@@ -1,11 +1,9 @@
-import Link from 'next/link';
 import Hero from '@/components/HeroSection';
 import Engagements from '@/components/Engagements';
 import Services from '@/components/Services';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import GoogleReviews from '@/components/GoogleReviews';
 import LocationMap from '@/components/LocationMap';
-import StaticReviews from '@/components/StaticReviews';
 
 
 export default function HomePage() {

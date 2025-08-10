@@ -106,14 +106,14 @@ export default function Engagements() {
       <div className="relative w-full">
         {/* Gradient de flou du haut */}
         <div 
-          className="absolute top-0 left-0 right-0 h-12 bg-gradient-to-b from-white dark:from-black to-transparent z-10 pointer-events-none transition-opacity duration-300"
+          className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-white via-white/90 via-white/70 to-transparent dark:from-black dark:via-black/90 dark:via-black/70 z-10 pointer-events-none transition-opacity duration-300"
           style={{ opacity: topShadowOpacity }}
         />
         
         {/* Zone de scroll sur toute la largeur de la page */}
         <div 
           ref={scrollRef}
-          className="w-full h-[400px] px-4 py-4 overflow-y-auto scrollbar-hide cursor-default"
+          className="w-full h-[500px] px-4 py-8 overflow-y-auto scrollbar-hide cursor-default"
           style={{
             scrollbarWidth: 'none',
             msOverflowStyle: 'none',
@@ -127,7 +127,7 @@ export default function Engagements() {
         
         {/* Gradient de flou du bas */}
         <div 
-          className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-white dark:from-black to-transparent z-10 pointer-events-none transition-opacity duration-300"
+          className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white via-white/90 via-white/70 to-transparent dark:from-black dark:via-black/90 dark:via-black/70 z-10 pointer-events-none transition-opacity duration-300"
           style={{ opacity: bottomShadowOpacity }}
         />
       </div>

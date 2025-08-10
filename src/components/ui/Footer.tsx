@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin, Wrench, Wind, Droplet, Settings, FileText, Star, Github, Twitter } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin, Wrench, Wind, Droplet, FileText, Star, Github, Twitter } from 'lucide-react';
 
 const services = [
   { title: "Chauffage", href: "/chauffage", icon: <Wrench className="w-4 h-4" /> },

@@ -251,123 +251,14 @@ export default function Andernos() {
         </div>
       </section>
 
-      {/* Section Fond Aquitaine Animé */}
-      <section className="relative py-20 overflow-hidden bg-white dark:bg-gray-900 transition-colors duration-300">
-        {/* Fond dégradé adaptatif */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-black"></div>
-        
-        {/* Motif de texture subtile */}
-        <div className="absolute inset-0 opacity-10 dark:opacity-20" 
-             style={{
-               backgroundImage: `radial-gradient(circle at 1px 1px, rgb(156 163 175) 1px, transparent 0)`,
-               backgroundSize: '20px 20px'
-             }}>
-        </div>
 
-        {/* SVG Carte d'Aquitaine avec animation lumineuse */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <svg 
-            width="800" 
-            height="600" 
-            viewBox="0 0 800 600" 
-            className="max-w-full max-h-full opacity-40 dark:opacity-50"
-          >
-            <defs>
-              {/* Gradient pour le trait lumineux */}
-              <linearGradient id="lightTrailAndernos" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="transparent" />
-                <stop offset="30%" stopColor="rgb(59 130 246)" stopOpacity="0.8" />
-                <stop offset="50%" stopColor="rgb(147 197 253)" stopOpacity="1" />
-                <stop offset="70%" stopColor="rgb(59 130 246)" stopOpacity="0.8" />
-                <stop offset="100%" stopColor="transparent" />
-                <animateTransform
-                  attributeName="gradientTransform"
-                  type="translate"
-                  values="-200 0; 1000 0; -200 0"
-                  dur="8s"
-                  repeatCount="indefinite"
-                />
-              </linearGradient>
-              
-              {/* Filtre pour l'effet de lueur */}
-              <filter id="glowAndernos">
-                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-                <feMerge> 
-                  <feMergeNode in="coloredBlur"/>
-                  <feMergeNode in="SourceGraphic"/>
-                </feMerge>
-              </filter>
-            </defs>
-            
-            {/* Contour simplifié de l'Aquitaine */}
-            <path 
-              d="M 150 100 L 300 80 L 450 90 L 580 120 L 650 180 L 680 250 L 670 320 L 640 400 L 580 480 L 500 520 L 400 540 L 300 530 L 200 510 L 120 450 L 100 380 L 110 300 L 130 220 Z" 
-              fill="none" 
-              stroke="rgb(156 163 175)" 
-              strokeWidth="2" 
-              className="opacity-30 dark:opacity-50"
-            />
-            
-            {/* Trait lumineux animé */}
-            <path 
-              d="M 150 100 L 300 80 L 450 90 L 580 120 L 650 180 L 680 250 L 670 320 L 640 400 L 580 480 L 500 520 L 400 540 L 300 530 L 200 510 L 120 450 L 100 380 L 110 300 L 130 220 Z" 
-              fill="none" 
-              stroke="url(#lightTrailAndernos)" 
-              strokeWidth="4" 
-              filter="url(#glowAndernos)"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            
-            {/* Point lumineux pour Andernos-les-Bains */}
-            <circle cx="250" cy="150" r="6" fill="rgb(59 130 246)" className="opacity-80">
-              <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite" />
-              <animate attributeName="r" values="6;8;6" dur="2s" repeatCount="indefinite" />
-            </circle>
-            
-            {/* Points lumineux aux autres villes principales */}
-            <circle cx="400" cy="200" r="4" fill="rgb(59 130 246)" className="opacity-60">
-              <animate attributeName="opacity" values="0.6;1;0.6" dur="2.5s" repeatCount="indefinite" />
-            </circle>
-            <circle cx="500" cy="350" r="4" fill="rgb(59 130 246)" className="opacity-60">
-              <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite" />
-            </circle>
-            
-            {/* Texte "AQUITAINE" stylisé */}
-            <text 
-              x="400" 
-              y="380" 
-              textAnchor="middle" 
-              className="fill-gray-400 dark:fill-gray-600 text-3xl font-bold opacity-15"
-              style={{ fontFamily: 'system-ui, sans-serif' }}
-            >
-              AQUITAINE
-            </text>
-            
-            {/* Texte "Andernos-les-Bains" */}
-            <text 
-              x="250" 
-              y="135" 
-              textAnchor="middle" 
-              className="fill-blue-500 dark:fill-blue-400 text-sm font-semibold opacity-60"
-              style={{ fontFamily: 'system-ui, sans-serif' }}
-            >
-              Andernos-les-Bains
-            </text>
-          </svg>
-        </div>
-
-        {/* Éléments décoratifs additionnels */}
-        <div className="absolute top-10 left-10 w-32 h-32 bg-blue-200 dark:bg-blue-900 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-xl opacity-30 animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-40 h-40 bg-indigo-200 dark:bg-indigo-900 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-xl opacity-30 animate-pulse" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-cyan-200 dark:bg-cyan-900 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-xl opacity-30 animate-pulse" style={{ animationDelay: '4s' }}></div>
-      </section>
       
-      <Breadcrumb className="max-w-7xl mx-auto px-4 my-6">
-        <BreadcrumbList>
+      <div className="bg-white dark:bg-black py-4">
+        <Breadcrumb className="max-w-7xl mx-auto px-4">
+        <BreadcrumbList className="text-gray-600 dark:text-gray-300">
           <BreadcrumbItem>
             <BreadcrumbLink asChild>
-              <Link href="/" className="hover:text-[#03144a] transition-colors">
+              <Link href="/" className="hover:text-gray-900 dark:hover:text-white transition-colors">
                 Accueil
               </Link>
             </BreadcrumbLink>
@@ -375,20 +266,22 @@ export default function Andernos() {
           <BreadcrumbSeparator />
           <BreadcrumbItem>
             <BreadcrumbLink asChild>
-              <Link href="/zones-desservies" className="hover:text-[#03144a] transition-colors">
+              <Link href="/zones-desservies" className="hover:text-gray-900 dark:hover:text-white transition-colors">
                 Zones desservies
               </Link>
             </BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbPage className="text-gray-500">
+            <BreadcrumbPage className="text-gray-500 dark:text-gray-400">
               Andernos-les-Bains
             </BreadcrumbPage>
           </BreadcrumbItem>
         </BreadcrumbList>
-      </Breadcrumb>
+        </Breadcrumb>
+      </div>
       
+      {/* Section Bassin d'Arcachon - Texte défilant au scroll */}
       <section className="relative py-12 overflow-hidden">
         <div
           className="absolute inset-0 -z-10 w-full h-full bg-white dark:bg-black"
@@ -396,26 +289,22 @@ export default function Andernos() {
         ></div>
         
         {/* Titre centré */}
-        <SimpleWrapper>
-          <div className="relative z-10 container mx-auto px-4 mb-4">
-            <h2 className="text-2xl md:text-3xl font-medium text-gray-800 dark:text-white text-center">
-              Bassin d&apos;Arcachon, Habitant d&apos;Andernos-les-Bains
-            </h2>
-          </div>
-        </SimpleWrapper>
+        <div className="relative z-10 container mx-auto px-4 mb-4">
+          <h2 className="text-2xl md:text-3xl font-medium text-gray-800 dark:text-white text-center">
+            Chauffage Climatisation Andernos-les-Bains - ClimGO Bassin d&apos;Arcachon
+          </h2>
+        </div>
         
         {/* Container de scroll sur toute la largeur de la page */}
         <div className="relative w-full">
           {/* Gradient de flou du haut */}
           <div 
-            className="absolute top-0 left-0 right-0 h-12 bg-gradient-to-b from-white dark:from-black to-transparent z-10 pointer-events-none transition-opacity duration-300"
-            style={{ opacity: topShadowOpacity }}
+            className="absolute top-0 left-0 right-0 h-12 bg-gradient-to-b from-white dark:from-black to-transparent z-10 pointer-events-none"
           />
           
           {/* Zone de scroll sur toute la largeur de la page */}
           <div 
-            ref={scrollRef}
-            className="w-full h-[400px] px-4 py-4 overflow-y-auto scrollbar-hide cursor-default"
+            className="w-full h-[300px] px-4 py-16 overflow-y-auto scrollbar-hide cursor-default"
             style={{
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
@@ -423,32 +312,45 @@ export default function Andernos() {
           >
             {/* Contenu centré dans la zone élargie */}
             <div className="max-w-4xl mx-auto">
-              <div className="space-y-4 text-center">
-                <SimpleWrapper>
-                  <p className="text-lg text-gray-800 dark:text-gray-200 leading-normal">
-                    Située au bord du bassin, <strong>Andernos-les-Bains</strong> séduit par son cadre maritime et ses quartiers variés, du centre-ville animé au <strong>Bétey</strong> paisible. ClimGO adapte ses solutions à chaque type d'habitat pour garantir votre confort thermique toute l'année.
-                  </p>
-                </SimpleWrapper>
+              <div className="space-y-6 text-center pt-8 pb-20">
+                <p className="text-lg text-gray-800 dark:text-gray-200 leading-normal">
+                  Située au bord du bassin, <strong className="text-gray-900 dark:text-white">Andernos-les-Bains</strong> séduit par son cadre maritime et ses quartiers variés, du centre-ville animé au <strong className="text-gray-900 dark:text-white">Bétey</strong> paisible. ClimGO adapte ses solutions à chaque type d'habitat pour garantir votre confort thermique toute l'année.
+                </p>
                 
-                <SimpleWrapper>
-                  <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
-                    Nous accompagnons les <strong>familles</strong>, <strong>retraités</strong> et <strong>nouveaux arrivants</strong> dans leurs projets d'installation, en tenant compte des spécificités locales et des réglementations environnementales.
-                  </p>
-                </SimpleWrapper>
+                <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
+                  Nous accompagnons les <strong className="text-gray-900 dark:text-white">familles</strong>, <strong className="text-gray-900 dark:text-white">retraités</strong> et <strong className="text-gray-900 dark:text-white">nouveaux arrivants</strong> dans leurs projets d'installation, en tenant compte des spécificités locales et des réglementations environnementales.
+                </p>
                 
-                <SimpleWrapper>
-                  <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
-                    Chaque intervention vise à optimiser la <strong>performance énergétique</strong> de votre logement tout en respectant l'intégration harmonieuse dans ce cadre naturel et urbain.
-                  </p>
-                </SimpleWrapper>
+                <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
+                  Chaque intervention vise à optimiser la <strong className="text-gray-900 dark:text-white">performance énergétique</strong> de votre logement tout en respectant l'intégration harmonieuse dans ce cadre naturel et urbain.
+                </p>
+                
+                <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
+                  Notre expertise locale nous permet de comprendre les <strong className="text-gray-900 dark:text-white">contraintes climatiques</strong> du Bassin d'Arcachon : l'humidité marine, les vents côtiers et les variations saisonnières qui influencent le choix des équipements et leur installation.
+                </p>
+                
+                <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
+                  Nous privilégions les <strong className="text-gray-900 dark:text-white">solutions durables</strong> et respectueuses de l'environnement, en accord avec la sensibilité écologique des habitants d'Andernos et les réglementations en vigueur dans cette zone protégée.
+                </p>
+                
+                <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
+                  De la <strong className="text-gray-900 dark:text-white">pompe à chaleur</strong> à la <strong className="text-gray-900 dark:text-white">climatisation réversible</strong>, en passant par la <strong className="text-gray-900 dark:text-white">production d'eau chaude sanitaire</strong>, nos solutions s'adaptent à chaque type de logement et à chaque budget.
+                </p>
+                
+                <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
+                  Notre équipe d'<strong className="text-gray-900 dark:text-white">experts certifiés</strong> intervient dans tous les quartiers d'Andernos, du centre historique aux résidences modernes du Bétey, en passant par les maisons traditionnelles du port ostréicole.
+                </p>
+                
+                <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
+                  Nous garantissons un <strong className="text-gray-900 dark:text-white">service personnalisé</strong> et un suivi rigoureux de chaque projet, de la première visite à la mise en service, en passant par l'installation et la maintenance préventive.
+                </p>
               </div>
             </div>
           </div>
           
           {/* Gradient de flou du bas */}
           <div 
-            className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-white dark:from-black to-transparent z-10 pointer-events-none transition-opacity duration-300"
-            style={{ opacity: bottomShadowOpacity }}
+            className="absolute bottom-0 left-0 right-0 h-70 bg-gradient-to-t from-white dark:from-black to-transparent z-10 pointer-events-none"
           />
         </div>
         
@@ -459,58 +361,309 @@ export default function Andernos() {
         `}</style>
       </section>
 
-
-
-
-
-      <section
-        className="relative py-20 mb-12 bg-gradient-to-br from-[#03144a] to-[#1e3a8a]"
-      >
-        <div className="absolute inset-0 bg-black/20 z-0" />
+      {/* Section 4 blocs horizontaux avec ScrollShadow HeroUI */}
+      <section className="py-20 bg-white dark:bg-black">
         <SimpleWrapper>
-          <div className="relative z-10 bg-white/70 backdrop-blur-lg p-8 rounded-xl shadow-xl max-w-3xl mx-auto">
-            <SimpleWrapper>
-              <h2 className="text-2xl font-semibold text-[#03144a] mb-4 text-center">Nos interventions à Andernos-les-Bains</h2>
-            </SimpleWrapper>
-            <SimpleWrapper>
-              <p className="text-gray-800 leading-relaxed text-center">
-                Du centre-ville au Bétey, nous couvrons tous les secteurs d'Andernos. Nos solutions s'adaptent aux constructions neuves comme aux maisons anciennes, avec un souci constant d'efficacité et de durabilité. Où que vous soyez, nous vous garantissons un service réactif et personnalisé.
-              </p>
-            </SimpleWrapper>
+          <div className="max-w-7xl mx-auto">
+            <div className="relative max-w-full overflow-hidden">
+              {/* Ombre gauche */}
+              <div className="absolute left-0 top-0 bottom-0 w-90 bg-gradient-to-r from-white via-white/80 to-transparent dark:from-black dark:via-black/80 z-10 pointer-events-none" />
+              
+              {/* Ombre droite */}
+              <div className="absolute right-0 top-0 bottom-0 w-90 bg-gradient-to-l from-white via-white/80 to-transparent dark:from-black dark:via-black/80 z-10 pointer-events-none" />
+              
+              <div className="overflow-x-auto">
+                <div className="flex space-x-8 min-w-max px-4" style={{ marginLeft: 'calc(50% - 144px)', marginRight: 'calc(50% - 144px)' }}>
+                  {/* Bloc 1 */}
+                  <div className="w-72 flex-shrink-0 bg-white dark:bg-black rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100 dark:border-gray-700">
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                      Un cadre de vie recherché au bord du Bassin
+                    </h3>
+                    <div className="space-y-3 text-gray-600 dark:text-gray-300 leading-relaxed">
+                      <p>
+                        Située entre plages, forêt et piste cyclable, <strong className="text-gray-900 dark:text-white">Andernos-les-Bains</strong> séduit par son cadre naturel privilégié. Avec ses 12 000 habitants, la ville attire aussi bien les familles en quête de tranquillité que les retraités ou jeunes actifs souhaitant s'installer à proximité de Bordeaux.
+                      </p>
+                      <p>
+                        Le centre-ville dynamique, le port ostréicole typique, les établissements scolaires et les nombreuses pistes cyclables font d'Andernos une commune vivante toute l'année.
+                      </p>
+                    </div>
+                  </div>
+                  
+                  {/* Bloc 2 */}
+                  <div className="w-72 flex-shrink-0 bg-white dark:bg-black rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100 dark:border-gray-700">
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                      Exemples concrets d'interventions à Andernos
+                    </h3>
+                    <div className="space-y-3 text-gray-600 dark:text-gray-300 leading-relaxed">
+                      <div className="flex items-start space-x-3">
+                        <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <p><strong>Quartier du Bétey :</strong> installation d'une pompe à chaleur air/air dans une maison secondaire, avec optimisation acoustique pour le voisinage.</p>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <p><strong>Avenue Pasteur :</strong> remplacement d'un ancien chauffage au gaz par une PAC air/eau haute performance pour une résidence principale de plain-pied.</p>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <p><strong>Rue du Port :</strong> entretien annuel d'un système multisplit Mitsubishi dans une maison rénovée avec vue sur le Bassin.</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Bloc 3 */}
+                  <div className="w-72 flex-shrink-0 bg-white dark:bg-black rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100 dark:border-gray-700">
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                      Un savoir-faire adapté à l'environnement andernosien
+                    </h3>
+                    <div className="space-y-3 text-gray-600 dark:text-gray-300 leading-relaxed">
+                      <p>
+                        L'air marin, l'humidité du Bassin et la proximité des pins exigent des installations robustes et bien pensées. Chez ClimGO, chaque PAC est installée avec des supports surélevés et des traitements anticorrosion pour résister aux conditions locales.
+                      </p>
+                      <p>
+                        Nous tenons compte des expositions souvent plein ouest, de l'ombre partielle liée aux grands arbres, et des contraintes de voisinage, pour assurer un confort optimal en toute saison.
+                      </p>
+                    </div>
+                  </div>
+                  
+                  {/* Bloc 4 */}
+                  <div className="w-72 flex-shrink-0 bg-white dark:bg-black rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100 dark:border-gray-700">
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                      Un projet thermique à Andernos ? On en parle ?
+                    </h3>
+                    <div className="space-y-3 text-gray-600 dark:text-gray-300 leading-relaxed">
+                      <p>
+                        Vous habitez <strong className="text-gray-900 dark:text-white">Andernos-les-Bains</strong> ou venez d'acquérir un bien ? Nos conseillers sont à votre écoute pour définir ensemble une solution de chauffage, climatisation ou production d'eau chaude parfaitement adaptée à votre logement.
+                      </p>
+                      <p>
+                        Contactez-nous pour un <strong className="text-gray-900 dark:text-white">Devis gratuit</strong> et personnalisé.
+                      </p>
+                      <div className="mt-4">
+                        <a
+                          href="/contact"
+                          className="inline-flex items-center px-6 py-3 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-700 transition-colors duration-300"
+                        >
+                          Devis gratuit
+                          <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </SimpleWrapper>
       </section>
 
-      <div
-        className="relative py-20 bg-gradient-to-br from-[#1e40af] to-[#3b82f6]"
-      >
-        <div className="absolute inset-0 bg-black/20 z-0" />
-        <div className="relative z-10 bg-white/80 backdrop-blur-md p-6 rounded-lg max-w-4xl mx-auto">
-          <section className="mb-12">
-            <SimpleWrapper>
-              <h2 className="text-2xl font-semibold text-[#03144a] mb-4 text-center">Pourquoi choisir ClimGO à Andernos-les-Bains ?</h2>
-            </SimpleWrapper>
-            <SimpleWrapper>
-              <p className="text-gray-800 leading-relaxed mb-4 text-center">
+      {/* Section Nos interventions - Timeline verticale élégante */}
+      <section className="relative py-24 overflow-hidden bg-white dark:bg-black">
+        
+        <SimpleWrapper>
+          <div className="relative z-10 max-w-6xl mx-auto px-4">
+            {/* Titre avec animation */}
+            <div className="text-center mb-20">
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+                Nos interventions à Andernos-les-Bains
+              </h2>
+              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                Du centre-ville au Bétey, nous couvrons tous les secteurs d'Andernos. Nos solutions s'adaptent aux constructions neuves comme aux maisons anciennes, avec un souci constant d'efficacité et de durabilité.
+              </p>
+            </div>
+            
+            {/* Timeline verticale */}
+            <div className="relative">
+              {/* Ligne de connexion */}
+              <div className="absolute left-1/2 transform -translate-x-px w-0.5 h-full bg-gradient-to-b from-blue-400 via-purple-500 to-pink-500" />
+              
+              {/* Étape 1 */}
+              <div className="relative flex items-center mb-16">
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full shadow-2xl flex items-center justify-center z-10">
+                  <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  </svg>
+                </div>
+                
+                <div className="w-5/12 pr-8 text-right">
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Centre-ville & Bétey</h3>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    Interventions dans tous les quartiers d'Andernos, du centre animé au Bétey paisible, avec des solutions adaptées à chaque type d'habitat.
+                  </p>
+                </div>
+              </div>
+              
+              {/* Étape 2 */}
+              <div className="relative flex items-center mb-16">
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gradient-to-br from-green-500 to-blue-600 rounded-full shadow-2xl flex items-center justify-center z-10">
+                  <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                </div>
+                
+                <div className="w-5/12 ml-auto pl-8">
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Constructions & Rénovations</h3>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    Solutions adaptées aux constructions neuves comme aux maisons anciennes, avec un souci constant d'efficacité et de durabilité.
+                  </p>
+                </div>
+              </div>
+              
+              {/* Étape 3 */}
+              <div className="relative flex items-center mb-16">
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full shadow-2xl flex items-center justify-center z-10">
+                  <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                
+                <div className="w-5/12 pr-8 text-right">
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Service Réactif</h3>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    Où que vous soyez, nous vous garantissons un service réactif et personnalisé, avec des interventions rapides et efficaces.
+                  </p>
+                </div>
+              </div>
+              
+              {/* Étape 4 */}
+              <div className="relative flex items-center">
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-full shadow-2xl flex items-center justify-center z-10">
+                  <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                
+                <div className="w-5/12 ml-auto pl-8">
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Excellence Garantie</h3>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    Chaque intervention est réalisée avec la plus grande exigence, du premier contact à la mise en service, pour votre satisfaction totale.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            {/* Call-to-action */}
+            <div className="text-center mt-16">
+              <Link
+                href="/contact"
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-gray-900 to-gray-700 text-white font-semibold rounded-full hover:from-gray-700 hover:to-gray-900 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                Demander un devis
+                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </SimpleWrapper>
+      </section>
+
+      {/* Section Pourquoi choisir - Stats cards avec icônes */}
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#1e40af]/10 via-blue-100/30 to-[#3b82f6]/10 dark:from-[#1e40af]/20 dark:via-gray-900/50 dark:to-[#3b82f6]/20" />
+        
+        <SimpleWrapper>
+          <div className="relative z-10 max-w-7xl mx-auto px-4">
+            {/* Titre principal */}
+            <div className="text-center mb-20">
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+                Pourquoi choisir ClimGO à Andernos-les-Bains ?
+              </h2>
+              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
                 Choisir ClimGO à Andernos-les-Bains, c'est faire appel à des experts qui connaissent les contraintes spécifiques du climat local et la richesse environnementale de la commune.
               </p>
-            </SimpleWrapper>
-            <SimpleWrapper>
-              <p className="text-gray-800 leading-relaxed mb-4 text-center">
-                Matériaux performants, normes rigoureuses et finitions impeccables : chaque projet est traité avec la plus grande exigence, du premier contact à la mise en service.
-              </p>
-            </SimpleWrapper>
-            <SimpleWrapper>
-              <p className="text-gray-800 leading-relaxed text-center">
-                Notre proximité nous permet d&apos;intervenir rapidement sur tout Andernos, pour des dépannages ou des installations urgentes sans attente.
-              </p>
-            </SimpleWrapper>
-          </section>
-        </div>
-      </div>
+            </div>
+            
+            {/* Grid de stats cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+              {/* Card 1 - Expertise locale */}
+              <div className="group relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500" />
+                <div className="relative bg-white/90 dark:bg-black/90 backdrop-blur-xl border border-white/20 dark:border-gray-700/50 rounded-3xl p-8 text-center hover:transform hover:-translate-y-2 transition-all duration-500 shadow-xl hover:shadow-2xl">
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Expertise Locale</h3>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    Connaissance approfondie du climat local et de l'environnement andernosien
+                  </p>
+                </div>
+              </div>
+              
+              {/* Card 2 - Qualité */}
+              <div className="group relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-green-500/20 to-blue-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500" />
+                <div className="relative bg-white/90 dark:bg-black/90 backdrop-blur-xl border border-white/20 dark:border-gray-700/50 rounded-3xl p-8 text-center hover:transform hover:-translate-y-2 transition-all duration-500 shadow-xl hover:shadow-2xl">
+                  <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Qualité Premium</h3>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    Matériaux performants, normes rigoureuses et finitions impeccables
+                  </p>
+                </div>
+              </div>
+              
+              {/* Card 3 - Proximité */}
+              <div className="group relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500" />
+                <div className="relative bg-white/90 dark:bg-black/90 backdrop-blur-xl border border-white/20 dark:border-gray-700/50 rounded-3xl p-8 text-center hover:transform hover:-translate-y-2 transition-all duration-500 shadow-xl hover:shadow-2xl">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Proximité</h3>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    Intervention rapide sur tout Andernos, dépannages et installations urgentes
+                  </p>
+                </div>
+              </div>
+              
+              {/* Card 4 - Excellence */}
+              <div className="group relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/20 to-orange-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500" />
+                <div className="relative bg-white/90 dark:bg-black/90 backdrop-blur-xl border border-white/20 dark:border-gray-700/50 rounded-3xl p-8 text-center hover:transform hover:-translate-y-2 transition-all duration-500 shadow-xl hover:shadow-2xl">
+                  <div className="w-16 h-16 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Excellence</h3>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    Chaque projet traité avec la plus grande exigence, du premier contact à la mise en service
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            {/* Section de texte détaillé */}
+            <div className="bg-white/80 dark:bg-black/80 backdrop-blur-xl border border-white/20 dark:border-gray-700/50 rounded-3xl p-12 shadow-2xl max-w-5xl mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Savoir-faire reconnu</h3>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    Notre équipe d'experts maîtrise parfaitement les spécificités du climat local et la richesse environnementale de la commune d'Andernos-les-Bains.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Service personnalisé</h3>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    Chaque intervention est adaptée aux besoins spécifiques de votre habitat, avec un accompagnement complet du début à la fin de votre projet.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </SimpleWrapper>
+      </section>
 
       {/* Section Services - Design Moderne */}
-      <section className="relative py-20 overflow-hidden bg-gradient-to-br from-white via-gray-50 to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900">
+      <section className="relative py-20 overflow-hidden bg-gradient-to-br from-white/80 via-gray-50/80 to-blue-50/80 dark:from-gray-900/80 dark:via-gray-800/80 dark:to-blue-900/80 z-10">
         {/* Éléments décoratifs de fond */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-10 right-20 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
@@ -520,7 +673,7 @@ export default function Andernos() {
         <div className="relative z-10 max-w-7xl mx-auto px-4">
           <SimpleWrapper>
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#03144a] to-[#1e40af] bg-clip-text text-transparent mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
                 Nos Services ClimGO
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
@@ -533,7 +686,7 @@ export default function Andernos() {
             {/* Carte 1 - Types de logements */}
             <SimpleWrapper>
               <motion.div 
-                className="group relative bg-gradient-to-br from-[#03144a] to-[#1e40af] rounded-2xl p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border border-[#03144a]/20"
+                className="group relative bg-gradient-to-br from-gray-900 to-gray-700 rounded-2xl p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border border-gray-900/20"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -578,7 +731,7 @@ export default function Andernos() {
                   <div className="absolute inset-0 bg-yellow-400/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
                 </div>
 
-                <h3 className="text-2xl font-bold text-[#03144a] dark:text-white mb-4 text-center">Processus d'installation</h3>
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 text-center">Processus d'installation</h3>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-center text-lg">
                   Après une étude personnalisée de votre habitat, nous vous proposons un devis gratuit et détaillé. Nos équipes assurent ensuite une installation soignée, en respectant les délais convenus et les normes en vigueur.
                 </p>
@@ -609,7 +762,7 @@ export default function Andernos() {
                   <div className="absolute inset-0 bg-green-400/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
                 </div>
 
-                <h3 className="text-2xl font-bold text-[#03144a] dark:text-white mb-4 text-center">Entretien & maintenance</h3>
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 text-center">Entretien & maintenance</h3>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-center text-lg">
                   Pour garantir la performance et la durabilité de vos équipements, nous proposons des contrats d'entretien personnalisés avec des visites régulières pour vérification, nettoyage et optimisation.
                 </p>
@@ -663,7 +816,7 @@ export default function Andernos() {
               </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#03144a] to-[#1e40af] text-white font-semibold rounded-full hover:from-[#1e40af] hover:to-[#03144a] transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-gray-900 to-gray-700 text-white font-semibold rounded-full hover:from-gray-700 hover:to-gray-900 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 Découvrir nos solutions
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -675,123 +828,118 @@ export default function Andernos() {
         </div>
       </section>
 
-      <div
-        className="relative py-20 mb-12 bg-gradient-to-br from-[#03144a] to-[#1e3a8a]"
-      >
-        <div className="absolute inset-0 bg-black/30 z-0" />
-        <div className="relative z-10 bg-white/60 backdrop-blur-md p-6 rounded-lg max-w-4xl mx-auto px-4">
-          <section>
-            <SimpleWrapper>
-              <h2 className="text-2xl font-semibold text-[#03144a] mb-6 text-center">Mini FAQ locale</h2>
-            </SimpleWrapper>
-            <div className="space-y-4">
-              <SimpleWrapper>
-                <div className="bg-white/80 rounded-lg p-4">
-                  <h3 className="font-semibold text-[#03144a] mb-2">Quels sont vos services à Andernos-les-Bains ?</h3>
-                  <p className="text-gray-700">Nous assurons l'installation, l'entretien et le dépannage de systèmes de chauffage, climatisation et production d'eau chaude à Andernos et ses alentours.</p>
-                </div>
-              </SimpleWrapper>
-              <SimpleWrapper>
-                <div className="bg-white/80 rounded-lg p-4">
-                  <h3 className="font-semibold text-[#03144a] mb-2">Proposez-vous un accompagnement pour les aides ?</h3>
-                  <p className="text-gray-700">Oui. Nous vous guidons dans les démarches pour obtenir MaPrimeRénov', les CEE, la TVA réduite ou l'Éco-PTZ, selon votre projet.</p>
-                </div>
-              </SimpleWrapper>
-              <SimpleWrapper>
-                <div className="bg-white/80 rounded-lg p-4">
-                  <h3 className="font-semibold text-[#03144a] mb-2">Intervenez-vous dans les quartiers d'Andernos ?</h3>
-                  <p className="text-gray-700">Absolument. Nos techniciens se déplacent dans tous les quartiers d'Andernos, notamment le centre-ville, le Bétey, la Jetée ou encore les zones pavillonnaires.</p>
-                </div>
-              </SimpleWrapper>
-            </div>
-          </section>
-        </div>
-      </div>
-
-    {/* Ajout des sections enrichies pour Andernos-les-Bains */}
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto px-4 my-12">
-      <SimpleWrapper>
-        <div className="bg-white/80 backdrop-blur-md rounded-lg shadow-md p-6">
-          <h2 className="text-xl font-semibold text-[#03144a] mb-4 text-center">Un cadre de vie recherché au bord du Bassin</h2>
-          <p className="text-[#03144a] leading-relaxed text-center">
-            Située entre plages, forêt et piste cyclable, Andernos-les-Bains séduit par son cadre naturel privilégié. Avec ses 12 000 habitants, la ville attire aussi bien les familles en quête de tranquillité que les retraités ou jeunes actifs souhaitant s'installer à proximité de Bordeaux.
-          </p>
-          <p className="text-[#03144a] leading-relaxed text-center">
-            Le centre-ville dynamique, le port ostréicole typique, les établissements scolaires et les nombreuses pistes cyclables font d'Andernos une commune vivante toute l'année. La zone de la Jetée, le quartier du Bétey ou encore Coubertin accueillent une diversité de logements adaptés à tous les styles de vie.
-          </p>
-          <p className="text-[#03144a] leading-relaxed text-center">
-            ClimGO intervient dans tous les quartiers d'Andernos, des villas contemporaines du port aux maisons typiques du centre, en passant par les nouvelles constructions côté Mauret ou Grand Large.
-          </p>
-        </div>
-      </SimpleWrapper>
-
-      <SimpleWrapper>
-        <div className="bg-[#03144a]/90 backdrop-blur-md rounded-lg shadow-md p-6">
-          <h2 className="text-xl font-semibold text-white mb-4 text-center">Exemples concrets d'interventions à Andernos</h2>
-          <p className="text-white leading-relaxed text-center">
-            • Quartier du Bétey : installation d'une pompe à chaleur air/air dans une maison secondaire, avec optimisation acoustique pour le voisinage.
-          </p>
-          <p className="text-white leading-relaxed text-center">
-            • Avenue Pasteur : remplacement d'un ancien chauffage au gaz par une PAC air/eau haute performance pour une résidence principale de plain-pied.
-          </p>
-          <p className="text-white leading-relaxed text-center">
-            • Rue du Port : entretien annuel d'un système multisplit Mitsubishi dans une maison rénovée avec vue sur le Bassin.
-          </p>
-          <p className="text-white leading-relaxed text-center">
-            • Lotissement Coubertin : pose d'un chauffe-eau thermodynamique compact dans une construction neuve RT2012.
-          </p>
-        </div>
-      </SimpleWrapper>
-
-      <SimpleWrapper>
-        <div className="bg-[#03144a]/90 backdrop-blur-md rounded-lg shadow-md p-6">
-          <h2 className="text-xl font-semibold text-white mb-4 text-center">Un savoir-faire adapté à l'environnement andernosien</h2>
-          <p className="text-white leading-relaxed text-center">
-            L'air marin, l'humidité du Bassin et la proximité des pins exigent des installations robustes et bien pensées. Chez ClimGO, chaque PAC est installée avec des supports surélevés et des traitements anticorrosion pour résister aux conditions locales.
-          </p>
-          <p className="text-white leading-relaxed text-center">
-            Nous tenons compte des expositions souvent plein ouest, de l'ombre partielle liée aux grands arbres, et des contraintes de voisinage, pour assurer un confort optimal en toute saison.
-          </p>
-        </div>
-      </SimpleWrapper>
-
-      <SimpleWrapper>
-        <div className="bg-white/80 backdrop-blur-md rounded-lg shadow-md p-6">
-          <h2 className="text-xl font-semibold text-[#03144a] mb-4 text-center">Un projet thermique à Andernos ? On en parle ?</h2>
-          <p className="text-[#03144a] leading-relaxed text-center">
-            Vous habitez Andernos-les-Bains ou venez d'acquérir un bien ? Nos conseillers sont à votre écoute pour définir ensemble une solution de chauffage, climatisation ou production d'eau chaude parfaitement adaptée à votre logement. Contactez-nous pour un diagnostic gratuit.
-          </p>
-        </div>
-      </SimpleWrapper>
-    </div>
-     <section className="text-center my-20">
-        <h2 className="text-2xl font-semibold text-[#03144a] mb-6 text-center">Besoin d&apos;un devis à Andernos-les-Bains ?</h2>
-        <p className="text-gray-800 leading-relaxed mb-6 text-center">
-          Faites confiance à ClimGO pour vos projets. Contactez-nous dès maintenant pour un devis gratuit et personnalisé.
-        </p>
-        <a
-          href="/contact"
-          className="inline-block bg-[#03144a] text-white font-semibold py-3 px-8 rounded-lg hover:bg-[#021037] transition"
-        >
-          Demandez votre devis gratuit à Andernos-les-Bains
-        </a>
-      </section>
-
-      {/* Section Carte en pleine largeur collée au footer */}
-      <section className="relative w-full overflow-hidden bg-white dark:bg-white">
+      {/* Section FAQ - Accordéon moderne */}
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#03144a]/10 via-blue-50/30 to-[#1e3a8a]/10 dark:from-[#03144a]/20 dark:via-gray-900/50 dark:to-[#1e3a8a]/20" />
         
-        <div className="relative z-10 w-full px-4">
-          <SimpleWrapper>
-            <div className="text-center mb-8">
-              <h2 className="text-4xl md:text-5xl font-light text-[#03144a] dark:text-white mb-4 tracking-tight">
-                Notre zone d&apos;intervention
+        <SimpleWrapper>
+          <div className="relative z-10 max-w-4xl mx-auto px-4">
+            {/* Titre */}
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+                Questions fréquentes
               </h2>
-              <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                Découvrez où ClimGO intervient à Andernos-les-Bains et dans tout le Bassin d&apos;Arcachon
+              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                Tout ce que vous devez savoir sur nos services à Andernos-les-Bains
               </p>
             </div>
-          </SimpleWrapper>
+            
+            {/* Accordéon */}
+            <div className="space-y-4">
+              {/* Question 1 */}
+              <div className="group">
+                <div className="bg-white/90 dark:bg-black/90 backdrop-blur-xl border border-white/20 dark:border-gray-700/50 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden">
+                  <div className="p-6 cursor-pointer group-hover:bg-gradient-to-r group-hover:from-blue-50/50 group-hover:to-purple-50/50 dark:group-hover:from-gray-800/50 dark:group-hover:to-gray-700/50 transition-all duration-300">
+                    <div className="flex items-center justify-between">
+                      <h3 className="text-xl font-semibold text-gray-900 dark:text-white group-hover:text-gray-700 transition-colors duration-300">
+                        Quels sont vos services à Andernos-les-Bains ?
+                      </h3>
+                      <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <svg className="w-5 h-5 text-white transform group-hover:rotate-45 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="px-6 pb-6">
+                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                      Nous assurons l'installation, l'entretien et le dépannage de systèmes de chauffage, climatisation et production d'eau chaude à Andernos et ses alentours.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Question 2 */}
+              <div className="group">
+                <div className="bg-white/90 dark:bg-black/90 backdrop-blur-xl border border-white/20 dark:border-gray-700/50 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden">
+                  <div className="p-6 cursor-pointer group-hover:bg-gradient-to-r group-hover:from-green-50/50 group-hover:to-blue-50/50 dark:group-hover:from-gray-800/50 dark:group-hover:to-gray-700/50 transition-all duration-300">
+                    <div className="flex items-center justify-between">
+                      <h3 className="text-xl font-semibold text-[#03144a] dark:text-white group-hover:text-[#1e40af] transition-colors duration-300">
+                        Proposez-vous un accompagnement pour les aides ?
+                      </h3>
+                      <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-blue-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <svg className="w-5 h-5 text-white transform group-hover:rotate-45 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="px-6 pb-6">
+                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                      Oui. Nous vous guidons dans les démarches pour obtenir MaPrimeRénov', les CEE, la TVA réduite ou l'Éco-PTZ, selon votre projet.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Question 3 */}
+              <div className="group">
+                <div className="bg-white/90 dark:bg-black/90 backdrop-blur-xl border border-white/20 dark:border-gray-700/50 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden">
+                  <div className="p-6 cursor-pointer group-hover:bg-gradient-to-r group-hover:from-purple-50/50 group-hover:to-pink-50/50 dark:group-hover:from-gray-800/50 dark:group-hover:to-gray-700/50 transition-all duration-300">
+                    <div className="flex items-center justify-between">
+                      <h3 className="text-xl font-semibold text-[#03144a] dark:text-white group-hover:text-[#1e40af] transition-colors duration-300">
+                        Intervenez-vous dans les quartiers d'Andernos ?
+                      </h3>
+                      <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <svg className="w-5 h-5 text-white transform group-hover:rotate-45 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="px-6 pb-6">
+                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                      Absolument. Nos techniciens se déplacent dans tous les quartiers d'Andernos, notamment le centre-ville, le Bétey, la Jetée ou encore les zones pavillonnaires.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Call-to-action */}
+            <div className="text-center mt-12">
+              <p className="text-gray-600 dark:text-gray-300 mb-6">
+                Vous avez d'autres questions ?
+              </p>
+              <Link
+                href="/contact"
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-gray-900 to-gray-700 text-white font-semibold rounded-full hover:from-gray-700 hover:to-gray-900 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                Contactez-nous
+                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </SimpleWrapper>
+      </section>
 
+
+
+      {/* Section Carte en pleine largeur */}
+      <section className="relative w-full overflow-hidden bg-white dark:bg-white">
+        <div className="relative z-10 w-full px-4">
           <SimpleWrapper>
             <div className="relative w-full">
               {/* Carte Google Maps en pleine largeur */}
@@ -813,7 +961,6 @@ export default function Andernos() {
           </SimpleWrapper>
         </div>
       </section>
-
 
     </main>
   );

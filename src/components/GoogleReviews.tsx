@@ -1,8 +1,9 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { Star } from 'lucide-react';
 import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
+import Image from 'next/image';
 
 interface Review {
   id?: string;
@@ -18,16 +19,13 @@ interface Review {
 
 interface GoogleReviewsProps {
   placeId: string; // Votre Google Place ID
-  apiKey?: string;  // Votre clé API Google (optionnel)
 }
 
-export default function GoogleReviews({ placeId, apiKey }: GoogleReviewsProps) {
+export default function GoogleReviews({ placeId }: GoogleReviewsProps) {
   const [reviews, setReviews] = useState<Review[]>([]);
   const [averageRating, setAverageRating] = useState(0);
   const [totalReviews, setTotalReviews] = useState(0);
   const [loading, setLoading] = useState(true);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const fetchReviews = async () => {
@@ -162,9 +160,11 @@ export default function GoogleReviews({ placeId, apiKey }: GoogleReviewsProps) {
               >
                 <div className="bg-white/80 dark:bg-[#2a2a2a]/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-600/30 h-[280px] flex flex-col hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                   <div className="flex items-center mb-4">
-                    <img
+                    <Image
                       src={review.profile_photo_url}
                       alt={review.author_name}
+                      width={48}
+                      height={48}
                       className="w-12 h-12 rounded-full mr-3 object-cover border-2 border-gray-200 dark:border-gray-600"
                       onError={(e) => {
                         e.currentTarget.src = '/favicon/android-chrome-192x192.png';
@@ -224,7 +224,7 @@ export default function GoogleReviews({ placeId, apiKey }: GoogleReviewsProps) {
 
               {/* Bouton pour laisser un avis */}
               <a
-                href="https://www.google.com/maps/place/ClimGO/@44.6965443,-0.8562622,17z/data=!3m1!4b1!4m6!3m5!1s0x55e91babdbbad05:0x35eae658ca1b3c85!8m2!3d44.6965443!4d-0.8562622!16s%2Fg%2F11xkqntvxd?entry=ttu&g_ep=EgoyMDI1MDgwNi4wIKXMDSoASAFQAw%3D%3D"
+                href="https://g.page/r/CYU8G8pY5uo1EBM/review"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-white dark:bg-gray-800 border-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700 font-semibold px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105"

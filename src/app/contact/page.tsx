@@ -1,8 +1,7 @@
 'use client';
 
-import { useRef, useEffect, useState } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { Phone, Mail, MapPin, Clock, Star, User, MessageSquare, Building, Wrench, Wind, Droplet, Settings, FileText, Home } from 'lucide-react';
 import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import LocationMap from '@/components/LocationMap';

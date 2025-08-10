@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { TbBulb, TbArrowRight, TbPhone, TbBook, TbAward, TbUsers, TbShieldCheck, TbLeaf } from "react-icons/tb";
+import { TbAward, TbUsers, TbShieldCheck, TbLeaf } from "react-icons/tb";
 import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 
 export default function WhyChooseUs() {

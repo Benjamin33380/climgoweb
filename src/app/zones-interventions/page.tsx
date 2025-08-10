@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo, memo } from 'react';
 import Link from 'next/link';
-import { MapPin, Phone, Clock, CheckCircle, ArrowRight, Users, Star, DraftingCompass, ChevronDown, Zap, Target, ChevronRight } from 'lucide-react';
+import { MapPin, Phone, Clock, CheckCircle, ArrowRight, Users, Star, DraftingCompass, Zap, Target, ChevronRight } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';

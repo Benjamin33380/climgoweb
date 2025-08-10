@@ -100,7 +100,6 @@ export const useScrollHijack = ({
       clearTimeout(scrollTimeout);
 
       const containerRect = container.getBoundingClientRect();
-      const containerCenter = containerRect.top + containerRect.height / 2;
       const viewportCenter = window.innerHeight / 2;
 
       // Si le conteneur est visible
