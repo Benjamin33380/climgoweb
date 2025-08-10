@@ -729,6 +729,108 @@ const FaqSection = ({ cityData }: { cityData: CityData }) => (
   </section>
 );
 
+// Composant Fond Aquitaine Animé - DESIGN PREMIUM LUXE 🔥
+const AquitaineBackgroundSection = () => {
+  return (
+    <section className="relative py-20 overflow-hidden bg-white dark:bg-gray-900 transition-colors duration-300">
+      {/* Fond dégradé adaptatif */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-black"></div>
+      
+      {/* Motif de texture subtile */}
+      <div className="absolute inset-0 opacity-5 dark:opacity-10" 
+           style={{
+             backgroundImage: `radial-gradient(circle at 1px 1px, rgb(156 163 175) 1px, transparent 0)`,
+             backgroundSize: '20px 20px'
+           }}>
+      </div>
+
+      {/* SVG Carte d'Aquitaine avec animation lumineuse */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <svg 
+          width="800" 
+          height="600" 
+          viewBox="0 0 800 600" 
+          className="max-w-full max-h-full opacity-20 dark:opacity-30"
+        >
+          <defs>
+            {/* Gradient pour le trait lumineux */}
+            <linearGradient id="lightTrail" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="transparent" />
+              <stop offset="30%" stopColor="rgb(59 130 246)" stopOpacity="0.8" />
+              <stop offset="50%" stopColor="rgb(147 197 253)" stopOpacity="1" />
+              <stop offset="70%" stopColor="rgb(59 130 246)" stopOpacity="0.8" />
+              <stop offset="100%" stopColor="transparent" />
+              <animateTransform
+                attributeName="gradientTransform"
+                type="translate"
+                values="-200 0; 1000 0; -200 0"
+                dur="8s"
+                repeatCount="indefinite"
+              />
+            </linearGradient>
+            
+            {/* Filtre pour l'effet de lueur */}
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+              <feMerge> 
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+          
+          {/* Contour simplifié de l'Aquitaine */}
+          <path 
+            d="M 150 100 L 300 80 L 450 90 L 580 120 L 650 180 L 680 250 L 670 320 L 640 400 L 580 480 L 500 520 L 400 540 L 300 530 L 200 510 L 120 450 L 100 380 L 110 300 L 130 220 Z" 
+            fill="none" 
+            stroke="rgb(156 163 175)" 
+            strokeWidth="2" 
+            className="opacity-30 dark:opacity-50"
+          />
+          
+          {/* Trait lumineux animé */}
+          <path 
+            d="M 150 100 L 300 80 L 450 90 L 580 120 L 650 180 L 680 250 L 670 320 L 640 400 L 580 480 L 500 520 L 400 540 L 300 530 L 200 510 L 120 450 L 100 380 L 110 300 L 130 220 Z" 
+            fill="none" 
+            stroke="url(#lightTrail)" 
+            strokeWidth="4" 
+            filter="url(#glow)"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          
+          {/* Points lumineux aux principales villes */}
+          <circle cx="300" cy="200" r="4" fill="rgb(59 130 246)" className="opacity-60">
+            <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="500" cy="300" r="4" fill="rgb(59 130 246)" className="opacity-60">
+            <animate attributeName="opacity" values="0.6;1;0.6" dur="2.5s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="400" cy="400" r="4" fill="rgb(59 130 246)" className="opacity-60">
+            <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite" />
+          </circle>
+          
+          {/* Texte "AQUITAINE" stylisé */}
+          <text 
+            x="400" 
+            y="350" 
+            textAnchor="middle" 
+            className="fill-gray-400 dark:fill-gray-600 text-4xl font-bold opacity-20"
+            style={{ fontFamily: 'system-ui, sans-serif' }}
+          >
+            AQUITAINE
+          </text>
+        </svg>
+      </div>
+
+      {/* Éléments décoratifs additionnels */}
+      <div className="absolute top-10 left-10 w-32 h-32 bg-blue-200 dark:bg-blue-900 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-xl opacity-20 animate-pulse"></div>
+      <div className="absolute bottom-20 right-20 w-40 h-40 bg-indigo-200 dark:bg-indigo-900 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-xl opacity-20 animate-pulse" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-cyan-200 dark:bg-cyan-900 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-xl opacity-20 animate-pulse" style={{ animationDelay: '4s' }}></div>
+    </section>
+  );
+};
+
 // Composant Google Maps Section - DESIGN PREMIUM LUXE 🔥
 const GoogleMapsSection = ({ cityData }: { cityData: CityData }) => {
   // Encoder l'adresse pour l'URL Google Maps
@@ -1048,6 +1150,7 @@ export default function CityPageTemplate({ cityData }: CityPageTemplateProps) {
   return (
     <main className="min-h-screen">
       <HeroSection cityData={cityData} />
+      <AquitaineBackgroundSection />
       <BreadcrumbNav cityData={cityData} />
       <VilleDescription cityData={cityData} />
               <ServicesGrid cityData={cityData} />

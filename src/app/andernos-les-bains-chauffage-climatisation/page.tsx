@@ -250,6 +250,118 @@ export default function Andernos() {
           <div className="h-8 w-[1px] bg-white/50 sm:bg-black/50 dark:bg-white/50 animate-pulse" />
         </div>
       </section>
+
+      {/* Section Fond Aquitaine Animé */}
+      <section className="relative py-20 overflow-hidden bg-white dark:bg-gray-900 transition-colors duration-300">
+        {/* Fond dégradé adaptatif */}
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-black"></div>
+        
+        {/* Motif de texture subtile */}
+        <div className="absolute inset-0 opacity-10 dark:opacity-20" 
+             style={{
+               backgroundImage: `radial-gradient(circle at 1px 1px, rgb(156 163 175) 1px, transparent 0)`,
+               backgroundSize: '20px 20px'
+             }}>
+        </div>
+
+        {/* SVG Carte d'Aquitaine avec animation lumineuse */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <svg 
+            width="800" 
+            height="600" 
+            viewBox="0 0 800 600" 
+            className="max-w-full max-h-full opacity-40 dark:opacity-50"
+          >
+            <defs>
+              {/* Gradient pour le trait lumineux */}
+              <linearGradient id="lightTrailAndernos" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="transparent" />
+                <stop offset="30%" stopColor="rgb(59 130 246)" stopOpacity="0.8" />
+                <stop offset="50%" stopColor="rgb(147 197 253)" stopOpacity="1" />
+                <stop offset="70%" stopColor="rgb(59 130 246)" stopOpacity="0.8" />
+                <stop offset="100%" stopColor="transparent" />
+                <animateTransform
+                  attributeName="gradientTransform"
+                  type="translate"
+                  values="-200 0; 1000 0; -200 0"
+                  dur="8s"
+                  repeatCount="indefinite"
+                />
+              </linearGradient>
+              
+              {/* Filtre pour l'effet de lueur */}
+              <filter id="glowAndernos">
+                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                <feMerge> 
+                  <feMergeNode in="coloredBlur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+            
+            {/* Contour simplifié de l'Aquitaine */}
+            <path 
+              d="M 150 100 L 300 80 L 450 90 L 580 120 L 650 180 L 680 250 L 670 320 L 640 400 L 580 480 L 500 520 L 400 540 L 300 530 L 200 510 L 120 450 L 100 380 L 110 300 L 130 220 Z" 
+              fill="none" 
+              stroke="rgb(156 163 175)" 
+              strokeWidth="2" 
+              className="opacity-30 dark:opacity-50"
+            />
+            
+            {/* Trait lumineux animé */}
+            <path 
+              d="M 150 100 L 300 80 L 450 90 L 580 120 L 650 180 L 680 250 L 670 320 L 640 400 L 580 480 L 500 520 L 400 540 L 300 530 L 200 510 L 120 450 L 100 380 L 110 300 L 130 220 Z" 
+              fill="none" 
+              stroke="url(#lightTrailAndernos)" 
+              strokeWidth="4" 
+              filter="url(#glowAndernos)"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            
+            {/* Point lumineux pour Andernos-les-Bains */}
+            <circle cx="250" cy="150" r="6" fill="rgb(59 130 246)" className="opacity-80">
+              <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite" />
+              <animate attributeName="r" values="6;8;6" dur="2s" repeatCount="indefinite" />
+            </circle>
+            
+            {/* Points lumineux aux autres villes principales */}
+            <circle cx="400" cy="200" r="4" fill="rgb(59 130 246)" className="opacity-60">
+              <animate attributeName="opacity" values="0.6;1;0.6" dur="2.5s" repeatCount="indefinite" />
+            </circle>
+            <circle cx="500" cy="350" r="4" fill="rgb(59 130 246)" className="opacity-60">
+              <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite" />
+            </circle>
+            
+            {/* Texte "AQUITAINE" stylisé */}
+            <text 
+              x="400" 
+              y="380" 
+              textAnchor="middle" 
+              className="fill-gray-400 dark:fill-gray-600 text-3xl font-bold opacity-15"
+              style={{ fontFamily: 'system-ui, sans-serif' }}
+            >
+              AQUITAINE
+            </text>
+            
+            {/* Texte "Andernos-les-Bains" */}
+            <text 
+              x="250" 
+              y="135" 
+              textAnchor="middle" 
+              className="fill-blue-500 dark:fill-blue-400 text-sm font-semibold opacity-60"
+              style={{ fontFamily: 'system-ui, sans-serif' }}
+            >
+              Andernos-les-Bains
+            </text>
+          </svg>
+        </div>
+
+        {/* Éléments décoratifs additionnels */}
+        <div className="absolute top-10 left-10 w-32 h-32 bg-blue-200 dark:bg-blue-900 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-xl opacity-30 animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-40 h-40 bg-indigo-200 dark:bg-indigo-900 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-xl opacity-30 animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-cyan-200 dark:bg-cyan-900 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-xl opacity-30 animate-pulse" style={{ animationDelay: '4s' }}></div>
+      </section>
       
       <Breadcrumb className="max-w-7xl mx-auto px-4 my-6">
         <BreadcrumbList>
@@ -349,199 +461,7 @@ export default function Andernos() {
 
 
 
-      {/* Section Avis Clients - Design Moderne */}
-      <section className="relative py-20 overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900">
-        {/* Éléments décoratifs de fond */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
-          <div className="absolute top-40 right-10 w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-2000"></div>
-          <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-4000"></div>
-        </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4">
-          <SimpleWrapper>
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#03144a] to-[#1e40af] bg-clip-text text-transparent mb-6">
-                Avis clients ClimGO à Andernos-les-Bains
-              </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                Découvrez ce que nos clients disent de nos services de chauffage et climatisation
-              </p>
-            </div>
-          </SimpleWrapper>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Carte Avis 1 */}
-            <SimpleWrapper>
-              <motion.div 
-                className="group relative bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 border border-gray-100 dark:border-gray-700"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                {/* Badge de vérification */}
-                <div className="absolute -top-3 -right-3 bg-green-500 text-white text-xs px-3 py-1 rounded-full font-medium">
-                  ✓ Vérifié
-                </div>
-                
-                {/* Note avec étoiles */}
-                <div className="flex items-center mb-6">
-                  <div className="flex text-yellow-400 mr-3">
-                    {[...Array(5)].map((_, i) => (
-                      <svg key={i} className="w-6 h-6 fill-current" viewBox="0 0 20 20">
-                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-                      </svg>
-                    ))}
-                  </div>
-                  <span className="text-sm font-medium text-gray-500 dark:text-gray-400">5.0</span>
-                </div>
-
-                {/* Citation */}
-                <div className="mb-6">
-                  <svg className="w-8 h-8 text-blue-200 dark:text-blue-700 mb-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-                  </svg>
-                  <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed italic">
-                    "Service impeccable ! Installation rapide et propre. L'équipe de ClimGO est très professionnelle et à l'écoute. Je recommande vivement."
-                  </p>
-                </div>
-
-                {/* Auteur */}
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
-                    MD
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-900 dark:text-white">Marie Dubois</p>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">Andernos-les-Bains</p>
-                  </div>
-                </div>
-              </motion.div>
-            </SimpleWrapper>
-
-            {/* Carte Avis 2 */}
-            <SimpleWrapper>
-              <motion.div 
-                className="group relative bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 border border-gray-100 dark:border-gray-700"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                {/* Badge de vérification */}
-                <div className="absolute -top-3 -right-3 bg-green-500 text-white text-xs px-3 py-1 rounded-full font-medium">
-                  ✓ Vérifié
-                </div>
-                
-                {/* Note avec étoiles */}
-                <div className="flex items-center mb-6">
-                  <div className="flex text-yellow-400 mr-3">
-                    {[...Array(5)].map((_, i) => (
-                      <svg key={i} className="w-6 h-6 fill-current" viewBox="0 0 20 20">
-                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-                      </svg>
-                    ))}
-                  </div>
-                  <span className="text-sm font-medium text-gray-500 dark:text-gray-400">5.0</span>
-                </div>
-
-                {/* Citation */}
-                <div className="mb-6">
-                  <svg className="w-8 h-8 text-blue-200 dark:text-blue-700 mb-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-                  </svg>
-                  <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed italic">
-                    "Excellent travail pour l'installation de notre pompe à chaleur. Très satisfait du résultat et du service après-vente."
-                  </p>
-                </div>
-
-                {/* Auteur */}
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
-                    JM
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-900 dark:text-white">Jean Martin</p>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">Andernos-les-Bains</p>
-                  </div>
-                </div>
-              </motion.div>
-            </SimpleWrapper>
-
-            {/* Carte Avis 3 */}
-            <SimpleWrapper>
-              <motion.div 
-                className="group relative bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 border border-gray-100 dark:border-gray-700"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                {/* Badge de vérification */}
-                <div className="absolute -top-3 -right-3 bg-green-500 text-white text-xs px-3 py-1 rounded-full font-medium">
-                  ✓ Vérifié
-                </div>
-                
-                {/* Note avec étoiles */}
-                <div className="flex items-center mb-6">
-                  <div className="flex text-yellow-400 mr-3">
-                    {[...Array(5)].map((_, i) => (
-                      <svg key={i} className="w-6 h-6 fill-current" viewBox="0 0 20 20">
-                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-                      </svg>
-                    ))}
-                  </div>
-                  <span className="text-sm font-medium text-gray-500 dark:text-gray-400">5.0</span>
-                </div>
-
-                {/* Citation */}
-                <div className="mb-6">
-                  <svg className="w-8 h-8 text-blue-200 dark:text-blue-700 mb-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-                  </svg>
-                  <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed italic">
-                    "Entreprise sérieuse et compétente. Installation de climatisation réalisée dans les temps avec un excellent rapport qualité-prix."
-                  </p>
-                </div>
-
-                {/* Auteur */}
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-gradient-to-br from-pink-400 to-red-500 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
-                    SL
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-900 dark:text-white">Sophie Laurent</p>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">Andernos-les-Bains</p>
-                  </div>
-                </div>
-              </motion.div>
-            </SimpleWrapper>
-          </div>
-
-          {/* Call-to-action en bas */}
-          <SimpleWrapper>
-            <div className="text-center mt-12">
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
-                Rejoignez nos clients satisfaits !
-              </p>
-              <Link
-                href="/contact"
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#03144a] to-[#1e40af] text-white font-semibold rounded-full hover:from-[#1e40af] hover:to-[#03144a] transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
-              >
-                Demander un devis gratuit
-                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
-            </div>
-          </SimpleWrapper>
-        </div>
-
-        {/* Styles CSS personnalisés */}
-        <style jsx>{`
-          .animation-delay-2000 {
-            animation-delay: 2s;
-          }
-          .animation-delay-4000 {
-            animation-delay: 4s;
-          }
-        `}</style>
-      </section>
 
       <section
         className="relative py-20 mb-12 bg-gradient-to-br from-[#03144a] to-[#1e3a8a]"
