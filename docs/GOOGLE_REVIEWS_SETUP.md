@@ -65,3 +65,5 @@ En attendant la configuration de l'API Google, le composant affiche 6 avis stati
 Une fois configuré, vous devriez voir vos vrais avis Google s'afficher sur la page d'accueil dans la section "Avis Clients".
 
 
+
+

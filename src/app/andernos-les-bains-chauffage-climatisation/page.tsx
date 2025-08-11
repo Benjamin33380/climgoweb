@@ -6,6 +6,7 @@ import { Search, MapPin } from "lucide-react";
 import { useState } from "react";
 import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
+import GoogleReviews from '@/components/GoogleReviews';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -335,6 +336,23 @@ export default function Andernos() {
           .scrollbar-hide::-webkit-scrollbar {
             display: none;
           }
+          
+          @keyframes lightMove {
+            0% {
+              top: -10%;
+              opacity: 0;
+            }
+            5% {
+              opacity: 1;
+            }
+            95% {
+              opacity: 1;
+            }
+            100% {
+              top: 110%;
+              opacity: 0;
+            }
+          }
         `}        </style>
       </section>
 
@@ -360,6 +378,22 @@ export default function Andernos() {
             <div className="relative">
               {/* Ligne de connexion */}
               <div className="absolute left-1/2 transform -translate-x-px w-0.5 h-full bg-gray-300 dark:bg-gray-600" />
+              
+              {/* Effet de lumière défilante */}
+              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-16 rounded-full z-5 light-mode:hidden" 
+                   style={{
+                     animation: 'lightMove 4s infinite linear',
+                     background: 'linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 20%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.8) 80%, rgba(255, 255, 255, 0) 100%)',
+                     boxShadow: '0 0 20px rgba(255, 255, 255, 0.6), 0 0 40px rgba(255, 255, 255, 0.3)'
+                   }} />
+              
+              {/* Effet de lumière défilante pour le mode clair */}
+              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-16 rounded-full z-5 dark:hidden" 
+                   style={{
+                     animation: 'lightMove 4s infinite linear',
+                     background: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 20%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.8) 80%, rgba(0, 0, 0, 0) 100%)',
+                     boxShadow: '0 0 20px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 0, 0, 0.3)'
+                   }} />
               
               {/* Étape 1 */}
               <div className="relative flex items-center mb-16">
@@ -540,105 +574,102 @@ export default function Andernos() {
 
 
 
-      {/* Section Pourquoi choisir - Stats cards avec icônes */}
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-white dark:bg-black" />
-        
+      {/* Section Pourquoi choisir ClimGO - Timeline horizontale élégante */}
+      <section className="relative py-24 overflow-hidden bg-white dark:bg-black" id="why-choose-section">
         <SimpleWrapper>
-          <div className="relative z-10 max-w-7xl mx-auto px-4">
-            {/* Titre principal */}
+          <div className="relative z-10 max-w-6xl mx-auto px-4">
+            {/* Titre avec animation */}
             <div className="text-center mb-20">
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+              <h2 className="text-3xl md:text-4xl font-medium text-gray-900 dark:text-white mb-6">
                 Pourquoi choisir ClimGO à Andernos-les-Bains ?
               </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
                 Choisir ClimGO à Andernos-les-Bains, c'est faire appel à des experts qui connaissent les contraintes spécifiques du climat local et la richesse environnementale de la commune.
               </p>
             </div>
             
-            {/* Grid de stats cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-              {/* Card 1 - Expertise locale */}
-              <div className="group relative">
-                <div className="absolute inset-0 bg-black/5 dark:bg-white/5 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500" />
-                <div className="relative bg-white/90 dark:bg-black/90 backdrop-blur-xl border border-white/20 dark:border-gray-700/50 rounded-3xl p-8 text-center hover:transform hover:-translate-y-2 transition-all duration-500 shadow-xl hover:shadow-2xl">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            {/* Pourquoi choisir ClimGO à Andernos - Version personnalisée */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 max-w-6xl mx-auto mb-12 sm:mb-16">
+              {/* Expertise Locale */}
+              <div className="group bg-white/80 dark:bg-[#2a2a2a]/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#2563EB]/50 dark:hover:border-[#60A5FA] h-[420px] flex flex-col">
+                <div className="text-center flex flex-col h-full">
+                  <div className="bg-[#2563EB]/10 dark:bg-[#2563EB]/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-12 h-12 text-[#2563EB] dark:text-[#60A5FA]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Expertise Locale</h3>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                    Connaissance approfondie du climat local et de l'environnement andernosien
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-[#2563EB] dark:group-hover:text-[#60A5FA] transition-colors">
+                    Expertise Locale
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
+                    <strong className="text-[#2563EB] dark:text-[#60A5FA]">Connaissance approfondie</strong> du climat local et de l'environnement andernosien. <strong className="text-[#2563EB] dark:text-[#60A5FA]">Maîtrise parfaite</strong> des spécificités météorologiques de la région.
                   </p>
                 </div>
               </div>
-              
-              {/* Card 2 - Qualité */}
-              <div className="group relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-green-500/20 to-blue-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500" />
-                <div className="relative bg-white/90 dark:bg-black/90 backdrop-blur-xl border border-white/20 dark:border-gray-700/50 rounded-3xl p-8 text-center hover:transform hover:-translate-y-2 transition-all duration-500 shadow-xl hover:shadow-2xl">
-                  <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
+              {/* Qualité Premium */}
+              <div className="group bg-white/80 dark:bg-[#2a2a2a]/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#f97316]/50 dark:hover:border-[#fb923c] h-[420px] flex flex-col">
+                <div className="text-center flex flex-col h-full">
+                  <div className="bg-[#f97316]/10 dark:bg-[#f97316]/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-12 h-12 text-[#f97316] dark:text-[#fb923c]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Qualité Premium</h3>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                    Matériaux performants, normes rigoureuses et finitions impeccables
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-[#f97316] dark:group-hover:text-[#fb923c] transition-colors">
+                    Qualité Premium
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
+                    <strong className="text-[#f97316] dark:text-[#fb923c]">Matériaux performants</strong> et <strong className="text-[#f97316] dark:text-[#fb923c]">normes rigoureuses</strong>. Chaque installation respecte les <strong className="text-[#f97316] dark:text-[#fb923c]">plus hauts standards</strong> de qualité.
                   </p>
                 </div>
               </div>
-              
-              {/* Card 3 - Proximité */}
-              <div className="group relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500" />
-                <div className="relative bg-white/90 dark:bg-black/90 backdrop-blur-xl border border-white/20 dark:border-gray-700/50 rounded-3xl p-8 text-center hover:transform hover:-translate-y-2 transition-all duration-500 shadow-xl hover:shadow-2xl">
-                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
+              {/* Proximité */}
+              <div className="group bg-white/80 dark:bg-[#2a2a2a]/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#8B5CF6]/50 dark:hover:border-[#A78BFA] h-[420px] flex flex-col">
+                <div className="text-center flex flex-col h-full">
+                  <div className="bg-[#8B5CF6]/10 dark:bg-[#8B5CF6]/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-12 h-12 text-[#8B5CF6] dark:text-[#A78BFA]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Proximité</h3>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                    Intervention rapide sur tout Andernos, dépannages et installations urgentes
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-[#8B5CF6] dark:group-hover:text-[#A78BFA] transition-colors">
+                    Proximité
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
+                    <strong className="text-[#8B5CF6] dark:text-[#A78BFA]">Intervention rapide</strong> sur tout Andernos, <strong className="text-[#8B5CF6] dark:text-[#A78BFA]">dépannages urgents</strong> et <strong className="text-[#8B5CF6] dark:text-[#8B5CF6]">service de proximité</strong> pour une réactivité maximale.
                   </p>
                 </div>
               </div>
-              
-              {/* Card 4 - Excellence */}
-              <div className="group relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/20 to-orange-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500" />
-                <div className="relative bg-white/90 dark:bg-black/90 backdrop-blur-xl border border-white/20 dark:border-gray-700/50 rounded-3xl p-8 text-center hover:transform hover:-translate-y-2 transition-all duration-500 shadow-xl hover:shadow-2xl">
-                  <div className="w-16 h-16 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+
+              {/* Garantie Complète */}
+              <div className="group bg-white/80 dark:bg-[#2a2a2a]/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#059669]/50 dark:hover:border-[#10B981] h-[420px] flex flex-col">
+                <div className="text-center flex flex-col h-full">
+                  <div className="bg-[#059669]/10 dark:bg-[#059669]/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-12 h-12 text-[#059669] dark:text-[#10B981]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Excellence</h3>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                    Chaque projet traité avec la plus grande exigence, du premier contact à la mise en service
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-[#059669] dark:group-hover:text-[#10B981] transition-colors">
+                    Garantie Complète
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
+                    <strong className="text-[#059669] dark:text-[#10B981]">Garantie étendue</strong> sur tous nos équipements et <strong className="text-[#059669] dark:text-[#10B981]">service après-vente réactif</strong>. <strong className="text-[#059669] dark:text-[#10B981]">Tranquillité d'esprit</strong> garantie.
                   </p>
                 </div>
               </div>
             </div>
             
-            {/* Section de texte détaillé */}
-            <div className="bg-white/80 dark:bg-black/80 backdrop-blur-xl border border-white/20 dark:border-gray-700/50 rounded-3xl p-12 shadow-2xl max-w-5xl mx-auto">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Savoir-faire reconnu</h3>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                    Notre équipe d'experts maîtrise parfaitement les spécificités du climat local et la richesse environnementale de la commune d'Andernos-les-Bains.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Service personnalisé</h3>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                    Chaque intervention est adaptée aux besoins spécifiques de votre habitat, avec un accompagnement complet du début à la fin de votre projet.
-                  </p>
-                </div>
-              </div>
+            {/* Call-to-action */}
+            <div className="text-center mt-16">
+              <Link
+                href="/contact"
+                className="inline-flex items-center px-8 py-4 bg-black dark:bg-white text-white dark:text-black font-semibold rounded-full hover:bg-gray-700 dark:hover:bg-gray-200 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                Demander un devis
+                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
             </div>
           </div>
         </SimpleWrapper>
@@ -655,8 +686,8 @@ export default function Andernos() {
         <div className="relative z-10 max-w-7xl mx-auto px-4">
           <SimpleWrapper>
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-                Nos Services ClimGO
+              <h2 className="text-4xl md:text-5xl font-light text-gray-900 dark:text-white mb-6">
+                Nos Solutions ClimGO
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
                 Des solutions complètes et personnalisées pour votre confort thermique à Andernos-les-Bains
@@ -668,28 +699,28 @@ export default function Andernos() {
             {/* Carte 1 - Types de logements */}
             <SimpleWrapper>
               <motion.div 
-                                        className="group relative bg-white dark:bg-black rounded-2xl p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border border-gray-100 dark:border-gray-700"
+                className="group relative bg-black dark:bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-black dark:border-white h-[400px] flex flex-col"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 {/* Icône avec effet de brillance */}
                 <div className="relative mb-6">
-                  <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto group-hover:bg-white/30 transition-all duration-300">
-                    <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="w-16 h-16 bg-white dark:bg-black rounded-2xl flex items-center justify-center mx-auto group-hover:bg-gray-100 dark:group-hover:bg-gray-800 transition-all duration-300 border-2 border-black dark:border-white">
+                    <svg className="w-8 h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                     </svg>
                   </div>
-                  <div className="absolute inset-0 bg-white/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+                  <div className="absolute inset-0 bg-white/10 dark:bg-black/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
                 </div>
 
-                <h3 className="text-2xl font-bold text-white mb-4 text-center">Types de logements desservis</h3>
-                <p className="text-white/90 leading-relaxed text-center text-lg">
+                <h3 className="text-2xl font-bold text-white dark:text-black mb-4 text-center">Types de logements desservis</h3>
+                <p className="text-white/90 dark:text-black/90 leading-relaxed text-center text-lg flex-grow">
                   Nous intervenons aussi bien dans les maisons individuelles neuves que dans les bâtisses traditionnelles rénovées. Notre expérience nous permet d'adapter nos solutions aux contraintes architecturales et énergétiques propres à chaque logement.
                 </p>
 
                 {/* Badge de service */}
                 <div className="mt-6 text-center">
-                  <span className="inline-block bg-white/20 text-white text-sm font-medium px-4 py-2 rounded-full">
+                  <span className="inline-block bg-white/20 dark:bg-black/20 text-white dark:text-black text-sm font-medium px-4 py-2 rounded-full">
                     Tous types d'habitats
                   </span>
                 </div>
@@ -699,22 +730,22 @@ export default function Andernos() {
             {/* Carte 2 - Processus d'installation */}
             <SimpleWrapper>
               <motion.div 
-                className="group relative bg-white dark:bg-black rounded-2xl p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border border-gray-100 dark:border-gray-700"
+                className="group relative bg-white dark:bg-black rounded-2xl p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-black dark:border-white h-[400px] flex flex-col"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 {/* Icône avec effet de brillance */}
                 <div className="relative mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl flex items-center justify-center mx-auto group-hover:from-yellow-300 group-hover:to-orange-400 transition-all duration-300">
-                    <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="w-16 h-16 bg-black dark:bg-white rounded-2xl flex items-center justify-center mx-auto group-hover:bg-gray-700 dark:group-hover:bg-gray-200 transition-all duration-300 border-2 border-black dark:border-white">
+                    <svg className="w-8 h-8 text-white dark:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.563.563 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
                     </svg>
                   </div>
-                  <div className="absolute inset-0 bg-yellow-400/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+                  <div className="absolute inset-0 bg-black/10 dark:bg-white/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
                 </div>
 
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 text-center">Processus d'installation</h3>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-center text-lg">
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-center text-lg flex-grow">
                   Après une étude personnalisée de votre habitat, nous vous proposons un devis gratuit et détaillé. Nos équipes assurent ensuite une installation soignée, en respectant les délais convenus et les normes en vigueur.
                 </p>
 
@@ -730,14 +761,14 @@ export default function Andernos() {
             {/* Carte 3 - Entretien & maintenance */}
             <SimpleWrapper>
               <motion.div 
-                className="group relative bg-white dark:bg-black rounded-2xl p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border border-gray-100 dark:border-gray-700"
+                className="group relative bg-white dark:bg-black rounded-2xl p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-black dark:border-white h-[400px] flex flex-col"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 {/* Icône avec effet de brillance */}
                 <div className="relative mb-6">
-                  <div className="w-16 h-16 bg-black dark:bg-white rounded-2xl flex items-center justify-center mx-auto group-hover:bg-gray-700 dark:group-hover:bg-gray-200 transition-all duration-300">
-                    <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="w-16 h-16 bg-black dark:bg-white rounded-2xl flex items-center justify-center mx-auto group-hover:bg-gray-700 dark:group-hover:bg-gray-200 transition-all duration-300 border-2 border-black dark:border-white">
+                    <svg className="w-8 h-8 text-white dark:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437 1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008Z" />
                     </svg>
                   </div>
@@ -745,7 +776,7 @@ export default function Andernos() {
                 </div>
 
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 text-center">Entretien & maintenance</h3>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-center text-lg">
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-center text-lg flex-grow">
                   Pour garantir la performance et la durabilité de vos équipements, nous proposons des contrats d'entretien personnalisés avec des visites régulières pour vérification, nettoyage et optimisation.
                 </p>
 
@@ -761,28 +792,28 @@ export default function Andernos() {
             {/* Carte 4 - Aides financières */}
             <SimpleWrapper>
               <motion.div 
-                                        className="group relative bg-white dark:bg-black rounded-2xl p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border border-gray-100 dark:border-gray-700"
+                className="group relative bg-black dark:bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-black dark:border-white h-[400px] flex flex-col"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 {/* Icône avec effet de brillance */}
                 <div className="relative mb-6">
-                  <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto group-hover:bg-white/30 transition-all duration-300">
-                    <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="w-16 h-16 bg-white dark:bg-black rounded-2xl flex items-center justify-center mx-auto group-hover:bg-gray-100 dark:group-hover:bg-gray-800 transition-all duration-300 border-2 border-black dark:border-white">
+                    <svg className="w-8 h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0 0 12 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52 2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 0 1-2.031.352 5.988 5.988 0 0 1-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971Zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0 2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 0 1-2.031.352 5.989 5.989 0 0 1-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971Z" />
                     </svg>
                   </div>
-                  <div className="absolute inset-0 bg-white/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+                  <div className="absolute inset-0 bg-white/10 dark:bg-black/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
                 </div>
 
-                <h3 className="text-2xl font-bold text-white mb-4 text-center">Aides financières à Andernos-les-Bains</h3>
-                <p className="text-white/90 leading-relaxed text-center text-lg">
+                <h3 className="text-2xl font-bold text-white dark:text-black mb-4 text-center">Aides financières à Andernos-les-Bains</h3>
+                <p className="text-white/90 dark:text-black/90 leading-relaxed text-center text-lg flex-grow">
                   Nous vous accompagnons dans l'obtention des aides telles que MaPrimeRénov', les Certificats d'Économies d'Énergie (CEE), la TVA réduite ou l'Éco-PTZ, afin de rendre vos projets plus accessibles et avantageux.
                 </p>
 
                 {/* Badge de service */}
                 <div className="mt-6 text-center">
-                  <span className="inline-block bg-white/20 text-white text-sm font-medium px-4 py-2 rounded-full">
+                  <span className="inline-block bg-white/20 dark:bg-black/20 text-white dark:text-black text-sm font-medium px-4 py-2 rounded-full">
                     Accompagnement complet
                   </span>
                 </div>
@@ -809,6 +840,11 @@ export default function Andernos() {
           </SimpleWrapper>
         </div>
       </section>
+
+      {/* Section Google Reviews */}
+      <GoogleReviews 
+        placeId={process.env.NEXT_PUBLIC_GOOGLE_PLACE_ID || "ClimGO-default-place-id"} 
+      />
 
       {/* Section FAQ - Accordéon moderne */}
       <section className="relative py-24 overflow-hidden">
