@@ -3,8 +3,9 @@
 import Link from "next/link";
 import { motion } from 'framer-motion';
 import { Search, MapPin } from "lucide-react";
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
+import Services from '@/components/Services';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -15,32 +16,8 @@ import {
 } from "@/components/ui/breadcrumb";
 
 export default function Andernos() {
-  // Variables pour l'effet de scroll
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const [maxScroll, setMaxScroll] = useState(0);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (scrollRef.current) {
-        const { scrollTop, scrollHeight, clientHeight } = scrollRef.current;
-        setScrollPosition(scrollTop);
-        setMaxScroll(scrollHeight - clientHeight);
-      }
-    };
 
-    const scrollElement = scrollRef.current;
-    if (scrollElement) {
-      scrollElement.addEventListener('scroll', handleScroll);
-      // Initialize maxScroll
-      setMaxScroll(scrollElement.scrollHeight - scrollElement.clientHeight);
-      
-      return () => scrollElement.removeEventListener('scroll', handleScroll);
-    }
-  }, []);
-
-  const topShadowOpacity = Math.min(scrollPosition / 50, 1);
-  const bottomShadowOpacity = Math.min((maxScroll - scrollPosition) / 50, 1);
 
   // Composant CitySearch
   const CitySearch = () => {
@@ -123,7 +100,7 @@ export default function Andernos() {
         
         {/* Résultats de recherche */}
         {showSearchResults && (
-          <div className="absolute top-full left-0 right-0 mt-2 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md rounded-xl shadow-2xl border border-black/20 dark:border-white/30 max-h-60 overflow-y-auto z-50">
+                          <div className="absolute top-full left-0 right-0 mt-2 bg-white/95 dark:bg-black/95 backdrop-blur-md rounded-xl shadow-2xl border border-black/20 dark:border-white/30 max-h-60 overflow-y-auto z-50">
             {filteredCities.length > 0 ? (
               filteredCities.slice(0, 8).map((city, index) => (
                 <Link
@@ -358,7 +335,111 @@ export default function Andernos() {
           .scrollbar-hide::-webkit-scrollbar {
             display: none;
           }
-        `}</style>
+        `}        </style>
+      </section>
+
+      {/* Section Services */}
+      <Services />
+
+      {/* Section Nos interventions - Timeline verticale élégante */}
+      <section className="relative py-24 overflow-hidden bg-white dark:bg-black">
+        
+        <SimpleWrapper>
+          <div className="relative z-10 max-w-6xl mx-auto px-4">
+            {/* Titre avec animation */}
+            <div className="text-center mb-20">
+              <h2 className="text-3xl md:text-4xl font-medium text-gray-900 dark:text-white mb-6">
+                Nos interventions à Andernos-les-Bains
+              </h2>
+              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                Du centre-ville au Bétey, nous couvrons tous les secteurs d'Andernos. Nos solutions s'adaptent aux constructions neuves comme aux maisons anciennes, avec un souci constant d'efficacité et de durabilité.
+              </p>
+            </div>
+            
+            {/* Timeline verticale */}
+            <div className="relative">
+              {/* Ligne de connexion */}
+              <div className="absolute left-1/2 transform -translate-x-px w-0.5 h-full bg-gray-300 dark:bg-gray-600" />
+              
+              {/* Étape 1 */}
+              <div className="relative flex items-center mb-16">
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-black dark:bg-white rounded-full shadow-2xl flex items-center justify-center z-10">
+                  <svg className="w-8 h-8 text-white dark:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  </svg>
+                </div>
+                
+                <div className="w-5/12 pr-8 text-right">
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Centre-ville & Bétey</h3>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    Interventions dans tous les quartiers d'Andernos, du centre animé au Bétey paisible, avec des solutions adaptées à chaque type d'habitat.
+                  </p>
+                </div>
+              </div>
+              
+              {/* Étape 2 */}
+              <div className="relative flex items-center mb-16">
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-black dark:bg-white rounded-full shadow-2xl flex items-center justify-center z-10">
+                  <svg className="w-8 h-8 text-white dark:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                </div>
+                
+                <div className="w-5/12 ml-auto pl-8">
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Constructions & Rénovations</h3>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    Solutions adaptées aux constructions neuves comme aux maisons anciennes, avec un souci constant d'efficacité et de durabilité.
+                  </p>
+                </div>
+              </div>
+              
+              {/* Étape 3 */}
+              <div className="relative flex items-center mb-16">
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-black dark:bg-white rounded-full shadow-2xl flex items-center justify-center z-10">
+                  <svg className="w-8 h-8 text-white dark:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                
+                <div className="w-5/12 pr-8 text-right">
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Service Réactif</h3>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    Où que vous soyez, nous vous garantissons un service réactif et personnalisé, avec des interventions rapides et efficaces.
+                  </p>
+                </div>
+              </div>
+              
+              {/* Étape 4 */}
+              <div className="relative flex items-center">
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-black dark:bg-white rounded-full shadow-2xl flex items-center justify-center z-10">
+                  <svg className="w-8 h-8 text-white dark:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                
+                <div className="w-5/12 ml-auto pl-8">
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Excellence Garantie</h3>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    Chaque intervention est réalisée avec la plus grande exigence, du premier contact à la mise en service, pour votre satisfaction totale.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            {/* Call-to-action */}
+            <div className="text-center mt-16">
+              <Link
+                href="/contact"
+                className="inline-flex items-center px-8 py-4 bg-black dark:bg-white text-white dark:text-black font-semibold rounded-full hover:bg-gray-700 dark:hover:bg-gray-200 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                Demander un devis
+                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </SimpleWrapper>
       </section>
 
       {/* Section 4 blocs horizontaux avec ScrollShadow HeroUI */}
@@ -440,7 +521,7 @@ export default function Andernos() {
                       <div className="mt-4">
                         <a
                           href="/contact"
-                          className="inline-flex items-center px-6 py-3 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-700 transition-colors duration-300"
+                          className="inline-flex items-center px-6 py-3 bg-black dark:bg-white text-white dark:text-black font-semibold rounded-lg hover:bg-gray-700 dark:hover:bg-gray-200 transition-colors duration-300"
                         >
                           Devis gratuit
                           <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -457,110 +538,11 @@ export default function Andernos() {
         </SimpleWrapper>
       </section>
 
-      {/* Section Nos interventions - Timeline verticale élégante */}
-      <section className="relative py-24 overflow-hidden bg-white dark:bg-black">
-        
-        <SimpleWrapper>
-          <div className="relative z-10 max-w-6xl mx-auto px-4">
-            {/* Titre avec animation */}
-            <div className="text-center mb-20">
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-                Nos interventions à Andernos-les-Bains
-              </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                Du centre-ville au Bétey, nous couvrons tous les secteurs d'Andernos. Nos solutions s'adaptent aux constructions neuves comme aux maisons anciennes, avec un souci constant d'efficacité et de durabilité.
-              </p>
-            </div>
-            
-            {/* Timeline verticale */}
-            <div className="relative">
-              {/* Ligne de connexion */}
-              <div className="absolute left-1/2 transform -translate-x-px w-0.5 h-full bg-gradient-to-b from-blue-400 via-purple-500 to-pink-500" />
-              
-              {/* Étape 1 */}
-              <div className="relative flex items-center mb-16">
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full shadow-2xl flex items-center justify-center z-10">
-                  <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  </svg>
-                </div>
-                
-                <div className="w-5/12 pr-8 text-right">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Centre-ville & Bétey</h3>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                    Interventions dans tous les quartiers d'Andernos, du centre animé au Bétey paisible, avec des solutions adaptées à chaque type d'habitat.
-                  </p>
-                </div>
-              </div>
-              
-              {/* Étape 2 */}
-              <div className="relative flex items-center mb-16">
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gradient-to-br from-green-500 to-blue-600 rounded-full shadow-2xl flex items-center justify-center z-10">
-                  <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                  </svg>
-                </div>
-                
-                <div className="w-5/12 ml-auto pl-8">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Constructions & Rénovations</h3>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                    Solutions adaptées aux constructions neuves comme aux maisons anciennes, avec un souci constant d'efficacité et de durabilité.
-                  </p>
-                </div>
-              </div>
-              
-              {/* Étape 3 */}
-              <div className="relative flex items-center mb-16">
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full shadow-2xl flex items-center justify-center z-10">
-                  <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                </div>
-                
-                <div className="w-5/12 pr-8 text-right">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Service Réactif</h3>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                    Où que vous soyez, nous vous garantissons un service réactif et personnalisé, avec des interventions rapides et efficaces.
-                  </p>
-                </div>
-              </div>
-              
-              {/* Étape 4 */}
-              <div className="relative flex items-center">
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-full shadow-2xl flex items-center justify-center z-10">
-                  <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                
-                <div className="w-5/12 ml-auto pl-8">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Excellence Garantie</h3>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                    Chaque intervention est réalisée avec la plus grande exigence, du premier contact à la mise en service, pour votre satisfaction totale.
-                  </p>
-                </div>
-              </div>
-            </div>
-            
-            {/* Call-to-action */}
-            <div className="text-center mt-16">
-              <Link
-                href="/contact"
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-gray-900 to-gray-700 text-white font-semibold rounded-full hover:from-gray-700 hover:to-gray-900 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
-              >
-                Demander un devis
-                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
-            </div>
-          </div>
-        </SimpleWrapper>
-      </section>
+
 
       {/* Section Pourquoi choisir - Stats cards avec icônes */}
       <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1e40af]/10 via-blue-100/30 to-[#3b82f6]/10 dark:from-[#1e40af]/20 dark:via-gray-900/50 dark:to-[#3b82f6]/20" />
+        <div className="absolute inset-0 bg-white dark:bg-black" />
         
         <SimpleWrapper>
           <div className="relative z-10 max-w-7xl mx-auto px-4">
@@ -578,7 +560,7 @@ export default function Andernos() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
               {/* Card 1 - Expertise locale */}
               <div className="group relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500" />
+                <div className="absolute inset-0 bg-black/5 dark:bg-white/5 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500" />
                 <div className="relative bg-white/90 dark:bg-black/90 backdrop-blur-xl border border-white/20 dark:border-gray-700/50 rounded-3xl p-8 text-center hover:transform hover:-translate-y-2 transition-all duration-500 shadow-xl hover:shadow-2xl">
                   <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                     <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -663,7 +645,7 @@ export default function Andernos() {
       </section>
 
       {/* Section Services - Design Moderne */}
-      <section className="relative py-20 overflow-hidden bg-gradient-to-br from-white/80 via-gray-50/80 to-blue-50/80 dark:from-gray-900/80 dark:via-gray-800/80 dark:to-blue-900/80 z-10">
+      <section className="relative py-20 overflow-hidden bg-white dark:bg-black z-10">
         {/* Éléments décoratifs de fond */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-10 right-20 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
@@ -686,7 +668,7 @@ export default function Andernos() {
             {/* Carte 1 - Types de logements */}
             <SimpleWrapper>
               <motion.div 
-                className="group relative bg-gradient-to-br from-gray-900 to-gray-700 rounded-2xl p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border border-gray-900/20"
+                                        className="group relative bg-white dark:bg-black rounded-2xl p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border border-gray-100 dark:border-gray-700"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -717,7 +699,7 @@ export default function Andernos() {
             {/* Carte 2 - Processus d'installation */}
             <SimpleWrapper>
               <motion.div 
-                className="group relative bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border border-gray-100 dark:border-gray-700"
+                className="group relative bg-white dark:bg-black rounded-2xl p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border border-gray-100 dark:border-gray-700"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -738,7 +720,7 @@ export default function Andernos() {
 
                 {/* Badge de service */}
                 <div className="mt-6 text-center">
-                  <span className="inline-block bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-sm font-medium px-4 py-2 rounded-full">
+                  <span className="inline-block bg-black dark:bg-white text-white dark:text-black text-sm font-medium px-4 py-2 rounded-full">
                     Devis gratuit
                   </span>
                 </div>
@@ -748,18 +730,18 @@ export default function Andernos() {
             {/* Carte 3 - Entretien & maintenance */}
             <SimpleWrapper>
               <motion.div 
-                className="group relative bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border border-gray-100 dark:border-gray-700"
+                className="group relative bg-white dark:bg-black rounded-2xl p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border border-gray-100 dark:border-gray-700"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 {/* Icône avec effet de brillance */}
                 <div className="relative mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-blue-500 rounded-2xl flex items-center justify-center mx-auto group-hover:from-green-300 group-hover:to-blue-400 transition-all duration-300">
+                  <div className="w-16 h-16 bg-black dark:bg-white rounded-2xl flex items-center justify-center mx-auto group-hover:bg-gray-700 dark:group-hover:bg-gray-200 transition-all duration-300">
                     <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437 1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008Z" />
                     </svg>
                   </div>
-                  <div className="absolute inset-0 bg-green-400/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+                  <div className="absolute inset-0 bg-black/10 dark:bg-white/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
                 </div>
 
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 text-center">Entretien & maintenance</h3>
@@ -769,7 +751,7 @@ export default function Andernos() {
 
                 {/* Badge de service */}
                 <div className="mt-6 text-center">
-                  <span className="inline-block bg-gradient-to-r from-green-400 to-blue-500 text-white text-sm font-medium px-4 py-2 rounded-full">
+                  <span className="inline-block bg-black dark:bg-white text-white dark:text-black text-sm font-medium px-4 py-2 rounded-full">
                     Contrats personnalisés
                   </span>
                 </div>
@@ -779,7 +761,7 @@ export default function Andernos() {
             {/* Carte 4 - Aides financières */}
             <SimpleWrapper>
               <motion.div 
-                className="group relative bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border border-purple-500/20"
+                                        className="group relative bg-white dark:bg-black rounded-2xl p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border border-gray-100 dark:border-gray-700"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -816,7 +798,7 @@ export default function Andernos() {
               </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-gray-900 to-gray-700 text-white font-semibold rounded-full hover:from-gray-700 hover:to-gray-900 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center px-8 py-4 bg-black dark:bg-white text-white dark:text-black font-semibold rounded-full hover:bg-gray-700 dark:hover:bg-gray-200 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 Découvrir nos solutions
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -830,7 +812,7 @@ export default function Andernos() {
 
       {/* Section FAQ - Accordéon moderne */}
       <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#03144a]/10 via-blue-50/30 to-[#1e3a8a]/10 dark:from-[#03144a]/20 dark:via-gray-900/50 dark:to-[#1e3a8a]/20" />
+        <div className="absolute inset-0 bg-white dark:bg-black" />
         
         <SimpleWrapper>
           <div className="relative z-10 max-w-4xl mx-auto px-4">
@@ -874,7 +856,7 @@ export default function Andernos() {
                 <div className="bg-white/90 dark:bg-black/90 backdrop-blur-xl border border-white/20 dark:border-gray-700/50 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden">
                   <div className="p-6 cursor-pointer group-hover:bg-gradient-to-r group-hover:from-green-50/50 group-hover:to-blue-50/50 dark:group-hover:from-gray-800/50 dark:group-hover:to-gray-700/50 transition-all duration-300">
                     <div className="flex items-center justify-between">
-                      <h3 className="text-xl font-semibold text-[#03144a] dark:text-white group-hover:text-[#1e40af] transition-colors duration-300">
+                      <h3 className="text-xl font-semibold text-black dark:text-white group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300">
                         Proposez-vous un accompagnement pour les aides ?
                       </h3>
                       <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-blue-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -897,7 +879,7 @@ export default function Andernos() {
                 <div className="bg-white/90 dark:bg-black/90 backdrop-blur-xl border border-white/20 dark:border-gray-700/50 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden">
                   <div className="p-6 cursor-pointer group-hover:bg-gradient-to-r group-hover:from-purple-50/50 group-hover:to-pink-50/50 dark:group-hover:from-gray-800/50 dark:group-hover:to-gray-700/50 transition-all duration-300">
                     <div className="flex items-center justify-between">
-                      <h3 className="text-xl font-semibold text-[#03144a] dark:text-white group-hover:text-[#1e40af] transition-colors duration-300">
+                      <h3 className="text-xl font-semibold text-black dark:text-white group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300">
                         Intervenez-vous dans les quartiers d'Andernos ?
                       </h3>
                       <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -923,7 +905,7 @@ export default function Andernos() {
               </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-gray-900 to-gray-700 text-white font-semibold rounded-full hover:from-gray-700 hover:to-gray-900 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center px-8 py-4 bg-black dark:bg-white text-white dark:text-black font-semibold rounded-full hover:bg-gray-700 dark:hover:bg-gray-200 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 Contactez-nous
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -938,7 +920,7 @@ export default function Andernos() {
 
 
       {/* Section Carte en pleine largeur */}
-      <section className="relative w-full overflow-hidden bg-white dark:bg-white">
+              <section className="relative w-full overflow-hidden bg-white dark:bg-black">
         <div className="relative z-10 w-full px-4">
           <SimpleWrapper>
             <div className="relative w-full">
