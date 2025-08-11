@@ -7,6 +7,7 @@ import { useState } from "react";
 import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
+import FAQChat from '@/components/FAQChat';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -846,112 +847,33 @@ export default function Andernos() {
         placeId={process.env.NEXT_PUBLIC_GOOGLE_PLACE_ID || "ClimGO-default-place-id"} 
       />
 
-      {/* Section FAQ - Accordéon moderne */}
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-white dark:bg-black" />
-        
-        <SimpleWrapper>
-          <div className="relative z-10 max-w-4xl mx-auto px-4">
-            {/* Titre */}
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-                Questions fréquentes
-              </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                Tout ce que vous devez savoir sur nos services à Andernos-les-Bains
-              </p>
-            </div>
-            
-            {/* Accordéon */}
-            <div className="space-y-4">
-              {/* Question 1 */}
-              <div className="group">
-                <div className="bg-white/90 dark:bg-black/90 backdrop-blur-xl border border-white/20 dark:border-gray-700/50 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden">
-                  <div className="p-6 cursor-pointer group-hover:bg-gradient-to-r group-hover:from-blue-50/50 group-hover:to-purple-50/50 dark:group-hover:from-gray-800/50 dark:group-hover:to-gray-700/50 transition-all duration-300">
-                    <div className="flex items-center justify-between">
-                      <h3 className="text-xl font-semibold text-gray-900 dark:text-white group-hover:text-gray-700 transition-colors duration-300">
-                        Quels sont vos services à Andernos-les-Bains ?
-                      </h3>
-                      <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <svg className="w-5 h-5 text-white transform group-hover:rotate-45 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="px-6 pb-6">
-                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                      Nous assurons l'installation, l'entretien et le dépannage de systèmes de chauffage, climatisation et production d'eau chaude à Andernos et ses alentours.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Question 2 */}
-              <div className="group">
-                <div className="bg-white/90 dark:bg-black/90 backdrop-blur-xl border border-white/20 dark:border-gray-700/50 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden">
-                  <div className="p-6 cursor-pointer group-hover:bg-gradient-to-r group-hover:from-green-50/50 group-hover:to-blue-50/50 dark:group-hover:from-gray-800/50 dark:group-hover:to-gray-700/50 transition-all duration-300">
-                    <div className="flex items-center justify-between">
-                      <h3 className="text-xl font-semibold text-black dark:text-white group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300">
-                        Proposez-vous un accompagnement pour les aides ?
-                      </h3>
-                      <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-blue-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <svg className="w-5 h-5 text-white transform group-hover:rotate-45 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="px-6 pb-6">
-                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                      Oui. Nous vous guidons dans les démarches pour obtenir MaPrimeRénov', les CEE, la TVA réduite ou l'Éco-PTZ, selon votre projet.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Question 3 */}
-              <div className="group">
-                <div className="bg-white/90 dark:bg-black/90 backdrop-blur-xl border border-white/20 dark:border-gray-700/50 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden">
-                  <div className="p-6 cursor-pointer group-hover:bg-gradient-to-r group-hover:from-purple-50/50 group-hover:to-pink-50/50 dark:group-hover:from-gray-800/50 dark:group-hover:to-gray-700/50 transition-all duration-300">
-                    <div className="flex items-center justify-between">
-                      <h3 className="text-xl font-semibold text-black dark:text-white group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300">
-                        Intervenez-vous dans les quartiers d'Andernos ?
-                      </h3>
-                      <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <svg className="w-5 h-5 text-white transform group-hover:rotate-45 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="px-6 pb-6">
-                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                      Absolument. Nos techniciens se déplacent dans tous les quartiers d'Andernos, notamment le centre-ville, le Bétey, la Jetée ou encore les zones pavillonnaires.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            {/* Call-to-action */}
-            <div className="text-center mt-12">
-              <p className="text-gray-600 dark:text-gray-300 mb-6">
-                Vous avez d'autres questions ?
-              </p>
-              <Link
-                href="/contact"
-                className="inline-flex items-center px-8 py-4 bg-black dark:bg-white text-white dark:text-black font-semibold rounded-full hover:bg-gray-700 dark:hover:bg-gray-200 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
-              >
-                Contactez-nous
-                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                </svg>
-              </Link>
-            </div>
-          </div>
-        </SimpleWrapper>
-      </section>
+      {/* Section FAQ - Style Chat Moderne */}
+      <FAQChat 
+        title="Questions Fréquentes"
+        subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Andernos-les-Bains"
+        faqs={[
+          {
+            question: "Combien de temps dure une intervention de chauffage/climatisation ?",
+            answer: "Cela dépend de la complexité ! Une simple réparation prend 1-2h, tandis qu'une installation complète peut nécessiter une journée. Je vous donne toujours une estimation précise avant de commencer."
+          },
+          {
+            question: "Vous intervenez en urgence le week-end ?",
+            answer: "Absolument ! Je suis disponible 7j/7 pour les urgences de chauffage et climatisation. Panne totale, système qui ne démarre pas, problème de sécurité... Je me déplace rapidement sur Andernos et ses environs."
+          },
+          {
+            question: "Comment se déroule la mise aux normes de mon installation ?",
+            answer: "Je commence par un diagnostic complet de votre installation. Ensuite, je vous présente un devis détaillé avec les travaux nécessaires. Chaque étape respecte les normes en vigueur pour votre sécurité et votre confort."
+          },
+          {
+            question: "Vos tarifs sont-ils transparents ? Pas de surprise sur la facture ?",
+            answer: "Transparence totale ! Je vous remets systématiquement un devis détaillé avant toute intervention. Tarif horaire fixe, matériaux au prix coûtant, aucun frais caché. Votre confiance est ma priorité."
+          }
+        ]}
+        ctaTitle="Une autre question ?"
+        ctaSubtitle="N'hésitez pas à nous contacter directement !"
+        phoneNumber="0123456789"
+        email="contact@climgo.fr"
+      />
 
 
 
