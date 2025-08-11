@@ -73,43 +73,43 @@ export default function FAQChat({
         </div>
 
                     {/* FAQ Chat Cards - 4 colonnes sur une ligne */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-6 max-w-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 px-4 md:px-6 max-w-full">
               {faqs.map((faq, index) => (
                 <motion.div 
                   key={index}
-                  className="chat-card bg-white dark:bg-black rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 border-2 border-black dark:border-white h-[400px] flex flex-col"
-                  initial={{ opacity: 0, y: 20 }}
+                  className="chat-card bg-white dark:bg-black rounded-2xl shadow-lg p-4 md:p-6 border-2 border-black dark:border-white h-[350px] md:h-[400px] flex flex-col"
+                  initial={{ opacity: 1, y: 0 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  whileHover={{ y: -5 }}
+                  transition={{ duration: 0, delay: 0 }}
+                  whileHover={{ y: 0 }}
                 >
                   {/* Question du client - 2 lignes fixes */}
-                  <div className="flex items-start mb-4 h-20">
-                    <div className="w-10 h-10 bg-gradient-to-br from-gray-400 to-gray-500 rounded-full flex items-center justify-center mr-3 flex-shrink-0 shadow-md">
-                      <span className="text-white font-semibold text-sm">
+                  <div className="flex items-start mb-3 md:mb-4 h-16 md:h-20">
+                    <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-gray-400 to-gray-500 rounded-full flex items-center justify-center mr-2 md:mr-3 flex-shrink-0 shadow-md">
+                      <span className="text-white font-semibold text-xs md:text-sm">
                         {index === 0 ? "JD" : index === 1 ? "ML" : index === 2 ? "SP" : "AB"}
                       </span>
                     </div>
                     <div className="flex-1">
-                      <div className="bg-black dark:bg-white text-white dark:text-black rounded-2xl rounded-tl-md px-3 py-2 h-full flex items-center">
-                        <p className="text-lg leading-tight">{faq.question}</p>
+                      <div className="bg-black dark:bg-white text-white dark:text-black rounded-2xl rounded-tl-md px-2 md:px-3 py-2 h-full flex items-center">
+                        <p className="text-base md:text-lg leading-tight">{faq.question}</p>
                       </div>
                       <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Client • À l'instant</p>
                     </div>
                   </div>
                   
                   {/* Réponse de l'expert - 5 lignes fixes */}
-                  <div className="flex items-start justify-end flex-grow h-48">
+                  <div className="flex items-start justify-end flex-grow h-36 md:h-48">
                     <div className="flex-1 flex justify-end">
-                      <div className="bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-2xl rounded-tr-md px-3 py-2 max-w-full h-full flex items-center">
-                        <p className="text-lg leading-tight">{faq.answer}</p>
+                      <div className="bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-2xl rounded-tr-md px-2 md:px-3 py-2 max-w-full h-full flex items-center">
+                        <p className="text-base md:text-lg leading-tight">{faq.answer}</p>
                       </div>
                     </div>
-                    <div className="ml-3 flex-shrink-0 flex items-center">
+                    <div className="ml-2 md:ml-3 flex-shrink-0 flex items-center">
                       <Logo3D 
                         glbUrl="/favicon/logo.glb" 
                         isHovered={false}
-                        className="w-8 h-8"
+                        className="w-6 h-6 md:w-8 md:h-8"
                       />
                     </div>
                   </div>
@@ -140,26 +140,7 @@ export default function FAQChat({
         </motion.div>
       </div>
 
-      <style jsx>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        
-        .chat-card {
-          animation: fadeInUp 0.6s ease-out forwards;
-        }
-        
-        .chat-card:nth-child(2) { animation-delay: 0.2s; }
-        .chat-card:nth-child(3) { animation-delay: 0.4s; }
-        .chat-card:nth-child(4) { animation-delay: 0.6s; }
-      `}</style>
+
     </section>
   );
 }

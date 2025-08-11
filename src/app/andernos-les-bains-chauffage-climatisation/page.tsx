@@ -481,17 +481,17 @@ export default function Andernos() {
       <section className="py-20 bg-white dark:bg-black">
         <SimpleWrapper>
           <div className="max-w-7xl mx-auto">
-            <div className="relative max-w-full overflow-hidden">
-              {/* Ombre gauche */}
-              <div className="absolute left-0 top-0 bottom-0 w-90 bg-gradient-to-r from-white via-white/80 to-transparent dark:from-black dark:via-black/80 z-10 pointer-events-none" />
+                        <div className="relative max-w-full overflow-hidden">
+              {/* Ombre gauche - Desktop seulement */}
+              <div className="hidden md:block absolute left-0 top-0 bottom-0 w-90 bg-gradient-to-r from-white via-white/80 to-transparent dark:from-black dark:via-black/80 z-10 pointer-events-none" />
               
-              {/* Ombre droite */}
-              <div className="absolute right-0 top-0 bottom-0 w-90 bg-gradient-to-l from-white via-white/80 to-transparent dark:from-black dark:via-black/80 z-10 pointer-events-none" />
-              
-              <div className="overflow-x-auto">
+              {/* Ombre droite - Desktop seulement */}
+              <div className="hidden md:block absolute right-0 top-0 bottom-0 w-90 bg-gradient-to-l from-white via-white/80 to-transparent dark:from-black dark:via-black/80 z-10 pointer-events-none" />
+                
+                <div className="overflow-x-auto">
                 <div className="flex space-x-8 min-w-max px-4" style={{ marginLeft: 'calc(50% - 144px)', marginRight: 'calc(50% - 144px)' }}>
                   {/* Bloc 1 */}
-                  <div className="w-72 flex-shrink-0 bg-white dark:bg-black rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100 dark:border-gray-700">
+                  <div className="w-72 flex-shrink-0 bg-white dark:bg-black rounded-2xl md:shadow-lg p-6 border border-gray-100 dark:border-gray-700">
                     <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
                       Un cadre de vie recherché au bord du Bassin
                     </h3>
@@ -506,7 +506,7 @@ export default function Andernos() {
                   </div>
                   
                   {/* Bloc 2 */}
-                  <div className="w-72 flex-shrink-0 bg-white dark:bg-black rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100 dark:border-gray-700">
+                  <div className="w-72 flex-shrink-0 bg-white dark:bg-black rounded-2xl md:shadow-lg p-6 border border-gray-100 dark:border-gray-700">
                     <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
                       Exemples concrets d'interventions à Andernos
                     </h3>
@@ -526,8 +526,8 @@ export default function Andernos() {
                     </div>
                   </div>
                   
-                  {/* Bloc 3 */}
-                  <div className="w-72 flex-shrink-0 bg-white dark:bg-black rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100 dark:border-gray-700">
+                                    {/* Bloc 3 */}
+                  <div className="w-72 flex-shrink-0 bg-white dark:bg-black rounded-2xl md:shadow-lg p-6 border border-gray-100 dark:border-gray-700">
                     <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
                       Un savoir-faire adapté à l'environnement andernosien
                     </h3>
@@ -542,7 +542,7 @@ export default function Andernos() {
                   </div>
                   
                   {/* Bloc 4 */}
-                  <div className="w-72 flex-shrink-0 bg-white dark:bg-black rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100 dark:border-gray-700">
+                  <div className="w-72 flex-shrink-0 bg-white dark:bg-black rounded-2xl md:shadow-lg p-6 border border-gray-100 dark:border-gray-700">
                     <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
                       Un projet thermique à Andernos ? On en parle ?
                     </h3>
@@ -556,7 +556,7 @@ export default function Andernos() {
                       <div className="mt-4">
                         <a
                           href="/contact"
-                          className="inline-flex items-center px-6 py-3 bg-black dark:bg-white text-white dark:text-black font-semibold rounded-lg hover:bg-gray-700 dark:hover:bg-gray-200 transition-colors duration-300"
+                          className="inline-flex items-center px-6 py-3 bg-black dark:bg-white text-white dark:text-black font-semibold rounded-lg hover:bg-gray-700 dark:hover:bg-gray-200"
                         >
                           Devis gratuit
                           <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
