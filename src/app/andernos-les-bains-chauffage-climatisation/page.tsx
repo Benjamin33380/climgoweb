@@ -853,7 +853,7 @@ export default function Andernos() {
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Andernos-les-Bains"
         faqs={[
           {
-            question: "Combien de temps dure une intervention de chauffage/climatisation ?",
+            question: "Combien de temps dure une intervention de climatisation ?",
             answer: "Cela dépend de la complexité ! Une simple réparation prend 1-2h, tandis qu'une installation complète peut nécessiter une journée. Je vous donne toujours une estimation précise avant de commencer."
           },
           {

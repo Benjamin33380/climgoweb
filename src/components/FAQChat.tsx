@@ -77,7 +77,7 @@ export default function FAQChat({
               {faqs.map((faq, index) => (
                 <motion.div 
                   key={index}
-                  className="chat-card bg-white dark:bg-black rounded-2xl shadow-lg p-4 md:p-6 border-2 border-black dark:border-white h-[350px] md:h-[400px] flex flex-col"
+                  className="chat-card bg-white dark:bg-black rounded-2xl shadow-lg p-4 md:p-6 border-2 border-gray-700 dark:border-gray-300 h-[350px] md:h-[400px] flex flex-col"
                   initial={{ opacity: 1, y: 0 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0, delay: 0 }}
@@ -91,7 +91,7 @@ export default function FAQChat({
                       </span>
                     </div>
                     <div className="flex-1">
-                      <div className="bg-black dark:bg-white text-white dark:text-black rounded-2xl rounded-tl-md px-2 md:px-3 py-2 h-full flex items-center">
+                      <div className="bg-gray-700 dark:bg-gray-200 text-white dark:text-black rounded-2xl rounded-tl-md px-2 md:px-3 py-2 h-full flex items-center">
                         <p className="text-base md:text-lg leading-tight">{faq.question}</p>
                       </div>
                       <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Client • À l'instant</p>
@@ -130,7 +130,7 @@ export default function FAQChat({
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center px-8 py-4 bg-black dark:bg-white text-white dark:text-black font-semibold rounded-full hover:bg-gray-700 dark:hover:bg-gray-200 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center px-8 py-4 bg-gray-700 dark:bg-gray-200 text-white dark:text-black font-semibold rounded-full hover:bg-gray-600 dark:hover:bg-gray-300 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             Contactez-nous
             <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
