@@ -298,29 +298,40 @@ export default function EauChaudeSanitairePage() {
               </div>
             </div>
 
-            {/* Mobile version : carrousel horizontal */}
-            <div className="md:hidden overflow-x-auto flex snap-x snap-mandatory scrollbar-hide px-2">
+                        {/* Mobile version : carrousel vertical optimisé */}
+            <div className="md:hidden space-y-6 px-4">
               {solutions.map((solution, index) => (
-                <div key={index} className="snap-center flex-shrink-0 w-full px-2">
-                  <div className="bg-white dark:bg-gray-900 rounded-3xl border border-[#03144A] dark:border-white/20 overflow-hidden backdrop-blur-sm shadow-xl min-h-[600px] flex flex-col">
-                    <div className="w-full h-48 relative">
+                <div key={index} className="bg-white dark:bg-gray-900 rounded-2xl border border-[#03144A] dark:border-white/20 overflow-hidden shadow-lg">
+                  <div className="w-full h-40 relative bg-gradient-to-br from-[#0EA5E9]/5 to-[#03144A]/5 flex items-center justify-center">
+                    {solution.image ? (
                       <Image
                         src={solution.image}
                         alt={solution.title}
                         fill
-                        className="object-contain rounded-t-3xl"
+                        className="object-contain p-4"
                       />
+                    ) : (
+                      <span className="text-4xl">🔧</span>
+                    )}
+                  </div>
+                  <div className="p-4">
+                    <div className="flex items-start justify-between mb-3">
+                      <div className="flex-1">
+                        <h3 className="text-lg font-semibold text-[#03144A] dark:text-white mb-1">{solution.title}</h3>
+                        <p className="text-[#0EA5E9] text-sm font-medium">{solution.subtitle}</p>
+                      </div>
+                      <div className="text-right ml-4">
+                        <p className="text-[#03144A] dark:text-white font-semibold text-sm">{solution.price}</p>
+                      </div>
                     </div>
-                    <div className="p-6 flex-1 flex flex-col justify-between">
-                      <div>
-                        <h3 className="text-2xl text-[#03144A] dark:text-white mb-2">{solution.title}</h3>
-                        <p className="text-[#0EA5E9] mb-4">{solution.subtitle}</p>
-                        <p className="text-[#03144A] dark:text-white mb-4">{solution.description}</p>
-                      </div>
-                      <div>
-                        <p className="text-[#03144A] dark:text-white text-lg mb-2">{solution.price}</p>
-                        <Link href="/contact" className="text-[#0EA5E9] underline">Devis</Link>
-                      </div>
+                    <p className="text-[#03144A] dark:text-white/80 text-sm leading-relaxed mb-4">{solution.description}</p>
+                    <div className="grid grid-cols-2 gap-2 mb-4">
+                      {solution.features.slice(0, 4).map((feature, i) => (
+                        <div key={i} className="flex items-center text-xs text-[#03144A] dark:text-white/70">
+                          <div className="w-1.5 h-1.5 bg-[#0EA5E9] rounded-full mr-2 flex-shrink-0"></div>
+                          <span>{feature}</span>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -365,28 +376,26 @@ export default function EauChaudeSanitairePage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24 relative">
-        <div className="max-w-4xl mx-auto text-center px-6">
-          <div className="bg-gradient-to-br from-[#0EA5E9]/5 to-[#03144A]/5 dark:from-[#0EA5E9]/10 dark:to-[#03144A]/10 rounded-3xl p-16 border border-[#03144A] dark:border-white/20 backdrop-blur-sm shadow-xl">
-            <h2 className="text-4xl md:text-5xl font-light mb-8">
+      {/* CTA Section - Optimisé Mobile */}
+      <section className="py-12 md:py-24 relative">
+        <div className="max-w-4xl mx-auto text-center px-4 md:px-6">
+          <div className="bg-gradient-to-br from-[#0EA5E9]/5 to-[#03144A]/5 dark:from-[#0EA5E9]/10 dark:to-[#03144A]/10 rounded-2xl md:rounded-3xl p-8 md:p-16 border border-[#03144A] dark:border-white/20 backdrop-blur-sm shadow-xl">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-light mb-6 md:mb-8 leading-tight">
               Prêt à optimiser votre
-              <br />
-              <span className="text-[#0EA5E9]">eau chaude sanitaire</span> ?
+              <br className="hidden sm:block" />
+              <span className="text-[#0EA5E9]">confort thermique</span> ?
             </h2>
             
-            <p className="text-xl text-[#03144A] dark:text-white mb-12 leading-relaxed">
+            <p className="text-base md:text-xl text-[#03144A] dark:text-white mb-8 md:mb-12 leading-relaxed">
               Nos experts vous accompagnent dans le choix de la solution parfaite pour votre habitat
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Link
-                href="/contact"
-                className="group relative px-10 py-4 bg-gradient-to-r from-[#03144A] to-[#0EA5E9] rounded-full text-[#F8F9F4] font-medium transition-all duration-300 hover:scale-105"
-              >
-                Demander un devis gratuit
-              </Link>
-            </div>
+            <Link
+              href="/contact"
+              className="inline-block px-8 md:px-10 py-3 md:py-4 bg-gradient-to-r from-[#03144A] to-[#0EA5E9] rounded-full text-[#F8F9F4] font-medium transition-all duration-300 hover:scale-105 text-sm md:text-base"
+            >
+              Demander un devis gratuit
+            </Link>
           </div>
         </div>
         <nav className="max-w-7xl mx-auto px-4 text-sm text-gray-600 dark:text-gray-300 mt-12 mb-24" aria-label="Fil d'Ariane">
