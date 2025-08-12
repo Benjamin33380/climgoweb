@@ -82,6 +82,9 @@ export default function FAQChat({
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 px-4 md:px-6 max-w-full">
               {faqs.map((faq, index) => {
                 const profile = clientProfiles[index] || clientProfiles[0];
+                // Générer des temps différents pour chaque client
+                const clientTimes = ["il y a 2 minutes", "il y a 15 minutes", "il y a 48 minutes", "il y a 1 heure"];
+                const clientTime = clientTimes[index] || "il y a quelques minutes";
                 return (
                   <motion.div 
                     key={index}
@@ -115,7 +118,7 @@ export default function FAQChat({
                         <div className="bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-2xl rounded-bl-md px-4 py-3 shadow-sm">
                           <p className="text-sm leading-relaxed">{faq.question}</p>
                         </div>
-                        <p className="text-xs text-gray-400 dark:text-gray-500 mt-1 ml-2">À l'instant</p>
+                        <p className="text-xs text-gray-400 dark:text-gray-500 mt-1 ml-2">{clientTime}</p>
                       </div>
                     </div>
                     
@@ -126,21 +129,15 @@ export default function FAQChat({
                           <p className="text-sm leading-relaxed">{faq.answer}</p>
                         </div>
                       </div>
-                      <div className="ml-3 flex-shrink-0 flex items-end">
-                        <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center shadow-lg">
+                      <div className="ml-3 flex-shrink-0 flex items-end flex-col">
+                        <div className="w-8 h-8 flex items-center justify-center">
                           <Logo3D 
                             glbUrl="/favicon/logo.glb" 
                             isHovered={false}
-                            className="w-4 h-4"
+                            className="w-6 h-6"
                           />
                         </div>
-                      </div>
-                    </div>
-                    
-                    {/* Footer avec nom expert */}
-                    <div className="mt-2 flex justify-end">
-                      <div className="text-right">
-                        <p className="text-xs text-gray-400 dark:text-gray-500">Expert ClimGO • À l'instant</p>
+                        <p className="text-xs text-gray-400 dark:text-gray-500 mt-1">Expert ClimGO • À l'instant</p>
                       </div>
                     </div>
                   </motion.div>
