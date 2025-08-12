@@ -17,6 +17,12 @@ export default function ContactPage() {
     message: ''
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: 'success' | 'error' | null;
+    message: string;
+  }>({ type: null, message: '' });
+
   const services = [
     'Pompe à chaleur air/eau',
     'Pompe à chaleur air/air',
@@ -27,10 +33,52 @@ export default function ContactPage() {
     'Autre'
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Traitement du formulaire ici
-    console.log('Formulaire soumis:', formData);
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: '' });
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus({
+          type: 'success',
+          message: data.message || 'Votre demande a été envoyée avec succès !'
+        });
+        
+        // Réinitialiser le formulaire
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          address: '',
+          postalCode: '',
+          service: '',
+          message: ''
+        });
+      } else {
+        setSubmitStatus({
+          type: 'error',
+          message: data.error || 'Erreur lors de l\'envoi. Veuillez réessayer.'
+        });
+      }
+    } catch (error) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Erreur de connexion. Vérifiez votre connexion internet et réessayez.'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -127,6 +175,17 @@ export default function ContactPage() {
                   </div>
                   
                   <form onSubmit={handleSubmit} className="space-y-6">
+                    {/* Message de statut */}
+                    {submitStatus.type && (
+                      <div className={`p-4 rounded-xl border ${
+                        submitStatus.type === 'success' 
+                          ? 'bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800 text-green-800 dark:text-green-200' 
+                          : 'bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800 text-red-800 dark:text-red-200'
+                      }`}>
+                        <p className="text-sm font-medium">{submitStatus.message}</p>
+                      </div>
+                    )}
+                    
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
                         <label htmlFor="name" className="block text-sm font-medium text-[#03144A] dark:text-white mb-2">
@@ -267,9 +326,21 @@ export default function ContactPage() {
 
                     <button
                       type="submit"
-                      className="w-full bg-gradient-to-r from-[#03144A] to-[#F97316] text-white px-8 py-4 rounded-xl font-medium transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                      disabled={isSubmitting}
+                      className={`w-full px-8 py-4 rounded-xl font-medium transition-all duration-300 shadow-lg hover:shadow-xl ${
+                        isSubmitting
+                          ? 'bg-gray-400 dark:bg-gray-600 cursor-not-allowed'
+                          : 'bg-gradient-to-r from-[#03144A] to-[#F97316] text-white hover:scale-105'
+                      }`}
                     >
-                      Envoyer ma demande
+                      {isSubmitting ? (
+                        <div className="flex items-center justify-center space-x-2">
+                          <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                          <span>Envoi en cours...</span>
+                        </div>
+                      ) : (
+                        'Envoyer ma demande'
+                      )}
                     </button>
                   </form>
                 </div>
