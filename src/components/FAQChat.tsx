@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Logo3D } from '@/components/ui/Logo3D';
+import { getCityClientProfiles, type ClientProfile } from '@/data/clientProfiles';
 
 interface FAQItem {
   question: string;
@@ -14,6 +15,7 @@ interface FAQChatProps {
   subtitle?: string;
   faqs?: FAQItem[];
   initials?: string[];
+  citySlug?: string;
   ctaTitle?: string;
   ctaSubtitle?: string;
   phoneNumber?: string;
@@ -44,11 +46,13 @@ export default function FAQChat({
   subtitle = "Nos réponses à vos préoccupations les plus courantes",
   faqs = defaultFAQs,
   initials = ["JD", "ML", "SP", "AB"],
+  citySlug = "default",
   ctaTitle = "Une autre question ?",
   ctaSubtitle = "N'hésitez pas à nous contacter directement !",
   phoneNumber = "0123456789",
   email = "contact@climgo.fr"
 }: FAQChatProps) {
+  const clientProfiles = getCityClientProfiles(citySlug);
   return (
           <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 bg-white dark:bg-black" />
@@ -74,50 +78,74 @@ export default function FAQChat({
           </motion.p>
         </div>
 
-                    {/* FAQ Chat Cards - 4 colonnes sur une ligne */}
+                    {/* FAQ Chat Cards - Style moderne comme l'image */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 px-4 md:px-6 max-w-full">
-              {faqs.map((faq, index) => (
-                <motion.div 
-                  key={index}
-                  className="chat-card bg-white dark:bg-black rounded-2xl shadow-lg p-4 md:p-6 border-2 border-gray-700 dark:border-gray-300 h-[350px] md:h-[400px] flex flex-col"
-                  initial={{ opacity: 1, y: 0 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0, delay: 0 }}
-                  whileHover={{ y: 0 }}
-                >
-                  {/* Question du client - 2 lignes fixes */}
-                  <div className="flex items-start mb-3 md:mb-4 h-16 md:h-20">
-                    <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-gray-400 to-gray-500 rounded-full flex items-center justify-center mr-2 md:mr-3 flex-shrink-0 shadow-md">
-                      <span className="text-white font-semibold text-xs md:text-sm">
-                        {initials[index] || "??"}
-                      </span>
-                    </div>
-                    <div className="flex-1">
-                      <div className="bg-gray-700 dark:bg-gray-200 text-white dark:text-black rounded-2xl rounded-tl-md px-2 md:px-3 py-2 h-full flex items-center">
-                        <p className="text-base md:text-lg leading-tight">{faq.question}</p>
+              {faqs.map((faq, index) => {
+                const profile = clientProfiles[index] || clientProfiles[0];
+                return (
+                  <motion.div 
+                    key={index}
+                    className="chat-card bg-white dark:bg-black rounded-3xl shadow-xl p-4 md:p-6 border border-gray-200 dark:border-gray-700 h-[400px] md:h-[450px] flex flex-col hover:shadow-2xl transition-all duration-300"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    whileHover={{ y: -5 }}
+                  >
+                    {/* En-tête avec nom du client */}
+                    <div className="flex items-center mb-4 pb-3 border-b border-gray-100 dark:border-gray-800">
+                      <div className={`w-10 h-10 ${profile.avatarColor} dark:${profile.avatarColorDark} rounded-full flex items-center justify-center mr-3 shadow-lg`}>
+                        <span className="text-white font-bold text-sm">
+                          {profile.initials}
+                        </span>
                       </div>
-                      <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Client • À l'instant</p>
-                    </div>
-                  </div>
-                  
-                  {/* Réponse de l'expert - 5 lignes fixes */}
-                  <div className="flex items-start justify-end flex-grow h-36 md:h-48">
-                    <div className="flex-1 flex justify-end">
-                      <div className="bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-2xl rounded-tr-md px-2 md:px-3 py-2 max-w-full h-full flex items-center">
-                        <p className="text-base md:text-lg leading-tight">{faq.answer}</p>
+                      <div>
+                        <h4 className="text-sm font-semibold text-gray-900 dark:text-white">
+                          {profile.firstName} {profile.name}
+                        </h4>
+                        <p className="text-xs text-gray-500 dark:text-gray-400">Client</p>
+                      </div>
+                      <div className="ml-auto">
+                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                       </div>
                     </div>
-                    <div className="ml-2 md:ml-3 flex-shrink-0 flex items-center">
-                      <Logo3D 
-                        glbUrl="/favicon/logo.glb" 
-                        isHovered={false}
-                        className="w-6 h-6 md:w-8 md:h-8"
-                      />
+
+                    {/* Question du client */}
+                    <div className="flex items-start mb-4">
+                      <div className="flex-1">
+                        <div className="bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-2xl rounded-bl-md px-4 py-3 shadow-sm">
+                          <p className="text-sm leading-relaxed">{faq.question}</p>
+                        </div>
+                        <p className="text-xs text-gray-400 dark:text-gray-500 mt-1 ml-2">À l'instant</p>
+                      </div>
                     </div>
-                  </div>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-2 text-right">Expert ClimGO • À l'instant</p>
-                </motion.div>
-              ))}
+                    
+                    {/* Réponse de l'expert */}
+                    <div className="flex items-start justify-end flex-grow">
+                      <div className="flex-1 flex justify-end">
+                        <div className="bg-blue-500 dark:bg-blue-600 text-white rounded-2xl rounded-br-md px-4 py-3 max-w-[90%] shadow-sm">
+                          <p className="text-sm leading-relaxed">{faq.answer}</p>
+                        </div>
+                      </div>
+                      <div className="ml-3 flex-shrink-0 flex items-end">
+                        <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center shadow-lg">
+                          <Logo3D 
+                            glbUrl="/favicon/logo.glb" 
+                            isHovered={false}
+                            className="w-4 h-4"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Footer avec nom expert */}
+                    <div className="mt-2 flex justify-end">
+                      <div className="text-right">
+                        <p className="text-xs text-gray-400 dark:text-gray-500">Expert ClimGO • À l'instant</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                );
+              })}
             </div>
 
         {/* CTA Section */}

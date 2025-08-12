@@ -840,16 +840,14 @@ export default function LaTesteDeBuch() {
       />
 
       {/* Section FAQ - Style Chat Moderne avec questions variées */}
-      <FAQChat 
-        title="Questions Fréquentes"
+      <FAQChat title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à La Teste-de-Buch"
         faqs={getCityFAQSet('la-teste-de-buch')}
         initials={getCityInitials('la-teste-de-buch')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"
-        email="contact@climgo.fr"
-      />
+        email="contact@climgo.fr" citySlug="la-teste-de-buch" />
 
       {/* Section Carte en pleine largeur */}
       <section className="relative w-full overflow-hidden bg-white dark:bg-black">

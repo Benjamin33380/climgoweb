@@ -840,16 +840,14 @@ export default function Merignac() {
       />
 
       {/* Section FAQ - Style Chat Moderne avec questions variées */}
-      <FAQChat 
-        title="Questions Fréquentes"
+      <FAQChat title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Mérignac"
         faqs={getCityFAQSet('merignac')}
         initials={getCityInitials('merignac')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"
-        email="contact@climgo.fr"
-      />
+        email="contact@climgo.fr" citySlug="merignac" />
 
       {/* Section Carte en pleine largeur */}
       <section className="relative w-full overflow-hidden bg-white dark:bg-black">

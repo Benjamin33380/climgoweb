@@ -849,16 +849,14 @@ export default function VillenaveDornon() {
       />
 
       {/* Section FAQ - Style Chat Moderne */}
-      <FAQChat 
-        title="Questions Fréquentes"
+      <FAQChat title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Villenave-d'Ornon"
         faqs={getCityFAQSet('villenave-d-ornon')}
         initials={getCityInitials('villenave-d-ornon')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"
-        email="contact@climgo.fr"
-      />
+        email="contact@climgo.fr" citySlug="villenave-d-ornon" />
 
 
 
