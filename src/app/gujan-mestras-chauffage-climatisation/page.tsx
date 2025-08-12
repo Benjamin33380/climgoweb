@@ -584,7 +584,7 @@ export default function GujanMestras() {
             {/* Pourquoi choisir ClimGO à Gujan-Mestras - Version personnalisée */}
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6 lg:gap-8 max-w-6xl mx-auto mb-8 md:mb-12 lg:mb-16">
               {/* Expertise Locale */}
-              <div className="group bg-white/80 dark:bg-[#2a2a2a]/80 backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#2563EB]/50 dark:hover:border-[#60A5FA] min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
+              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#2563EB]/50 dark:hover:border-[#60A5FA] min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
                 <div className="text-center flex flex-col h-full">
                   <div className="bg-[#2563EB]/10 dark:bg-[#2563EB]/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                     <svg className="w-12 h-12 text-[#2563EB] dark:text-[#60A5FA]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -601,7 +601,7 @@ export default function GujanMestras() {
               </div>
 
               {/* Types de logements */}
-              <div className="group bg-white/80 dark:bg-[#2a2a2a]/80 backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#f97316]/50 dark:hover:border-[#fb923c] min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
+              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#f97316]/50 dark:hover:border-[#fb923c] min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
                 <div className="text-center flex flex-col h-full">
                   <div className="bg-[#f97316]/10 dark:bg-[#f97316]/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                     <svg className="w-12 h-12 text-[#f97316] dark:text-[#fb923c]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -618,7 +618,7 @@ export default function GujanMestras() {
               </div>
 
               {/* Processus */}
-              <div className="group bg-white/80 dark:bg-[#2a2a2a]/80 backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#8B5CF6]/50 dark:hover:border-[#A78BFA] min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
+              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#8B5CF6]/50 dark:hover:border-[#A78BFA] min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
                 <div className="text-center flex flex-col h-full">
                   <div className="bg-[#8B5CF6]/10 dark:bg-[#8B5CF6]/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                     <svg className="w-12 h-12 text-[#8B5CF6] dark:text-[#A78BFA]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -635,7 +635,7 @@ export default function GujanMestras() {
               </div>
 
               {/* Proximité */}
-              <div className="group bg-white/80 dark:bg-[#2a2a2a]/80 backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#059669]/50 dark:hover:border-[#10B981] min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
+              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#059669]/50 dark:hover:border-[#10B981] min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
                 <div className="text-center flex flex-col h-full">
                   <div className="bg-[#059669]/10 dark:bg-[#059669]/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                     <svg className="w-12 h-12 text-[#059669] dark:text-[#10B981]" fill="none" viewBox="0 0 24 24" stroke="currentColor">

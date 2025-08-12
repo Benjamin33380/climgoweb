@@ -22,7 +22,7 @@ export default function WhyChooseUs() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 max-w-6xl mx-auto mb-12 sm:mb-16">
           {/* Expertise */}
           <SimpleWrapper>
-            <div className="group bg-white/80 dark:bg-[#2a2a2a]/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#2563EB]/50 dark:hover:border-[#60A5FA] h-[420px] flex flex-col">
+            <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#2563EB]/50 dark:hover:border-[#60A5FA] h-[420px] flex flex-col">
               <div className="text-center flex flex-col h-full">
                 <div className="bg-[#2563EB]/10 dark:bg-[#2563EB]/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                   <TbAward className="w-12 h-12 text-[#2563EB] dark:text-[#60A5FA]" />
@@ -39,7 +39,7 @@ export default function WhyChooseUs() {
 
           {/* Accompagnement Personnalisé */}
           <SimpleWrapper>
-            <div className="group bg-white/80 dark:bg-[#2a2a2a]/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#f97316]/50 dark:hover:border-[#fb923c] h-[420px] flex flex-col">
+            <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#f97316]/50 dark:hover:border-[#fb923c] h-[420px] flex flex-col">
               <div className="text-center flex flex-col h-full">
                 <div className="bg-[#f97316]/10 dark:bg-[#f97316]/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                   <TbUsers className="w-12 h-12 text-[#f97316] dark:text-[#fb923c]" />
@@ -56,7 +56,7 @@ export default function WhyChooseUs() {
 
           {/* Discrétion et Confiance */}
           <SimpleWrapper>
-            <div className="group bg-white/80 dark:bg-[#2a2a2a]/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#8B5CF6]/50 dark:hover:border-[#A78BFA] h-[420px] flex flex-col">
+            <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#8B5CF6]/50 dark:hover:border-[#A78BFA] h-[420px] flex flex-col">
               <div className="text-center flex flex-col h-full">
                 <div className="bg-[#8B5CF6]/10 dark:bg-[#8B5CF6]/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                   <TbShieldCheck className="w-12 h-12 text-[#8B5CF6] dark:text-[#A78BFA]" />
@@ -73,7 +73,7 @@ export default function WhyChooseUs() {
 
           {/* Engagement Durable */}
           <SimpleWrapper>
-            <div className="group bg-white/80 dark:bg-[#2a2a2a]/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#059669]/50 dark:hover:border-[#10B981] h-[420px] flex flex-col">
+            <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#059669]/50 dark:hover:border-[#10B981] h-[420px] flex flex-col">
               <div className="text-center flex flex-col h-full">
                 <div className="bg-[#059669]/10 dark:bg-[#059669]/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                   <TbLeaf className="w-12 h-12 text-[#059669] dark:text-[#10B981]" />

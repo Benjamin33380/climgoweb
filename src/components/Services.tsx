@@ -22,7 +22,7 @@ export default function Services() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
           {/* Climatisation */}
           <SimpleWrapper>
-            <Link href="/climatisation" className="group block bg-gray-50/80 dark:bg-[#2a2a2a]/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#2563EB]/50 dark:hover:border-[#60A5FA]">
+            <Link href="/climatisation" className="group block bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#2563EB]/50 dark:hover:border-[#60A5FA]">
             <div className="text-center">
               <div className="bg-[#2563EB]/10 dark:bg-[#2563EB]/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                 <TbSnowflake className="w-12 h-12 text-[#2563EB] dark:text-[#60A5FA]" />
@@ -40,7 +40,7 @@ export default function Services() {
 
           {/* Chauffage */}
           <SimpleWrapper>
-            <Link href="/chauffage" className="group block bg-gray-50/80 dark:bg-[#2a2a2a]/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#DC2626]/50 dark:hover:border-[#F87171]">
+            <Link href="/chauffage" className="group block bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#DC2626]/50 dark:hover:border-[#F87171]">
             <div className="text-center">
               <div className="bg-[#DC2626]/10 dark:bg-[#DC2626]/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                 <TbFlame className="w-12 h-12 text-[#DC2626] dark:text-[#F87171]" />
@@ -57,7 +57,7 @@ export default function Services() {
 
           {/* Eau Chaude Sanitaire */}
           <SimpleWrapper>
-            <Link href="/eau-chaude-sanitaire" className="group block bg-gray-50/80 dark:bg-[#2a2a2a]/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#0EA5E9]/50 dark:hover:border-[#38BDF8]">
+            <Link href="/eau-chaude-sanitaire" className="group block bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#0EA5E9]/50 dark:hover:border-[#38BDF8]">
             <div className="text-center">
               <div className="bg-[#0EA5E9]/10 dark:bg-[#0EA5E9]/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                 <TbDroplet className="w-12 h-12 text-[#0EA5E9] dark:text-[#38BDF8]" />
@@ -74,7 +74,7 @@ export default function Services() {
 
           {/* Maintenance */}
           <SimpleWrapper>
-            <Link href="/maintenance" className="group block bg-gray-50/80 dark:bg-[#2a2a2a]/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#10B981]/50 dark:hover:border-[#34D399]">
+            <Link href="/maintenance" className="group block bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#10B981]/50 dark:hover:border-[#34D399]">
             <div className="text-center">
               <div className="bg-[#10B981]/10 dark:bg-[#10B981]/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                 <TbTools className="w-12 h-12 text-[#10B981] dark:text-[#34D399]" />

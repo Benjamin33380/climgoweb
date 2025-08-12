@@ -89,15 +89,15 @@ export default function ContactPage() {
           {/* Stats rapides */}
           <SimpleWrapper>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto mb-12">
-              <div className="text-center bg-white/80 dark:bg-[#2a2a2a]/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-600/30">
+              <div className="text-center bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-600/30">
                 <div className="text-3xl font-bold text-[#03144a] dark:text-white mb-2">48h</div>
                 <div className="text-gray-600 dark:text-gray-300 text-sm">Délai de réponse moyen</div>
               </div>
-              <div className="text-center bg-white/80 dark:bg-[#2a2a2a]/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-600/30">
+              <div className="text-center bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-600/30">
                 <div className="text-3xl font-bold text-[#03144a] dark:text-white mb-2">100%</div>
                 <div className="text-gray-600 dark:text-gray-300 text-sm">Devis gratuits</div>
               </div>
-              <div className="text-center bg-white/80 dark:bg-[#2a2a2a]/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-600/30">
+              <div className="text-center bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-600/30">
                 <div className="text-3xl font-bold text-[#03144a] dark:text-white mb-2">10+</div>
                 <div className="text-gray-600 dark:text-gray-300 text-sm">Années d'expérience</div>
               </div>
@@ -114,7 +114,7 @@ export default function ContactPage() {
             {/* Colonne gauche - Formulaire */}
             <div className="order-2 lg:order-1">
               <SimpleWrapper>
-                <div className="bg-white/80 dark:bg-[#2a2a2a]/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-600/30">
+                <div className="bg-white dark:bg-black backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-600/30">
                   <div className="mb-8">
                     <h2 className="text-3xl md:text-4xl font-light mb-4 text-[#03144A] dark:text-white">
                       Démarrons votre projet
@@ -347,7 +347,7 @@ export default function ContactPage() {
 
               {/* Note Google */}
               <SimpleWrapper>
-                <div className="bg-white/80 dark:bg-[#2a2a2a]/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-gray-200 dark:border-gray-600/30">
+                <div className="bg-white dark:bg-black backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-gray-200 dark:border-gray-600/30">
                   <h3 className="text-xl font-medium text-[#03144A] dark:text-white mb-6 flex items-center">
                     <div className="w-1 h-6 bg-gradient-to-b from-[#F97316] to-[#03144A] rounded-full mr-3"></div>
                     Nos clients nous font confiance
@@ -369,7 +369,7 @@ export default function ContactPage() {
 
               {/* Services */}
               <SimpleWrapper>
-                <div className="bg-white/80 dark:bg-[#2a2a2a]/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-gray-200 dark:border-gray-600/30">
+                <div className="bg-white dark:bg-black backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-gray-200 dark:border-gray-600/30">
                   <h3 className="text-xl font-medium text-[#03144A] dark:text-white mb-6 flex items-center">
                     <div className="w-1 h-6 bg-gradient-to-b from-[#03144A] to-[#F97316] rounded-full mr-3"></div>
                     Nos domaines d'expertise
