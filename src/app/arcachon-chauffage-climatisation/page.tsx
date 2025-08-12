@@ -294,35 +294,35 @@ export default function Arcachon() {
             <div className="max-w-4xl mx-auto">
               <div className="space-y-6 text-center pt-8 pb-20">
                 <p className="text-lg text-gray-800 dark:text-gray-200 leading-normal">
-                  Ville emblématique du <strong className="text-gray-900 dark:text-white">Bassin d'Arcachon</strong>, Arcachon séduit par son architecture Belle Époque et ses quatre quartiers distincts : la Ville d'Été, la Ville d'Hiver, la Ville d'Automne et la Ville de Printemps. ClimGO s'adapte à chaque type d'habitat pour garantir votre confort thermique.
+                  Ville emblématique du <strong className="text-black dark:text-white">Bassin d'Arcachon</strong>, Arcachon séduit par son architecture Belle Époque et ses quatre quartiers distincts : la Ville d'Été, la Ville d'Hiver, la Ville d'Automne et la Ville de Printemps. ClimGO s'adapte à chaque type d'habitat pour garantir votre confort thermique.
                 </p>
                 
                 <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
-                  Des <strong className="text-gray-900 dark:text-white">villas historiques</strong> de la Ville d'Hiver aux <strong className="text-gray-900 dark:text-white">appartements modernes</strong> du front de mer, nous accompagnons tous types de projets d'installation et de rénovation énergétique.
+                  Des <strong className="text-black dark:text-white">villas historiques</strong> de la Ville d'Hiver aux <strong className="text-black dark:text-white">appartements modernes</strong> du front de mer, nous accompagnons tous types de projets d'installation et de rénovation énergétique.
                 </p>
                 
                 <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
-                  Chaque intervention vise à optimiser la <strong className="text-gray-900 dark:text-white">performance énergétique</strong> tout en respectant l'intégration harmonieuse dans ce cadre architectural et naturel exceptionnel.
+                  Chaque intervention vise à optimiser la <strong className="text-black dark:text-white">performance énergétique</strong> tout en respectant l'intégration harmonieuse dans ce cadre architectural et naturel exceptionnel.
                 </p>
                 
                 <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
-                  Notre expertise locale nous permet de comprendre les <strong className="text-gray-900 dark:text-white">contraintes climatiques</strong> spécifiques : l'air marin, les vents côtiers et les variations saisonnières qui influencent le choix des équipements et leur installation.
+                  Notre expertise locale nous permet de comprendre les <strong className="text-black dark:text-white">contraintes climatiques</strong> spécifiques : l'air marin, les vents côtiers et les variations saisonnières qui influencent le choix des équipements et leur installation.
                 </p>
                 
                 <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
-                  Nous privilégions les <strong className="text-gray-900 dark:text-white">solutions durables</strong> et respectueuses de l'environnement, en accord avec la sensibilité écologique des Arcachonnais et les réglementations patrimoniales de la ville.
+                  Nous privilégions les <strong className="text-black dark:text-white">solutions durables</strong> et respectueuses de l'environnement, en accord avec la sensibilité écologique des Arcachonnais et les réglementations patrimoniales de la ville.
                 </p>
                 
                 <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
-                  De la <strong className="text-gray-900 dark:text-white">pompe à chaleur</strong> à la <strong className="text-gray-900 dark:text-white">climatisation réversible</strong>, en passant par la <strong className="text-gray-900 dark:text-white">production d'eau chaude sanitaire</strong>, nos solutions s'adaptent à chaque quartier et à chaque budget.
+                  De la <strong className="text-black dark:text-white">pompe à chaleur</strong> à la <strong className="text-black dark:text-white">climatisation réversible</strong>, en passant par la <strong className="text-black dark:text-white">production d'eau chaude sanitaire</strong>, nos solutions s'adaptent à chaque quartier et à chaque budget.
                 </p>
                 
                 <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
-                  Notre équipe d'<strong className="text-gray-900 dark:text-white">experts certifiés</strong> intervient dans tous les quartiers d'Arcachon, des villas Belle Époque aux résidences contemporaines, en respectant les spécificités architecturales locales.
+                  Notre équipe d'<strong className="text-black dark:text-white">experts certifiés</strong> intervient dans tous les quartiers d'Arcachon, des villas Belle Époque aux résidences contemporaines, en respectant les spécificités architecturales locales.
                 </p>
                 
                 <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
-                  Nous garantissons un <strong className="text-gray-900 dark:text-white">service personnalisé</strong> et un suivi rigoureux de chaque projet, de la première visite à la mise en service, en passant par l'installation et la maintenance préventive.
+                  Nous garantissons un <strong className="text-black dark:text-white">service personnalisé</strong> et un suivi rigoureux de chaque projet, de la première visite à la mise en service, en passant par l'installation et la maintenance préventive.
                 </p>
               </div>
             </div>
@@ -368,7 +368,7 @@ export default function Arcachon() {
           <div className="relative z-10 max-w-6xl mx-auto px-4">
             {/* Titre avec animation */}
             <div className="text-center mb-20">
-              <h2 className="text-3xl md:text-4xl font-medium text-gray-900 dark:text-white mb-6">
+              <h2 className="text-3xl md:text-4xl font-medium text-black dark:text-white mb-6">
                 Nos interventions à Arcachon
               </h2>
               <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
@@ -406,7 +406,7 @@ export default function Arcachon() {
                 </div>
                 
                 <div className="w-5/12 pr-8 text-right">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Tous les quartiers d'Arcachon</h3>
+                  <h3 className="text-2xl font-bold text-black dark:text-white mb-3">Tous les quartiers d'Arcachon</h3>
                   <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                     Interventions dans les quatre quartiers emblématiques : Ville d'Été, Ville d'Hiver, Ville d'Automne et Ville de Printemps, avec des solutions adaptées à chaque architecture.
                   </p>
@@ -416,13 +416,13 @@ export default function Arcachon() {
               {/* Étape 2 */}
               <div className="relative flex items-center mb-16">
                 <div className="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-black dark:bg-white rounded-full shadow-2xl flex items-center justify-center z-10">
-                  <svg className="w-8 h-8 text-white dark:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-8 h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                   </svg>
                 </div>
                 
                 <div className="w-5/12 ml-auto pl-8">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Patrimoine & Modernité</h3>
+                  <h3 className="text-2xl font-bold text-black dark:text-white mb-3">Patrimoine & Modernité</h3>
                   <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                     Solutions respectueuses du patrimoine architectural pour les villas Belle Époque et installations modernes pour les constructions contemporaines.
                   </p>
@@ -432,13 +432,13 @@ export default function Arcachon() {
               {/* Étape 3 */}
               <div className="relative flex items-center mb-16">
                 <div className="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-black dark:bg-white rounded-full shadow-2xl flex items-center justify-center z-10">
-                  <svg className="w-8 h-8 text-white dark:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-8 h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
                 
                 <div className="w-5/12 pr-8 text-right">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Proximité & Réactivité</h3>
+                  <h3 className="text-2xl font-bold text-black dark:text-white mb-3">Proximité & Réactivité</h3>
                   <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                     Service de proximité avec interventions rapides dans toute la ville, dépannages d'urgence et maintenance préventive personnalisée.
                   </p>
@@ -448,13 +448,13 @@ export default function Arcachon() {
               {/* Étape 4 */}
               <div className="relative flex items-center">
                 <div className="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-black dark:bg-white rounded-full shadow-2xl flex items-center justify-center z-10">
-                  <svg className="w-8 h-8 text-white dark:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-8 h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
                 
                 <div className="w-5/12 ml-auto pl-8">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Excellence & Durabilité</h3>
+                  <h3 className="text-2xl font-bold text-black dark:text-white mb-3">Excellence & Durabilité</h3>
                   <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                     Solutions durables respectueuses de l'environnement marin, avec garantie complète et service après-vente de qualité.
                   </p>
@@ -466,7 +466,7 @@ export default function Arcachon() {
             <div className="text-center mt-16">
               <Link
                 href="/contact"
-                className="inline-flex items-center px-8 py-4 bg-black dark:bg-white text-white dark:text-black font-semibold rounded-full hover:bg-gray-700 dark:hover:bg-gray-200 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-semibold rounded-full hover:bg-gray-700 dark:hover:bg-gray-200 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 Demander un devis
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -493,12 +493,12 @@ export default function Arcachon() {
                 <div className="flex space-x-8 min-w-max px-4" style={{ marginLeft: 'calc(50% - 144px)', marginRight: 'calc(50% - 144px)' }}>
                   {/* Bloc 1 */}
                   <div className="w-72 flex-shrink-0 bg-white dark:bg-black rounded-2xl md:shadow-lg p-6 border border-gray-100 dark:border-gray-700">
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                    <h3 className="text-2xl font-bold text-black dark:text-white mb-4">
                       La perle du Bassin d'Arcachon
                     </h3>
                     <div className="space-y-3 text-gray-600 dark:text-gray-300 leading-relaxed">
                       <p>
-                        Avec ses 11 000 habitants permanents et ses milliers de visiteurs saisonniers, <strong className="text-gray-900 dark:text-white">Arcachon</strong> est la destination phare du Bassin. Entre plages océanes, architecture Belle Époque et quartiers résidentiels, la ville offre une diversité d'habitats exceptionnelle.
+                        Avec ses 11 000 habitants permanents et ses milliers de visiteurs saisonniers, <strong className="text-black dark:text-white">Arcachon</strong> est la destination phare du Bassin. Entre plages océanes, architecture Belle Époque et quartiers résidentiels, la ville offre une diversité d'habitats exceptionnelle.
                       </p>
                       <p>
                         Du front de mer animé aux villas historiques de la Ville d'Hiver, chaque quartier a ses spécificités architecturales et ses contraintes techniques que nous maîtrisons parfaitement.
@@ -508,7 +508,7 @@ export default function Arcachon() {
                   
                   {/* Bloc 2 */}
                   <div className="w-72 flex-shrink-0 bg-white dark:bg-black rounded-2xl md:shadow-lg p-6 border border-gray-100 dark:border-gray-700">
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                    <h3 className="text-2xl font-bold text-black dark:text-white mb-4">
                       Exemples concrets d'interventions à Arcachon
                     </h3>
                     <div className="space-y-3 text-gray-600 dark:text-gray-300 leading-relaxed">
@@ -529,7 +529,7 @@ export default function Arcachon() {
                   
                                     {/* Bloc 3 */}
                   <div className="w-72 flex-shrink-0 bg-white dark:bg-black rounded-2xl md:shadow-lg p-6 border border-gray-100 dark:border-gray-700">
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                    <h3 className="text-2xl font-bold text-black dark:text-white mb-4">
                       Un savoir-faire adapté à l'environnement arcachonnais
                     </h3>
                     <div className="space-y-3 text-gray-600 dark:text-gray-300 leading-relaxed">
@@ -544,20 +544,20 @@ export default function Arcachon() {
                   
                   {/* Bloc 4 */}
                   <div className="w-72 flex-shrink-0 bg-white dark:bg-black rounded-2xl md:shadow-lg p-6 border border-gray-100 dark:border-gray-700">
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                    <h3 className="text-2xl font-bold text-black dark:text-white mb-4">
                       Un projet thermique à Arcachon ? Parlons-en !
                     </h3>
                     <div className="space-y-3 text-gray-600 dark:text-gray-300 leading-relaxed">
                       <p>
-                        Vous habitez <strong className="text-gray-900 dark:text-white">Arcachon</strong> ou venez d'acquérir un bien dans la ville ? Nos conseillers sont à votre écoute pour définir ensemble une solution de chauffage, climatisation ou production d'eau chaude parfaitement adaptée.
+                        Vous habitez <strong className="text-black dark:text-white">Arcachon</strong> ou venez d'acquérir un bien dans la ville ? Nos conseillers sont à votre écoute pour définir ensemble une solution de chauffage, climatisation ou production d'eau chaude parfaitement adaptée.
                       </p>
                       <p>
-                        Contactez-nous pour un <strong className="text-gray-900 dark:text-white">Devis gratuit</strong> et personnalisé.
+                        Contactez-nous pour un <strong className="text-black dark:text-white">Devis gratuit</strong> et personnalisé.
                       </p>
                       <div className="mt-4">
                         <a
                           href="/contact"
-                          className="inline-flex items-center px-6 py-3 bg-black dark:bg-white text-white dark:text-black font-semibold rounded-lg hover:bg-gray-700 dark:hover:bg-gray-200"
+                          className="inline-flex items-center px-6 py-3 bg-white dark:bg-black text-black dark:text-white font-semibold rounded-lg hover:bg-gray-700 dark:hover:bg-gray-200"
                         >
                           Devis gratuit
                           <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -582,7 +582,7 @@ export default function Arcachon() {
           <div className="relative z-10 max-w-6xl mx-auto px-4">
             {/* Titre avec animation */}
             <div className="text-center mb-20">
-              <h2 className="text-3xl md:text-4xl font-medium text-gray-900 dark:text-white mb-6">
+              <h2 className="text-3xl md:text-4xl font-medium text-black dark:text-white mb-6">
                 Pourquoi choisir ClimGO à Arcachon ?
               </h2>
               <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
@@ -600,7 +600,7 @@ export default function Arcachon() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-[#2563EB] dark:group-hover:text-[#60A5FA] transition-colors">
+                  <h3 className="text-lg sm:text-xl font-semibold text-black dark:text-white mb-3 sm:mb-4 group-hover:text-[#2563EB] dark:group-hover:text-[#60A5FA] transition-colors">
                     Expertise Locale
                   </h3>
                   <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
@@ -617,7 +617,7 @@ export default function Arcachon() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-[#f97316] dark:group-hover:text-[#fb923c] transition-colors">
+                  <h3 className="text-lg sm:text-xl font-semibold text-black dark:text-white mb-3 sm:mb-4 group-hover:text-[#f97316] dark:group-hover:text-[#fb923c] transition-colors">
                     Qualité Premium
                   </h3>
                   <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
@@ -634,7 +634,7 @@ export default function Arcachon() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-[#8B5CF6] dark:group-hover:text-[#A78BFA] transition-colors">
+                  <h3 className="text-lg sm:text-xl font-semibold text-black dark:text-white mb-3 sm:mb-4 group-hover:text-[#8B5CF6] dark:group-hover:text-[#A78BFA] transition-colors">
                     Proximité
                   </h3>
                   <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
@@ -651,7 +651,7 @@ export default function Arcachon() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-[#059669] dark:group-hover:text-[#10B981] transition-colors">
+                  <h3 className="text-lg sm:text-xl font-semibold text-black dark:text-white mb-3 sm:mb-4 group-hover:text-[#059669] dark:group-hover:text-[#10B981] transition-colors">
                     Garantie Complète
                   </h3>
                   <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
@@ -665,7 +665,7 @@ export default function Arcachon() {
             <div className="text-center mt-16">
               <Link
                 href="/contact"
-                className="inline-flex items-center px-8 py-4 bg-black dark:bg-white text-white dark:text-black font-semibold rounded-full hover:bg-gray-700 dark:hover:bg-gray-200 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-semibold rounded-full hover:bg-gray-700 dark:hover:bg-gray-200 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 Demander un devis
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -688,7 +688,7 @@ export default function Arcachon() {
         <div className="relative z-10 max-w-7xl mx-auto px-4">
           <SimpleWrapper>
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-light text-gray-900 dark:text-white mb-6">
+              <h2 className="text-4xl md:text-5xl font-light text-black dark:text-white mb-6">
                 Nos Solutions ClimGO
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
@@ -701,7 +701,7 @@ export default function Arcachon() {
             {/* Carte 1 - Types de logements */}
             <SimpleWrapper>
               <motion.div 
-                className="group relative bg-black dark:bg-white rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-black dark:border-white min-h-[300px] md:min-h-[380px] lg:min-h-[400px] flex flex-col"
+                className="group relative bg-white dark:bg-black rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-black dark:border-white min-h-[300px] md:min-h-[380px] lg:min-h-[400px] flex flex-col"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -715,14 +715,14 @@ export default function Arcachon() {
                   <div className="absolute inset-0 bg-white/10 dark:bg-black/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
                 </div>
 
-                <h3 className="text-2xl font-bold text-white dark:text-black mb-4 text-center">Types de logements desservis</h3>
-                <p className="text-white/90 dark:text-black/90 leading-relaxed text-center text-lg flex-grow">
+                <h3 className="text-2xl font-bold text-black dark:text-white mb-4 text-center">Types de logements desservis</h3>
+                <p className="text-black/90 dark:text-white/90 leading-relaxed text-center text-lg flex-grow">
                   Nous intervenons dans tous types d'habitats arcachonnais : villas Belle Époque, appartements front de mer, maisons contemporaines et résidences secondaires. Chaque installation respecte l'architecture locale.
                 </p>
 
                 {/* Badge de service */}
                 <div className="mt-6 text-center">
-                  <span className="inline-block bg-white/20 dark:bg-black/20 text-white dark:text-black text-sm font-medium px-4 py-2 rounded-full">
+                  <span className="inline-block bg-black/20 dark:bg-white/20 text-black dark:text-white text-sm font-medium px-4 py-2 rounded-full">
                     Tous quartiers d'Arcachon
                   </span>
                 </div>
@@ -738,22 +738,22 @@ export default function Arcachon() {
               >
                 {/* Icône avec effet de brillance */}
                 <div className="relative mb-6">
-                  <div className="w-16 h-16 bg-black dark:bg-white rounded-2xl flex items-center justify-center mx-auto group-hover:bg-gray-700 dark:group-hover:bg-gray-200 transition-all duration-300 border-2 border-black dark:border-white">
-                    <svg className="w-8 h-8 text-white dark:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="w-16 h-16 bg-white dark:bg-black rounded-2xl flex items-center justify-center mx-auto group-hover:bg-gray-700 dark:group-hover:bg-gray-200 transition-all duration-300 border-2 border-black dark:border-white">
+                    <svg className="w-8 h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.563.563 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
                     </svg>
                   </div>
                   <div className="absolute inset-0 bg-black/10 dark:bg-white/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
                 </div>
 
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 text-center">Processus d'installation</h3>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-center text-lg flex-grow">
+                <h3 className="text-2xl font-bold text-black dark:text-white mb-4 text-center">Processus d'installation</h3>
+                <p className="text-black/90 dark:text-white/90 leading-relaxed text-center text-lg flex-grow">
                   Étude personnalisée de votre habitat arcachonnais, devis gratuit et détaillé, installation soignée dans le respect des contraintes patrimoniales et des délais convenus.
                 </p>
 
                 {/* Badge de service */}
                 <div className="mt-6 text-center">
-                  <span className="inline-block bg-black dark:bg-white text-white dark:text-black text-sm font-medium px-4 py-2 rounded-full">
+                  <span className="inline-block bg-white dark:bg-black text-black dark:text-white text-sm font-medium px-4 py-2 rounded-full">
                     Devis gratuit
                   </span>
                 </div>
@@ -769,22 +769,22 @@ export default function Arcachon() {
               >
                 {/* Icône avec effet de brillance */}
                 <div className="relative mb-6">
-                  <div className="w-16 h-16 bg-black dark:bg-white rounded-2xl flex items-center justify-center mx-auto group-hover:bg-gray-700 dark:group-hover:bg-gray-200 transition-all duration-300 border-2 border-black dark:border-white">
-                    <svg className="w-8 h-8 text-white dark:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="w-16 h-16 bg-white dark:bg-black rounded-2xl flex items-center justify-center mx-auto group-hover:bg-gray-700 dark:group-hover:bg-gray-200 transition-all duration-300 border-2 border-black dark:border-white">
+                    <svg className="w-8 h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437 1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008Z" />
                     </svg>
                   </div>
                   <div className="absolute inset-0 bg-black/10 dark:bg-white/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
                 </div>
 
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 text-center">Entretien & maintenance</h3>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-center text-lg flex-grow">
+                <h3 className="text-2xl font-bold text-black dark:text-white mb-4 text-center">Entretien & maintenance</h3>
+                <p className="text-black/90 dark:text-white/90 leading-relaxed text-center text-lg flex-grow">
                   Contrats d'entretien personnalisés avec visites régulières, nettoyage spécialisé contre les embruns salés et optimisation des performances en environnement marin.
                 </p>
 
                 {/* Badge de service */}
                 <div className="mt-6 text-center">
-                  <span className="inline-block bg-black dark:bg-white text-white dark:text-black text-sm font-medium px-4 py-2 rounded-full">
+                  <span className="inline-block bg-white dark:bg-black text-black dark:text-white text-sm font-medium px-4 py-2 rounded-full">
                     Maintenance spécialisée
                   </span>
                 </div>
@@ -794,7 +794,7 @@ export default function Arcachon() {
             {/* Carte 4 - Aides financières */}
             <SimpleWrapper>
               <motion.div 
-                className="group relative bg-black dark:bg-white rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-black dark:border-white min-h-[300px] md:min-h-[380px] lg:min-h-[400px] flex flex-col"
+                className="group relative bg-white dark:bg-black rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-black dark:border-white min-h-[300px] md:min-h-[380px] lg:min-h-[400px] flex flex-col"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -808,14 +808,14 @@ export default function Arcachon() {
                   <div className="absolute inset-0 bg-white/10 dark:bg-black/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
                 </div>
 
-                <h3 className="text-2xl font-bold text-white dark:text-black mb-4 text-center">Aides financières à Arcachon</h3>
-                <p className="text-white/90 dark:text-black/90 leading-relaxed text-center text-lg flex-grow">
+                <h3 className="text-2xl font-bold text-black dark:text-white mb-4 text-center">Aides financières à Arcachon</h3>
+                <p className="text-black/90 dark:text-white/90 leading-relaxed text-center text-lg flex-grow">
                   Accompagnement complet pour l'obtention des aides : MaPrimeRénov', CEE, TVA réduite, Éco-PTZ. Nous maximisons vos avantages financiers pour vos projets arcachonnais.
                 </p>
 
                 {/* Badge de service */}
                 <div className="mt-6 text-center">
-                  <span className="inline-block bg-white/20 dark:bg-black/20 text-white dark:text-black text-sm font-medium px-4 py-2 rounded-full">
+                  <span className="inline-block bg-black/20 dark:bg-white/20 text-black dark:text-white text-sm font-medium px-4 py-2 rounded-full">
                     Accompagnement complet
                   </span>
                 </div>
@@ -831,7 +831,7 @@ export default function Arcachon() {
               </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center px-8 py-4 bg-black dark:bg-white text-white dark:text-black font-semibold rounded-full hover:bg-gray-700 dark:hover:bg-gray-200 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-semibold rounded-full hover:bg-gray-700 dark:hover:bg-gray-200 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 Découvrir nos solutions
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
