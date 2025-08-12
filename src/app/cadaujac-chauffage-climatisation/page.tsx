@@ -671,13 +671,7 @@ export default function Cadaujac() {
 
       {/* Section Services - Design Moderne avec les 4 cartes */}
       <section className="relative py-20 overflow-hidden bg-white dark:bg-black z-10">
-        {/* Éléments décoratifs de fond */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-10 right-20 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
-          <div className="absolute bottom-10 left-20 w-96 h-96 bg-green-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-2000"></div>
-        </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4">
+        {}<div className="relative z-10 max-w-7xl mx-auto px-4">
           <SimpleWrapper>
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-light text-gray-900 dark:text-white mb-6">
