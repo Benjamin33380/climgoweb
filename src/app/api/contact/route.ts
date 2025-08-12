@@ -14,19 +14,34 @@ export async function POST(req: NextRequest) {
     }
 
     // Configuration du transporteur SMTP pour OVH
-    const transporter = nodemailer.createTransport({
-      host: 'ssl0.ovh.net', // Serveur SMTP OVH
-      port: 587,
-      secure: false, // STARTTLS
-      auth: {
-        user: process.env.SMTP_USER, // contact@climgo.fr
-        pass: process.env.SMTP_PASS, // benclimgo06
-      },
-      tls: {
-        rejectUnauthorized: false,
-        ciphers: 'SSLv3'
-      }
-    });
+    let transporter;
+    
+    // Essayer d'abord avec port 587 (STARTTLS)
+    try {
+      transporter = nodemailer.createTransport({
+        host: 'smtp.climgo.fr',
+        port: 587,
+        secure: false, // STARTTLS
+        auth: {
+          user: process.env.SMTP_USER,
+          pass: process.env.SMTP_PASS,
+        },
+        tls: {
+          rejectUnauthorized: false
+        }
+      });
+    } catch (error) {
+      // Si ça échoue, essayer avec port 465 (SSL)
+      transporter = nodemailer.createTransport({
+        host: 'smtp.climgo.fr',
+        port: 465,
+        secure: true, // SSL
+        auth: {
+          user: process.env.SMTP_USER,
+          pass: process.env.SMTP_PASS,
+        }
+      });
+    }
 
     // Template de l'email
     const emailContent = `
