@@ -158,14 +158,14 @@ export default function GoogleReviews({ placeId }: GoogleReviewsProps) {
                 key={`${review.id || review.time}-${Math.floor(index / reviews.length)}`}
                 className="flex-shrink-0 w-[360px] mx-2"
               >
-                <div className="bg-white/80 dark:bg-[#2a2a2a]/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-600/30 h-[280px] flex flex-col hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                <div className="bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-700 h-[280px] flex flex-col hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                   <div className="flex items-center mb-4">
                     <Image
                       src={review.profile_photo_url}
                       alt={review.author_name}
                       width={48}
                       height={48}
-                      className="w-12 h-12 rounded-full mr-3 object-cover border-2 border-gray-200 dark:border-gray-600"
+                      className="w-12 h-12 rounded-full mr-3 object-cover border-2 border-gray-200 dark:border-gray-500"
                       onError={(e) => {
                         e.currentTarget.src = '/favicon/android-chrome-192x192.png';
                       }}
@@ -192,7 +192,7 @@ export default function GoogleReviews({ placeId }: GoogleReviewsProps) {
                       href={review.author_url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-600 dark:text-blue-400 hover:underline transition-colors font-medium"
+                      className="text-blue-600 dark:text-blue-400 hover:text-blue-500 dark:hover:text-blue-300 hover:underline transition-colors font-medium"
                     >
                       Google →
                     </a>
@@ -228,7 +228,7 @@ export default function GoogleReviews({ placeId }: GoogleReviewsProps) {
                 href="https://g.page/r/CYU8G8pY5uo1EBM/review"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-white dark:bg-gray-800 border-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700 font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-xl transition-all duration-300 transform hover:scale-105 text-sm sm:text-base"
+                className="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-white dark:bg-black border-2 border-blue-600 dark:border-white text-blue-600 dark:text-white hover:bg-blue-50 dark:hover:bg-gray-900 font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-xl transition-all duration-300 transform hover:scale-105 text-sm sm:text-base"
               >
                 <svg className="w-4 sm:w-5 h-4 sm:h-5 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
