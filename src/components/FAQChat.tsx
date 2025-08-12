@@ -129,7 +129,7 @@ export default function FAQChat({
                           <p className="text-sm leading-relaxed">{faq.answer}</p>
                         </div>
                       </div>
-                      <div className="ml-3 flex-shrink-0 flex items-end flex-col">
+                      <div className="ml-3 flex-shrink-0 flex items-end">
                         <div className="w-8 h-8 flex items-center justify-center">
                           <Logo3D 
                             glbUrl="/favicon/logo.glb" 
@@ -137,7 +137,13 @@ export default function FAQChat({
                             className="w-6 h-6"
                           />
                         </div>
-                        <p className="text-xs text-gray-400 dark:text-gray-500 mt-1">Expert ClimGO • À l'instant</p>
+                      </div>
+                    </div>
+                    
+                    {/* Footer avec nom expert */}
+                    <div className="mt-2 flex justify-end">
+                      <div className="text-right">
+                        <p className="text-xs text-gray-400 dark:text-gray-500">Expert ClimGO • À l'instant</p>
                       </div>
                     </div>
                   </motion.div>
