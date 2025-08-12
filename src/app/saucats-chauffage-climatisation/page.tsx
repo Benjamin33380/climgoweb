@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -851,24 +852,8 @@ export default function Saucats() {
       <FAQChat 
         title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Saucats"
-        faqs={[
-          {
-            question: "Quels équipements installez-vous à Saucats ?",
-            answer: "Nous installons pompes à chaleur, climatiseurs, chauffe-eaux et systèmes thermiques performants à Saucats, avec une attention particulière à l'intégration dans l'environnement naturel."
-          },
-          {
-            question: "Puis-je bénéficier d'aides pour mon installation ?",
-            answer: "Oui, nous vous guidons pour MaPrimeRénov', les CEE, TVA réduite et autres aides disponibles à Saucats. Notre accompagnement administratif simplifie toutes vos démarches."
-          },
-          {
-            question: "Vous couvrez toute la commune de Saucats ?",
-            answer: "Oui, nous intervenons dans tous les quartiers de Saucats, y compris les zones périurbaines et résidentielles, même dans les secteurs les plus isolés."
-          },
-          {
-            question: "Comment adaptez-vous vos installations à l'environnement forestier ?",
-            answer: "Nous sélectionnons des équipements silencieux et discrets, adaptés à l'environnement naturel de Saucats. Chaque installation respecte l'intégration paysagère et la tranquillité des lieux."
-          }
-        ]}
+        faqs={getCityFAQSet('saucats')}
+        initials={getCityInitials('saucats')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"

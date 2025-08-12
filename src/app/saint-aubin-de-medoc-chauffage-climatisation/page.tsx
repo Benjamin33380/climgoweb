@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -840,24 +841,8 @@ export default function SaintAubinDeMedoc() {
       <FAQChat 
         title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Saint-Aubin-de-Médoc"
-        faqs={[
-          {
-            question: "Quels équipements installez-vous à Saint-Aubin-de-Médoc ?",
-            answer: "Pompes à chaleur, climatisation, chauffe-eaux, planchers chauffants… Nous intervenons dans tous les quartiers de Saint-Aubin."
-          },
-          {
-            question: "Y a-t-il des aides spécifiques à Saint-Aubin-de-Médoc ?",
-            answer: "Oui, en plus des aides nationales, certaines aides locales existent. ClimGO vous guide à chaque étape."
-          },
-          {
-            question: "Couvrez-vous toute la commune de Saint-Aubin-de-Médoc ?",
-            answer: "Oui, nos équipes se déplacent dans tous les quartiers, y compris La Canau et les zones pavillonnaires. ClimGO intervient dans tous les secteurs : allée du Bourdieu, rue de la Gravière, lotissement Les Chênes, route de Castelnau."
-          },
-          {
-            question: "Comment adaptez-vous vos installations au cadre boisé de Saint-Aubin ?",
-            answer: "Le relief plat, les haies hautes et l'ombre permanente influencent le choix des équipements à Saint-Aubin-de-Médoc. Nos techniciens prennent en compte l'orientation, l'ensoleillement et l'accessibilité pour une installation optimale. Nous veillons à préserver la tranquillité sonore et l'esthétique extérieure, souvent recherchées dans les zones pavillonnaires entourées de pins."
-          }
-        ]}
+        faqs={getCityFAQSet('saint-aubin-de-medoc')}
+        initials={getCityInitials('saint-aubin-de-medoc')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"

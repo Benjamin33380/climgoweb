@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -842,24 +843,8 @@ export default function LegeCapFerret() {
       <FAQChat 
         title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Lège-Cap-Ferret"
-        faqs={[
-          {
-            question: "Quels sont vos services à Lège-Cap-Ferret ?",
-            answer: "Nous assurons l'installation, l'entretien et le dépannage de systèmes de chauffage, climatisation et production d'eau chaude sur toute la presqu'île de Lège-Cap-Ferret, du Four à La Vigne."
-          },
-          {
-            question: "Installez-vous des systèmes adaptés aux résidences secondaires ?",
-            answer: "Oui ! Nos systèmes sont connectés et conçus pour une gestion à distance, idéale pour les maisons secondaires sur la presqu'île. Vous pouvez contrôler votre installation depuis n'importe où."
-          },
-          {
-            question: "Travaillez-vous dans les villages comme Le Canon ou La Vigne ?",
-            answer: "Absolument ! Nous intervenons dans tous les quartiers de Lège-Cap-Ferret : Claouey, Grand Piquey, Le Canon, La Vigne, Cap-Ferret, pour tous vos projets thermiques."
-          },
-          {
-            question: "Comment vos équipements résistent-ils au climat marin ?",
-            answer: "Nos équipements sont traités anti-corrosion et posés sur supports spécifiques pour éviter l'encrassement. Nous respectons les règles d'urbanisme locales avec des solutions intégrées discrètes."
-          }
-        ]}
+        faqs={getCityFAQSet('lege-cap-ferret')}
+        initials={getCityInitials('lege-cap-ferret')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"

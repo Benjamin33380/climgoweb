@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -844,24 +845,8 @@ export default function Floirac() {
       <FAQChat 
         title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Floirac"
-        faqs={[
-          {
-            question: "Quels équipements installez-vous à Floirac ?",
-            answer: "Pompes à chaleur, climatisation réversible, chauffe-eaux performants… Nous intervenons dans tous les quartiers de Floirac, du coteau de la Garonne à la rue Jules Guesde."
-          },
-          {
-            question: "Puis-je bénéficier d'aides locales à Floirac ?",
-            answer: "Oui, des aides locales peuvent s'ajouter aux subventions nationales. ClimGO vous accompagne dans la constitution de vos dossiers."
-          },
-          {
-            question: "Travaillez-vous aussi avec les logements collectifs à Floirac ?",
-            answer: "Absolument, nous équipons aussi bien les maisons individuelles que les copropriétés ou immeubles à Floirac. Nous maîtrisons les contraintes d'intégration en milieu urbain dense."
-          },
-          {
-            question: "Comment adaptez-vous vos installations au relief de Floirac ?",
-            answer: "Le relief de Floirac, avec ses zones hautes et basses, et la diversité des habitats nécessitent une adaptation précise des puissances et technologies utilisées. Nous optimisons chaque installation en fonction de l'exposition et de l'isolation réelle du logement."
-          }
-        ]}
+        faqs={getCityFAQSet('floirac')}
+        initials={getCityInitials('floirac')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"

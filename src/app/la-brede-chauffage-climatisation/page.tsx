@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -844,24 +845,8 @@ export default function LaBrede() {
       <FAQChat 
         title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à La Brède"
-        faqs={[
-          {
-            question: "Quels équipements installez-vous à La Brède ?",
-            answer: "Pompes à chaleur, climatisations, chauffe-eaux... Nous proposons toutes les solutions thermiques modernes pour les habitants de La Brède, du centre-bourg aux hameaux environnants."
-          },
-          {
-            question: "Puis-je bénéficier d'aides locales à La Brède ?",
-            answer: "Oui, certaines aides locales ou communautaires peuvent compléter les dispositifs nationaux. Nous vous aidons à constituer votre dossier pour optimiser votre budget travaux."
-          },
-          {
-            question: "Travaillez-vous aussi sur les résidences secondaires à La Brède ?",
-            answer: "Bien sûr, nous intervenons sur les résidences principales et secondaires, en centre comme en périphérie de La Brède. Nos solutions s'adaptent à tous les usages."
-          },
-          {
-            question: "Comment intégrez-vous vos équipements dans le cachet architectural brédois ?",
-            answer: "Le climat tempéré de la région et les contraintes architecturales des quartiers brédois imposent des solutions à la fois performantes et discrètes. Nous intégrons toujours nos équipements dans le respect de l'environnement paysager et du cachet architectural local."
-          }
-        ]}
+        faqs={getCityFAQSet('la-brede')}
+        initials={getCityInitials('la-brede')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"

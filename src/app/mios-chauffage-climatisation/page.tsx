@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -842,24 +843,8 @@ export default function Mios() {
       <FAQChat 
         title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Mios"
-        faqs={[
-          {
-            question: "Quels services proposez-vous à Mios ?",
-            answer: "Nous proposons l'installation, l'entretien et la maintenance de systèmes de chauffage, climatisation, chauffe-eau et pompes à chaleur à Mios. Nos solutions s'adaptent à l'environnement forestier et aux zones humides."
-          },
-          {
-            question: "Travaillez-vous avec des aides financières ?",
-            answer: "Oui, nous vous accompagnons pour bénéficier de MaPrimeRénov', des CEE, de la TVA réduite ou encore de l'Éco-PTZ. Notre équipe vous guide pas à pas dans toutes vos démarches administratives."
-          },
-          {
-            question: "Intervenez-vous dans les zones rurales autour de Mios ?",
-            answer: "Tout à fait ! Nous couvrons Mios et ses alentours pour assurer un service de proximité. Du centre-bourg aux lotissements du Val de l'Eyre, en passant par Lacanau-de-Mios ou la route de Salles."
-          },
-          {
-            question: "Comment adaptez-vous vos installations à l'environnement de Mios ?",
-            answer: "À Mios, nous installons systématiquement sur dalles ventilées ou plots stabilisés pour éviter l'humidité au sol. Nous tenons compte des zones humides et boisées caractéristiques de la commune."
-          }
-        ]}
+        faqs={getCityFAQSet('mios')}
+        initials={getCityInitials('mios')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"

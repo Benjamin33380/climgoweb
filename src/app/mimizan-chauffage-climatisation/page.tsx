@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -842,24 +843,8 @@ export default function Mimizan() {
       <FAQChat 
         title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Mimizan"
-        faqs={[
-          {
-            question: "Quels équipements installez-vous à Mimizan ?",
-            answer: "Nous installons pompes à chaleur, climatiseurs, chauffe-eaux thermodynamiques et systèmes de chauffage adaptés à Mimizan. Nos solutions sont spécialement conçues pour résister au climat océanique et salin."
-          },
-          {
-            question: "Puis-je bénéficier d'aides pour mon installation ?",
-            answer: "Oui, ClimGO vous guide pour obtenir MaPrimeRénov', les CEE, la TVA réduite et autres aides disponibles à Mimizan. Notre équipe vous accompagne dans toutes vos démarches administratives."
-          },
-          {
-            question: "Vous déplacez-vous dans tout Mimizan ?",
-            answer: "Absolument ! Nous intervenons dans tous les quartiers de Mimizan, du centre aux abords de la plage. Du centre-ville de Mimizan-Bourg aux résidences de Mimizan-Plage."
-          },
-          {
-            question: "Comment vos équipements résistent-ils au climat marin ?",
-            answer: "Nos PAC sont spécialement sélectionnées pour leur fiabilité en bord de mer. Nous utilisons des équipements résistants à la corrosion et proposons un entretien rigoureux adapté à l'humidité et au vent marin."
-          }
-        ]}
+        faqs={getCityFAQSet('mimizan')}
+        initials={getCityInitials('mimizan')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"

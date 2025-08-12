@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -843,24 +844,8 @@ export default function Lanton() {
       <FAQChat 
         title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Lanton"
-        faqs={[
-          {
-            question: "Quels sont vos services à Lanton ?",
-            answer: "Nous assurons l'installation, l'entretien et le dépannage de systèmes de chauffage, climatisation et production d'eau chaude à Lanton et ses lieux-dits comme Taussat, Cassy et Blagon."
-          },
-          {
-            question: "Proposez-vous un accompagnement pour les aides ?",
-            answer: "Oui. Nous vous guidons dans les démarches pour obtenir MaPrimeRénov', les CEE, la TVA réduite ou l'Éco-PTZ, selon votre projet à Lanton."
-          },
-          {
-            question: "Intervenez-vous dans les lieux-dits autour de Lanton ?",
-            answer: "Absolument. Nos techniciens se déplacent dans tous les lieux-dits de Lanton, comme Taussat, Cassy ou Blagon, ainsi que Grand Lanton."
-          },
-          {
-            question: "Comment adaptez-vous vos équipements au climat côtier ?",
-            answer: "Nous choisissons des PAC et climatiseurs spécialement traités pour résister aux conditions côtières avec humidité de l'air marin et variations de température, plus systèmes avec pilotage à distance pour maisons secondaires."
-          }
-        ]}
+        faqs={getCityFAQSet('lanton')}
+        initials={getCityInitials('lanton')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"

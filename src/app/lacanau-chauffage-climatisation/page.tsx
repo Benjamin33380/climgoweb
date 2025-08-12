@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -843,24 +844,8 @@ export default function Lacanau() {
       <FAQChat 
         title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Lacanau"
-        faqs={[
-          {
-            question: "Quels sont vos services à Lacanau ?",
-            answer: "Nous assurons l'installation, l'entretien et le dépannage de systèmes de chauffage, climatisation et production d'eau chaude à Lacanau et ses alentours, de Lacanau-Océan au centre-ville."
-          },
-          {
-            question: "Proposez-vous un accompagnement pour les aides ?",
-            answer: "Oui. Nous vous guidons dans les démarches pour obtenir MaPrimeRénov', les CEE, la TVA réduite ou l'Éco-PTZ, selon votre projet à Lacanau."
-          },
-          {
-            question: "Intervenez-vous dans tous les quartiers de Lacanau ?",
-            answer: "Bien sûr. Que vous soyez à Lacanau-Océan, en centre-ville ou près du lac, nous intervenons rapidement et efficacement sur toute la commune."
-          },
-          {
-            question: "Comment vos équipements résistent-ils au climat côtier ?",
-            answer: "Nous privilégions des modèles adaptés au bord de mer, avec protections renforcées et fixations anti-corrosion pour résister au sel, aux vents et aux variations de température."
-          }
-        ]}
+        faqs={getCityFAQSet('lacanau')}
+        initials={getCityInitials('lacanau')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"

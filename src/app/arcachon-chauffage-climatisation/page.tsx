@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -317,7 +318,7 @@ export default function Arcachon() {
                 </p>
                 
                 <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
-                  Notr équipe d'<strong className="text-gray-900 dark:text-white">experts certifiés</strong> intervient dans tous les quartiers d'Arcachon, des villas Belle Époque aux résidences contemporaines, en respectant les spécificités architecturales locales.
+                  Notre équipe d'<strong className="text-gray-900 dark:text-white">experts certifiés</strong> intervient dans tous les quartiers d'Arcachon, des villas Belle Époque aux résidences contemporaines, en respectant les spécificités architecturales locales.
                 </p>
                 
                 <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
@@ -851,24 +852,8 @@ export default function Arcachon() {
       <FAQChat 
         title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Arcachon"
-        faqs={[
-          {
-            question: "Combien de temps dure une intervention de climatisation ?",
-            answer: "Cela dépend de la complexité ! Une simple réparation prend 1-2h, tandis qu'une installation complète peut nécessiter une journée. Je vous donne toujours une estimation précise avant de commencer."
-          },
-          {
-            question: "Vous intervenez en urgence le week-end ?",
-            answer: "Absolument ! Je suis disponible 7j/7 pour les urgences de chauffage et climatisation. Panne totale, système qui ne démarre pas, problème de sécurité... Je me déplace rapidement sur Arcachon et ses environs."
-          },
-          {
-            question: "Comment gérez-vous les contraintes patrimoniales à Arcachon ?",
-            answer: "Je connais parfaitement les réglementations d'Arcachon, notamment pour la Ville d'Hiver. Je propose des solutions discrètes et respectueuses du patrimoine architectural, avec tous les dossiers administratifs nécessaires."
-          },
-          {
-            question: "Vos équipements résistent-ils aux embruns salés ?",
-            answer: "Absolument ! Tous nos équipements bénéficient de traitements anticorrosion spéciaux et de supports surélevés. Je sélectionne uniquement des matériaux adaptés à l'environnement marin d'Arcachon."
-          }
-        ]}
+        faqs={getCityFAQSet('arcachon')}
+        initials={getCityInitials('arcachon')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"

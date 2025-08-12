@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -843,24 +844,8 @@ export default function Cestas() {
       <FAQChat 
         title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Cestas"
-        faqs={[
-          {
-            question: "Quels équipements installez-vous à Cestas ?",
-            answer: "Pompes à chaleur air/eau, climatisation réversible, chauffe-eaux thermodynamiques, radiateurs performants… Nous intervenons dans tous les quartiers de Cestas, du Bourg à Gazinet, de Pierroton à Toctoucau."
-          },
-          {
-            question: "Puis-je bénéficier d'aides locales à Cestas ?",
-            answer: "Oui, en plus des aides nationales comme MaPrimeRénov', certaines subventions locales sont parfois disponibles. Nous vous accompagnons dans toutes vos démarches pour maximiser vos aides."
-          },
-          {
-            question: "Intervenez-vous dans les zones pavillonnaires de Cestas ?",
-            answer: "Oui, nous intervenons dans l'ensemble de la commune, que ce soit dans les quartiers résidentiels calmes ou les secteurs plus isolés. Nos équipes connaissent parfaitement le terrain."
-          },
-          {
-            question: "Comment adaptez-vous vos installations aux terrains de Cestas ?",
-            answer: "Les terrains sablonneux et les expositions sud-ouest fréquentes nous demandent une précision particulière. Chaque projet est dimensionné selon l'orientation, la surface et l'isolation du logement."
-          }
-        ]}
+        faqs={getCityFAQSet('cestas')}
+        initials={getCityInitials('cestas')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"

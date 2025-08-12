@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -842,24 +843,8 @@ export default function LaTesteDeBuch() {
       <FAQChat 
         title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à La Teste-de-Buch"
-        faqs={[
-          {
-            question: "Quels sont vos services à La Teste-de-Buch ?",
-            answer: "Nous assurons l'installation, l'entretien et le dépannage de systèmes de chauffage, climatisation et production d'eau chaude à La Teste-de-Buch et tous ses quartiers : Pyla-sur-Mer, La Hume, le Port, Cazaux et le centre-ville."
-          },
-          {
-            question: "Proposez-vous un accompagnement pour les aides ?",
-            answer: "Oui, absolument ! Nous vous guidons dans toutes les démarches pour obtenir MaPrimeRénov', les CEE, la TVA réduite ou l'Éco-PTZ, selon votre projet et votre situation."
-          },
-          {
-            question: "Intervenez-vous dans tous les quartiers de La Teste-de-Buch ?",
-            answer: "Absolument. Nos techniciens se déplacent dans tous les quartiers de La Teste-de-Buch, comme Cazaux, le centre-ville, le port ostréicole, La Hume et Pyla-sur-Mer. Service réactif garanti !"
-          },
-          {
-            question: "Vos équipements résistent-ils au climat littoral ?",
-            answer: "Parfaitement ! Nous utilisons des matériaux anticorrosion spécialement conçus pour résister à l'humidité saline et aux vents côtiers. Nos installations sont adaptées aux contraintes du littoral atlantique."
-          }
-        ]}
+        faqs={getCityFAQSet('la-teste-de-buch')}
+        initials={getCityInitials('la-teste-de-buch')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"

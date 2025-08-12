@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -842,24 +843,8 @@ export default function Merignac() {
       <FAQChat 
         title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Mérignac"
-        faqs={[
-          {
-            question: "Quels équipements installez-vous à Mérignac ?",
-            answer: "Pompes à chaleur air/eau, climatisation réversible, chauffe-eaux thermodynamiques, radiateurs performants… Nous intervenons dans toute la commune de Mérignac, adaptés aux quartiers résidentiels et zones urbaines."
-          },
-          {
-            question: "Puis-je bénéficier d'aides locales à Mérignac ?",
-            answer: "Oui, en plus des aides nationales comme MaPrimeRénov', certaines subventions locales sont parfois disponibles. Nous vous guidons pas à pas dans vos démarches administratives."
-          },
-          {
-            question: "Intervenez-vous dans les différents quartiers de Mérignac ?",
-            answer: "Absolument ! Nous intervenons dans tous les quartiers d'Arlac, Capeyron, Beaudésert, Bourranville, en adaptant notre logistique pour garantir la qualité sans compromis."
-          },
-          {
-            question: "Comment adaptez-vous vos installations à la densité urbaine ?",
-            answer: "Nos techniciens prennent en compte la densité urbaine et les contraintes acoustiques de Mérignac pour garantir un confort maximal et une intégration discrète des équipements dans l'environnement résidentiel."
-          }
-        ]}
+        faqs={getCityFAQSet('merignac')}
+        initials={getCityInitials('merignac')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"

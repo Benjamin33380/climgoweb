@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -842,24 +843,8 @@ export default function Sanguinet() {
       <FAQChat 
         title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Sanguinet"
-        faqs={[
-          {
-            question: "Quels équipements installez-vous à Sanguinet ?",
-            answer: "Nous installons pompes à chaleur, climatiseurs, chauffe-eaux thermodynamiques et solutions de chauffage sur mesure à Sanguinet, adaptés au climat océanique humide de la région."
-          },
-          {
-            question: "Puis-je bénéficier d'aides pour mon installation ?",
-            answer: "Oui, ClimGO vous guide pour obtenir MaPrimeRénov', les CEE, la TVA réduite et d'autres aides disponibles à Sanguinet. Nous nous occupons de toutes les démarches administratives."
-          },
-          {
-            question: "Vous déplacez-vous dans tout Sanguinet ?",
-            answer: "Absolument ! Nous intervenons dans tous les quartiers de Sanguinet, du centre jusqu'aux abords du lac, en passant par Canteloup et les nouveaux lotissements."
-          },
-          {
-            question: "Vos équipements résistent-ils aux conditions du lac ?",
-            answer: "Parfaitement ! Nous sélectionnons des équipements traités anticorrosion, résistants à l'humidité et à la salinité. Nos fixations sont renforcées et adaptées au sol sableux de la région."
-          }
-        ]}
+        faqs={getCityFAQSet('sanguinet')}
+        initials={getCityInitials('sanguinet')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"

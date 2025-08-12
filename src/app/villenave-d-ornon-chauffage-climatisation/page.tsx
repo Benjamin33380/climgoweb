@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -851,24 +852,8 @@ export default function VillenaveDornon() {
       <FAQChat 
         title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Villenave-d'Ornon"
-        faqs={[
-          {
-            question: "Quels équipements installez-vous à Villenave-d'Ornon ?",
-            answer: "Pompes à chaleur air/eau, climatisation réversible, chauffe-eaux thermodynamiques, radiateurs performants… Nous intervenons dans tous les quartiers de Villenave-d'Ornon."
-          },
-          {
-            question: "Puis-je bénéficier d'aides locales à Villenave-d'Ornon ?",
-            answer: "Oui, en plus des aides nationales comme MaPrimeRénov', certaines subventions locales peuvent être disponibles. Nous vous guidons dans toutes les démarches."
-          },
-          {
-            question: "Travaillez-vous dans le centre-ville de Villenave-d'Ornon ?",
-            answer: "Absolument. Nous intervenons dans tous les secteurs, y compris les zones résidentielles et à circulation réglementée."
-          },
-          {
-            question: "Comment adaptez-vous vos installations aux copropriétés ?",
-            answer: "Nous maîtrisons parfaitement les contraintes de copropriété : autorisations, règlements intérieurs, syndics. Chaque installation respecte les règles collectives tout en optimisant votre confort individuel."
-          }
-        ]}
+        faqs={getCityFAQSet('villenave-d-ornon')}
+        initials={getCityInitials('villenave-d-ornon')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"

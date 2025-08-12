@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -842,24 +843,8 @@ export default function Ares() {
       <FAQChat 
         title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Arès"
-        faqs={[
-          {
-            question: "Quels sont vos services à Arès ?",
-            answer: "Nous assurons l'installation, l'entretien et le dépannage de systèmes de chauffage, climatisation et production d'eau chaude à Arès et ses lieux-dits : Jane de Boy, Quinconces, Le Coulin, Domaine de Saint-Brice."
-          },
-          {
-            question: "Proposez-vous un accompagnement pour les aides ?",
-            answer: "Oui ! Nous vous guidons dans les démarches pour obtenir MaPrimeRénov', les CEE, la TVA réduite ou l'Éco-PTZ, selon votre projet. Notre accompagnement administratif est complet."
-          },
-          {
-            question: "Intervenez-vous dans les lieux-dits autour d'Arès ?",
-            answer: "Absolument ! Nos techniciens se déplacent dans tous les lieux-dits d'Arès : Domaine de Saint-Brice, Quinconces, Jane de Boy, Le Coulin, avec notre expertise locale."
-          },
-          {
-            question: "Comment adaptez-vous vos installations au climat marin ?",
-            answer: "À Arès, nous utilisons des unités renforcées anticorrosion, fixées sur plots surélevés. Nos conseils prennent en compte les zones inondables et la proximité des zones protégées pour des installations respectueuses."
-          }
-        ]}
+        faqs={getCityFAQSet('ares')}
+        initials={getCityInitials('ares')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"

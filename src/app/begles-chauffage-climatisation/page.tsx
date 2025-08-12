@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -842,24 +843,8 @@ export default function Begles() {
       <FAQChat 
         title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Bègles"
-        faqs={[
-          {
-            question: "Quels équipements installez-vous à Bègles ?",
-            answer: "Pompes à chaleur air/eau, climatisation réversible, chauffe-eaux thermodynamiques, radiateurs performants… Nous intervenons dans tous les quartiers de Bègles : centre-ville, quartier Terre Sud, ZAC des Sècheries."
-          },
-          {
-            question: "Puis-je bénéficier d'aides locales à Bègles ?",
-            answer: "Oui, en plus des aides nationales comme MaPrimeRénov', certaines subventions locales sont parfois disponibles. Nous vous accompagnons dans toutes vos démarches administratives."
-          },
-          {
-            question: "Intervenez-vous dans les zones pavillonnaires de Bègles ?",
-            answer: "Oui, nous intervenons dans l'ensemble de la commune, que ce soit dans les quartiers résidentiels calmes ou les secteurs plus isolés, des échoppes proches de la gare aux résidences neuves."
-          },
-          {
-            question: "Comment adaptez-vous vos installations au tissu urbain béglais ?",
-            answer: "Entre mitoyenneté forte, petits jardins et fortes amplitudes thermiques, nous adaptons nos solutions selon l'orientation, l'espace disponible et les habitudes de vie. PAC fixées sur plots muraux pour limiter nuisances."
-          }
-        ]}
+        faqs={getCityFAQSet('begles')}
+        initials={getCityInitials('begles')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"

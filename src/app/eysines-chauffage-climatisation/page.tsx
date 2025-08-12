@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -844,24 +845,8 @@ export default function Eysines() {
       <FAQChat 
         title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Eysines"
-        faqs={[
-          {
-            question: "Quels équipements installez-vous à Eysines ?",
-            answer: "Pompes à chaleur, climatisation réversible, chauffe-eaux performants… Nous couvrons tous les quartiers de la ville, du Vigean à Migelane en passant par La Forêt et La Lescombes."
-          },
-          {
-            question: "Puis-je bénéficier d'aides locales à Eysines ?",
-            answer: "Oui, et ClimGO vous accompagne à chaque étape pour maximiser vos subventions et vous aider dans toutes vos démarches administratives."
-          },
-          {
-            question: "Intervenez-vous aussi dans les résidences collectives à Eysines ?",
-            answer: "Absolument, nos solutions s'adaptent à tous les types de bâtiments, du pavillon au collectif. Nous maîtrisons les contraintes des copropriétés et logements en bande."
-          },
-          {
-            question: "Comment adaptez-vous vos installations au bâti hétérogène d'Eysines ?",
-            answer: "Le bâti à Eysines est très hétérogène : pavillons des années 60, logements en bande, maisons neuves RT2012… Chaque situation demande une étude personnalisée de la puissance, de l'emplacement et du type d'équipement. Nous tenons également compte des contraintes de voisinage pour minimiser le bruit extérieur."
-          }
-        ]}
+        faqs={getCityFAQSet('eysines')}
+        initials={getCityInitials('eysines')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"

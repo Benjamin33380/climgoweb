@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -843,24 +844,8 @@ export default function Canejan() {
       <FAQChat 
         title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Canéjan"
-        faqs={[
-          {
-            question: "Quels équipements installez-vous à Canéjan ?",
-            answer: "Pompes à chaleur air/eau, climatisation réversible, chauffe-eaux thermodynamiques, radiateurs performants… Nous intervenons dans tous les quartiers de Canéjan, du Bourg à Gazinet en passant par Camparian."
-          },
-          {
-            question: "Puis-je bénéficier d'aides locales à Canéjan ?",
-            answer: "Oui, en plus des aides nationales comme MaPrimeRénov', certaines subventions locales sont parfois disponibles. Nous vous accompagnons dans toutes vos démarches administratives."
-          },
-          {
-            question: "Intervenez-vous dans les zones pavillonnaires de Canéjan ?",
-            answer: "Oui, nous intervenons dans l'ensemble de la commune, que ce soit dans les quartiers résidentiels calmes ou les secteurs plus isolés. Notre expertise couvre tous les types d'habitations."
-          },
-          {
-            question: "Comment gérez-vous les terrains en pente à Canéjan ?",
-            answer: "Les terrains en pente douce et la forte présence végétale exigent une installation rigoureuse des groupes extérieurs : sur dalle béton, avec ancrages spécifiques ou plots antivibratiles. Nous adaptons chaque installation aux contraintes du terrain."
-          }
-        ]}
+        faqs={getCityFAQSet('canejan')}
+        initials={getCityInitials('canejan')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"

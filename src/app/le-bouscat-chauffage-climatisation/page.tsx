@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -844,24 +845,8 @@ export default function LeBouscat() {
       <FAQChat 
         title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation au Bouscat"
-        faqs={[
-          {
-            question: "Quels équipements installez-vous au Bouscat ?",
-            answer: "Pompes à chaleur air/eau, climatisation réversible, chauffe-eaux thermodynamiques, radiateurs performants… Nous intervenons dans tous les quartiers du Bouscat : Saint-Antoine, Chêneraie, Grand Lebrun, etc."
-          },
-          {
-            question: "Puis-je bénéficier d'aides locales au Bouscat ?",
-            answer: "Oui, en plus des aides nationales comme MaPrimeRénov', certaines subventions locales sont parfois disponibles. Nous vous accompagnons dans toutes vos démarches."
-          },
-          {
-            question: "Intervenez-vous dans les zones pavillonnaires du Bouscat ?",
-            answer: "Oui, nous intervenons dans l'ensemble de la commune, que ce soit dans les quartiers résidentiels calmes ou les secteurs plus isolés. Nos solutions s'intègrent aussi bien dans les logements anciens que dans les projets de rénovation thermique."
-          },
-          {
-            question: "Comment adaptez-vous vos équipements à l'architecture du Bouscat ?",
-            answer: "L'architecture du Bouscat demande des installations discrètes et efficaces. Chez ClimGO, nous adaptons nos systèmes aux surfaces vitrées, aux murs épais typiques des échoppes, et aux contraintes des rénovations urbaines. Nos équipements sont sélectionnés pour leur faible nuisance sonore et leur design."
-          }
-        ]}
+        faqs={getCityFAQSet('le-bouscat')}
+        initials={getCityInitials('le-bouscat')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"

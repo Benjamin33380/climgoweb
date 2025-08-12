@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -844,24 +845,8 @@ export default function Talence() {
       <FAQChat 
         title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Talence"
-        faqs={[
-          {
-            question: "Quels équipements installez-vous à Talence ?",
-            answer: "Pompes à chaleur air/eau, climatisation réversible, chauffe-eaux thermodynamiques, radiateurs performants… Nous intervenons dans tous les quartiers de Talence, des campus universitaires au centre-ville."
-          },
-          {
-            question: "Puis-je bénéficier d'aides locales à Talence ?",
-            answer: "Oui, en plus des aides nationales comme MaPrimeRénov', certaines subventions locales sont parfois disponibles. Nous vous guidons pas à pas dans toutes vos démarches administratives."
-          },
-          {
-            question: "Travaillez-vous dans le centre-ville de Talence ?",
-            answer: "Absolument ! Nous intervenons même dans les zones à accès restreint, en adaptant notre logistique pour garantir la qualité sans compromis. Service adapté au tissu urbain dense."
-          },
-          {
-            question: "Vos installations conviennent-elles aux logements étudiants ?",
-            answer: "Parfaitement ! Nous proposons des solutions économiques et performantes spécialement adaptées aux résidences étudiantes, avec optimisation sonore et efficacité énergétique maximale."
-          }
-        ]}
+        faqs={getCityFAQSet('talence')}
+        initials={getCityInitials('talence')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"

@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -843,24 +844,8 @@ export default function BelinBeliet() {
       <FAQChat 
         title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Belin-Béliet"
-        faqs={[
-          {
-            question: "Quels services proposez-vous à Belin-Béliet ?",
-            answer: "Nous proposons l'installation, l'entretien et la maintenance de systèmes de chauffage, climatisation, chauffe-eau et pompes à chaleur à Belin-Béliet, dans tous les quartiers et lieux-dits."
-          },
-          {
-            question: "Travaillez-vous avec des aides financières ?",
-            answer: "Oui, nous vous accompagnons pour bénéficier de MaPrimeRénov', des CEE, de la TVA réduite ou encore de l'Éco-PTZ, afin de rendre vos projets plus accessibles."
-          },
-          {
-            question: "Intervenez-vous dans les zones rurales autour de Belin-Béliet ?",
-            answer: "Tout à fait. Nous couvrons Belin-Béliet et ses alentours pour assurer un service de proximité dans tous les lieux-dits comme Guiton, le Puch, Pernaud ou le Télègraphe."
-          },
-          {
-            question: "Comment adaptez-vous vos installations à l'environnement forestier ?",
-            answer: "Belin-Béliet impose des critères techniques précis liés à la forêt environnante : risques de résine, humidité des sols, accès parfois difficiles. Nous prévoyons des installations sur plots ou rehausses, avec un dimensionnement sur-mesure selon l'usage."
-          }
-        ]}
+        faqs={getCityFAQSet('belin-beliet')}
+        initials={getCityInitials('belin-beliet')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"

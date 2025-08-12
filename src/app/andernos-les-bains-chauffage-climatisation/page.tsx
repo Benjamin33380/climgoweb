@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -851,24 +852,8 @@ export default function Andernos() {
       <FAQChat 
         title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Andernos-les-Bains"
-        faqs={[
-          {
-            question: "Combien de temps dure une intervention de climatisation ?",
-            answer: "Cela dépend de la complexité ! Une simple réparation prend 1-2h, tandis qu'une installation complète peut nécessiter une journée. Je vous donne toujours une estimation précise avant de commencer."
-          },
-          {
-            question: "Vous intervenez en urgence le week-end ?",
-            answer: "Absolument ! Je suis disponible 7j/7 pour les urgences de chauffage et climatisation. Panne totale, système qui ne démarre pas, problème de sécurité... Je me déplace rapidement sur Andernos et ses environs."
-          },
-          {
-            question: "Comment se déroule la mise aux normes de mon installation ?",
-            answer: "Je commence par un diagnostic complet de votre installation. Ensuite, je vous présente un devis détaillé avec les travaux nécessaires. Chaque étape respecte les normes en vigueur pour votre sécurité et votre confort."
-          },
-          {
-            question: "Vos tarifs sont-ils transparents ? Pas de surprise sur la facture ?",
-            answer: "Transparence totale ! Je vous remets systématiquement un devis détaillé avant toute intervention. Tarif horaire fixe, matériaux au prix coûtant, aucun frais caché. Votre confiance est ma priorité."
-          }
-        ]}
+        faqs={getCityFAQSet('andernos-les-bains')}
+        initials={getCityInitials('andernos-les-bains')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"

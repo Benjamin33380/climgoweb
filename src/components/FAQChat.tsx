@@ -13,6 +13,7 @@ interface FAQChatProps {
   title?: string;
   subtitle?: string;
   faqs?: FAQItem[];
+  initials?: string[];
   ctaTitle?: string;
   ctaSubtitle?: string;
   phoneNumber?: string;
@@ -42,6 +43,7 @@ export default function FAQChat({
   title = "Questions Fréquentes",
   subtitle = "Nos réponses à vos préoccupations les plus courantes",
   faqs = defaultFAQs,
+  initials = ["JD", "ML", "SP", "AB"],
   ctaTitle = "Une autre question ?",
   ctaSubtitle = "N'hésitez pas à nous contacter directement !",
   phoneNumber = "0123456789",
@@ -87,7 +89,7 @@ export default function FAQChat({
                   <div className="flex items-start mb-3 md:mb-4 h-16 md:h-20">
                     <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-gray-400 to-gray-500 rounded-full flex items-center justify-center mr-2 md:mr-3 flex-shrink-0 shadow-md">
                       <span className="text-white font-semibold text-xs md:text-sm">
-                        {index === 0 ? "JD" : index === 1 ? "ML" : index === 2 ? "SP" : "AB"}
+                        {initials[index] || "??"}
                       </span>
                     </div>
                     <div className="flex-1">

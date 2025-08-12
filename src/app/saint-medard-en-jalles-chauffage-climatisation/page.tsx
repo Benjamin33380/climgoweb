@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -840,24 +841,8 @@ export default function SaintMedardEnJalles() {
       <FAQChat 
         title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Saint-Médard-en-Jalles"
-        faqs={[
-          {
-            question: "Quels systèmes installez-vous à Saint-Médard-en-Jalles ?",
-            answer: "Nous proposons des pompes à chaleur, climatisations, chauffe-eaux et radiateurs adaptés à tous les quartiers de Saint-Médard."
-          },
-          {
-            question: "Puis-je bénéficier d'aides à Saint-Médard-en-Jalles ?",
-            answer: "Oui, les aides nationales et parfois locales sont disponibles. Nous vous accompagnons dans toutes vos démarches."
-          },
-          {
-            question: "Intervenez-vous dans tous les quartiers ?",
-            answer: "Absolument. De Magudas à Corbiac, nous couvrons toute la commune. ClimGO intervient à Magudas, Hastignan, Gajac, ou encore Cérillan."
-          },
-          {
-            question: "Comment adaptez-vous vos installations aux conditions forestières ?",
-            answer: "Entre les zones boisées, les sols argileux et la proximité des forêts, nos équipes maîtrisent les contraintes locales : bruit, ventilation, sécurité et longévité des équipements. Nous proposons des systèmes réversibles discrets et performants."
-          }
-        ]}
+        faqs={getCityFAQSet('saint-medard-en-jalles')}
+        initials={getCityInitials('saint-medard-en-jalles')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"

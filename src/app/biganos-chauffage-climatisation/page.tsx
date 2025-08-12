@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -851,24 +852,8 @@ export default function Biganos() {
       <FAQChat 
         title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Biganos"
-        faqs={[
-          {
-            question: "Quelle est la durée d'intervention pour une installation à Biganos ?",
-            answer: "Cela varie selon la complexité ! Une installation simple peut prendre une journée, tandis qu'un système complet nécessite 2-3 jours. Je vous fournis toujours un planning précis avant de commencer."
-          },
-          {
-            question: "Intervenez-vous en urgence sur Biganos le week-end ?",
-            answer: "Bien sûr ! Service d'urgence 7j/7 pour les pannes de chauffage ou climatisation. Problème de sécurité, panne totale en plein hiver... Je me déplace rapidement sur Biganos et le Bassin d'Arcachon."
-          },
-          {
-            question: "Comment adaptez-vous vos installations au climat de Biganos ?",
-            answer: "J'adapte chaque installation aux spécificités locales : humidité du bassin, protection contre l'air marin, optimisation selon l'orientation. Chaque équipement est choisi pour résister parfaitement au climat local."
-          },
-          {
-            question: "Vos devis sont-ils vraiment sans engagement ?",
-            answer: "Absolument ! Devis 100% gratuit et sans engagement. Je me déplace à Biganos pour étudier votre projet, vous présente les meilleures solutions et vous laisse le temps de réfléchir en toute tranquillité."
-          }
-        ]}
+        faqs={getCityFAQSet('biganos')}
+        initials={getCityInitials('biganos')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"

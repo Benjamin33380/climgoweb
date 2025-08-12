@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -843,24 +844,8 @@ export default function LeBarp() {
       <FAQChat 
         title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation au Barp"
-        faqs={[
-          {
-            question: "Quels services proposez-vous au Barp ?",
-            answer: "Nous proposons l'installation, l'entretien et la maintenance de systèmes de chauffage, climatisation, chauffe-eau et pompes à chaleur au Barp, du centre-ville aux hameaux environnants."
-          },
-          {
-            question: "Travaillez-vous avec des aides financières ?",
-            answer: "Oui, nous vous accompagnons pour bénéficier de MaPrimeRénov', des CEE, de la TVA réduite ou encore de l'Éco-PTZ, rendant vos projets plus accessibles."
-          },
-          {
-            question: "Intervenez-vous dans les zones rurales autour du Barp ?",
-            answer: "Tout à fait. Nous couvrons Le Barp et ses alentours pour assurer un service de proximité dans tout le Val de l'Eyre."
-          },
-          {
-            question: "Comment adaptez-vous vos installations à l'environnement forestier ?",
-            answer: "Nous prévoyons plots béton adaptés, gaines protégées et équipements traités anticorrosion pour résister à l'humidité, résine de pins et sols instables du territoire forestier."
-          }
-        ]}
+        faqs={getCityFAQSet('le-barp')}
+        initials={getCityInitials('le-barp')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"

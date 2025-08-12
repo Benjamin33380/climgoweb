@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -840,24 +841,8 @@ export default function Leognan() {
       <FAQChat 
         title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Léognan"
-        faqs={[
-          {
-            question: "Quels équipements installez-vous à Léognan ?",
-            answer: "Pompes à chaleur, climatisations réversibles, chauffe-eaux performants… Nous intervenons dans tous les quartiers de Léognan."
-          },
-          {
-            question: "Puis-je bénéficier d'aides locales à Léognan ?",
-            answer: "Oui, en plus des aides nationales, nous vous informons des opportunités disponibles localement à Léognan."
-          },
-          {
-            question: "Intervenez-vous dans les propriétés viticoles de Léognan ?",
-            answer: "Oui, nous adaptons nos installations aux bâtiments techniques et habitations des domaines viticoles de Léognan. Nos solutions respectent les contraintes architecturales et environnementales spécifiques au secteur viticole."
-          },
-          {
-            question: "Comment vos installations s'adaptent-elles au climat viticole de Léognan ?",
-            answer: "À Léognan, les variations de températures entre vignes et forêts, ainsi que l'humidité ambiante, exigent des installations robustes et bien dimensionnées. Nous veillons à la bonne aération des unités extérieures et à leur intégration discrète dans les jardins paysagers."
-          }
-        ]}
+        faqs={getCityFAQSet('leognan')}
+        initials={getCityInitials('leognan')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"

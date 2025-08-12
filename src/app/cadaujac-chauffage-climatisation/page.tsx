@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -843,24 +844,8 @@ export default function Cadaujac() {
       <FAQChat 
         title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Cadaujac"
-        faqs={[
-          {
-            question: "Quels équipements installez-vous à Cadaujac ?",
-            answer: "Pompes à chaleur, climatisations réversibles, chauffe-eaux… Nous intervenons dans tous les quartiers de Cadaujac, du Bourg à la route de Beautiran, avec des équipements adaptés à chaque type d'habitat."
-          },
-          {
-            question: "Puis-je bénéficier d'aides locales à Cadaujac ?",
-            answer: "Oui, en complément des aides nationales. Notre équipe vous accompagne pour constituer les bons dossiers et maximiser vos subventions disponibles à Cadaujac."
-          },
-          {
-            question: "Intervenez-vous dans les logements neufs à Cadaujac ?",
-            answer: "Oui, nous intervenons aussi bien en rénovation que dans les constructions neuves à Cadaujac, en adaptant nos solutions selon l'architecture et les spécificités locales."
-          },
-          {
-            question: "Comment adaptez-vous vos installations aux constructions cadaujacaises ?",
-            answer: "Les constructions cadaujacaises, souvent dotées de combles peu isolés ou de murs anciens en moellon, demandent une approche sur mesure. Nous effectuons une étude thermique complète et posons nos unités extérieures sur plots béton isolés du sol."
-          }
-        ]}
+        faqs={getCityFAQSet('cadaujac')}
+        initials={getCityInitials('cadaujac')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"

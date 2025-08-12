@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -840,24 +841,8 @@ export default function SaintSelve() {
       <FAQChat 
         title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Saint-Selve"
-        faqs={[
-          {
-            question: "Quels équipements installez-vous à Saint-Selve ?",
-            answer: "Pompes à chaleur, climatisations, chauffe-eaux... Nous proposons toutes les solutions thermiques adaptées aux logements de Saint-Selve."
-          },
-          {
-            question: "Puis-je bénéficier d'aides locales à Saint-Selve ?",
-            answer: "Oui, certaines aides communales ou intercommunales peuvent compléter les dispositifs nationaux. Nous vous assistons dans les démarches."
-          },
-          {
-            question: "Intervenez-vous aussi sur les résidences secondaires à Saint-Selve ?",
-            answer: "Absolument, nous traitons aussi bien les résidences principales que secondaires, sur tout le territoire selvois. ClimGO intervient du centre-bourg historique aux zones pavillonnaires."
-          },
-          {
-            question: "Comment adaptez-vous vos installations au climat tempéré local ?",
-            answer: "Le climat tempéré et l'exposition des logements à la chaleur estivale guident nos préconisations techniques. Nous privilégions les systèmes silencieux, peu énergivores et discrets, pour un confort durable sans dénaturer l'environnement naturel de Saint-Selve."
-          }
-        ]}
+        faqs={getCityFAQSet('saint-selve')}
+        initials={getCityInitials('saint-selve')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"

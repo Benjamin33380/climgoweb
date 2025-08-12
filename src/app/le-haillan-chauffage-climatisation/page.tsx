@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -844,24 +845,8 @@ export default function LeHaillan() {
       <FAQChat 
         title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation au Haillan"
-        faqs={[
-          {
-            question: "Quels équipements installez-vous au Haillan ?",
-            answer: "Pompes à chaleur air/eau, climatisation réversible, chauffe-eaux thermodynamiques, radiateurs performants… Nous intervenons dans tous les quartiers du Haillan."
-          },
-          {
-            question: "Puis-je bénéficier d'aides locales au Haillan ?",
-            answer: "Oui, en plus des aides nationales comme MaPrimeRénov', certaines subventions locales sont parfois disponibles. Nous vous accompagnons dans toutes vos démarches."
-          },
-          {
-            question: "Intervenez-vous dans les zones pavillonnaires du Haillan ?",
-            answer: "Oui, nous intervenons dans l'ensemble de la commune, que ce soit dans les quartiers résidentiels calmes ou les secteurs plus isolés. Nos solutions s'intègrent aussi bien dans les maisons traditionnelles que dans les constructions neuves."
-          },
-          {
-            question: "Comment adaptez-vous vos équipements au climat du Haillan ?",
-            answer: "Le Haillan est soumis à des étés de plus en plus chauds et à des intersaisons humides. Nos équipements sont pensés pour garantir un confort thermique optimal tout au long de l'année, avec une consommation maîtrisée. Nous analysons l'isolation de chaque logement pour proposer une solution sur-mesure."
-          }
-        ]}
+        faqs={getCityFAQSet('le-haillan')}
+        initials={getCityInitials('le-haillan')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"

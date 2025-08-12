@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -840,24 +841,8 @@ export default function Salles() {
       <FAQChat 
         title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Salles"
-        faqs={[
-          {
-            question: "Quels services proposez-vous à Salles ?",
-            answer: "Nous proposons l'installation, l'entretien et la maintenance de systèmes de chauffage, climatisation, chauffe-eau et pompes à chaleur à Salles."
-          },
-          {
-            question: "Travaillez-vous avec des aides financières ?",
-            answer: "Oui, nous vous accompagnons pour bénéficier de MaPrimeRénov', des CEE, de la TVA réduite ou encore de l'Éco-PTZ."
-          },
-          {
-            question: "Intervenez-vous dans les zones rurales autour de Salles ?",
-            answer: "Tout à fait. Nous couvrons Salles et ses alentours pour assurer un service de proximité. ClimGO intervient aussi bien dans le centre-bourg que dans les quartiers de Lavignolle, La Cassadotte, Le Caplanne."
-          },
-          {
-            question: "Comment adaptez-vous vos installations au climat forestier ?",
-            answer: "En zone forestière, l'humidité et les sols sablonneux imposent des normes d'ancrage spécifiques. Nos PAC sont fixées sur des supports ventilés ou plots béton pour garantir stabilité et performance. L'ensoleillement généreux nous permet de vous conseiller des solutions économes en énergie."
-          }
-        ]}
+        faqs={getCityFAQSet('salles')}
+        initials={getCityInitials('salles')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"

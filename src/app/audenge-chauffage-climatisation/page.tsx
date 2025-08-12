@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -851,24 +852,8 @@ export default function Audenge() {
       <FAQChat 
         title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Audenge"
-        faqs={[
-          {
-            question: "Quels équipements installez-vous à Audenge ?",
-            answer: "Pompes à chaleur air/eau, climatisations réversibles, chauffe-eaux thermodynamiques, radiateurs économiques… Nous intervenons sur toute la commune d'Audenge."
-          },
-          {
-            question: "Puis-je bénéficier d'aides locales à Audenge ?",
-            answer: "Oui, et nous vous accompagnons dans chaque démarche, de la simulation au montage du dossier. MaPrimeRénov', CEE, Éco-PTZ : nous optimisons votre investissement."
-          },
-          {
-            question: "Intervenez-vous sur des maisons individuelles à Audenge ?",
-            answer: "Oui, nous sommes spécialisés dans l'adaptation de nos équipements aux maisons individuelles, même avec des contraintes spécifiques. Chaque installation est sur-mesure."
-          },
-          {
-            question: "Vos interventions respectent-elles l'environnement d'Audenge ?",
-            answer: "Absolument ! Nos installations sont conçues pour être discrètes et respectueuses de l'environnement local. Nous tenons compte de la proximité du Domaine de Certes et des spécificités du Bassin."
-          }
-        ]}
+        faqs={getCityFAQSet('audenge')}
+        initials={getCityInitials('audenge')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"

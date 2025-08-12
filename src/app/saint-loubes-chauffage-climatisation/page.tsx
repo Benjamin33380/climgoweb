@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -840,24 +841,8 @@ export default function SaintLoubes() {
       <FAQChat 
         title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Saint-Loubès"
-        faqs={[
-          {
-            question: "Quels équipements installez-vous à Saint-Loubès ?",
-            answer: "Pompes à chaleur, climatisation, chauffe-eaux, radiateurs performants… Nous intervenons dans tous les quartiers de Saint-Loubès."
-          },
-          {
-            question: "Puis-je bénéficier d'aides locales à Saint-Loubès ?",
-            answer: "Oui, certaines aides locales viennent compléter les aides nationales. Nous vous accompagnons dans toutes les démarches."
-          },
-          {
-            question: "Travaillez-vous dans toute la commune de Saint-Loubès ?",
-            answer: "Oui. Du centre historique aux nouveaux lotissements, nous couvrons toute la commune avec réactivité. ClimGO intervient du centre-ville aux nouveaux quartiers résidentiels."
-          },
-          {
-            question: "Comment adaptez-vous vos installations au climat de la rive droite ?",
-            answer: "Nos installations s'adaptent aux spécificités climatiques de la rive droite de la Garonne et aux exigences modernes de confort. Nous prenons en compte l'exposition et les variations d'humidité pour dimensionner parfaitement vos équipements."
-          }
-        ]}
+        faqs={getCityFAQSet('saint-loubes')}
+        initials={getCityInitials('saint-loubes')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"

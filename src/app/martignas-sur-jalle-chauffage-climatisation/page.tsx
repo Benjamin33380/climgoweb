@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -840,24 +841,8 @@ export default function MartignassuJalle() {
       <FAQChat 
         title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Martignas-sur-Jalle"
-        faqs={[
-          {
-            question: "Quels équipements installez-vous à Martignas-sur-Jalle ?",
-            answer: "Pompes à chaleur, climatisation, chauffe-eaux, planchers chauffants… Nous intervenons dans toute la commune."
-          },
-          {
-            question: "Y a-t-il des aides spécifiques à Martignas-sur-Jalle ?",
-            answer: "Oui, en plus des aides nationales, certaines aides locales existent. ClimGO vous guide à chaque étape."
-          },
-          {
-            question: "Couvrez-vous toute la commune de Martignas-sur-Jalle ?",
-            answer: "Oui, nos équipes se déplacent dans tous les quartiers de Martignas, y compris Beauséjour et les zones pavillonnaires. ClimGO intervient dans tous les secteurs : quartier de la Jalle, chemin du Blayais, avenue du 18 Juin, ou près du collège Aliénor d'Aquitaine."
-          },
-          {
-            question: "Comment adaptez-vous vos installations au sol local de Martignas ?",
-            answer: "Le sol argilo-sableux et les haies denses typiques des quartiers résidentiels de Martignas nécessitent des précautions spécifiques pour les unités extérieures. Nos équipes anticipent les risques d'humidité et de vibration pour chaque installation."
-          }
-        ]}
+        faqs={getCityFAQSet('martignas-sur-jalle')}
+        initials={getCityInitials('martignas-sur-jalle')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"

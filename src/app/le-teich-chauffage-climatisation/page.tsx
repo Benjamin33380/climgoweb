@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -842,24 +843,8 @@ export default function LeTeich() {
       <FAQChat 
         title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation au Teich"
-        faqs={[
-          {
-            question: "Quels sont vos services au Teich ?",
-            answer: "Nous assurons l'installation, l'entretien et le dépannage de systèmes de chauffage, climatisation et production d'eau chaude au Teich et ses lieux-dits : le Bourg, Lamothe et La Cassadote."
-          },
-          {
-            question: "Proposez-vous un accompagnement pour les aides ?",
-            answer: "Oui, nous vous guidons dans toutes les démarches pour obtenir MaPrimeRénov', les CEE, la TVA réduite ou l'Éco-PTZ, selon votre projet et votre situation au Teich."
-          },
-          {
-            question: "Intervenez-vous dans les lieux-dits autour du Teich ?",
-            answer: "Absolument ! Nos techniciens se déplacent dans tous les lieux-dits du Teich, comme Lamothe, le Bourg ou La Cassadote. Service réactif garanti dans toute la commune."
-          },
-          {
-            question: "Vos installations respectent-elles l'environnement du Teich ?",
-            answer: "Parfaitement ! Nous respectons les zones naturelles protégées et privilégions une intégration harmonieuse dans ce cadre naturel exceptionnel. Nos équipements prennent en compte la végétation environnante."
-          }
-        ]}
+        faqs={getCityFAQSet('le-teich')}
+        initials={getCityInitials('le-teich')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"

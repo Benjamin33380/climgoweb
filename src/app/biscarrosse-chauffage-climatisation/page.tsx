@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -842,24 +843,8 @@ export default function Biscarrosse() {
       <FAQChat 
         title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Biscarrosse"
-        faqs={[
-          {
-            question: "Quels équipements installez-vous à Biscarrosse ?",
-            answer: "Nous installons pompes à chaleur, climatiseurs, chauffe-eaux thermodynamiques et systèmes de chauffage adaptés à Biscarrosse. Nos solutions sont pensées pour résister à la corrosion et à l'air salin."
-          },
-          {
-            question: "Puis-je bénéficier d'aides pour mon installation ?",
-            answer: "Oui ! ClimGO vous guide pour obtenir les aides nationales et locales disponibles à Biscarrosse : CEE, MaPrimeRénov', TVA réduite, Éco-PTZ. Notre accompagnement administratif est complet."
-          },
-          {
-            question: "Vous déplacez-vous dans tout Biscarrosse ?",
-            answer: "Absolument ! Nous intervenons dans tous les quartiers de Biscarrosse, de la plage au centre-ville : Biscarrosse-Bourg, Biscarrosse-Plage, quartier Navarrosse, zone du Vivier, lotissements Naouas."
-          },
-          {
-            question: "Comment adaptez-vous vos installations au climat océanique ?",
-            answer: "Entre humidité marine et variations de température, nos installations sont dimensionnées précisément. Nous privilégions des emplacements abrités des vents d'ouest, avec unités extérieures surélevées et ventilées."
-          }
-        ]}
+        faqs={getCityFAQSet('biscarrosse')}
+        initials={getCityInitials('biscarrosse')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"

@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -842,24 +843,8 @@ export default function GujanMestras() {
       <FAQChat 
         title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Gujan-Mestras"
-        faqs={[
-          {
-            question: "Quels sont vos services à Gujan-Mestras ?",
-            answer: "Nous assurons l'installation, l'entretien et le dépannage de systèmes de chauffage, climatisation et production d'eau chaude à Gujan-Mestras et ses hameaux : La Hume, Meyran, Chante-Cigale et les Prés Salés."
-          },
-          {
-            question: "Proposez-vous un accompagnement pour les aides ?",
-            answer: "Oui, nous vous guidons dans toutes les démarches pour obtenir MaPrimeRénov', les CEE, la TVA réduite ou l'Éco-PTZ, selon votre projet et votre situation à Gujan-Mestras."
-          },
-          {
-            question: "Intervenez-vous dans les hameaux autour de Gujan-Mestras ?",
-            answer: "Absolument ! Nos techniciens se déplacent dans tous les lieux-dits de Gujan-Mestras, comme La Hume, Meyran, Chante-Cigale ou les Prés Salés. Service réactif garanti dans toute la commune."
-          },
-          {
-            question: "Vos équipements résistent-ils aux conditions du bassin ?",
-            answer: "Parfaitement ! Nous utilisons des matériaux anticorrosion spécialement conçus pour résister à l'air salin du bassin d'Arcachon. Pose en hauteur sur plots ou mur pour éviter les remontées humides."
-          }
-        ]}
+        faqs={getCityFAQSet('gujan-mestras')}
+        initials={getCityInitials('gujan-mestras')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"

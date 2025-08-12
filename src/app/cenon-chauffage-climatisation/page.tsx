@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -844,24 +845,8 @@ export default function Cenon() {
       <FAQChat 
         title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Cenon"
-        faqs={[
-          {
-            question: "Quels équipements installez-vous à Cenon ?",
-            answer: "Pompes à chaleur, climatisation réversible, chauffe-eaux performants… Nous intervenons dans tous les quartiers de Cenon, du Parc Palmer à la Morlette en passant par les Hauts de Cenon."
-          },
-          {
-            question: "Puis-je bénéficier d'aides locales à Cenon ?",
-            answer: "Oui, des aides locales peuvent s'ajouter aux subventions nationales. ClimGO vous accompagne dans la constitution de vos dossiers pour maximiser vos économies."
-          },
-          {
-            question: "Travaillez-vous aussi avec les logements collectifs à Cenon ?",
-            answer: "Absolument, nous équipons aussi bien les maisons individuelles que les copropriétés ou immeubles à Cenon. Notre expertise couvre tous types d'habitations."
-          },
-          {
-            question: "Comment gérez-vous la diversité architecturale de Cenon ?",
-            answer: "Cenon possède une diversité architecturale qui nécessite une approche sur-mesure : résidences en bande, logements sociaux, immeubles en terrasse ou pavillons modernes. Nous analysons chaque configuration (exposition, orientation, ventilation naturelle) pour garantir des installations efficaces, silencieuses et durables."
-          }
-        ]}
+        faqs={getCityFAQSet('cenon')}
+        initials={getCityInitials('cenon')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"

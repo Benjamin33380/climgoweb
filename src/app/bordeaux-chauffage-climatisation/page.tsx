@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -851,28 +852,8 @@ export default function Bordeaux() {
       <FAQChat 
         title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Bordeaux"
-        faqs={[
-          {
-            question: "Quels équipements installez-vous à Bordeaux ?",
-            answer: "Pompes à chaleur air/eau, climatisation réversible, chauffe-eaux thermodynamiques, radiateurs performants… Nous intervenons dans toute la métropole bordelaise, du centre historique aux quartiers modernes."
-          },
-          {
-            question: "Comment gérez-vous les contraintes du patrimoine bordelais ?",
-            answer: "Nous connaissons parfaitement les réglementations du centre historique de Bordeaux. Nos installations respectent l'architecture locale, notamment pour les échoppes et immeubles classés. Nous gérons tous les dossiers administratifs."
-          },
-          {
-            question: "Travaillez-vous dans les zones d'accès restreint du centre-ville ?",
-            answer: "Absolument ! Nous adaptons notre logistique pour intervenir dans les rues piétonnes et zones à circulation limitée. Notre équipe locale connaît tous les accès et contraintes du centre historique bordelais."
-          },
-          {
-            question: "Quelles aides puis-je obtenir pour mon projet à Bordeaux ?",
-            answer: "En plus des aides nationales (MaPrimeRénov', CEE, Éco-PTZ), certaines subventions locales peuvent être disponibles selon votre projet. Nous vous accompagnons dans toutes les démarches pour maximiser vos aides."
-          },
-          {
-            question: "Vos installations sont-elles adaptées aux échoppes bordelaises ?",
-            answer: "Parfaitement ! Les échoppes ont leurs spécificités : hauteur sous plafond, ventilation, isolation. Nous adaptons nos solutions à ces contraintes architecturales typiques pour un confort optimal."
-          }
-        ]}
+        faqs={getCityFAQSet('bordeaux')}
+        initials={getCityInitials('bordeaux')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"

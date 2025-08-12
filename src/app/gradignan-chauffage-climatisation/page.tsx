@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -844,24 +845,8 @@ export default function Gradignan() {
       <FAQChat 
         title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Gradignan"
-        faqs={[
-          {
-            question: "Quels équipements installez-vous à Gradignan ?",
-            answer: "Pompes à chaleur air/eau, climatisation réversible, chauffe-eaux performants… Nous intervenons dans tous les quartiers de Gradignan, de Mandavit à Laurenzane, de Beausoleil à Saint-Albe."
-          },
-          {
-            question: "Puis-je bénéficier d'aides locales à Gradignan ?",
-            answer: "Oui, en complément des aides nationales, certaines aides locales peuvent être disponibles. Nous vous accompagnons dans toutes vos démarches pour maximiser vos subventions."
-          },
-          {
-            question: "Intervenez-vous dans les résidences neuves de Gradignan ?",
-            answer: "Absolument, nous intervenons dans les logements anciens comme dans les constructions neuves à Gradignan. Nos systèmes s'adaptent parfaitement aux normes BBC récentes."
-          },
-          {
-            question: "Comment gérez-vous les contraintes des grands jardins ombragés ?",
-            answer: "À Gradignan, nous prenons en compte chaque contrainte : mitoyenneté, orientation, espace technique ou esthétique. Nos installations extérieures sont silencieuses et bien positionnées."
-          }
-        ]}
+        faqs={getCityFAQSet('gradignan')}
+        initials={getCityInitials('gradignan')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"

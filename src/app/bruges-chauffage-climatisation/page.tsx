@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -843,24 +844,8 @@ export default function Bruges() {
       <FAQChat 
         title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Bruges"
-        faqs={[
-          {
-            question: "Quels équipements installez-vous à Bruges ?",
-            answer: "Pompes à chaleur, climatisation réversible, chauffe-eaux performants… Nous intervenons dans tous les quartiers de Bruges, du Tasta à Treulon, d'Ausone au Grand Darnal."
-          },
-          {
-            question: "Puis-je bénéficier d'aides locales à Bruges ?",
-            answer: "Oui, des aides locales peuvent s'ajouter aux subventions nationales. ClimGO vous accompagne dans la constitution de vos dossiers pour MaPrimeRénov', CEE, Éco-PTZ."
-          },
-          {
-            question: "Travaillez-vous aussi avec les logements collectifs à Bruges ?",
-            answer: "Absolument, nous équipons aussi bien les maisons individuelles que les copropriétés ou immeubles à Bruges. Nos techniciens s'adaptent aux règles de copropriété."
-          },
-          {
-            question: "Comment adaptez-vous vos installations à l'urbanisme de Bruges ?",
-            answer: "Nos techniciens s'adaptent à l'urbanisme local, à la proximité des voies ferrées et aux règles des copropriétés. Nous prenons en compte l'exposition, le vis-à-vis et les contraintes esthétiques."
-          }
-        ]}
+        faqs={getCityFAQSet('bruges')}
+        initials={getCityInitials('bruges')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"

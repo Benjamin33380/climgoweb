@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -844,24 +845,8 @@ export default function Pessac() {
       <FAQChat 
         title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Pessac"
-        faqs={[
-          {
-            question: "Quels équipements installez-vous à Pessac ?",
-            answer: "Pompes à chaleur air/eau, climatisation réversible, chauffe-eaux thermodynamiques, radiateurs performants… Nous intervenons dans toute la commune de Pessac, de Saige à Monbalon."
-          },
-          {
-            question: "Puis-je bénéficier d'aides locales à Pessac ?",
-            answer: "Oui, en plus des aides nationales comme MaPrimeRénov', certaines subventions locales sont parfois disponibles. Nous vous guidons pas à pas dans toutes vos démarches administratives."
-          },
-          {
-            question: "Travaillez-vous dans les différents quartiers de Pessac ?",
-            answer: "Absolument ! Nous intervenons dans tous les quartiers : Saige, Alouette, Toctoucau, Noès, France Alouette, Bellegrave, en adaptant notre logistique pour garantir la qualité sans compromis."
-          },
-          {
-            question: "Vos solutions conviennent-elles aux résidences BBC ?",
-            answer: "Parfaitement ! Le bâti pessacais étant très varié, de l'ancien pavillonnaire aux nouvelles résidences BBC, nous adaptons chaque projet aux contraintes thermiques spécifiques et aux règles d'urbanisme."
-          }
-        ]}
+        faqs={getCityFAQSet('pessac')}
+        initials={getCityInitials('pessac')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"

@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -842,24 +843,8 @@ export default function Marcheprime() {
       <FAQChat 
         title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Marcheprime"
-        faqs={[
-          {
-            question: "Quels équipements installez-vous à Marcheprime ?",
-            answer: "Nous installons pompes à chaleur, climatiseurs, chauffe-eaux thermodynamiques et solutions de chauffage sur mesure à Marcheprime. Nos solutions s'adaptent à l'environnement boisé et aux différents styles d'habitat."
-          },
-          {
-            question: "Puis-je bénéficier d'aides pour mon installation ?",
-            answer: "Oui, ClimGO vous guide pour obtenir MaPrimeRénov', les CEE, la TVA réduite et d'autres aides en vigueur. Notre équipe vous accompagne dans toutes vos démarches administratives."
-          },
-          {
-            question: "Vous déplacez-vous dans tout Marcheprime ?",
-            answer: "Bien sûr ! Nous intervenons sur tout le territoire de Marcheprime, y compris Croix d'Hins, Biard ou le Bourg. Du centre-ville aux zones résidentielles, notre service couvre toute la commune."
-          },
-          {
-            question: "Comment adaptez-vous vos installations à l'environnement de Marcheprime ?",
-            answer: "La nature sableuse du sol et la présence de pins nous amènent à installer sur plots ou dalles isolées. Nous tenons compte des expositions sud/ouest et des besoins de rafraîchissement spécifiques à la région."
-          }
-        ]}
+        faqs={getCityFAQSet('marcheprime')}
+        initials={getCityInitials('marcheprime')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"

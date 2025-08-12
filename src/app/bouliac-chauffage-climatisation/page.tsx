@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -843,24 +844,8 @@ export default function Bouliac() {
       <FAQChat 
         title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Bouliac"
-        faqs={[
-          {
-            question: "Quels équipements installez-vous à Bouliac ?",
-            answer: "Pompes à chaleur, climatisation, chauffe-eaux économiques… Nous intervenons dans tout Bouliac, du bas de la commune jusqu'aux coteaux, avec des équipements adaptés à l'architecture locale."
-          },
-          {
-            question: "Puis-je bénéficier d'aides locales à Bouliac ?",
-            answer: "Oui, certaines aides de Bordeaux Métropole sont disponibles en complément des subventions nationales. Nous vous aidons à en profiter et maximiser vos économies."
-          },
-          {
-            question: "Proposez-vous un service après-vente à Bouliac ?",
-            answer: "Absolument, notre équipe assure l'entretien régulier et la maintenance de vos équipements à Bouliac et alentours avec des contrats personnalisés."
-          },
-          {
-            question: "Comment adaptez-vous vos installations au relief de Bouliac ?",
-            answer: "Le relief prononcé et la nature argilo-calcaire du sol imposent une attention particulière à la stabilité. Nous adaptons selon l'exposition, le vis-à-vis et les contraintes architecturales en préservant l'esthétique des façades."
-          }
-        ]}
+        faqs={getCityFAQSet('bouliac')}
+        initials={getCityInitials('bouliac')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"

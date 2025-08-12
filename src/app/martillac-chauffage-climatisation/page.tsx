@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -840,24 +841,8 @@ export default function Martillac() {
       <FAQChat 
         title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Martillac"
-        faqs={[
-          {
-            question: "Quels équipements installez-vous à Martillac ?",
-            answer: "Pompes à chaleur, climatisations, chauffe-eaux... Nous proposons toutes les solutions thermiques adaptées aux logements de Martillac."
-          },
-          {
-            question: "Puis-je bénéficier d'aides locales à Martillac ?",
-            answer: "Oui, certaines aides communales ou intercommunales peuvent compléter les dispositifs nationaux. Nous vous assistons dans les démarches."
-          },
-          {
-            question: "Intervenez-vous aussi sur les résidences secondaires à Martillac ?",
-            answer: "Absolument, nous traitons aussi bien les résidences principales que secondaires, sur tout le territoire martillacais."
-          },
-          {
-            question: "Comment adaptez-vous vos installations au climat viticole de Martillac ?",
-            answer: "Entre humidité matinale des vignes et variations thermiques, nous adaptons nos installations aux exigences spécifiques du climat martillacais. Nos PAC sont conçues pour garantir un fonctionnement optimal, même en hiver. L'esthétique locale étant un enjeu majeur, nous privilégions des installations sobres, efficaces et silencieuses."
-          }
-        ]}
+        faqs={getCityFAQSet('martillac')}
+        initials={getCityInitials('martillac')}
         ctaTitle="Une autre question ?"
         ctaSubtitle="N'hésitez pas à nous contacter directement !"
         phoneNumber="0123456789"
