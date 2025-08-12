@@ -243,8 +243,8 @@ export default function Floirac() {
           <BreadcrumbSeparator />
           <BreadcrumbItem>
             <BreadcrumbLink asChild>
-              <Link href="/zones-desservies" className="hover:text-gray-900 dark:hover:text-white transition-colors">
-                Zones desservies
+              <Link href="/zones-interventions" className="hover:text-gray-900 dark:hover:text-white transition-colors">
+                Zones d'intervention
               </Link>
             </BreadcrumbLink>
           </BreadcrumbItem>

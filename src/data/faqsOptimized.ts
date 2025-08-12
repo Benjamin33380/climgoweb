@@ -19,7 +19,7 @@ export const seoOptimizedFAQs = {
       answer: "Une climatisation moderne consomme 15-25€/mois pour 100m². Les modèles inverter récents sont 3x plus économiques que les anciens. Je vous conseille selon votre budget et vos besoins."
     },
     {
-      question: "Quelles aides pour installer une pompe à chaleur en 2024 ?",
+      question: "Quelles aides pour installer une pompe à chaleur en 2025 ?",
       answer: "MaPrimeRénov' (jusqu'à 4 000€), CEE (jusqu'à 2 500€), éco-PTZ, TVA réduite 5,5%. Je m'occupe de toutes vos démarches administratives pour maximiser vos aides."
     },
     {
