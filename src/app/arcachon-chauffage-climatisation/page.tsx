@@ -317,7 +317,7 @@ export default function Arcachon() {
                 </p>
                 
                 <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
-                  Notre équipe d'<strong className="text-gray-900 dark:text-white">experts certifiés</strong> intervient dans tous les quartiers d'Arcachon, des villas Belle Époque aux résidences contemporaines, en respectant les spécificités architecturales locales.
+                  Notr équipe d'<strong className="text-gray-900 dark:text-white">experts certifiés</strong> intervient dans tous les quartiers d'Arcachon, des villas Belle Époque aux résidences contemporaines, en respectant les spécificités architecturales locales.
                 </p>
                 
                 <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
