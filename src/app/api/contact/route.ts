@@ -14,7 +14,7 @@ export async function POST(req: NextRequest) {
     }
 
     // Configuration du transporteur SMTP
-    const transporter = nodemailer.createTransporter({
+    const transporter = nodemailer.createTransport({
       host: 'mail.climgo.fr', // Serveur SMTP de votre domaine
       port: 587,
       secure: false, // true pour 465, false pour autres ports
