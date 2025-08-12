@@ -584,69 +584,69 @@ export default function LaTesteDeBuch() {
             {/* Pourquoi choisir ClimGO à La Teste-de-Buch - Version personnalisée */}
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6 lg:gap-8 max-w-6xl mx-auto mb-8 md:mb-12 lg:mb-16">
               {/* Expertise Locale */}
-              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#2563EB]/50 dark:hover:border-[#60A5FA] min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
+              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30  min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
                 <div className="text-center flex flex-col h-full">
-                  <div className="bg-[#2563EB]/10 dark:bg-[#2563EB]/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-12 h-12 text-[#2563EB] dark:text-[#60A5FA]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="bg-gray-100 dark:bg-gray-800 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-12 h-12 text-gray-900 dark:text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-[#2563EB] dark:group-hover:text-[#60A5FA] transition-colors">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4  transition-colors">
                     Expertise Littorale
                   </h3>
                   <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
-                    <strong className="text-[#2563EB] dark:text-[#60A5FA]">Connaissance approfondie</strong> du climat littoral et des contraintes côtières. <strong className="text-[#2563EB] dark:text-[#60A5FA]">Matériaux spécialisés</strong> pour résister à l'humidité saline.
+                    <strong className="text-gray-900 dark:text-gray-300">Connaissance approfondie</strong> du climat littoral et des contraintes côtières. <strong className="text-gray-900 dark:text-gray-300">Matériaux spécialisés</strong> pour résister à l'humidité saline.
                   </p>
                 </div>
               </div>
 
               {/* Types de logements */}
-              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#f97316]/50 dark:hover:border-[#fb923c] min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
+              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30  min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
                 <div className="text-center flex flex-col h-full">
-                  <div className="bg-[#f97316]/10 dark:bg-[#f97316]/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-12 h-12 text-[#f97316] dark:text-[#fb923c]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="bg-gray-100 dark:bg-gray-800 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-12 h-12 text-gray-900 dark:text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-[#f97316] dark:group-hover:text-[#fb923c] transition-colors">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4  transition-colors">
                     Tous Types d'Habitats
                   </h3>
                   <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
-                    <strong className="text-[#f97316] dark:text-[#fb923c]">Maisons neuves</strong> comme <strong className="text-[#f97316] dark:text-[#fb923c]">bâtisses traditionnelles</strong> rénovées. Adaptation aux contraintes architecturales et énergétiques de chaque logement.
+                    <strong className="text-gray-900 dark:text-gray-300">Maisons neuves</strong> comme <strong className="text-gray-900 dark:text-gray-300">bâtisses traditionnelles</strong> rénovées. Adaptation aux contraintes architecturales et énergétiques de chaque logement.
                   </p>
                 </div>
               </div>
 
               {/* Processus */}
-              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#8B5CF6]/50 dark:hover:border-[#A78BFA] min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
+              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30  min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
                 <div className="text-center flex flex-col h-full">
-                  <div className="bg-[#8B5CF6]/10 dark:bg-[#8B5CF6]/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-12 h-12 text-[#8B5CF6] dark:text-[#A78BFA]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="bg-gray-100 dark:bg-gray-800 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-12 h-12 text-gray-900 dark:text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.563.563 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-[#8B5CF6] dark:group-hover:text-[#A78BFA] transition-colors">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4  transition-colors">
                     Service Premium
                   </h3>
                   <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
-                    <strong className="text-[#8B5CF6] dark:text-[#A78BFA]">Étude personnalisée</strong> puis devis gratuit et détaillé. <strong className="text-[#8B5CF6] dark:text-[#A78BFA]">Installation soignée</strong> en respectant délais et normes en vigueur.
+                    <strong className="text-gray-900 dark:text-gray-300">Étude personnalisée</strong> puis devis gratuit et détaillé. <strong className="text-gray-900 dark:text-gray-300">Installation soignée</strong> en respectant délais et normes en vigueur.
                   </p>
                 </div>
               </div>
 
               {/* Maintenance */}
-              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#059669]/50 dark:hover:border-[#10B981] min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
+              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30  min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
                 <div className="text-center flex flex-col h-full">
-                  <div className="bg-[#059669]/10 dark:bg-[#059669]/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-12 h-12 text-[#059669] dark:text-[#10B981]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="bg-gray-100 dark:bg-gray-800 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-12 h-12 text-gray-900 dark:text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437 1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008Z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-[#059669] dark:group-hover:text-[#10B981] transition-colors">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4  transition-colors">
                     Suivi Complet
                   </h3>
                   <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
-                    <strong className="text-[#059669] dark:text-[#10B981]">Contrats d'entretien</strong> personnalisés avec visites régulières pour vérification, nettoyage et optimisation des performances.
+                    <strong className="text-gray-900 dark:text-gray-300">Contrats d'entretien</strong> personnalisés avec visites régulières pour vérification, nettoyage et optimisation des performances.
                   </p>
                 </div>
               </div>

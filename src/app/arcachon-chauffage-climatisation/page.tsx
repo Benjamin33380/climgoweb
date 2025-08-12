@@ -593,18 +593,18 @@ export default function Arcachon() {
             {/* Pourquoi choisir ClimGO à Arcachon - Version personnalisée */}
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6 lg:gap-8 max-w-6xl mx-auto mb-8 md:mb-12 lg:mb-16">
               {/* Expertise Locale */}
-              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#2563EB]/50 dark:hover:border-[#60A5FA] min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
+              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30  min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
                 <div className="text-center flex flex-col h-full">
-                  <div className="bg-[#2563EB]/10 dark:bg-[#2563EB]/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-12 h-12 text-[#2563EB] dark:text-[#60A5FA]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="bg-gray-100 dark:bg-gray-800 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-12 h-12 text-gray-900 dark:text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-black dark:text-white mb-3 sm:mb-4 group-hover:text-[#2563EB] dark:group-hover:text-[#60A5FA] transition-colors">
+                  <h3 className="text-lg sm:text-xl font-semibold text-black dark:text-white mb-3 sm:mb-4  transition-colors">
                     Expertise Locale
                   </h3>
                   <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
-                    <strong className="text-[#2563EB] dark:text-[#60A5FA]">Connaissance approfondie</strong> du climat marin et de l'architecture arcachonnaise. <strong className="text-[#2563EB] dark:text-[#60A5FA]">Maîtrise parfaite</strong> des contraintes côtières et patrimoniales.
+                    <strong className="text-gray-900 dark:text-gray-300">Connaissance approfondie</strong> du climat marin et de l'architecture arcachonnaise. <strong className="text-gray-900 dark:text-gray-300">Maîtrise parfaite</strong> des contraintes côtières et patrimoniales.
                   </p>
                 </div>
               </div>

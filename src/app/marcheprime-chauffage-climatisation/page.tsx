@@ -584,69 +584,69 @@ export default function Marcheprime() {
             {/* Pourquoi choisir ClimGO à Marcheprime - Version personnalisée */}
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6 lg:gap-8 max-w-6xl mx-auto mb-8 md:mb-12 lg:mb-16">
               {/* Équipe Locale */}
-              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#2563EB]/50 dark:hover:border-[#60A5FA] min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
+              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30  min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
                 <div className="text-center flex flex-col h-full">
-                  <div className="bg-[#2563EB]/10 dark:bg-[#2563EB]/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-12 h-12 text-[#2563EB] dark:text-[#60A5FA]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="bg-gray-100 dark:bg-gray-800 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-12 h-12 text-gray-900 dark:text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-[#2563EB] dark:group-hover:text-[#60A5FA] transition-colors">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4  transition-colors">
                     Équipe Réactive
                   </h3>
                   <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
-                    <strong className="text-[#2563EB] dark:text-[#60A5FA]">Équipe réactive</strong>, ancrée localement. <strong className="text-[#2563EB] dark:text-[#60A5FA]">Grande réactivité</strong>, accompagnement clair et chantiers menés avec exigence et professionnalisme.
+                    <strong className="text-gray-900 dark:text-gray-300">Équipe réactive</strong>, ancrée localement. <strong className="text-gray-900 dark:text-gray-300">Grande réactivité</strong>, accompagnement clair et chantiers menés avec exigence et professionnalisme.
                   </p>
                 </div>
               </div>
 
               {/* Certifications */}
-              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#059669]/50 dark:hover:border-[#10B981] min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
+              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30  min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
                 <div className="text-center flex flex-col h-full">
-                  <div className="bg-[#059669]/10 dark:bg-[#059669]/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-12 h-12 text-[#059669] dark:text-[#10B981]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="bg-gray-100 dark:bg-gray-800 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-12 h-12 text-gray-900 dark:text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-[#059669] dark:group-hover:text-[#10B981] transition-colors">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4  transition-colors">
                     Solutions Éprouvées
                   </h3>
                   <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
-                    <strong className="text-[#059669] dark:text-[#10B981]">Savoir-faire certifié</strong> RGE & QualiPAC. <strong className="text-[#059669] dark:text-[#10B981]">Installations pensées</strong> pour durer avec matériel haut de gamme sélectionné.
+                    <strong className="text-gray-900 dark:text-gray-300">Savoir-faire certifié</strong> RGE & QualiPAC. <strong className="text-gray-900 dark:text-gray-300">Installations pensées</strong> pour durer avec matériel haut de gamme sélectionné.
                   </p>
                 </div>
               </div>
 
               {/* Habitat Adapté */}
-              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#8B5CF6]/50 dark:hover:border-[#A78BFA] min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
+              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30  min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
                 <div className="text-center flex flex-col h-full">
-                  <div className="bg-[#8B5CF6]/10 dark:bg-[#8B5CF6]/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-12 h-12 text-[#8B5CF6] dark:text-[#A78BFA]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="bg-gray-100 dark:bg-gray-800 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-12 h-12 text-gray-900 dark:text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                     </svg>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-[#8B5CF6] dark:group-hover:text-[#A78BFA] transition-colors">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4  transition-colors">
                     Habitat Varié
                   </h3>
                   <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
-                    <strong className="text-[#8B5CF6] dark:text-[#A78BFA]">Maisons traditionnelles</strong>, extensions bois, pavillons récents. Solutions adaptées aux <strong className="text-[#8B5CF6] dark:text-[#A78BFA]">défis thermiques</strong> neufs comme anciens.
+                    <strong className="text-gray-900 dark:text-gray-300">Maisons traditionnelles</strong>, extensions bois, pavillons récents. Solutions adaptées aux <strong className="text-gray-900 dark:text-gray-300">défis thermiques</strong> neufs comme anciens.
                   </p>
                 </div>
               </div>
 
               {/* Environnement */}
-              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#f97316]/50 dark:hover:border-[#fb923c] min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
+              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30  min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
                 <div className="text-center flex flex-col h-full">
-                  <div className="bg-[#f97316]/10 dark:bg-[#f97316]/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-12 h-12 text-[#f97316] dark:text-[#fb923c]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="bg-gray-100 dark:bg-gray-800 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-12 h-12 text-gray-900 dark:text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-[#f97316] dark:group-hover:text-[#fb923c] transition-colors">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4  transition-colors">
                     Environnement Boisé
                   </h3>
                   <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
-                    <strong className="text-[#f97316] dark:text-[#fb923c]">Nature sableuse</strong> du sol et présence de pins. <strong className="text-[#f97316] dark:text-[#fb923c]">Installations sur plots</strong> isolées pour performances acoustiques optimales.
+                    <strong className="text-gray-900 dark:text-gray-300">Nature sableuse</strong> du sol et présence de pins. <strong className="text-gray-900 dark:text-gray-300">Installations sur plots</strong> isolées pour performances acoustiques optimales.
                   </p>
                 </div>
               </div>
