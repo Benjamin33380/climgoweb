@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { motion } from 'framer-motion';
 import { Search, MapPin } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
@@ -19,7 +19,23 @@ import {
 
 export default function HomePage() {
 
-
+  // Liste des vidéos disponibles
+  const videos = [
+    '/mp4/sdbpyla.mp4',
+    '/mp4/Gen-4 Turbo Cinematic slow push-in from low angle onto a high-end air-source heat pump on a modern wooden terrace Golden hour sunlight shimmering through tropical leaves, casting moving shadows on wa 4K.mp4'
+  ];
+  
+  // État pour l'index de la vidéo actuelle
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  
+  // Changement automatique de vidéo toutes les 10 secondes
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % videos.length);
+    }, 10000); // 10 secondes
+    
+    return () => clearInterval(interval);
+  }, [videos.length]);
 
   // Composant CitySearch
   const CitySearch = () => {
@@ -143,12 +159,13 @@ export default function HomePage() {
           {/* Version mobile - vidéo plein écran */}
           <div className="block sm:hidden relative h-full w-full">
             <video
+              key={currentVideoIndex}
               className="h-full w-full object-cover"
               autoPlay
               muted
               loop
               playsInline
-              src="/mp4/heat-pump-cinematic.mp4"
+              src={videos[currentVideoIndex]}
             />
           </div>
           
@@ -160,12 +177,13 @@ export default function HomePage() {
             }}
           >
             <video
+              key={`desktop-${currentVideoIndex}`}
               className="h-full w-full object-cover"
               autoPlay
               muted
               loop
               playsInline
-              src="/mp4/heat-pump-cinematic.mp4"
+              src={videos[currentVideoIndex]}
             />
           </div>
         </motion.div>
@@ -190,10 +208,10 @@ export default function HomePage() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-light tracking-tight mb-3 sm:mb-4 md:mb-6 text-white sm:text-black dark:text-white break-words leading-tight">
-              ClimGO Bassin d'Arcachon
+              ClimGO
             </h1>
             <p className="text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl text-white/90 sm:text-black/90 dark:text-white/90 mb-3 sm:mb-4 md:mb-6 lg:mb-8 leading-relaxed max-w-[280px] sm:max-w-sm md:max-w-lg lg:max-w-none whitespace-pre-line">
-              Votre expert en chauffage et climatisation{'\n'}sur le Bassin d'Arcachon
+              Installateur de pompe à chaleur{'\n'}Chauffage & climatisation
             </p>
 
             {/* Composant de recherche de villes */}
@@ -240,7 +258,7 @@ export default function HomePage() {
         {/* Titre centré */}
         <div className="relative z-10 container mx-auto px-4 mb-4">
           <h2 className="text-2xl md:text-3xl font-medium text-gray-800 dark:text-white text-center">
-            Chauffage Climatisation Bassin d&apos;Arcachon - ClimGO
+            Notre savoir-faire
           </h2>
         </div>
         
@@ -261,37 +279,57 @@ export default function HomePage() {
           >
             {/* Contenu centré dans la zone élargie */}
             <div className="max-w-4xl mx-auto">
-              <div className="space-y-6 text-center pt-8 pb-20">
+              <div className="space-y-4 text-center pt-8 pb-20">
                 <p className="text-lg text-gray-800 dark:text-gray-200 leading-normal">
-                  Le <strong className="text-gray-900 dark:text-white">Bassin d'Arcachon</strong> offre un cadre de vie exceptionnel entre océan, forêt et lacs. ClimGO accompagne tous les habitants de ce territoire unique dans leurs projets de chauffage et climatisation, en s'adaptant aux spécificités climatiques et environnementales locales.
+                  Chez <strong>ClimGO</strong>, nous vous accompagnons dans tous les domaines du confort thermique et sanitaire : <strong>chauffage</strong>, <strong>climatisation</strong>, <strong>eau chaude sanitaire</strong> et <strong>maintenance</strong>.
                 </p>
-                
+
                 <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
-                  De <strong className="text-gray-900 dark:text-white">Arcachon</strong> à <strong className="text-gray-900 dark:text-white">Biscarrosse</strong>, en passant par <strong className="text-gray-900 dark:text-white">Andernos-les-Bains</strong> et <strong className="text-gray-900 dark:text-white">La Teste-de-Buch</strong>, nous intervenons dans toutes les communes du Bassin avec la même exigence de qualité.
+                  Nos solutions sont pensées pour allier <strong>performance</strong>, <strong>durabilité</strong>, <strong>économies d'énergie</strong> et <strong>sérénité</strong>, année après année.
                 </p>
-                
-                <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
-                  Chaque installation vise à optimiser la <strong className="text-gray-900 dark:text-white">performance énergétique</strong> tout en respectant l'intégration harmonieuse dans ce cadre naturel préservé et ses réglementations environnementales.
-                </p>
-                
-                <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
-                  Notre expertise locale nous permet de comprendre les <strong className="text-gray-900 dark:text-white">contraintes climatiques</strong> du Bassin : l'humidité marine, les vents côtiers, les variations saisonnières et l'influence de l'océan sur le choix des équipements.
-                </p>
-                
-                <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
-                  Nous privilégions les <strong className="text-gray-900 dark:text-white">solutions durables</strong> et respectueuses de l'environnement, en accord avec la sensibilité écologique des habitants du Bassin et les réglementations en vigueur dans cette zone protégée.
-                </p>
-                
-                <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
-                  De la <strong className="text-gray-900 dark:text-white">pompe à chaleur</strong> à la <strong className="text-gray-900 dark:text-white">climatisation réversible</strong>, en passant par la <strong className="text-gray-900 dark:text-white">production d'eau chaude sanitaire</strong>, nos solutions s'adaptent à chaque territoire et à chaque budget.
-                </p>
-                
-                <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
-                  Notre équipe d'<strong className="text-gray-900 dark:text-white">experts certifiés</strong> intervient sur l'ensemble du Bassin d'Arcachon, des villas Belle Époque aux constructions contemporaines, en respectant les spécificités locales.
-                </p>
-                
-                <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
-                  Nous garantissons un <strong className="text-gray-900 dark:text-white">service personnalisé</strong> et un suivi rigoureux de chaque projet, de la première visite à la mise en service, en passant par l'installation et la maintenance préventive.
+
+                <div className="my-6">
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">Notre Expertise</h3>
+                  <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
+                    Notre expertise technique, développée depuis plus de 10 ans, nous permet de vous proposer les équipements les plus adaptés à votre habitat et à votre mode de vie.
+                  </p>
+                </div>
+
+                <div className="my-6">
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">Service Complet</h3>
+                  <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
+                    De l'installation à la maintenance, en passant par le conseil et le dépannage, nous vous garantissons un service complet et personnalisé.
+                  </p>
+                </div>
+
+                <div className="my-6">
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">Qualité & Conformité</h3>
+                  <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
+                    Chaque intervention est réalisée dans le respect des normes en vigueur, avec des équipements certifiés et une garantie sur nos prestations.
+                  </p>
+                </div>
+
+                <div className="my-6">
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">Nos Engagements</h3>
+                  <ul className="text-center text-base text-gray-800 dark:text-gray-200 leading-normal space-y-1 max-w-xl mx-auto">
+                    <li>✓ Intervention rapide et professionnelle</li>
+                    <li>✓ Devis gratuit et transparent</li>
+                    <li>✓ Garantie sur toutes nos prestations</li>
+                    <li>✓ Équipements certifiés et de qualité</li>
+                    <li>✓ Respect des délais convenus</li>
+                    <li>✓ SAV réactif et disponible</li>
+                  </ul>
+                </div>
+
+                <div className="my-6">
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">Zone d'Intervention</h3>
+                  <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
+                    Nous intervenons dans toute la Gironde : Bordeaux métropole, Bassin d'Arcachon, Médoc, Entre-deux-Mers et leurs communes environnantes.
+                  </p>
+                </div>
+
+                <p className="text-lg text-gray-800 dark:text-gray-200 leading-normal font-medium mt-6">
+                  Notre objectif : votre satisfaction et votre confort au quotidien, dans le respect de l'environnement et de votre budget.
                 </p>
               </div>
             </div>

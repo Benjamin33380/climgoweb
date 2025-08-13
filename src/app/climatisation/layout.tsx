@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Climatisation Gironde | Installation Climatiseur PAC Air/Air | ClimGO',
   description: 'Expert climatisation Gironde. Installation climatiseur reversible, PAC air/air multi-split. Artisan RGE. Devis gratuit, pose professionnelle.',
-  keywords: 'climatisation gironde, installation climatiseur, PAC air air, climatiseur reversible, multi split, monosplit',
+  keywords: 'climatisation gironde, installation climatiseur, clim réversible, climatisation murale, climatisation gainable, climatisation cassette, pompe à chaleur air air, système multi-split, climatiseur mobile, rafraîchissement adiabatique, ventilation VMC, purification air, climatisation bureau, clim commerce, climatisation industrielle, maintenance climatisation, contrat entretien clim, réparation climatiseur, fluide frigorigène, détection fuite, nettoyage filtres clim',
   
   openGraph: {
     title: 'Climatisation Gironde | Installation Climatiseur PAC Air/Air | ClimGO',
@@ -52,35 +52,8 @@ export default function ClimatisationLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr-FR">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="canonical" href="https://www.climgo.fr/climatisation" />
-        
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Service",
-              "name": "Climatisation",
-              "description": "Expert climatisation Gironde. Installation climatiseur reversible, PAC air/air multi-split. Artisan RGE. Devis gratuit, pose professionnelle.",
-              "provider": {
-                "@type": "Organization",
-                "name": "ClimGO",
-                "url": "https://www.climgo.fr"
-              },
-              "serviceType": "Climatisation",
-              "areaServed": {
-                "@type": "State",
-                "name": "Gironde"
-              },
-              "offers": [{"@type":"Offer","itemOffered":{"@type":"Service","name":"Installation climatiseur mono-split"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Installation multi-split"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"PAC air/air reversible"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Entretien climatisation"}}]
-            })
-          }}
-        />
-      </head>
-      <body>{children}</body>
-    </html>
+    <>
+      {children}
+    </>
   );
 }

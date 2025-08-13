@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Contact ClimGO | Devis Gratuit Chauffage Climatisation Gironde',
   description: 'Contactez ClimGO pour votre projet chauffage climatisation en Gironde. Devis gratuit sous 24h. Artisan RGE. Tel: 07 66 46 00 08.',
-  keywords: 'contact climgo, devis chauffage, devis climatisation, artisan RGE gironde, chauffagiste bordeaux',
+  keywords: 'contact chauffagiste, devis gratuit, rendez-vous technique, urgence chauffage, intervention rapide, artisan qualifié, expert local, proximité client, service personnalisé, satisfaction garantie, tarif transparent, financement possible',
   
   openGraph: {
     title: 'Contact ClimGO | Devis Gratuit Chauffage Climatisation Gironde',
@@ -27,11 +27,8 @@ export default function ContactLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr-FR">
-      <head>
-        <link rel="canonical" href="https://www.climgo.fr/contact" />
-      </head>
-      <body>{children}</body>
-    </html>
+    <>
+      {children}
+    </>
   );
 }

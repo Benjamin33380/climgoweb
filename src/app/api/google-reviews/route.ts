@@ -82,37 +82,8 @@ export async function GET(request: NextRequest) {
             relative_time_description: "il y a 3 semaines",
             text: "Entreprise sérieuse et compétente. Installation de climatisation réalisée dans les temps avec un excellent rapport qualité-prix.",
             time: Math.floor((Date.now() - 1814400000) / 1000)
-          },
-          {
-            author_name: "Pierre Dupont",
-            author_url: "https://www.google.com/maps/contrib/789123456", 
-            language: "fr",
-            profile_photo_url: "/favicon/android-chrome-192x192.png",
-            rating: 5,
-            relative_time_description: "il y a 1 mois",
-            text: "Installation pompe à chaleur impeccable. Équipe professionnelle, respect des délais et excellent suivi. Très satisfait !",
-            time: Math.floor((Date.now() - 2419200000) / 1000)
-          },
-          {
-            author_name: "Isabelle Moreau",
-            author_url: "https://www.google.com/maps/contrib/321654987",
-            language: "fr", 
-            profile_photo_url: "/favicon/android-chrome-192x192.png",
-            rating: 5,
-            relative_time_description: "il y a 2 mois",
-            text: "Service de qualité pour notre système de climatisation. Installation soignée et équipe très compétente. Je recommande ClimGO.",
-            time: Math.floor((Date.now() - 5184000000) / 1000)
-          },
-          {
-            author_name: "Michel Bernard",
-            author_url: "https://www.google.com/maps/contrib/654987321",
-            language: "fr",
-            profile_photo_url: "/favicon/android-chrome-192x192.png",
-            rating: 4,
-            relative_time_description: "il y a 6 semaines", 
-            text: "Bonne prestation dans l'ensemble. Installation efficace et propre. Service client réactif.",
-            time: Math.floor((Date.now() - 3628800000) / 1000)
           }
+
         ]
       },
       status: 'OK'

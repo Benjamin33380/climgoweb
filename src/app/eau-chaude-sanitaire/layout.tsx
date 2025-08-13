@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Chauffe-eau Ballon Eau Chaude Gironde | ClimGO Installation',
   description: 'Installation chauffe-eau Gironde. Ballon eau chaude, chauffe-eau thermodynamique, solaire. Remplacement urgence. Artisan qualifié.',
-  keywords: 'chauffe eau gironde, ballon eau chaude, chauffe eau thermodynamique, chauffe eau solaire, remplacement chauffe eau',
+  keywords: 'eau chaude sanitaire, chauffe-eau thermodynamique, ballon eau chaude, chauffe-eau solaire, préparateur ECS, production eau chaude, cumulus électrique, chauffe-eau gaz, ballon thermodynamique, installation sanitaire, remplacement chauffe-eau, détartrage ballon, isolation ballon, récupération chaleur, système solaire combiné, bouclage sanitaire, légionellose prévention, température eau chaude',
   
   openGraph: {
     title: 'Chauffe-eau Ballon Eau Chaude Gironde | ClimGO Installation',
@@ -52,35 +52,8 @@ export default function EauChaudeSanitaireLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr-FR">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="canonical" href="https://www.climgo.fr/eau-chaude-sanitaire" />
-        
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Service",
-              "name": "Eau chaude sanitaire",
-              "description": "Installation chauffe-eau Gironde. Ballon eau chaude, chauffe-eau thermodynamique, solaire. Remplacement urgence. Artisan qualifié.",
-              "provider": {
-                "@type": "Organization",
-                "name": "ClimGO",
-                "url": "https://www.climgo.fr"
-              },
-              "serviceType": "Eau chaude sanitaire",
-              "areaServed": {
-                "@type": "State",
-                "name": "Gironde"
-              },
-              "offers": [{"@type":"Offer","itemOffered":{"@type":"Service","name":"Installation chauffe-eau électrique"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Chauffe-eau thermodynamique"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Ballon solaire"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Dépannage urgence"}}]
-            })
-          }}
-        />
-      </head>
-      <body>{children}</body>
-    </html>
+    <>
+      {children}
+    </>
   );
 }

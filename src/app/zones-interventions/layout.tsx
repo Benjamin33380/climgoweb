@@ -27,11 +27,8 @@ export default function ZonesinterventionsLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr-FR">
-      <head>
-        <link rel="canonical" href="https://www.climgo.fr/zones-interventions" />
-      </head>
-      <body>{children}</body>
-    </html>
+    <>
+      {children}
+    </>
   );
 }

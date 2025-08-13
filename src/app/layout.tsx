@@ -7,6 +7,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 import { LoadingProvider } from '@/components/providers/LoadingProvider';
 import { ClientHeroUIProvider } from '@/components/providers/HeroUIProvider';
 import { GlobalScrollShadow } from '@/components/ui/GlobalScrollShadow';
+import { AuthProvider } from '@/components/providers/AuthProvider';
 import { scrollShadowConfig } from '@/config/scrollShadow';
 
 const geistSans = Geist({
@@ -22,7 +23,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'ClimGO - Spécialiste Climatisation & Chauffage Gironde',
   description: 'ClimGO, votre spécialiste en climatisation, chauffage et maintenance en Gironde. Installation, entretien, dépannage. Devis gratuit. ☎️ 07 66 46 00 08',
-  keywords: 'climatisation, chauffage, maintenance, Gironde, installation, dépannage, PAC, chauffe-eau',
+  keywords: 'climatisation gironde, chauffage gironde, pompe à chaleur gironde, chauffagiste bordeaux, installateur climatisation, artisan RGE, installation PAC air eau, entretien climatisation, dépannage chauffage, chaudière gaz condensation, plancher chauffant, radiateurs électriques, maintenance pompe à chaleur, réparation climatisation, devis gratuit, intervention urgence, certificat RGE, MaPrimeRénov, aide financière chauffage, prime CEE, crédit impôt, économie énergie, rénovation énergétique, audit énergétique',
   authors: [{ name: 'ClimGO' }],
   creator: 'ClimGO',
   publisher: 'ClimGO',
@@ -100,29 +101,31 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <ClientHeroUIProvider>
-            <LoadingProvider>
-              <GlobalScrollShadow 
-                size={scrollShadowConfig.size}
-                shadowColor={scrollShadowConfig.shadowColor}
-                blurIntensity={scrollShadowConfig.blurIntensity}
-                className="min-h-screen"
-              >
-                <NewHeader />
-                <main>
-                  {children}
-                </main>
-                <Footer />
-              </GlobalScrollShadow>
-            </LoadingProvider>
-          </ClientHeroUIProvider>
-        </ThemeProvider>
+        <AuthProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <ClientHeroUIProvider>
+              <LoadingProvider>
+                <GlobalScrollShadow 
+                  size={scrollShadowConfig.size}
+                  shadowColor={scrollShadowConfig.shadowColor}
+                  blurIntensity={scrollShadowConfig.blurIntensity}
+                  className="min-h-screen"
+                >
+                  <NewHeader />
+                  <main>
+                    {children}
+                  </main>
+                  <Footer />
+                </GlobalScrollShadow>
+              </LoadingProvider>
+            </ClientHeroUIProvider>
+          </ThemeProvider>
+        </AuthProvider>
       </body>
     </html>
   );

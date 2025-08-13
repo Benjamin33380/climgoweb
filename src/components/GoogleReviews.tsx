@@ -30,11 +30,17 @@ export default function GoogleReviews({ placeId }: GoogleReviewsProps) {
   useEffect(() => {
     const fetchReviews = async () => {
       try {
+        // Faire l'appel API seulement si le placeId est valide et configuré
+        if (!placeId || placeId === 'ClimGO-default-place-id') {
+          console.info('Place ID non configuré, utilisation des données mock');
+          throw new Error('Place ID not configured');
+        }
+        
         // Tentative d'appel API via une route Next.js (plus sécurisé)
         const response = await fetch(`/api/google-reviews?placeId=${placeId}`);
         
         if (!response.ok) {
-          throw new Error('API call failed');
+          throw new Error(`API call failed: ${response.status}`);
         }
         
         const data = await response.json();
@@ -45,7 +51,7 @@ export default function GoogleReviews({ placeId }: GoogleReviewsProps) {
           setTotalReviews(data.result.user_ratings_total || 0);
         }
       } catch (error) {
-        console.error('Erreur lors du chargement des avis Google, utilisation des avis statiques:', error);
+        console.info('📍 Chargement des avis statiques (Place ID non configuré ou API indisponible):', error instanceof Error ? error.message : 'Unknown error');
         
         // Fallback vers des avis statiques en cas d'erreur
         const staticReviews: Review[] = [

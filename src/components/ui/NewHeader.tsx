@@ -194,6 +194,38 @@ export function NewHeader() {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
+              <NavigationMenuTrigger>Blog</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                  <ListItem
+                    href="/blog"
+                    title="Tous les articles"
+                  >
+                    Découvrez nos conseils d'experts en chauffage et climatisation
+                  </ListItem>
+                  <ListItem
+                    href="/blog?category=chauffage"
+                    title="Chauffage"
+                  >
+                    Conseils et guides pour vos systèmes de chauffage
+                  </ListItem>
+                  <ListItem
+                    href="/blog?category=climatisation"
+                    title="Climatisation"
+                  >
+                    Tout savoir sur la climatisation et la pompe à chaleur
+                  </ListItem>
+                  <ListItem
+                    href="/blog?category=maintenance"
+                    title="Maintenance"
+                  >
+                    Entretien et dépannage de vos équipements
+                  </ListItem>
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem>
               <NavigationMenuTrigger>Contact</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid w-[400px] gap-3 p-6">
@@ -335,6 +367,32 @@ export function NewHeader() {
               ))}
             </div>
 
+            {/* Blog */}
+            <div className="space-y-2 pt-4 border-t">
+              <h3 className="text-sm font-semibold text-muted-foreground">Blog</h3>
+              <Link
+                href="/blog"
+                className="block p-2 rounded-md hover:bg-accent transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <span className="font-medium">Tous les articles</span>
+              </Link>
+              <Link
+                href="/blog?category=chauffage"
+                className="block p-2 rounded-md hover:bg-accent transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <span className="font-medium">Chauffage</span>
+              </Link>
+              <Link
+                href="/blog?category=climatisation"
+                className="block p-2 rounded-md hover:bg-accent transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <span className="font-medium">Climatisation</span>
+              </Link>
+            </div>
+
             {/* Contact */}
             <div className="space-y-2 pt-4 border-t">
               <Link
@@ -342,7 +400,7 @@ export function NewHeader() {
                 className="block p-2 rounded-md hover:bg-accent transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                <span className="font-medium text-lg">📞 Contact</span>
+                <span className="font-medium text-lg">Contact</span>
               </Link>
             </div>
 

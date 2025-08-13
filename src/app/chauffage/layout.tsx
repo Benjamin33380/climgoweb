@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Chauffage Gironde | Installation Chaudière PAC | ClimGO Expert RGE',
   description: 'Expert chauffage Gironde. Installation chaudière gaz, fioul, granulés, pompe à chaleur. Artisan RGE certifié. Devis gratuit, intervention 24h.',
-  keywords: 'chauffage gironde, installation chaudière, pompe à chaleur air eau, chauffagiste RGE, chaudière gaz condensation, PAC haute température',
+  keywords: 'chauffage gironde, installation chaudière, pompe à chaleur air eau, chaudière gaz condensation, chaudière granulés, plancher chauffant, radiateurs haute performance, PAC haute température, chauffage central, remplacement chaudière, modernisation chauffage, système hybride, chaudière biomasse, poêle granulés, insert cheminée, chauffage au sol, émetteurs chaleur douce, thermostat connecté, régulation chauffage, optimisation consommation, diagnostic thermique',
   
   openGraph: {
     title: 'Chauffage Gironde | Installation Chaudière PAC | ClimGO Expert RGE',
@@ -52,35 +52,8 @@ export default function ChauffageLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr-FR">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="canonical" href="https://www.climgo.fr/chauffage" />
-        
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Service",
-              "name": "Chauffage",
-              "description": "Expert chauffage Gironde. Installation chaudière gaz, fioul, granulés, pompe à chaleur. Artisan RGE certifié. Devis gratuit, intervention 24h.",
-              "provider": {
-                "@type": "Organization",
-                "name": "ClimGO",
-                "url": "https://www.climgo.fr"
-              },
-              "serviceType": "Chauffage",
-              "areaServed": {
-                "@type": "State",
-                "name": "Gironde"
-              },
-              "offers": [{"@type":"Offer","itemOffered":{"@type":"Service","name":"Installation chaudière gaz"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Installation PAC air/eau"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Remplacement chauffage"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Dépannage urgence"}}]
-            })
-          }}
-        />
-      </head>
-      <body>{children}</body>
-    </html>
+    <>
+      {children}
+    </>
   );
 }

@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Services ClimGO | Chauffage Climatisation PAC Gironde | Expert RGE',
   description: 'Tous nos services chauffage climatisation en Gironde. Installation, dépannage, entretien PAC, chaudière, climatiseur. Artisan RGE certifié.',
-  keywords: 'services chauffage, services climatisation, installation PAC, expert RGE gironde',
+  keywords: 'services chauffage climatisation, entreprise CVC, génie climatique, bureau étude thermique, conception installation, mise en service, formation utilisateur, assistance technique, support client, devis personnalisé, étude faisabilité, conseil énergétique, suivi consommation, optimisation coûts, retour investissement',
   
   openGraph: {
     title: 'Services ClimGO | Chauffage Climatisation PAC Gironde | Expert RGE',
@@ -27,11 +27,8 @@ export default function ServicesLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr-FR">
-      <head>
-        <link rel="canonical" href="https://www.climgo.fr/services" />
-      </head>
-      <body>{children}</body>
-    </html>
+    <>
+      {children}
+    </>
   );
 }

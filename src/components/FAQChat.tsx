@@ -88,7 +88,7 @@ export default function FAQChat({
                 return (
                   <motion.div 
                     key={index}
-                    className="chat-card bg-white dark:bg-black rounded-3xl shadow-xl p-4 md:p-6 border border-gray-200 dark:border-gray-700 h-[400px] md:h-[450px] flex flex-col hover:shadow-2xl transition-all duration-300"
+                    className="chat-card bg-white dark:bg-black rounded-3xl shadow-xl p-4 md:p-6 border border-gray-200 dark:border-gray-700 h-[420px] sm:h-[400px] md:h-[450px] flex flex-col hover:shadow-2xl transition-all duration-300"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -123,27 +123,29 @@ export default function FAQChat({
                     </div>
                     
                     {/* Réponse de l'expert */}
-                    <div className="flex items-start justify-end flex-grow">
-                      <div className="flex-1 flex justify-end">
-                        <div className="bg-blue-500 dark:bg-blue-600 text-white rounded-2xl rounded-br-md px-4 py-3 max-w-[90%] shadow-sm">
-                          <p className="text-sm leading-relaxed">{faq.answer}</p>
+                    <div className="flex-grow flex flex-col justify-end">
+                      <div className="flex items-start justify-end mb-2">
+                        <div className="flex-1 flex justify-end">
+                          <div className="bg-blue-500 dark:bg-blue-600 text-white rounded-2xl rounded-br-md px-4 py-3 max-w-[85%] shadow-sm">
+                            <p className="text-sm leading-relaxed">{faq.answer}</p>
+                          </div>
+                        </div>
+                        <div className="ml-3 flex-shrink-0 flex items-end">
+                          <div className="w-8 h-8 flex items-center justify-center">
+                            <Logo3D 
+                              glbUrl="/favicon/logo.glb" 
+                              isHovered={false}
+                              className="w-6 h-6"
+                            />
+                          </div>
                         </div>
                       </div>
-                      <div className="ml-3 flex-shrink-0 flex items-end">
-                        <div className="w-8 h-8 flex items-center justify-center">
-                          <Logo3D 
-                            glbUrl="/favicon/logo.glb" 
-                            isHovered={false}
-                            className="w-6 h-6"
-                          />
+                      
+                      {/* Footer avec nom expert */}
+                      <div className="flex justify-end pr-11">
+                        <div className="text-right">
+                          <p className="text-xs text-gray-400 dark:text-gray-500">Expert ClimGO • À l'instant</p>
                         </div>
-                      </div>
-                    </div>
-                    
-                    {/* Footer avec nom expert */}
-                    <div className="mt-2 flex justify-end">
-                      <div className="text-right">
-                        <p className="text-xs text-gray-400 dark:text-gray-500">Expert ClimGO • À l'instant</p>
                       </div>
                     </div>
                   </motion.div>

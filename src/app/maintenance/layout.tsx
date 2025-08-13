@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Entretien Chauffage Climatisation Gironde | ClimGO Maintenance',
   description: 'Entretien chauffage climatisation Gironde. Maintenance PAC, chaudière, climatiseur. Contrat entretien annuel. Intervention rapide.',
-  keywords: 'entretien chauffage, maintenance PAC, entretien chaudière, contrat maintenance, révision climatisation',
+  keywords: 'maintenance chauffage, entretien climatisation, contrat maintenance, révision annuelle, nettoyage installation, contrôle étanchéité, remplacement filtres, vérification sécurité, optimisation performance, diagnostic panne, réparation urgente, dépannage 24h, pièces détachées, garantie constructeur, expertise technique, prévention pannes, amélioration rendement, mise aux normes',
   
   openGraph: {
     title: 'Entretien Chauffage Climatisation Gironde | ClimGO Maintenance',
@@ -52,35 +52,8 @@ export default function MaintenanceLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr-FR">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="canonical" href="https://www.climgo.fr/maintenance" />
-        
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Service",
-              "name": "Maintenance",
-              "description": "Entretien chauffage climatisation Gironde. Maintenance PAC, chaudière, climatiseur. Contrat entretien annuel. Intervention rapide.",
-              "provider": {
-                "@type": "Organization",
-                "name": "ClimGO",
-                "url": "https://www.climgo.fr"
-              },
-              "serviceType": "Maintenance",
-              "areaServed": {
-                "@type": "State",
-                "name": "Gironde"
-              },
-              "offers": [{"@type":"Offer","itemOffered":{"@type":"Service","name":"Entretien chaudière obligatoire"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Maintenance PAC"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Révision climatisation"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Contrat entretien"}}]
-            })
-          }}
-        />
-      </head>
-      <body>{children}</body>
-    </html>
+    <>
+      {children}
+    </>
   );
 }

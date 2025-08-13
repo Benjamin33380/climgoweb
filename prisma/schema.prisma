@@ -1,0 +1,393 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+// Modèle Utilisateur
+model User {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  name        String?
+  email       String   @unique
+  password    String?
+  image       String?
+  role        UserRole @default(USER)
+  verified    Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  // Relations
+  posts       Post[]
+  comments    Comment[]
+  newsletters NewsletterSubscription[]
+  
+  @@map("users")
+}
+
+// Modèle Article de Blog
+model Post {
+  id          String      @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  slug        String      @unique
+  content     String
+  excerpt     String?
+  coverImage  String?
+  published   Boolean     @default(false)
+  featured    Boolean     @default(false)
+  views       Int         @default(0)
+  seoTitle    String?
+  seoDescription String?
+  tags        String[]
+  category    String?
+  readTime    Int?        // minutes
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  publishedAt DateTime?
+  
+  // Relations
+  authorId    String      @db.ObjectId
+  author      User        @relation(fields: [authorId], references: [id])
+  comments    Comment[]
+  
+  @@map("posts")
+}
+
+// Modèle Commentaire
+model Comment {
+  id        String      @id @default(auto()) @map("_id") @db.ObjectId
+  content   String
+  approved  Boolean     @default(false)
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+  
+  // Relations
+  postId    String      @db.ObjectId
+  post      Post        @relation(fields: [postId], references: [id], onDelete: Cascade)
+  authorId  String      @db.ObjectId
+  author    User        @relation(fields: [authorId], references: [id])
+  
+  // Commentaires parents/enfants (réponses)
+  parentId  String?     @db.ObjectId
+  parent    Comment?    @relation("CommentReplies", fields: [parentId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  replies   Comment[]   @relation("CommentReplies")
+  
+  @@map("comments")
+}
+
+// Modèle Newsletter
+model NewsletterSubscription {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  email       String   @unique
+  name        String?
+  active      Boolean  @default(true)
+  confirmed   Boolean  @default(false)
+  source      String?  // d'où vient l'inscription
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  // Relations optionnelles
+  userId      String?  @db.ObjectId
+  user        User?    @relation(fields: [userId], references: [id])
+  
+  @@map("newsletter_subscriptions")
+}
+
+// Modèle pour les demandes de contact (existant)
+model ContactRequest {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  email       String
+  phone       String
+  address     String?
+  postalCode  String?
+  service     String
+  message     String
+  status      ContactStatus @default(PENDING)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  @@map("contact_requests")
+}
+
+// Modèle Configuration du site
+model SiteConfig {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  key         String   @unique
+  value       String
+  description String?
+  updatedAt   DateTime @updatedAt
+  
+  @@map("site_config")
+}
+
+// Modèle Protection Bruteforce
+model BruteforceAttempt {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  ip          String
+  email       String?
+  attempts    Int      @default(1)
+  blocked     Boolean  @default(false)
+  blockedUntil DateTime?
+  lastAttempt DateTime @default(now())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  @@unique([ip, email])
+  @@map("bruteforce_attempts")
+}
+
+// Modèle Catalogue Produits/Services
+model ProductCatalog {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  code        String   @unique
+  name        String
+  description String?
+  category    String   // chauffage, climatisation, maintenance, etc.
+  subcategory String?  // pompe-a-chaleur, chaudiere, etc.
+  unit        String   @default("unité") // unité, m², heure, forfait
+  unitPrice   Float
+  vatRate     Float    @default(20)
+  supplier    String?
+  brand       String?
+  model       String?
+  active      Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  // Relations avec les devis
+  quoteItems  QuoteItem[]
+  invoiceItems InvoiceItem[]
+  
+  @@map("product_catalog")
+}
+
+// Modèle Templates de Devis
+model QuoteTemplate {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  category    String   // installation-pac, maintenance-chaudiere, etc.
+  description String?
+  items       Json     // Structure des items par défaut
+  validDays   Int      @default(30)
+  notes       String?
+  active      Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  @@map("quote_templates")
+}
+
+// Modèle Client
+model Client {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  email       String   @unique
+  phone       String?
+  address     String?
+  postalCode  String?
+  city        String?
+  notes       String?
+  clientType  ClientType @default(INDIVIDUAL) // particulier ou professionnel
+  siret       String?  // pour les pros
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  // Relations
+  quotes      Quote[]
+  invoices    Invoice[]
+  projects    Project[]
+  
+  @@map("clients")
+}
+
+// Modèle Devis
+model Quote {
+  id          String      @id @default(auto()) @map("_id") @db.ObjectId
+  number      String      @unique
+  title       String
+  description String?
+  subtotal    Float
+  vatRate     Float       @default(20)
+  vatAmount   Float
+  total       Float
+  validUntil  DateTime?
+  status      QuoteStatus @default(DRAFT)
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  sentAt      DateTime?
+  viewedAt    DateTime?
+  
+  // Relations
+  clientId    String      @db.ObjectId
+  client      Client      @relation(fields: [clientId], references: [id])
+  items       QuoteItem[]
+  invoice     Invoice?
+  
+  @@map("quotes")
+}
+
+// Modèle Articles de devis
+model QuoteItem {
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  description String
+  quantity    Float   @default(1)
+  unitPrice   Float
+  discount    Float   @default(0) // remise en pourcentage
+  total       Float
+  order       Int     @default(0) // ordre d'affichage
+  
+  // Relations
+  quoteId     String         @db.ObjectId
+  quote       Quote          @relation(fields: [quoteId], references: [id], onDelete: Cascade)
+  productId   String?        @db.ObjectId
+  product     ProductCatalog? @relation(fields: [productId], references: [id])
+  
+  @@map("quote_items")
+}
+
+// Modèle Facture
+model Invoice {
+  id          String        @id @default(auto()) @map("_id") @db.ObjectId
+  number      String        @unique
+  title       String
+  description String?
+  subtotal    Float
+  vatRate     Float         @default(20)
+  vatAmount   Float
+  total       Float
+  dueDate     DateTime?
+  status      InvoiceStatus @default(DRAFT)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  sentAt      DateTime?
+  paidAt      DateTime?
+  
+  // Relations
+  clientId    String        @db.ObjectId
+  client      Client        @relation(fields: [clientId], references: [id])
+  quoteId     String?       @unique @db.ObjectId
+  quote       Quote?        @relation(fields: [quoteId], references: [id])
+  items       InvoiceItem[]
+  
+  @@map("invoices")
+}
+
+// Modèle Articles de facture
+model InvoiceItem {
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  description String
+  quantity    Float   @default(1)
+  unitPrice   Float
+  total       Float
+  
+  // Relations
+  invoiceId   String  @db.ObjectId
+  invoice     Invoice @relation(fields: [invoiceId], references: [id], onDelete: Cascade)
+  
+  @@map("invoice_items")
+}
+
+// Modèle Projet
+model Project {
+  id          String        @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  description String?
+  address     String?
+  startDate   DateTime?
+  endDate     DateTime?
+  status      ProjectStatus @default(PLANNING)
+  progress    Float         @default(0) // Pourcentage 0-100
+  notes       String?
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  
+  // Relations
+  clientId    String        @db.ObjectId
+  client      Client        @relation(fields: [clientId], references: [id])
+  photos      ProjectPhoto[]
+  tasks       ProjectTask[]
+  
+  @@map("projects")
+}
+
+// Modèle Photos de projet
+model ProjectPhoto {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  url         String
+  caption     String?
+  uploadedAt  DateTime @default(now())
+  
+  // Relations
+  projectId   String   @db.ObjectId
+  project     Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  
+  @@map("project_photos")
+}
+
+// Modèle Tâches de projet
+model ProjectTask {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  description String?
+  completed   Boolean  @default(false)
+  dueDate     DateTime?
+  completedAt DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  // Relations
+  projectId   String   @db.ObjectId
+  project     Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  
+  @@map("project_tasks")
+}
+
+// Enums
+enum UserRole {
+  USER
+  ADMIN
+  EDITOR
+}
+
+enum ContactStatus {
+  PENDING
+  CONTACTED
+  CONVERTED
+  REJECTED
+}
+
+enum QuoteStatus {
+  DRAFT
+  SENT
+  VIEWED
+  ACCEPTED
+  REJECTED
+  EXPIRED
+}
+
+enum InvoiceStatus {
+  DRAFT
+  SENT
+  PAID
+  OVERDUE
+  CANCELLED
+}
+
+enum ProjectStatus {
+  PLANNING
+  IN_PROGRESS
+  PAUSED
+  COMPLETED
+  CANCELLED
+}
+
+enum ClientType {
+  INDIVIDUAL
+  PROFESSIONAL
+}
