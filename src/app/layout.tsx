@@ -7,7 +7,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 import { LoadingProvider } from '@/components/providers/LoadingProvider';
 import { ClientHeroUIProvider } from '@/components/providers/HeroUIProvider';
 import { GlobalScrollShadow } from '@/components/ui/GlobalScrollShadow';
-import { AuthProvider } from '@/components/providers/AuthProvider';
+
 import { scrollShadowConfig } from '@/config/scrollShadow';
 
 const geistSans = Geist({
@@ -101,31 +101,29 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <AuthProvider>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <ClientHeroUIProvider>
-              <LoadingProvider>
-                <GlobalScrollShadow 
-                  size={scrollShadowConfig.size}
-                  shadowColor={scrollShadowConfig.shadowColor}
-                  blurIntensity={scrollShadowConfig.blurIntensity}
-                  className="min-h-screen"
-                >
-                  <NewHeader />
-                  <main>
-                    {children}
-                  </main>
-                  <Footer />
-                </GlobalScrollShadow>
-              </LoadingProvider>
-            </ClientHeroUIProvider>
-          </ThemeProvider>
-        </AuthProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <ClientHeroUIProvider>
+            <LoadingProvider>
+              <GlobalScrollShadow 
+                size={scrollShadowConfig.size}
+                shadowColor={scrollShadowConfig.shadowColor}
+                blurIntensity={scrollShadowConfig.blurIntensity}
+                className="min-h-screen"
+              >
+                <NewHeader />
+                <main>
+                  {children}
+                </main>
+                <Footer />
+              </GlobalScrollShadow>
+            </LoadingProvider>
+          </ClientHeroUIProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
