@@ -9,7 +9,7 @@ import { Color } from '@tiptap/extension-color'
 import { 
   Bold, 
   Italic, 
-  Underline, 
+ 
   Strikethrough, 
   Code, 
   Quote, 
@@ -31,7 +31,7 @@ interface RichTextEditorProps {
   placeholder?: string
 }
 
-export default function RichTextEditor({ content, onChange, placeholder = "Commencez à écrire..." }: RichTextEditorProps) {
+export default function RichTextEditor({ content, onChange, placeholder: _placeholder = "Commencez à écrire..." }: RichTextEditorProps) {
   const [showLinkDialog, setShowLinkDialog] = useState(false)
   const [linkUrl, setLinkUrl] = useState('')
 

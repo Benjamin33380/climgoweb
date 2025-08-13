@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Logo3D } from '@/components/ui/Logo3D';
-import { getCityClientProfiles, type ClientProfile } from '@/data/clientProfiles';
+import { getCityClientProfiles } from '@/data/clientProfiles';
 
 interface FAQItem {
   question: string;
@@ -45,12 +45,12 @@ export default function FAQChat({
   title = "Questions Fréquentes",
   subtitle = "Nos réponses à vos préoccupations les plus courantes",
   faqs = defaultFAQs,
-  initials = ["JD", "ML", "SP", "AB"],
+  initials: _initials = ["JD", "ML", "SP", "AB"],
   citySlug = "default",
-  ctaTitle = "Une autre question ?",
-  ctaSubtitle = "N'hésitez pas à nous contacter directement !",
-  phoneNumber = "0123456789",
-  email = "contact@climgo.fr"
+  ctaTitle: _ctaTitle = "Une autre question ?",
+  ctaSubtitle: _ctaSubtitle = "N'hésitez pas à nous contacter directement !",
+  phoneNumber: _phoneNumber = "0123456789",
+  email: _email = "contact@climgo.fr"
 }: FAQChatProps) {
   const clientProfiles = getCityClientProfiles(citySlug);
   return (

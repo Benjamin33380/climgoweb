@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useCallback } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Calendar, Eye, MessageSquare, Search, Filter, Grid3X3, List, Clock, Tag, TrendingUp } from 'lucide-react'
@@ -55,11 +55,7 @@ export default function BlogPage() {
   const [searchQuery, setSearchQuery] = useState('')
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid')
 
-  useEffect(() => {
-    fetchPosts()
-  }, [currentPage, selectedCategory, searchQuery])
-
-  const fetchPosts = async () => {
+  const fetchPosts = useCallback(async () => {
     try {
       const params = new URLSearchParams({
         page: currentPage.toString(),
@@ -79,7 +75,11 @@ export default function BlogPage() {
     } finally {
       setLoading(false)
     }
-  }
+  }, [currentPage, selectedCategory, searchQuery])
+
+  useEffect(() => {
+    fetchPosts()
+  }, [fetchPosts])
 
   const handleCategoryChange = (category: string) => {
     setSelectedCategory(category)
