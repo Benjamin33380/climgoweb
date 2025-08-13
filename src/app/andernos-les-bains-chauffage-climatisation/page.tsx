@@ -773,7 +773,7 @@ export default function Andernos() {
 
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 text-center">Entretien & maintenance</h3>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-center text-lg flex-grow">
-                  Pour garantir la performance et la durabilité de vos équipements, nous proposons des contrats d'entretien personnalisés avec des visites régulières pour vérification, nettoyage et optimisation.
+                  Pou garantir la performance et la durabilité de vos équipements, nous proposons des contrats d'entretien personnalisés avec des visites régulières pour vérification, nettoyage et optimisation.
                 </p>
 
                 {/* Badge de service */}
