@@ -44,7 +44,7 @@ const statusConfig = {
 export default function InvoicesPage() {
   const { data: session, status } = useSession()
   const router = useRouter()
-  const [invoices, setInvoices] = useState<Invoice[]>([])
+  const [invoices] = useState<Invoice[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const [searchTerm, setSearchTerm] = useState('')
   const [statusFilter, setStatusFilter] = useState('ALL')

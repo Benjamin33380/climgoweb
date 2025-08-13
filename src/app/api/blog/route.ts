@@ -64,7 +64,7 @@ export async function GET(req: NextRequest) {
           limit
         }
       })
-    } catch (error) {
+    } catch (_error) {
       // Si DB pas connectée, retourner des données mockées avec les nouvelles propriétés
       const mockPosts = [
         {
@@ -203,8 +203,8 @@ export async function GET(req: NextRequest) {
       })
     }
 
-  } catch (error) {
-    console.error('Error fetching blog posts:', error)
+  } catch (_error) {
+    console.error('Error fetching blog posts:', _error)
     return NextResponse.json(
       { error: 'Erreur lors de la récupération des articles' },
       { status: 500 }

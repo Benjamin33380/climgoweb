@@ -65,8 +65,8 @@ export default function ClientsPage() {
         const data = await response.json()
         setClients(data.clients || [])
       }
-    } catch (error) {
-      console.error('Erreur:', error)
+    } catch (_error) {
+      console.error('Erreur:', _error)
     } finally {
       setIsLoading(false)
     }

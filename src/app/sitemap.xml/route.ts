@@ -98,7 +98,7 @@ export async function GET() {
   </url>`
       })
     }
-  } catch (error) {
+  } catch (_error) {
     console.log('Blog posts not available for sitemap')
   }
 

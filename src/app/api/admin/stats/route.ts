@@ -3,7 +3,7 @@ import { getServerSession } from 'next-auth'
 import { authOptions } from '../../../../../lib/auth'
 import { prisma } from '../../../../../lib/prisma'
 
-export async function GET(req: NextRequest) {
+export async function GET(_req: NextRequest) {
   try {
     const session = await getServerSession(authOptions)
 
@@ -44,7 +44,7 @@ export async function GET(req: NextRequest) {
         newsletterSubscribers,
         contactRequests
       })
-    } catch (error) {
+    } catch (_error) {
       // Si DB pas connectée, retourner des données mockées
       return NextResponse.json({
         totalPosts: 12,
@@ -56,8 +56,8 @@ export async function GET(req: NextRequest) {
       })
     }
 
-  } catch (error) {
-    console.error('Error fetching admin stats:', error)
+  } catch (_error) {
+    console.error('Error fetching admin stats:', _error)
     return NextResponse.json(
       { error: 'Erreur lors de la récupération des statistiques' },
       { status: 500 }

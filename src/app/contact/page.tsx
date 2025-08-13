@@ -71,7 +71,7 @@ export default function ContactPage() {
           message: data.error || 'Erreur lors de l\'envoi. Veuillez réessayer.'
         });
       }
-    } catch (error) {
+    } catch (_error) {
       setSubmitStatus({
         type: 'error',
         message: 'Erreur de connexion. Vérifiez votre connexion internet et réessayez.'

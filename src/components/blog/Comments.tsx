@@ -42,8 +42,8 @@ export default function Comments({ slug }: CommentsProps) {
       const response = await fetch(`/api/blog/${slug}/comments`)
       const data = await response.json()
       setComments(data.comments || [])
-    } catch (error) {
-      console.error('Error fetching comments:', error)
+    } catch (_error) {
+      console.error('Error fetching comments:', _error)
     } finally {
       setIsLoading(false)
     }
@@ -96,7 +96,7 @@ export default function Comments({ slug }: CommentsProps) {
           message: data.error || 'Erreur lors de l\'envoi du commentaire'
         })
       }
-    } catch (error) {
+    } catch (_error) {
       setSubmitStatus({
         type: 'error',
         message: 'Erreur de connexion'

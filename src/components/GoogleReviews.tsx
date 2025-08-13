@@ -50,9 +50,9 @@ export default function GoogleReviews({ placeId }: GoogleReviewsProps) {
           setAverageRating(data.result.rating || 0);
           setTotalReviews(data.result.user_ratings_total || 0);
         }
-      } catch (error) {
+      } catch (_error) {
         if (placeId && placeId !== 'ClimGO-default-place-id') {
-          console.warn('⚠️  Erreur API Google Reviews, basculement vers données statiques:', error instanceof Error ? error.message : 'Unknown error');
+          console.warn('⚠️  Erreur API Google Reviews, basculement vers données statiques:', _error instanceof Error ? _error.message : 'Unknown error');
         } else {
           console.info('📍 Utilisation des avis statiques (configuration en mode démo)');
         }

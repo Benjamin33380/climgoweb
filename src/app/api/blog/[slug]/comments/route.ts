@@ -46,8 +46,8 @@ export async function GET(
 
     return NextResponse.json({ comments })
 
-  } catch (error) {
-    console.error('Error fetching comments:', error)
+  } catch (_error) {
+    console.error('Error fetching comments:', _error)
     return NextResponse.json(
       { error: 'Erreur lors de la récupération des commentaires' },
       { status: 500 }
@@ -122,8 +122,8 @@ export async function POST(
       message: 'Commentaire soumis pour modération'
     }, { status: 201 })
 
-  } catch (error) {
-    console.error('Error creating comment:', error)
+  } catch (_error) {
+    console.error('Error creating comment:', _error)
     return NextResponse.json(
       { error: 'Erreur lors de la création du commentaire' },
       { status: 500 }

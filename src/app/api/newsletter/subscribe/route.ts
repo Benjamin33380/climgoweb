@@ -59,8 +59,8 @@ export async function POST(req: NextRequest) {
       message: 'Abonnement réussi ! Vous recevrez bientôt nos dernières actualités.'
     }, { status: 201 })
 
-  } catch (error) {
-    console.error('Newsletter subscription error:', error)
+  } catch (_error) {
+    console.error('Newsletter subscription error:', _error)
     return NextResponse.json(
       { error: 'Erreur lors de l\'abonnement' },
       { status: 500 }
@@ -100,8 +100,8 @@ export async function DELETE(req: NextRequest) {
       message: 'Désabonnement réussi. Nous sommes désolés de vous voir partir.'
     })
 
-  } catch (error) {
-    console.error('Newsletter unsubscribe error:', error)
+  } catch (_error) {
+    console.error('Newsletter unsubscribe error:', _error)
     return NextResponse.json(
       { error: 'Erreur lors du désabonnement' },
       { status: 500 }

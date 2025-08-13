@@ -40,7 +40,7 @@ export default function SignInPage() {
           router.push('/profile')
         }
       }
-    } catch (error) {
+    } catch (_error) {
       setError('Une erreur est survenue')
     } finally {
       setIsLoading(false)

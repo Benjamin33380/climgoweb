@@ -66,7 +66,7 @@ export default function Newsletter({
           message: data.error || 'Erreur lors de l\'abonnement'
         })
       }
-    } catch (error) {
+    } catch (_error) {
       setStatus({
         type: 'error',
         message: 'Erreur de connexion. Veuillez réessayer.'

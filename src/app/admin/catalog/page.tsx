@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { Plus, Search, Filter, Edit, Trash2, Package, Eye, EyeOff } from 'lucide-react'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Badge } from '@/components/ui/badge'
@@ -139,8 +139,8 @@ export default function CatalogPage() {
       ]
       
       setProducts(mockProducts)
-    } catch (error) {
-      console.error('Erreur lors du chargement des produits:', error)
+    } catch (_error) {
+      console.error('Erreur lors du chargement des produits:', _error)
     } finally {
       setLoading(false)
     }
@@ -183,8 +183,8 @@ export default function CatalogPage() {
       
       // Recharger la liste
       fetchProducts()
-    } catch (error) {
-      console.error('Erreur:', error)
+    } catch (_error) {
+      console.error('Erreur:', _error)
     }
   }
 

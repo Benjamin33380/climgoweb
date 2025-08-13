@@ -33,8 +33,8 @@ export async function GET() {
     })
 
     return NextResponse.json({ quotes })
-  } catch (error) {
-    console.error('Erreur lors de la récupération des devis:', error)
+  } catch (_error) {
+    console.error('Erreur lors de la récupération des devis:', _error)
     return NextResponse.json({ error: 'Erreur serveur' }, { status: 500 })
   }
 }
@@ -105,8 +105,8 @@ export async function POST(request: NextRequest) {
     })
 
     return NextResponse.json({ quote })
-  } catch (error) {
-    console.error('Erreur lors de la création du devis:', error)
+  } catch (_error) {
+    console.error('Erreur lors de la création du devis:', _error)
     return NextResponse.json({ error: 'Erreur serveur' }, { status: 500 })
   }
 }

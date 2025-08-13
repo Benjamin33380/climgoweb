@@ -27,8 +27,8 @@ export async function GET() {
     })
 
     return NextResponse.json({ clients })
-  } catch (error) {
-    console.error('Erreur lors de la récupération des clients:', error)
+  } catch (_error) {
+    console.error('Erreur lors de la récupération des clients:', _error)
     return NextResponse.json({ error: 'Erreur serveur' }, { status: 500 })
   }
 }
@@ -75,8 +75,8 @@ export async function POST(request: NextRequest) {
     })
 
     return NextResponse.json({ client })
-  } catch (error) {
-    console.error('Erreur lors de la création du client:', error)
+  } catch (_error) {
+    console.error('Erreur lors de la création du client:', _error)
     return NextResponse.json({ error: 'Erreur serveur' }, { status: 500 })
   }
 }

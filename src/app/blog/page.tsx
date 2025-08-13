@@ -3,13 +3,13 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Calendar, User, Eye, MessageSquare, Search, Filter, Grid3X3, List, Clock, Tag, TrendingUp } from 'lucide-react'
+import { Calendar, Eye, MessageSquare, Search, Filter, Grid3X3, List, Clock, Tag, TrendingUp } from 'lucide-react'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Separator } from '@/components/ui/separator'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { Avatar, AvatarFallback } from '@/components/ui/avatar'
 
 interface Post {
   id: string
@@ -74,8 +74,8 @@ export default function BlogPage() {
         setPosts(data.posts)
         setTotalPages(data.pagination.pages)
       }
-    } catch (error) {
-      console.error('Erreur lors du chargement des articles:', error)
+    } catch (_error) {
+      console.error('Erreur lors du chargement des articles:', _error)
     } finally {
       setLoading(false)
     }

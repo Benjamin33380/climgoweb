@@ -63,8 +63,8 @@ export async function POST(req: NextRequest) {
       { status: 200 }
     )
 
-  } catch (error) {
-    console.error('Erreur lors de l\'enregistrement des métriques:', error)
+  } catch (_error) {
+    console.error('Erreur lors de l\'enregistrement des métriques:', _error)
     return NextResponse.json(
       { error: 'Erreur serveur' },
       { status: 500 }
@@ -149,8 +149,8 @@ export async function GET(req: NextRequest) {
       rawMetrics: filteredMetrics.slice(-100) // Limiter à 100 échantillons récents
     })
 
-  } catch (error) {
-    console.error('Erreur lors de la récupération des métriques:', error)
+  } catch (_error) {
+    console.error('Erreur lors de la récupération des métriques:', _error)
     return NextResponse.json(
       { error: 'Erreur lors de la récupération des données' },
       { status: 500 }

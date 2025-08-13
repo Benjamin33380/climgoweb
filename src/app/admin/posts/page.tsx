@@ -60,8 +60,8 @@ export default function PostsPage() {
         const data = await response.json()
         setPosts(data.posts || [])
       }
-    } catch (error) {
-      console.error('Erreur:', error)
+    } catch (_error) {
+      console.error('Erreur:', _error)
     } finally {
       setIsLoading(false)
     }

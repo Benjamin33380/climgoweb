@@ -9,23 +9,7 @@ import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
 import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
-
-// Import des nouveaux composants SEO 🚀
-import StructuredData from '@/components/seo/StructuredData';
-import SEOBreadcrumbs from '@/components/seo/SEOBreadcrumbs';
-import InternalLinking from '@/components/seo/InternalLinking';
-import OptimizedImage from '@/components/seo/OptimizedImage';
-import GoogleMyBusiness from '@/components/seo/GoogleMyBusiness';
-import ContentSuggestions from '@/components/seo/ContentSuggestions';
-import PerformanceMonitor from '@/components/seo/PerformanceMonitor';
+// Composants SEO supprimés
 
 export default function Bordeaux() {
 
@@ -141,19 +125,6 @@ export default function Bordeaux() {
 
   return (
     <main className="px-0">
-      {/* Schema.org données structurées pour Google */}
-      <StructuredData 
-        type="LocalBusiness" 
-        data={{
-          latitude: 44.8378,
-          longitude: -0.5792,
-          postalCode: "33000"
-        }}
-        cityName="Bordeaux"
-      />
-      
-      {/* Performance monitoring */}
-      <PerformanceMonitor />
       <section className="relative h-[90vh] min-h-[500px] sm:min-h-[600px] md:min-h-[640px] w-full overflow-hidden bg-white dark:bg-black text-black dark:text-white">
         {/* Zone vidéo - Responsive avec adaptation mobile */}
         <motion.div
@@ -254,18 +225,7 @@ export default function Bordeaux() {
       </section>
 
 
-      
-      {/* Breadcrumbs SEO avec données structurées */}
-      <div className="bg-white dark:bg-black py-4">
-        <div className="max-w-7xl mx-auto px-4">
-          <SEOBreadcrumbs 
-            items={[
-              { name: "Zones d'intervention", href: "/zones-interventions" }
-            ]}
-            currentPage="Bordeaux - Chauffage Climatisation"
-          />
-        </div>
-      </div>
+
       
       {/* Section Bassin d'Arcachon - Texte défilant au scroll */}
       <section className="relative py-12 overflow-hidden">
@@ -848,15 +808,7 @@ export default function Bordeaux() {
         placeId={process.env.NEXT_PUBLIC_GOOGLE_PLACE_ID || "ClimGO-default-place-id"} 
       />
 
-      {/* Google My Business Widget */}
-      <div className="py-12 bg-gray-50 dark:bg-gray-900">
-        <div className="max-w-4xl mx-auto px-4">
-          <GoogleMyBusiness 
-            city="bordeaux"
-            showFullWidget={true}
-          />
-        </div>
-      </div>
+
 
       {/* Section FAQ - Style Chat Moderne avec questions variées */}
       <FAQChat title="Questions Fréquentes"
@@ -868,26 +820,7 @@ export default function Bordeaux() {
         phoneNumber="0123456789"
         email="contact@climgo.fr" citySlug="bordeaux" />
 
-      {/* Liens internes automatiques */}
-      <div className="py-12 bg-white dark:bg-black">
-        <div className="max-w-6xl mx-auto px-4">
-          <InternalLinking 
-            currentCity="bordeaux"
-            currentService="chauffage-climatisation"
-          />
-        </div>
-      </div>
 
-      {/* Suggestions de contenu SEO (visible seulement pour admins) */}
-      <div className="py-8 bg-gray-50 dark:bg-gray-900">
-        <div className="max-w-4xl mx-auto px-4">
-          <ContentSuggestions 
-            currentCity="bordeaux"
-            currentService="chauffage-climatisation"
-            showOnlyAdmin={true}
-          />
-        </div>
-      </div>
 
 
 

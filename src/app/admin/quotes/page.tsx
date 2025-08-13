@@ -45,7 +45,7 @@ const statusConfig = {
 export default function QuotesPage() {
   const { data: session, status } = useSession()
   const router = useRouter()
-  const [quotes, setQuotes] = useState<Quote[]>([])
+  const [quotes] = useState<Quote[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const [searchTerm, setSearchTerm] = useState('')
   const [statusFilter, setStatusFilter] = useState('ALL')

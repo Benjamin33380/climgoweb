@@ -4,7 +4,7 @@ import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { ArrowLeft, Save, Eye, Upload } from 'lucide-react'
+import { ArrowLeft, Save, Eye } from 'lucide-react'
 import RichTextEditor from '@/components/admin/RichTextEditor'
 
 export default function NewPostPage() {
@@ -76,7 +76,7 @@ export default function NewPostPage() {
           message: data.error || 'Erreur lors de la sauvegarde'
         })
       }
-    } catch (error) {
+    } catch (_error) {
       setSubmitStatus({
         type: 'error',
         message: 'Erreur de connexion'
@@ -143,8 +143,8 @@ export default function NewPostPage() {
       })
       const data = await response.json()
       return data.secure_url
-    } catch (error) {
-      console.error('Upload error:', error)
+    } catch (_error) {
+      console.error('Upload error:', _error)
       return null
     }
   }

@@ -49,8 +49,8 @@ export async function GET() {
       recentAttempts,
       blockedIPs
     })
-  } catch (error) {
-    console.error('Erreur lors de la récupération des stats de sécurité:', error)
+  } catch (_error) {
+    console.error('Erreur lors de la récupération des stats de sécurité:', _error)
     return NextResponse.json({ error: 'Erreur serveur' }, { status: 500 })
   }
 }
@@ -80,8 +80,8 @@ export async function POST(request: Request) {
     }
     
     return NextResponse.json({ error: 'Action non supportée' }, { status: 400 })
-  } catch (error) {
-    console.error('Erreur lors de l\'action de sécurité:', error)
+  } catch (_error) {
+    console.error('Erreur lors de l\'action de sécurité:', _error)
     return NextResponse.json({ error: 'Erreur serveur' }, { status: 500 })
   }
 }

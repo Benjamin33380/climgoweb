@@ -106,8 +106,8 @@ export default function SettingsPage() {
       // Sauvegarder les paramètres
       console.log('Saving settings...', { companySettings, invoiceSettings })
       // await saveSettings({ company: companySettings, invoice: invoiceSettings })
-    } catch (error) {
-      console.error('Erreur:', error)
+    } catch (_error) {
+      console.error('Erreur:', _error)
     } finally {
       setIsSaving(false)
     }

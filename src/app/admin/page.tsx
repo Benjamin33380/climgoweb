@@ -60,8 +60,8 @@ export default function AdminDashboard() {
         const data = await response.json()
         setStats(data)
       }
-    } catch (error) {
-      console.error('Error fetching stats:', error)
+    } catch (_error) {
+      console.error('Error fetching stats:', _error)
     }
   }
 
@@ -72,8 +72,8 @@ export default function AdminDashboard() {
         const data = await response.json()
         setRecentPosts(data.posts)
       }
-    } catch (error) {
-      console.error('Error fetching posts:', error)
+    } catch (_error) {
+      console.error('Error fetching posts:', _error)
     } finally {
       setIsLoading(false)
     }

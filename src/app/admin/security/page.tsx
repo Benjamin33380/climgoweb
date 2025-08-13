@@ -68,8 +68,8 @@ export default function SecurityPage() {
         setRecentAttempts(data.recentAttempts)
         setBlockedIPs(data.blockedIPs)
       }
-    } catch (error) {
-      console.error('Erreur:', error)
+    } catch (_error) {
+      console.error('Erreur:', _error)
     } finally {
       setIsLoading(false)
     }
@@ -92,8 +92,8 @@ export default function SecurityPage() {
       if (response.ok) {
         fetchSecurityData() // Rafraîchir les données
       }
-    } catch (error) {
-      console.error('Erreur lors du déblocage:', error)
+    } catch (_error) {
+      console.error('Erreur lors du déblocage:', _error)
     }
   }
 

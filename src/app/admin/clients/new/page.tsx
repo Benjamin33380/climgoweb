@@ -69,8 +69,8 @@ export default function NewClientPage() {
       }
 
       router.push('/admin/clients')
-    } catch (error) {
-      setError(error instanceof Error ? error.message : 'Erreur lors de la création')
+    } catch (_error) {
+      setError(_error instanceof Error ? _error.message : 'Erreur lors de la création')
     } finally {
       setIsLoading(false)
     }

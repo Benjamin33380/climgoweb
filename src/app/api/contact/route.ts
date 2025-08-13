@@ -30,7 +30,7 @@ export async function POST(req: NextRequest) {
           rejectUnauthorized: false
         }
       });
-    } catch (error) {
+    } catch (_error) {
       // Si ça échoue, essayer avec port 465 (SSL)
       transporter = nodemailer.createTransport({
         host: 'smtp.climgo.fr',
@@ -126,13 +126,13 @@ export async function POST(req: NextRequest) {
       { status: 200 }
     );
 
-  } catch (error) {
-    console.error('Erreur envoi email:', error);
+  } catch (_error) {
+    console.error('Erreur envoi email:', _error);
     
     return NextResponse.json(
       { 
         error: 'Erreur lors de l\'envoi du message. Veuillez réessayer ou nous appeler directement.',
-        details: process.env.NODE_ENV === 'development' ? error : undefined
+        details: process.env.NODE_ENV === 'development' ? _error : undefined
       },
       { status: 500 }
     );

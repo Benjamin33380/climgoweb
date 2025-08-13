@@ -71,8 +71,8 @@ export default function NewQuotePage() {
           const data = await response.json()
           setClients(data.clients)
         }
-      } catch (error) {
-        console.error('Erreur:', error)
+      } catch (_error) {
+        console.error('Erreur:', _error)
       } finally {
         setLoadingClients(false)
       }
@@ -154,8 +154,8 @@ export default function NewQuotePage() {
       }
 
       router.push('/admin/quotes')
-    } catch (error) {
-      setError(error instanceof Error ? error.message : 'Erreur lors de la création')
+    } catch (_error) {
+      setError(_error instanceof Error ? _error.message : 'Erreur lors de la création')
     } finally {
       setIsLoading(false)
     }

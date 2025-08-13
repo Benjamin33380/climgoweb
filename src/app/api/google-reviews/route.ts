@@ -44,8 +44,8 @@ export async function GET(request: NextRequest) {
     console.log('Avis récupérés avec succès:', data.result?.reviews?.length || 0, 'avis');
     return NextResponse.json(data);
     
-  } catch (error) {
-    console.error('Erreur lors de la récupération des avis Google:', error);
+  } catch (_error) {
+    console.error('Erreur lors de la récupération des avis Google:', _error);
     
     // Fallback avec vos vraies données (à ajuster selon vos avis réels)
     return NextResponse.json({

@@ -52,7 +52,7 @@ export async function GET(req: NextRequest) {
           limit
         }
       })
-    } catch (error) {
+    } catch (_error) {
       // Si DB pas connectée, retourner des données mockées
       const mockPosts = [
         {
@@ -88,8 +88,8 @@ export async function GET(req: NextRequest) {
       })
     }
 
-  } catch (error) {
-    console.error('Error fetching posts:', error)
+  } catch (_error) {
+    console.error('Error fetching posts:', _error)
     return NextResponse.json(
       { error: 'Erreur lors de la récupération des articles' },
       { status: 500 }
@@ -167,8 +167,8 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json(post, { status: 201 })
 
-  } catch (error) {
-    console.error('Error creating post:', error)
+  } catch (_error) {
+    console.error('Error creating post:', _error)
     return NextResponse.json(
       { error: 'Erreur lors de la création de l\'article' },
       { status: 500 }
