@@ -51,7 +51,11 @@ export default function GoogleReviews({ placeId }: GoogleReviewsProps) {
           setTotalReviews(data.result.user_ratings_total || 0);
         }
       } catch (error) {
-        console.info('📍 Chargement des avis statiques (Place ID non configuré ou API indisponible):', error instanceof Error ? error.message : 'Unknown error');
+        if (placeId && placeId !== 'ClimGO-default-place-id') {
+          console.warn('⚠️  Erreur API Google Reviews, basculement vers données statiques:', error instanceof Error ? error.message : 'Unknown error');
+        } else {
+          console.info('📍 Utilisation des avis statiques (configuration en mode démo)');
+        }
         
         // Fallback vers des avis statiques en cas d'erreur
         const staticReviews: Review[] = [
