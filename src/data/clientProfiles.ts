@@ -49,10 +49,10 @@ const cityClientProfiles: CityClientProfiles = {
   ],
   // Ajout de profils pour les autres villes avec des variations
   'default': [
-    { name: "Client", firstName: "Anonyme", initials: "CA", avatarColor: "bg-gradient-to-br from-gray-400 to-gray-600", avatarColorDark: "bg-gradient-to-br from-gray-300 to-gray-500" },
-    { name: "Utilisateur", firstName: "Mystère", initials: "UM", avatarColor: "bg-gradient-to-br from-blue-400 to-blue-600", avatarColorDark: "bg-gradient-to-br from-blue-300 to-blue-500" },
-    { name: "Personne", firstName: "Inconnue", initials: "PI", avatarColor: "bg-gradient-to-br from-green-400 to-green-600", avatarColorDark: "bg-gradient-to-br from-green-300 to-green-500" },
-    { name: "Demandeur", firstName: "Secret", initials: "DS", avatarColor: "bg-gradient-to-br from-purple-400 to-purple-600", avatarColorDark: "bg-gradient-to-br from-purple-300 to-purple-500" }
+    { name: "Lecomte", firstName: "Aurélie", initials: "AL", avatarColor: "bg-gradient-to-br from-gray-400 to-gray-600", avatarColorDark: "bg-gradient-to-br from-gray-300 to-gray-500" },
+    { name: "Perrin", firstName: "Mathieu", initials: "PM", avatarColor: "bg-gradient-to-br from-blue-400 to-blue-600", avatarColorDark: "bg-gradient-to-br from-blue-300 to-blue-500" },
+    { name: "Roussel", firstName: "Isabelle", initials: "RI", avatarColor: "bg-gradient-to-br from-green-400 to-green-600", avatarColorDark: "bg-gradient-to-br from-green-300 to-green-500" },
+    { name: "Marchand", firstName: "Sébastien", initials: "MS", avatarColor: "bg-gradient-to-br from-purple-400 to-purple-600", avatarColorDark: "bg-gradient-to-br from-purple-300 to-purple-500" }
   ]
 };
 

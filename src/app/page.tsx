@@ -204,7 +204,7 @@ export default function HomePage() {
               ClimGO
             </h1>
             <p className="text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl text-white/90 sm:text-black/90 dark:text-white/90 mb-3 sm:mb-4 md:mb-6 lg:mb-8 leading-relaxed max-w-[280px] sm:max-w-sm md:max-w-lg lg:max-w-none whitespace-pre-line">
-              Installateur de pompe à chaleur{'\n'}Chauffage & climatisation
+              Installateur de pompe à chaleur, chauffage et climatisation
             </p>
 
             {/* Composant de recherche de villes */}
@@ -242,14 +242,14 @@ export default function HomePage() {
       </section>
 
       {/* Section Bassin d'Arcachon - Texte défilant au scroll */}
-      <section className="relative py-12 overflow-hidden">
+      <section className="relative py-20 md:py-24 lg:py-28 overflow-hidden">
         <div
           className="absolute inset-0 -z-10 w-full h-full bg-white dark:bg-black"
           aria-hidden="true"
         ></div>
         
         {/* Titre centré */}
-        <div className="relative z-10 container mx-auto px-4 mb-4">
+        <div className="relative z-10 container mx-auto px-6 md:px-8 lg:px-12 mb-8 md:mb-12">
           <h2 className="text-2xl md:text-3xl font-medium text-gray-800 dark:text-white text-center">
             Notre savoir-faire
           </h2>
@@ -264,7 +264,7 @@ export default function HomePage() {
           
           {/* Zone de scroll sur toute la largeur de la page */}
           <div 
-            className="w-full h-[300px] px-4 py-16 overflow-y-auto scrollbar-hide cursor-default"
+            className="w-full h-[300px] px-6 md:px-8 lg:px-12 py-20 md:py-24 overflow-y-auto scrollbar-hide cursor-default"
             style={{
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',

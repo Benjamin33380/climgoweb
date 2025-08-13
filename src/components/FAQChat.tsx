@@ -165,7 +165,7 @@ export default function FAQChat({
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center px-8 py-4 bg-gray-700 dark:bg-gray-200 text-white dark:text-black font-semibold rounded-full hover:bg-gray-600 dark:hover:bg-gray-300 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center px-8 py-4 bg-white border border-gray-300 text-black font-semibold rounded-full hover:bg-gray-50 hover:border-gray-400 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             Contactez-nous
             <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
