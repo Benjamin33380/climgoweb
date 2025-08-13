@@ -10,17 +10,12 @@ const services = [
 ];
 
 const zones = [
-  { title: "Gironde", href: "/gironde" },
-  { title: "Landes", href: "/landes" },
+  { title: "Zones d'intervention", href: "/zones-interventions" },
 ];
 
 const entreprise = [
-  { title: "À propos", href: "/a-propos" },
   { title: "Politique de confidentialité", href: "/politique-confidentialite" },
-  { title: "Certifications", href: "/certifications" },
   { title: "Mentions légales", href: "/mentions-legales" },
-  { title: "Aides d'État", href: "/aides-etat" },
-  { title: "CGV", href: "/cgv" },
 ];
 
 export default function Footer() {

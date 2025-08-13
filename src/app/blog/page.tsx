@@ -40,7 +40,7 @@ const categories = [
   { name: 'Chauffage', value: 'chauffage' },
   { name: 'Climatisation', value: 'climatisation' },
   { name: 'Maintenance', value: 'maintenance' },
-  { name: 'Pompe à chaleur', value: 'pompe-a-chaleur' },
+
   { name: 'Eau chaude', value: 'eau-chaude' },
   { name: 'Conseils', value: 'conseils' },
   { name: 'Réglementation', value: 'reglementation' }

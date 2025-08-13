@@ -64,34 +64,14 @@ const zones: { title: string; href: string; description: string }[] = [
 
 const entreprise: { title: string; href: string; description: string }[] = [
   {
-    title: "À propos",
-    href: "/a-propos",
-    description: "Découvrez notre histoire, nos valeurs et notre expertise.",
-  },
-  {
     title: "Politique de confidentialité",
     href: "/politique-confidentialite",
     description: "Comment nous protégeons et utilisons vos données personnelles.",
   },
   {
-    title: "Certifications",
-    href: "/certifications",
-    description: "Nos certifications et agréments professionnels.",
-  },
-  {
     title: "Mentions légales",
     href: "/mentions-legales",
     description: "Informations légales et réglementaires de l'entreprise.",
-  },
-  {
-    title: "Aides d'État",
-    href: "/aides-etat",
-    description: "Informations sur les subventions et aides financières disponibles.",
-  },
-  {
-    title: "CGV",
-    href: "/cgv",
-    description: "Conditions générales de vente et modalités de service.",
   },
 ]
 
