@@ -16,8 +16,7 @@ import {
   UserCheck,
   FolderOpen,
   Shield,
-  Package,
-  FileTemplate
+  Package
 } from 'lucide-react'
 
 const navigation = [

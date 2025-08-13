@@ -52,7 +52,7 @@ export async function POST(request: NextRequest) {
 
     // Calculer les totaux
     let subtotal = 0
-    const processedItems = items.map((item: any) => {
+    const processedItems = items.map((item: { description: string; quantity: number; unitPrice: number }) => {
       const total = item.quantity * item.unitPrice
       subtotal += total
       return {

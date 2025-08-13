@@ -18,8 +18,9 @@ import {
   XCircle,
   MapPin,
   Calendar,
-  Progress
+
 } from 'lucide-react'
+import { Progress } from '@/components/ui/progress'
 
 interface Project {
   id: string

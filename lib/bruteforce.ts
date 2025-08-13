@@ -16,7 +16,7 @@ const defaultConfig: BruteforceConfig = {
 }
 
 export async function getClientIP(): Promise<string> {
-  const headersList = headers()
+  const headersList = await headers()
   
   // Essayer différents headers pour récupérer la vraie IP
   const forwardedFor = headersList.get('x-forwarded-for')
