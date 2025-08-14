@@ -204,7 +204,7 @@ export default function HomePage() {
               ClimGO
             </h1>
             <p className="text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl text-white/90 sm:text-black/90 dark:text-white/90 mb-3 sm:mb-4 md:mb-6 lg:mb-8 leading-relaxed max-w-[280px] sm:max-w-sm md:max-w-lg lg:max-w-none whitespace-pre-line">
-              Installateur de pompe à chaleur, chauffage et climatisation
+              Installateur de pompe à chaleur{'\n'}chauffage et climatisation
             </p>
 
             {/* Composant de recherche de villes */}
@@ -369,23 +369,23 @@ export default function HomePage() {
       {/* Section FAQ - Style Chat Moderne */}
       <FAQChat 
         title="Questions Fréquentes"
-        subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation sur le Bassin d'Arcachon"
+        subtitle="Nos réponses aux questions les plus courantes sur le chauffage et la climatisation en Gironde"
         faqs={[
           {
-            question: "Combien de temps dure une intervention de climatisation ?",
-            answer: "Cela dépend de la complexité ! Une simple réparation prend 1-2h, tandis qu'une installation complète peut nécessiter une journée. Je vous donne toujours une estimation précise avant de commencer."
+            question: "Quel est le prix d'une pompe à chaleur air/eau ?",
+            answer: "Le prix varie entre 8 000€ et 15 000€ selon la puissance et les options. Avec les aides MaPrimeRénov' et CEE, votre reste à charge peut être divisé par 2. Je vous propose un devis personnalisé gratuit."
           },
           {
-            question: "Vous intervenez en urgence le week-end ?",
-            answer: "Absolument ! Je suis disponible 7j/7 pour les urgences de chauffage et climatisation. Panne totale, système qui ne démarre pas, problème de sécurité... Je me déplace rapidement sur tout le Bassin d'Arcachon."
+            question: "Combien coûte l'installation d'une climatisation ?",
+            answer: "Pour un mono-split : 1 500€ à 3 000€. Pour un multi-split 3 zones : 4 000€ à 7 000€. Prix incluant pose, mise en service et garantie. Devis gratuit sous 24h avec visite technique."
           },
           {
-            question: "Comment gérez-vous les spécificités du climat du Bassin ?",
-            answer: "Je connais parfaitement les contraintes du Bassin d'Arcachon : humidité marine, embruns salés, vents côtiers. Tous nos équipements sont sélectionnés et traités spécialement pour résister à cet environnement."
+            question: "Quelle différence entre pompe à chaleur air/air et air/eau ?",
+            answer: "La PAC air/air (climatisation réversible) chauffe et rafraîchit via des splits muraux. La PAC air/eau alimente vos radiateurs et plancher chauffant + eau chaude sanitaire. Je vous conseille selon votre installation existante."
           },
           {
-            question: "Vos tarifs sont-ils les mêmes sur tout le Bassin ?",
-            answer: "Oui, transparence totale ! Mes tarifs sont identiques que vous soyez à Arcachon, Andernos, La Teste ou Biscarrosse. Devis détaillé, tarif horaire fixe, aucun frais de déplacement supplémentaire."
+            question: "Vous intervenez en dépannage urgent ?",
+            answer: "Oui, 24h/24 et 7j/7 ! Panne de chauffage en hiver, climatisation défaillante en été... J'interviens dans l'heure en urgence dans toute la Gironde. Devis gratuit, réparation immédiate."
           }
         ]}
         ctaTitle="Une autre question ?"

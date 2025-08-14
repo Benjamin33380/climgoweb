@@ -13,13 +13,13 @@ const GLOBE_CONFIG: COBEOptions = {
   devicePixelRatio: 2,
   phi: 0.8, // Rotation pour centrer sur l'Europe
   theta: 0.9, // Angle plus élevé pour voir le pôle nord
-  dark: 0,
-  diffuse: 0.4,
+  dark: 1, // Fond sombre pour ne voir que les points
+  diffuse: 0,
   mapSamples: 16000,
-  mapBrightness: 1.2,
-  baseColor: [1, 1, 1],
+  mapBrightness: 4, // Points vifs
+  baseColor: [1, 0.647, 0], // Points orange ClimGO
   markerColor: [37 / 255, 99 / 255, 235 / 255], // Blue-600 pour cohérence
-  glowColor: [1, 1, 1],
+  glowColor: [0, 0, 0], // Pas de lueur
   markers: [
     // Gironde/Bordeaux - notre zone principale (markers très discrets)
     { location: [44.8378, -0.5792], size: 0.08 }, // Bordeaux - marker principal
