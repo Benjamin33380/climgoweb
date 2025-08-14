@@ -13,13 +13,13 @@ const GLOBE_CONFIG: COBEOptions = {
   devicePixelRatio: 2,
   phi: 0.8, // Rotation pour centrer sur l'Europe
   theta: 0.9, // Angle plus élevé pour voir le pôle nord
-  dark: 1, // Rendre le fond transparent/sombre
-  diffuse: 0,
+  dark: 0,
+  diffuse: 0.4,
   mapSamples: 16000,
-  mapBrightness: 4, // Beaucoup plus vif
-  baseColor: [1, 0.5, 0], // Orange plus saturé et vif
+  mapBrightness: 1.2,
+  baseColor: [1, 1, 1],
   markerColor: [37 / 255, 99 / 255, 235 / 255], // Blue-600 pour cohérence
-  glowColor: [0, 0, 0], // Pas de lueur
+  glowColor: [1, 1, 1],
   markers: [
     // Gironde/Bordeaux - notre zone principale (markers très discrets)
     { location: [44.8378, -0.5792], size: 0.08 }, // Bordeaux - marker principal
@@ -91,7 +91,11 @@ export function Globe({
       onRender,
     })
 
-    setTimeout(() => (canvasRef.current!.style.opacity = "1"))
+    setTimeout(() => {
+      if (canvasRef.current) {
+        canvasRef.current.style.opacity = "1"
+      }
+    })
     return () => globe.destroy()
   }, [config, onRender])
 
