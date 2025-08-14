@@ -94,7 +94,7 @@ export default function HomePage() {
     return (
       <div className="max-w-[240px] sm:max-w-xs md:max-w-sm relative">
         <div className="relative">
-          <Search className="absolute left-2 sm:left-3 top-1/2 transform -translate-y-1/2 text-gray-600 dark:text-gray-400 w-3 sm:w-4 h-3 sm:h-4" />
+          <Search className="absolute left-2 sm:left-3 top-1/2 transform -translate-y-1/2 text-white sm:text-gray-600 dark:text-gray-400 w-3 sm:w-4 h-3 sm:h-4" />
           <input
             type="text"
             placeholder="Rechercher votre ville..."
@@ -104,9 +104,9 @@ export default function HomePage() {
               setShowSearchResults(e.target.value.length > 0);
             }}
             onFocus={() => setShowSearchResults(searchQuery.length > 0)}
-            className="w-full bg-white/20 dark:bg-white/10 backdrop-blur-md border border-black/40 dark:border-white/30 rounded-lg px-6 sm:px-8 py-1.5 sm:py-2 text-black dark:text-white placeholder-gray-600 dark:placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent text-xs sm:text-sm"
+            className="w-full bg-white/30 sm:bg-white/90 dark:bg-white/10 backdrop-blur-md border border-white/50 sm:border-black/40 dark:border-white/30 rounded-lg px-6 sm:px-8 py-1.5 sm:py-2 text-white sm:text-black dark:text-white placeholder-white/70 sm:placeholder-gray-600 dark:placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent text-xs sm:text-sm"
           />
-          <MapPin className="absolute right-2 sm:right-3 top-1/2 transform -translate-y-1/2 text-gray-600 dark:text-gray-400 w-3 sm:w-4 h-3 sm:h-4" />
+          <MapPin className="absolute right-2 sm:right-3 top-1/2 transform -translate-y-1/2 text-white sm:text-gray-600 dark:text-gray-400 w-3 sm:w-4 h-3 sm:h-4" />
         </div>
         
         {/* Résultats de recherche */}

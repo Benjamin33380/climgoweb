@@ -41,8 +41,7 @@ export default function Footer() {
               </div>
               
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                Spécialiste en climatisation, chauffage et maintenance depuis plus de 10 ans. 
-                Notre expertise au service de votre confort en Gironde et Landes.
+                Spécialiste en climatisation, chauffage et maintenance depuis plus de 10 ans. Notre expertise au service de votre confort en Gironde et dans le Nord des Landes.
               </p>
               
               {/* Note et avis */}
