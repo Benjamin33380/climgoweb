@@ -64,6 +64,11 @@ const zones: { title: string; href: string; description: string }[] = [
 
 const entreprise: { title: string; href: string; description: string }[] = [
   {
+    title: "À propos",
+    href: "/a-propos",
+    description: "Découvrez ClimGO : notre histoire, nos valeurs et notre expertise.",
+  },
+  {
     title: "Aides & Subventions",
     href: "/aides-etat",
     description: "MaPrimeRénov', CEE, TVA 5,5% : toutes les aides pour vos travaux 2025.",

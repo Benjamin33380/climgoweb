@@ -14,6 +14,7 @@ const zones = [
 ];
 
 const entreprise = [
+  { title: "À propos", href: "/a-propos" },
   { title: "Aides & Subventions", href: "/aides-etat" },
   { title: "Politique de confidentialité", href: "/politique-confidentialite" },
   { title: "Mentions légales", href: "/mentions-legales" },
