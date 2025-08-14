@@ -2,7 +2,7 @@
 
 import { useMemo } from 'react';
 import Link from 'next/link';
-import { ChevronRight, ArrowRight, Phone, MapPin, Clock, Star, Target, Compass, Sparkles, Zap } from 'lucide-react';
+import { ChevronRight, ArrowRight, Phone, MapPin, Clock, Star, Building2, Mountain, TreePine, Waves, Home, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Globe } from '@/components/ui/globe';
@@ -23,48 +23,37 @@ interface Zone {
   count: number;
 }
 
-// Simple Zone Card - consistent with Services
+// Simple Zone Card - showing ALL cities
 const SimpleZoneCard = ({ zone, index }: { zone: Zone; index: number }) => (
-  <div className="bg-white dark:bg-black rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-blue-600/50 dark:hover:border-blue-400/50">
-    <div className="flex items-center justify-between mb-6">
-      <div className={`bg-gradient-to-br ${zone.gradient} rounded-2xl w-16 h-16 flex items-center justify-center shadow-lg`}>
-        <zone.icon className="w-8 h-8 text-white" />
+  <div className="bg-white dark:bg-black rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-black/20 dark:border-white/20 hover:border-black/40 dark:hover:border-white/40">
+    <div className="flex items-center justify-between mb-4 md:mb-6">
+      <div className="bg-black/10 dark:bg-white/10 rounded-2xl w-12 h-12 md:w-16 md:h-16 flex items-center justify-center shadow-sm">
+        <zone.icon className="w-6 h-6 md:w-8 md:h-8 text-black dark:text-white" />
       </div>
-      <Badge variant="secondary" className="text-sm font-semibold">
+      <Badge variant="secondary" className="text-xs md:text-sm font-semibold">
         {zone.count} communes
       </Badge>
     </div>
     
-    <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+    <h3 className="text-xl md:text-2xl font-semibold text-black dark:text-white mb-3 md:mb-4">
       {zone.title}
     </h3>
     
-    <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-6">
+    <p className="text-black/70 dark:text-white/70 text-sm leading-relaxed mb-4 md:mb-6">
       {zone.description}
     </p>
 
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-      {zone.cities.slice(0, 8).map((city, cityIndex) => (
+      {zone.cities.map((city, cityIndex) => (
         <Link
           key={cityIndex}
           href={city.url}
-          className="flex items-center justify-between p-3 rounded-lg bg-gray-50 dark:bg-gray-800 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors duration-200 group"
+          className="flex items-center justify-between p-3 rounded-lg bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 transition-colors duration-200 group"
         >
-          <span className="text-sm font-medium text-gray-900 dark:text-white">{city.name}</span>
-          <ArrowRight className="w-3 h-3 text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transform group-hover:translate-x-1 transition-all duration-200" />
+          <span className="text-sm font-medium text-black dark:text-white">{city.name}</span>
+          <ArrowRight className="w-3 h-3 text-black/50 dark:text-white/50 group-hover:text-black dark:group-hover:text-white transform group-hover:translate-x-1 transition-all duration-200" />
         </Link>
       ))}
-      
-      {zone.cities.length > 8 && (
-        <div className="col-span-2 text-center">
-          <Button
-            variant="outline"
-            className="w-full border-dashed text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
-          >
-            +{zone.cities.length - 8} autres communes
-          </Button>
-        </div>
-      )}
     </div>
   </div>
 );
@@ -87,8 +76,8 @@ export default function ZonesInterventions() {
         { name: 'Arès', url: '/villes/ares-chauffage-climatisation' },
         { name: 'Lège-Cap-Ferret', url: '/villes/lege-cap-ferret-chauffage-climatisation' }
       ],
-      gradient: 'from-blue-500 via-cyan-500 to-teal-500',
-      icon: MapPin,
+      gradient: '',
+      icon: Waves,
       count: 10
     },
     {
@@ -103,16 +92,16 @@ export default function ZonesInterventions() {
         { name: 'Bègles', url: '/villes/begles-chauffage-climatisation' },
         { name: 'Bruges', url: '/villes/bruges-chauffage-climatisation' },
         { name: 'Cenon', url: '/villes/cenon-chauffage-climatisation' },
-        { name: 'Lormont', url: '/villes/lormont-chauffage-climatisation' },
         { name: 'Floirac', url: '/villes/floirac-chauffage-climatisation' },
         { name: "Villenave-d'Ornon", url: '/villes/villenave-d-ornon-chauffage-climatisation' },
         { name: 'Eysines', url: '/villes/eysines-chauffage-climatisation' },
         { name: 'Le Haillan', url: '/villes/le-haillan-chauffage-climatisation' },
-        { name: 'Bouliac', url: '/villes/bouliac-chauffage-climatisation' }
+        { name: 'Bouliac', url: '/villes/bouliac-chauffage-climatisation' },
+        { name: 'Le Bouscat', url: '/villes/le-bouscat-chauffage-climatisation' }
       ],
-      gradient: 'from-red-500 via-pink-500 to-purple-500',
-      icon: Target,
-      count: 14
+      gradient: '',
+      icon: Building2,
+      count: 13
     },
     {
       id: 'graves',
@@ -126,8 +115,8 @@ export default function ZonesInterventions() {
         { name: 'Martillac', url: '/villes/martillac-chauffage-climatisation' },
         { name: 'La Brède', url: '/villes/la-brede-chauffage-climatisation' }
       ],
-      gradient: 'from-green-500 via-emerald-500 to-teal-500',
-      icon: Compass,
+      gradient: '',
+      icon: Mountain,
       count: 6
     },
     {
@@ -145,8 +134,8 @@ export default function ZonesInterventions() {
         { name: 'Biscarrosse', url: '/villes/biscarrosse-chauffage-climatisation' },
         { name: 'Mimizan', url: '/villes/mimizan-chauffage-climatisation' }
       ],
-      gradient: 'from-yellow-500 via-orange-500 to-red-500',
-      icon: Sparkles,
+      gradient: '',
+      icon: TreePine,
       count: 9
     },
     {
@@ -161,8 +150,8 @@ export default function ZonesInterventions() {
         { name: "Saint-Jean-d'Illac", url: '/villes/saint-jean-d-illac-chauffage-climatisation' },
         { name: 'Saucats', url: '/villes/saucats-chauffage-climatisation' }
       ],
-      gradient: 'from-purple-500 via-violet-500 to-indigo-500',
-      icon: Zap,
+      gradient: '',
+      icon: Home,
       count: 6
     },
     {
@@ -172,12 +161,11 @@ export default function ZonesInterventions() {
       cities: [
         { name: 'Saint-Loubès', url: '/villes/saint-loubes-chauffage-climatisation' },
         { name: 'Cadaujac', url: '/villes/cadaujac-chauffage-climatisation' },
-        { name: 'Saint-Selve', url: '/villes/saint-selve-chauffage-climatisation' },
-        { name: 'Le Bouscat', url: '/villes/le-bouscat-chauffage-climatisation' }
+        { name: 'Saint-Selve', url: '/villes/saint-selve-chauffage-climatisation' }
       ],
-      gradient: 'from-slate-500 via-gray-500 to-zinc-500',
-      icon: Star,
-      count: 6
+      gradient: '',
+      icon: Users,
+      count: 3
     }
   ];
 
@@ -185,54 +173,54 @@ export default function ZonesInterventions() {
     <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white relative">
       {/* Hero Section with Globe Background */}
       <section className="relative min-h-screen bg-white dark:bg-black overflow-hidden">
-        {/* Globe Background - Optimized positioning */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-30 dark:opacity-20">
+        {/* Globe Background - Enhanced contrast */}
+        <div className="absolute inset-0 flex items-center justify-center opacity-40 dark:opacity-35">
           <div className="relative w-full h-full flex items-center justify-center">
             <Globe className="w-[80vw] h-[80vw] md:w-[60vw] md:h-[60vw] lg:w-[50vw] lg:h-[50vw] max-w-[800px] max-h-[800px]" />
           </div>
         </div>
         
         {/* Overlay for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/40 to-white/70 dark:from-black/70 dark:via-black/40 dark:to-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-white/30 to-white/60 dark:from-black/60 dark:via-black/30 dark:to-black/60" />
         
         <div className="relative z-10 container mx-auto px-4 min-h-screen flex flex-col justify-center">
           {/* Simple Breadcrumb */}
-          <nav className="text-sm text-gray-600 dark:text-gray-400 mb-12 pt-8">
+          <nav className="text-sm text-black/60 dark:text-white/60 mb-8 md:mb-12 pt-6 md:pt-8">
             <Link href="/" className="hover:text-black dark:hover:text-white transition-colors">Accueil</Link>
             <ChevronRight className="w-4 h-4 mx-2 inline" />
             <span className="text-black dark:text-white">Zones d'intervention</span>
           </nav>
 
           {/* Hero Content */}
-          <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-light text-gray-900 dark:text-white mb-8 tracking-tight">
+          <div className="text-center mb-12 md:mb-16">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-black dark:text-white mb-6 md:mb-8 tracking-tight">
               Zones d'Intervention
             </h1>
-            <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed mb-16">
-              Nous intervenons dans toute la <span className="font-semibold text-blue-600 dark:text-blue-400">Gironde</span>, 
-              sur le <span className="font-semibold text-blue-600 dark:text-blue-400">Bassin d'Arcachon</span> et 
-              <span className="font-semibold text-blue-600 dark:text-blue-400"> Bordeaux Métropole</span>
+            <p className="text-lg md:text-xl lg:text-2xl text-black/80 dark:text-white/80 max-w-4xl mx-auto leading-relaxed mb-12 md:mb-16">
+              Nous intervenons dans toute la <span className="font-semibold text-black dark:text-white">Gironde</span>, 
+              sur le <span className="font-semibold text-black dark:text-white">Bassin d'Arcachon</span> et 
+              <span className="font-semibold text-black dark:text-white"> Bordeaux Métropole</span>
             </p>
           </div>
 
           {/* Stats - Enhanced for Globe Background */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
             {[
-              { number: '50+', label: 'Communes desservies', icon: MapPin },
+              { number: '48', label: 'Communes desservies', icon: MapPin },
               { number: '24/7', label: 'Service d\'urgence', icon: Clock },
               { number: '100%', label: 'Satisfaction client', icon: Star }
             ].map((stat, index) => (
               <div
                 key={index}
-                className="text-center bg-white/95 dark:bg-black/95 backdrop-blur-sm rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200/50 dark:border-gray-600/30"
+                className="text-center bg-white/95 dark:bg-black/95 backdrop-blur-sm rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-black/20 dark:border-white/20"
               >
-                <div className="bg-blue-600/10 dark:bg-blue-600/20 rounded-full w-16 h-16 md:w-20 md:h-20 flex items-center justify-center mx-auto mb-4 md:mb-6">
-                  <stat.icon className="w-8 h-8 md:w-10 md:h-10 text-blue-600 dark:text-blue-400" />
+                <div className="bg-black/10 dark:bg-white/10 rounded-full w-16 h-16 md:w-20 md:h-20 flex items-center justify-center mx-auto mb-4 md:mb-6">
+                  <stat.icon className="w-8 h-8 md:w-10 md:h-10 text-black dark:text-white" />
                 </div>
-                <div className="text-3xl md:text-4xl font-light mb-3 text-gray-900 dark:text-white">
+                <div className="text-3xl md:text-4xl font-light mb-3 text-black dark:text-white">
                   {stat.number}
                 </div>
-                <div className="text-sm md:text-base text-gray-600 dark:text-gray-300 font-medium">{stat.label}</div>
+                <div className="text-sm md:text-base text-black/70 dark:text-white/70 font-medium">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -240,13 +228,13 @@ export default function ZonesInterventions() {
       </section>
 
       {/* Zones Section */}
-      <section className="relative py-20 bg-gray-50 dark:bg-gray-900">
+      <section className="relative py-16 md:py-20 bg-white dark:bg-black">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-light text-gray-900 dark:text-white mb-4">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-black dark:text-white mb-3 md:mb-4">
               Nos Zones d'Intervention
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-black/70 dark:text-white/70 max-w-2xl mx-auto">
               Découvrez toutes nos zones d'intervention avec leurs spécificités locales
             </p>
           </div>
@@ -260,24 +248,24 @@ export default function ZonesInterventions() {
       </section>
 
       {/* CTA Section - Simple like homepage */}
-      <section className="relative py-20 bg-blue-600">
+      <section className="relative py-16 md:py-20 bg-white dark:bg-black">
         <div className="container mx-auto px-4 text-center">
-          <div className="bg-blue-600/10 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
-            <Phone className="w-10 h-10 text-white" />
+          <div className="bg-black/10 dark:bg-white/10 rounded-full w-16 h-16 md:w-20 md:h-20 flex items-center justify-center mx-auto mb-4 md:mb-6">
+            <Phone className="w-8 h-8 md:w-10 md:h-10 text-black dark:text-white" />
           </div>
           
-          <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-black dark:text-white mb-4 md:mb-6">
             Besoin d'une Intervention ?
           </h2>
           
-          <p className="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-black/70 dark:text-white/70 mb-6 md:mb-8 max-w-2xl mx-auto">
             Notre équipe d'experts est à votre disposition dans toute la région. Devis gratuit et intervention rapide garantie !
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="tel:0766460008"
-              className="inline-flex items-center justify-center rounded-full px-8 py-4 text-lg font-medium bg-white text-blue-600 hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
+              className="inline-flex items-center justify-center rounded-full px-8 py-4 text-lg font-medium bg-black dark:bg-white text-white dark:text-black hover:bg-black/80 dark:hover:bg-white/80 transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
               <Phone className="w-5 h-5 mr-2" />
               07 66 46 00 08
@@ -285,7 +273,7 @@ export default function ZonesInterventions() {
             
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-full px-8 py-4 text-lg font-medium border-2 border-white text-white hover:bg-white hover:text-blue-600 transition-all duration-300"
+              className="inline-flex items-center justify-center rounded-full px-8 py-4 text-lg font-medium border-2 border-black dark:border-white text-black dark:text-white hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black transition-all duration-300"
             >
               Devis Gratuit
             </Link>
