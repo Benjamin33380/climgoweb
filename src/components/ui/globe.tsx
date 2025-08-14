@@ -16,8 +16,8 @@ const GLOBE_CONFIG: COBEOptions = {
   dark: 1, // Rendre le fond transparent/sombre
   diffuse: 0,
   mapSamples: 16000,
-  mapBrightness: 2, // Augmenter pour rendre les points plus visibles
-  baseColor: [1, 0.647, 0], // Orange pour les points uniquement
+  mapBrightness: 4, // Beaucoup plus vif
+  baseColor: [1, 0.5, 0], // Orange plus saturé et vif
   markerColor: [37 / 255, 99 / 255, 235 / 255], // Blue-600 pour cohérence
   glowColor: [0, 0, 0], // Pas de lueur
   markers: [
