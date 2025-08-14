@@ -64,6 +64,11 @@ const zones: { title: string; href: string; description: string }[] = [
 
 const entreprise: { title: string; href: string; description: string }[] = [
   {
+    title: "Aides & Subventions",
+    href: "/aides-etat",
+    description: "MaPrimeRénov', CEE, TVA 5,5% : toutes les aides pour vos travaux 2025.",
+  },
+  {
     title: "Politique de confidentialité",
     href: "/politique-confidentialite",
     description: "Comment nous protégeons et utilisons vos données personnelles.",
