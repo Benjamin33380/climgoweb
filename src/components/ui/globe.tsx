@@ -2,6 +2,7 @@
 
 import createGlobe, { COBEOptions } from "cobe"
 import { useCallback, useEffect, useRef, useState } from "react"
+import Image from "next/image"
 
 import { cn } from "@/lib/utils"
 
@@ -20,24 +21,26 @@ const GLOBE_CONFIG: COBEOptions = {
   markerColor: [37 / 255, 99 / 255, 235 / 255], // Blue-600 pour cohérence
   glowColor: [1, 1, 1],
   markers: [
-    // Gironde/Bordeaux - notre zone principale (markers plus gros)
-    { location: [44.8378, -0.5792], size: 0.25 }, // Bordeaux - GROS marker
-    { location: [44.6596, -1.1211], size: 0.18 },  // Arcachon
-    { location: [44.7922, -0.6121], size: 0.12 }, // Pessac
-    { location: [44.8049, -0.6075], size: 0.12 }, // Mérignac
-    { location: [44.8138, -0.5811], size: 0.12 }, // Talence
-    { location: [44.9778, -0.6319], size: 0.10 }, // Le Bouscat
-    { location: [44.6397, -1.0389], size: 0.10 }, // La Teste-de-Buch
-    { location: [44.7561, -1.0561], size: 0.10 }, // Gujan-Mestras
+    // Gironde/Bordeaux - notre zone principale (markers très discrets)
+    { location: [44.8378, -0.5792], size: 0.08 }, // Bordeaux - marker principal
+    { location: [44.6596, -1.1211], size: 0.05 },  // Arcachon
+    { location: [44.7922, -0.6121], size: 0.04 }, // Pessac
+    { location: [44.8049, -0.6075], size: 0.04 }, // Mérignac
+    { location: [44.8138, -0.5811], size: 0.04 }, // Talence
+    { location: [44.9778, -0.6319], size: 0.03 }, // Le Bouscat
+    { location: [44.6397, -1.0389], size: 0.03 }, // La Teste-de-Buch
+    { location: [44.7561, -1.0561], size: 0.03 }, // Gujan-Mestras
   ],
 }
 
 export function Globe({
   className,
   config = GLOBE_CONFIG,
+  showLogo = false,
 }: {
   className?: string
   config?: COBEOptions
+  showLogo?: boolean
 }) {
   let phi = 0
   let width = 0
@@ -116,6 +119,21 @@ export function Globe({
           e.touches[0] && updateMovement(e.touches[0].clientX)
         }
       />
+      
+      {/* Logo overlay au centre du globe */}
+      {showLogo && (
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div className="bg-white/90 dark:bg-black/90 backdrop-blur-sm rounded-full p-3 shadow-lg border border-gray-200/50 dark:border-gray-600/30">
+            <Image
+              src="/favicon/logo.png"
+              alt="ClimGO"
+              width={32}
+              height={32}
+              className="w-8 h-8"
+            />
+          </div>
+        </div>
+      )}
     </div>
   )
 }

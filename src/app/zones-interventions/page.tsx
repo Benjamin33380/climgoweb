@@ -183,17 +183,17 @@ export default function ZonesInterventions() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white relative">
-      {/* Hero Section with Full Globe Background */}
+      {/* Hero Section with Globe Background */}
       <section className="relative min-h-screen bg-white dark:bg-black overflow-hidden">
-        {/* Globe Full Background */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-50 dark:opacity-35">
-          <div className="relative w-[100vw] h-[120vh] flex items-center justify-center" style={{ marginTop: '-10vh' }}>
-            <Globe className="w-[120vw] h-[120vh] max-w-none" />
+        {/* Globe Background - Optimized positioning */}
+        <div className="absolute inset-0 flex items-center justify-center opacity-30 dark:opacity-20">
+          <div className="relative w-full h-full flex items-center justify-center">
+            <Globe className="w-[80vw] h-[80vw] md:w-[60vw] md:h-[60vw] lg:w-[50vw] lg:h-[50vw] max-w-[800px] max-h-[800px]" />
           </div>
         </div>
         
         {/* Overlay for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/60 to-white/80 dark:from-black/80 dark:via-black/60 dark:to-black/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/40 to-white/70 dark:from-black/70 dark:via-black/40 dark:to-black/70" />
         
         <div className="relative z-10 container mx-auto px-4 min-h-screen flex flex-col justify-center">
           {/* Simple Breadcrumb */}
@@ -216,7 +216,7 @@ export default function ZonesInterventions() {
           </div>
 
           {/* Stats - Enhanced for Globe Background */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
             {[
               { number: '50+', label: 'Communes desservies', icon: MapPin },
               { number: '24/7', label: 'Service d\'urgence', icon: Clock },
@@ -224,15 +224,15 @@ export default function ZonesInterventions() {
             ].map((stat, index) => (
               <div
                 key={index}
-                className="text-center bg-white/90 dark:bg-black/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200/50 dark:border-gray-600/30"
+                className="text-center bg-white/95 dark:bg-black/95 backdrop-blur-sm rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200/50 dark:border-gray-600/30"
               >
-                <div className="bg-blue-600/10 dark:bg-blue-600/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
-                  <stat.icon className="w-10 h-10 text-blue-600 dark:text-blue-400" />
+                <div className="bg-blue-600/10 dark:bg-blue-600/20 rounded-full w-16 h-16 md:w-20 md:h-20 flex items-center justify-center mx-auto mb-4 md:mb-6">
+                  <stat.icon className="w-8 h-8 md:w-10 md:h-10 text-blue-600 dark:text-blue-400" />
                 </div>
-                <div className="text-4xl font-light mb-3 text-gray-900 dark:text-white">
+                <div className="text-3xl md:text-4xl font-light mb-3 text-gray-900 dark:text-white">
                   {stat.number}
                 </div>
-                <div className="text-base text-gray-600 dark:text-gray-300 font-medium">{stat.label}</div>
+                <div className="text-sm md:text-base text-gray-600 dark:text-gray-300 font-medium">{stat.label}</div>
               </div>
             ))}
           </div>
