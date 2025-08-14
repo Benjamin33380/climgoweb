@@ -23,202 +23,6 @@ interface Zone {
   count: number;
 }
 
-// Floating animation component
-const FloatingOrb = ({ delay = 0, size = 'w-64 h-64', color = 'bg-blue-500' }) => (
-  <motion.div
-    className={`absolute ${size} ${color} rounded-full opacity-10 blur-3xl`}
-    animate={{
-      x: [0, 100, 0],
-      y: [0, -100, 0],
-      scale: [1, 1.2, 1],
-    }}
-    transition={{
-      duration: 10,
-      delay,
-      repeat: Infinity,
-      ease: "linear"
-    }}
-  />
-);
-
-// Magic cursor trail effect
-const CursorTrail = () => {
-  const [trails, setTrails] = useState<Array<{ id: number; x: number; y: number }>>([]);
-
-  useEffect(() => {
-    let trailId = 0;
-    const handleMouseMove = (e: MouseEvent) => {
-      const newTrail = { id: trailId++, x: e.clientX, y: e.clientY };
-      setTrails(prev => [...prev.slice(-20), newTrail]);
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
-
-  return (
-    <div className="fixed inset-0 pointer-events-none z-50">
-      {trails.map((trail, index) => (
-        <motion.div
-          key={trail.id}
-          className="absolute w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"
-          style={{ left: trail.x - 4, top: trail.y - 4 }}
-          initial={{ opacity: 0.6, scale: 1 }}
-          animate={{ opacity: 0, scale: 0 }}
-          transition={{ duration: 0.8 }}
-        />
-      ))}
-    </div>
-  );
-};
-
-// Enhanced Zone Card with magical effects
-const MagicalZoneCard = ({ zone, index }: { zone: Zone; index: number }) => {
-  const [isHovered, setIsHovered] = useState(false);
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-  
-  const rotateX = useTransform(mouseY, [-300, 300], [15, -15]);
-  const rotateY = useTransform(mouseX, [-300, 300], [-15, 15]);
-  
-  const springConfig = { stiffness: 300, damping: 30 };
-  const rotateXSpring = useSpring(rotateX, springConfig);
-  const rotateYSpring = useSpring(rotateY, springConfig);
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
-      onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(false)}
-      onMouseMove={(e) => {
-        const rect = e.currentTarget.getBoundingClientRect();
-        const centerX = rect.left + rect.width / 2;
-        const centerY = rect.top + rect.height / 2;
-        mouseX.set(e.clientX - centerX);
-        mouseY.set(e.clientY - centerY);
-      }}
-      style={{
-        rotateX: rotateXSpring,
-        rotateY: rotateYSpring,
-        transformStyle: "preserve-3d",
-      }}
-      className="relative group"
-    >
-      <Card className="relative overflow-hidden bg-card/40 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-border/50 group-hover:border-primary/20">
-        {/* Subtle tech glow */}
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-        />
-        
-        {/* Tech grid overlay */}
-        <div className="absolute inset-0 opacity-[0.02] group-hover:opacity-[0.05] transition-opacity duration-500" style={{
-          backgroundImage: `linear-gradient(rgba(120, 119, 198, 0.3) 1px, transparent 1px),
-                           linear-gradient(90deg, rgba(120, 119, 198, 0.3) 1px, transparent 1px)`,
-          backgroundSize: '20px 20px'
-        }} />
-        
-        {/* Sparkling particles */}
-        {isHovered && (
-          <div className="absolute inset-0 overflow-hidden">
-            {[...Array(12)].map((_, i) => (
-              <motion.div
-                key={i}
-                className="absolute w-1 h-1 bg-white rounded-full"
-                initial={{ 
-                  x: Math.random() * 400, 
-                  y: Math.random() * 300, 
-                  opacity: 0 
-                }}
-                animate={{ 
-                  x: Math.random() * 400, 
-                  y: Math.random() * 300, 
-                  opacity: [0, 1, 0] 
-                }}
-                transition={{ 
-                  duration: 2, 
-                  repeat: Infinity, 
-                  delay: i * 0.1 
-                }}
-              />
-            ))}
-          </div>
-        )}
-
-        <CardHeader className="relative z-10 p-8">
-          <div className="flex items-center justify-between mb-8">
-            <motion.div
-              className="relative"
-              whileHover={{ scale: 1.1 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <div className="absolute inset-0 bg-primary/20 rounded-2xl blur-lg" />
-              <div className={`relative inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br ${zone.gradient} rounded-2xl shadow-lg border border-white/20`}>
-                <zone.icon className="w-10 h-10 text-white" />
-              </div>
-            </motion.div>
-            
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-            >
-              <Badge variant="secondary" className="text-sm font-semibold bg-card/60 backdrop-blur-sm border border-border/50 px-4 py-2">
-                {zone.count} communes
-              </Badge>
-            </motion.div>
-          </div>
-          
-          <CardTitle className="text-2xl md:text-3xl font-bold mb-4 group-hover:text-primary transition-colors duration-300">
-            {zone.title}
-          </CardTitle>
-          
-          <CardDescription className="text-base leading-relaxed font-light">
-            {zone.description}
-          </CardDescription>
-        </CardHeader>
-
-        <CardContent className="relative z-10 p-8 pt-0">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {zone.cities.slice(0, 8).map((city, cityIndex) => (
-              <motion.div
-                key={cityIndex}
-                whileHover={{ scale: 1.02, x: 5 }}
-                transition={{ type: "spring", stiffness: 400 }}
-              >
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  asChild
-                  className="w-full justify-between h-auto p-4 text-left transition-all duration-300 hover:bg-card/60 border border-border/40 hover:border-primary/30 rounded-lg group/city backdrop-blur-sm"
-                >
-                  <Link href={city.url}>
-                    <span className="font-medium text-sm">{city.name}</span>
-                    <ArrowRight className="w-3 h-3 transform group-hover/city:translate-x-1 transition-all duration-300 text-muted-foreground group-hover/city:text-primary" />
-                  </Link>
-                </Button>
-              </motion.div>
-            ))}
-            
-            {zone.cities.length > 8 && (
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                className="col-span-2"
-              >
-                <Button
-                  variant="outline"
-                  className="w-full border-dashed border-border/50 text-muted-foreground hover:text-foreground hover:border-primary/30 bg-card/20 hover:bg-card/40 backdrop-blur-sm transition-all duration-300"
-                >
-                  +{zone.cities.length - 8} autres communes
-                </Button>
-              </motion.div>
-            )}
-          </div>
-        </CardContent>
-      </Card>
-    </motion.div>
-  );
-};
-
 // Simple Zone Card - consistent with Services
 const SimpleZoneCard = ({ zone, index }: { zone: Zone; index: number }) => (
   <div className="bg-white dark:bg-black rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-blue-600/50 dark:hover:border-blue-400/50">
@@ -265,14 +69,12 @@ const SimpleZoneCard = ({ zone, index }: { zone: Zone; index: number }) => (
   </div>
 );
 
-
-
 export default function ZonesInterventions() {
   const zones: Zone[] = [
     {
       id: 'bassin',
-      title: "Bassin d'Arcachon",
-      description: 'Zone côtière avec spécificités marines. Équipements résistants au sel et à l\'humidité.',
+      title: 'Bassin d\'Arcachon',
+      description: 'Zone côtière avec des enjeux spécifiques liés à l\'humidité et au sel marin.',
       cities: [
         { name: 'Arcachon', url: '/villes/arcachon-chauffage-climatisation' },
         { name: 'La Teste-de-Buch', url: '/villes/la-teste-de-buch-chauffage-climatisation' },
@@ -283,7 +85,7 @@ export default function ZonesInterventions() {
         { name: 'Lanton', url: '/villes/lanton-chauffage-climatisation' },
         { name: 'Andernos-les-Bains', url: '/villes/andernos-les-bains-chauffage-climatisation' },
         { name: 'Arès', url: '/villes/ares-chauffage-climatisation' },
-        { name: 'Lège Cap Ferret', url: '/villes/lege-cap-ferret-chauffage-climatisation' }
+        { name: 'Lège-Cap-Ferret', url: '/villes/lege-cap-ferret-chauffage-climatisation' }
       ],
       gradient: 'from-blue-500 via-cyan-500 to-teal-500',
       icon: MapPin,
@@ -291,18 +93,17 @@ export default function ZonesInterventions() {
     },
     {
       id: 'bordeaux',
-      title: 'Métropole Bordelaise',
-      description: 'Zone urbaine dense. Solutions adaptées aux appartements, maisons de ville et espaces réduits.',
+      title: 'Bordeaux Métropole',
+      description: 'Zone urbaine dense nécessitant des solutions adaptées aux contraintes citadines.',
       cities: [
         { name: 'Bordeaux', url: '/villes/bordeaux-chauffage-climatisation' },
-        { name: 'Mérignac', url: '/villes/merignac-chauffage-climatisation' },
         { name: 'Pessac', url: '/villes/pessac-chauffage-climatisation' },
+        { name: 'Mérignac', url: '/villes/merignac-chauffage-climatisation' },
         { name: 'Talence', url: '/villes/talence-chauffage-climatisation' },
+        { name: 'Bègles', url: '/villes/begles-chauffage-climatisation' },
         { name: 'Bruges', url: '/villes/bruges-chauffage-climatisation' },
-        { name: 'Le Bouscat', url: '/villes/le-bouscat-chauffage-climatisation' },
         { name: 'Cenon', url: '/villes/cenon-chauffage-climatisation' },
         { name: 'Lormont', url: '/villes/lormont-chauffage-climatisation' },
-        { name: 'Bègles', url: '/villes/begles-chauffage-climatisation' },
         { name: 'Floirac', url: '/villes/floirac-chauffage-climatisation' },
         { name: "Villenave-d'Ornon", url: '/villes/villenave-d-ornon-chauffage-climatisation' },
         { name: 'Eysines', url: '/villes/eysines-chauffage-climatisation' },
@@ -323,55 +124,56 @@ export default function ZonesInterventions() {
         { name: 'Canéjan', url: '/villes/canejan-chauffage-climatisation' },
         { name: 'Léognan', url: '/villes/leognan-chauffage-climatisation' },
         { name: 'Martillac', url: '/villes/martillac-chauffage-climatisation' },
-        { name: 'La Brède', url: '/villes/la-brede-chauffage-climatisation' },
-        { name: 'Cadaujac', url: '/villes/cadaujac-chauffage-climatisation' },
-        { name: 'Saucats', url: '/villes/saucats-chauffage-climatisation' },
-        { name: 'Saint-Selve', url: '/villes/saint-selve-chauffage-climatisation' }
+        { name: 'La Brède', url: '/villes/la-brede-chauffage-climatisation' }
       ],
-      gradient: 'from-purple-500 via-indigo-500 to-blue-500',
+      gradient: 'from-green-500 via-emerald-500 to-teal-500',
       icon: Compass,
-      count: 9
+      count: 6
     },
     {
-      id: 'val-eyre',
-      title: "Val de l'Eyre",
-      description: 'Zone forestière. Systèmes adaptés aux maisons en bois et environnements naturels.',
+      id: 'landes',
+      title: 'Landes de Gascogne',
+      description: 'Zone forestière avec des défis particuliers liés à l\'isolation et à l\'accessibilité.',
       cities: [
         { name: 'Marcheprime', url: '/villes/marcheprime-chauffage-climatisation' },
         { name: 'Le Barp', url: '/villes/le-barp-chauffage-climatisation' },
         { name: 'Mios', url: '/villes/mios-chauffage-climatisation' },
         { name: 'Salles', url: '/villes/salles-chauffage-climatisation' },
-        { name: 'Belin-Béliet', url: '/villes/belin-beliet-chauffage-climatisation' }
-      ],
-      gradient: 'from-emerald-500 via-green-500 to-teal-500',
-      icon: Sparkles,
-      count: 5
-    },
-    {
-      id: 'landes',
-      title: 'Nord des Landes',
-      description: 'Zone de pinèdes. Solutions haute performance pour maisons individuelles et résidences secondaires.',
-      cities: [
+        { name: 'Belin-Béliet', url: '/villes/belin-beliet-chauffage-climatisation' },
         { name: 'Sanguinet', url: '/villes/sanguinet-chauffage-climatisation' },
         { name: 'Parentis-en-Born', url: '/villes/parentis-chauffage-climatisation' },
         { name: 'Biscarrosse', url: '/villes/biscarrosse-chauffage-climatisation' },
         { name: 'Mimizan', url: '/villes/mimizan-chauffage-climatisation' }
       ],
-      gradient: 'from-amber-500 via-orange-500 to-red-500',
-      icon: Zap,
-      count: 4
+      gradient: 'from-yellow-500 via-orange-500 to-red-500',
+      icon: Sparkles,
+      count: 9
     },
     {
-      id: 'gironde',
-      title: 'Autres communes',
-      description: 'Communes rurales et périurbaines. Solutions sur-mesure adaptées à chaque spécificité locale.',
+      id: 'medoc',
+      title: 'Médoc',
+      description: 'Territoire viticole d\'exception nécessitant une approche sur-mesure.',
       cities: [
         { name: 'Lacanau', url: '/villes/lacanau-chauffage-climatisation' },
-        { name: 'Saint-Loubès', url: '/villes/saint-loubes-chauffage-climatisation' },
+        { name: 'Saint-Médard-en-Jalles', url: '/villes/saint-medard-en-jalles-chauffage-climatisation' },
+        { name: 'Saint-Aubin-de-Médoc', url: '/villes/saint-aubin-de-medoc-chauffage-climatisation' },
+        { name: 'Martignas-sur-Jalle', url: '/villes/martignas-sur-jalle-chauffage-climatisation' },
         { name: "Saint-Jean-d'Illac", url: '/villes/saint-jean-d-illac-chauffage-climatisation' },
-        { name: "Saint-Médard-en-Jalles", url: '/villes/saint-medard-en-jalles-chauffage-climatisation' },
-        { name: "Saint-Aubin-de-Médoc", url: '/villes/saint-aubin-de-medoc-chauffage-climatisation' },
-        { name: 'Martignas-sur-Jalle', url: '/villes/martignas-sur-jalle-chauffage-climatisation' }
+        { name: 'Saucats', url: '/villes/saucats-chauffage-climatisation' }
+      ],
+      gradient: 'from-purple-500 via-violet-500 to-indigo-500',
+      icon: Zap,
+      count: 6
+    },
+    {
+      id: 'autres',
+      title: 'Autres communes',
+      description: 'Intervention ponctuelle dans d\'autres communes de la Gironde selon les besoins.',
+      cities: [
+        { name: 'Saint-Loubès', url: '/villes/saint-loubes-chauffage-climatisation' },
+        { name: 'Cadaujac', url: '/villes/cadaujac-chauffage-climatisation' },
+        { name: 'Saint-Selve', url: '/villes/saint-selve-chauffage-climatisation' },
+        { name: 'Le Bouscat', url: '/villes/le-bouscat-chauffage-climatisation' }
       ],
       gradient: 'from-slate-500 via-gray-500 to-zinc-500',
       icon: Star,
@@ -379,12 +181,8 @@ export default function ZonesInterventions() {
     }
   ];
 
-
-
   return (
     <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white relative">
-      {/* Simple background like the rest of the site */}
-      
       {/* Hero Section with Full Globe Background */}
       <section className="relative min-h-screen bg-white dark:bg-black overflow-hidden">
         {/* Globe Full Background */}
@@ -440,8 +238,6 @@ export default function ZonesInterventions() {
           </div>
         </div>
       </section>
-
-
 
       {/* Zones Section */}
       <section className="relative py-20 bg-gray-50 dark:bg-gray-900">
