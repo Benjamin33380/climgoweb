@@ -299,88 +299,98 @@ export function NewHeader() {
 
       {/* Menu mobile déroulant */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden border-t bg-background/95 backdrop-blur">
-          <div className="container mx-auto px-4 py-4 space-y-4">
+        <div className="lg:hidden border-t bg-background/95 backdrop-blur max-h-[calc(100vh-80px)] overflow-y-auto">
+          <div className="container mx-auto px-4 py-4 space-y-4 pb-6">
             {/* Services */}
             <div className="space-y-2">
-              <h3 className="text-sm font-semibold text-muted-foreground">Nos Services</h3>
+              <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Nos Services</h3>
               {services.map((service) => (
                 <Link
                   key={service.title}
                   href={service.href}
-                  className="flex items-center space-x-3 p-2 rounded-md hover:bg-accent transition-colors"
+                  className="flex items-center space-x-3 p-3 rounded-md hover:bg-accent transition-colors min-h-[48px]"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {service.icon}
-                  <span className="font-medium">{service.title}</span>
+                  <div>
+                    <span className="font-medium text-base">{service.title}</span>
+                    <p className="text-xs text-muted-foreground mt-1 line-clamp-1">{service.description}</p>
+                  </div>
                 </Link>
               ))}
             </div>
             
             {/* Zones d'intervention */}
             <div className="space-y-2 pt-4 border-t">
-              <h3 className="text-sm font-semibold text-muted-foreground">Zones d'intervention</h3>
+              <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Zones d'intervention</h3>
               {zones.map((zone) => (
                 <Link
                   key={zone.title}
                   href={zone.href}
-                  className="block p-2 rounded-md hover:bg-accent transition-colors"
+                  className="block p-3 rounded-md hover:bg-accent transition-colors min-h-[48px] flex items-center"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  <span className="font-medium">{zone.title}</span>
+                  <div>
+                    <span className="font-medium text-base">{zone.title}</span>
+                    <p className="text-xs text-muted-foreground mt-1 line-clamp-1">{zone.description}</p>
+                  </div>
                 </Link>
               ))}
             </div>
 
             {/* Notre entreprise */}
             <div className="space-y-2 pt-4 border-t">
-              <h3 className="text-sm font-semibold text-muted-foreground">Notre entreprise</h3>
+              <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Notre entreprise</h3>
               {entreprise.map((item) => (
                 <Link
                   key={item.title}
                   href={item.href}
-                  className="block p-2 rounded-md hover:bg-accent transition-colors"
+                  className="block p-3 rounded-md hover:bg-accent transition-colors min-h-[48px] flex items-center"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  <span className="font-medium">{item.title}</span>
+                  <div>
+                    <span className="font-medium text-base">{item.title}</span>
+                    <p className="text-xs text-muted-foreground mt-1 line-clamp-1">{item.description}</p>
+                  </div>
                 </Link>
               ))}
             </div>
 
             {/* Blog */}
             <div className="space-y-2 pt-4 border-t">
-              <h3 className="text-sm font-semibold text-muted-foreground">Blog</h3>
+              <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Blog</h3>
               <Link
                 href="/blog"
-                className="block p-2 rounded-md hover:bg-accent transition-colors"
+                className="block p-3 rounded-md hover:bg-accent transition-colors min-h-[48px] flex items-center"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                <span className="font-medium">Tous les articles</span>
+                <span className="font-medium text-base">Tous les articles</span>
               </Link>
               <Link
                 href="/blog?category=chauffage"
-                className="block p-2 rounded-md hover:bg-accent transition-colors"
+                className="block p-3 rounded-md hover:bg-accent transition-colors min-h-[48px] flex items-center"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                <span className="font-medium">Chauffage</span>
+                <span className="font-medium text-base">Chauffage</span>
               </Link>
               <Link
                 href="/blog?category=climatisation"
-                className="block p-2 rounded-md hover:bg-accent transition-colors"
+                className="block p-3 rounded-md hover:bg-accent transition-colors min-h-[48px] flex items-center"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                <span className="font-medium">Climatisation</span>
+                <span className="font-medium text-base">Climatisation</span>
               </Link>
             </div>
 
             {/* Contact */}
             <div className="space-y-2 pt-4 border-t">
+              <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Contact</h3>
               <Link
                 href="/contact"
-                className="block p-2 rounded-md hover:bg-accent transition-colors"
+                className="block p-3 rounded-md hover:bg-accent transition-colors min-h-[48px] flex items-center"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                <span className="font-medium text-lg">Contact</span>
+                <span className="font-medium text-base">Nous contacter</span>
               </Link>
             </div>
 
@@ -398,9 +408,7 @@ export function NewHeader() {
       )}
     </header>
   )
-}
-
-function ListItem({
+}function ListItem({
   title,
   children,
   href,
@@ -429,3 +437,5 @@ function ListItem({
     </li>
   )
 }
+
+
