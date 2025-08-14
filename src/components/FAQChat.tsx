@@ -88,7 +88,7 @@ export default function FAQChat({
                 return (
                   <motion.div 
                     key={index}
-                    className="chat-card bg-white dark:bg-black rounded-3xl shadow-xl p-4 md:p-6 border border-gray-200 dark:border-gray-700 h-[420px] sm:h-[400px] md:h-[450px] flex flex-col hover:shadow-2xl transition-all duration-300"
+                    className="chat-card bg-white dark:bg-black rounded-3xl shadow-xl p-3 sm:p-4 md:p-6 border border-gray-200 dark:border-gray-700 h-[420px] sm:h-[400px] md:h-[450px] flex flex-col hover:shadow-2xl transition-all duration-300 overflow-hidden"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -101,8 +101,8 @@ export default function FAQChat({
                           {profile.initials}
                         </span>
                       </div>
-                      <div>
-                        <h4 className="text-sm font-semibold text-gray-900 dark:text-white">
+                      <div className="min-w-0 flex-1">
+                        <h4 className="text-sm font-semibold text-gray-900 dark:text-white truncate">
                           {profile.firstName} {profile.name}
                         </h4>
                         <p className="text-xs text-gray-500 dark:text-gray-400">Client</p>
@@ -114,9 +114,9 @@ export default function FAQChat({
 
                     {/* Question du client */}
                     <div className="flex items-start mb-4">
-                      <div className="flex-1">
-                        <div className="bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-2xl rounded-bl-md px-4 py-3 shadow-sm">
-                          <p className="text-sm leading-relaxed">{faq.question}</p>
+                      <div className="flex-1 min-w-0">
+                        <div className="bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-2xl rounded-bl-md px-3 sm:px-4 py-2 sm:py-3 shadow-sm">
+                          <p className="text-xs sm:text-sm leading-relaxed break-words">{faq.question}</p>
                         </div>
                         <p className="text-xs text-gray-400 dark:text-gray-500 mt-1 ml-2">{clientTime}</p>
                       </div>
@@ -125,26 +125,26 @@ export default function FAQChat({
                     {/* Réponse de l'expert */}
                     <div className="flex-grow flex flex-col justify-end">
                       <div className="flex items-start justify-end mb-2">
-                        <div className="flex-1 flex justify-end">
-                          <div className="bg-blue-500 dark:bg-blue-600 text-white rounded-2xl rounded-br-md px-4 py-3 max-w-[85%] shadow-sm">
-                            <p className="text-sm leading-relaxed">{faq.answer}</p>
+                        <div className="flex-1 flex justify-end min-w-0">
+                          <div className="bg-blue-500 dark:bg-blue-600 text-white rounded-2xl rounded-br-md px-3 sm:px-4 py-2 sm:py-3 max-w-[85%] shadow-sm min-w-0">
+                            <p className="text-xs sm:text-sm leading-relaxed break-words">{faq.answer}</p>
                           </div>
                         </div>
-                        <div className="ml-3 flex-shrink-0 flex items-end">
-                          <div className="w-8 h-8 flex items-center justify-center">
+                        <div className="ml-2 sm:ml-3 flex-shrink-0 flex items-end">
+                          <div className="w-6 sm:w-8 h-6 sm:h-8 flex items-center justify-center">
                             <Logo3D 
                               glbUrl="/favicon/logo.glb" 
                               isHovered={false}
-                              className="w-6 h-6"
+                              className="w-4 sm:w-6 h-4 sm:h-6"
                             />
                           </div>
                         </div>
                       </div>
                       
                       {/* Footer avec nom expert */}
-                      <div className="flex justify-end pr-11">
+                      <div className="flex justify-end pr-8 sm:pr-11">
                         <div className="text-right">
-                          <p className="text-xs text-gray-400 dark:text-gray-500">Expert ClimGO • À l'instant</p>
+                          <p className="text-xs text-gray-400 dark:text-gray-500 truncate">Expert ClimGO • À l'instant</p>
                         </div>
                       </div>
                     </div>
