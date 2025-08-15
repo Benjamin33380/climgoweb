@@ -25,33 +25,33 @@ interface Zone {
 
 // Simple Zone Card - showing ALL cities
 const SimpleZoneCard = ({ zone, index }: { zone: Zone; index: number }) => (
-  <div className="bg-white dark:bg-black rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-black/20 dark:border-white/20 hover:border-black/40 dark:hover:border-white/40">
-    <div className="flex items-center justify-between mb-4 md:mb-6">
-      <div className="bg-black/10 dark:bg-white/10 rounded-2xl w-12 h-12 md:w-16 md:h-16 flex items-center justify-center shadow-sm">
-        <zone.icon className="w-6 h-6 md:w-8 md:h-8 text-black dark:text-white" />
+  <div className="bg-white dark:bg-black rounded-xl xs:rounded-2xl p-4 xs:p-5 sm:p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-black/20 dark:border-white/20 hover:border-black/40 dark:hover:border-white/40">
+    <div className="flex items-center justify-between mb-3 xs:mb-4 sm:mb-4 md:mb-6">
+      <div className="bg-black/10 dark:bg-white/10 rounded-xl xs:rounded-2xl w-10 h-10 xs:w-12 xs:h-12 sm:w-12 sm:h-12 md:w-16 md:h-16 flex items-center justify-center shadow-sm">
+        <zone.icon className="w-5 h-5 xs:w-6 xs:h-6 sm:w-6 sm:h-6 md:w-8 md:h-8 text-black dark:text-white" />
       </div>
-      <Badge variant="secondary" className="text-xs md:text-sm font-semibold">
+      <Badge variant="secondary" className="text-xs xs:text-xs sm:text-xs md:text-sm font-semibold px-2 xs:px-3 py-1">
         {zone.count} communes
       </Badge>
     </div>
     
-    <h3 className="text-xl md:text-2xl font-semibold text-black dark:text-white mb-3 md:mb-4">
+    <h3 className="text-lg xs:text-xl sm:text-xl md:text-2xl lg:text-2xl font-semibold text-black dark:text-white mb-2 xs:mb-3 sm:mb-3 md:mb-4">
       {zone.title}
     </h3>
     
-    <p className="text-black/70 dark:text-white/70 text-sm leading-relaxed mb-4 md:mb-6">
+    <p className="text-black/70 dark:text-white/70 text-xs xs:text-sm sm:text-sm leading-relaxed mb-3 xs:mb-4 sm:mb-4 md:mb-6">
       {zone.description}
     </p>
 
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+    <div className="grid grid-cols-1 xs:grid-cols-1 sm:grid-cols-2 gap-2 xs:gap-2 sm:gap-3">
       {zone.cities.map((city, cityIndex) => (
         <Link
           key={cityIndex}
           href={city.url}
-          className="flex items-center justify-between p-3 rounded-lg bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 transition-colors duration-200 group"
+          className="flex items-center justify-between p-2 xs:p-2.5 sm:p-3 rounded-lg bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 transition-colors duration-200 group"
         >
-          <span className="text-sm font-medium text-black dark:text-white">{city.name}</span>
-          <ArrowRight className="w-3 h-3 text-black/50 dark:text-white/50 group-hover:text-black dark:group-hover:text-white transform group-hover:translate-x-1 transition-all duration-200" />
+          <span className="text-xs xs:text-sm sm:text-sm font-medium text-black dark:text-white">{city.name}</span>
+          <ArrowRight className="w-3 h-3 xs:w-3 xs:h-3 sm:w-3 sm:h-3 text-black/50 dark:text-white/50 group-hover:text-black dark:group-hover:text-white transform group-hover:translate-x-1 transition-all duration-200" />
         </Link>
       ))}
     </div>
@@ -204,7 +204,7 @@ export default function ZonesInterventions() {
           </div>
 
           {/* Stats - Enhanced for Globe Background */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 xs:grid-cols-1 sm:grid-cols-3 md:grid-cols-3 gap-4 xs:gap-5 sm:gap-6 md:gap-8 max-w-5xl mx-auto">
             {[
               { number: '48', label: 'Communes desservies', icon: MapPin },
               { number: '24/7', label: 'Service d\'urgence', icon: Clock },
@@ -212,15 +212,15 @@ export default function ZonesInterventions() {
             ].map((stat, index) => (
               <div
                 key={index}
-                className="text-center bg-white/95 dark:bg-black/95 backdrop-blur-sm rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-black/20 dark:border-white/20"
+                className="text-center bg-white/95 dark:bg-black/95 backdrop-blur-sm rounded-xl xs:rounded-2xl p-4 xs:p-5 sm:p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-black/20 dark:border-white/20"
               >
-                <div className="bg-black/10 dark:bg-white/10 rounded-full w-16 h-16 md:w-20 md:h-20 flex items-center justify-center mx-auto mb-4 md:mb-6">
-                  <stat.icon className="w-8 h-8 md:w-10 md:h-10 text-black dark:text-white" />
+                <div className="bg-black/10 dark:bg-white/10 rounded-full w-12 h-12 xs:w-14 xs:h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 flex items-center justify-center mx-auto mb-3 xs:mb-4 sm:mb-4 md:mb-6">
+                  <stat.icon className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 text-black dark:text-white" />
                 </div>
-                <div className="text-3xl md:text-4xl font-light mb-3 text-black dark:text-white">
+                <div className="text-2xl xs:text-2xl sm:text-3xl md:text-4xl font-light mb-2 xs:mb-2 sm:mb-3 text-black dark:text-white">
                   {stat.number}
                 </div>
-                <div className="text-sm md:text-base text-black/70 dark:text-white/70 font-medium">{stat.label}</div>
+                <div className="text-xs xs:text-sm sm:text-sm md:text-base text-black/70 dark:text-white/70 font-medium">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -228,18 +228,18 @@ export default function ZonesInterventions() {
       </section>
 
       {/* Zones Section */}
-      <section className="relative py-16 md:py-20 bg-white dark:bg-black">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-black dark:text-white mb-3 md:mb-4">
+      <section className="relative py-12 xs:py-14 sm:py-16 md:py-20 lg:py-24 bg-white dark:bg-black">
+        <div className="container mx-auto px-4 xs:px-5 sm:px-6">
+          <div className="text-center mb-8 xs:mb-10 sm:mb-12 md:mb-16">
+            <h2 className="text-2xl xs:text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-black dark:text-white mb-2 xs:mb-3 sm:mb-3 md:mb-4">
               Nos Zones d'Intervention
             </h2>
-            <p className="text-base md:text-lg text-black/70 dark:text-white/70 max-w-2xl mx-auto">
+            <p className="text-sm xs:text-base sm:text-base md:text-lg text-black/70 dark:text-white/70 max-w-2xl mx-auto px-2">
               Découvrez toutes nos zones d'intervention avec leurs spécificités locales
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-6 xs:gap-7 sm:gap-8 md:gap-8 max-w-7xl mx-auto">
             {zones.map((zone, index) => (
               <SimpleZoneCard key={zone.id} zone={zone} index={index} />
             ))}
@@ -248,32 +248,32 @@ export default function ZonesInterventions() {
       </section>
 
       {/* CTA Section - Simple like homepage */}
-      <section className="relative py-16 md:py-20 bg-white dark:bg-black">
-        <div className="container mx-auto px-4 text-center">
-          <div className="bg-black/10 dark:bg-white/10 rounded-full w-16 h-16 md:w-20 md:h-20 flex items-center justify-center mx-auto mb-4 md:mb-6">
-            <Phone className="w-8 h-8 md:w-10 md:h-10 text-black dark:text-white" />
+      <section className="relative py-12 xs:py-14 sm:py-16 md:py-20 bg-white dark:bg-black">
+        <div className="container mx-auto px-4 xs:px-5 sm:px-6 text-center">
+          <div className="bg-black/10 dark:bg-white/10 rounded-full w-12 h-12 xs:w-14 xs:h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 flex items-center justify-center mx-auto mb-3 xs:mb-4 sm:mb-4 md:mb-6">
+            <Phone className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 text-black dark:text-white" />
           </div>
           
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-black dark:text-white mb-4 md:mb-6">
+          <h2 className="text-2xl xs:text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-black dark:text-white mb-3 xs:mb-4 sm:mb-4 md:mb-6">
             Besoin d'une Intervention ?
           </h2>
           
-          <p className="text-base md:text-lg text-black/70 dark:text-white/70 mb-6 md:mb-8 max-w-2xl mx-auto">
+          <p className="text-sm xs:text-base sm:text-base md:text-lg text-black/70 dark:text-white/70 mb-5 xs:mb-6 sm:mb-6 md:mb-8 max-w-2xl mx-auto px-2">
             Notre équipe d'experts est à votre disposition dans toute la région. Devis gratuit et intervention rapide garantie !
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col xs:flex-col sm:flex-row gap-3 xs:gap-3 sm:gap-4 justify-center max-w-md xs:max-w-lg sm:max-w-none mx-auto">
             <Link
               href="tel:0766460008"
-              className="inline-flex items-center justify-center rounded-full px-8 py-4 text-lg font-medium bg-black dark:bg-white text-white dark:text-black hover:bg-black/80 dark:hover:bg-white/80 transition-all duration-300 transform hover:scale-105 shadow-lg"
+              className="inline-flex items-center justify-center rounded-full px-6 xs:px-7 sm:px-8 py-3 xs:py-3.5 sm:py-4 text-sm xs:text-base sm:text-lg font-medium bg-black dark:bg-white text-white dark:text-black hover:bg-black/80 dark:hover:bg-white/80 transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
-              <Phone className="w-5 h-5 mr-2" />
+              <Phone className="w-4 h-4 xs:w-5 xs:h-5 sm:w-5 sm:h-5 mr-2" />
               07 66 46 00 08
             </Link>
             
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-full px-8 py-4 text-lg font-medium border-2 border-black dark:border-white text-black dark:text-white hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black transition-all duration-300"
+              className="inline-flex items-center justify-center rounded-full px-6 xs:px-7 sm:px-8 py-3 xs:py-3.5 sm:py-4 text-sm xs:text-base sm:text-lg font-medium border-2 border-black dark:border-white text-black dark:text-white hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black transition-all duration-300"
             >
               Devis Gratuit
             </Link>

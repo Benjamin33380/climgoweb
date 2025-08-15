@@ -92,7 +92,7 @@ export default function HomePage() {
     );
 
     return (
-      <div className="max-w-[240px] sm:max-w-xs md:max-w-sm relative">
+      <div className="max-w-[220px] xs:max-w-[240px] sm:max-w-xs md:max-w-sm lg:max-w-md relative">
         <div className="relative">
           <Search className="absolute left-2 sm:left-3 top-1/2 transform -translate-y-1/2 text-white sm:text-gray-600 dark:text-gray-400 w-3 sm:w-4 h-3 sm:h-4" />
           <input
@@ -104,7 +104,7 @@ export default function HomePage() {
               setShowSearchResults(e.target.value.length > 0);
             }}
             onFocus={() => setShowSearchResults(searchQuery.length > 0)}
-            className="w-full bg-white/30 sm:bg-white/90 dark:bg-white/10 backdrop-blur-md border border-white/50 sm:border-black/40 dark:border-white/30 rounded-lg px-6 sm:px-8 py-1.5 sm:py-2 text-white sm:text-black dark:text-white placeholder-white/70 sm:placeholder-gray-600 dark:placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent text-xs sm:text-sm"
+            className="w-full bg-white/30 sm:bg-white/90 dark:bg-white/10 backdrop-blur-md border border-white/50 sm:border-black/40 dark:border-white/30 rounded-lg px-5 xs:px-6 sm:px-8 py-1.5 xs:py-2 sm:py-2 text-white sm:text-black dark:text-white placeholder-white/70 sm:placeholder-gray-600 dark:placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent text-xs xs:text-xs sm:text-sm"
           />
           <MapPin className="absolute right-2 sm:right-3 top-1/2 transform -translate-y-1/2 text-white sm:text-gray-600 dark:text-gray-400 w-3 sm:w-4 h-3 sm:h-4" />
         </div>
@@ -140,7 +140,7 @@ export default function HomePage() {
 
   return (
     <main className="px-0">
-      <section className="relative h-[90vh] min-h-[500px] sm:min-h-[600px] md:min-h-[640px] w-full overflow-hidden bg-white dark:bg-black text-black dark:text-white">
+      <section className="relative h-[100vh] xs:h-[95vh] sm:h-[90vh] min-h-[500px] xs:min-h-[550px] sm:min-h-[600px] md:min-h-[640px] lg:min-h-[700px] xl:min-h-[750px] w-full overflow-hidden bg-white dark:bg-black text-black dark:text-white">
         {/* Zone vidéo - Responsive avec adaptation mobile */}
         <motion.div
           className="absolute top-0 right-0 h-full w-full sm:w-2/3"
@@ -195,15 +195,15 @@ export default function HomePage() {
         {/* Contenu côté gauche - Responsive */}
         <div className="relative z-10 flex h-full items-center">
           <motion.div
-            className="w-full sm:max-w-xl md:max-w-2xl px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16"
+            className="w-full xs:max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16"
             initial={{ x: -50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-light tracking-tight mb-3 sm:mb-4 md:mb-6 text-white sm:text-black dark:text-white break-words leading-tight">
+            <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-light tracking-tight mb-2 xs:mb-3 sm:mb-4 md:mb-6 text-white sm:text-black dark:text-white break-words leading-tight">
               ClimGO
             </h1>
-            <p className="text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl text-white/90 sm:text-black/90 dark:text-white/90 mb-3 sm:mb-4 md:mb-6 lg:mb-8 leading-relaxed max-w-[280px] sm:max-w-sm md:max-w-lg lg:max-w-none whitespace-pre-line">
+            <p className="text-xs xs:text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl text-white/90 sm:text-black/90 dark:text-white/90 mb-3 xs:mb-4 sm:mb-4 md:mb-6 lg:mb-8 leading-relaxed max-w-[260px] xs:max-w-[280px] sm:max-w-sm md:max-w-lg lg:max-w-xl xl:max-w-2xl whitespace-pre-line">
               Installateur de pompe à chaleur{'\n'}chauffage et climatisation
             </p>
 
@@ -212,22 +212,22 @@ export default function HomePage() {
               <CitySearch />
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4">
+            <div className="flex flex-col xs:flex-row sm:flex-row gap-2 xs:gap-2 sm:gap-3 md:gap-4 lg:gap-5">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-full px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-2.5 md:py-3 lg:py-4 text-xs sm:text-sm md:text-base font-medium
+                className="inline-flex items-center justify-center rounded-full px-3 xs:px-4 sm:px-4 md:px-6 lg:px-8 xl:px-10 py-2 xs:py-2 sm:py-2.5 md:py-3 lg:py-4 text-xs xs:text-xs sm:text-sm md:text-base lg:text-lg font-medium
                            bg-white dark:bg-black text-black dark:text-white hover:bg-white/90 dark:hover:bg-black/90
                            border border-black/20 dark:border-white/20
-                           transition-all duration-300 transform hover:scale-105 shadow-lg"
+                           transition-all duration-300 transform hover:scale-105 shadow-lg min-w-[120px] xs:min-w-[130px] sm:min-w-[140px]"
               >
                 Devis gratuit
               </Link>
 
               <a
                 href="#services"
-                className="inline-flex items-center justify-center rounded-full px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-2.5 md:py-3 lg:py-4 text-xs sm:text-sm md:text-base font-medium
+                className="inline-flex items-center justify-center rounded-full px-3 xs:px-4 sm:px-4 md:px-6 lg:px-8 xl:px-10 py-2 xs:py-2 sm:py-2.5 md:py-3 lg:py-4 text-xs xs:text-xs sm:text-sm md:text-base lg:text-lg font-medium
                            border-2 border-white/50 sm:border-black/50 dark:border-white/30 text-white sm:text-black dark:text-white hover:bg-white/15 sm:hover:bg-black/15 dark:hover:bg-white/10 hover:border-white/70 sm:hover:border-black/70 dark:hover:border-white/50
-                           transition-all duration-300 backdrop-blur-sm"
+                           transition-all duration-300 backdrop-blur-sm min-w-[120px] xs:min-w-[130px] sm:min-w-[140px]"
               >
                 Découvrir
               </a>
@@ -242,15 +242,15 @@ export default function HomePage() {
       </section>
 
       {/* Section Bassin d'Arcachon - Texte défilant au scroll */}
-      <section className="relative py-20 md:py-24 lg:py-28 overflow-hidden">
+      <section className="relative py-12 xs:py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32 overflow-hidden">
         <div
           className="absolute inset-0 -z-10 w-full h-full bg-white dark:bg-black"
           aria-hidden="true"
         ></div>
         
         {/* Titre centré */}
-        <div className="relative z-10 container mx-auto px-6 md:px-8 lg:px-12 mb-8 md:mb-12">
-          <h2 className="text-2xl md:text-3xl font-medium text-gray-800 dark:text-white text-center">
+        <div className="relative z-10 container mx-auto px-4 xs:px-6 sm:px-6 md:px-8 lg:px-12 mb-6 xs:mb-8 sm:mb-8 md:mb-12">
+          <h2 className="text-xl xs:text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-gray-800 dark:text-white text-center">
             Notre savoir-faire
           </h2>
         </div>
@@ -264,40 +264,40 @@ export default function HomePage() {
           
           {/* Zone de scroll sur toute la largeur de la page */}
           <div 
-            className="w-full h-[300px] px-6 md:px-8 lg:px-12 py-20 md:py-24 overflow-y-auto scrollbar-hide cursor-default"
+            className="w-full h-[250px] xs:h-[280px] sm:h-[300px] md:h-[320px] px-4 xs:px-6 sm:px-6 md:px-8 lg:px-12 py-12 xs:py-16 sm:py-20 md:py-24 overflow-y-auto scrollbar-hide cursor-default"
             style={{
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
             }}
           >
             {/* Contenu centré dans la zone élargie */}
-            <div className="max-w-4xl mx-auto">
-              <div className="space-y-4 text-center pt-8 pb-20">
-                <p className="text-lg text-gray-800 dark:text-gray-200 leading-normal">
+            <div className="max-w-3xl xs:max-w-4xl sm:max-w-4xl mx-auto">
+              <div className="space-y-3 xs:space-y-4 sm:space-y-4 text-center pt-4 xs:pt-6 sm:pt-8 pb-12 xs:pb-16 sm:pb-20">
+                <p className="text-sm xs:text-base sm:text-lg md:text-lg text-gray-800 dark:text-gray-200 leading-normal px-2">
                   Chez <strong>ClimGO</strong>, nous vous accompagnons dans tous les domaines du confort thermique et sanitaire : <strong>chauffage</strong>, <strong>climatisation</strong>, <strong>eau chaude sanitaire</strong> et <strong>maintenance</strong>.
                 </p>
 
-                <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
+                <p className="text-xs xs:text-sm sm:text-base md:text-base text-gray-800 dark:text-gray-200 leading-normal px-2">
                   Nos solutions sont pensées pour allier <strong>performance</strong>, <strong>durabilité</strong>, <strong>économies d'énergie</strong> et <strong>sérénité</strong>, année après année.
                 </p>
 
-                <div className="my-6">
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">Notre Expertise</h3>
-                  <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
+                <div className="my-4 xs:my-5 sm:my-6">
+                  <h3 className="text-base xs:text-lg sm:text-xl md:text-xl font-semibold text-gray-900 dark:text-white mb-2 xs:mb-3 sm:mb-3">Notre Expertise</h3>
+                  <p className="text-xs xs:text-sm sm:text-base md:text-base text-gray-800 dark:text-gray-200 leading-normal px-2">
                     Notre expertise technique, développée depuis plus de 10 ans, nous permet de vous proposer les équipements les plus adaptés à votre habitat et à votre mode de vie.
                   </p>
                 </div>
 
-                <div className="my-6">
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">Service Complet</h3>
-                  <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
+                <div className="my-4 xs:my-5 sm:my-6">
+                  <h3 className="text-base xs:text-lg sm:text-xl md:text-xl font-semibold text-gray-900 dark:text-white mb-2 xs:mb-3 sm:mb-3">Service Complet</h3>
+                  <p className="text-xs xs:text-sm sm:text-base md:text-base text-gray-800 dark:text-gray-200 leading-normal px-2">
                     De l'installation à la maintenance, en passant par le conseil et le dépannage, nous vous garantissons un service complet et personnalisé.
                   </p>
                 </div>
 
-                <div className="my-6">
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">Qualité & Conformité</h3>
-                  <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
+                <div className="my-4 xs:my-5 sm:my-6">
+                  <h3 className="text-base xs:text-lg sm:text-xl md:text-xl font-semibold text-gray-900 dark:text-white mb-2 xs:mb-3 sm:mb-3">Qualité & Conformité</h3>
+                  <p className="text-xs xs:text-sm sm:text-base md:text-base text-gray-800 dark:text-gray-200 leading-normal px-2">
                     Chaque intervention est réalisée dans le respect des normes en vigueur, avec des équipements certifiés et une garantie sur nos prestations.
                   </p>
                 </div>

@@ -126,24 +126,24 @@ export default function AProposPage() {
       </section>
 
       {/* Section Statistiques */}
-      <section className="py-20 bg-white dark:bg-black">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <section className="py-12 xs:py-16 sm:py-20 md:py-24 bg-white dark:bg-black">
+        <div className="container mx-auto px-4 xs:px-5 sm:px-6">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6 xs:gap-7 sm:gap-8 md:gap-8">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center group">
-                  <div className="w-20 h-20 bg-[#03144a] dark:bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-16 h-16 xs:w-18 xs:h-18 sm:w-20 sm:h-20 md:w-20 md:h-20 bg-[#03144a] dark:bg-white/10 rounded-xl xs:rounded-2xl flex items-center justify-center mx-auto mb-4 xs:mb-5 sm:mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
                     <div className="text-white dark:text-white">
                       {stat.icon}
                     </div>
                   </div>
-                  <div className="text-4xl font-bold text-[#03144a] dark:text-white mb-2">
+                  <div className="text-2xl xs:text-3xl sm:text-4xl md:text-4xl font-bold text-[#03144a] dark:text-white mb-1 xs:mb-2 sm:mb-2">
                     {stat.number}
                   </div>
-                  <h3 className="text-lg font-semibold text-black dark:text-white mb-2">
+                  <h3 className="text-sm xs:text-base sm:text-lg md:text-lg font-semibold text-black dark:text-white mb-1 xs:mb-2 sm:mb-2">
                     {stat.label}
                   </h3>
-                  <p className="text-black/70 dark:text-white/70 text-sm">
+                  <p className="text-black/70 dark:text-white/70 text-xs xs:text-sm sm:text-sm">
                     {stat.description}
                   </p>
                 </div>

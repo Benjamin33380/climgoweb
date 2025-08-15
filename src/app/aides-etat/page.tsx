@@ -99,22 +99,22 @@ export default function AidesEtatPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section - Épuré sans image */}
-      <section className="relative bg-[#03144a] text-white py-24">
+      <section className="relative bg-[#03144a] text-white py-16 xs:py-20 sm:py-24 md:py-28">
         <div className="absolute inset-0 bg-black/10"></div>
-        <div className="relative container mx-auto px-4 py-24">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="mb-8">
-              <span className="inline-block px-4 py-2 bg-blue-700/50 rounded-full text-sm font-medium mb-6">
+        <div className="relative container mx-auto px-4 xs:px-5 sm:px-6 py-12 xs:py-16 sm:py-20 md:py-24">
+          <div className="max-w-5xl mx-auto text-center">
+            <div className="mb-6 xs:mb-7 sm:mb-8">
+              <span className="inline-block px-3 xs:px-4 py-1.5 xs:py-2 bg-blue-700/50 rounded-full text-xs xs:text-sm font-medium mb-4 xs:mb-5 sm:mb-6">
                 Financement & Subventions
               </span>
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+              <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 xs:mb-5 sm:mb-6 leading-tight">
                 Aides & Subventions
               </h1>
-              <h2 className="text-2xl md:text-3xl font-light mb-8 text-blue-100">
+              <h2 className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-light mb-6 xs:mb-7 sm:mb-8 text-blue-100">
                 Simplifiez vos démarches avec ClimGO
               </h2>
             </div>
-            <p className="text-xl leading-relaxed text-blue-100 max-w-3xl mx-auto">
+            <p className="text-sm xs:text-base sm:text-lg md:text-xl leading-relaxed text-blue-100 max-w-4xl mx-auto px-2">
               <strong className="text-white">Aides & Subventions</strong> : plusieurs dispositifs existent pour alléger le coût de vos travaux de chauffage, climatisation ou rénovation énergétique. Chez ClimGO, nous vous aidons à chaque étape pour bénéficier sereinement des aides de l&apos;État.
             </p>
           </div>
@@ -136,32 +136,32 @@ export default function AidesEtatPage() {
       </section>
 
       {/* Section Accordéons - Design moderne */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="space-y-6">
+      <section className="py-12 xs:py-16 sm:py-20 md:py-24 bg-gray-50">
+        <div className="container mx-auto px-4 xs:px-5 sm:px-6">
+          <div className="max-w-5xl mx-auto">
+            <div className="space-y-4 xs:space-y-5 sm:space-y-6">
               {aides.map((aide) => (
-                <div key={aide.id} className="bg-[#f8f9f4] rounded-2xl shadow-lg overflow-hidden border border-gray-100 transition-all duration-300 hover:shadow-xl">
+                <div key={aide.id} className="bg-[#f8f9f4] rounded-xl xs:rounded-2xl shadow-lg overflow-hidden border border-gray-100 transition-all duration-300 hover:shadow-xl">
                   <button
                     onClick={() => toggleFaq(aide.id)}
-                    className="w-full p-8 text-left flex justify-between items-center hover:bg-gray-50 transition-colors"
+                    className="w-full p-4 xs:p-5 sm:p-6 md:p-8 text-left flex justify-between items-center hover:bg-gray-50 transition-colors"
                   >
-                    <div className="flex items-center gap-6">
-                      <div className={`w-16 h-16 ${aide.color} rounded-xl flex items-center justify-center shadow-sm overflow-hidden`}>
+                    <div className="flex items-center gap-3 xs:gap-4 sm:gap-5 md:gap-6">
+                      <div className={`w-12 h-12 xs:w-14 xs:h-14 sm:w-16 sm:h-16 ${aide.color} rounded-lg xs:rounded-xl flex items-center justify-center shadow-sm overflow-hidden`}>
                         <Image 
                           src={aide.logo} 
                           alt={`Logo ${aide.title}`}
-                          width={48}
-                          height={48}
-                          className="object-contain"
+                          width={40}
+                          height={40}
+                          className="object-contain w-8 h-8 xs:w-10 xs:h-10 sm:w-12 sm:h-12"
                         />
                       </div>
-                      <span className="text-xl font-semibold text-blue-900">
+                      <span className="text-base xs:text-lg sm:text-xl md:text-xl font-semibold text-blue-900">
                         {aide.title}
                       </span>
                     </div>
                     <ChevronDown 
-                      className={`w-6 h-6 text-blue-600 transition-transform duration-300 ${
+                      className={`w-5 h-5 xs:w-6 xs:h-6 text-blue-600 transition-transform duration-300 ${
                         openFaq === aide.id ? 'rotate-180' : ''
                       }`}
                     />

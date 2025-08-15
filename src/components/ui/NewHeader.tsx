@@ -92,17 +92,17 @@ export function NewHeader() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto flex h-14 xs:h-15 sm:h-16 md:h-16 items-center justify-between px-3 xs:px-4 sm:px-6 lg:px-8">
         {/* Logo */}
-        <Link href="/" className="flex items-center space-x-2">
+        <Link href="/" className="flex items-center space-x-1.5 xs:space-x-2">
           <Image
             src="/favicon/logo.png"
             alt="ClimGO Logo"
             width={32}
             height={32}
-            className="w-8 h-8"
+            className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8"
           />
-          <span className="font-bold text-xl">ClimGO</span>
+          <span className="font-bold text-lg xs:text-xl sm:text-xl">ClimGO</span>
         </Link>
 
         {/* Navigation centrée */}
