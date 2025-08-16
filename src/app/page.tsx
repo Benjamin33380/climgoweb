@@ -94,7 +94,7 @@ export default function HomePage() {
     return (
       <div className="max-w-[220px] xs:max-w-[240px] sm:max-w-xs md:max-w-sm lg:max-w-md relative">
         <div className="relative">
-          <Search className="absolute left-2 sm:left-3 top-1/2 transform -translate-y-1/2 text-white sm:text-gray-600 dark:text-gray-400 w-3 sm:w-4 h-3 sm:h-4" />
+          <Search className="absolute left-2 sm:left-3 top-1/2 transform -translate-y-1/2 text-white sm:text-muted-foreground dark:text-muted-foreground w-3 sm:w-4 h-3 sm:h-4" />
           <input
             type="text"
             placeholder="Rechercher votre ville..."
@@ -104,14 +104,14 @@ export default function HomePage() {
               setShowSearchResults(e.target.value.length > 0);
             }}
             onFocus={() => setShowSearchResults(searchQuery.length > 0)}
-            className="w-full bg-white/30 sm:bg-white/90 dark:bg-white/10 backdrop-blur-md border border-white/50 sm:border-black/40 dark:border-white/30 rounded-lg px-5 xs:px-6 sm:px-8 py-1.5 xs:py-2 sm:py-2 text-white sm:text-black dark:text-white placeholder-white/70 sm:placeholder-gray-600 dark:placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent text-xs xs:text-xs sm:text-sm"
+            className="w-full bg-white/30 sm:bg-background/90 dark:bg-background/10 backdrop-blur-md border border-white/50 sm:border-border dark:border-border rounded-lg px-5 xs:px-6 sm:px-8 py-1.5 xs:py-2 sm:py-2 text-white sm:text-foreground dark:text-white placeholder-white/70 sm:placeholder-muted-foreground dark:placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent text-xs xs:text-xs sm:text-sm"
           />
-          <MapPin className="absolute right-2 sm:right-3 top-1/2 transform -translate-y-1/2 text-white sm:text-gray-600 dark:text-gray-400 w-3 sm:w-4 h-3 sm:h-4" />
+          <MapPin className="absolute right-2 sm:right-3 top-1/2 transform -translate-y-1/2 text-white sm:text-muted-foreground dark:text-muted-foreground w-3 sm:w-4 h-3 sm:h-4" />
         </div>
         
         {/* Résultats de recherche */}
         {showSearchResults && (
-                          <div className="absolute top-full left-0 right-0 mt-2 bg-white/95 dark:bg-black/95 backdrop-blur-md rounded-xl shadow-2xl border border-black/20 dark:border-white/30 max-h-60 overflow-y-auto z-50">
+          <div className="absolute top-full left-0 right-0 mt-2 bg-background/95 backdrop-blur-md rounded-xl shadow-2xl border border-border max-h-60 overflow-y-auto z-50">
             {filteredCities.length > 0 ? (
               filteredCities.slice(0, 8).map((city, index) => (
                 <Link
@@ -121,14 +121,14 @@ export default function HomePage() {
                     setSearchQuery('');
                     setShowSearchResults(false);
                   }}
-                  className="block w-full text-left px-4 py-3 hover:bg-blue-50 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center gap-2"
+                  className="block w-full text-left px-4 py-3 hover:bg-muted/50 text-foreground hover:text-primary transition-colors flex items-center gap-2"
                 >
-                  <MapPin className="w-4 h-4 text-gray-500 dark:text-gray-400" />
+                  <MapPin className="w-4 h-4 text-muted-foreground" />
                   {city.name}
                 </Link>
               ))
             ) : (
-              <div className="px-4 py-3 text-gray-600 dark:text-gray-500">
+              <div className="px-4 py-3 text-muted-foreground">
                 Aucune ville trouvée
               </div>
             )}
