@@ -61,7 +61,7 @@ export default function FAQChat({
         {/* Titre */}
         <div className="text-center mb-12">
           <motion.h2 
-            className="text-4xl font-bold text-gray-900 dark:text-white mb-4"
+            className="text-xl xs:text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-gray-900 dark:text-white mb-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -79,7 +79,7 @@ export default function FAQChat({
         </div>
 
                     {/* FAQ Chat Cards - Style moderne comme l'image */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 px-4 md:px-6 max-w-full">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 px-4 md:px-6 max-w-full">
               {faqs.map((faq, index) => {
                 const profile = clientProfiles[index] || clientProfiles[0];
                 // Générer des temps différents pour chaque client
@@ -88,7 +88,7 @@ export default function FAQChat({
                 return (
                   <motion.div 
                     key={index}
-                    className="chat-card bg-white dark:bg-black rounded-3xl shadow-xl p-3 sm:p-4 md:p-6 border border-gray-200 dark:border-gray-700 h-[420px] sm:h-[400px] md:h-[450px] flex flex-col hover:shadow-2xl transition-all duration-300 overflow-hidden"
+                    className="chat-card bg-white dark:bg-black rounded-3xl shadow-xl p-3 sm:p-4 md:p-6 border border-gray-200 dark:border-gray-700 h-[480px] sm:h-[460px] md:h-[500px] lg:h-[520px] flex flex-col hover:shadow-2xl transition-all duration-300 overflow-hidden"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -123,19 +123,19 @@ export default function FAQChat({
                     </div>
                     
                     {/* Réponse de l'expert */}
-                    <div className="flex-grow flex flex-col justify-end">
+                    <div className="flex-grow flex flex-col justify-end overflow-hidden">
                       <div className="flex items-start justify-end mb-2">
                         <div className="flex-1 flex justify-end min-w-0">
-                          <div className="bg-blue-500 dark:bg-blue-600 text-white rounded-2xl rounded-br-md px-3 sm:px-4 py-2 sm:py-3 max-w-[85%] shadow-sm min-w-0">
+                          <div className="bg-blue-500 dark:bg-blue-600 text-white rounded-2xl rounded-br-md px-3 sm:px-4 py-2 sm:py-3 max-w-[85%] shadow-sm min-w-0 max-h-[200px] overflow-y-auto">
                             <p className="text-xs sm:text-sm leading-relaxed break-words">{faq.answer}</p>
                           </div>
                         </div>
                         <div className="ml-2 sm:ml-3 flex-shrink-0 flex items-end">
-                          <div className="w-6 sm:w-8 h-6 sm:h-8 flex items-center justify-center">
+                          <div className="w-10 sm:w-12 h-10 sm:h-12 flex items-center justify-center">
                             <Logo3D 
                               glbUrl="/favicon/logo.glb" 
                               isHovered={false}
-                              className="w-4 sm:w-6 h-4 sm:h-6"
+                              className="w-8 sm:w-10 h-8 sm:h-10"
                             />
                           </div>
                         </div>

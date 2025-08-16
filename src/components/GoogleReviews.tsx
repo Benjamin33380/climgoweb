@@ -138,7 +138,7 @@ export default function GoogleReviews({ placeId }: GoogleReviewsProps) {
       <div className="container mx-auto px-4">
         <SimpleWrapper>
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-light text-gray-900 dark:text-white mb-4">
+            <h2 className="text-xl xs:text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-gray-900 dark:text-white mb-4">
               Avis clients Google
             </h2>
             <div className="flex items-center justify-center gap-2 mb-4">

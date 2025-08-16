@@ -9,8 +9,8 @@ export default function Services() {
         {/* Titre de section */}
         <SimpleWrapper>
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-light text-gray-900 dark:text-white mb-4">
-              Notre Expertise
+            <h2 className="text-xl xs:text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-gray-900 dark:text-white mb-4">
+              Notre expertise
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               Expertise technique et solutions sur-mesure pour votre confort thermique

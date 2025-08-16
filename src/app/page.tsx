@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import LocationMap from '@/components/LocationMap';
 // Importations breadcrumb supprimées car non utilisées
 
 export default function HomePage() {
@@ -250,7 +251,7 @@ export default function HomePage() {
         
         {/* Titre centré */}
         <div className="relative z-10 container mx-auto px-4 xs:px-6 sm:px-6 md:px-8 lg:px-12 mb-6 xs:mb-8 sm:mb-8 md:mb-12">
-          <h2 className="text-xl xs:text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-gray-800 dark:text-white text-center">
+          <h2 className="text-xl xs:text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-gray-900 dark:text-white text-center">
             Notre savoir-faire
           </h2>
         </div>
@@ -361,6 +362,142 @@ export default function HomePage() {
       {/* Section Services */}
       <Services />
 
+      {/* Section Nos Engagements - Timeline verticale élégante */}
+      <section className="relative py-24 overflow-hidden bg-white dark:bg-black">
+        <SimpleWrapper>
+          <div className="relative z-10 max-w-6xl mx-auto px-4">
+            {/* Titre avec animation */}
+            <div className="text-center mb-20">
+              <h2 className="text-xl xs:text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-gray-900 dark:text-white mb-6">
+                Notre engagement
+              </h2>
+              <p className="text-sm xs:text-base sm:text-lg md:text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                De l'étude à la maintenance, nous vous accompagnons à chaque étape de votre projet avec professionnalisme et transparence.
+              </p>
+            </div>
+            
+            {/* Timeline verticale */}
+            <div className="relative">
+              {/* Ligne de connexion */}
+              <div className="absolute left-1/2 transform -translate-x-px w-0.5 h-full bg-gray-300 dark:bg-gray-600" />
+              
+              {/* Effet de lumière défilante */}
+              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-16 rounded-full z-5 dark:block hidden" 
+                   style={{
+                     animation: 'lightMove 4s infinite linear',
+                     background: 'linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 20%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.8) 80%, rgba(255, 255, 255, 0) 100%)',
+                     boxShadow: '0 0 20px rgba(255, 255, 255, 0.6), 0 0 40px rgba(255, 255, 255, 0.3)'
+                   }} />
+              
+              {/* Effet de lumière défilante pour le mode clair */}
+              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-16 rounded-full z-5 dark:hidden block" 
+                   style={{
+                     animation: 'lightMove 4s infinite linear',
+                     background: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 20%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.8) 80%, rgba(0, 0, 0, 0) 100%)',
+                     boxShadow: '0 0 20px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 0, 0, 0.3)'
+                   }} />
+              
+              {/* Étape 1 - Étude et Devis */}
+              <div className="relative flex items-center mb-16">
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-white dark:bg-black rounded-full shadow-2xl flex items-center justify-center z-10">
+                  <svg className="w-8 h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                </div>
+                
+                <div className="w-5/12 pr-8 text-right">
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">ÉTUDE ET DEVIS</h3>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    Audit énergétique. Aides auxquelles vous pouvez prétendre. Pas d'avance de frais sur les aides gouvernementales.
+                  </p>
+                </div>
+              </div>
+              
+              {/* Étape 2 - Travaux */}
+              <div className="relative flex items-center mb-16">
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-white dark:bg-black rounded-full shadow-2xl flex items-center justify-center z-10">
+                  <svg className="w-8 h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                </div>
+                
+                <div className="w-5/12 ml-auto pl-8">
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">TRAVAUX</h3>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    RGE. Équipes techniques formées et qualifiées avec les plus grandes marques. Aucun sous-traitant pour vos travaux.
+                  </p>
+                </div>
+              </div>
+              
+              {/* Étape 3 - Satisfaction */}
+              <div className="relative flex items-center mb-16">
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-white dark:bg-black rounded-full shadow-2xl flex items-center justify-center z-10">
+                  <svg className="w-8 h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                
+                <div className="w-5/12 pr-8 text-right">
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">SATISFACTION</h3>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    Accompagnement sur l'ensemble de vos projets. Plus de 95 % de client satisfait. Un service entretien et maintenance.
+                  </p>
+                </div>
+              </div>
+              
+              {/* Étape 4 - Solutions de Financement */}
+              <div className="relative flex items-center">
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-white dark:bg-black rounded-full shadow-2xl flex items-center justify-center z-10">
+                  <svg className="w-8 h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                
+                <div className="w-5/12 ml-auto pl-8">
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">SOLUTIONS DE FINANCEMENT</h3>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    Solutions de financement adaptées à votre situation et vos encours. Facilité de paiement.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            {/* Call-to-action */}
+            <div className="text-center mt-16">
+              <Link
+                href="/contact"
+                className="inline-flex items-center px-8 py-4 bg-black dark:bg-white text-white dark:text-black font-semibold rounded-full hover:bg-gray-800 dark:hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                Demander un devis
+                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </SimpleWrapper>
+
+        {/* Animation CSS */}
+        <style jsx>{`
+          @keyframes lightMove {
+            0% {
+              top: -10%;
+              opacity: 0;
+            }
+            5% {
+              opacity: 1;
+            }
+            95% {
+              opacity: 1;
+            }
+            100% {
+              top: 110%;
+              opacity: 0;
+            }
+          }
+        `}</style>
+      </section>
+
       {/* Section Google Reviews */}
       <GoogleReviews 
         placeId={process.env.NEXT_PUBLIC_GOOGLE_PLACE_ID || "ClimGO-default-place-id"} 
@@ -368,7 +505,7 @@ export default function HomePage() {
 
       {/* Section FAQ - Style Chat Moderne */}
       <FAQChat 
-        title="Questions Fréquentes"
+        title="Questions fréquentes"
         subtitle="Nos réponses aux questions les plus courantes sur le chauffage et la climatisation en Gironde"
         faqs={[
           {
@@ -402,15 +539,15 @@ export default function HomePage() {
               {/* Carte Google Maps en pleine largeur */}
               <div className="relative w-full h-[600px] transform hover:scale-[1.02] transition-transform duration-700 ease-out">
                 <iframe
-                  src={`https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_GOOGLE_API_KEY}&q=Bassin+d'Arcachon,France&zoom=11&center=44.7,-1.15`}
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.9835896155786!2d-0.8562622!3d44.6965443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x55e91babdbbad05%3A0x35eae658ca1b3c85!2sClimGO!5e0!3m2!1sfr!2sfr!4v1699999999999!5m2!1sfr!2sfr"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="ClimGO - Zone d'intervention sur le Bassin d'Arcachon"
-                  aria-label="Carte Google Maps montrant la zone d'intervention de ClimGO sur le Bassin d'Arcachon"
+                  title="ClimGO - Localisation à Marcheprime"
+                  aria-label="Carte Google Maps montrant la localisation de ClimGO à Marcheprime"
                   className="w-full h-full"
                 />
               </div>
