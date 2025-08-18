@@ -4,7 +4,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 
 export default function Services() {
   return (
-    <section className="relative py-20 bg-white dark:bg-black overflow-hidden">
+    <section id="services" className="relative py-20 bg-white dark:bg-black overflow-hidden">
       <div className="container mx-auto px-4">
         {/* Titre de section */}
         <SimpleWrapper>
@@ -40,16 +40,16 @@ export default function Services() {
 
           {/* Chauffage */}
           <SimpleWrapper>
-            <Link href="/chauffage" className="group block bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#DC2626]/50 dark:hover:border-[#F87171]">
+            <Link href="/chauffage" className="group block bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#FF8C00]/50 dark:hover:border-[#FFA500]">
             <div className="text-center">
-              <div className="bg-[#DC2626]/10 dark:bg-[#DC2626]/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <TbFlame className="w-12 h-12 text-[#DC2626] dark:text-[#F87171]" />
+              <div className="bg-[#FF8C00]/10 dark:bg-[#FF8C00]/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <TbFlame className="w-12 h-12 text-[#FF8C00] dark:text-[#FFA500]" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 group-hover:text-[#DC2626] dark:group-hover:text-[#F87171] transition-colors">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 group-hover:text-[#FF8C00] dark:group-hover:text-[#FFA500] transition-colors">
                 Chauffage
               </h3>
               <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-                Pompes à chaleur et planchers chauffants pour un <strong className="text-[#DC2626] dark:text-[#F87171]">chauffage écologique</strong> et économique toute l&apos;année.
+                Pompes à chaleur et planchers chauffants pour un <strong className="text-[#FF8C00] dark:text-[#FFA500]">chauffage écologique</strong> et économique toute l&apos;année.
               </p>
             </div>
             </Link>
@@ -57,16 +57,16 @@ export default function Services() {
 
           {/* Eau Chaude Sanitaire */}
           <SimpleWrapper>
-            <Link href="/eau-chaude-sanitaire" className="group block bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#0EA5E9]/50 dark:hover:border-[#38BDF8]">
+            <Link href="/eau-chaude-sanitaire" className="group block bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#FF6B6B]/50 dark:hover:border-[#FF6B6B]">
             <div className="text-center">
-              <div className="bg-[#0EA5E9]/10 dark:bg-[#0EA5E9]/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <TbDroplet className="w-12 h-12 text-[#0EA5E9] dark:text-[#38BDF8]" />
+              <div className="bg-[#FF6B6B]/10 dark:bg-[#FF6B6B]/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <TbDroplet className="w-12 h-12 text-[#FF6B6B] dark:text-[#FF6B6B]" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 group-hover:text-[#0EA5E9] dark:group-hover:text-[#38BDF8] transition-colors">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 group-hover:text-[#FF6B6B] dark:group-hover:text-[#FF6B6B] transition-colors">
                 Eau Chaude Sanitaire
               </h3>
               <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-                Ballons thermodynamiques et cumulus électriques pour une <strong className="text-[#0EA5E9] dark:text-[#38BDF8]">eau chaude</strong> disponible 24h/24 et économique.
+                Ballons thermodynamiques et cumulus électriques pour une <strong className="text-[#FF6B6B] dark:text-[#FF6B6B]">eau chaude</strong> disponible 24h/24 et économique.
               </p>
             </div>
             </Link>

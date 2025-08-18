@@ -31,10 +31,10 @@ export default function ServicesPage() {
         
         {/* Floating Particles */}
         {/* Red particles */}
-        <div className="absolute w-3 h-3 bg-[#DC2626] rounded-full top-10 left-10 animate-bounce" />
-        <div className="absolute w-2 h-2 bg-[#DC2626] rounded-full top-1/3 left-1/2 animate-pulse" />
-        <div className="absolute w-4 h-4 bg-[#DC2626] rounded-full bottom-1/3 right-20 animate-bounce" />
-        <div className="absolute w-2 h-2 bg-[#DC2626] rounded-full top-[15%] left-[25%] animate-pulse" />
+        <div className="absolute w-3 h-3 bg-[#FF8C00] rounded-full top-10 left-10 animate-bounce" />
+        <div className="absolute w-2 h-2 bg-[#FF8C00] rounded-full top-1/3 left-1/2 animate-pulse" />
+        <div className="absolute w-4 h-4 bg-[#FF8C00] rounded-full bottom-1/3 right-20 animate-bounce" />
+        <div className="absolute w-2 h-2 bg-[#FF8C00] rounded-full top-[15%] left-[25%] animate-pulse" />
 
         {/* Blue particles */}
         <div className="absolute w-3 h-3 bg-[#2563EB] rounded-full top-20 right-10 animate-bounce" />
@@ -56,24 +56,24 @@ export default function ServicesPage() {
 
         {/* Background gradient effects */}
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#DC2626] rounded-full filter blur-3xl animate-pulse" />
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#FF8C00] rounded-full filter blur-3xl animate-pulse" />
           <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-[#2563EB] rounded-full filter blur-3xl animate-pulse" style={{animationDelay: '2s'}} />
           <div className="absolute top-1/2 left-1/2 w-48 h-48 bg-[#10B981] rounded-full filter blur-3xl animate-pulse" style={{animationDelay: '4s'}} />
         </div>
 
         <div className="relative z-10 text-center max-w-5xl mx-auto px-6">
           <div className="inline-flex items-center px-6 py-3 rounded-full border border-[#03144A] dark:border-white/20 text-sm tracking-widest uppercase mb-8 text-[#03144A] dark:text-white bg-[#F8F9F4] dark:bg-black backdrop-blur-sm">
-            <div className="w-2 h-2 bg-[#DC2626] rounded-full mr-3 animate-pulse" />
+            <div className="w-2 h-2 bg-[#FF8C00] rounded-full mr-3 animate-pulse" />
             Notre savoir-faire
           </div>
           
           <SimpleWrapper>
             <h1 className="text-6xl md:text-7xl lg:text-8xl font-extralight tracking-wide mb-8">
-              <span className="bg-gradient-to-r from-[#DC2626] via-[#2563EB] to-[#10B981] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#FF8C00] via-[#2563EB] to-[#10B981] bg-clip-text text-transparent">
                 Services
               </span>
               <br />
-              <span className="bg-gradient-to-r from-[#0EA5E9] via-[#DC2626] to-[#2563EB] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#0EA5E9] via-[#FF8C00] to-[#2563EB] bg-clip-text text-transparent">
                 ClimGO
               </span>
             </h1>
@@ -96,7 +96,7 @@ export default function ServicesPage() {
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <button 
               onClick={scrollToServices}
-              className="group relative px-10 py-4 bg-gradient-to-r from-[#DC2626] via-[#2563EB] to-[#10B981] text-white rounded-full font-medium transition-all duration-300 hover:scale-105 overflow-hidden shadow-xl"
+              className="group relative px-10 py-4 bg-gradient-to-r from-[#FF8C00] via-[#2563EB] to-[#10B981] text-white rounded-full font-medium transition-all duration-300 hover:scale-105 overflow-hidden shadow-xl"
             >
               <span className="relative z-10">Découvrir nos services</span>
               <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
@@ -104,7 +104,7 @@ export default function ServicesPage() {
             
             <Link 
               href="tel:0766460008"
-              className="group px-10 py-4 border-2 border-[#03144A] dark:border-white rounded-full font-medium transition-all duration-300 hover:border-[#DC2626] hover:bg-gradient-to-r hover:from-[#DC2626]/10 hover:to-[#2563EB]/10 text-[#03144A] dark:text-white backdrop-blur-sm"
+              className="group px-10 py-4 border-2 border-[#03144A] dark:border-white rounded-full font-medium transition-all duration-300 hover:border-[#FF8C00] hover:bg-gradient-to-r hover:from-[#FF8C00]/10 hover:to-[#2563EB]/10 text-[#03144A] dark:text-white backdrop-blur-sm"
             >
               Demander un devis
             </Link>
@@ -128,12 +128,12 @@ export default function ServicesPage() {
       {/* Expertise Section */}
       <section className="relative bg-[#f8f9f4] dark:bg-black text-[#0a0f2c] py-32 overflow-hidden">
         {/* Particules décoratives pour cette section */}
-        <div className="absolute w-1 h-1 bg-[#DC2626] rounded-full top-20 left-20 opacity-60 animate-pulse" />
+        <div className="absolute w-1 h-1 bg-[#FF8C00] rounded-full top-20 left-20 opacity-60 animate-pulse" />
         <div className="absolute w-2 h-2 bg-[#2563EB] rounded-full bottom-20 right-20 opacity-60 animate-bounce" />
         <div className="absolute w-1 h-1 bg-[#10B981] rounded-full top-1/2 left-10 opacity-60 animate-pulse" />
         
         <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-10 right-10 w-64 h-64 bg-[#DC2626] rounded-full filter blur-3xl" />
+          <div className="absolute top-10 right-10 w-64 h-64 bg-[#FF8C00] rounded-full filter blur-3xl" />
           <div className="absolute bottom-10 left-10 w-48 h-48 bg-[#2563EB] rounded-full filter blur-3xl" />
         </div>
         
@@ -144,11 +144,11 @@ export default function ServicesPage() {
           </div>
           
           <h2 className="text-5xl md:text-6xl font-extralight mb-6 tracking-tight leading-tight">
-            <span className="bg-gradient-to-r from-[#DC2626] via-[#2563EB] to-[#10B981] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#FF8C00] via-[#2563EB] to-[#10B981] bg-clip-text text-transparent">
               Nos domaines
             </span>
             <br />
-            <span className="bg-gradient-to-r from-[#10B981] via-[#0EA5E9] to-[#DC2626] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#10B981] via-[#0EA5E9] to-[#FF8C00] bg-clip-text text-transparent">
               d&apos;expertise
             </span>
           </h2>
@@ -157,7 +157,7 @@ export default function ServicesPage() {
             Quatre domaines de compétence, une seule promesse : votre confort optimal.
           </p>
           
-          <div className="h-1 w-40 mx-auto mt-8 bg-gradient-to-r from-[#DC2626] via-[#2563EB] to-[#10B981] rounded-full"></div>
+          <div className="h-1 w-40 mx-auto mt-8 bg-gradient-to-r from-[#FF8C00] via-[#2563EB] to-[#10B981] rounded-full"></div>
         </div>
       </section>
 
@@ -168,7 +168,7 @@ export default function ServicesPage() {
         className="pt-20 pb-32 relative bg-[#f8f9f4] dark:bg-black text-[#0a0f2c] overflow-hidden scroll-mt-28"
       >
         {/* Effet de particules pour cette section */}
-        <div className="absolute w-2 h-2 bg-[#DC2626] rounded-full top-32 left-16 opacity-40 animate-bounce" />
+        <div className="absolute w-2 h-2 bg-[#FF8C00] rounded-full top-32 left-16 opacity-40 animate-bounce" />
         <div className="absolute w-1 h-1 bg-[#2563EB] rounded-full bottom-32 right-16 opacity-40 animate-pulse" />
         <div className="absolute w-3 h-3 bg-[#10B981] rounded-full top-1/2 right-1/3 opacity-30 animate-bounce" />
         
@@ -259,7 +259,7 @@ export default function ServicesPage() {
             {/* Bloc Chauffage */}
             <div
               onClick={() => toggleSection('chauffage')}
-              className="group block cursor-pointer border-2 border-[#dc2626]/20 border-t-4 border-t-[#dc2626] rounded-2xl shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 ease-out p-10 text-center bg-gradient-to-br from-[#DC2626]/5 to-[#03144A]/5 dark:from-[#DC2626]/10 dark:to-[#03144A]/10 hover:bg-gradient-to-br hover:from-[#dc2626] hover:to-[#b91c1c] backdrop-blur-sm"
+              className="group block cursor-pointer border-2 border-[#dc2626]/20 border-t-4 border-t-[#dc2626] rounded-2xl shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 ease-out p-10 text-center bg-gradient-to-br from-[#FF8C00]/5 to-[#03144A]/5 dark:from-[#FF8C00]/10 dark:to-[#03144A]/10 hover:bg-gradient-to-br hover:from-[#dc2626] hover:to-[#b91c1c] backdrop-blur-sm"
             >
               <div className="flex justify-center mb-6">
                 <div className="p-4 rounded-full bg-[#dc2626]/10 group-hover:bg-white/20 transition-colors duration-300">
@@ -506,26 +506,26 @@ export default function ServicesPage() {
       {/* CTA Section */}
       <section className="relative bg-[#f8f9f4] dark:bg-black text-[#03144A] dark:text-white py-32 overflow-hidden">
         {/* Particules pour CTA */}
-        <div className="absolute w-3 h-3 bg-[#DC2626] rounded-full top-20 left-20 opacity-60 animate-bounce" />
+        <div className="absolute w-3 h-3 bg-[#FF8C00] rounded-full top-20 left-20 opacity-60 animate-bounce" />
         <div className="absolute w-2 h-2 bg-[#10B981] rounded-full bottom-20 right-20 opacity-60 animate-pulse" />
         <div className="absolute w-4 h-4 bg-[#0EA5E9] rounded-full top-1/2 left-10 opacity-40 animate-bounce" />
         <div className="absolute w-1 h-1 bg-[#2563EB] rounded-full bottom-1/3 right-1/3 opacity-60 animate-pulse" />
         
         {/* Effets de fond légers */}
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#DC2626] rounded-full filter blur-3xl animate-pulse" />
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#FF8C00] rounded-full filter blur-3xl animate-pulse" />
           <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-[#10B981] rounded-full filter blur-3xl animate-pulse" style={{animationDelay: '2s'}} />
           <div className="absolute top-1/2 left-1/2 w-48 h-48 bg-[#0EA5E9] rounded-full filter blur-3xl animate-pulse" style={{animationDelay: '4s'}} />
         </div>
         
         <div className="relative z-10 container mx-auto px-6 text-center max-w-4xl">
           <div className="inline-flex items-center px-6 py-3 rounded-full border border-[#03144A] dark:border-white/30 text-sm tracking-widest uppercase mb-8 text-[#03144A] dark:text-white bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm shadow-lg">
-            <div className="w-2 h-2 bg-[#DC2626] rounded-full mr-3 animate-pulse" />
+            <div className="w-2 h-2 bg-[#FF8C00] rounded-full mr-3 animate-pulse" />
             Votre projet nous intéresse
           </div>
           
           <h2 className="text-5xl md:text-6xl font-extralight mb-8 tracking-tight leading-tight">
-            <span className="bg-gradient-to-r from-[#DC2626] via-[#10B981] to-[#0EA5E9] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#FF8C00] via-[#10B981] to-[#0EA5E9] bg-clip-text text-transparent">
               Vous avez un projet ?
             </span>
             <br />
@@ -544,7 +544,7 @@ export default function ServicesPage() {
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Link
               href="tel:0766460008"
-              className="group px-12 py-5 bg-gradient-to-r from-[#03144a] via-[#03144a] to-[#03144a] dark:from-white dark:via-white dark:to-white text-white dark:text-black font-semibold rounded-full text-lg shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-[#DC2626]/25 relative overflow-hidden"
+              className="group px-12 py-5 bg-gradient-to-r from-[#03144a] via-[#03144a] to-[#03144a] dark:from-white dark:via-white dark:to-white text-white dark:text-black font-semibold rounded-full text-lg shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-[#FF8C00]/25 relative overflow-hidden"
             >
               <span className="relative z-10">Je veux être rappelé</span>
               <div className="absolute inset-0 bg-gradient-to-r from-[#03144a] to-[#03144a] dark:from-gray-200 dark:to-gray-200 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -552,13 +552,13 @@ export default function ServicesPage() {
             
             <Link
               href="/contact"
-              className="group px-12 py-5 border-2 border-[#03144A] dark:border-white/50 rounded-full font-semibold text-lg transition-all duration-300 hover:border-[#03144a] dark:hover:border-white hover:bg-[#DC2626]/10 dark:hover:bg-white/10 text-[#03144A] dark:text-white backdrop-blur-sm"
+              className="group px-12 py-5 border-2 border-[#03144A] dark:border-white/50 rounded-full font-semibold text-lg transition-all duration-300 hover:border-[#03144a] dark:hover:border-white hover:bg-[#FF8C00]/10 dark:hover:bg-white/10 text-[#03144A] dark:text-white backdrop-blur-sm"
             >
               Formulaire de contact
             </Link>
           </div>
           
-          <div className="h-1 w-40 mx-auto mt-12 bg-gradient-to-r from-[#DC2626] via-[#10B981] to-[#0EA5E9] rounded-full"></div>
+          <div className="h-1 w-40 mx-auto mt-12 bg-gradient-to-r from-[#FF8C00] via-[#10B981] to-[#0EA5E9] rounded-full"></div>
         </div>
       </section>
 

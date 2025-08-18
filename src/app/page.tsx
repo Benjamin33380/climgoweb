@@ -252,7 +252,7 @@ export default function HomePage() {
         {/* Titre centré */}
         <div className="relative z-10 container mx-auto px-4 xs:px-6 sm:px-6 md:px-8 lg:px-12 mb-6 xs:mb-8 sm:mb-8 md:mb-12">
           <h2 className="text-xl xs:text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-gray-900 dark:text-white text-center">
-            Notre savoir-faire
+            Le confort, tout simplement.
           </h2>
         </div>
         
@@ -265,7 +265,7 @@ export default function HomePage() {
           
           {/* Zone de scroll sur toute la largeur de la page */}
           <div 
-            className="w-full h-[250px] xs:h-[280px] sm:h-[300px] md:h-[320px] px-4 xs:px-6 sm:px-6 md:px-8 lg:px-12 py-12 xs:py-16 sm:py-20 md:py-24 overflow-y-auto scrollbar-hide cursor-default"
+            className="w-full h-[350px] xs:h-[380px] sm:h-[400px] md:h-[420px] px-4 xs:px-6 sm:px-6 md:px-8 lg:px-12 py-12 xs:py-16 sm:py-20 md:py-24 overflow-y-auto scrollbar-hide cursor-default"
             style={{
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
@@ -275,55 +275,42 @@ export default function HomePage() {
             <div className="max-w-3xl xs:max-w-4xl sm:max-w-4xl mx-auto">
               <div className="space-y-3 xs:space-y-4 sm:space-y-4 text-center pt-4 xs:pt-6 sm:pt-8 pb-12 xs:pb-16 sm:pb-20">
                 <p className="text-sm xs:text-base sm:text-lg md:text-lg text-gray-800 dark:text-gray-200 leading-normal px-2">
-                  Chez <strong>ClimGO</strong>, nous vous accompagnons dans tous les domaines du confort thermique et sanitaire : <strong>chauffage</strong>, <strong>climatisation</strong>, <strong>eau chaude sanitaire</strong> et <strong>maintenance</strong>.
+                  Imaginez rentrer chez vous en plein été, ouvrir la porte… et sentir une vague de fraîcheur vous envelopper.  
+                  Ou, en plein hiver, poser vos mains sur un radiateur tiède pendant que dehors la pluie tombe sans relâche.  
                 </p>
 
                 <p className="text-xs xs:text-sm sm:text-base md:text-base text-gray-800 dark:text-gray-200 leading-normal px-2">
-                  Nos solutions sont pensées pour allier <strong>performance</strong>, <strong>durabilité</strong>, <strong>économies d'énergie</strong> et <strong>sérénité</strong>, année après année.
+                  C'est ça, l'effet <strong>ClimGO</strong> : des installations pensées pour que votre maison devienne un cocon où il fait bon vivre, 
+                  été comme hiver.  
                 </p>
 
                 <div className="my-4 xs:my-5 sm:my-6">
-                  <h3 className="text-base xs:text-lg sm:text-xl md:text-xl font-semibold text-gray-900 dark:text-white mb-2 xs:mb-3 sm:mb-3">Notre Expertise</h3>
+                  <h3 className="text-base xs:text-lg sm:text-xl md:text-xl font-semibold text-gray-900 dark:text-white mb-2 xs:mb-3 sm:mb-3">Ce qu'on vous apporte</h3>
                   <p className="text-xs xs:text-sm sm:text-base md:text-base text-gray-800 dark:text-gray-200 leading-normal px-2">
-                    Notre expertise technique, développée depuis plus de 10 ans, nous permet de vous proposer les équipements les plus adaptés à votre habitat et à votre mode de vie.
+                    Plus qu'un service technique, on installe du <strong>confort durable</strong>, de la <strong>tranquillité</strong> et de <strong>vraies économies</strong>.  
+                    Chaque intervention est calibrée pour que vous oubliiez vos appareils… sauf quand vous profitez de leurs bienfaits.
                   </p>
                 </div>
 
                 <div className="my-4 xs:my-5 sm:my-6">
-                  <h3 className="text-base xs:text-lg sm:text-xl md:text-xl font-semibold text-gray-900 dark:text-white mb-2 xs:mb-3 sm:mb-3">Service Complet</h3>
+                  <h3 className="text-base xs:text-lg sm:text-xl md:text-xl font-semibold text-gray-900 dark:text-white mb-2 xs:mb-3 sm:mb-3">Avant / Après</h3>
                   <p className="text-xs xs:text-sm sm:text-base md:text-base text-gray-800 dark:text-gray-200 leading-normal px-2">
-                    De l'installation à la maintenance, en passant par le conseil et le dépannage, nous vous garantissons un service complet et personnalisé.
+                    Avant ClimGO : factures qui grimpent, appareils bruyants, confort inégal.  
+                    Après ClimGO : une maison silencieuse, agréable, avec des économies visibles dès les premiers mois.  
                   </p>
                 </div>
 
                 <div className="my-4 xs:my-5 sm:my-6">
-                  <h3 className="text-base xs:text-lg sm:text-xl md:text-xl font-semibold text-gray-900 dark:text-white mb-2 xs:mb-3 sm:mb-3">Qualité & Conformité</h3>
+                  <h3 className="text-base xs:text-lg sm:text-xl md:text-xl font-semibold text-gray-900 dark:text-white mb-2 xs:mb-3 sm:mb-3">Notre promesse</h3>
                   <p className="text-xs xs:text-sm sm:text-base md:text-base text-gray-800 dark:text-gray-200 leading-normal px-2">
-                    Chaque intervention est réalisée dans le respect des normes en vigueur, avec des équipements certifiés et une garantie sur nos prestations.
-                  </p>
-                </div>
-
-                <div className="my-6">
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">Nos Engagements</h3>
-                  <ul className="text-center text-base text-gray-800 dark:text-gray-200 leading-normal space-y-1 max-w-xl mx-auto">
-                    <li>✓ Intervention rapide et professionnelle</li>
-                    <li>✓ Devis gratuit et transparent</li>
-                    <li>✓ Garantie sur toutes nos prestations</li>
-                    <li>✓ Équipements certifiés et de qualité</li>
-                    <li>✓ Respect des délais convenus</li>
-                    <li>✓ SAV réactif et disponible</li>
-                  </ul>
-                </div>
-
-                <div className="my-6">
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">Zone d'Intervention</h3>
-                  <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
-                    Nous intervenons dans toute la Gironde : Bordeaux métropole, Bassin d'Arcachon, Médoc, Entre-deux-Mers et leurs communes environnantes.
+                    Intervenir vite, travailler propre, respecter vos délais et vous laisser avec un confort qui dure.  
+                    Ni blabla, ni déco : juste du concret, garanti et certifié.  
                   </p>
                 </div>
 
                 <p className="text-lg text-gray-800 dark:text-gray-200 leading-normal font-medium mt-6">
-                  Notre objectif : votre satisfaction et votre confort au quotidien, dans le respect de l'environnement et de votre budget.
+                  Avec <strong>ClimGO</strong>, vous investissez dans plus qu'un équipement : vous investissez dans votre quotidien.  
+                  <br />Et si on commençait à transformer le vôtre ?  
                 </p>
               </div>
             </div>
