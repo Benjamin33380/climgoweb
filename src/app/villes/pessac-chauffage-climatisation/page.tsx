@@ -76,7 +76,7 @@ export default function Pessac() {
     return (
       <div className="max-w-[240px] sm:max-w-xs md:max-w-sm relative">
         <div className="relative">
-          <Search className="absolute left-2 sm:left-3 top-1/2 transform -translate-y-1/2 text-gray-600 dark:text-gray-400 w-3 sm:w-4 h-3 sm:h-4" />
+          <Search className="absolute left-2 sm:left-3 top-1/2 transform -translate-y-1/2 text-black dark:text-white w-3 sm:w-4 h-3 sm:h-4" />
           <input
             type="text"
             placeholder="Rechercher votre ville..."
@@ -86,9 +86,9 @@ export default function Pessac() {
               setShowSearchResults(e.target.value.length > 0);
             }}
             onFocus={() => setShowSearchResults(searchQuery.length > 0)}
-            className="w-full bg-white/20 dark:bg-white/10 backdrop-blur-md border border-black/40 dark:border-white/30 rounded-lg px-6 sm:px-8 py-1.5 sm:py-2 text-black dark:text-white placeholder-gray-600 dark:placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent text-xs sm:text-sm"
+            className="w-full bg-white/20 dark:bg-white/10 backdrop-blur-md border border-black/40 dark:border-white/30 rounded-lg px-6 sm:px-8 py-1.5 sm:py-2 text-black dark:text-white placeholder-black dark:placeholder-white focus:outline-none focus:ring-2 focus:ring-gray-400 dark:focus:ring-gray-400 focus:border-transparent text-xs sm:text-sm"
           />
-          <MapPin className="absolute right-2 sm:right-3 top-1/2 transform -translate-y-1/2 text-gray-600 dark:text-gray-400 w-3 sm:w-4 h-3 sm:h-4" />
+          <MapPin className="absolute right-2 sm:right-3 top-1/2 transform -translate-y-1/2 text-black dark:text-white w-3 sm:w-4 h-3 sm:h-4" />
         </div>
         
         {/* Résultats de recherche */}
@@ -103,14 +103,14 @@ export default function Pessac() {
                     setSearchQuery('');
                     setShowSearchResults(false);
                   }}
-                  className="block w-full text-left px-4 py-3 hover:bg-blue-50 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center gap-2"
+                  className="block w-full text-left px-4 py-3 hover:bg-white dark:hover:bg-black text-black dark:text-white hover:text-black dark:hover:text-white transition-colors flex items-center gap-2"
                 >
-                  <MapPin className="w-4 h-4 text-gray-500 dark:text-gray-400" />
+                  <MapPin className="w-4 h-4 text-gray-500 dark:text-white" />
                   {city.name}
                 </Link>
               ))
             ) : (
-              <div className="px-4 py-3 text-gray-600 dark:text-gray-500">
+              <div className="px-4 py-3 text-black dark:text-gray-500">
                 Aucune ville trouvée
               </div>
             )}
@@ -183,7 +183,7 @@ export default function Pessac() {
             <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-light tracking-tight mb-3 sm:mb-4 md:mb-6 text-black dark:text-white break-words leading-tight">
               ClimGO à Pessac
             </h1>
-            <p className="text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl text-black/90 dark:text-white/90 mb-3 sm:mb-4 md:mb-6 lg:mb-8 leading-relaxed max-w-[280px] sm:max-w-sm md:max-w-lg lg:max-w-none whitespace-pre-line">
+            <p className="text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl text-black dark:text-white mb-3 sm:mb-4 md:mb-6 lg:mb-8 leading-relaxed max-w-[280px] sm:max-w-sm md:max-w-lg lg:max-w-none whitespace-pre-line">
               Votre expert en chauffage et climatisation{'\n'}entre nature et dynamisme urbain
             </p>
 
@@ -196,7 +196,7 @@ export default function Pessac() {
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-full px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-2.5 md:py-3 lg:py-4 text-xs sm:text-sm md:text-base font-medium
-                           bg-black dark:bg-black text-black dark:text-white hover:bg-white/90 dark:hover:bg-black/90
+                           bg-white dark:bg-black text-black dark:text-white hover:bg-white/90 dark:hover:bg-black/90
                            border border-black/20 dark:border-white/20
                            transition-all duration-300 transform hover:scale-105 shadow-lg"
               >
@@ -206,7 +206,7 @@ export default function Pessac() {
               <a
                 href="#services"
                 className="inline-flex items-center justify-center rounded-full px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-2.5 md:py-3 lg:py-4 text-xs sm:text-sm md:text-base font-medium
-                           border-2 border-white/50 dark:border-white/30 text-black dark:text-white hover:bg-white/15 sm:hover:bg-black/15 dark:hover:bg-white/10 hover:border-white/70 sm:hover:border-black/70 dark:hover:border-white/50
+                           border-2 border-white/50 sm:border-black/50 dark:border-white/30 text-black dark:text-white sm:text-black dark:text-white hover:bg-white/15 sm:hover:bg-black/15 dark:hover:bg-white/10 hover:border-white/70 sm:hover:border-black/70 dark:hover:border-white/50
                            transition-all duration-300 backdrop-blur-sm"
               >
                 Découvrir
@@ -234,7 +234,7 @@ export default function Pessac() {
         
         {/* Titre centré */}
         <div className="relative z-10 container mx-auto px-4 mb-4">
-          <h2 className="text-2xl md:text-3xl font-medium text-gray-800 dark:text-white text-center">
+          <h2 className="text-2xl md:text-3xl font-medium text-gray-800 dark:text-black dark:text-white text-center">
             Pessac, entre nature et dynamisme urbain
           </h2>
         </div>
@@ -257,32 +257,32 @@ export default function Pessac() {
             {/* Contenu centré dans la zone élargie */}
             <div className="max-w-4xl mx-auto">
               <div className="space-y-6 text-center pt-8 pb-20">
-                <p className="text-lg text-gray-800 dark:text-gray-200 leading-normal">
-                  Située entre <strong className="text-gray-900 dark:text-white">vignobles et zones d'activité</strong>, Pessac allie cadre résidentiel et vitalité économique. De Saige à Monbalon, ClimGO intervient avec précision sur tous types de logements.
+                <p className="text-lg text-gray-800 dark:text-white leading-normal">
+                  Située entre <strong className="text-black dark:text-white">vignobles et zones d'activité</strong>, Pessac allie cadre résidentiel et vitalité économique. De Saige à Monbalon, ClimGO intervient avec précision sur tous types de logements.
                 </p>
                 
-                <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
-                  Que vous soyez dans le quartier de <strong className="text-gray-900 dark:text-white">Saige</strong>, <strong className="text-gray-900 dark:text-white">Monbalon</strong> ou <strong className="text-gray-900 dark:text-white">Magonty</strong>, ClimGO adapte chaque installation aux spécificités thermiques de votre habitat.
+                <p className="text-base text-gray-800 dark:text-white leading-normal">
+                  Que vous soyez dans le quartier de <strong className="text-black dark:text-white">Saige</strong>, <strong className="text-black dark:text-white">Monbalon</strong> ou <strong className="text-black dark:text-white">Magonty</strong>, ClimGO adapte chaque installation aux spécificités thermiques de votre habitat.
                 </p>
                 
-                <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
-                  Grâce à notre ancrage local et nos certifications, nous garantissons des systèmes performants, sobres et discrets, parfaitement intégrés au <strong className="text-gray-900 dark:text-white">cadre de vie pessacais</strong>.
+                <p className="text-base text-gray-800 dark:text-white leading-normal">
+                  Grâce à notre ancrage local et nos certifications, nous garantissons des systèmes performants, sobres et discrets, parfaitement intégrés au <strong className="text-black dark:text-white">cadre de vie pessacais</strong>.
                 </p>
                 
-                <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
-                  Située au cœur de la métropole bordelaise, <strong className="text-gray-900 dark:text-white">Pessac</strong> conjugue patrimoine, modernité et attractivité. Forte de plus de <strong className="text-gray-900 dark:text-white">65 000 habitants</strong>, la commune séduit par ses quartiers résidentiels.
+                <p className="text-base text-gray-800 dark:text-white leading-normal">
+                  Située au cœur de la métropole bordelaise, <strong className="text-black dark:text-white">Pessac</strong> conjugue patrimoine, modernité et attractivité. Forte de plus de <strong className="text-black dark:text-white">65 000 habitants</strong>, la commune séduit par ses quartiers résidentiels.
                 </p>
                 
-                <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
-                  C'est aussi une <strong className="text-gray-900 dark:text-white">ville universitaire et scientifique</strong> dynamique avec l'Université de Bordeaux, technopole Bordeaux InnoCampus, et un réseau de transports performant.
+                <p className="text-base text-gray-800 dark:text-white leading-normal">
+                  C'est aussi une <strong className="text-black dark:text-white">ville universitaire et scientifique</strong> dynamique avec l'Université de Bordeaux, technopole Bordeaux InnoCampus, et un réseau de transports performant.
                 </p>
                 
-                <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
-                  ClimGO intervient dans tous les secteurs : <strong className="text-gray-900 dark:text-white">Saige, Alouette, Toctoucau, Noès, France Alouette</strong> ou encore <strong className="text-gray-900 dark:text-white">Bellegrave</strong>. Nos installations s'adaptent aux maisons anciennes en pierre comme aux logements récents.
+                <p className="text-base text-gray-800 dark:text-white leading-normal">
+                  ClimGO intervient dans tous les secteurs : <strong className="text-black dark:text-white">Saige, Alouette, Toctoucau, Noès, France Alouette</strong> ou encore <strong className="text-black dark:text-white">Bellegrave</strong>. Nos installations s'adaptent aux maisons anciennes en pierre comme aux logements récents.
                 </p>
                 
-                <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
-                  Le bâti pessacais est très varié, allant de l'ancien pavillonnaire aux nouvelles résidences BBC. Chaque projet est adapté aux <strong className="text-gray-900 dark:text-white">contraintes thermiques du logement</strong> et aux règles d'urbanisme.
+                <p className="text-base text-gray-800 dark:text-white leading-normal">
+                  Le bâti pessacais est très varié, allant de l'ancien pavillonnaire aux nouvelles résidences BBC. Chaque projet est adapté aux <strong className="text-black dark:text-white">contraintes thermiques du logement</strong> et aux règles d'urbanisme.
                 </p>
               </div>
             </div>
@@ -328,10 +328,10 @@ export default function Pessac() {
           <div className="relative z-10 max-w-6xl mx-auto px-4">
             {/* Titre avec animation */}
             <div className="text-center mb-20">
-              <h2 className="text-3xl md:text-4xl font-medium text-gray-900 dark:text-white mb-6">
+              <h2 className="text-3xl md:text-4xl font-medium text-black dark:text-white mb-6">
                 Nos interventions à Pessac
               </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl text-black dark:text-white max-w-3xl mx-auto leading-relaxed">
                 De Saige à Monbalon, nous intervenons dans toute la commune de Pessac. Chaque chantier est réalisé avec précision, pour un confort optimal été comme hiver.
               </p>
             </div>
@@ -366,8 +366,8 @@ export default function Pessac() {
                 </div>
                 
                 <div className="w-5/12 pr-8 text-right">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Toute la commune</h3>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  <h3 className="text-2xl font-bold text-black dark:text-white mb-3">Toute la commune</h3>
+                  <p className="text-black dark:text-white leading-relaxed">
                     Interventions dans tous les quartiers de Pessac : Saige, Alouette, Toctoucau, Noès, France Alouette, Bellegrave. Service adapté à chaque secteur.
                   </p>
                 </div>
@@ -382,8 +382,8 @@ export default function Pessac() {
                 </div>
                 
                 <div className="w-5/12 ml-auto pl-8">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Habitat Varié</h3>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  <h3 className="text-2xl font-bold text-black dark:text-white mb-3">Habitat Varié</h3>
+                  <p className="text-black dark:text-white leading-relaxed">
                     Maisons anciennes en pierre, pavillonnaire récent, résidences BBC : nos installations s'adaptent à tous types de logements pessacais.
                   </p>
                 </div>
@@ -399,8 +399,8 @@ export default function Pessac() {
                 </div>
                 
                 <div className="w-5/12 pr-8 text-right">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Ville Universitaire</h3>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  <h3 className="text-2xl font-bold text-black dark:text-white mb-3">Ville Universitaire</h3>
+                  <p className="text-black dark:text-white leading-relaxed">
                     Solutions adaptées au dynamisme universitaire et scientifique : Université de Bordeaux, technopole Bordeaux InnoCampus. Expertise dans les résidences étudiantes.
                   </p>
                 </div>
@@ -415,8 +415,8 @@ export default function Pessac() {
                 </div>
                 
                 <div className="w-5/12 ml-auto pl-8">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Qualité & Rigueur</h3>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  <h3 className="text-2xl font-bold text-black dark:text-white mb-3">Qualité & Rigueur</h3>
+                  <p className="text-black dark:text-white leading-relaxed">
                     Service rapide, finitions propres et accompagnement administratif complet. Solutions discrètes et performantes adaptées aux espaces réduits.
                   </p>
                 </div>
@@ -427,7 +427,7 @@ export default function Pessac() {
             <div className="text-center mt-16">
               <Link
                 href="/contact"
-                className="inline-flex items-center px-8 py-4 bg-black dark:bg-black text-black dark:text-white font-semibold rounded-full hover:bg-gray-700 dark:hover:bg-gray-200 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-semibold rounded-full hover:bg-white dark:hover:bg-black transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 Demander un devis
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -454,25 +454,25 @@ export default function Pessac() {
                 <div className="flex space-x-8 min-w-max px-4" style={{ marginLeft: 'calc(50% - 144px)', marginRight: 'calc(50% - 144px)' }}>
                   {/* Bloc 1 */}
                   <div className="w-72 flex-shrink-0 bg-white dark:bg-black rounded-2xl md:shadow-lg p-6 border border-gray-100 dark:border-gray-700">
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                    <h3 className="text-2xl font-bold text-black dark:text-white mb-4">
                       Une ville stratégique entre nature et innovation
                     </h3>
-                    <div className="space-y-3 text-gray-600 dark:text-gray-300 leading-relaxed">
+                    <div className="space-y-3 text-black dark:text-white leading-relaxed">
                       <p>
-                        Située au cœur de la métropole bordelaise, <strong className="text-gray-900 dark:text-white">Pessac</strong> conjugue patrimoine, modernité et attractivité. Forte de plus de <strong className="text-gray-900 dark:text-white">65 000 habitants</strong>.
+                        Située au cœur de la métropole bordelaise, <strong className="text-black dark:text-white">Pessac</strong> conjugue patrimoine, modernité et attractivité. Forte de plus de <strong className="text-black dark:text-white">65 000 habitants</strong>.
                       </p>
                       <p>
-                        C'est aussi une ville universitaire et scientifique dynamique avec l'<strong className="text-gray-900 dark:text-white">Université de Bordeaux</strong>, technopole Bordeaux InnoCampus.
+                        C'est aussi une ville universitaire et scientifique dynamique avec l'<strong className="text-black dark:text-white">Université de Bordeaux</strong>, technopole Bordeaux InnoCampus.
                       </p>
                     </div>
                   </div>
                   
                   {/* Bloc 2 */}
                   <div className="w-72 flex-shrink-0 bg-white dark:bg-black rounded-2xl md:shadow-lg p-6 border border-gray-100 dark:border-gray-700">
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                    <h3 className="text-2xl font-bold text-black dark:text-white mb-4">
                       Exemples concrets d'interventions à Pessac
                     </h3>
-                    <div className="space-y-3 text-gray-600 dark:text-gray-300 leading-relaxed">
+                    <div className="space-y-3 text-black dark:text-white leading-relaxed">
                       <div className="flex items-start space-x-3">
                         <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
                         <p><strong>Avenue Pasteur :</strong> PAC air/eau avec plancher chauffant maison années 90.</p>
@@ -490,35 +490,35 @@ export default function Pessac() {
                   
                   {/* Bloc 3 */}
                   <div className="w-72 flex-shrink-0 bg-white dark:bg-black rounded-2xl md:shadow-lg p-6 border border-gray-100 dark:border-gray-700">
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                    <h3 className="text-2xl font-bold text-black dark:text-white mb-4">
                       Des installations pensées pour l'habitat pessacais
                     </h3>
-                    <div className="space-y-3 text-gray-600 dark:text-gray-300 leading-relaxed">
+                    <div className="space-y-3 text-black dark:text-white leading-relaxed">
                       <p>
-                        Le bâti pessacais est très varié, allant de l'ancien pavillonnaire aux nouvelles <strong className="text-gray-900 dark:text-white">résidences BBC</strong>. Chaque projet est adapté aux contraintes thermiques.
+                        Le bâti pessacais est très varié, allant de l'ancien pavillonnaire aux nouvelles <strong className="text-black dark:text-white">résidences BBC</strong>. Chaque projet est adapté aux contraintes thermiques.
                       </p>
                       <p>
-                        Nous privilégions des <strong className="text-gray-900 dark:text-white">solutions discrètes</strong>, performantes et adaptées aux espaces réduits, en tenant compte de l'exposition.
+                        Nous privilégions des <strong className="text-black dark:text-white">solutions discrètes</strong>, performantes et adaptées aux espaces réduits, en tenant compte de l'exposition.
                       </p>
                     </div>
                   </div>
                   
                   {/* Bloc 4 */}
                   <div className="w-72 flex-shrink-0 bg-white dark:bg-black rounded-2xl md:shadow-lg p-6 border border-gray-100 dark:border-gray-700">
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                    <h3 className="text-2xl font-bold text-black dark:text-white mb-4">
                       Votre projet énergétique sur Pessac commence ici
                     </h3>
-                    <div className="space-y-3 text-gray-600 dark:text-gray-300 leading-relaxed">
+                    <div className="space-y-3 text-black dark:text-white leading-relaxed">
                       <p>
-                        Vous habitez <strong className="text-gray-900 dark:text-white">Pessac</strong> ou ses environs ? Nos techniciens ClimGO vous accompagnent dans le choix, l'installation et l'entretien.
+                        Vous habitez <strong className="text-black dark:text-white">Pessac</strong> ou ses environs ? Nos techniciens ClimGO vous accompagnent dans le choix, l'installation et l'entretien.
                       </p>
                       <p>
-                        Contactez-nous dès aujourd'hui pour un <strong className="text-gray-900 dark:text-white">devis ou un diagnostic gratuit</strong>.
+                        Contactez-nous dès aujourd'hui pour un <strong className="text-black dark:text-white">devis ou un diagnostic gratuit</strong>.
                       </p>
                       <div className="mt-4">
                         <a
                           href="/contact"
-                          className="inline-flex items-center px-6 py-3 bg-black dark:bg-black text-black dark:text-white font-semibold rounded-lg hover:bg-gray-700 dark:hover:bg-gray-200"
+                          className="inline-flex items-center px-6 py-3 bg-white dark:bg-black text-black dark:text-white font-semibold rounded-lg hover:bg-white dark:hover:bg-black"
                         >
                           Contactez-nous
                           <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -541,10 +541,10 @@ export default function Pessac() {
           <div className="relative z-10 max-w-6xl mx-auto px-4">
             {/* Titre avec animation */}
             <div className="text-center mb-20">
-              <h2 className="text-3xl md:text-4xl font-medium text-gray-900 dark:text-white mb-6">
+              <h2 className="text-3xl md:text-4xl font-medium text-black dark:text-white mb-6">
                 Pourquoi choisir ClimGO à Pessac ?
               </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl text-black dark:text-white max-w-3xl mx-auto leading-relaxed">
                 Faire appel à ClimGO à Pessac, c'est choisir une entreprise engagée, qui comprend les particularités climatiques et architecturales de la région pessacaise.
               </p>
             </div>
@@ -552,70 +552,70 @@ export default function Pessac() {
             {/* Pourquoi choisir ClimGO à Pessac - Version personnalisée */}
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6 lg:gap-8 max-w-6xl mx-auto mb-8 md:mb-12 lg:mb-16">
               {/* Métropole Universitaire */}
-              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#10b981]/50 dark:hover:border-[#34d399] min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
+              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-black dark:hover:border-white min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
                 <div className="text-center flex flex-col h-full">
-                  <div className="bg-green-500 dark:bg-green-600 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-12 h-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="bg-black dark:bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-12 h-12 text-white dark:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-[#10b981] dark:group-hover:text-[#34d399] transition-colors">
+                  <h3 className="text-lg sm:text-xl font-semibold text-black dark:text-white mb-3 sm:mb-4 group-hover:text-black dark:group-hover:text-white transition-colors">
                     Métropole Universitaire
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
-                    <strong className="text-white">Expertise scientifique</strong> avec l'Université de Bordeaux, technopole InnoCampus. <strong className="text-white">Solutions adaptées</strong> aux résidences étudiantes et logements familiaux.
+                  <p className="text-black dark:text-white text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
+                    <strong className="text-black dark:text-white">Expertise scientifique</strong> avec l'Université de Bordeaux, technopole InnoCampus. <strong className="text-black dark:text-white">Solutions adaptées</strong> aux résidences étudiantes et logements familiaux.
                   </p>
                 </div>
               </div>
 
               {/* Équipements */}
-              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#f97316]/50 dark:hover:border-[#fb923c] min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
+              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-black dark:hover:border-white min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
                 <div className="text-center flex flex-col h-full">
-                  <div className="bg-blue-500 dark:bg-blue-600 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-12 h-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="bg-black dark:bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-12 h-12 text-white dark:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-[#10b981] dark:group-hover:text-[#34d399] transition-colors">
+                  <h3 className="text-lg sm:text-xl font-semibold text-black dark:text-white mb-3 sm:mb-4 group-hover:text-black dark:group-hover:text-white transition-colors">
                     Qualité Garantie
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
-                    <strong className="text-white">Équipements sélectionnés</strong> pour garantir efficacité, discrétion et durabilité. Adaptation aux <strong className="text-gray-900 dark:text-gray-300">maisons traditionnelles</strong> et quartiers récents.
+                  <p className="text-black dark:text-white text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
+                    <strong className="text-black dark:text-white">Équipements sélectionnés</strong> pour garantir efficacité, discrétion et durabilité. Adaptation aux <strong className="text-black dark:text-white">maisons traditionnelles</strong> et quartiers récents.
                   </p>
                 </div>
               </div>
 
               {/* Habitat Varié */}
-              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30  min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
+              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-black dark:hover:border-white min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
                 <div className="text-center flex flex-col h-full">
-                  <div className="bg-green-500 dark:bg-green-600 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-12 h-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="bg-black dark:bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-12 h-12 text-white dark:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                     </svg>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-[#0ea5e9] dark:group-hover:text-[#38bdf8] transition-colors">
+                  <h3 className="text-lg sm:text-xl font-semibold text-black dark:text-white mb-3 sm:mb-4 group-hover:text-black dark:group-hover:text-white transition-colors">
                     Habitat Varié
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
-                    <strong className="text-gray-900 dark:text-gray-300">Ancien pavillonnaire</strong> aux nouvelles résidences BBC. <strong className="text-gray-900 dark:text-gray-300">Solutions discrètes</strong> adaptées aux espaces réduits et règles d'urbanisme.
+                  <p className="text-black dark:text-white text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
+                    <strong className="text-black dark:text-white">Ancien pavillonnaire</strong> aux nouvelles résidences BBC. <strong className="text-black dark:text-white">Solutions discrètes</strong> adaptées aux espaces réduits et règles d'urbanisme.
                   </p>
                 </div>
               </div>
 
               {/* Service */}
-              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30  min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
+              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-black dark:hover:border-white min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
                 <div className="text-center flex flex-col h-full">
-                  <div className="bg-gray-100 dark:bg-gray-800 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-12 h-12 text-gray-900 dark:text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="bg-black dark:bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-12 h-12 text-white dark:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4  transition-colors">
+                  <h3 className="text-lg sm:text-xl font-semibold text-black dark:text-white mb-3 sm:mb-4  transition-colors">
                     Service Complet
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
-                    <strong className="text-gray-900 dark:text-gray-300">Service rapide</strong>, finitions propres et <strong className="text-gray-900 dark:text-gray-300">accompagnement administratif</strong> complet. Proximité et rigueur pour tous vos projets pessacais.
+                  <p className="text-black dark:text-white text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
+                    <strong className="text-black dark:text-white">Service rapide</strong>, finitions propres et <strong className="text-black dark:text-white">accompagnement administratif</strong> complet. Proximité et rigueur pour tous vos projets pessacais.
                   </p>
                 </div>
               </div>
@@ -625,7 +625,7 @@ export default function Pessac() {
             <div className="text-center mt-16">
               <Link
                 href="/contact"
-                className="inline-flex items-center px-8 py-4 bg-black dark:bg-black text-black dark:text-white font-semibold rounded-full hover:bg-gray-700 dark:hover:bg-gray-200 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-semibold rounded-full hover:bg-white dark:hover:bg-black transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 Demander un devis
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -642,10 +642,10 @@ export default function Pessac() {
         {}<div className="relative z-10 max-w-7xl mx-auto px-4">
           <SimpleWrapper>
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-light text-gray-900 dark:text-white mb-6">
+              <h2 className="text-4xl md:text-5xl font-light text-black dark:text-white mb-6">
                 Nos Solutions ClimGO
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              <p className="text-lg text-black dark:text-white max-w-3xl mx-auto">
                 Des solutions complètes et personnalisées pour votre confort thermique à Pessac
               </p>
             </div>
@@ -655,14 +655,14 @@ export default function Pessac() {
             {/* Carte 1 - Types de logements */}
             <SimpleWrapper>
               <motion.div 
-                className="group relative bg-white dark:bg-black rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-blue-500 dark:border-blue-600 min-h-[300px] md:min-h-[380px] lg:min-h-[400px] flex flex-col"
+                className="group relative bg-white dark:bg-black rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-gray-200 dark:border-gray-600 min-h-[300px] md:min-h-[380px] lg:min-h-[400px] flex flex-col"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 {/* Icône avec effet de brillance */}
                 <div className="relative mb-6">
-                  <div className="w-16 h-16 bg-blue-500 dark:bg-blue-600 rounded-2xl flex items-center justify-center mx-auto group-hover:bg-blue-600 dark:group-hover:bg-blue-500 transition-all duration-300 border-2 border-black dark:border-white">
-                    <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="w-16 h-16 bg-white dark:bg-black rounded-2xl flex items-center justify-center mx-auto group-hover:bg-white dark:group-hover:bg-black transition-all duration-300 border-2 border-black dark:border-white">
+                    <svg className="w-8 h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                     </svg>
                   </div>
@@ -670,7 +670,7 @@ export default function Pessac() {
                 </div>
 
                 <h3 className="text-2xl font-bold text-black dark:text-white mb-4 text-center">Types de logements desservis</h3>
-                <p className="text-black/90 dark:text-white/90 leading-relaxed text-center text-lg flex-grow">
+                <p className="text-black dark:text-white leading-relaxed text-center text-lg flex-grow">
                   Maisons individuelles, résidences récentes, logements collectifs : nous maîtrisons les contraintes thermiques de tous les types d'habitat à Pessac.
                 </p>
 
@@ -686,28 +686,28 @@ export default function Pessac() {
             {/* Carte 2 - Processus d'installation */}
             <SimpleWrapper>
               <motion.div 
-                className="group relative bg-white dark:bg-black rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-orange-500 dark:border-orange-600 min-h-[300px] md:min-h-[380px] lg:min-h-[400px] flex flex-col"
+                className="group relative bg-white dark:bg-black rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-gray-200 dark:border-gray-600 min-h-[300px] md:min-h-[380px] lg:min-h-[400px] flex flex-col"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 {/* Icône avec effet de brillance */}
                 <div className="relative mb-6">
-                  <div className="w-16 h-16 bg-orange-500 dark:bg-orange-600 rounded-2xl flex items-center justify-center mx-auto group-hover:bg-orange-600 dark:group-hover:bg-orange-500 transition-all duration-300 border-2 border-black dark:border-white">
-                    <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="w-16 h-16 bg-white dark:bg-black rounded-2xl flex items-center justify-center mx-auto group-hover:bg-white dark:group-hover:bg-black transition-all duration-300 border-2 border-black dark:border-white">
+                    <svg className="w-8 h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.563.563 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
                     </svg>
                   </div>
                   
                 </div>
 
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 text-center">Processus d'installation</h3>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-center text-lg flex-grow">
+                <h3 className="text-2xl font-bold text-black dark:text-white mb-4 text-center">Processus d'installation</h3>
+                <p className="text-black dark:text-white leading-relaxed text-center text-lg flex-grow">
                   Un projet démarre toujours par une visite technique sur place. Nous établissons ensuite un devis précis, avant de programmer une installation rapide, propre et certifiée conforme.
                 </p>
 
                 {/* Badge de service */}
                 <div className="mt-6 text-center">
-                  <span className="inline-block bg-black dark:bg-black text-black dark:text-white text-sm font-medium px-4 py-2 rounded-full">
+                  <span className="inline-block bg-white dark:bg-black text-black dark:text-white text-sm font-medium px-4 py-2 rounded-full">
                     Devis gratuit
                   </span>
                 </div>
@@ -717,28 +717,28 @@ export default function Pessac() {
             {/* Carte 3 - Entretien & maintenance */}
             <SimpleWrapper>
               <motion.div 
-                className="group relative bg-white dark:bg-black rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-green-500 dark:border-green-600 min-h-[300px] md:min-h-[380px] lg:min-h-[400px] flex flex-col"
+                className="group relative bg-white dark:bg-black rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-gray-200 dark:border-gray-600 min-h-[300px] md:min-h-[380px] lg:min-h-[400px] flex flex-col"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 {/* Icône avec effet de brillance */}
                 <div className="relative mb-6">
-                  <div className="w-16 h-16 bg-green-500 dark:bg-green-600 rounded-2xl flex items-center justify-center mx-auto group-hover:bg-green-600 dark:group-hover:bg-green-500 transition-all duration-300 border-2 border-black dark:border-white">
-                    <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="w-16 h-16 bg-white dark:bg-black rounded-2xl flex items-center justify-center mx-auto group-hover:bg-white dark:group-hover:bg-black transition-all duration-300 border-2 border-black dark:border-white">
+                    <svg className="w-8 h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437 1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008Z" />
                     </svg>
                   </div>
                   
                 </div>
 
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 text-center">Entretien &amp; maintenance</h3>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-center text-lg flex-grow">
+                <h3 className="text-2xl font-bold text-black dark:text-white mb-4 text-center">Entretien &amp; maintenance</h3>
+                <p className="text-black dark:text-white leading-relaxed text-center text-lg flex-grow">
                   ClimGO assure un suivi complet de vos équipements, avec des interventions de maintenance planifiées pour préserver performances et économies d'énergie, année après année.
                 </p>
 
                 {/* Badge de service */}
                 <div className="mt-6 text-center">
-                  <span className="inline-block bg-black dark:bg-black text-black dark:text-white text-sm font-medium px-4 py-2 rounded-full">
+                  <span className="inline-block bg-white dark:bg-black text-black dark:text-white text-sm font-medium px-4 py-2 rounded-full">
                     Suivi personnalisé
                   </span>
                 </div>
@@ -748,14 +748,14 @@ export default function Pessac() {
             {/* Carte 4 - Aides financières */}
             <SimpleWrapper>
               <motion.div 
-                className="group relative bg-white dark:bg-black rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-purple-500 dark:border-purple-600 min-h-[300px] md:min-h-[380px] lg:min-h-[400px] flex flex-col"
+                className="group relative bg-white dark:bg-black rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-gray-200 dark:border-gray-600 min-h-[300px] md:min-h-[380px] lg:min-h-[400px] flex flex-col"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 {/* Icône avec effet de brillance */}
                 <div className="relative mb-6">
-                  <div className="w-16 h-16 bg-purple-500 dark:bg-purple-600 rounded-2xl flex items-center justify-center mx-auto group-hover:bg-purple-600 dark:group-hover:bg-purple-500 transition-all duration-300 border-2 border-black dark:border-white">
-                    <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="w-16 h-16 bg-white dark:bg-black rounded-2xl flex items-center justify-center mx-auto group-hover:bg-white dark:group-hover:bg-black transition-all duration-300 border-2 border-black dark:border-white">
+                    <svg className="w-8 h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0 0 12 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52 2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 0 1-2.031.352 5.988 5.988 0 0 1-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971Zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0 2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 0 1-2.031.352 5.989 5.989 0 0 1-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971Z" />
                     </svg>
                   </div>
@@ -763,7 +763,7 @@ export default function Pessac() {
                 </div>
 
                 <h3 className="text-2xl font-bold text-black dark:text-white mb-4 text-center">Aides financières à Pessac</h3>
-                <p className="text-black/90 dark:text-white/90 leading-relaxed text-center text-lg flex-grow">
+                <p className="text-black dark:text-white leading-relaxed text-center text-lg flex-grow">
                   MaPrimeRénov', CEE, Éco-PTZ… à Pessac, de nombreuses aides sont accessibles. Nous vous aidons à maximiser vos subventions sans vous perdre dans la paperasse.
                 </p>
 
@@ -780,12 +780,12 @@ export default function Pessac() {
           {/* Call-to-action en bas */}
           <SimpleWrapper>
             <div className="text-center mt-16">
-              <p className="text-gray-600 dark:text-gray-300 mb-6 text-lg">
+              <p className="text-black dark:text-white mb-6 text-lg">
                 Prêt à améliorer votre confort thermique ?
               </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center px-8 py-4 bg-black dark:bg-black text-black dark:text-white font-semibold rounded-full hover:bg-gray-700 dark:hover:bg-gray-200 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-semibold rounded-full hover:bg-white dark:hover:bg-black transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 Découvrir nos solutions
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

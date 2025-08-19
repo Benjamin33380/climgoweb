@@ -76,7 +76,7 @@ export default function Gradignan() {
     return (
       <div className="max-w-[240px] sm:max-w-xs md:max-w-sm relative">
         <div className="relative">
-          <Search className="absolute left-2 sm:left-3 top-1/2 transform -translate-y-1/2 text-gray-600 dark:text-gray-400 w-3 sm:w-4 h-3 sm:h-4" />
+          <Search className="absolute left-2 sm:left-3 top-1/2 transform -translate-y-1/2 text-black dark:text-white w-3 sm:w-4 h-3 sm:h-4" />
           <input
             type="text"
             placeholder="Rechercher votre ville..."
@@ -86,9 +86,9 @@ export default function Gradignan() {
               setShowSearchResults(e.target.value.length > 0);
             }}
             onFocus={() => setShowSearchResults(searchQuery.length > 0)}
-            className="w-full bg-white/20 dark:bg-white/10 backdrop-blur-md border border-black/40 dark:border-white/30 rounded-lg px-6 sm:px-8 py-1.5 sm:py-2 text-black dark:text-white placeholder-gray-600 dark:placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent text-xs sm:text-sm"
+            className="w-full bg-white/20 dark:bg-white/10 backdrop-blur-md border border-black/40 dark:border-white/30 rounded-lg px-6 sm:px-8 py-1.5 sm:py-2 text-black dark:text-white placeholder-black dark:placeholder-white focus:outline-none focus:ring-2 focus:ring-gray-400 dark:focus:ring-gray-400 focus:border-transparent text-xs sm:text-sm"
           />
-          <MapPin className="absolute right-2 sm:right-3 top-1/2 transform -translate-y-1/2 text-gray-600 dark:text-gray-400 w-3 sm:w-4 h-3 sm:h-4" />
+          <MapPin className="absolute right-2 sm:right-3 top-1/2 transform -translate-y-1/2 text-black dark:text-white w-3 sm:w-4 h-3 sm:h-4" />
         </div>
         
         {/* Résultats de recherche */}
@@ -103,14 +103,14 @@ export default function Gradignan() {
                     setSearchQuery('');
                     setShowSearchResults(false);
                   }}
-                  className="block w-full text-left px-4 py-3 hover:bg-blue-50 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center gap-2"
+                  className="block w-full text-left px-4 py-3 hover:bg-white dark:hover:bg-black text-black dark:text-white hover:text-black dark:hover:text-white transition-colors flex items-center gap-2"
                 >
-                  <MapPin className="w-4 h-4 text-gray-500 dark:text-gray-400" />
+                  <MapPin className="w-4 h-4 text-gray-500 dark:text-white" />
                   {city.name}
                 </Link>
               ))
             ) : (
-              <div className="px-4 py-3 text-gray-600 dark:text-gray-500">
+              <div className="px-4 py-3 text-black dark:text-gray-500">
                 Aucune ville trouvée
               </div>
             )}
@@ -183,7 +183,7 @@ export default function Gradignan() {
             <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-light tracking-tight mb-3 sm:mb-4 md:mb-6 text-black dark:text-white break-words leading-tight">
               ClimGO à Gradignan
             </h1>
-            <p className="text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl text-black/90 dark:text-white/90 mb-3 sm:mb-4 md:mb-6 lg:mb-8 leading-relaxed max-w-[280px] sm:max-w-sm md:max-w-lg lg:max-w-none whitespace-pre-line">
+            <p className="text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl text-black dark:text-white mb-3 sm:mb-4 md:mb-6 lg:mb-8 leading-relaxed max-w-[280px] sm:max-w-sm md:max-w-lg lg:max-w-none whitespace-pre-line">
               Ville verte et résidentielle{'\n'}au cœur de la métropole
             </p>
 
@@ -196,7 +196,7 @@ export default function Gradignan() {
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-full px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-2.5 md:py-3 lg:py-4 text-xs sm:text-sm md:text-base font-medium
-                           bg-black dark:bg-black text-black dark:text-white hover:bg-white/90 dark:hover:bg-black/90
+                           bg-white dark:bg-black text-black dark:text-white hover:bg-white/90 dark:hover:bg-black/90
                            border border-black/20 dark:border-white/20
                            transition-all duration-300 transform hover:scale-105 shadow-lg"
               >
@@ -206,7 +206,7 @@ export default function Gradignan() {
               <a
                 href="#services"
                 className="inline-flex items-center justify-center rounded-full px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-2.5 md:py-3 lg:py-4 text-xs sm:text-sm md:text-base font-medium
-                           border-2 border-white/50 dark:border-white/30 text-black dark:text-white hover:bg-white/15 sm:hover:bg-black/15 dark:hover:bg-white/10 hover:border-white/70 sm:hover:border-black/70 dark:hover:border-white/50
+                           border-2 border-white/50 sm:border-black/50 dark:border-white/30 text-black dark:text-white sm:text-black dark:text-white hover:bg-white/15 sm:hover:bg-black/15 dark:hover:bg-white/10 hover:border-white/70 sm:hover:border-black/70 dark:hover:border-white/50
                            transition-all duration-300 backdrop-blur-sm"
               >
                 Découvrir
@@ -234,7 +234,7 @@ export default function Gradignan() {
         
         {/* Titre centré */}
         <div className="relative z-10 container mx-auto px-4 mb-4">
-          <h2 className="text-2xl md:text-3xl font-medium text-gray-800 dark:text-white text-center">
+          <h2 className="text-2xl md:text-3xl font-medium text-gray-800 dark:text-black dark:text-white text-center">
             Gradignan, ville verte et résidentielle au cœur de la métropole
           </h2>
         </div>
@@ -257,32 +257,32 @@ export default function Gradignan() {
             {/* Contenu centré dans la zone élargie */}
             <div className="max-w-4xl mx-auto">
               <div className="space-y-6 text-center pt-8 pb-20">
-                <p className="text-lg text-gray-800 dark:text-gray-200 leading-normal">
-                  Gradignan, connue pour ses <strong className="text-gray-900 dark:text-white">parcs, équipements publics et cadre résidentiel</strong>, est une commune idéale pour des solutions de confort thermique haut de gamme.
+                <p className="text-lg text-gray-800 dark:text-white leading-normal">
+                  Gradignan, connue pour ses <strong className="text-black dark:text-white">parcs, équipements publics et cadre résidentiel</strong>, est une commune idéale pour des solutions de confort thermique haut de gamme.
                 </p>
                 
-                <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
-                  Que vous habitiez près du <strong className="text-gray-900 dark:text-white">Bourg, de Mandavit ou du quartier Saint-Géry</strong>, ClimGO vous accompagne pour choisir et installer la solution la plus adaptée.
+                <p className="text-base text-gray-800 dark:text-white leading-normal">
+                  Que vous habitiez près du <strong className="text-black dark:text-white">Bourg, de Mandavit ou du quartier Saint-Géry</strong>, ClimGO vous accompagne pour choisir et installer la solution la plus adaptée.
                 </p>
                 
-                <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
-                  Située à la lisière de Pessac et Talence, Gradignan séduit par ses <strong className="text-gray-900 dark:text-white">nombreux parcs, infrastructures scolaires réputées</strong> et son cadre de vie arboré.
+                <p className="text-base text-gray-800 dark:text-white leading-normal">
+                  Située à la lisière de Pessac et Talence, Gradignan séduit par ses <strong className="text-black dark:text-white">nombreux parcs, infrastructures scolaires réputées</strong> et son cadre de vie arboré.
                 </p>
                 
-                <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
-                  Avec plus de <strong className="text-gray-900 dark:text-white">25 000 habitants</strong>, la ville attire autant les familles que les seniors à la recherche de tranquillité.
+                <p className="text-base text-gray-800 dark:text-white leading-normal">
+                  Avec plus de <strong className="text-black dark:text-white">25 000 habitants</strong>, la ville attire autant les familles que les seniors à la recherche de tranquillité.
                 </p>
                 
-                <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
-                  Entre les écoles Jean Vilar, le <strong className="text-gray-900 dark:text-white">lycée des Graves, zones pavillonnaires calmes</strong> et résidences modernes proches du centre-ville.
+                <p className="text-base text-gray-800 dark:text-white leading-normal">
+                  Entre les écoles Jean Vilar, le <strong className="text-black dark:text-white">lycée des Graves, zones pavillonnaires calmes</strong> et résidences modernes proches du centre-ville.
                 </p>
                 
-                <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
-                  ClimGO intervient à <strong className="text-gray-900 dark:text-white">Mandavit, Laurenzane, Beausoleil ou encore Saint-Albe</strong>, en neuf comme en rénovation.
+                <p className="text-base text-gray-800 dark:text-white leading-normal">
+                  ClimGO intervient à <strong className="text-black dark:text-white">Mandavit, Laurenzane, Beausoleil ou encore Saint-Albe</strong>, en neuf comme en rénovation.
                 </p>
                 
-                <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
-                  Nos systèmes s'intègrent parfaitement aux <strong className="text-gray-900 dark:text-white">maisons des années 70-80</strong> comme aux constructions BBC récentes.
+                <p className="text-base text-gray-800 dark:text-white leading-normal">
+                  Nos systèmes s'intègrent parfaitement aux <strong className="text-black dark:text-white">maisons des années 70-80</strong> comme aux constructions BBC récentes.
                 </p>
               </div>
             </div>
@@ -328,10 +328,10 @@ export default function Gradignan() {
           <div className="relative z-10 max-w-6xl mx-auto px-4">
             {/* Titre avec animation */}
             <div className="text-center mb-20">
-              <h2 className="text-3xl md:text-4xl font-medium text-gray-900 dark:text-white mb-6">
+              <h2 className="text-3xl md:text-4xl font-medium text-black dark:text-white mb-6">
                 Nos interventions à Gradignan
               </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl text-black dark:text-white max-w-3xl mx-auto leading-relaxed">
                 De Cayac à Saint-Albe, nous intervenons dans toute la commune avec expertise. Chaque projet est réalisé dans les règles de l'art, pour un confort thermique optimisé toute l'année.
               </p>
             </div>
@@ -366,8 +366,8 @@ export default function Gradignan() {
                 </div>
                 
                 <div className="w-5/12 pr-8 text-right">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Ville Verte et Familiale</h3>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  <h3 className="text-2xl font-bold text-black dark:text-white mb-3">Ville Verte et Familiale</h3>
+                  <p className="text-black dark:text-white leading-relaxed">
                     Parcs, équipements publics et cadre résidentiel, commune idéale pour solutions confort thermique haut de gamme. Plus de 25 000 habitants, familles et seniors recherchent tranquillité.
                   </p>
                 </div>
@@ -382,8 +382,8 @@ export default function Gradignan() {
                 </div>
                 
                 <div className="w-5/12 ml-auto pl-8">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Infrastructures et Éducation</h3>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  <h3 className="text-2xl font-bold text-black dark:text-white mb-3">Infrastructures et Éducation</h3>
+                  <p className="text-black dark:text-white leading-relaxed">
                     Écoles Jean Vilar, lycée des Graves, zones pavillonnaires calmes et résidences modernes proches centre-ville. Infrastructures scolaires réputées et cadre de vie arboré.
                   </p>
                 </div>
@@ -399,8 +399,8 @@ export default function Gradignan() {
                 </div>
                 
                 <div className="w-5/12 pr-8 text-right">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Quartiers d'Intervention</h3>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  <h3 className="text-2xl font-bold text-black dark:text-white mb-3">Quartiers d'Intervention</h3>
+                  <p className="text-black dark:text-white leading-relaxed">
                     Mandavit, Laurenzane, Beausoleil ou encore Saint-Albe, en neuf comme en rénovation. Bourg, Saint-Géry, Cayac. Systèmes s'intègrent parfaitement tous types logements.
                   </p>
                 </div>
@@ -415,8 +415,8 @@ export default function Gradignan() {
                 </div>
                 
                 <div className="w-5/12 ml-auto pl-8">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Adaptation Architecturale</h3>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  <h3 className="text-2xl font-bold text-black dark:text-white mb-3">Adaptation Architecturale</h3>
+                  <p className="text-black dark:text-white leading-relaxed">
                     Maisons années 70-80 comme constructions BBC récentes. Grands jardins ombragés nécessitent installations extérieures silencieuses et bien positionnées. Équipements discrets et efficaces.
                   </p>
                 </div>
@@ -427,7 +427,7 @@ export default function Gradignan() {
             <div className="text-center mt-16">
               <Link
                 href="/contact"
-                className="inline-flex items-center px-8 py-4 bg-black dark:bg-black text-black dark:text-white font-semibold rounded-full hover:bg-gray-700 dark:hover:bg-gray-200 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-semibold rounded-full hover:bg-white dark:hover:bg-black transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 Demander un devis
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -454,25 +454,25 @@ export default function Gradignan() {
                 <div className="flex space-x-8 min-w-max px-4" style={{ marginLeft: 'calc(50% - 144px)', marginRight: 'calc(50% - 144px)' }}>
                   {/* Bloc 1 */}
                   <div className="w-72 flex-shrink-0 bg-white dark:bg-black rounded-2xl md:shadow-lg p-6 border border-gray-100 dark:border-gray-700">
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                    <h3 className="text-2xl font-bold text-black dark:text-white mb-4">
                       Gradignan, ville verte et familiale au sud de Bordeaux
                     </h3>
-                    <div className="space-y-3 text-gray-600 dark:text-gray-300 leading-relaxed">
+                    <div className="space-y-3 text-black dark:text-white leading-relaxed">
                       <p>
-                        Située à la lisière de Pessac et Talence, Gradignan séduit par ses <strong className="text-gray-900 dark:text-white">nombreux parcs, infrastructures scolaires réputées</strong> et son cadre de vie arboré.
+                        Située à la lisière de Pessac et Talence, Gradignan séduit par ses <strong className="text-black dark:text-white">nombreux parcs, infrastructures scolaires réputées</strong> et son cadre de vie arboré.
                       </p>
                       <p>
-                        Avec plus de <strong className="text-gray-900 dark:text-white">25 000 habitants</strong>, la ville attire autant les familles que les seniors à la recherche de tranquillité.
+                        Avec plus de <strong className="text-black dark:text-white">25 000 habitants</strong>, la ville attire autant les familles que les seniors à la recherche de tranquillité.
                       </p>
                     </div>
                   </div>
                   
                   {/* Bloc 2 */}
                   <div className="w-72 flex-shrink-0 bg-white dark:bg-black rounded-2xl md:shadow-lg p-6 border border-gray-100 dark:border-gray-700">
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                    <h3 className="text-2xl font-bold text-black dark:text-white mb-4">
                       Exemples concrets d'interventions à Gradignan
                     </h3>
-                    <div className="space-y-3 text-gray-600 dark:text-gray-300 leading-relaxed">
+                    <div className="space-y-3 text-black dark:text-white leading-relaxed">
                       <div className="flex items-start space-x-3">
                         <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
                         <p><strong>Rue des Pins :</strong> PAC air/eau maison traditionnelle avec radiateurs basse température.</p>
@@ -490,35 +490,35 @@ export default function Gradignan() {
                   
                   {/* Bloc 3 */}
                   <div className="w-72 flex-shrink-0 bg-white dark:bg-black rounded-2xl md:shadow-lg p-6 border border-gray-100 dark:border-gray-700">
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                    <h3 className="text-2xl font-bold text-black dark:text-white mb-4">
                       Des installations pensées pour Gradignan
                     </h3>
-                    <div className="space-y-3 text-gray-600 dark:text-gray-300 leading-relaxed">
+                    <div className="space-y-3 text-black dark:text-white leading-relaxed">
                       <p>
-                        À Gradignan, les <strong className="text-gray-900 dark:text-white">grands jardins ombragés</strong> nécessitent des installations extérieures silencieuses et bien positionnées.
+                        À Gradignan, les <strong className="text-black dark:text-white">grands jardins ombragés</strong> nécessitent des installations extérieures silencieuses et bien positionnées.
                       </p>
                       <p>
-                        Nos équipes prennent en compte chaque contrainte : <strong className="text-gray-900 dark:text-white">mitoyenneté, orientation, espace technique</strong> ou esthétique.
+                        Nos équipes prennent en compte chaque contrainte : <strong className="text-black dark:text-white">mitoyenneté, orientation, espace technique</strong> ou esthétique.
                       </p>
                     </div>
                   </div>
                   
                   {/* Bloc 4 */}
                   <div className="w-72 flex-shrink-0 bg-white dark:bg-black rounded-2xl md:shadow-lg p-6 border border-gray-100 dark:border-gray-700">
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                    <h3 className="text-2xl font-bold text-black dark:text-white mb-4">
                       Un projet à Gradignan ? On est là.
                     </h3>
-                    <div className="space-y-3 text-gray-600 dark:text-gray-300 leading-relaxed">
+                    <div className="space-y-3 text-black dark:text-white leading-relaxed">
                       <p>
-                        Vous habitez à Gradignan ou vous <strong className="text-gray-900 dark:text-white">venez d'acheter dans le secteur</strong> ? Contactez ClimGO pour des conseils adaptés.
+                        Vous habitez à Gradignan ou vous <strong className="text-black dark:text-white">venez d'acheter dans le secteur</strong> ? Contactez ClimGO pour des conseils adaptés.
                       </p>
                       <p>
-                        On vous accompagne de l'étude à l'entretien, avec la <strong className="text-gray-900 dark:text-white">transparence et qualité</strong> d'un partenaire local.
+                        On vous accompagne de l'étude à l'entretien, avec la <strong className="text-black dark:text-white">transparence et qualité</strong> d'un partenaire local.
                       </p>
                       <div className="mt-4">
                         <a
                           href="/contact"
-                          className="inline-flex items-center px-6 py-3 bg-black dark:bg-black text-black dark:text-white font-semibold rounded-lg hover:bg-gray-700 dark:hover:bg-gray-200"
+                          className="inline-flex items-center px-6 py-3 bg-white dark:bg-black text-black dark:text-white font-semibold rounded-lg hover:bg-white dark:hover:bg-black"
                         >
                           Contactez-nous
                           <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -541,10 +541,10 @@ export default function Gradignan() {
           <div className="relative z-10 max-w-6xl mx-auto px-4">
             {/* Titre avec animation */}
             <div className="text-center mb-20">
-              <h2 className="text-3xl md:text-4xl font-medium text-gray-900 dark:text-white mb-6">
+              <h2 className="text-3xl md:text-4xl font-medium text-black dark:text-white mb-6">
                 Pourquoi choisir ClimGO à Gradignan ?
               </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl text-black dark:text-white max-w-3xl mx-auto leading-relaxed">
                 Faire appel à ClimGO à Gradignan, c'est choisir une équipe locale qui connaît parfaitement les besoins thermiques des logements pavillonnaires et collectifs.
               </p>
             </div>
@@ -552,70 +552,70 @@ export default function Gradignan() {
             {/* Pourquoi choisir ClimGO à Gradignan - Version personnalisée */}
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6 lg:gap-8 max-w-6xl mx-auto mb-8 md:mb-12 lg:mb-16">
               {/* Équipe Locale */}
-              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#0ea5e9]/50 dark:hover:border-[#38bdf8] min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
+              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-black dark:hover:border-white min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
                 <div className="text-center flex flex-col h-full">
-                  <div className="bg-blue-500 dark:bg-blue-600 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-12 h-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="bg-black dark:bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-12 h-12 text-white dark:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-[#0ea5e9] dark:group-hover:text-[#38bdf8] transition-colors">
+                  <h3 className="text-lg sm:text-xl font-semibold text-black dark:text-white mb-3 sm:mb-4 group-hover:text-black dark:group-hover:text-white transition-colors">
                     Équipe Locale
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
-                    Choisir une <strong className="text-white">équipe locale</strong> qui connaît parfaitement les besoins thermiques des logements pavillonnaires et collectifs de Gradignan.
+                  <p className="text-black dark:text-white text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
+                    Choisir une <strong className="text-black dark:text-white">équipe locale</strong> qui connaît parfaitement les besoins thermiques des logements pavillonnaires et collectifs de Gradignan.
                   </p>
                 </div>
               </div>
 
               {/* Solutions Adaptées */}
-              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#f97316]/50 dark:hover:border-[#fb923c] min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
+              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-black dark:hover:border-white min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
                 <div className="text-center flex flex-col h-full">
-                  <div className="bg-green-500 dark:bg-green-600 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-12 h-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="bg-black dark:bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-12 h-12 text-white dark:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                     </svg>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-[#10b981] dark:group-hover:text-[#34d399] transition-colors">
+                  <h3 className="text-lg sm:text-xl font-semibold text-black dark:text-white mb-3 sm:mb-4 group-hover:text-black dark:group-hover:text-white transition-colors">
                     Solutions Adaptées
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
-                    Pompes à chaleur, <strong className="text-white">climatisation gainable ou murale, chauffe-eaux performants</strong> : nous adaptons chaque solution à votre habitat.
+                  <p className="text-black dark:text-white text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
+                    Pompes à chaleur, <strong className="text-black dark:text-white">climatisation gainable ou murale, chauffe-eaux performants</strong> : nous adaptons chaque solution à votre habitat.
                   </p>
                 </div>
               </div>
 
               {/* Proximité et Réactivité */}
-              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30  min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
+              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-black dark:hover:border-white min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
                 <div className="text-center flex flex-col h-full">
-                  <div className="bg-blue-500 dark:bg-blue-600 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-12 h-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="bg-black dark:bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-12 h-12 text-white dark:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-[#0ea5e9] dark:group-hover:text-[#38bdf8] transition-colors">
+                  <h3 className="text-lg sm:text-xl font-semibold text-black dark:text-white mb-3 sm:mb-4 group-hover:text-black dark:group-hover:text-white transition-colors">
                     Proximité et Réactivité
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
-                    Notre <strong className="text-white">proximité garantit une réactivité optimale</strong> et un suivi rigoureux, du devis à l'entretien annuel.
+                  <p className="text-black dark:text-white text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
+                    Notre <strong className="text-black dark:text-white">proximité garantit une réactivité optimale</strong> et un suivi rigoureux, du devis à l'entretien annuel.
                   </p>
                 </div>
               </div>
 
               {/* Installations Silencieuses */}
-              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30  min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
+              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-black dark:hover:border-white min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
                 <div className="text-center flex flex-col h-full">
-                  <div className="bg-gray-100 dark:bg-gray-800 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-12 h-12 text-gray-900 dark:text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="bg-black dark:bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-12 h-12 text-white dark:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
                     </svg>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4  transition-colors">
+                  <h3 className="text-lg sm:text-xl font-semibold text-black dark:text-white mb-3 sm:mb-4  transition-colors">
                     Installations Silencieuses
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
-                    Nous proposons des <strong className="text-gray-900 dark:text-gray-300">équipements discrets et efficaces</strong>, adaptés aux besoins thermiques spécifiques de Gradignan.
+                  <p className="text-black dark:text-white text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
+                    Nous proposons des <strong className="text-black dark:text-white">équipements discrets et efficaces</strong>, adaptés aux besoins thermiques spécifiques de Gradignan.
                   </p>
                 </div>
               </div>
@@ -625,7 +625,7 @@ export default function Gradignan() {
             <div className="text-center mt-16">
               <Link
                 href="/contact"
-                className="inline-flex items-center px-8 py-4 bg-black dark:bg-black text-black dark:text-white font-semibold rounded-full hover:bg-gray-700 dark:hover:bg-gray-200 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-semibold rounded-full hover:bg-white dark:hover:bg-black transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 Demander un devis
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -642,10 +642,10 @@ export default function Gradignan() {
         {}<div className="relative z-10 max-w-7xl mx-auto px-4">
           <SimpleWrapper>
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-light text-gray-900 dark:text-white mb-6">
+              <h2 className="text-4xl md:text-5xl font-light text-black dark:text-white mb-6">
                 Nos Solutions ClimGO
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              <p className="text-lg text-black dark:text-white max-w-3xl mx-auto">
                 Des solutions complètes et personnalisées pour votre confort thermique à Gradignan
               </p>
             </div>
@@ -655,14 +655,14 @@ export default function Gradignan() {
             {/* Carte 1 - Types de logements */}
             <SimpleWrapper>
               <motion.div 
-                className="group relative bg-white dark:bg-black rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-blue-500 dark:border-blue-600 min-h-[300px] md:min-h-[380px] lg:min-h-[400px] flex flex-col"
+                className="group relative bg-white dark:bg-black rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-gray-200 dark:border-gray-600 min-h-[300px] md:min-h-[380px] lg:min-h-[400px] flex flex-col"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 {/* Icône avec effet de brillance */}
                 <div className="relative mb-6">
-                  <div className="w-16 h-16 bg-blue-500 dark:bg-blue-600 rounded-2xl flex items-center justify-center mx-auto group-hover:bg-blue-600 dark:group-hover:bg-blue-500 transition-all duration-300 border-2 border-black dark:border-white">
-                    <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="w-16 h-16 bg-white dark:bg-black rounded-2xl flex items-center justify-center mx-auto group-hover:bg-white dark:group-hover:bg-black transition-all duration-300 border-2 border-black dark:border-white">
+                    <svg className="w-8 h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                     </svg>
                   </div>
@@ -670,7 +670,7 @@ export default function Gradignan() {
                 </div>
 
                 <h3 className="text-2xl font-bold text-black dark:text-white mb-4 text-center">Types de logements desservis</h3>
-                <p className="text-black/90 dark:text-white/90 leading-relaxed text-center text-lg flex-grow">
+                <p className="text-black dark:text-white leading-relaxed text-center text-lg flex-grow">
                   Maisons de famille, résidences récentes, quartiers anciens : nous intervenons partout à Gradignan avec des solutions sur mesure.
                 </p>
 
@@ -686,28 +686,28 @@ export default function Gradignan() {
             {/* Carte 2 - Processus d'installation */}
             <SimpleWrapper>
               <motion.div 
-                className="group relative bg-white dark:bg-black rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-orange-500 dark:border-orange-600 min-h-[300px] md:min-h-[380px] lg:min-h-[400px] flex flex-col"
+                className="group relative bg-white dark:bg-black rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-gray-200 dark:border-gray-600 min-h-[300px] md:min-h-[380px] lg:min-h-[400px] flex flex-col"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 {/* Icône avec effet de brillance */}
                 <div className="relative mb-6">
-                  <div className="w-16 h-16 bg-orange-500 dark:bg-orange-600 rounded-2xl flex items-center justify-center mx-auto group-hover:bg-orange-600 dark:group-hover:bg-orange-500 transition-all duration-300 border-2 border-black dark:border-white">
-                    <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="w-16 h-16 bg-white dark:bg-black rounded-2xl flex items-center justify-center mx-auto group-hover:bg-white dark:group-hover:bg-black transition-all duration-300 border-2 border-black dark:border-white">
+                    <svg className="w-8 h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.563.563 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
                     </svg>
                   </div>
                   
                 </div>
 
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 text-center">Processus d'installation</h3>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-center text-lg flex-grow">
+                <h3 className="text-2xl font-bold text-black dark:text-white mb-4 text-center">Processus d'installation</h3>
+                <p className="text-black dark:text-white leading-relaxed text-center text-lg flex-grow">
                   Un projet démarre toujours par une visite technique sur place. Nous établissons ensuite un devis précis, avant de programmer une installation rapide, propre et certifiée conforme.
                 </p>
 
                 {/* Badge de service */}
                 <div className="mt-6 text-center">
-                  <span className="inline-block bg-black dark:bg-black text-black dark:text-white text-sm font-medium px-4 py-2 rounded-full">
+                  <span className="inline-block bg-white dark:bg-black text-black dark:text-white text-sm font-medium px-4 py-2 rounded-full">
                     Devis gratuit
                   </span>
                 </div>
@@ -717,28 +717,28 @@ export default function Gradignan() {
             {/* Carte 3 - Entretien & maintenance */}
             <SimpleWrapper>
               <motion.div 
-                className="group relative bg-white dark:bg-black rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-green-500 dark:border-green-600 min-h-[300px] md:min-h-[380px] lg:min-h-[400px] flex flex-col"
+                className="group relative bg-white dark:bg-black rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-gray-200 dark:border-gray-600 min-h-[300px] md:min-h-[380px] lg:min-h-[400px] flex flex-col"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 {/* Icône avec effet de brillance */}
                 <div className="relative mb-6">
-                  <div className="w-16 h-16 bg-green-500 dark:bg-green-600 rounded-2xl flex items-center justify-center mx-auto group-hover:bg-green-600 dark:group-hover:bg-green-500 transition-all duration-300 border-2 border-black dark:border-white">
-                    <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="w-16 h-16 bg-white dark:bg-black rounded-2xl flex items-center justify-center mx-auto group-hover:bg-white dark:group-hover:bg-black transition-all duration-300 border-2 border-black dark:border-white">
+                    <svg className="w-8 h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437 1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008Z" />
                     </svg>
                   </div>
                   
                 </div>
 
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 text-center">Entretien &amp; maintenance</h3>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-center text-lg flex-grow">
+                <h3 className="text-2xl font-bold text-black dark:text-white mb-4 text-center">Entretien &amp; maintenance</h3>
+                <p className="text-black dark:text-white leading-relaxed text-center text-lg flex-grow">
                   ClimGO assure un suivi complet de vos équipements, avec des interventions de maintenance planifiées pour préserver performances et économies d'énergie, année après année.
                 </p>
 
                 {/* Badge de service */}
                 <div className="mt-6 text-center">
-                  <span className="inline-block bg-black dark:bg-black text-black dark:text-white text-sm font-medium px-4 py-2 rounded-full">
+                  <span className="inline-block bg-white dark:bg-black text-black dark:text-white text-sm font-medium px-4 py-2 rounded-full">
                     Suivi personnalisé
                   </span>
                 </div>
@@ -748,14 +748,14 @@ export default function Gradignan() {
             {/* Carte 4 - Aides financières */}
             <SimpleWrapper>
               <motion.div 
-                className="group relative bg-white dark:bg-black rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-purple-500 dark:border-purple-600 min-h-[300px] md:min-h-[380px] lg:min-h-[400px] flex flex-col"
+                className="group relative bg-white dark:bg-black rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-gray-200 dark:border-gray-600 min-h-[300px] md:min-h-[380px] lg:min-h-[400px] flex flex-col"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 {/* Icône avec effet de brillance */}
                 <div className="relative mb-6">
-                  <div className="w-16 h-16 bg-purple-500 dark:bg-purple-600 rounded-2xl flex items-center justify-center mx-auto group-hover:bg-purple-600 dark:group-hover:bg-purple-500 transition-all duration-300 border-2 border-black dark:border-white">
-                    <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="w-16 h-16 bg-white dark:bg-black rounded-2xl flex items-center justify-center mx-auto group-hover:bg-white dark:group-hover:bg-black transition-all duration-300 border-2 border-black dark:border-white">
+                    <svg className="w-8 h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0 0 12 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52 2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 0 1-2.031.352 5.988 5.988 0 0 1-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971Zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0 2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 0 1-2.031.352 5.989 5.989 0 0 1-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971Z" />
                     </svg>
                   </div>
@@ -763,7 +763,7 @@ export default function Gradignan() {
                 </div>
 
                 <h3 className="text-2xl font-bold text-black dark:text-white mb-4 text-center">Aides financières à Gradignan</h3>
-                <p className="text-black/90 dark:text-white/90 leading-relaxed text-center text-lg flex-grow">
+                <p className="text-black dark:text-white leading-relaxed text-center text-lg flex-grow">
                   De nombreuses aides sont accessibles à Gradignan : MaPrimeRénov', CEE, Éco-PTZ. On vous guide à chaque étape pour en profiter au maximum.
                 </p>
 
@@ -780,12 +780,12 @@ export default function Gradignan() {
           {/* Call-to-action en bas */}
           <SimpleWrapper>
             <div className="text-center mt-16">
-              <p className="text-gray-600 dark:text-gray-300 mb-6 text-lg">
+              <p className="text-black dark:text-white mb-6 text-lg">
                 Prêt à améliorer votre confort thermique ?
               </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center px-8 py-4 bg-black dark:bg-black text-black dark:text-white font-semibold rounded-full hover:bg-gray-700 dark:hover:bg-gray-200 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-semibold rounded-full hover:bg-white dark:hover:bg-black transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 Découvrir nos solutions
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

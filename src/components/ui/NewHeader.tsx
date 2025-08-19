@@ -49,30 +49,26 @@ const services: { title: string; href: string; description: string; icon: React.
   },
 ]
 
-const zones: { title: string; href: string; description: string; count?: string }[] = [
+const zones: { title: string; href: string; description: string }[] = [
   {
     title: "Bassin d'Arcachon",
     href: "/zones-interventions",
     description: "Arcachon, La Teste-de-Buch, Gujan-Mestras, Le Teich, Andernos...",
-    count: "15 villes",
   },
   {
     title: "Bordeaux Métropole",
     href: "/zones-interventions", 
     description: "Bordeaux, Mérignac, Pessac, Talence, Bègles, Bruges...",
-    count: "18 villes",
   },
   {
     title: "Pays des Graves",
     href: "/zones-interventions",
     description: "Gradignan, Cestas, Léognan, Martillac, La Brède...",
-    count: "8 villes",
   },
   {
     title: "Nord Landes",
     href: "/zones-interventions",
     description: "Mimizan, Biscarrosse, Parentis-en-Born, Sanguinet...",
-    count: "7 villes",
   },
 ]
 
@@ -179,13 +175,8 @@ export function NewHeader() {
                             href={zone.href}
                             className="block select-none space-y-2 rounded-lg p-4 leading-none no-underline outline-none transition-all hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                           >
-                            <div className="flex items-center justify-between">
-                              <div className="text-sm font-medium leading-none">
-                                {zone.title}
-                              </div>
-                              <span className="text-xs text-muted-foreground font-medium">
-                                {zone.count}
-                              </span>
+                            <div className="text-sm font-medium leading-none mb-2">
+                              {zone.title}
                             </div>
                             <p className="text-xs leading-snug text-muted-foreground">
                               {zone.description}
@@ -384,12 +375,9 @@ export function NewHeader() {
                   className="block p-3 rounded-lg hover:bg-accent transition-colors min-h-[48px]"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  <div className="flex items-center justify-between mb-1">
+                  <div className="mb-1">
                     <span className="font-medium text-base">
                       {zone.title}
-                    </span>
-                    <span className="text-xs text-muted-foreground font-medium">
-                      {zone.count}
                     </span>
                   </div>
                   <p className="text-xs text-muted-foreground line-clamp-1">{zone.description}</p>

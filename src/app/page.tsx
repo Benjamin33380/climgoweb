@@ -13,8 +13,23 @@ import LocationMap from '@/components/LocationMap';
 
 export default function HomePage() {
 
-  // Image hero avec effet zoom
-  const heroImage = '/img/clim-caudéran.jpeg';
+  // Images hero avec rotation
+  const heroImages = [
+    '/img/clim-caudéran.jpeg',
+    '/img/uicauderan.jpeg'
+  ];
+  
+  // État pour l'index de l'image actuelle
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
+  // Changement automatique d'image toutes les 20 secondes
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
+    }, 20000); // 20 secondes
+    
+    return () => clearInterval(interval);
+  }, [heroImages.length]);
 
   // Composant CitySearch
   const CitySearch = () => {
@@ -138,12 +153,13 @@ export default function HomePage() {
           {/* Version mobile - image plein écran */}
           <div className="block sm:hidden relative h-full w-full overflow-hidden">
             <motion.img
-              src={heroImage}
+              key={`mobile-${currentImageIndex}`}
+              src={heroImages[currentImageIndex]}
               alt="ClimGO - Installation climatisation"
               className="h-full w-full object-cover object-center"
-              initial={{ scale: 1.2 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 15, ease: "easeInOut", repeat: Infinity, repeatType: "reverse" }}
+              initial={{ scale: 1 }}
+              animate={{ scale: 1.2 }}
+              transition={{ duration: 18, ease: "easeInOut" }}
             />
           </div>
           
@@ -155,12 +171,13 @@ export default function HomePage() {
             }}
           >
             <motion.img
-              src={heroImage}
+              key={`desktop-${currentImageIndex}`}
+              src={heroImages[currentImageIndex]}
               alt="ClimGO - Installation climatisation"
               className="h-full w-full object-cover object-center"
-              initial={{ scale: 1.2 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 15, ease: "easeInOut", repeat: Infinity, repeatType: "reverse" }}
+              initial={{ scale: 1 }}
+              animate={{ scale: 1.2 }}
+              transition={{ duration: 18, ease: "easeInOut" }}
             />
           </div>
         </motion.div>

@@ -76,7 +76,7 @@ export default function Cestas() {
     return (
       <div className="max-w-[240px] sm:max-w-xs md:max-w-sm relative">
         <div className="relative">
-          <Search className="absolute left-2 sm:left-3 top-1/2 transform -translate-y-1/2 text-gray-600 dark:text-gray-400 w-3 sm:w-4 h-3 sm:h-4" />
+          <Search className="absolute left-2 sm:left-3 top-1/2 transform -translate-y-1/2 text-black dark:text-white w-3 sm:w-4 h-3 sm:h-4" />
           <input
             type="text"
             placeholder="Rechercher votre ville..."
@@ -86,9 +86,9 @@ export default function Cestas() {
               setShowSearchResults(e.target.value.length > 0);
             }}
             onFocus={() => setShowSearchResults(searchQuery.length > 0)}
-            className="w-full bg-white/20 dark:bg-white/10 backdrop-blur-md border border-black/40 dark:border-white/30 rounded-lg px-6 sm:px-8 py-1.5 sm:py-2 text-black dark:text-white placeholder-gray-600 dark:placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent text-xs sm:text-sm"
+            className="w-full bg-white/20 dark:bg-white/10 backdrop-blur-md border border-black/40 dark:border-white/30 rounded-lg px-6 sm:px-8 py-1.5 sm:py-2 text-black dark:text-white placeholder-black dark:placeholder-white focus:outline-none focus:ring-2 focus:ring-gray-400 dark:focus:ring-gray-400 focus:border-transparent text-xs sm:text-sm"
           />
-          <MapPin className="absolute right-2 sm:right-3 top-1/2 transform -translate-y-1/2 text-gray-600 dark:text-gray-400 w-3 sm:w-4 h-3 sm:h-4" />
+          <MapPin className="absolute right-2 sm:right-3 top-1/2 transform -translate-y-1/2 text-black dark:text-white w-3 sm:w-4 h-3 sm:h-4" />
         </div>
         
         {/* Résultats de recherche */}
@@ -103,14 +103,14 @@ export default function Cestas() {
                     setSearchQuery('');
                     setShowSearchResults(false);
                   }}
-                  className="block w-full text-left px-4 py-3 hover:bg-blue-50 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center gap-2"
+                  className="block w-full text-left px-4 py-3 hover:bg-white dark:hover:bg-black text-black dark:text-white hover:text-black dark:hover:text-white transition-colors flex items-center gap-2"
                 >
-                  <MapPin className="w-4 h-4 text-gray-500 dark:text-gray-400" />
+                  <MapPin className="w-4 h-4 text-gray-500 dark:text-white" />
                   {city.name}
                 </Link>
               ))
             ) : (
-              <div className="px-4 py-3 text-gray-600 dark:text-gray-500">
+              <div className="px-4 py-3 text-black dark:text-gray-500">
                 Aucune ville trouvée
               </div>
             )}
@@ -183,7 +183,7 @@ export default function Cestas() {
             <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-light tracking-tight mb-3 sm:mb-4 md:mb-6 text-black dark:text-white break-words leading-tight">
               ClimGO à Cestas
             </h1>
-            <p className="text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl text-black/90 dark:text-white/90 mb-3 sm:mb-4 md:mb-6 lg:mb-8 leading-relaxed max-w-[280px] sm:max-w-sm md:max-w-lg lg:max-w-none whitespace-pre-line">
+            <p className="text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl text-black dark:text-white mb-3 sm:mb-4 md:mb-6 lg:mb-8 leading-relaxed max-w-[280px] sm:max-w-sm md:max-w-lg lg:max-w-none whitespace-pre-line">
               Cadre résidentiel entouré de forêts{'\n'}confort thermique maîtrisé
             </p>
 
@@ -196,7 +196,7 @@ export default function Cestas() {
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-full px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-2.5 md:py-3 lg:py-4 text-xs sm:text-sm md:text-base font-medium
-                           bg-black dark:bg-black text-black dark:text-white hover:bg-white/90 dark:hover:bg-black/90
+                           bg-white dark:bg-black text-black dark:text-white hover:bg-white/90 dark:hover:bg-black/90
                            border border-black/20 dark:border-white/20
                            transition-all duration-300 transform hover:scale-105 shadow-lg"
               >
@@ -206,7 +206,7 @@ export default function Cestas() {
               <a
                 href="#services"
                 className="inline-flex items-center justify-center rounded-full px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-2.5 md:py-3 lg:py-4 text-xs sm:text-sm md:text-base font-medium
-                           border-2 border-white/50 dark:border-white/30 text-black dark:text-white hover:bg-white/15 sm:hover:bg-black/15 dark:hover:bg-white/10 hover:border-white/70 sm:hover:border-black/70 dark:hover:border-white/50
+                           border-2 border-white/50 sm:border-black/50 dark:border-white/30 text-black dark:text-white sm:text-black dark:text-white hover:bg-white/15 sm:hover:bg-black/15 dark:hover:bg-white/10 hover:border-white/70 sm:hover:border-black/70 dark:hover:border-white/50
                            transition-all duration-300 backdrop-blur-sm"
               >
                 Découvrir
@@ -234,7 +234,7 @@ export default function Cestas() {
         
         {/* Titre centré */}
         <div className="relative z-10 container mx-auto px-4 mb-4">
-          <h2 className="text-2xl md:text-3xl font-medium text-gray-800 dark:text-white text-center">
+          <h2 className="text-2xl md:text-3xl font-medium text-gray-800 dark:text-black dark:text-white text-center">
             Cestas, cadre résidentiel et confort thermique maîtrisé
           </h2>
         </div>
@@ -257,32 +257,32 @@ export default function Cestas() {
             {/* Contenu centré dans la zone élargie */}
             <div className="max-w-4xl mx-auto">
               <div className="space-y-6 text-center pt-8 pb-20">
-                <p className="text-lg text-gray-800 dark:text-gray-200 leading-normal">
-                  Cestas est une <strong className="text-gray-900 dark:text-white">commune résidentielle entourée de forêts</strong>, appréciée pour son calme, ses grands terrains et sa qualité de vie.
+                <p className="text-lg text-gray-800 dark:text-white leading-normal">
+                  Cestas est une <strong className="text-black dark:text-white">commune résidentielle entourée de forêts</strong>, appréciée pour son calme, ses grands terrains et sa qualité de vie.
                 </p>
                 
-                <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
-                  Que vous soyez situé près du <strong className="text-gray-900 dark:text-white">Bourg, de Gazinet ou de Pierroton</strong>, ClimGO conçoit et installe des équipements thermiques adaptés.
+                <p className="text-base text-gray-800 dark:text-white leading-normal">
+                  Que vous soyez situé près du <strong className="text-black dark:text-white">Bourg, de Gazinet ou de Pierroton</strong>, ClimGO conçoit et installe des équipements thermiques adaptés.
                 </p>
                 
-                <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
-                  Située entre Bordeaux, Canéjan et le bassin d'Arcachon, Cestas offre un <strong className="text-gray-900 dark:text-white">environnement privilégié</strong> mêlant forêts, grands terrains et quartiers résidentiels calmes.
+                <p className="text-base text-gray-800 dark:text-white leading-normal">
+                  Située entre Bordeaux, Canéjan et le bassin d'Arcachon, Cestas offre un <strong className="text-black dark:text-white">environnement privilégié</strong> mêlant forêts, grands terrains et quartiers résidentiels calmes.
                 </p>
                 
-                <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
-                  Avec plus de <strong className="text-gray-900 dark:text-white">17 000 habitants</strong>, la commune attire familles et actifs recherchant confort et accessibilité. Proximité gare de Gazinet, accès rapide A63.
+                <p className="text-base text-gray-800 dark:text-white leading-normal">
+                  Avec plus de <strong className="text-black dark:text-white">17 000 habitants</strong>, la commune attire familles et actifs recherchant confort et accessibilité. Proximité gare de Gazinet, accès rapide A63.
                 </p>
                 
-                <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
-                  ClimGO intervient sur toute la commune : <strong className="text-gray-900 dark:text-white">quartier Gazinet, Bourg, Pierroton ou Toctoucau</strong>. Équipements adaptés tous types de logements.
+                <p className="text-base text-gray-800 dark:text-white leading-normal">
+                  ClimGO intervient sur toute la commune : <strong className="text-black dark:text-white">quartier Gazinet, Bourg, Pierroton ou Toctoucau</strong>. Équipements adaptés tous types de logements.
                 </p>
                 
-                <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
-                  Du <strong className="text-gray-900 dark:text-white">pavillon des années 80 aux constructions neuves RT2012</strong>. Terrains sablonneux, expositions sud-ouest, toitures inclinées.
+                <p className="text-base text-gray-800 dark:text-white leading-normal">
+                  Du <strong className="text-black dark:text-white">pavillon des années 80 aux constructions neuves RT2012</strong>. Terrains sablonneux, expositions sud-ouest, toitures inclinées.
                 </p>
                 
-                <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
-                  Attention particulière à l'<strong className="text-gray-900 dark:text-white">intégration esthétique des équipements</strong>, souvent posés sur terrasse, en façade ou en local technique.
+                <p className="text-base text-gray-800 dark:text-white leading-normal">
+                  Attention particulière à l'<strong className="text-black dark:text-white">intégration esthétique des équipements</strong>, souvent posés sur terrasse, en façade ou en local technique.
                 </p>
               </div>
             </div>
@@ -328,10 +328,10 @@ export default function Cestas() {
           <div className="relative z-10 max-w-6xl mx-auto px-4">
             {/* Titre avec animation */}
             <div className="text-center mb-20">
-              <h2 className="text-3xl md:text-4xl font-medium text-gray-900 dark:text-white mb-6">
+              <h2 className="text-3xl md:text-4xl font-medium text-black dark:text-white mb-6">
                 Nos interventions à Cestas
               </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl text-black dark:text-white max-w-3xl mx-auto leading-relaxed">
                 De Gazinet au bourg en passant par les hameaux, nous intervenons dans toute la commune de Cestas avec précision. Chaque chantier est réalisé avec soin, pour un confort optimal été comme hiver.
               </p>
             </div>
@@ -366,8 +366,8 @@ export default function Cestas() {
                 </div>
                 
                 <div className="w-5/12 pr-8 text-right">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Cadre Résidentiel Privilégié</h3>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  <h3 className="text-2xl font-bold text-black dark:text-white mb-3">Cadre Résidentiel Privilégié</h3>
+                  <p className="text-black dark:text-white leading-relaxed">
                     Commune résidentielle entourée de forêts, appréciée pour son calme, grands terrains et qualité de vie. Plus de 17 000 habitants, familles et actifs recherchant confort et accessibilité.
                   </p>
                 </div>
@@ -383,8 +383,8 @@ export default function Cestas() {
                 </div>
                 
                 <div className="w-5/12 ml-auto pl-8">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Quartiers et Accessibilité</h3>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  <h3 className="text-2xl font-bold text-black dark:text-white mb-3">Quartiers et Accessibilité</h3>
+                  <p className="text-black dark:text-white leading-relaxed">
                     Bourg, Gazinet, Pierroton, Toctoucau. Proximité gare de Gazinet, accès rapide A63, établissements scolaires variés. Tissu associatif actif, urbanisme à taille humaine.
                   </p>
                 </div>
@@ -399,8 +399,8 @@ export default function Cestas() {
                 </div>
                 
                 <div className="w-5/12 pr-8 text-right">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Adaptation Technique</h3>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  <h3 className="text-2xl font-bold text-black dark:text-white mb-3">Adaptation Technique</h3>
+                  <p className="text-black dark:text-white leading-relaxed">
                     Terrains sablonneux, expositions sud-ouest fréquentes, toitures inclinées. Dimensionnement selon orientation, surface et isolation. Pavillon années 80 aux constructions neuves RT2012.
                   </p>
                 </div>
@@ -415,8 +415,8 @@ export default function Cestas() {
                 </div>
                 
                 <div className="w-5/12 ml-auto pl-8">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Intégration Esthétique</h3>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  <h3 className="text-2xl font-bold text-black dark:text-white mb-3">Intégration Esthétique</h3>
+                  <p className="text-black dark:text-white leading-relaxed">
                     Attention particulière intégration esthétique équipements, souvent posés sur terrasse, façade ou local technique. Solutions discrètes et performantes pour chaque configuration.
                   </p>
                 </div>
@@ -427,7 +427,7 @@ export default function Cestas() {
             <div className="text-center mt-16">
               <Link
                 href="/contact"
-                className="inline-flex items-center px-8 py-4 bg-black dark:bg-black text-black dark:text-white font-semibold rounded-full hover:bg-gray-700 dark:hover:bg-gray-200 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-semibold rounded-full hover:bg-white dark:hover:bg-black transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 Demander un devis
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -454,25 +454,25 @@ export default function Cestas() {
                 <div className="flex space-x-8 min-w-max px-4" style={{ marginLeft: 'calc(50% - 144px)', marginRight: 'calc(50% - 144px)' }}>
                   {/* Bloc 1 */}
                   <div className="w-72 flex-shrink-0 bg-white dark:bg-black rounded-2xl md:shadow-lg p-6 border border-gray-100 dark:border-gray-700">
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                    <h3 className="text-2xl font-bold text-black dark:text-white mb-4">
                       Cestas, un cadre de vie résidentiel prisé
                     </h3>
-                    <div className="space-y-3 text-gray-600 dark:text-gray-300 leading-relaxed">
+                    <div className="space-y-3 text-black dark:text-white leading-relaxed">
                       <p>
-                        Située entre Bordeaux, Canéjan et le bassin d'Arcachon, Cestas offre un <strong className="text-gray-900 dark:text-white">environnement privilégié</strong> mêlant forêts, grands terrains et quartiers calmes.
+                        Située entre Bordeaux, Canéjan et le bassin d'Arcachon, Cestas offre un <strong className="text-black dark:text-white">environnement privilégié</strong> mêlant forêts, grands terrains et quartiers calmes.
                       </p>
                       <p>
-                        Avec plus de <strong className="text-gray-900 dark:text-white">17 000 habitants</strong>, la commune attire familles et actifs recherchant confort et accessibilité.
+                        Avec plus de <strong className="text-black dark:text-white">17 000 habitants</strong>, la commune attire familles et actifs recherchant confort et accessibilité.
                       </p>
                     </div>
                   </div>
                   
                   {/* Bloc 2 */}
                   <div className="w-72 flex-shrink-0 bg-white dark:bg-black rounded-2xl md:shadow-lg p-6 border border-gray-100 dark:border-gray-700">
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                    <h3 className="text-2xl font-bold text-black dark:text-white mb-4">
                       Exemples concrets d'interventions à Cestas
                     </h3>
-                    <div className="space-y-3 text-gray-600 dark:text-gray-300 leading-relaxed">
+                    <div className="space-y-3 text-black dark:text-white leading-relaxed">
                       <div className="flex items-start space-x-3">
                         <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
                         <p><strong>Rue de la Forêt :</strong> PAC air/eau sur dalle ventilée pour maison de plain-pied.</p>
@@ -490,35 +490,35 @@ export default function Cestas() {
                   
                   {/* Bloc 3 */}
                   <div className="w-72 flex-shrink-0 bg-white dark:bg-black rounded-2xl md:shadow-lg p-6 border border-gray-100 dark:border-gray-700">
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                    <h3 className="text-2xl font-bold text-black dark:text-white mb-4">
                       Un savoir-faire adapté aux particularités de Cestas
                     </h3>
-                    <div className="space-y-3 text-gray-600 dark:text-gray-300 leading-relaxed">
+                    <div className="space-y-3 text-black dark:text-white leading-relaxed">
                       <p>
-                        Les <strong className="text-gray-900 dark:text-white">terrains sablonneux, expositions sud-ouest</strong> et toitures inclinées imposent une vraie précision dans nos installations.
+                        Les <strong className="text-black dark:text-white">terrains sablonneux, expositions sud-ouest</strong> et toitures inclinées imposent une vraie précision dans nos installations.
                       </p>
                       <p>
-                        Chaque projet est <strong className="text-gray-900 dark:text-white">dimensionné selon l'orientation, surface et isolation</strong> du logement.
+                        Chaque projet est <strong className="text-black dark:text-white">dimensionné selon l'orientation, surface et isolation</strong> du logement.
                       </p>
                     </div>
                   </div>
                   
                   {/* Bloc 4 */}
                   <div className="w-72 flex-shrink-0 bg-white dark:bg-black rounded-2xl md:shadow-lg p-6 border border-gray-100 dark:border-gray-700">
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                    <h3 className="text-2xl font-bold text-black dark:text-white mb-4">
                       Vous avez un projet thermique à Cestas ?
                     </h3>
-                    <div className="space-y-3 text-gray-600 dark:text-gray-300 leading-relaxed">
+                    <div className="space-y-3 text-black dark:text-white leading-relaxed">
                       <p>
-                        Que vous envisagiez une <strong className="text-gray-900 dark:text-white">rénovation énergétique</strong> ou une installation dans une maison neuve, ClimGO vous accompagne.
+                        Que vous envisagiez une <strong className="text-black dark:text-white">rénovation énergétique</strong> ou une installation dans une maison neuve, ClimGO vous accompagne.
                       </p>
                       <p>
-                        Contactez-nous pour obtenir un <strong className="text-gray-900 dark:text-white">devis adapté à votre maison</strong> à Cestas.
+                        Contactez-nous pour obtenir un <strong className="text-black dark:text-white">devis adapté à votre maison</strong> à Cestas.
                       </p>
                       <div className="mt-4">
                         <a
                           href="/contact"
-                          className="inline-flex items-center px-6 py-3 bg-black dark:bg-black text-black dark:text-white font-semibold rounded-lg hover:bg-gray-700 dark:hover:bg-gray-200"
+                          className="inline-flex items-center px-6 py-3 bg-white dark:bg-black text-black dark:text-white font-semibold rounded-lg hover:bg-white dark:hover:bg-black"
                         >
                           Contactez-nous
                           <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -541,10 +541,10 @@ export default function Cestas() {
           <div className="relative z-10 max-w-6xl mx-auto px-4">
             {/* Titre avec animation */}
             <div className="text-center mb-20">
-              <h2 className="text-3xl md:text-4xl font-medium text-gray-900 dark:text-white mb-6">
+              <h2 className="text-3xl md:text-4xl font-medium text-black dark:text-white mb-6">
                 Pourquoi choisir ClimGO à Cestas ?
               </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl text-black dark:text-white max-w-3xl mx-auto leading-relaxed">
                 Faire appel à ClimGO à Cestas, c'est choisir une entreprise engagée, qui comprend les particularités climatiques et architecturales de la commune.
               </p>
             </div>
@@ -552,69 +552,69 @@ export default function Cestas() {
             {/* Pourquoi choisir ClimGO à Cestas - Version personnalisée */}
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6 lg:gap-8 max-w-6xl mx-auto mb-8 md:mb-12 lg:mb-16">
               {/* Entreprise Engagée */}
-              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#0ea5e9]/50 dark:hover:border-[#38bdf8] min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
+              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-black dark:hover:border-white min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
                 <div className="text-center flex flex-col h-full">
-                  <div className="bg-blue-500 dark:bg-blue-600 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-12 h-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="bg-black dark:bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-12 h-12 text-white dark:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                     </svg>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-[#0ea5e9] dark:group-hover:text-[#38bdf8] transition-colors">
+                  <h3 className="text-lg sm:text-xl font-semibold text-black dark:text-white mb-3 sm:mb-4 group-hover:text-black dark:group-hover:text-white transition-colors">
                     Entreprise Engagée
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
-                    Choisir une <strong className="text-white">entreprise engagée</strong>, qui comprend les particularités climatiques et architecturales de la commune de Cestas.
+                  <p className="text-black dark:text-white text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
+                    Choisir une <strong className="text-black dark:text-white">entreprise engagée</strong>, qui comprend les particularités climatiques et architecturales de la commune de Cestas.
                   </p>
                 </div>
               </div>
 
               {/* Efficacité et Durabilité */}
-              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#10b981]/50 dark:hover:border-[#34d399] min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
+              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-black dark:hover:border-white min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
                 <div className="text-center flex flex-col h-full">
-                  <div className="bg-green-500 dark:bg-green-600 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-12 h-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="bg-black dark:bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-12 h-12 text-white dark:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-[#10b981] dark:group-hover:text-[#34d399] transition-colors">
+                  <h3 className="text-lg sm:text-xl font-semibold text-black dark:text-white mb-3 sm:mb-4 group-hover:text-black dark:group-hover:text-white transition-colors">
                     Efficacité et Durabilité
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
-                    Nos PAC, climatiseurs et chauffe-eaux sélectionnés pour garantir <strong className="text-white">efficacité, discrétion et durabilité</strong> dans résidences familiales.
+                  <p className="text-black dark:text-white text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
+                    Nos PAC, climatiseurs et chauffe-eaux sélectionnés pour garantir <strong className="text-black dark:text-white">efficacité, discrétion et durabilité</strong> dans résidences familiales.
                   </p>
                 </div>
               </div>
 
               {/* Proximité et Rigueur */}
-              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#f97316]/50 dark:hover:border-[#fb923c] min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
+              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-black dark:hover:border-white min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
                 <div className="text-center flex flex-col h-full">
-                  <div className="bg-green-500 dark:bg-green-600 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-12 h-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="bg-black dark:bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-12 h-12 text-white dark:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-[#f97316] dark:group-hover:text-[#fb923c] transition-colors">
+                  <h3 className="text-lg sm:text-xl font-semibold text-black dark:text-white mb-3 sm:mb-4 group-hover:text-black dark:group-hover:text-white transition-colors">
                     Proximité et Rigueur
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
-                    Notre <strong className="text-white">proximité et rigueur</strong> font la différence : service rapide, finitions propres, accompagnement administratif complet.
+                  <p className="text-black dark:text-white text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
+                    Notre <strong className="text-black dark:text-white">proximité et rigueur</strong> font la différence : service rapide, finitions propres, accompagnement administratif complet.
                   </p>
                 </div>
               </div>
 
               {/* Intégration Esthétique */}
-              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30  min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
+              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-black dark:hover:border-white min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
                 <div className="text-center flex flex-col h-full">
-                  <div className="bg-orange-500 dark:bg-orange-600 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-12 h-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="bg-black dark:bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-12 h-12 text-white dark:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-[#0ea5e9] dark:group-hover:text-[#38bdf8] transition-colors">
+                  <h3 className="text-lg sm:text-xl font-semibold text-black dark:text-white mb-3 sm:mb-4 group-hover:text-black dark:group-hover:text-white transition-colors">
                     Intégration Esthétique
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
-                    Attention particulière à l'<strong className="text-white">intégration esthétique</strong> des équipements, posés sur terrasse, façade ou local technique.
+                  <p className="text-black dark:text-white text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
+                    Attention particulière à l'<strong className="text-black dark:text-white">intégration esthétique</strong> des équipements, posés sur terrasse, façade ou local technique.
                   </p>
                 </div>
               </div>
@@ -624,7 +624,7 @@ export default function Cestas() {
             <div className="text-center mt-16">
               <Link
                 href="/contact"
-                className="inline-flex items-center px-8 py-4 bg-black dark:bg-black text-black dark:text-white font-semibold rounded-full hover:bg-gray-700 dark:hover:bg-gray-200 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-semibold rounded-full hover:bg-white dark:hover:bg-black transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 Demander un devis
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -641,10 +641,10 @@ export default function Cestas() {
         {}<div className="relative z-10 max-w-7xl mx-auto px-4">
           <SimpleWrapper>
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-light text-gray-900 dark:text-white mb-6">
+              <h2 className="text-4xl md:text-5xl font-light text-black dark:text-white mb-6">
                 Nos Solutions ClimGO
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              <p className="text-lg text-black dark:text-white max-w-3xl mx-auto">
                 Des solutions complètes et personnalisées pour votre confort thermique à Cestas
               </p>
             </div>
@@ -654,14 +654,14 @@ export default function Cestas() {
             {/* Carte 1 - Types de logements */}
             <SimpleWrapper>
               <motion.div 
-                className="group relative bg-white dark:bg-black rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-blue-500 dark:border-blue-600 min-h-[300px] md:min-h-[380px] lg:min-h-[400px] flex flex-col"
+                className="group relative bg-white dark:bg-black rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-gray-200 dark:border-gray-600 min-h-[300px] md:min-h-[380px] lg:min-h-[400px] flex flex-col"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 {/* Icône avec effet de brillance */}
                 <div className="relative mb-6">
-                  <div className="w-16 h-16 bg-blue-500 dark:bg-blue-600 rounded-2xl flex items-center justify-center mx-auto group-hover:bg-blue-600 dark:group-hover:bg-blue-500 transition-all duration-300 border-2 border-black dark:border-white">
-                    <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="w-16 h-16 bg-white dark:bg-black rounded-2xl flex items-center justify-center mx-auto group-hover:bg-white dark:group-hover:bg-black transition-all duration-300 border-2 border-black dark:border-white">
+                    <svg className="w-8 h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                     </svg>
                   </div>
@@ -669,7 +669,7 @@ export default function Cestas() {
                 </div>
 
                 <h3 className="text-2xl font-bold text-black dark:text-white mb-4 text-center">Types de logements desservis</h3>
-                <p className="text-black/90 dark:text-white/90 leading-relaxed text-center text-lg flex-grow">
+                <p className="text-black dark:text-white leading-relaxed text-center text-lg flex-grow">
                   Résidences étudiantes, maisons familiales, logements collectifs : nous maîtrisons les contraintes thermiques de tous les types d'habitat à Cestas.
                 </p>
 
@@ -685,28 +685,28 @@ export default function Cestas() {
             {/* Carte 2 - Processus d'installation */}
             <SimpleWrapper>
               <motion.div 
-                className="group relative bg-white dark:bg-black rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-orange-500 dark:border-orange-600 min-h-[300px] md:min-h-[380px] lg:min-h-[400px] flex flex-col"
+                className="group relative bg-white dark:bg-black rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-gray-200 dark:border-gray-600 min-h-[300px] md:min-h-[380px] lg:min-h-[400px] flex flex-col"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 {/* Icône avec effet de brillance */}
                 <div className="relative mb-6">
-                  <div className="w-16 h-16 bg-orange-500 dark:bg-orange-600 rounded-2xl flex items-center justify-center mx-auto group-hover:bg-orange-600 dark:group-hover:bg-orange-500 transition-all duration-300 border-2 border-black dark:border-white">
-                    <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="w-16 h-16 bg-white dark:bg-black rounded-2xl flex items-center justify-center mx-auto group-hover:bg-white dark:group-hover:bg-black transition-all duration-300 border-2 border-black dark:border-white">
+                    <svg className="w-8 h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.563.563 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
                     </svg>
                   </div>
                   
                 </div>
 
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 text-center">Processus d'installation</h3>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-center text-lg flex-grow">
+                <h3 className="text-2xl font-bold text-black dark:text-white mb-4 text-center">Processus d'installation</h3>
+                <p className="text-black dark:text-white leading-relaxed text-center text-lg flex-grow">
                   Un projet démarre toujours par une visite technique sur place. Nous établissons ensuite un devis précis, avant de programmer une installation rapide, propre et certifiée conforme.
                 </p>
 
                 {/* Badge de service */}
                 <div className="mt-6 text-center">
-                  <span className="inline-block bg-black dark:bg-black text-black dark:text-white text-sm font-medium px-4 py-2 rounded-full">
+                  <span className="inline-block bg-white dark:bg-black text-black dark:text-white text-sm font-medium px-4 py-2 rounded-full">
                     Devis gratuit
                   </span>
                 </div>
@@ -716,28 +716,28 @@ export default function Cestas() {
             {/* Carte 3 - Entretien & maintenance */}
             <SimpleWrapper>
               <motion.div 
-                className="group relative bg-white dark:bg-black rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-green-500 dark:border-green-600 min-h-[300px] md:min-h-[380px] lg:min-h-[400px] flex flex-col"
+                className="group relative bg-white dark:bg-black rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-gray-200 dark:border-gray-600 min-h-[300px] md:min-h-[380px] lg:min-h-[400px] flex flex-col"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 {/* Icône avec effet de brillance */}
                 <div className="relative mb-6">
-                  <div className="w-16 h-16 bg-green-500 dark:bg-green-600 rounded-2xl flex items-center justify-center mx-auto group-hover:bg-green-600 dark:group-hover:bg-green-500 transition-all duration-300 border-2 border-black dark:border-white">
-                    <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="w-16 h-16 bg-white dark:bg-black rounded-2xl flex items-center justify-center mx-auto group-hover:bg-white dark:group-hover:bg-black transition-all duration-300 border-2 border-black dark:border-white">
+                    <svg className="w-8 h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437 1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008Z" />
                     </svg>
                   </div>
                   
                 </div>
 
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 text-center">Entretien &amp; maintenance</h3>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-center text-lg flex-grow">
+                <h3 className="text-2xl font-bold text-black dark:text-white mb-4 text-center">Entretien &amp; maintenance</h3>
+                <p className="text-black dark:text-white leading-relaxed text-center text-lg flex-grow">
                   ClimGO assure un suivi complet de vos équipements, avec des interventions de maintenance planifiées pour préserver performances et économies d'énergie, année après année.
                 </p>
 
                 {/* Badge de service */}
                 <div className="mt-6 text-center">
-                  <span className="inline-block bg-black dark:bg-black text-black dark:text-white text-sm font-medium px-4 py-2 rounded-full">
+                  <span className="inline-block bg-white dark:bg-black text-black dark:text-white text-sm font-medium px-4 py-2 rounded-full">
                     Suivi personnalisé
                   </span>
                 </div>
@@ -747,14 +747,14 @@ export default function Cestas() {
             {/* Carte 4 - Aides financières */}
             <SimpleWrapper>
               <motion.div 
-                className="group relative bg-white dark:bg-black rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-purple-500 dark:border-purple-600 min-h-[300px] md:min-h-[380px] lg:min-h-[400px] flex flex-col"
+                className="group relative bg-white dark:bg-black rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-gray-200 dark:border-gray-600 min-h-[300px] md:min-h-[380px] lg:min-h-[400px] flex flex-col"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 {/* Icône avec effet de brillance */}
                 <div className="relative mb-6">
-                  <div className="w-16 h-16 bg-purple-500 dark:bg-purple-600 rounded-2xl flex items-center justify-center mx-auto group-hover:bg-purple-600 dark:group-hover:bg-purple-500 transition-all duration-300 border-2 border-black dark:border-white">
-                    <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="w-16 h-16 bg-white dark:bg-black rounded-2xl flex items-center justify-center mx-auto group-hover:bg-white dark:group-hover:bg-black transition-all duration-300 border-2 border-black dark:border-white">
+                    <svg className="w-8 h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0 0 12 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52 2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 0 1-2.031.352 5.988 5.988 0 0 1-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971Zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0 2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 0 1-2.031.352 5.989 5.989 0 0 1-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971Z" />
                     </svg>
                   </div>
@@ -762,7 +762,7 @@ export default function Cestas() {
                 </div>
 
                 <h3 className="text-2xl font-bold text-black dark:text-white mb-4 text-center">Aides financières à Cestas</h3>
-                <p className="text-black/90 dark:text-white/90 leading-relaxed text-center text-lg flex-grow">
+                <p className="text-black dark:text-white leading-relaxed text-center text-lg flex-grow">
                   MaPrimeRénov', CEE, Éco-PTZ… à Cestas, de nombreuses aides sont accessibles. Nous vous aidons à maximiser vos subventions sans vous perdre dans la paperasse.
                 </p>
 
@@ -779,12 +779,12 @@ export default function Cestas() {
           {/* Call-to-action en bas */}
           <SimpleWrapper>
             <div className="text-center mt-16">
-              <p className="text-gray-600 dark:text-gray-300 mb-6 text-lg">
+              <p className="text-black dark:text-white mb-6 text-lg">
                 Prêt à améliorer votre confort thermique ?
               </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center px-8 py-4 bg-black dark:bg-black text-black dark:text-white font-semibold rounded-full hover:bg-gray-700 dark:hover:bg-gray-200 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-semibold rounded-full hover:bg-white dark:hover:bg-black transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 Découvrir nos solutions
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

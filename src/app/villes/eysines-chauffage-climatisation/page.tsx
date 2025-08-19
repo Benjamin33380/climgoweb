@@ -76,7 +76,7 @@ export default function Eysines() {
     return (
       <div className="max-w-[240px] sm:max-w-xs md:max-w-sm relative">
         <div className="relative">
-          <Search className="absolute left-2 sm:left-3 top-1/2 transform -translate-y-1/2 text-gray-600 dark:text-gray-400 w-3 sm:w-4 h-3 sm:h-4" />
+          <Search className="absolute left-2 sm:left-3 top-1/2 transform -translate-y-1/2 text-black dark:text-white w-3 sm:w-4 h-3 sm:h-4" />
           <input
             type="text"
             placeholder="Rechercher votre ville..."
@@ -86,9 +86,9 @@ export default function Eysines() {
               setShowSearchResults(e.target.value.length > 0);
             }}
             onFocus={() => setShowSearchResults(searchQuery.length > 0)}
-            className="w-full bg-white/20 dark:bg-white/10 backdrop-blur-md border border-black/40 dark:border-white/30 rounded-lg px-6 sm:px-8 py-1.5 sm:py-2 text-black dark:text-white placeholder-gray-600 dark:placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent text-xs sm:text-sm"
+            className="w-full bg-white/20 dark:bg-white/10 backdrop-blur-md border border-black/40 dark:border-white/30 rounded-lg px-6 sm:px-8 py-1.5 sm:py-2 text-black dark:text-white placeholder-black dark:placeholder-white focus:outline-none focus:ring-2 focus:ring-gray-400 dark:focus:ring-gray-400 focus:border-transparent text-xs sm:text-sm"
           />
-          <MapPin className="absolute right-2 sm:right-3 top-1/2 transform -translate-y-1/2 text-gray-600 dark:text-gray-400 w-3 sm:w-4 h-3 sm:h-4" />
+          <MapPin className="absolute right-2 sm:right-3 top-1/2 transform -translate-y-1/2 text-black dark:text-white w-3 sm:w-4 h-3 sm:h-4" />
         </div>
         
         {/* Résultats de recherche */}
@@ -103,14 +103,14 @@ export default function Eysines() {
                     setSearchQuery('');
                     setShowSearchResults(false);
                   }}
-                  className="block w-full text-left px-4 py-3 hover:bg-blue-50 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center gap-2"
+                  className="block w-full text-left px-4 py-3 hover:bg-white dark:hover:bg-black text-black dark:text-white hover:text-black dark:hover:text-white transition-colors flex items-center gap-2"
                 >
-                  <MapPin className="w-4 h-4 text-gray-500 dark:text-gray-400" />
+                  <MapPin className="w-4 h-4 text-gray-500 dark:text-white" />
                   {city.name}
                 </Link>
               ))
             ) : (
-              <div className="px-4 py-3 text-gray-600 dark:text-gray-500">
+              <div className="px-4 py-3 text-black dark:text-gray-500">
                 Aucune ville trouvée
               </div>
             )}
@@ -183,7 +183,7 @@ export default function Eysines() {
             <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-light tracking-tight mb-3 sm:mb-4 md:mb-6 text-black dark:text-white break-words leading-tight">
               ClimGO à Eysines
             </h1>
-            <p className="text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl text-black/90 dark:text-white/90 mb-3 sm:mb-4 md:mb-6 lg:mb-8 leading-relaxed max-w-[280px] sm:max-w-sm md:max-w-lg lg:max-w-none whitespace-pre-line">
+            <p className="text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl text-black dark:text-white mb-3 sm:mb-4 md:mb-6 lg:mb-8 leading-relaxed max-w-[280px] sm:max-w-sm md:max-w-lg lg:max-w-none whitespace-pre-line">
               Entre tradition et modernité{'\n'}aux portes de Bordeaux
             </p>
 
@@ -196,7 +196,7 @@ export default function Eysines() {
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-full px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-2.5 md:py-3 lg:py-4 text-xs sm:text-sm md:text-base font-medium
-                           bg-black dark:bg-black text-black dark:text-white hover:bg-white/90 dark:hover:bg-black/90
+                           bg-white dark:bg-black text-black dark:text-white hover:bg-white/90 dark:hover:bg-black/90
                            border border-black/20 dark:border-white/20
                            transition-all duration-300 transform hover:scale-105 shadow-lg"
               >
@@ -206,7 +206,7 @@ export default function Eysines() {
               <a
                 href="#services"
                 className="inline-flex items-center justify-center rounded-full px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-2.5 md:py-3 lg:py-4 text-xs sm:text-sm md:text-base font-medium
-                           border-2 border-white/50 dark:border-white/30 text-black dark:text-white hover:bg-white/15 sm:hover:bg-black/15 dark:hover:bg-white/10 hover:border-white/70 sm:hover:border-black/70 dark:hover:border-white/50
+                           border-2 border-white/50 sm:border-black/50 dark:border-white/30 text-black dark:text-white sm:text-black dark:text-white hover:bg-white/15 sm:hover:bg-black/15 dark:hover:bg-white/10 hover:border-white/70 sm:hover:border-black/70 dark:hover:border-white/50
                            transition-all duration-300 backdrop-blur-sm"
               >
                 Découvrir
@@ -234,7 +234,7 @@ export default function Eysines() {
         
         {/* Titre centré */}
         <div className="relative z-10 container mx-auto px-4 mb-4">
-          <h2 className="text-2xl md:text-3xl font-medium text-gray-800 dark:text-white text-center">
+          <h2 className="text-2xl md:text-3xl font-medium text-gray-800 dark:text-black dark:text-white text-center">
             Eysines, entre tradition et modernité aux portes de Bordeaux
           </h2>
         </div>
@@ -257,32 +257,32 @@ export default function Eysines() {
             {/* Contenu centré dans la zone élargie */}
             <div className="max-w-4xl mx-auto">
               <div className="space-y-6 text-center pt-8 pb-20">
-                <p className="text-lg text-gray-800 dark:text-gray-200 leading-normal">
-                  <strong className="text-gray-900 dark:text-white">Eysines combine charme résidentiel et dynamisme périurbain</strong>. Un territoire idéal pour des solutions de chauffage et climatisation bien pensées.
+                <p className="text-lg text-gray-800 dark:text-white leading-normal">
+                  <strong className="text-black dark:text-white">Eysines combine charme résidentiel et dynamisme périurbain</strong>. Un territoire idéal pour des solutions de chauffage et climatisation bien pensées.
                 </p>
                 
-                <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
-                  ClimGO intervient à Eysines pour vous proposer des <strong className="text-gray-900 dark:text-white">installations thermiques adaptées à tous les types d'habitat</strong>.
+                <p className="text-base text-gray-800 dark:text-white leading-normal">
+                  ClimGO intervient à Eysines pour vous proposer des <strong className="text-black dark:text-white">installations thermiques adaptées à tous les types d'habitat</strong>.
                 </p>
                 
-                <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
-                  Située au <strong className="text-gray-900 dark:text-white">nord-ouest de Bordeaux</strong>, Eysines bénéficie d'un développement résidentiel continu tout en conservant ses espaces verts.
+                <p className="text-base text-gray-800 dark:text-white leading-normal">
+                  Située au <strong className="text-black dark:text-white">nord-ouest de Bordeaux</strong>, Eysines bénéficie d'un développement résidentiel continu tout en conservant ses espaces verts.
                 </p>
                 
-                <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
-                  Comme le <strong className="text-gray-900 dark:text-white">parc du Vigean ou le bois de Migelane</strong>. Sa proximité avec les boulevards et le tram D attire de nombreuses familles et jeunes actifs.
+                <p className="text-base text-gray-800 dark:text-white leading-normal">
+                  Comme le <strong className="text-black dark:text-white">parc du Vigean ou le bois de Migelane</strong>. Sa proximité avec les boulevards et le tram D attire de nombreuses familles et jeunes actifs.
                 </p>
                 
-                <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
-                  Les habitants profitent d'un <strong className="text-gray-900 dark:text-white">cadre de vie équilibré</strong>, avec des infrastructures modernes, des écoles réputées et un accès rapide vers Mérignac ou le centre de Bordeaux.
+                <p className="text-base text-gray-800 dark:text-white leading-normal">
+                  Les habitants profitent d'un <strong className="text-black dark:text-white">cadre de vie équilibré</strong>, avec des infrastructures modernes, des écoles réputées et un accès rapide vers Mérignac ou le centre de Bordeaux.
                 </p>
                 
-                <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
-                  Le <strong className="text-gray-900 dark:text-white">tissu pavillonnaire, ancien et récent</strong>, permet des interventions variées en chauffage et climatisation.
+                <p className="text-base text-gray-800 dark:text-white leading-normal">
+                  Le <strong className="text-black dark:text-white">tissu pavillonnaire, ancien et récent</strong>, permet des interventions variées en chauffage et climatisation.
                 </p>
                 
-                <p className="text-base text-gray-800 dark:text-gray-200 leading-normal">
-                  Profitez d'un <strong className="text-gray-900 dark:text-white">accompagnement sur mesure, d'un confort optimisé</strong> et d'un rendu discret et efficace.
+                <p className="text-base text-gray-800 dark:text-white leading-normal">
+                  Profitez d'un <strong className="text-black dark:text-white">accompagnement sur mesure, d'un confort optimisé</strong> et d'un rendu discret et efficace.
                 </p>
               </div>
             </div>
@@ -328,10 +328,10 @@ export default function Eysines() {
           <div className="relative z-10 max-w-6xl mx-auto px-4">
             {/* Titre avec animation */}
             <div className="text-center mb-20">
-              <h2 className="text-3xl md:text-4xl font-medium text-gray-900 dark:text-white mb-6">
+              <h2 className="text-3xl md:text-4xl font-medium text-black dark:text-white mb-6">
                 Nos interventions à Eysines
               </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl text-black dark:text-white max-w-3xl mx-auto leading-relaxed">
                 Du Bourg à Migron, nos équipes interviennent dans tous les quartiers d'Eysines pour des installations thermiques fiables et esthétiques.
               </p>
             </div>
@@ -367,8 +367,8 @@ export default function Eysines() {
                 </div>
                 
                 <div className="w-5/12 pr-8 text-right">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Charme Résidentiel</h3>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  <h3 className="text-2xl font-bold text-black dark:text-white mb-3">Charme Résidentiel</h3>
+                  <p className="text-black dark:text-white leading-relaxed">
                     Combine charme résidentiel et dynamisme périurbain. Territoire idéal pour des solutions de chauffage et climatisation bien pensées.
                   </p>
                 </div>
@@ -383,8 +383,8 @@ export default function Eysines() {
                 </div>
                 
                 <div className="w-5/12 ml-auto pl-8">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Développement Résidentiel</h3>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  <h3 className="text-2xl font-bold text-black dark:text-white mb-3">Développement Résidentiel</h3>
+                  <p className="text-black dark:text-white leading-relaxed">
                     Nord-ouest Bordeaux, développement résidentiel continu conservant espaces verts : parc du Vigean, bois de Migelane. Proximité boulevards et tram D.
                   </p>
                 </div>
@@ -399,8 +399,8 @@ export default function Eysines() {
                 </div>
                 
                 <div className="w-5/12 pr-8 text-right">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Cadre Équilibré</h3>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  <h3 className="text-2xl font-bold text-black dark:text-white mb-3">Cadre Équilibré</h3>
+                  <p className="text-black dark:text-white leading-relaxed">
                     Habitants profitent cadre vie équilibré, infrastructures modernes, écoles réputées et accès rapide vers Mérignac ou centre Bordeaux.
                   </p>
                 </div>
@@ -415,8 +415,8 @@ export default function Eysines() {
                 </div>
                 
                 <div className="w-5/12 ml-auto pl-8">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Interventions Variées</h3>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  <h3 className="text-2xl font-bold text-black dark:text-white mb-3">Interventions Variées</h3>
+                  <p className="text-black dark:text-white leading-relaxed">
                     Tissu pavillonnaire, ancien et récent, permet interventions variées chauffage climatisation. Accompagnement sur mesure, confort optimisé, rendu discret efficace.
                   </p>
                 </div>
@@ -427,7 +427,7 @@ export default function Eysines() {
             <div className="text-center mt-16">
               <Link
                 href="/contact"
-                className="inline-flex items-center px-8 py-4 bg-black dark:bg-black text-black dark:text-white font-semibold rounded-full hover:bg-gray-700 dark:hover:bg-gray-200 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-semibold rounded-full hover:bg-white dark:hover:bg-black transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 Demander un devis
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -454,25 +454,25 @@ export default function Eysines() {
                 <div className="flex space-x-8 min-w-max px-4" style={{ marginLeft: 'calc(50% - 144px)', marginRight: 'calc(50% - 144px)' }}>
                   {/* Bloc 1 */}
                   <div className="w-72 flex-shrink-0 bg-white dark:bg-black rounded-2xl md:shadow-lg p-6 border border-gray-100 dark:border-gray-700">
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                    <h3 className="text-2xl font-bold text-black dark:text-white mb-4">
                       Eysines, entre urbanisme et nature
                     </h3>
-                    <div className="space-y-3 text-gray-600 dark:text-gray-300 leading-relaxed">
+                    <div className="space-y-3 text-black dark:text-white leading-relaxed">
                       <p>
-                        Située au <strong className="text-gray-900 dark:text-white">nord-ouest de Bordeaux</strong>, Eysines bénéficie d'un développement résidentiel continu tout en conservant ses espaces verts.
+                        Située au <strong className="text-black dark:text-white">nord-ouest de Bordeaux</strong>, Eysines bénéficie d'un développement résidentiel continu tout en conservant ses espaces verts.
                       </p>
                       <p>
-                        Sa <strong className="text-gray-900 dark:text-white">proximité avec les boulevards et le tram D</strong> attire de nombreuses familles et jeunes actifs.
+                        Sa <strong className="text-black dark:text-white">proximité avec les boulevards et le tram D</strong> attire de nombreuses familles et jeunes actifs.
                       </p>
                     </div>
                   </div>
                   
                   {/* Bloc 2 */}
                   <div className="w-72 flex-shrink-0 bg-white dark:bg-black rounded-2xl md:shadow-lg p-6 border border-gray-100 dark:border-gray-700">
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                    <h3 className="text-2xl font-bold text-black dark:text-white mb-4">
                       Exemples concrets d'interventions à Eysines
                     </h3>
-                    <div className="space-y-3 text-gray-600 dark:text-gray-300 leading-relaxed">
+                    <div className="space-y-3 text-black dark:text-white leading-relaxed">
                       <div className="flex items-start space-x-3">
                         <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
                         <p><strong>Rue du Médoc :</strong> climatisation split inverter dans maison mitoyenne en rénovation énergétique.</p>
@@ -490,35 +490,35 @@ export default function Eysines() {
                   
                   {/* Bloc 3 */}
                   <div className="w-72 flex-shrink-0 bg-white dark:bg-black rounded-2xl md:shadow-lg p-6 border border-gray-100 dark:border-gray-700">
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                    <h3 className="text-2xl font-bold text-black dark:text-white mb-4">
                       Un savoir-faire pensé pour les logements eysinais
                     </h3>
-                    <div className="space-y-3 text-gray-600 dark:text-gray-300 leading-relaxed">
+                    <div className="space-y-3 text-black dark:text-white leading-relaxed">
                       <p>
-                        Le bâti à Eysines est très <strong className="text-gray-900 dark:text-white">hétérogène : pavillons des années 60, logements en bande, maisons neuves RT2012</strong>…
+                        Le bâti à Eysines est très <strong className="text-black dark:text-white">hétérogène : pavillons des années 60, logements en bande, maisons neuves RT2012</strong>…
                       </p>
                       <p>
-                        Nous tenons également compte des <strong className="text-gray-900 dark:text-white">contraintes de voisinage pour minimiser le bruit extérieur</strong>, tout en garantissant confort et performance.
+                        Nous tenons également compte des <strong className="text-black dark:text-white">contraintes de voisinage pour minimiser le bruit extérieur</strong>, tout en garantissant confort et performance.
                       </p>
                     </div>
                   </div>
                   
                   {/* Bloc 4 */}
                   <div className="w-72 flex-shrink-0 bg-white dark:bg-black rounded-2xl md:shadow-lg p-6 border border-gray-100 dark:border-gray-700">
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                    <h3 className="text-2xl font-bold text-black dark:text-white mb-4">
                       Vous avez un projet thermique à Eysines ?
                     </h3>
-                    <div className="space-y-3 text-gray-600 dark:text-gray-300 leading-relaxed">
+                    <div className="space-y-3 text-black dark:text-white leading-relaxed">
                       <p>
-                        Que vous soyez <strong className="text-gray-900 dark:text-white">propriétaire, en extension de maison ou en réhabilitation</strong>, ClimGO vous propose des solutions adaptées aux réalités d'Eysines.
+                        Que vous soyez <strong className="text-black dark:text-white">propriétaire, en extension de maison ou en réhabilitation</strong>, ClimGO vous propose des solutions adaptées aux réalités d'Eysines.
                       </p>
                       <p>
-                        Parlons-en et obtenez un <strong className="text-gray-900 dark:text-white">devis rapide et précis</strong>.
+                        Parlons-en et obtenez un <strong className="text-black dark:text-white">devis rapide et précis</strong>.
                       </p>
                       <div className="mt-4">
                         <a
                           href="/contact"
-                          className="inline-flex items-center px-6 py-3 bg-black dark:bg-black text-black dark:text-white font-semibold rounded-lg hover:bg-gray-700 dark:hover:bg-gray-200"
+                          className="inline-flex items-center px-6 py-3 bg-white dark:bg-black text-black dark:text-white font-semibold rounded-lg hover:bg-white dark:hover:bg-black"
                         >
                           Contactez-nous
                           <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -541,10 +541,10 @@ export default function Eysines() {
           <div className="relative z-10 max-w-6xl mx-auto px-4">
             {/* Titre avec animation */}
             <div className="text-center mb-20">
-              <h2 className="text-3xl md:text-4xl font-medium text-gray-900 dark:text-white mb-6">
+              <h2 className="text-3xl md:text-4xl font-medium text-black dark:text-white mb-6">
                 Pourquoi choisir ClimGO à Eysines ?
               </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl text-black dark:text-white max-w-3xl mx-auto leading-relaxed">
                 Choisir ClimGO à Eysines, c'est s'assurer d'un service de proximité avec une parfaite connaissance des enjeux locaux.
               </p>
             </div>
@@ -552,70 +552,70 @@ export default function Eysines() {
             {/* Pourquoi choisir ClimGO à Eysines - Version personnalisée */}
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6 lg:gap-8 max-w-6xl mx-auto mb-8 md:mb-12 lg:mb-16">
               {/* Service Proximité */}
-              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#0ea5e9]/50 dark:hover:border-[#38bdf8] min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
+              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-black dark:hover:border-white min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
                 <div className="text-center flex flex-col h-full">
-                  <div className="bg-blue-500 dark:bg-blue-600 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-12 h-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="bg-black dark:bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-12 h-12 text-white dark:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-[#0ea5e9] dark:group-hover:text-[#38bdf8] transition-colors">
+                  <h3 className="text-lg sm:text-xl font-semibold text-black dark:text-white mb-3 sm:mb-4 group-hover:text-black dark:group-hover:text-white transition-colors">
                     Service Proximité
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
-                    S'assurer d'un <strong className="text-white">service de proximité avec une parfaite connaissance</strong> des enjeux locaux.
+                  <p className="text-black dark:text-white text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
+                    S'assurer d'un <strong className="text-black dark:text-white">service de proximité avec une parfaite connaissance</strong> des enjeux locaux.
                   </p>
                 </div>
               </div>
 
               {/* Intégration Harmonieuse */}
-              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#8b5cf6]/50 dark:hover:border-[#a78bfa] min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
+              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-black dark:hover:border-white min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
                 <div className="text-center flex flex-col h-full">
-                  <div className="bg-purple-500 dark:bg-purple-600 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-12 h-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="bg-black dark:bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-12 h-12 text-white dark:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-[#8b5cf6] dark:group-hover:text-[#a78bfa] transition-colors">
+                  <h3 className="text-lg sm:text-xl font-semibold text-black dark:text-white mb-3 sm:mb-4 group-hover:text-black dark:group-hover:text-white transition-colors">
                     Intégration Harmonieuse
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
-                    Nos équipements <strong className="text-white">s'intègrent harmonieusement dans le paysage résidentiel eysinais</strong>.
+                  <p className="text-black dark:text-white text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
+                    Nos équipements <strong className="text-black dark:text-white">s'intègrent harmonieusement dans le paysage résidentiel eysinais</strong>.
                   </p>
                 </div>
               </div>
 
               {/* Accompagnement Complet */}
-              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#10b981]/50 dark:hover:border-[#34d399] min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
+              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-black dark:hover:border-white min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
                 <div className="text-center flex flex-col h-full">
-                  <div className="bg-green-500 dark:bg-green-600 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-12 h-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="bg-black dark:bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-12 h-12 text-white dark:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-[#10b981] dark:group-hover:text-[#34d399] transition-colors">
+                  <h3 className="text-lg sm:text-xl font-semibold text-black dark:text-white mb-3 sm:mb-4 group-hover:text-black dark:group-hover:text-white transition-colors">
                     Accompagnement Complet
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
-                    Nous facilitons chaque étape, <strong className="text-white">des conseils jusqu'aux aides financières</strong>, pour un projet serein.
+                  <p className="text-black dark:text-white text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
+                    Nous facilitons chaque étape, <strong className="text-black dark:text-white">des conseils jusqu'aux aides financières</strong>, pour un projet serein.
                   </p>
                 </div>
               </div>
 
               {/* Adaptation Logements */}
-              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#f97316]/50 dark:hover:border-[#fb923c] min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
+              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-black dark:hover:border-white min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
                 <div className="text-center flex flex-col h-full">
-                  <div className="bg-orange-500 dark:bg-orange-600 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-12 h-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="bg-black dark:bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-12 h-12 text-white dark:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-[#f97316] dark:group-hover:text-[#fb923c] transition-colors">
+                  <h3 className="text-lg sm:text-xl font-semibold text-black dark:text-white mb-3 sm:mb-4 group-hover:text-black dark:group-hover:text-white transition-colors">
                     Adaptation Logements
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
-                    Que vous soyez en <strong className="text-white">maison individuelle ou en résidence à Eysines</strong>, nos solutions s'adaptent parfaitement à votre habitat.
+                  <p className="text-black dark:text-white text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
+                    Que vous soyez en <strong className="text-black dark:text-white">maison individuelle ou en résidence à Eysines</strong>, nos solutions s'adaptent parfaitement à votre habitat.
                   </p>
                 </div>
               </div>
@@ -625,7 +625,7 @@ export default function Eysines() {
             <div className="text-center mt-16">
               <Link
                 href="/contact"
-                className="inline-flex items-center px-8 py-4 bg-black dark:bg-black text-black dark:text-white font-semibold rounded-full hover:bg-gray-700 dark:hover:bg-gray-200 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-semibold rounded-full hover:bg-white dark:hover:bg-black transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 Demander un devis
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -644,10 +644,10 @@ export default function Eysines() {
         <div className="relative z-10 max-w-7xl mx-auto px-4">
           <SimpleWrapper>
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-light text-gray-900 dark:text-white mb-6">
+              <h2 className="text-4xl md:text-5xl font-light text-black dark:text-white mb-6">
                 Nos Solutions ClimGO
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              <p className="text-lg text-black dark:text-white max-w-3xl mx-auto">
                 Des solutions complètes et personnalisées pour votre confort thermique à Eysines
               </p>
             </div>
@@ -657,14 +657,14 @@ export default function Eysines() {
             {/* Carte 1 - Types de logements */}
             <SimpleWrapper>
               <motion.div 
-                className="group relative bg-white dark:bg-black rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-blue-500 dark:border-blue-600 min-h-[300px] md:min-h-[380px] lg:min-h-[400px] flex flex-col"
+                className="group relative bg-white dark:bg-black rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-gray-200 dark:border-gray-600 min-h-[300px] md:min-h-[380px] lg:min-h-[400px] flex flex-col"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 {/* Icône avec effet de brillance */}
                 <div className="relative mb-6">
-                  <div className="w-16 h-16 bg-blue-500 dark:bg-blue-600 rounded-2xl flex items-center justify-center mx-auto group-hover:bg-blue-600 dark:group-hover:bg-blue-500 transition-all duration-300 border-2 border-black dark:border-white">
-                    <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="w-16 h-16 bg-white dark:bg-black rounded-2xl flex items-center justify-center mx-auto group-hover:bg-white dark:group-hover:bg-black transition-all duration-300 border-2 border-black dark:border-white">
+                    <svg className="w-8 h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                     </svg>
                   </div>
@@ -672,7 +672,7 @@ export default function Eysines() {
                 </div>
 
                 <h3 className="text-2xl font-bold text-black dark:text-white mb-4 text-center">Types de logements desservis</h3>
-                <p className="text-black/90 dark:text-white/90 leading-relaxed text-center text-lg flex-grow">
+                <p className="text-black dark:text-white leading-relaxed text-center text-lg flex-grow">
                   Que vous soyez en maison individuelle ou en résidence à Eysines, nos solutions s'adaptent parfaitement à votre habitat.
                 </p>
 
@@ -688,28 +688,28 @@ export default function Eysines() {
             {/* Carte 2 - Processus d'installation */}
             <SimpleWrapper>
               <motion.div 
-                className="group relative bg-white dark:bg-black rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-orange-500 dark:border-orange-600 min-h-[300px] md:min-h-[380px] lg:min-h-[400px] flex flex-col"
+                className="group relative bg-white dark:bg-black rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-gray-200 dark:border-gray-600 min-h-[300px] md:min-h-[380px] lg:min-h-[400px] flex flex-col"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 {/* Icône avec effet de brillance */}
                 <div className="relative mb-6">
-                  <div className="w-16 h-16 bg-orange-500 dark:bg-orange-600 rounded-2xl flex items-center justify-center mx-auto group-hover:bg-orange-600 dark:group-hover:bg-orange-500 transition-all duration-300 border-2 border-black dark:border-white">
-                    <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="w-16 h-16 bg-white dark:bg-black rounded-2xl flex items-center justify-center mx-auto group-hover:bg-white dark:group-hover:bg-black transition-all duration-300 border-2 border-black dark:border-white">
+                    <svg className="w-8 h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.563.563 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
                     </svg>
                   </div>
                   
                 </div>
 
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 text-center">Processus d'installation</h3>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-center text-lg flex-grow">
+                <h3 className="text-2xl font-bold text-black dark:text-white mb-4 text-center">Processus d'installation</h3>
+                <p className="text-black dark:text-white leading-relaxed text-center text-lg flex-grow">
                   Un projet démarre toujours par une visite technique sur place. Nous établissons ensuite un devis précis, avant de programmer une installation rapide, propre et certifiée conforme.
                 </p>
 
                 {/* Badge de service */}
                 <div className="mt-6 text-center">
-                  <span className="inline-block bg-black dark:bg-black text-black dark:text-white text-sm font-medium px-4 py-2 rounded-full">
+                  <span className="inline-block bg-white dark:bg-black text-black dark:text-white text-sm font-medium px-4 py-2 rounded-full">
                     Devis gratuit
                   </span>
                 </div>
@@ -719,28 +719,28 @@ export default function Eysines() {
             {/* Carte 3 - Entretien & maintenance */}
             <SimpleWrapper>
               <motion.div 
-                className="group relative bg-white dark:bg-black rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-green-500 dark:border-green-600 min-h-[300px] md:min-h-[380px] lg:min-h-[400px] flex flex-col"
+                className="group relative bg-white dark:bg-black rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-gray-200 dark:border-gray-600 min-h-[300px] md:min-h-[380px] lg:min-h-[400px] flex flex-col"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 {/* Icône avec effet de brillance */}
                 <div className="relative mb-6">
-                  <div className="w-16 h-16 bg-green-500 dark:bg-green-600 rounded-2xl flex items-center justify-center mx-auto group-hover:bg-green-600 dark:group-hover:bg-green-500 transition-all duration-300 border-2 border-black dark:border-white">
-                    <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="w-16 h-16 bg-white dark:bg-black rounded-2xl flex items-center justify-center mx-auto group-hover:bg-white dark:group-hover:bg-black transition-all duration-300 border-2 border-black dark:border-white">
+                    <svg className="w-8 h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437 1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008Z" />
                     </svg>
                   </div>
                   
                 </div>
 
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 text-center">Entretien &amp; maintenance</h3>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-center text-lg flex-grow">
+                <h3 className="text-2xl font-bold text-black dark:text-white mb-4 text-center">Entretien &amp; maintenance</h3>
+                <p className="text-black dark:text-white leading-relaxed text-center text-lg flex-grow">
                   ClimGO assure un suivi complet de vos équipements, avec des interventions de maintenance planifiées pour préserver performances et économies d'énergie, année après année.
                 </p>
 
                 {/* Badge de service */}
                 <div className="mt-6 text-center">
-                  <span className="inline-block bg-black dark:bg-black text-black dark:text-white text-sm font-medium px-4 py-2 rounded-full">
+                  <span className="inline-block bg-white dark:bg-black text-black dark:text-white text-sm font-medium px-4 py-2 rounded-full">
                     Suivi personnalisé
                   </span>
                 </div>
@@ -750,14 +750,14 @@ export default function Eysines() {
             {/* Carte 4 - Aides financières */}
             <SimpleWrapper>
               <motion.div 
-                className="group relative bg-white dark:bg-black rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-purple-500 dark:border-purple-600 min-h-[300px] md:min-h-[380px] lg:min-h-[400px] flex flex-col"
+                className="group relative bg-white dark:bg-black rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-gray-200 dark:border-gray-600 min-h-[300px] md:min-h-[380px] lg:min-h-[400px] flex flex-col"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 {/* Icône avec effet de brillance */}
                 <div className="relative mb-6">
-                  <div className="w-16 h-16 bg-purple-500 dark:bg-purple-600 rounded-2xl flex items-center justify-center mx-auto group-hover:bg-purple-600 dark:group-hover:bg-purple-500 transition-all duration-300 border-2 border-black dark:border-white">
-                    <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="w-16 h-16 bg-white dark:bg-black rounded-2xl flex items-center justify-center mx-auto group-hover:bg-white dark:group-hover:bg-black transition-all duration-300 border-2 border-black dark:border-white">
+                    <svg className="w-8 h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0 0 12 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52 2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 0 1-2.031.352 5.988 5.988 0 0 1-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971Zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0 2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 0 1-2.031.352 5.989 5.989 0 0 1-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971Z" />
                     </svg>
                   </div>
@@ -765,7 +765,7 @@ export default function Eysines() {
                 </div>
 
                 <h3 className="text-2xl font-bold text-black dark:text-white mb-4 text-center">Aides financières à Eysines</h3>
-                <p className="text-black/90 dark:text-white/90 leading-relaxed text-center text-lg flex-grow">
+                <p className="text-black dark:text-white leading-relaxed text-center text-lg flex-grow">
                   MaPrimeRénov', CEE, Éco-PTZ… ClimGO vous accompagne dans vos démarches pour bénéficier des aides disponibles à Eysines.
                 </p>
 
@@ -782,12 +782,12 @@ export default function Eysines() {
           {/* Call-to-action en bas */}
           <SimpleWrapper>
             <div className="text-center mt-16">
-              <p className="text-gray-600 dark:text-gray-300 mb-6 text-lg">
+              <p className="text-black dark:text-white mb-6 text-lg">
                 Prêt à améliorer votre confort thermique ?
               </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center px-8 py-4 bg-black dark:bg-black text-black dark:text-white font-semibold rounded-full hover:bg-gray-700 dark:hover:bg-gray-200 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-semibold rounded-full hover:bg-white dark:hover:bg-black transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 Découvrir nos solutions
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
