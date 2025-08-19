@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from 'framer-motion';
-import { Search, MapPin } from "lucide-react";
+import { Search, MapPin, Euro } from "lucide-react";
 import { useState, useEffect } from "react";
 import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
@@ -271,47 +271,72 @@ export default function HomePage() {
               msOverflowStyle: 'none',
             }}
           >
-            {/* Contenu centré dans la zone élargie */}
+                        {/* Contenu centré dans la zone élargie */}
             <div className="max-w-3xl xs:max-w-4xl sm:max-w-4xl mx-auto">
-              <div className="space-y-3 xs:space-y-4 sm:space-y-4 text-center pt-4 xs:pt-6 sm:pt-8 pb-12 xs:pb-16 sm:pb-20">
-                <p className="text-sm xs:text-base sm:text-lg md:text-lg text-gray-800 dark:text-gray-200 leading-normal px-2">
-                  Imaginez rentrer chez vous en plein été, ouvrir la porte… et sentir une vague de fraîcheur vous envelopper.  
-                  Ou, en plein hiver, poser vos mains sur un radiateur tiède pendant que dehors la pluie tombe sans relâche.  
-                </p>
+              <div className="space-y-6 xs:space-y-8 sm:space-y-8 text-center pt-4 xs:pt-6 sm:pt-8 pb-12 xs:pb-16 sm:pb-20">
+                
+                {/* Introduction avec plus de taille */}
+                <div className="space-y-4">
+                  <p className="text-base xs:text-lg sm:text-xl md:text-xl text-gray-800 dark:text-gray-200 leading-relaxed px-2 font-medium">
+                    Imaginez rentrer chez vous en plein été, ouvrir la porte… et sentir une vague de fraîcheur vous envelopper. Ou, en plein hiver, poser vos mains sur un radiateur tiède pendant que dehors la pluie tombe sans relâche.
+                  </p>
 
-                <p className="text-xs xs:text-sm sm:text-base md:text-base text-gray-800 dark:text-gray-200 leading-normal px-2">
-                  C'est ça, l'effet <strong>ClimGO</strong> : des installations pensées pour que votre maison devienne un cocon où il fait bon vivre, 
-                  été comme hiver.  
-                </p>
-
-                <div className="my-4 xs:my-5 sm:my-6">
-                  <h3 className="text-base xs:text-lg sm:text-xl md:text-xl font-semibold text-gray-900 dark:text-white mb-2 xs:mb-3 sm:mb-3">Ce qu'on vous apporte</h3>
-                  <p className="text-xs xs:text-sm sm:text-base md:text-base text-gray-800 dark:text-gray-200 leading-normal px-2">
-                    Plus qu'un service technique, on installe du <strong>confort durable</strong>, de la <strong>tranquillité</strong> et de <strong>vraies économies</strong>.  
-                    Chaque intervention est calibrée pour que vous oubliiez vos appareils… sauf quand vous profitez de leurs bienfaits.
+                  <p className="text-sm xs:text-base sm:text-lg md:text-lg text-gray-800 dark:text-gray-200 leading-relaxed px-2">
+                    C'est ça, l'effet <strong>ClimGO</strong> : des installations pensées pour que votre maison devienne un cocon où il fait bon vivre, été comme hiver.
                   </p>
                 </div>
 
-                <div className="my-4 xs:my-5 sm:my-6">
-                  <h3 className="text-base xs:text-lg sm:text-xl md:text-xl font-semibold text-gray-900 dark:text-white mb-2 xs:mb-3 sm:mb-3">Avant / Après</h3>
-                  <p className="text-xs xs:text-sm sm:text-base md:text-base text-gray-800 dark:text-gray-200 leading-normal px-2">
-                    Avant ClimGO : factures qui grimpent, appareils bruyants, confort inégal.  
-                    Après ClimGO : une maison silencieuse, agréable, avec des économies visibles dès les premiers mois.  
+                {/* Chapitre 1 avec ligne gradient */}
+                <div className="my-8 xs:my-10 sm:my-12">
+                  <div className="flex items-center justify-center mb-4">
+                    <div className="h-px bg-gradient-to-r from-transparent via-orange-500 to-transparent w-24"></div>
+                    <h3 className="text-lg xs:text-xl sm:text-2xl md:text-2xl font-semibold text-gray-900 dark:text-white mx-6 bg-gradient-to-r from-orange-500 to-blue-600 bg-clip-text text-transparent">
+                      Ce qu'on vous apporte
+                    </h3>
+                    <div className="h-px bg-gradient-to-r from-transparent via-orange-500 to-transparent w-24"></div>
+                  </div>
+                  <p className="text-sm xs:text-base sm:text-lg md:text-lg text-gray-800 dark:text-gray-200 leading-relaxed px-2">
+                    Plus qu'un service technique, on installe du <strong>confort durable</strong>, de la <strong>tranquillité</strong> et de <strong>vraies économies</strong>. Chaque intervention est calibrée pour que vous oubliiez vos appareils… sauf quand vous profitez de leurs bienfaits.
                   </p>
                 </div>
 
-                <div className="my-4 xs:my-5 sm:my-6">
-                  <h3 className="text-base xs:text-lg sm:text-xl md:text-xl font-semibold text-gray-900 dark:text-white mb-2 xs:mb-3 sm:mb-3">Notre promesse</h3>
-                  <p className="text-xs xs:text-sm sm:text-base md:text-base text-gray-800 dark:text-gray-200 leading-normal px-2">
-                    Intervenir vite, travailler propre, respecter vos délais et vous laisser avec un confort qui dure.  
-                    Ni blabla, ni déco : juste du concret, garanti et certifié.  
+                {/* Chapitre 2 avec ligne gradient */}
+                <div className="my-8 xs:my-10 sm:my-12">
+                  <div className="flex items-center justify-center mb-4">
+                    <div className="h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent w-24"></div>
+                    <h3 className="text-lg xs:text-xl sm:text-2xl md:text-2xl font-semibold text-gray-900 dark:text-white mx-6 bg-gradient-to-r from-blue-600 to-orange-500 bg-clip-text text-transparent">
+                      Avant / Après
+                    </h3>
+                    <div className="h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent w-24"></div>
+                  </div>
+                  <p className="text-sm xs:text-base sm:text-lg md:text-lg text-gray-800 dark:text-gray-200 leading-relaxed px-2">
+                    Avant ClimGO : factures qui grimpent, appareils bruyants, confort inégal. Après ClimGO : une maison silencieuse, agréable, avec des économies visibles dès les premiers mois.
                   </p>
                 </div>
 
-                <p className="text-lg text-gray-800 dark:text-gray-200 leading-normal font-medium mt-6">
-                  Avec <strong>ClimGO</strong>, vous investissez dans plus qu'un équipement : vous investissez dans votre quotidien.  
-                  <br />Et si on commençait à transformer le vôtre ?  
-                </p>
+                {/* Chapitre 3 avec ligne gradient */}
+                <div className="my-8 xs:my-10 sm:my-12">
+                  <div className="flex items-center justify-center mb-4">
+                    <div className="h-px bg-gradient-to-r from-transparent via-orange-600 to-transparent w-24"></div>
+                    <h3 className="text-lg xs:text-xl sm:text-2xl md:text-2xl font-semibold text-gray-900 dark:text-white mx-6 bg-gradient-to-r from-orange-600 to-blue-700 bg-clip-text text-transparent">
+                      Notre promesse
+                    </h3>
+                    <div className="h-px bg-gradient-to-r from-transparent via-orange-600 to-transparent w-24"></div>
+                  </div>
+                  <p className="text-sm xs:text-base sm:text-lg md:text-lg text-gray-800 dark:text-gray-200 leading-relaxed px-2">
+                    Intervenir vite, travailler propre, respecter vos délais et vous laisser avec un confort qui dure. Ni blabla, ni déco : juste du concret, garanti et certifié.
+                  </p>
+                </div>
+
+                {/* Conclusion avec plus d'impact */}
+                <div className="mt-10 xs:mt-12 sm:mt-14 space-y-3">
+                  <p className="text-base xs:text-lg sm:text-xl md:text-xl text-gray-800 dark:text-gray-200 leading-relaxed font-semibold px-2">
+                    Avec <strong className="bg-gradient-to-r from-orange-500 to-blue-600 bg-clip-text text-transparent">ClimGO</strong>, vous investissez dans plus qu'un équipement : vous investissez dans votre quotidien.
+                  </p>
+                  <p className="text-sm xs:text-base sm:text-lg md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed px-2 italic">
+                    Et si on commençait à transformer le vôtre ?
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -382,8 +407,8 @@ export default function HomePage() {
               {/* Étape 1 */}
               <div className="relative flex items-center mb-16">
                 {/* Pastille */}
-                <div className="absolute left-1/2 -translate-x-1/2 w-16 h-16 rounded-full shadow-lg bg-white dark:bg-black flex items-center justify-center z-10 ring-1 ring-black/5 dark:ring-white/10">
-                  <svg className="w-7 h-7 text-sky-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8}>
+                <div className="absolute left-1/2 -translate-x-1/2 w-16 h-16 rounded-full shadow-lg bg-gradient-to-br from-orange-500 to-blue-600 flex items-center justify-center z-10">
+                  <svg className="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8}>
                     <path d="M9 12l2 2 4-4" strokeLinecap="round" strokeLinejoin="round"/>
                     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
                     <path d="M14 2v6h6" />
@@ -404,9 +429,10 @@ export default function HomePage() {
               {/* Étape 2 */}
               <div className="relative flex items-center mb-16">
                 <div className="hidden md:block w-5/12" />
-                <div className="absolute left-1/2 -translate-x-1/2 w-16 h-16 rounded-full shadow-lg bg-white dark:bg-black flex items-center justify-center z-10 ring-1 ring-black/5 dark:ring-white/10">
-                  <svg className="w-7 h-7 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8}>
-                    <path d="M14.7 6.3a4 4 0 1 0-5.66 5.66L3 18l3 3 6.04-6.04a4 4 0 0 0 5.66-5.66z" strokeLinecap="round" strokeLinejoin="round"/>
+                <div className="absolute left-1/2 -translate-x-1/2 w-16 h-16 rounded-full shadow-lg bg-gradient-to-br from-blue-600 to-orange-500 flex items-center justify-center z-10">
+                  <svg className="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8}>
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M9 12l2 2 4-4" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
                 <div className="w-full md:w-5/12 md:ml-auto md:pl-8">
@@ -430,11 +456,12 @@ export default function HomePage() {
                     pour un confort qui dure.
                   </p>
                 </div>
-                <div className="absolute left-1/2 -translate-x-1/2 w-16 h-16 rounded-full shadow-lg bg-white dark:bg-black flex items-center justify-center z-10 ring-1 ring-black/5 dark:ring-white/10">
-                  <svg className="w-7 h-7 text-emerald-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8}>
-                    <circle cx="12" cy="12" r="9"/>
-                    <path d="M9 10h.01M15 10h.01" strokeLinecap="round"/>
-                    <path d="M12 17a5 5 0 0 0 5-5H7a5 5 0 0 0 5 5z" strokeLinecap="round" strokeLinejoin="round"/>
+                <div className="absolute left-1/2 -translate-x-1/2 w-16 h-16 rounded-full shadow-lg bg-gradient-to-br from-orange-600 to-blue-700 flex items-center justify-center z-10">
+                  <svg className="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8}>
+                    <path d="M8 14s1.5 2 4 2 4-2 4-2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M9 9h.01" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M15 9h.01" strokeLinecap="round" strokeLinejoin="round"/>
+                    <circle cx="12" cy="12" r="10" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
                 <div className="hidden md:block w-5/12" />
@@ -443,11 +470,8 @@ export default function HomePage() {
               {/* Étape 4 */}
               <div className="relative flex items-center">
                 <div className="hidden md:block w-5/12" />
-                <div className="absolute left-1/2 -translate-x-1/2 w-16 h-16 rounded-full shadow-lg bg-white dark:bg-black flex items-center justify-center z-10 ring-1 ring-black/5 dark:ring-white/10">
-                  <svg className="w-7 h-7 text-yellow-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8}>
-                    <circle cx="12" cy="12" r="9"/>
-                    <path d="M8 12h8M12 8v8" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
+                <div className="absolute left-1/2 -translate-x-1/2 w-16 h-16 rounded-full shadow-lg bg-gradient-to-br from-blue-700 to-orange-600 flex items-center justify-center z-10">
+                  <Euro className="w-7 h-7 text-white" />
                 </div>
                 <div className="w-full md:w-5/12 md:ml-auto md:pl-8">
                   <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2">
