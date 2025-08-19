@@ -49,16 +49,30 @@ const services: { title: string; href: string; description: string; icon: React.
   },
 ]
 
-const zones: { title: string; href: string; description: string }[] = [
+const zones: { title: string; href: string; description: string; count?: string }[] = [
   {
-    title: "Gironde",
+    title: "Bassin d'Arcachon",
     href: "/zones-interventions",
-    description: "Installation et maintenance dans toute la Gironde et ses communes.",
+    description: "Arcachon, La Teste-de-Buch, Gujan-Mestras, Le Teich, Andernos...",
+    count: "15 villes",
   },
   {
-    title: "Landes",
+    title: "Bordeaux Métropole",
+    href: "/zones-interventions", 
+    description: "Bordeaux, Mérignac, Pessac, Talence, Bègles, Bruges...",
+    count: "18 villes",
+  },
+  {
+    title: "Pays des Graves",
     href: "/zones-interventions",
-    description: "Service dans tout le département des Landes.",
+    description: "Gradignan, Cestas, Léognan, Martillac, La Brède...",
+    count: "8 villes",
+  },
+  {
+    title: "Nord Landes",
+    href: "/zones-interventions",
+    description: "Mimizan, Biscarrosse, Parentis-en-Born, Sanguinet...",
+    count: "7 villes",
   },
 ]
 
@@ -152,17 +166,46 @@ export function NewHeader() {
             <NavigationMenuItem>
               <NavigationMenuTrigger>Zones d'intervention</NavigationMenuTrigger>
               <NavigationMenuContent>
-                <ul className="grid w-[300px] gap-3 p-4">
-                  {zones.map((zone) => (
-                    <ListItem
-                      key={zone.title}
-                      title={zone.title}
-                      href={zone.href}
-                    >
-                      {zone.description}
-                    </ListItem>
-                  ))}
-                </ul>
+                <div className="w-[400px] p-6">
+                  <div className="mb-4">
+                    <h3 className="text-lg font-semibold mb-2">+50 communes desservies</h3>
+                    <p className="text-sm text-muted-foreground">Gironde et Nord des Landes</p>
+                  </div>
+                  <ul className="grid gap-3">
+                    {zones.map((zone) => (
+                      <li key={zone.title}>
+                        <NavigationMenuLink asChild>
+                          <Link 
+                            href={zone.href}
+                            className="block select-none space-y-2 rounded-lg p-4 leading-none no-underline outline-none transition-all hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="flex items-center justify-between">
+                              <div className="text-sm font-medium leading-none">
+                                {zone.title}
+                              </div>
+                              <span className="text-xs text-muted-foreground font-medium">
+                                {zone.count}
+                              </span>
+                            </div>
+                            <p className="text-xs leading-snug text-muted-foreground">
+                              {zone.description}
+                            </p>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-4 pt-4 border-t">
+                    <NavigationMenuLink asChild>
+                      <Link 
+                        href="/zones-interventions"
+                        className="flex items-center justify-center w-full p-3 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
+                      >
+                        Voir toutes les communes →
+                      </Link>
+                    </NavigationMenuLink>
+                  </div>
+                </div>
               </NavigationMenuContent>
             </NavigationMenuItem>
 
@@ -332,20 +375,33 @@ export function NewHeader() {
             
             {/* Zones d'intervention */}
             <div className="space-y-2 pt-4 border-t">
-              <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Zones d'intervention</h3>
+              <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">+50 communes desservies</h3>
+              <p className="text-xs text-muted-foreground mb-3">Gironde et Nord des Landes</p>
               {zones.map((zone) => (
                 <Link
                   key={zone.title}
                   href={zone.href}
-                  className="block p-3 rounded-md hover:bg-accent transition-colors min-h-[48px] flex items-center"
+                  className="block p-3 rounded-lg hover:bg-accent transition-colors min-h-[48px]"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  <div>
-                    <span className="font-medium text-base">{zone.title}</span>
-                    <p className="text-xs text-muted-foreground mt-1 line-clamp-1">{zone.description}</p>
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="font-medium text-base">
+                      {zone.title}
+                    </span>
+                    <span className="text-xs text-muted-foreground font-medium">
+                      {zone.count}
+                    </span>
                   </div>
+                  <p className="text-xs text-muted-foreground line-clamp-1">{zone.description}</p>
                 </Link>
               ))}
+              <Link
+                href="/zones-interventions"
+                className="block p-3 rounded-md hover:bg-accent transition-colors text-center text-primary font-medium text-sm"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Voir toutes les communes →
+              </Link>
             </div>
 
             {/* Notre entreprise */}

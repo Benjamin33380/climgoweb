@@ -140,7 +140,7 @@ export default function HomePage() {
             <motion.img
               src={heroImage}
               alt="ClimGO - Installation climatisation"
-              className="h-full w-full object-contain"
+              className="h-full w-full object-cover object-center"
               initial={{ scale: 1.2 }}
               animate={{ scale: 1 }}
               transition={{ duration: 15, ease: "easeInOut", repeat: Infinity, repeatType: "reverse" }}
@@ -157,7 +157,7 @@ export default function HomePage() {
             <motion.img
               src={heroImage}
               alt="ClimGO - Installation climatisation"
-              className="h-full w-full object-contain"
+              className="h-full w-full object-cover object-center"
               initial={{ scale: 1.2 }}
               animate={{ scale: 1 }}
               transition={{ duration: 15, ease: "easeInOut", repeat: Infinity, repeatType: "reverse" }}
