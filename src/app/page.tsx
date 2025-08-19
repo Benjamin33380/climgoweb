@@ -349,140 +349,136 @@ export default function HomePage() {
       {/* Section Services */}
       <Services />
 
-      {/* Section Nos Engagements - Timeline verticale élégante */}
+      {/* Section Nos Engagements */}
       <section className="relative py-24 overflow-hidden bg-white dark:bg-black">
         <SimpleWrapper>
           <div className="relative z-10 max-w-6xl mx-auto px-4">
-            {/* Titre avec animation */}
+            {/* En-tête */}
             <div className="text-center mb-20">
               <h2 className="text-xl xs:text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-gray-900 dark:text-white mb-6">
-                Notre engagement
+                Nos engagements, votre tranquillité
               </h2>
               <p className="text-sm xs:text-base sm:text-lg md:text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                De l'étude à la maintenance, nous vous accompagnons à chaque étape de votre projet avec professionnalisme et transparence.
+                De l'étude aux aides, des travaux au suivi, on s'occupe de tout. Vous, vous profitez.
               </p>
             </div>
-            
-            {/* Timeline verticale */}
+
+            {/* Timeline */}
             <div className="relative">
-              {/* Ligne de connexion */}
-              <div className="absolute left-1/2 transform -translate-x-px w-0.5 h-full bg-gray-300 dark:bg-gray-600" />
-              
-              {/* Effet de lumière défilante */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-16 rounded-full z-5 dark:block hidden" 
-                   style={{
-                     animation: 'lightMove 4s infinite linear',
-                     background: 'linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 20%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.8) 80%, rgba(255, 255, 255, 0) 100%)',
-                     boxShadow: '0 0 20px rgba(255, 255, 255, 0.6), 0 0 40px rgba(255, 255, 255, 0.3)'
-                   }} />
-              
-              {/* Effet de lumière défilante pour le mode clair */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-16 rounded-full z-5 dark:hidden block" 
-                   style={{
-                     animation: 'lightMove 4s infinite linear',
-                     background: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 20%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.8) 80%, rgba(0, 0, 0, 0) 100%)',
-                     boxShadow: '0 0 20px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 0, 0, 0.3)'
-                   }} />
-              
-              {/* Étape 1 - Étude et Devis */}
+              {/* Ligne centrale */}
+              <div className="pointer-events-none absolute left-1/2 -translate-x-1/2 w-px h-full bg-gray-300 dark:bg-gray-700" />
+              {/* Lumière qui défile */}
+              <div
+                className="pointer-events-none absolute left-1/2 -translate-x-1/2 w-[2px] h-20 rounded-full"
+                style={{
+                  animation: 'lightMove 4s infinite linear',
+                  background:
+                    'linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(255,255,255,0.8) 20%, rgba(255,255,255,1) 50%, rgba(255,255,255,0.8) 80%, rgba(0,0,0,0) 100%)',
+                  boxShadow: '0 0 24px rgba(255,255,255,.35)'
+                }}
+                aria-hidden="true"
+              />
+
+              {/* Étape 1 */}
               <div className="relative flex items-center mb-16">
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-white dark:bg-black rounded-full shadow-2xl flex items-center justify-center z-10">
-                  <svg className="w-8 h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                {/* Pastille */}
+                <div className="absolute left-1/2 -translate-x-1/2 w-16 h-16 rounded-full shadow-lg bg-white dark:bg-black flex items-center justify-center z-10 ring-1 ring-black/5 dark:ring-white/10">
+                  <svg className="w-7 h-7 text-sky-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8}>
+                    <path d="M9 12l2 2 4-4" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                    <path d="M14 2v6h6" />
                   </svg>
                 </div>
-                
-                <div className="w-5/12 pr-8 text-right">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">ÉTUDE ET DEVIS</h3>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                    Audit énergétique. Aides auxquelles vous pouvez prétendre. Pas d'avance de frais sur les aides gouvernementales.
+                <div className="w-full md:w-5/12 pr-0 md:pr-8 md:text-right">
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                    Clarté dès le départ
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300">
+                    Audit énergétique précis, aides identifiées, <strong>devis 100% gratuit</strong> et sans surprise.
+                    Vous profitez des aides <strong>sans avancer un centime</strong>.
+                  </p>
+                </div>
+                <div className="hidden md:block w-5/12" />
+              </div>
+
+              {/* Étape 2 */}
+              <div className="relative flex items-center mb-16">
+                <div className="hidden md:block w-5/12" />
+                <div className="absolute left-1/2 -translate-x-1/2 w-16 h-16 rounded-full shadow-lg bg-white dark:bg-black flex items-center justify-center z-10 ring-1 ring-black/5 dark:ring-white/10">
+                  <svg className="w-7 h-7 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8}>
+                    <path d="M14.7 6.3a4 4 0 1 0-5.66 5.66L3 18l3 3 6.04-6.04a4 4 0 0 0 5.66-5.66z" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <div className="w-full md:w-5/12 md:ml-auto md:pl-8">
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                    Travaux garantis RGE
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300">
+                    Équipes formées, grandes marques, <strong>zéro sous-traitance</strong>. Pose propre, délais respectés.
                   </p>
                 </div>
               </div>
-              
-              {/* Étape 2 - Travaux */}
+
+              {/* Étape 3 */}
               <div className="relative flex items-center mb-16">
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-white dark:bg-black rounded-full shadow-2xl flex items-center justify-center z-10">
-                  <svg className="w-8 h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                  </svg>
-                </div>
-                
-                <div className="w-5/12 ml-auto pl-8">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">TRAVAUX</h3>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                    RGE. Équipes techniques formées et qualifiées avec les plus grandes marques. Aucun sous-traitant pour vos travaux.
+                <div className="w-full md:w-5/12 pr-0 md:pr-8 md:text-right">
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                    Votre satisfaction, notre fierté
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300">
+                    <strong>95% de clients nous recommandent</strong>. Suivi après installation, entretien et maintenance
+                    pour un confort qui dure.
                   </p>
                 </div>
-              </div>
-              
-              {/* Étape 3 - Satisfaction */}
-              <div className="relative flex items-center mb-16">
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-white dark:bg-black rounded-full shadow-2xl flex items-center justify-center z-10">
-                  <svg className="w-8 h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                <div className="absolute left-1/2 -translate-x-1/2 w-16 h-16 rounded-full shadow-lg bg-white dark:bg-black flex items-center justify-center z-10 ring-1 ring-black/5 dark:ring-white/10">
+                  <svg className="w-7 h-7 text-emerald-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8}>
+                    <circle cx="12" cy="12" r="9"/>
+                    <path d="M9 10h.01M15 10h.01" strokeLinecap="round"/>
+                    <path d="M12 17a5 5 0 0 0 5-5H7a5 5 0 0 0 5 5z" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
-                
-                <div className="w-5/12 pr-8 text-right">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">SATISFACTION</h3>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                    Accompagnement sur l'ensemble de vos projets. Plus de 95 % de client satisfait. Un service entretien et maintenance.
-                  </p>
-                </div>
+                <div className="hidden md:block w-5/12" />
               </div>
-              
-              {/* Étape 4 - Solutions de Financement */}
+
+              {/* Étape 4 */}
               <div className="relative flex items-center">
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-white dark:bg-black rounded-full shadow-2xl flex items-center justify-center z-10">
-                  <svg className="w-8 h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                <div className="hidden md:block w-5/12" />
+                <div className="absolute left-1/2 -translate-x-1/2 w-16 h-16 rounded-full shadow-lg bg-white dark:bg-black flex items-center justify-center z-10 ring-1 ring-black/5 dark:ring-white/10">
+                  <svg className="w-7 h-7 text-yellow-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8}>
+                    <circle cx="12" cy="12" r="9"/>
+                    <path d="M8 12h8M12 8v8" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
-                
-                <div className="w-5/12 ml-auto pl-8">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">SOLUTIONS DE FINANCEMENT</h3>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                    Solutions de financement adaptées à votre situation et vos encours. Facilité de paiement.
+                <div className="w-full md:w-5/12 md:ml-auto md:pl-8">
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                    Financement sur mesure
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300">
+                    Aides mobilisées, paiements facilités, solutions adaptées à votre situation. <strong>Vous ne vous occupez de rien.</strong>
                   </p>
                 </div>
               </div>
             </div>
-            
-            {/* Call-to-action */}
+
+            {/* CTA */}
             <div className="text-center mt-16">
               <Link
                 href="/contact"
-                className="inline-flex items-center px-8 py-4 bg-black dark:bg-white text-white dark:text-black font-semibold rounded-full hover:bg-gray-800 dark:hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center px-7 py-3 rounded-full text-sm font-semibold
+                           bg-white text-gray-900 ring-1 ring-black/10 shadow-md hover:shadow-lg
+                           dark:bg-gray-100 dark:text-gray-900 transition-transform hover:-translate-y-0.5"
+                aria-label="Obtenez votre devis gratuit"
               >
-                Demander un devis
-                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                Obtenez votre devis gratuit
+                <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+                  <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </Link>
             </div>
           </div>
         </SimpleWrapper>
 
-        {/* Animation CSS */}
-        <style jsx>{`
-          @keyframes lightMove {
-            0% {
-              top: -10%;
-              opacity: 0;
-            }
-            5% {
-              opacity: 1;
-            }
-            95% {
-              opacity: 1;
-            }
-            100% {
-              top: 110%;
-              opacity: 0;
-            }
-          }
-        `}</style>
+
       </section>
 
       {/* Section Google Reviews */}
