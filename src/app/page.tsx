@@ -13,23 +13,8 @@ import LocationMap from '@/components/LocationMap';
 
 export default function HomePage() {
 
-  // Liste des vidéos disponibles
-  const videos = [
-    '/mp4/sdbpyla.mp4',
-    '/mp4/Gen-4 Turbo Cinematic slow push-in from low angle onto a high-end air-source heat pump on a modern wooden terrace Golden hour sunlight shimmering through tropical leaves, casting moving shadows on wa 4K.mp4'
-  ];
-  
-  // État pour l'index de la vidéo actuelle
-  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
-  
-  // Changement automatique de vidéo toutes les 10 secondes
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % videos.length);
-    }, 10000); // 10 secondes
-    
-    return () => clearInterval(interval);
-  }, [videos.length]);
+  // Image hero avec effet zoom
+  const heroImage = '/img/clim-caudéran.jpeg';
 
   // Composant CitySearch
   const CitySearch = () => {
@@ -142,42 +127,40 @@ export default function HomePage() {
   return (
     <main className="px-0">
       <section className="relative h-[100vh] xs:h-[95vh] sm:h-[90vh] min-h-[500px] xs:min-h-[550px] sm:min-h-[600px] md:min-h-[640px] lg:min-h-[700px] xl:min-h-[750px] w-full overflow-hidden bg-white dark:bg-black text-black dark:text-white">
-        {/* Zone vidéo - Responsive avec adaptation mobile */}
+        {/* Zone image avec effet zoom - Responsive avec adaptation mobile */}
         <motion.div
           className="absolute top-0 right-0 h-full w-full sm:w-2/3"
           aria-hidden
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
+          initial={{ opacity: 0, scale: 1.1 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
         >
-          {/* Version mobile - vidéo plein écran */}
-          <div className="block sm:hidden relative h-full w-full">
-            <video
-              key={currentVideoIndex}
-              className="h-full w-full object-cover"
-              autoPlay
-              muted
-              loop
-              playsInline
-              src={videos[currentVideoIndex]}
+          {/* Version mobile - image plein écran */}
+          <div className="block sm:hidden relative h-full w-full overflow-hidden">
+            <motion.img
+              src={heroImage}
+              alt="ClimGO - Installation climatisation"
+              className="h-full w-full object-contain"
+              initial={{ scale: 1.2 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 15, ease: "easeInOut", repeat: Infinity, repeatType: "reverse" }}
             />
           </div>
           
           {/* Version desktop - forme diagonale */}
           <div 
-            className="hidden sm:block relative h-full w-full"
+            className="hidden sm:block relative h-full w-full overflow-hidden"
             style={{
               clipPath: 'polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%)'
             }}
           >
-            <video
-              key={`desktop-${currentVideoIndex}`}
-              className="h-full w-full object-cover"
-              autoPlay
-              muted
-              loop
-              playsInline
-              src={videos[currentVideoIndex]}
+            <motion.img
+              src={heroImage}
+              alt="ClimGO - Installation climatisation"
+              className="h-full w-full object-contain"
+              initial={{ scale: 1.2 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 15, ease: "easeInOut", repeat: Infinity, repeatType: "reverse" }}
             />
           </div>
         </motion.div>
@@ -485,7 +468,7 @@ export default function HomePage() {
             </div>
 
             {/* CTA */}
-            <div className="text-center mt-16">
+            <div id="demander-devis" className="text-center mt-16">
               <Link
                 href="/contact"
                 className="inline-flex items-center px-7 py-3 rounded-full text-sm font-semibold
