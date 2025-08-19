@@ -96,7 +96,7 @@ export default function FAQChat({
                   >
                     {/* En-tête avec nom du client */}
                     <div className="flex items-center mb-4 pb-3 border-b border-gray-100 dark:border-gray-800">
-                      <div className={`w-10 h-10 ${profile.avatarColor} dark:${profile.avatarColorDark} rounded-full flex items-center justify-center mr-3 shadow-lg`}>
+                      <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-blue-600 rounded-full flex items-center justify-center mr-3 shadow-lg">
                         <span className="text-white font-bold text-sm">
                           {profile.initials}
                         </span>

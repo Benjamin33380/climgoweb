@@ -23,11 +23,11 @@ export default function ServicesPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#f8f9f4] dark:bg-black dark:bg-black text-[#03144A] dark:text-white dark:text-white">
+    <div className="min-h-screen bg-white dark:bg-black text-[#03144A] dark:text-white">
       
       {/* Hero Section with Floating Particles */}
-      <section className="relative min-h-screen pt-24 md:pt-0 flex items-center justify-center overflow-hidden bg-[#f8f9f4] dark:bg-black">
-        <div className="absolute inset-0 bg-[#F8F9F4] dark:bg-black" />
+      <section className="relative min-h-screen pt-24 md:pt-0 flex items-center justify-center overflow-hidden bg-white dark:bg-black">
+        <div className="absolute inset-0 bg-white dark:bg-black" />
         
         {/* Floating Particles */}
         {/* Red particles */}
@@ -42,38 +42,38 @@ export default function ServicesPage() {
         <div className="absolute w-4 h-4 bg-[#2563EB] rounded-full top-1/2 right-1/4 animate-bounce" />
         <div className="absolute w-3 h-3 bg-[#2563EB] rounded-full bottom-[25%] left-[60%] animate-pulse" />
 
-        {/* Light blue particles */}
-        <div className="absolute w-2 h-2 bg-[#0EA5E9] rounded-full top-[35%] left-[15%] animate-pulse" />
-        <div className="absolute w-3 h-3 bg-[#0EA5E9] rounded-full bottom-[40%] right-[30%] animate-bounce" />
-        <div className="absolute w-2 h-2 bg-[#0EA5E9] rounded-full top-[70%] left-[40%] animate-pulse" />
-        <div className="absolute w-4 h-4 bg-[#0EA5E9] rounded-full top-[20%] right-[45%] animate-bounce" />
+        {/* Orange particles */}
+        <div className="absolute w-2 h-2 bg-[#FF8C00] rounded-full top-[35%] left-[15%] animate-pulse" />
+        <div className="absolute w-3 h-3 bg-[#2563EB] rounded-full bottom-[40%] right-[30%] animate-bounce" />
+        <div className="absolute w-2 h-2 bg-[#FF8C00] rounded-full top-[70%] left-[40%] animate-pulse" />
+        <div className="absolute w-4 h-4 bg-[#2563EB] rounded-full top-[20%] right-[45%] animate-bounce" />
 
-        {/* Green particles */}
-        <div className="absolute w-3 h-3 bg-[#10B981] rounded-full top-[45%] left-[70%] animate-bounce" />
-        <div className="absolute w-2 h-2 bg-[#10B981] rounded-full bottom-[15%] left-[20%] animate-pulse" />
-        <div className="absolute w-4 h-4 bg-[#10B981] rounded-full top-[60%] right-[15%] animate-bounce" />
-        <div className="absolute w-2 h-2 bg-[#10B981] rounded-full bottom-[50%] left-[80%] animate-pulse" />
+        {/* Blue particles */}
+        <div className="absolute w-3 h-3 bg-[#2563EB] rounded-full top-[45%] left-[70%] animate-bounce" />
+        <div className="absolute w-2 h-2 bg-[#FF8C00] rounded-full bottom-[15%] left-[20%] animate-pulse" />
+        <div className="absolute w-4 h-4 bg-[#2563EB] rounded-full top-[60%] right-[15%] animate-bounce" />
+        <div className="absolute w-2 h-2 bg-[#FF8C00] rounded-full bottom-[50%] left-[80%] animate-pulse" />
 
         {/* Background gradient effects */}
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#FF8C00] rounded-full filter blur-3xl animate-pulse" />
           <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-[#2563EB] rounded-full filter blur-3xl animate-pulse" style={{animationDelay: '2s'}} />
-          <div className="absolute top-1/2 left-1/2 w-48 h-48 bg-[#10B981] rounded-full filter blur-3xl animate-pulse" style={{animationDelay: '4s'}} />
+          <div className="absolute top-1/2 left-1/2 w-48 h-48 bg-[#FF8C00] rounded-full filter blur-3xl animate-pulse" style={{animationDelay: '4s'}} />
         </div>
 
         <div className="relative z-10 text-center max-w-5xl mx-auto px-6">
-          <div className="inline-flex items-center px-6 py-3 rounded-full border border-[#03144A] dark:border-white/20 text-sm tracking-widest uppercase mb-8 text-[#03144A] dark:text-white bg-[#F8F9F4] dark:bg-black backdrop-blur-sm">
+          <div className="inline-flex items-center px-6 py-3 rounded-full border border-[#03144A] dark:border-white/20 text-sm tracking-widest uppercase mb-8 text-[#03144A] dark:text-white bg-white dark:bg-black backdrop-blur-sm">
             <div className="w-2 h-2 bg-[#FF8C00] rounded-full mr-3 animate-pulse" />
             Notre savoir-faire
           </div>
           
           <SimpleWrapper>
             <h1 className="text-6xl md:text-7xl lg:text-8xl font-extralight tracking-wide mb-8">
-              <span className="bg-gradient-to-r from-[#FF8C00] via-[#2563EB] to-[#10B981] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#FF8C00] to-[#2563EB] bg-clip-text text-transparent">
                 Services
               </span>
               <br />
-              <span className="bg-gradient-to-r from-[#0EA5E9] via-[#FF8C00] to-[#2563EB] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#2563EB] to-[#FF8C00] bg-clip-text text-transparent">
                 ClimGO
               </span>
             </h1>
@@ -96,7 +96,7 @@ export default function ServicesPage() {
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <button 
               onClick={scrollToServices}
-              className="group relative px-10 py-4 bg-gradient-to-r from-[#FF8C00] via-[#2563EB] to-[#10B981] text-white rounded-full font-medium transition-all duration-300 hover:scale-105 overflow-hidden shadow-xl"
+              className="group relative px-10 py-4 bg-gradient-to-r from-[#FF8C00] to-[#2563EB] text-white rounded-full font-medium transition-all duration-300 hover:scale-105 overflow-hidden shadow-xl"
             >
               <span className="relative z-10">Découvrir nos services</span>
               <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
@@ -126,11 +126,11 @@ export default function ServicesPage() {
       </div>
 
       {/* Expertise Section */}
-      <section className="relative bg-[#f8f9f4] dark:bg-black text-[#0a0f2c] py-32 overflow-hidden">
+      <section className="relative bg-white dark:bg-black text-[#0a0f2c] py-32 overflow-hidden">
         {/* Particules décoratives pour cette section */}
         <div className="absolute w-1 h-1 bg-[#FF8C00] rounded-full top-20 left-20 opacity-60 animate-pulse" />
         <div className="absolute w-2 h-2 bg-[#2563EB] rounded-full bottom-20 right-20 opacity-60 animate-bounce" />
-        <div className="absolute w-1 h-1 bg-[#10B981] rounded-full top-1/2 left-10 opacity-60 animate-pulse" />
+        <div className="absolute w-1 h-1 bg-[#FF8C00] rounded-full top-1/2 left-10 opacity-60 animate-pulse" />
         
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-10 right-10 w-64 h-64 bg-[#FF8C00] rounded-full filter blur-3xl" />
@@ -139,16 +139,16 @@ export default function ServicesPage() {
         
         <div className="relative z-10 container mx-auto px-6 text-center max-w-4xl">
           <div className="inline-flex items-center px-6 py-3 rounded-full border border-[#03144A] dark:border-white/30 text-sm tracking-widest uppercase mb-8 text-[#03144A] dark:text-white bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm">
-            <div className="w-2 h-2 bg-[#10B981] rounded-full mr-3 animate-pulse" />
+            <div className="w-2 h-2 bg-[#FF8C00] rounded-full mr-3 animate-pulse" />
             Expertise & Excellence
           </div>
           
           <h2 className="text-5xl md:text-6xl font-extralight mb-6 tracking-tight leading-tight">
-            <span className="bg-gradient-to-r from-[#FF8C00] via-[#2563EB] to-[#10B981] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#FF8C00] to-[#2563EB] bg-clip-text text-transparent">
               Nos domaines
             </span>
             <br />
-            <span className="bg-gradient-to-r from-[#10B981] via-[#0EA5E9] to-[#FF8C00] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#2563EB] to-[#FF8C00] bg-clip-text text-transparent">
               d&apos;expertise
             </span>
           </h2>
@@ -157,7 +157,7 @@ export default function ServicesPage() {
             Quatre domaines de compétence, une seule promesse : votre confort optimal.
           </p>
           
-          <div className="h-1 w-40 mx-auto mt-8 bg-gradient-to-r from-[#FF8C00] via-[#2563EB] to-[#10B981] rounded-full"></div>
+          <div className="h-1 w-40 mx-auto mt-8 bg-gradient-to-r from-[#FF8C00] to-[#2563EB] rounded-full"></div>
         </div>
       </section>
 
@@ -165,12 +165,12 @@ export default function ServicesPage() {
       <section
         ref={servicesRef}
         id="services"
-        className="pt-20 pb-32 relative bg-[#f8f9f4] dark:bg-black text-[#0a0f2c] overflow-hidden scroll-mt-28"
+        className="pt-20 pb-32 relative bg-white dark:bg-black text-[#0a0f2c] overflow-hidden scroll-mt-28"
       >
         {/* Effet de particules pour cette section */}
         <div className="absolute w-2 h-2 bg-[#FF8C00] rounded-full top-32 left-16 opacity-40 animate-bounce" />
         <div className="absolute w-1 h-1 bg-[#2563EB] rounded-full bottom-32 right-16 opacity-40 animate-pulse" />
-        <div className="absolute w-3 h-3 bg-[#10B981] rounded-full top-1/2 right-1/3 opacity-30 animate-bounce" />
+        <div className="absolute w-3 h-3 bg-[#FF8C00] rounded-full top-1/2 right-1/3 opacity-30 animate-bounce" />
         
         <div className="container relative z-10 mx-auto px-6">
           <div className="space-y-8 max-w-5xl mx-auto">
@@ -259,17 +259,17 @@ export default function ServicesPage() {
             {/* Bloc Chauffage */}
             <div
               onClick={() => toggleSection('chauffage')}
-              className="group block cursor-pointer border-2 border-[#dc2626]/20 border-t-4 border-t-[#dc2626] rounded-2xl shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 ease-out p-10 text-center bg-gradient-to-br from-[#FF8C00]/5 to-[#03144A]/5 dark:from-[#FF8C00]/10 dark:to-[#03144A]/10 hover:bg-gradient-to-br hover:from-[#dc2626] hover:to-[#b91c1c] backdrop-blur-sm"
+              className="group block cursor-pointer border-2 border-[#FF8C00]/20 border-t-4 border-t-[#FF8C00] rounded-2xl shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 ease-out p-10 text-center bg-gradient-to-br from-[#FF8C00]/5 to-[#03144A]/5 dark:from-[#FF8C00]/10 dark:to-[#03144A]/10 hover:bg-gradient-to-br hover:from-[#FF8C00] hover:to-[#FFA500] backdrop-blur-sm"
             >
               <div className="flex justify-center mb-6">
-                <div className="p-4 rounded-full bg-[#dc2626]/10 group-hover:bg-white/20 transition-colors duration-300">
-                  <Flame className="w-12 h-12 text-[#dc2626] group-hover:text-white transition-colors duration-300" />
+                <div className="p-4 rounded-full bg-[#FF8C00]/10 group-hover:bg-white/20 transition-colors duration-300">
+                  <Flame className="w-12 h-12 text-[#FF8C00] group-hover:text-white transition-colors duration-300" />
                 </div>
               </div>
-              <div className="inline-block bg-[#fee2e2] text-[#dc2626] group-hover:bg-white/20 group-hover:text-white text-xs font-semibold px-4 py-2 rounded-full mb-4 transition-all duration-300">
+              <div className="inline-block bg-[#fff7ed] text-[#FF8C00] group-hover:bg-white/20 group-hover:text-white text-xs font-semibold px-4 py-2 rounded-full mb-4 transition-all duration-300">
                 Chaleur & économies
               </div>
-              <h3 className="text-2xl font-semibold text-[#dc2626] group-hover:text-white mb-3 transition-colors duration-300">Chauffage</h3>
+              <h3 className="text-2xl font-semibold text-[#FF8C00] group-hover:text-white mb-3 transition-colors duration-300">Chauffage</h3>
               <p className="text-gray-600 dark:text-gray-200 group-hover:text-white/90 transition-colors duration-300 text-lg leading-relaxed">
                 Solutions de chauffage économiques et performantes pour votre confort.
               </p>
@@ -278,13 +278,13 @@ export default function ServicesPage() {
               </div>
             </div>
             {activeSection === 'chauffage' && (
-              <div className="mt-8 bg-gradient-to-br from-white to-[#fef2f2] dark:from-gray-900 dark:to-gray-800 rounded-2xl shadow-2xl px-10 py-16 transition-all duration-700 ease-out text-center border border-[#dc2626]/20 dark:border-[#dc2626]/40">
+              <div className="mt-8 bg-gradient-to-br from-white to-[#fff7ed] dark:from-gray-900 dark:to-gray-800 rounded-2xl shadow-2xl px-10 py-16 transition-all duration-700 ease-out text-center border border-[#FF8C00]/20 dark:border-[#FF8C00]/40">
                 <div className="max-w-4xl mx-auto">
                   <div className="flex items-center justify-center gap-3 mb-6">
-                    <div className="p-3 rounded-full bg-[#dc2626]/10">
-                      <Flame className="w-8 h-8 text-[#dc2626]" />
+                    <div className="p-3 rounded-full bg-[#FF8C00]/10">
+                      <Flame className="w-8 h-8 text-[#FF8C00]" />
                     </div>
-                    <h2 className="text-3xl font-light text-[#dc2626]">Chauffage</h2>
+                    <h2 className="text-3xl font-light text-[#FF8C00]">Chauffage</h2>
                   </div>
                   
                   <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-6">
@@ -303,23 +303,23 @@ export default function ServicesPage() {
                     <div>
                       <ul className="text-gray-700 dark:text-gray-300 list-none space-y-3">
                         <li className="flex items-center gap-3">
-                          <div className="w-2 h-2 bg-[#dc2626] rounded-full"></div>
+                          <div className="w-2 h-2 bg-[#FF8C00] rounded-full"></div>
                           Jusqu&apos;à 70% d&apos;économies sur votre facture
                         </li>
                         <li className="flex items-center gap-3">
-                          <div className="w-2 h-2 bg-[#dc2626] rounded-full"></div>
+                          <div className="w-2 h-2 bg-[#FF8C00] rounded-full"></div>
                           Systèmes éligibles aux aides de l&apos;État
                         </li>
                         <li className="flex items-center gap-3">
-                          <div className="w-2 h-2 bg-[#dc2626] rounded-full"></div>
+                          <div className="w-2 h-2 bg-[#FF8C00] rounded-full"></div>
                           Installation rapide et personnalisée
                         </li>
                       </ul>
                     </div>
                   </div>
                   
-                  <div className="bg-[#dc2626]/5 rounded-xl p-6 mb-8">
-                    <p className="text-[#dc2626] font-medium text-lg">
+                  <div className="bg-[#FF8C00]/5 rounded-xl p-6 mb-8">
+                    <p className="text-[#FF8C00] font-medium text-lg">
                       Profitez d&apos;une chaleur homogène et économe en énergie, tout au long de l&apos;année.
                     </p>
                   </div>
@@ -327,7 +327,7 @@ export default function ServicesPage() {
                   <div className="flex justify-center">
                     <Link
                       href="/chauffage"
-                      className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#dc2626] to-[#b91c1c] text-white font-semibold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                      className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#FF8C00] to-[#FFA500] text-white font-semibold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg"
                     >
                       En savoir plus
                       <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
@@ -340,17 +340,17 @@ export default function ServicesPage() {
             {/* Bloc Eau Chaude Sanitaire */}
             <div
               onClick={() => toggleSection('eau-chaude')}
-              className="group block cursor-pointer border-2 border-[#0EA5E9]/20 border-t-4 border-t-[#0EA5E9] rounded-2xl shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 ease-out p-10 text-center bg-gradient-to-br from-[#0EA5E9]/5 to-[#03144A]/5 dark:from-[#0EA5E9]/10 dark:to-[#03144A]/10 hover:bg-gradient-to-br hover:from-[#0EA5E9] hover:to-[#0284c7] backdrop-blur-sm"
+              className="group block cursor-pointer border-2 border-[#FF6B6B]/20 border-t-4 border-t-[#FF6B6B] rounded-2xl shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 ease-out p-10 text-center bg-gradient-to-br from-[#FF6B6B]/5 to-[#03144A]/5 dark:from-[#FF6B6B]/10 dark:to-[#03144A]/10 hover:bg-gradient-to-br hover:from-[#FF6B6B] hover:to-[#FF6B6B] backdrop-blur-sm"
             >
               <div className="flex justify-center mb-6">
-                <div className="p-4 rounded-full bg-[#0EA5E9]/10 group-hover:bg-white/20 transition-colors duration-300">
-                  <Droplets className="w-12 h-12 text-[#0EA5E9] group-hover:text-white transition-colors duration-300" />
+                <div className="p-4 rounded-full bg-[#FF6B6B]/10 group-hover:bg-white/20 transition-colors duration-300">
+                  <Droplets className="w-12 h-12 text-[#FF6B6B] group-hover:text-white transition-colors duration-300" />
                 </div>
               </div>
-              <div className="inline-block bg-[#bae6fd] text-[#0EA5E9] group-hover:bg-white/20 group-hover:text-white text-xs font-semibold px-4 py-2 rounded-full mb-4 transition-all duration-300">
+              <div className="inline-block bg-[#fecaca] text-[#FF6B6B] group-hover:bg-white/20 group-hover:text-white text-xs font-semibold px-4 py-2 rounded-full mb-4 transition-all duration-300">
                 Eau chaude & sérénité
               </div>
-              <h3 className="text-2xl font-semibold text-[#0EA5E9] group-hover:text-white mb-3 transition-colors duration-300">Eau chaude sanitaire</h3>
+              <h3 className="text-2xl font-semibold text-[#FF6B6B] group-hover:text-white mb-3 transition-colors duration-300">Eau chaude sanitaire</h3>
               <p className="text-gray-600 dark:text-gray-200 group-hover:text-white/90 transition-colors duration-300 text-lg leading-relaxed">
                 Production d&apos;eau chaude fiable et économique pour votre quotidien.
               </p>
@@ -359,13 +359,13 @@ export default function ServicesPage() {
               </div>
             </div>
             {activeSection === 'eau-chaude' && (
-              <div className="mt-8 bg-gradient-to-br from-white to-[#f0f9ff] dark:from-gray-900 dark:to-gray-800 rounded-2xl shadow-2xl px-10 py-16 transition-all duration-700 ease-out text-center border border-[#0EA5E9]/20 dark:border-[#0EA5E9]/40">
+              <div className="mt-8 bg-gradient-to-br from-white to-[#fef2f2] dark:from-gray-900 dark:to-gray-800 rounded-2xl shadow-2xl px-10 py-16 transition-all duration-700 ease-out text-center border border-[#FF6B6B]/20 dark:border-[#FF6B6B]/40">
                 <div className="max-w-4xl mx-auto">
                   <div className="flex items-center justify-center gap-3 mb-6">
-                    <div className="p-3 rounded-full bg-[#0EA5E9]/10">
-                      <Droplets className="w-8 h-8 text-[#0EA5E9]" />
+                    <div className="p-3 rounded-full bg-[#FF6B6B]/10">
+                      <Droplets className="w-8 h-8 text-[#FF6B6B]" />
                     </div>
-                    <h2 className="text-3xl font-light text-[#0EA5E9]">Eau chaude sanitaire</h2>
+                    <h2 className="text-3xl font-light text-[#FF6B6B]">Eau chaude sanitaire</h2>
                   </div>
                   
                   <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-6">
@@ -384,23 +384,23 @@ export default function ServicesPage() {
                     <div>
                       <ul className="text-gray-700 dark:text-gray-300 list-none space-y-3">
                         <li className="flex items-center gap-3">
-                          <div className="w-2 h-2 bg-[#0EA5E9] rounded-full"></div>
+                          <div className="w-2 h-2 bg-[#FF6B6B] rounded-full"></div>
                           Jusqu&apos;à 60% d&apos;économie sur votre production d&apos;eau chaude
                         </li>
                         <li className="flex items-center gap-3">
-                          <div className="w-2 h-2 bg-[#0EA5E9] rounded-full"></div>
+                          <div className="w-2 h-2 bg-[#FF6B6B] rounded-full"></div>
                           Installation adaptée à vos besoins et à votre logement
                         </li>
                         <li className="flex items-center gap-3">
-                          <div className="w-2 h-2 bg-[#0EA5E9] rounded-full"></div>
+                          <div className="w-2 h-2 bg-[#FF6B6B] rounded-full"></div>
                           Équipements éligibles aux aides financières
                         </li>
                       </ul>
                     </div>
                   </div>
                   
-                  <div className="bg-[#0EA5E9]/5 rounded-xl p-6 mb-8">
-                    <p className="text-[#0EA5E9] font-medium text-lg">
+                  <div className="bg-[#FF6B6B]/5 rounded-xl p-6 mb-8">
+                    <p className="text-[#FF6B6B] font-medium text-lg">
                       Profitez d&apos;une eau chaude fiable, économique et disponible à tout moment.
                     </p>
                   </div>
@@ -408,7 +408,7 @@ export default function ServicesPage() {
                   <div className="flex justify-center">
                     <Link
                       href="/eau-chaude-sanitaire"
-                      className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#0EA5E9] to-[#0284c7] text-white font-semibold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                      className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#FF6B6B] to-[#FF6B6B] text-white font-semibold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg"
                     >
                       En savoir plus
                       <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
@@ -504,18 +504,18 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative bg-[#f8f9f4] dark:bg-black text-[#03144A] dark:text-white py-32 overflow-hidden">
+      <section className="relative bg-white dark:bg-black text-[#03144A] dark:text-white py-32 overflow-hidden">
         {/* Particules pour CTA */}
         <div className="absolute w-3 h-3 bg-[#FF8C00] rounded-full top-20 left-20 opacity-60 animate-bounce" />
-        <div className="absolute w-2 h-2 bg-[#10B981] rounded-full bottom-20 right-20 opacity-60 animate-pulse" />
-        <div className="absolute w-4 h-4 bg-[#0EA5E9] rounded-full top-1/2 left-10 opacity-40 animate-bounce" />
+        <div className="absolute w-2 h-2 bg-[#2563EB] rounded-full bottom-20 right-20 opacity-60 animate-pulse" />
+        <div className="absolute w-4 h-4 bg-[#FF8C00] rounded-full top-1/2 left-10 opacity-40 animate-bounce" />
         <div className="absolute w-1 h-1 bg-[#2563EB] rounded-full bottom-1/3 right-1/3 opacity-60 animate-pulse" />
         
         {/* Effets de fond légers */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#FF8C00] rounded-full filter blur-3xl animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-[#10B981] rounded-full filter blur-3xl animate-pulse" style={{animationDelay: '2s'}} />
-          <div className="absolute top-1/2 left-1/2 w-48 h-48 bg-[#0EA5E9] rounded-full filter blur-3xl animate-pulse" style={{animationDelay: '4s'}} />
+          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-[#2563EB] rounded-full filter blur-3xl animate-pulse" style={{animationDelay: '2s'}} />
+          <div className="absolute top-1/2 left-1/2 w-48 h-48 bg-[#FF8C00] rounded-full filter blur-3xl animate-pulse" style={{animationDelay: '4s'}} />
         </div>
         
         <div className="relative z-10 container mx-auto px-6 text-center max-w-4xl">
@@ -525,7 +525,7 @@ export default function ServicesPage() {
           </div>
           
           <h2 className="text-5xl md:text-6xl font-extralight mb-8 tracking-tight leading-tight">
-            <span className="bg-gradient-to-r from-[#FF8C00] via-[#10B981] to-[#0EA5E9] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#FF8C00] to-[#2563EB] bg-clip-text text-transparent">
               Vous avez un projet ?
             </span>
             <br />
@@ -544,10 +544,10 @@ export default function ServicesPage() {
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Link
               href="tel:0766460008"
-              className="group px-12 py-5 bg-gradient-to-r from-[#03144a] via-[#03144a] to-[#03144a] dark:from-white dark:via-white dark:to-white text-white dark:text-black font-semibold rounded-full text-lg shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-[#FF8C00]/25 relative overflow-hidden"
+              className="group px-12 py-5 bg-gradient-to-r from-[#FF8C00] to-[#2563EB] text-white font-semibold rounded-full text-lg shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-[#FF8C00]/25 relative overflow-hidden"
             >
               <span className="relative z-10">Je veux être rappelé</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-[#03144a] to-[#03144a] dark:from-gray-200 dark:to-gray-200 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#2563EB] to-[#FF8C00] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </Link>
             
             <Link
@@ -558,12 +558,12 @@ export default function ServicesPage() {
             </Link>
           </div>
           
-          <div className="h-1 w-40 mx-auto mt-12 bg-gradient-to-r from-[#FF8C00] via-[#10B981] to-[#0EA5E9] rounded-full"></div>
+          <div className="h-1 w-40 mx-auto mt-12 bg-gradient-to-r from-[#FF8C00] to-[#2563EB] rounded-full"></div>
         </div>
       </section>
 
       {/* Location Map Section */}
-      <LocationMap backgroundColor="bg-[#f8f9f4] dark:bg-black" />
+      <LocationMap backgroundColor="bg-white dark:bg-black" />
 
     </div>
   );
