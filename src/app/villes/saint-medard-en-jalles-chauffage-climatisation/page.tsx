@@ -470,15 +470,15 @@ export default function SaintMedardEnJalles() {
                     </h3>
                     <div className="space-y-3 text-black dark:text-white leading-relaxed">
                       <div className="flex items-start space-x-3">
-                        <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-black dark:bg-white rounded-full mt-2 flex-shrink-0"></div>
                         <p><strong>Allée François Arago :</strong> installation climatisation gainable dans maison ossature bois RT2012.</p>
                       </div>
                       <div className="flex items-start space-x-3">
-                        <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-black dark:bg-white rounded-full mt-2 flex-shrink-0"></div>
                         <p><strong>Rue du Commandant Charcot :</strong> remplacement ancien chauffage gaz par PAC air/eau pour foyer quatre personnes.</p>
                       </div>
                       <div className="flex items-start space-x-3">
-                        <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-black dark:bg-white rounded-full mt-2 flex-shrink-0"></div>
                         <p><strong>Résidence des Écureuils :</strong> entretien annuel plusieurs PAC Mitsubishi pour copropriété boisée.</p>
                       </div>
                     </div>

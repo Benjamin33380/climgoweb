@@ -470,15 +470,15 @@ export default function MartignassuJalle() {
                     </h3>
                     <div className="space-y-3 text-black dark:text-white leading-relaxed">
                       <div className="flex items-start space-x-3">
-                        <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-black dark:bg-white rounded-full mt-2 flex-shrink-0"></div>
                         <p><strong>Rue de Capeyron :</strong> installation système gainable pour maison familiale à étage avec combles isolés.</p>
                       </div>
                       <div className="flex items-start space-x-3">
-                        <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-black dark:bg-white rounded-full mt-2 flex-shrink-0"></div>
                         <p><strong>Quartier des Palombes :</strong> remplacement ancien chauffage électrique par PAC air/eau avec plancher chauffant.</p>
                       </div>
                       <div className="flex items-start space-x-3">
-                        <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-black dark:bg-white rounded-full mt-2 flex-shrink-0"></div>
                         <p><strong>Chemin de la Jalle :</strong> pose chauffe-eau thermodynamique avec gestion connectée pour optimiser consommation.</p>
                       </div>
                     </div>

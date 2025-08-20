@@ -474,15 +474,15 @@ export default function LeHaillan() {
                     </h3>
                     <div className="space-y-3 text-black dark:text-white leading-relaxed">
                       <div className="flex items-start space-x-3">
-                        <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-black dark:bg-white rounded-full mt-2 flex-shrink-0"></div>
                         <p><strong>Rue Pasteur :</strong> installation pompe à chaleur air/eau pour maison familiale 120 m² avec plancher chauffant.</p>
                       </div>
                       <div className="flex items-start space-x-3">
-                        <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-black dark:bg-white rounded-full mt-2 flex-shrink-0"></div>
                         <p><strong>Rue Jean Mermoz :</strong> remplacement ancien chauffe-eau par modèle thermodynamique dernière génération.</p>
                       </div>
                       <div className="flex items-start space-x-3">
-                        <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-black dark:bg-white rounded-full mt-2 flex-shrink-0"></div>
                         <p><strong>Chemin de la Morandière :</strong> installation climatisation gainable dans maison de plain-pied orientée plein sud.</p>
                       </div>
                     </div>

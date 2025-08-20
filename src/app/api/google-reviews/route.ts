@@ -24,7 +24,7 @@ export async function GET(request: NextRequest) {
 
   try {
     // Appel à l'API Google Places pour récupérer les détails du lieu avec les avis
-    const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=name,rating,reviews,user_ratings_total&key=${googleApiKey}`;
+    const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=name,rating,reviews,user_ratings_total&language=fr&key=${googleApiKey}`;
     
     const response = await fetch(url);
     

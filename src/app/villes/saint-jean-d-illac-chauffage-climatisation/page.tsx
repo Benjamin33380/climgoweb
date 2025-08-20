@@ -470,15 +470,15 @@ export default function SaintJeanDIllac() {
                     </h3>
                     <div className="space-y-3 text-black dark:text-white leading-relaxed">
                       <div className="flex items-start space-x-3">
-                        <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-black dark:bg-white rounded-full mt-2 flex-shrink-0"></div>
                         <p><strong>Rue François Mauriac :</strong> remplacement ancien système électrique par pompe à chaleur air/air discrète, avec option réversible.</p>
                       </div>
                       <div className="flex items-start space-x-3">
-                        <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-black dark:bg-white rounded-full mt-2 flex-shrink-0"></div>
                         <p><strong>Avenue du Las :</strong> installation plancher chauffant pour maison RT2012, couplé PAC air/eau haut rendement.</p>
                       </div>
                       <div className="flex items-start space-x-3">
-                        <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-black dark:bg-white rounded-full mt-2 flex-shrink-0"></div>
                         <p><strong>Allée des Mimosas :</strong> remplacement chauffe-eau électrique par chauffe-eau thermodynamique, avec gain de place et économies facture EDF.</p>
                       </div>
                     </div>

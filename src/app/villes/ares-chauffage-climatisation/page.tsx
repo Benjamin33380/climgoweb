@@ -473,15 +473,15 @@ export default function Ares() {
                     </h3>
                     <div className="space-y-3 text-black dark:text-white leading-relaxed">
                       <div className="flex items-start space-x-3">
-                        <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-black dark:bg-white rounded-full mt-2 flex-shrink-0"></div>
                         <p><strong>Rue du Temple :</strong> PAC air/eau maison bois bordure forêt, chauffage sol basse température.</p>
                       </div>
                       <div className="flex items-start space-x-3">
-                        <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-black dark:bg-white rounded-full mt-2 flex-shrink-0"></div>
                         <p><strong>Chemin des Pêcheurs :</strong> remplacement climatiseur par console double flux Mitsubishi villa secondaire.</p>
                       </div>
                       <div className="flex items-start space-x-3">
-                        <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-black dark:bg-white rounded-full mt-2 flex-shrink-0"></div>
                         <p><strong>Quartier des Quinconces :</strong> intervention urgence fuite circuit frigorifique split Daikin.</p>
                       </div>
                     </div>

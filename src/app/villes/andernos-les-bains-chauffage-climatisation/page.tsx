@@ -480,15 +480,15 @@ export default function Andernos() {
                     </h3>
                     <div className="space-y-3 text-black dark:text-white leading-relaxed">
                       <div className="flex items-start space-x-3">
-                        <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-black dark:bg-white rounded-full mt-2 flex-shrink-0"></div>
                         <p><strong>Quartier du Bétey :</strong> installation d'une pompe à chaleur air/air dans une maison secondaire, avec optimisation acoustique pour le voisinage.</p>
                       </div>
                       <div className="flex items-start space-x-3">
-                        <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-black dark:bg-white rounded-full mt-2 flex-shrink-0"></div>
                         <p><strong>Avenue Pasteur :</strong> remplacement d'un ancien chauffage au gaz par une PAC air/eau haute performance pour une résidence principale de plain-pied.</p>
                       </div>
                       <div className="flex items-start space-x-3">
-                        <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-black dark:bg-white rounded-full mt-2 flex-shrink-0"></div>
                         <p><strong>Rue du Port :</strong> entretien annuel d'un système multisplit Mitsubishi dans une maison rénovée avec vue sur le Bassin.</p>
                       </div>
                     </div>

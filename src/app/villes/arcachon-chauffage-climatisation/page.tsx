@@ -480,15 +480,15 @@ export default function Arcachon() {
                     </h3>
                     <div className="space-y-3 text-black dark:text-white leading-relaxed">
                       <div className="flex items-start space-x-3">
-                        <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-black dark:bg-white rounded-full mt-2 flex-shrink-0"></div>
                         <p><strong>Ville d'Hiver :</strong> installation discrète d'une pompe à chaleur air/eau dans une villa Belle Époque, avec respect des contraintes patrimoniales.</p>
                       </div>
                       <div className="flex items-start space-x-3">
-                        <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-black dark:bg-white rounded-full mt-2 flex-shrink-0"></div>
                         <p><strong>Front de mer :</strong> climatisation réversible multisplit dans un appartement avec vue sur le Bassin, optimisation acoustique pour le confort.</p>
                       </div>
                       <div className="flex items-start space-x-3">
-                        <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-black dark:bg-white rounded-full mt-2 flex-shrink-0"></div>
                         <p><strong>Ville d'Été :</strong> remplacement d'un ancien chauffage électrique par une PAC haute performance dans une résidence récente.</p>
                       </div>
                     </div>
