@@ -141,7 +141,6 @@ export default function VillenaveDornon() {
               muted
               loop
               playsInline
-              src="/mp4/villenave.mp4"
             />
           </div>
           
@@ -158,7 +157,6 @@ export default function VillenaveDornon() {
               muted
               loop
               playsInline
-              src="/mp4/villenave.mp4"
             />
           </div>
         </motion.div>

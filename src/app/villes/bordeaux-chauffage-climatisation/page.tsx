@@ -142,7 +142,6 @@ export default function Bordeaux() {
               muted
               loop
               playsInline
-              src="/mp4/bordeaux.mp4"
             />
           </div>
           
@@ -159,7 +158,6 @@ export default function Bordeaux() {
               muted
               loop
               playsInline
-              src="/mp4/bordeaux.mp4"
             />
           </div>
         </motion.div>

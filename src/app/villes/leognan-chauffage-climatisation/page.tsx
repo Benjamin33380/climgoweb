@@ -139,7 +139,6 @@ export default function Leognan() {
               muted
               loop
               playsInline
-              src="/mp4/leognan.mp4"
             />
           </div>
           
@@ -156,7 +155,6 @@ export default function Leognan() {
               muted
               loop
               playsInline
-              src="/mp4/leognan.mp4"
             />
           </div>
         </motion.div>

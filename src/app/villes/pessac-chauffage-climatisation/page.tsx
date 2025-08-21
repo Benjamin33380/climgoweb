@@ -139,7 +139,6 @@ export default function Pessac() {
               muted
               loop
               playsInline
-              src="/mp4/pessac.mp4"
             />
           </div>
           
@@ -156,7 +155,6 @@ export default function Pessac() {
               muted
               loop
               playsInline
-              src="/mp4/pessac.mp4"
             />
           </div>
         </motion.div>

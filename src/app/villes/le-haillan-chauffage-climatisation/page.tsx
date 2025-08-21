@@ -139,7 +139,6 @@ export default function LeHaillan() {
               muted
               loop
               playsInline
-              src="/mp4/haillan.mp4"
             />
           </div>
           
@@ -156,7 +155,6 @@ export default function LeHaillan() {
               muted
               loop
               playsInline
-              src="/mp4/haillan.mp4"
             />
           </div>
         </motion.div>

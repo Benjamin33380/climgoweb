@@ -4,7 +4,7 @@ import "./globals.css";
 import { NewHeader } from '@/components/ui/NewHeader';
 import Footer from '@/components/ui/Footer';
 import { ThemeProvider } from '@/components/theme-provider';
-import { LoadingProvider } from '@/components/providers/LoadingProvider';
+
 import { ClientHeroUIProvider } from '@/components/providers/HeroUIProvider';
 import { GlobalScrollShadow } from '@/components/ui/GlobalScrollShadow';
 
@@ -108,20 +108,18 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <ClientHeroUIProvider>
-            <LoadingProvider>
-              <GlobalScrollShadow 
-                size={scrollShadowConfig.size}
-                shadowColor={scrollShadowConfig.shadowColor}
-                blurIntensity={scrollShadowConfig.blurIntensity}
-                className="min-h-screen"
-              >
-                <NewHeader />
-                <main>
-                  {children}
-                </main>
-                <Footer />
-              </GlobalScrollShadow>
-            </LoadingProvider>
+            <GlobalScrollShadow 
+              size={scrollShadowConfig.size}
+              shadowColor={scrollShadowConfig.shadowColor}
+              blurIntensity={scrollShadowConfig.blurIntensity}
+              className="min-h-screen"
+            >
+              <NewHeader />
+              <main>
+                {children}
+              </main>
+              <Footer />
+            </GlobalScrollShadow>
           </ClientHeroUIProvider>
         </ThemeProvider>
       </body>

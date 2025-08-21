@@ -139,7 +139,6 @@ export default function Bruges() {
               muted
               loop
               playsInline
-              src="/mp4/bruges.mp4"
             />
           </div>
           
@@ -156,7 +155,6 @@ export default function Bruges() {
               muted
               loop
               playsInline
-              src="/mp4/bruges.mp4"
             />
           </div>
         </motion.div>

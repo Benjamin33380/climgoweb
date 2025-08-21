@@ -139,7 +139,6 @@ export default function GujanMestras() {
               muted
               loop
               playsInline
-              src="/mp4/gujan.mp4"
             />
           </div>
           
@@ -156,7 +155,6 @@ export default function GujanMestras() {
               muted
               loop
               playsInline
-              src="/mp4/gujan.mp4"
             />
           </div>
         </motion.div>

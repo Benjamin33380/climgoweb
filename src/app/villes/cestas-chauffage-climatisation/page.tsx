@@ -139,7 +139,6 @@ export default function Cestas() {
               muted
               loop
               playsInline
-              src="/mp4/cestas.mp4"
             />
           </div>
           
@@ -156,7 +155,6 @@ export default function Cestas() {
               muted
               loop
               playsInline
-              src="/mp4/cestas.mp4"
             />
           </div>
         </motion.div>

@@ -51,49 +51,12 @@ export default function GoogleReviews({ placeId }: GoogleReviewsProps) {
           setTotalReviews(data.result.user_ratings_total || 0);
         }
       } catch (_error) {
-        if (placeId && placeId !== 'ClimGO-default-place-id') {
-          console.warn('⚠️  Erreur API Google Reviews, basculement vers données statiques:', _error instanceof Error ? _error.message : 'Unknown error');
-        } else {
-          console.info('📍 Utilisation des avis statiques (configuration en mode démo)');
-        }
+        console.error('❌ Erreur API Google Reviews:', _error instanceof Error ? _error.message : 'Unknown error');
         
-        // Fallback vers des avis statiques en cas d'erreur
-        const staticReviews: Review[] = [
-          {
-            id: 'static-1',
-            author_name: 'Marie Dubois',
-            author_url: '#',
-            profile_photo_url: '/favicon/android-chrome-192x192.png',
-            rating: 5,
-            relative_time_description: 'il y a 2 semaines',
-            text: 'Service impeccable ! Installation rapide et propre. L\'équipe de ClimGO est très professionnelle et à l\'écoute. Je recommande vivement.',
-            time: Date.now() - 1209600000
-          },
-          {
-            id: 'static-2',
-            author_name: 'Jean Martin',
-            author_url: '#',
-            profile_photo_url: '/favicon/android-chrome-192x192.png',
-            rating: 5,
-            relative_time_description: 'il y a 1 mois',
-            text: 'Excellent travail pour l\'installation de notre pompe à chaleur. Très satisfait du résultat et du service après-vente.',
-            time: Date.now() - 2592000000
-          },
-          {
-            id: 'static-3',
-            author_name: 'Sophie Laurent',
-            author_url: '#',
-            profile_photo_url: '/favicon/android-chrome-192x192.png',
-            rating: 5,
-            relative_time_description: 'il y a 3 semaines',
-            text: 'Entreprise sérieuse et compétente. Installation de climatisation réalisée dans les temps avec un excellent rapport qualité-prix.',
-            time: Date.now() - 1814400000
-          }
-        ];
-        
-        setReviews(staticReviews);
-        setAverageRating(4.9);
-        setTotalReviews(47);
+        // PAS DE FAUX AVIS ! Si l'API ne fonctionne pas, on ne montre rien
+        setReviews([]);
+        setAverageRating(0);
+        setTotalReviews(0);
       } finally {
         setLoading(false);
       }
@@ -128,6 +91,19 @@ export default function GoogleReviews({ placeId }: GoogleReviewsProps) {
             <div className="h-8 bg-gray-300 dark:bg-gray-700 rounded w-1/3 mx-auto mb-4"></div>
             <div className="h-4 bg-gray-300 dark:bg-gray-700 rounded w-1/2 mx-auto"></div>
           </div>
+        </div>
+      </section>
+    );
+  }
+
+  // Si pas d'avis réels, on ne montre pas la section
+  if (reviews.length === 0) {
+    return (
+      <section className="py-20 bg-white dark:bg-black">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-gray-500 dark:text-gray-400">
+            Configuration des avis Google en cours...
+          </p>
         </div>
       </section>
     );
@@ -170,16 +146,27 @@ export default function GoogleReviews({ placeId }: GoogleReviewsProps) {
               >
                 <div className="bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-700 h-[280px] flex flex-col hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                   <div className="flex items-center mb-4">
-                    <Image
-                      src={review.profile_photo_url}
-                      alt={review.author_name}
-                      width={48}
-                      height={48}
-                      className="w-12 h-12 rounded-full mr-3 object-cover border-2 border-gray-200 dark:border-gray-500"
-                      onError={(e) => {
-                        e.currentTarget.src = '/favicon/android-chrome-192x192.png';
-                      }}
-                    />
+                    {review.profile_photo_url ? (
+                      <Image
+                        src={review.profile_photo_url}
+                        alt={review.author_name}
+                        width={48}
+                        height={48}
+                        className="w-12 h-12 rounded-full mr-3 object-cover border-2 border-gray-200 dark:border-gray-500"
+                        onError={(e) => {
+                          // Cache l'image et affiche le fallback
+                          e.currentTarget.style.display = 'none';
+                          const fallback = e.currentTarget.nextSibling as HTMLElement;
+                          if (fallback) fallback.style.display = 'flex';
+                        }}
+                      />
+                    ) : null}
+                    <div 
+                      className="w-12 h-12 rounded-full mr-3 bg-gradient-to-br from-orange-500 to-blue-600 flex items-center justify-center text-white font-semibold text-lg border-2 border-gray-200 dark:border-gray-500"
+                      style={{ display: review.profile_photo_url ? 'none' : 'flex' }}
+                    >
+                      {review.author_name.charAt(0).toUpperCase()}
+                    </div>
                     <div className="flex-1">
                       <h4 className="font-semibold text-gray-900 dark:text-white text-sm">
                         {review.author_name}

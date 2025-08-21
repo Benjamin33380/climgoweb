@@ -375,26 +375,29 @@ export default function HomePage() {
       <Services />
 
       {/* Section Nos Engagements */}
-      <section className="relative py-24 overflow-hidden bg-white dark:bg-black">
+      <section className="relative py-12 xs:py-16 sm:py-20 md:py-24 overflow-hidden bg-white dark:bg-black">
         <SimpleWrapper>
           <div className="relative z-10 max-w-6xl mx-auto px-4">
             {/* En-tête */}
-            <div className="text-center mb-20">
-              <h2 className="text-xl xs:text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-gray-900 dark:text-white mb-6">
+            <div className="text-center mb-12 xs:mb-16 sm:mb-20">
+              <h2 className="text-xl xs:text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-gray-900 dark:text-white mb-4 xs:mb-6">
                 Nos engagements, votre tranquillité
               </h2>
-              <p className="text-sm xs:text-base sm:text-lg md:text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-sm xs:text-base sm:text-lg md:text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed px-2">
                 De l'étude aux aides, des travaux au suivi, on s'occupe de tout. Vous, vous profitez.
               </p>
             </div>
 
             {/* Timeline */}
             <div className="relative">
-              {/* Ligne centrale */}
-              <div className="pointer-events-none absolute left-1/2 -translate-x-1/2 w-px h-full bg-gray-300 dark:bg-gray-700" />
-              {/* Lumière qui défile */}
+              {/* Ligne centrale - cachée sur mobile, visible sur desktop */}
+              <div className="pointer-events-none absolute left-1/2 -translate-x-1/2 w-px h-full bg-gray-300 dark:bg-gray-700 hidden md:block" />
+              {/* Ligne verticale mobile - visible seulement sur mobile */}
+              <div className="pointer-events-none absolute left-8 top-0 w-px h-full bg-gray-300 dark:bg-gray-700 md:hidden" />
+              
+              {/* Lumière qui défile - seulement sur desktop */}
               <div
-                className="pointer-events-none absolute left-1/2 -translate-x-1/2 w-[2px] h-20 rounded-full"
+                className="pointer-events-none absolute left-1/2 -translate-x-1/2 w-[2px] h-20 rounded-full hidden md:block"
                 style={{
                   animation: 'lightMove 4s infinite linear',
                   background:
@@ -405,20 +408,31 @@ export default function HomePage() {
               />
 
               {/* Étape 1 */}
-              <div className="relative flex items-center mb-16">
+              <div className="relative flex items-center mb-12 xs:mb-16">
                 {/* Pastille */}
-                <div className="absolute left-1/2 -translate-x-1/2 w-16 h-16 rounded-full shadow-lg bg-gradient-to-br from-orange-500 to-blue-600 flex items-center justify-center z-10">
-                  <svg className="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8}>
+                <div className="absolute left-8 md:left-1/2 -translate-x-1/2 w-12 h-12 xs:w-14 xs:h-14 md:w-16 md:h-16 rounded-full shadow-lg bg-gradient-to-br from-orange-500 to-blue-600 flex items-center justify-center z-10">
+                  <svg className="w-5 h-5 xs:w-6 xs:h-6 md:w-7 md:h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8}>
                     <path d="M9 12l2 2 4-4" strokeLinecap="round" strokeLinejoin="round"/>
                     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
                     <path d="M14 2v6h6" />
                   </svg>
                 </div>
-                <div className="w-full md:w-5/12 pr-0 md:pr-8 md:text-right">
-                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                {/* Contenu mobile */}
+                <div className="ml-20 md:hidden w-full">
+                  <h3 className="text-lg xs:text-xl font-bold text-gray-900 dark:text-white mb-2">
                     Clarté dès le départ
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300">
+                  <p className="text-sm xs:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
+                    Audit énergétique précis, aides identifiées, <strong>devis 100% gratuit</strong> et sans surprise.
+                    Vous profitez des aides <strong>sans avancer un centime</strong>.
+                  </p>
+                </div>
+                {/* Contenu desktop */}
+                <div className="hidden md:block w-5/12 pr-8 text-right">
+                  <h3 className="text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                    Clarté dès le départ
+                  </h3>
+                  <p className="text-base lg:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
                     Audit énergétique précis, aides identifiées, <strong>devis 100% gratuit</strong> et sans surprise.
                     Vous profitez des aides <strong>sans avancer un centime</strong>.
                   </p>
@@ -427,42 +441,63 @@ export default function HomePage() {
               </div>
 
               {/* Étape 2 */}
-              <div className="relative flex items-center mb-16">
+              <div className="relative flex items-center mb-12 xs:mb-16">
                 <div className="hidden md:block w-5/12" />
-                <div className="absolute left-1/2 -translate-x-1/2 w-16 h-16 rounded-full shadow-lg bg-gradient-to-br from-blue-600 to-orange-500 flex items-center justify-center z-10">
-                  <svg className="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8}>
+                <div className="absolute left-8 md:left-1/2 -translate-x-1/2 w-12 h-12 xs:w-14 xs:h-14 md:w-16 md:h-16 rounded-full shadow-lg bg-gradient-to-br from-blue-600 to-orange-500 flex items-center justify-center z-10">
+                  <svg className="w-5 h-5 xs:w-6 xs:h-6 md:w-7 md:h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8}>
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" strokeLinecap="round" strokeLinejoin="round"/>
                     <path d="M9 12l2 2 4-4" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
-                <div className="w-full md:w-5/12 md:ml-auto md:pl-8">
-                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                {/* Contenu mobile */}
+                <div className="ml-20 md:hidden w-full">
+                  <h3 className="text-lg xs:text-xl font-bold text-gray-900 dark:text-white mb-2">
                     Travaux garantis RGE
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300">
+                  <p className="text-sm xs:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
+                    Équipes formées, grandes marques, <strong>zéro sous-traitance</strong>. Pose propre, délais respectés.
+                  </p>
+                </div>
+                {/* Contenu desktop */}
+                <div className="hidden md:block w-5/12 ml-auto pl-8">
+                  <h3 className="text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                    Travaux garantis RGE
+                  </h3>
+                  <p className="text-base lg:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
                     Équipes formées, grandes marques, <strong>zéro sous-traitance</strong>. Pose propre, délais respectés.
                   </p>
                 </div>
               </div>
 
               {/* Étape 3 */}
-              <div className="relative flex items-center mb-16">
-                <div className="w-full md:w-5/12 pr-0 md:pr-8 md:text-right">
-                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                    Votre satisfaction, notre fierté
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-300">
-                    <strong>95% de clients nous recommandent</strong>. Suivi après installation, entretien et maintenance
-                    pour un confort qui dure.
-                  </p>
-                </div>
-                <div className="absolute left-1/2 -translate-x-1/2 w-16 h-16 rounded-full shadow-lg bg-gradient-to-br from-orange-600 to-blue-700 flex items-center justify-center z-10">
-                  <svg className="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8}>
+              <div className="relative flex items-center mb-12 xs:mb-16">
+                <div className="absolute left-8 md:left-1/2 -translate-x-1/2 w-12 h-12 xs:w-14 xs:h-14 md:w-16 md:h-16 rounded-full shadow-lg bg-gradient-to-br from-orange-600 to-blue-700 flex items-center justify-center z-10">
+                  <svg className="w-5 h-5 xs:w-6 xs:h-6 md:w-7 md:h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8}>
                     <path d="M8 14s1.5 2 4 2 4-2 4-2" strokeLinecap="round" strokeLinejoin="round"/>
                     <path d="M9 9h.01" strokeLinecap="round" strokeLinejoin="round"/>
                     <path d="M15 9h.01" strokeLinecap="round" strokeLinejoin="round"/>
                     <circle cx="12" cy="12" r="10" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
+                </div>
+                {/* Contenu mobile */}
+                <div className="ml-20 md:hidden w-full">
+                  <h3 className="text-lg xs:text-xl font-bold text-gray-900 dark:text-white mb-2">
+                    Votre satisfaction, notre fierté
+                  </h3>
+                  <p className="text-sm xs:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
+                    <strong>95% de clients nous recommandent</strong>. Suivi après installation, entretien et maintenance
+                    pour un confort qui dure.
+                  </p>
+                </div>
+                {/* Contenu desktop */}
+                <div className="hidden md:block w-5/12 pr-8 text-right">
+                  <h3 className="text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                    Votre satisfaction, notre fierté
+                  </h3>
+                  <p className="text-base lg:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                    <strong>95% de clients nous recommandent</strong>. Suivi après installation, entretien et maintenance
+                    pour un confort qui dure.
+                  </p>
                 </div>
                 <div className="hidden md:block w-5/12" />
               </div>
@@ -470,14 +505,24 @@ export default function HomePage() {
               {/* Étape 4 */}
               <div className="relative flex items-center">
                 <div className="hidden md:block w-5/12" />
-                <div className="absolute left-1/2 -translate-x-1/2 w-16 h-16 rounded-full shadow-lg bg-gradient-to-br from-blue-700 to-orange-600 flex items-center justify-center z-10">
-                  <Euro className="w-7 h-7 text-white" />
+                <div className="absolute left-8 md:left-1/2 -translate-x-1/2 w-12 h-12 xs:w-14 xs:h-14 md:w-16 md:h-16 rounded-full shadow-lg bg-gradient-to-br from-blue-700 to-orange-600 flex items-center justify-center z-10">
+                  <Euro className="w-5 h-5 xs:w-6 xs:h-6 md:w-7 md:h-7 text-white" />
                 </div>
-                <div className="w-full md:w-5/12 md:ml-auto md:pl-8">
-                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                {/* Contenu mobile */}
+                <div className="ml-20 md:hidden w-full">
+                  <h3 className="text-lg xs:text-xl font-bold text-gray-900 dark:text-white mb-2">
                     Financement sur mesure
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300">
+                  <p className="text-sm xs:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
+                    Aides mobilisées, paiements facilités, solutions adaptées à votre situation. <strong>Vous ne vous occupez de rien.</strong>
+                  </p>
+                </div>
+                {/* Contenu desktop */}
+                <div className="hidden md:block w-5/12 ml-auto pl-8">
+                  <h3 className="text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                    Financement sur mesure
+                  </h3>
+                  <p className="text-base lg:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
                     Aides mobilisées, paiements facilités, solutions adaptées à votre situation. <strong>Vous ne vous occupez de rien.</strong>
                   </p>
                 </div>
@@ -485,10 +530,10 @@ export default function HomePage() {
             </div>
 
             {/* CTA */}
-            <div id="demander-devis" className="text-center mt-16">
+            <div id="demander-devis" className="text-center mt-12 xs:mt-16">
               <Link
                 href="/contact"
-                className="inline-flex items-center px-7 py-3 rounded-full text-sm font-semibold
+                className="inline-flex items-center px-6 xs:px-7 py-3 rounded-full text-sm xs:text-base font-semibold
                            bg-white text-gray-900 ring-1 ring-black/10 shadow-md hover:shadow-lg
                            dark:bg-gray-100 dark:text-gray-900 transition-transform hover:-translate-y-0.5"
                 aria-label="Obtenez votre devis gratuit"

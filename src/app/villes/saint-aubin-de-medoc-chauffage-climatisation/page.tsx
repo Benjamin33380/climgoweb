@@ -139,7 +139,6 @@ export default function SaintAubinDeMedoc() {
               muted
               loop
               playsInline
-              src="/mp4/aubin.mp4"
             />
           </div>
           
@@ -156,7 +155,6 @@ export default function SaintAubinDeMedoc() {
               muted
               loop
               playsInline
-              src="/mp4/aubin.mp4"
             />
           </div>
         </motion.div>
