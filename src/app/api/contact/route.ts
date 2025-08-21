@@ -15,7 +15,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Configuration SMTP
-    const transporter = nodemailer.createTransporter({
+    const transporter = nodemailer.createTransport({
       host: 'smtp.gmail.com', // ou ton serveur SMTP
       port: 587,
       secure: false,

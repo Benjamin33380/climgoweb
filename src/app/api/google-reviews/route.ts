@@ -44,7 +44,7 @@ export async function GET(request: NextRequest) {
       
       // Debug: Log photos de profil pour voir ce qu'on reçoit
       if (data.result?.reviews) {
-        data.result.reviews.forEach((review: any, index: number) => {
+        data.result.reviews.forEach((review: { author_name: string; profile_photo_url?: string }, index: number) => {
           console.log(`📸 Review ${index + 1} - ${review.author_name}:`);
           console.log(`   Photo URL: ${review.profile_photo_url || 'MANQUANTE'}`);
         });
