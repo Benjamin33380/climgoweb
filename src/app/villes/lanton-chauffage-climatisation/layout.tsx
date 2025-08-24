@@ -1,25 +1,26 @@
 import { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Lanton COMPLETE
 export const metadata: Metadata = {
-  title: 'Chauffage Climatisation Lanton 33138 | ClimGO Expert Local',
-  description: 'Expert chauffage climatisation Lanton 33138. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit sous 24h.',
+  title: 'Chauffage Climatisation Lanton 33138 | Expert Local #1 | ClimGO',
+  description: 'Expert chauffage climatisation Lanton 33138. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit sous 24h.',
   
-  keywords: 'climatisation gironde, chauffage gironde, pompe à chaleur gironde, chauffagiste bordeaux, installateur climatisation, artisan RGE, installation PAC air eau, entretien climatisation, dépannage chauffage, chaudière gaz condensation, plancher chauffant, radiateurs électriques, maintenance pompe à chaleur, réparation climatisation, devis gratuit, intervention urgence, certificat RGE, MaPrimeRénov, aide financière chauffage, prime CEE, crédit impôt, économie énergie, rénovation énergétique, audit énergétique, chauffage lanton, climatisation lanton, chauffagiste lanton, pompe à chaleur lanton, installation PAC lanton, dépannage chauffage lanton, entretien climatisation lanton, artisan RGE lanton, chaudière lanton, maintenance lanton, expert chauffage 33138, climatisation 33138, chauffagiste 33138, devis gratuit lanton, intervention urgence lanton, spécialiste CVC lanton, entreprise chauffage lanton, installateur agréé lanton, technicien qualifié lanton, service après-vente lanton',
+  keywords: 'climatisation Lanton, chauffage Lanton, pompe à chaleur Lanton, chauffagiste Lanton, installateur climatisation Lanton, artisan RGE Lanton, installation PAC Lanton, entretien climatisation Lanton, dépannage chauffage Lanton, chaudière Lanton, maintenance Lanton, réparation climatisation Lanton, devis gratuit Lanton, intervention urgence Lanton, certificat RGE Lanton, MaPrimeRénov Lanton, aide financière chauffage Lanton, prime CEE Lanton, crédit impôt Lanton, économie énergie Lanton, rénovation énergétique Lanton, audit énergétique Lanton, expert chauffage 33138, climatisation 33138, chauffagiste 33138, devis gratuit Lanton, intervention urgence Lanton, spécialiste CVC Lanton, entreprise chauffage Lanton, installateur agréé Lanton, technicien qualifié Lanton, service après-vente Lanton',
   
   // Open Graph optimisé COMPLET
   openGraph: {
-    title: 'Chauffage Climatisation Lanton 33138 | ClimGO Expert Local',
-    description: 'ClimGO, expert chauffage climatisation Lanton. Installation, dépannage, entretien PAC. Artisan RGE certifié. Devis gratuit.',
-    url: 'https://climgo.fr/villes/lanton-chauffage-climatisation',
+    title: 'Chauffage Climatisation Lanton 33138 | Expert Local #1 | ClimGO',
+    description: 'ClimGO, expert chauffage climatisation Lanton 33138. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit.',
+    url: 'https://www.climgo.fr/villes/lanton-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
     type: 'website',
     images: [{
-      url: 'https://www.climgo.fr/images/og-lanton-chauffage-climatisation.jpg',
+      url: 'https://www.climgo.fr/images/og/lanton-chauffage-climatisation.jpg',
       width: 1200,
       height: 630,
-      alt: 'Chauffage climatisation Lanton - ClimGO',
+      alt: 'Chauffage climatisation Lanton 33138 - ClimGO Expert Local #1',
     }],
   },
   
@@ -28,9 +29,9 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Lanton 33138 | ClimGO Expert Local',
-    description: 'Expert chauffage climatisation Lanton. Installation PAC, dépannage urgent. Artisan RGE certifié.',
-    images: ['https://www.climgo.fr/images/twitter-lanton-chauffage-climatisation.jpg'],
+    title: 'Chauffage Climatisation Lanton 33138 | Expert Local #1 | ClimGO',
+    description: 'Expert chauffage climatisation Lanton 33138. Installation PAC, dépannage urgent. Artisan RGE certifié #1.',
+    images: ['https://www.climgo.fr/images/og/lanton-chauffage-climatisation.jpg'],
   },
   
   // Métadonnées avancées COMPLÈTES
@@ -38,20 +39,20 @@ export const metadata: Metadata = {
     // Géolocalisation précise
     'geo.region': 'FR-33',
     'geo.placename': 'Lanton',
-    'geo.position': '44.7058;-1.0336',
-    'ICBM': '44.7058, -1.0336',
+    'geo.position': '44.8997;-0.7031',
+    'ICBM': '44.8997, -0.7031',
     'geo.country': 'France',
     'geo.state': 'Nouvelle-Aquitaine',
     
     // Dublin Core COMPLET
-    'DC.title': 'Chauffage Climatisation Lanton 33138 | ClimGO Expert Local',
-    'DC.description': 'Expert chauffage climatisation Lanton 33138. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié.',
+    'DC.title': 'Chauffage Climatisation Lanton 33138 | ClimGO Expert Local #1',
+    'DC.description': 'Expert chauffage climatisation Lanton 33138. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1.',
     'DC.creator': 'ClimGO',
     'DC.publisher': 'ClimGO',
     'DC.language': 'fr-FR',
     'DC.type': 'Service',
     'DC.format': 'text/html',
-    'DC.identifier': 'https://climgo.fr/villes/lanton-chauffage-climatisation',
+    'DC.identifier': 'https://www.climgo.fr/villes/lanton-chauffage-climatisation',
     'DC.source': 'https://www.climgo.fr',
     'DC.coverage': 'Lanton, Gironde, France',
     'DC.rights': '© 2025 ClimGO. Tous droits réservés.',
@@ -71,7 +72,7 @@ export const metadata: Metadata = {
     'serviceType': 'Installation, Dépannage, Entretien',
     
     // Référencement avancé
-    'revisit-after': '7 days',
+    'revisit-after': '1 day',
     'robots': 'index,follow,noimageindex,max-video-preview:-1,max-image-preview:large,max-snippet:-1',
     'googlebot': 'index,follow,max-video-preview:-1,max-image-preview:large,max-snippet:-1',
     
@@ -93,11 +94,11 @@ export const metadata: Metadata = {
   },
   
   alternates: {
-    canonical: 'https://climgo.fr/villes/lanton-chauffage-climatisation',
+    canonical: 'https://www.climgo.fr/villes/lanton-chauffage-climatisation',
   },
   
   verification: {
-    google: 'VERIFICATION_CODE_TO_ADD',
+    google: 'Ljs9Q3ve_Z_ldbzUTagcBPPmmQ_LTJER2pD3j7Woj1g',
     other: {
       bing: 'VERIFICATION_CODE_TO_ADD'
     }
@@ -111,6 +112,7 @@ export default function LantonLayout({
 }) {
   return (
     <>
+      <JsonLd type="city" city="Lanton" postalCode="33138" />
       {children}
     </>
   );

@@ -1,25 +1,26 @@
 import { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 
-// Métadonnées ultra-optimisées La-Teste-De-Buch COMPLETE
+// Métadonnées ultra-optimisées La Teste-de-Buch COMPLETE
 export const metadata: Metadata = {
-  title: 'Chauffage Climatisation La-Teste-De-Buch 33260 | ClimGO Expert Local',
-  description: 'Expert chauffage climatisation La-Teste-De-Buch 33260. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit sous 24h.',
+  title: 'Chauffage Climatisation La Teste-de-Buch 33260 | Expert Local #1 | ClimGO',
+  description: 'Expert chauffage climatisation La Teste-de-Buch 33260. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit sous 24h.',
   
-  keywords: 'climatisation gironde, chauffage gironde, pompe à chaleur gironde, chauffagiste bordeaux, installateur climatisation, artisan RGE, installation PAC air eau, entretien climatisation, dépannage chauffage, chaudière gaz condensation, plancher chauffant, radiateurs électriques, maintenance pompe à chaleur, réparation climatisation, devis gratuit, intervention urgence, certificat RGE, MaPrimeRénov, aide financière chauffage, prime CEE, crédit impôt, économie énergie, rénovation énergétique, audit énergétique, chauffage la teste-de-buch, climatisation la teste-de-buch, chauffagiste la teste-de-buch, pompe à chaleur la teste-de-buch, installation PAC la teste-de-buch, dépannage chauffage la teste-de-buch, entretien climatisation la teste-de-buch, artisan RGE la teste-de-buch, chaudière la teste-de-buch, maintenance la teste-de-buch, expert chauffage 33260, climatisation 33260, chauffagiste 33260, devis gratuit la teste-de-buch, intervention urgence la teste-de-buch, spécialiste CVC la teste-de-buch, entreprise chauffage la teste-de-buch, installateur agréé la teste-de-buch, technicien qualifié la teste-de-buch, service après-vente la teste-de-buch',
+  keywords: 'climatisation La Teste-de-Buch, chauffage La Teste-de-Buch, pompe à chaleur La Teste-de-Buch, chauffagiste La Teste-de-Buch, installateur climatisation La Teste-de-Buch, artisan RGE La Teste-de-Buch, installation PAC La Teste-de-Buch, entretien climatisation La Teste-de-Buch, dépannage chauffage La Teste-de-Buch, chaudière La Teste-de-Buch, maintenance La Teste-de-Buch, réparation climatisation La Teste-de-Buch, devis gratuit La Teste-de-Buch, intervention urgence La Teste-de-Buch, certificat RGE La Teste-de-Buch, MaPrimeRénov La Teste-de-Buch, aide financière chauffage La Teste-de-Buch, prime CEE La Teste-de-Buch, crédit impôt La Teste-de-Buch, économie énergie La Teste-de-Buch, rénovation énergétique La Teste-de-Buch, audit énergétique La Teste-de-Buch, expert chauffage 33260, climatisation 33260, chauffagiste 33260, devis gratuit La Teste-de-Buch, intervention urgence La Teste-de-Buch, spécialiste CVC La Teste-de-Buch, entreprise chauffage La Teste-de-Buch, installateur agréé La Teste-de-Buch, technicien qualifié La Teste-de-Buch, service après-vente La Teste-de-Buch',
   
   // Open Graph optimisé COMPLET
   openGraph: {
-    title: 'Chauffage Climatisation La-Teste-De-Buch 33260 | ClimGO Expert Local',
-    description: 'ClimGO, expert chauffage climatisation La-Teste-De-Buch. Installation, dépannage, entretien PAC. Artisan RGE certifié. Devis gratuit.',
-    url: 'https://climgo.fr/villes/la-teste-de-buch-chauffage-climatisation',
+    title: 'Chauffage Climatisation La Teste-de-Buch 33260 | Expert Local #1 | ClimGO',
+    description: 'ClimGO, expert chauffage climatisation La Teste-de-Buch 33260. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit.',
+    url: 'https://www.climgo.fr/villes/la-teste-de-buch-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
     type: 'website',
     images: [{
-      url: 'https://www.climgo.fr/images/og-la-teste-de-buch-chauffage-climatisation.jpg',
+      url: 'https://www.climgo.fr/images/og/la-teste-de-buch-chauffage-climatisation.jpg',
       width: 1200,
       height: 630,
-      alt: 'Chauffage climatisation La-Teste-De-Buch - ClimGO',
+      alt: 'Chauffage climatisation La Teste-de-Buch 33260 - ClimGO Expert Local #1',
     }],
   },
   
@@ -28,36 +29,36 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation La-Teste-De-Buch 33260 | ClimGO Expert Local',
-    description: 'Expert chauffage climatisation La-Teste-De-Buch. Installation PAC, dépannage urgent. Artisan RGE certifié.',
-    images: ['https://www.climgo.fr/images/twitter-la-teste-de-buch-chauffage-climatisation.jpg'],
+    title: 'Chauffage Climatisation La Teste-de-Buch 33260 | Expert Local #1 | ClimGO',
+    description: 'Expert chauffage climatisation La Teste-de-Buch 33260. Installation PAC, dépannage urgent. Artisan RGE certifié #1.',
+    images: ['https://www.climgo.fr/images/og/la-teste-de-buch-chauffage-climatisation.jpg'],
   },
   
   // Métadonnées avancées COMPLÈTES
   other: {
     // Géolocalisation précise
     'geo.region': 'FR-33',
-    'geo.placename': 'La-Teste-De-Buch',
-    'geo.position': '44.6307;-1.1459',
-    'ICBM': '44.6307, -1.1459',
+    'geo.placename': 'La Teste-de-Buch',
+    'geo.position': '44.8997;-0.7031',
+    'ICBM': '44.8997, -0.7031',
     'geo.country': 'France',
     'geo.state': 'Nouvelle-Aquitaine',
     
     // Dublin Core COMPLET
-    'DC.title': 'Chauffage Climatisation La-Teste-De-Buch 33260 | ClimGO Expert Local',
-    'DC.description': 'Expert chauffage climatisation La-Teste-De-Buch 33260. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié.',
+    'DC.title': 'Chauffage Climatisation La Teste-de-Buch 33260 | ClimGO Expert Local #1',
+    'DC.description': 'Expert chauffage climatisation La Teste-de-Buch 33260. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1.',
     'DC.creator': 'ClimGO',
     'DC.publisher': 'ClimGO',
     'DC.language': 'fr-FR',
     'DC.type': 'Service',
     'DC.format': 'text/html',
-    'DC.identifier': 'https://climgo.fr/villes/la-teste-de-buch-chauffage-climatisation',
+    'DC.identifier': 'https://www.climgo.fr/villes/la-teste-de-buch-chauffage-climatisation',
     'DC.source': 'https://www.climgo.fr',
-    'DC.coverage': 'La-Teste-De-Buch, Gironde, France',
+    'DC.coverage': 'La Teste-de-Buch, Gironde, France',
     'DC.rights': '© 2025 ClimGO. Tous droits réservés.',
     
     // Données business locales COMPLÈTES
-    'business.contact_data.locality': 'La-Teste-De-Buch',
+    'business.contact_data.locality': 'La Teste-de-Buch',
     'business.contact_data.postal_code': '33260',
     'business.contact_data.phone_number': '+33766460008',
     'business.contact_data.website': 'https://www.climgo.fr',
@@ -71,7 +72,7 @@ export const metadata: Metadata = {
     'serviceType': 'Installation, Dépannage, Entretien',
     
     // Référencement avancé
-    'revisit-after': '7 days',
+    'revisit-after': '1 day',
     'robots': 'index,follow,noimageindex,max-video-preview:-1,max-image-preview:large,max-snippet:-1',
     'googlebot': 'index,follow,max-video-preview:-1,max-image-preview:large,max-snippet:-1',
     
@@ -93,24 +94,25 @@ export const metadata: Metadata = {
   },
   
   alternates: {
-    canonical: 'https://climgo.fr/villes/la-teste-de-buch-chauffage-climatisation',
+    canonical: 'https://www.climgo.fr/villes/la-teste-de-buch-chauffage-climatisation',
   },
   
   verification: {
-    google: 'VERIFICATION_CODE_TO_ADD',
+    google: 'Ljs9Q3ve_Z_ldbzUTagcBPPmmQ_LTJER2pD3j7Woj1g',
     other: {
       bing: 'VERIFICATION_CODE_TO_ADD'
     }
   }
 };
 
-export default function LaTesteDeBuchLayout({
+export default function LaTestedeBuchLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
     <>
+      <JsonLd type="city" city="La Teste-de-Buch" postalCode="33260" />
       {children}
     </>
   );

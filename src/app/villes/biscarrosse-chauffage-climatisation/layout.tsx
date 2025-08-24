@@ -1,25 +1,26 @@
 import { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Biscarrosse COMPLETE
 export const metadata: Metadata = {
-  title: 'Chauffage Climatisation Biscarrosse 33840 | ClimGO Expert Local',
-  description: 'Expert chauffage climatisation Biscarrosse 33840. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit sous 24h.',
+  title: 'Chauffage Climatisation Biscarrosse 40600 | Expert Local #1 | ClimGO',
+  description: 'Expert chauffage climatisation Biscarrosse 40600. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit sous 24h.',
   
-  keywords: 'climatisation gironde, chauffage gironde, pompe à chaleur gironde, chauffagiste bordeaux, installateur climatisation, artisan RGE, installation PAC air eau, entretien climatisation, dépannage chauffage, chaudière gaz condensation, plancher chauffant, radiateurs électriques, maintenance pompe à chaleur, réparation climatisation, devis gratuit, intervention urgence, certificat RGE, MaPrimeRénov, aide financière chauffage, prime CEE, crédit impôt, économie énergie, rénovation énergétique, audit énergétique, chauffage biscarrosse, climatisation biscarrosse, chauffagiste biscarrosse, pompe à chaleur biscarrosse, installation PAC biscarrosse, dépannage chauffage biscarrosse, entretien climatisation biscarrosse, artisan RGE biscarrosse, chaudière biscarrosse, maintenance biscarrosse, expert chauffage 40600, climatisation 40600, chauffagiste 40600, devis gratuit biscarrosse, intervention urgence biscarrosse, spécialiste CVC biscarrosse, entreprise chauffage biscarrosse, installateur agréé biscarrosse, technicien qualifié biscarrosse, service après-vente biscarrosse',
+  keywords: 'climatisation Biscarrosse, chauffage Biscarrosse, pompe à chaleur Biscarrosse, chauffagiste Biscarrosse, installateur climatisation Biscarrosse, artisan RGE Biscarrosse, installation PAC Biscarrosse, entretien climatisation Biscarrosse, dépannage chauffage Biscarrosse, chaudière Biscarrosse, maintenance Biscarrosse, réparation climatisation Biscarrosse, devis gratuit Biscarrosse, intervention urgence Biscarrosse, certificat RGE Biscarrosse, MaPrimeRénov Biscarrosse, aide financière chauffage Biscarrosse, prime CEE Biscarrosse, crédit impôt Biscarrosse, économie énergie Biscarrosse, rénovation énergétique Biscarrosse, audit énergétique Biscarrosse, expert chauffage 40600, climatisation 40600, chauffagiste 40600, devis gratuit Biscarrosse, intervention urgence Biscarrosse, spécialiste CVC Biscarrosse, entreprise chauffage Biscarrosse, installateur agréé Biscarrosse, technicien qualifié Biscarrosse, service après-vente Biscarrosse',
   
   // Open Graph optimisé COMPLET
   openGraph: {
-    title: 'Chauffage Climatisation Biscarrosse 33840 | ClimGO Expert Local',
-    description: 'ClimGO, expert chauffage climatisation Biscarrosse. Installation, dépannage, entretien PAC. Artisan RGE certifié. Devis gratuit.',
-    url: 'https://climgo.fr/villes/biscarrosse-chauffage-climatisation',
+    title: 'Chauffage Climatisation Biscarrosse 40600 | Expert Local #1 | ClimGO',
+    description: 'ClimGO, expert chauffage climatisation Biscarrosse 40600. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit.',
+    url: 'https://www.climgo.fr/villes/biscarrosse-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
     type: 'website',
     images: [{
-      url: 'https://www.climgo.fr/images/og-biscarrosse-chauffage-climatisation.jpg',
+      url: 'https://www.climgo.fr/images/og/biscarrosse-chauffage-climatisation.jpg',
       width: 1200,
       height: 630,
-      alt: 'Chauffage climatisation Biscarrosse - ClimGO',
+      alt: 'Chauffage climatisation Biscarrosse 40600 - ClimGO Expert Local #1',
     }],
   },
   
@@ -28,9 +29,9 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Biscarrosse 33840 | ClimGO Expert Local',
-    description: 'Expert chauffage climatisation Biscarrosse. Installation PAC, dépannage urgent. Artisan RGE certifié.',
-    images: ['https://www.climgo.fr/images/twitter-biscarrosse-chauffage-climatisation.jpg'],
+    title: 'Chauffage Climatisation Biscarrosse 40600 | Expert Local #1 | ClimGO',
+    description: 'Expert chauffage climatisation Biscarrosse 40600. Installation PAC, dépannage urgent. Artisan RGE certifié #1.',
+    images: ['https://www.climgo.fr/images/og/biscarrosse-chauffage-climatisation.jpg'],
   },
   
   // Métadonnées avancées COMPLÈTES
@@ -38,27 +39,27 @@ export const metadata: Metadata = {
     // Géolocalisation précise
     'geo.region': 'FR-33',
     'geo.placename': 'Biscarrosse',
-    'geo.position': '44.3939;-1.1697',
-    'ICBM': '44.3939, -1.1697',
+    'geo.position': '44.8997;-0.7031',
+    'ICBM': '44.8997, -0.7031',
     'geo.country': 'France',
     'geo.state': 'Nouvelle-Aquitaine',
     
     // Dublin Core COMPLET
-    'DC.title': 'Chauffage Climatisation Biscarrosse 33840 | ClimGO Expert Local',
-    'DC.description': 'Expert chauffage climatisation Biscarrosse 33840. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié.',
+    'DC.title': 'Chauffage Climatisation Biscarrosse 40600 | ClimGO Expert Local #1',
+    'DC.description': 'Expert chauffage climatisation Biscarrosse 40600. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1.',
     'DC.creator': 'ClimGO',
     'DC.publisher': 'ClimGO',
     'DC.language': 'fr-FR',
     'DC.type': 'Service',
     'DC.format': 'text/html',
-    'DC.identifier': 'https://climgo.fr/villes/biscarrosse-chauffage-climatisation',
+    'DC.identifier': 'https://www.climgo.fr/villes/biscarrosse-chauffage-climatisation',
     'DC.source': 'https://www.climgo.fr',
     'DC.coverage': 'Biscarrosse, Gironde, France',
     'DC.rights': '© 2025 ClimGO. Tous droits réservés.',
     
     // Données business locales COMPLÈTES
     'business.contact_data.locality': 'Biscarrosse',
-    'business.contact_data.postal_code': '33840',
+    'business.contact_data.postal_code': '40600',
     'business.contact_data.phone_number': '+33766460008',
     'business.contact_data.website': 'https://www.climgo.fr',
     'business.contact_data.email': 'contact@climgo.fr',
@@ -71,7 +72,7 @@ export const metadata: Metadata = {
     'serviceType': 'Installation, Dépannage, Entretien',
     
     // Référencement avancé
-    'revisit-after': '7 days',
+    'revisit-after': '1 day',
     'robots': 'index,follow,noimageindex,max-video-preview:-1,max-image-preview:large,max-snippet:-1',
     'googlebot': 'index,follow,max-video-preview:-1,max-image-preview:large,max-snippet:-1',
     
@@ -93,11 +94,11 @@ export const metadata: Metadata = {
   },
   
   alternates: {
-    canonical: 'https://climgo.fr/villes/biscarrosse-chauffage-climatisation',
+    canonical: 'https://www.climgo.fr/villes/biscarrosse-chauffage-climatisation',
   },
   
   verification: {
-    google: 'VERIFICATION_CODE_TO_ADD',
+    google: 'Ljs9Q3ve_Z_ldbzUTagcBPPmmQ_LTJER2pD3j7Woj1g',
     other: {
       bing: 'VERIFICATION_CODE_TO_ADD'
     }
@@ -111,6 +112,7 @@ export default function BiscarrosseLayout({
 }) {
   return (
     <>
+      <JsonLd type="city" city="Biscarrosse" postalCode="40600" />
       {children}
     </>
   );

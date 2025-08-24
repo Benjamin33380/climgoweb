@@ -1,25 +1,26 @@
 import { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 
-// Métadonnées ultra-optimisées Martignas-Sur-Jalle COMPLETE
+// Métadonnées ultra-optimisées Martignas-sur-Jalle COMPLETE
 export const metadata: Metadata = {
-  title: 'Chauffage Climatisation Martignas-Sur-Jalle 33127 | Expert Local',
-  description: 'Expert chauffage climatisation Martignas-Sur-Jalle 33127. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit sous 24h.',
+  title: 'Chauffage Climatisation Martignas-sur-Jalle 33127 | Expert Local #1 | ClimGO',
+  description: 'Expert chauffage climatisation Martignas-sur-Jalle 33127. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit sous 24h.',
   
-  keywords: 'climatisation gironde, chauffage gironde, pompe à chaleur gironde, chauffagiste bordeaux, installateur climatisation, artisan RGE, installation PAC air eau, entretien climatisation, dépannage chauffage, chaudière gaz condensation, plancher chauffant, radiateurs électriques, maintenance pompe à chaleur, réparation climatisation, devis gratuit, intervention urgence, certificat RGE, MaPrimeRénov, aide financière chauffage, prime CEE, crédit impôt, économie énergie, rénovation énergétique, audit énergétique, chauffage martignas-sur-jalle, climatisation martignas-sur-jalle, chauffagiste martignas-sur-jalle, pompe à chaleur martignas-sur-jalle, installation PAC martignas-sur-jalle, dépannage chauffage martignas-sur-jalle, entretien climatisation martignas-sur-jalle, artisan RGE martignas-sur-jalle, chaudière martignas-sur-jalle, maintenance martignas-sur-jalle, expert chauffage 33127, climatisation 33127, chauffagiste 33127, devis gratuit martignas-sur-jalle, intervention urgence martignas-sur-jalle, spécialiste CVC martignas-sur-jalle, entreprise chauffage martignas-sur-jalle, installateur agréé martignas-sur-jalle, technicien qualifié martignas-sur-jalle, service après-vente martignas-sur-jalle',
+  keywords: 'climatisation Martignas-sur-Jalle, chauffage Martignas-sur-Jalle, pompe à chaleur Martignas-sur-Jalle, chauffagiste Martignas-sur-Jalle, installateur climatisation Martignas-sur-Jalle, artisan RGE Martignas-sur-Jalle, installation PAC Martignas-sur-Jalle, entretien climatisation Martignas-sur-Jalle, dépannage chauffage Martignas-sur-Jalle, chaudière Martignas-sur-Jalle, maintenance Martignas-sur-Jalle, réparation climatisation Martignas-sur-Jalle, devis gratuit Martignas-sur-Jalle, intervention urgence Martignas-sur-Jalle, certificat RGE Martignas-sur-Jalle, MaPrimeRénov Martignas-sur-Jalle, aide financière chauffage Martignas-sur-Jalle, prime CEE Martignas-sur-Jalle, crédit impôt Martignas-sur-Jalle, économie énergie Martignas-sur-Jalle, rénovation énergétique Martignas-sur-Jalle, audit énergétique Martignas-sur-Jalle, expert chauffage 33127, climatisation 33127, chauffagiste 33127, devis gratuit Martignas-sur-Jalle, intervention urgence Martignas-sur-Jalle, spécialiste CVC Martignas-sur-Jalle, entreprise chauffage Martignas-sur-Jalle, installateur agréé Martignas-sur-Jalle, technicien qualifié Martignas-sur-Jalle, service après-vente Martignas-sur-Jalle',
   
   // Open Graph optimisé COMPLET
   openGraph: {
-    title: 'Chauffage Climatisation Martignas-Sur-Jalle 33127 | Expert Local',
-    description: 'ClimGO, expert chauffage climatisation Martignas-Sur-Jalle. Installation, dépannage, entretien PAC. Artisan RGE certifié. Devis gratuit.',
-    url: 'https://climgo.fr/villes/martignas-sur-jalle-chauffage-climatisation',
+    title: 'Chauffage Climatisation Martignas-sur-Jalle 33127 | Expert Local #1 | ClimGO',
+    description: 'ClimGO, expert chauffage climatisation Martignas-sur-Jalle 33127. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit.',
+    url: 'https://www.climgo.fr/villes/martignas-sur-jalle-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
     type: 'website',
     images: [{
-      url: 'https://climgo.fr/images/og-martignas-sur-jalle-chauffage-climatisation.jpg',
+      url: 'https://www.climgo.fr/images/og/martignas-sur-jalle-chauffage-climatisation.jpg',
       width: 1200,
       height: 630,
-      alt: 'Chauffage climatisation Martignas-Sur-Jalle - ClimGO',
+      alt: 'Chauffage climatisation Martignas-sur-Jalle 33127 - ClimGO Expert Local #1',
     }],
   },
   
@@ -28,39 +29,39 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Martignas-Sur-Jalle 33127 | Expert Local',
-    description: 'Expert chauffage climatisation Martignas-Sur-Jalle. Installation PAC, dépannage urgent. Artisan RGE certifié.',
-    images: ['https://climgo.fr/images/twitter-martignas-sur-jalle-chauffage-climatisation.jpg'],
+    title: 'Chauffage Climatisation Martignas-sur-Jalle 33127 | Expert Local #1 | ClimGO',
+    description: 'Expert chauffage climatisation Martignas-sur-Jalle 33127. Installation PAC, dépannage urgent. Artisan RGE certifié #1.',
+    images: ['https://www.climgo.fr/images/og/martignas-sur-jalle-chauffage-climatisation.jpg'],
   },
   
   // Métadonnées avancées COMPLÈTES
   other: {
     // Géolocalisation précise
     'geo.region': 'FR-33',
-    'geo.placename': 'Martignas-Sur-Jalle',
-    'geo.position': '44.8431;-0.7831',
-    'ICBM': '44.8431, -0.7831',
+    'geo.placename': 'Martignas-sur-Jalle',
+    'geo.position': '44.8997;-0.7031',
+    'ICBM': '44.8997, -0.7031',
     'geo.country': 'France',
     'geo.state': 'Nouvelle-Aquitaine',
     
     // Dublin Core COMPLET
-    'DC.title': 'Chauffage Climatisation Martignas-Sur-Jalle 33127 | ClimGO Expert Local',
-    'DC.description': 'Expert chauffage climatisation Martignas-Sur-Jalle 33127. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié.',
+    'DC.title': 'Chauffage Climatisation Martignas-sur-Jalle 33127 | ClimGO Expert Local #1',
+    'DC.description': 'Expert chauffage climatisation Martignas-sur-Jalle 33127. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1.',
     'DC.creator': 'ClimGO',
     'DC.publisher': 'ClimGO',
     'DC.language': 'fr-FR',
     'DC.type': 'Service',
     'DC.format': 'text/html',
-    'DC.identifier': 'https://climgo.fr/villes/martignas-sur-jalle-chauffage-climatisation',
-    'DC.source': 'https://climgo.fr',
-    'DC.coverage': 'Martignas-Sur-Jalle, Gironde, France',
+    'DC.identifier': 'https://www.climgo.fr/villes/martignas-sur-jalle-chauffage-climatisation',
+    'DC.source': 'https://www.climgo.fr',
+    'DC.coverage': 'Martignas-sur-Jalle, Gironde, France',
     'DC.rights': '© 2025 ClimGO. Tous droits réservés.',
     
     // Données business locales COMPLÈTES
-    'business.contact_data.locality': 'Martignas-Sur-Jalle',
+    'business.contact_data.locality': 'Martignas-sur-Jalle',
     'business.contact_data.postal_code': '33127',
     'business.contact_data.phone_number': '+33766460008',
-    'business.contact_data.website': 'https://climgo.fr',
+    'business.contact_data.website': 'https://www.climgo.fr',
     'business.contact_data.email': 'contact@climgo.fr',
     
     // Signaux SEO local AVANCÉS
@@ -71,7 +72,7 @@ export const metadata: Metadata = {
     'serviceType': 'Installation, Dépannage, Entretien',
     
     // Référencement avancé
-    'revisit-after': '7 days',
+    'revisit-after': '1 day',
     'robots': 'index,follow,noimageindex,max-video-preview:-1,max-image-preview:large,max-snippet:-1',
     'googlebot': 'index,follow,max-video-preview:-1,max-image-preview:large,max-snippet:-1',
     
@@ -93,24 +94,25 @@ export const metadata: Metadata = {
   },
   
   alternates: {
-    canonical: 'https://climgo.fr/villes/martignas-sur-jalle-chauffage-climatisation',
+    canonical: 'https://www.climgo.fr/villes/martignas-sur-jalle-chauffage-climatisation',
   },
   
   verification: {
-    google: 'VERIFICATION_CODE_TO_ADD',
+    google: 'Ljs9Q3ve_Z_ldbzUTagcBPPmmQ_LTJER2pD3j7Woj1g',
     other: {
       bing: 'VERIFICATION_CODE_TO_ADD'
     }
   }
 };
 
-export default function MartignasSurJalleLayout({
+export default function MartignassurJalleLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
     <>
+      <JsonLd type="city" city="Martignas-sur-Jalle" postalCode="33127" />
       {children}
     </>
   );

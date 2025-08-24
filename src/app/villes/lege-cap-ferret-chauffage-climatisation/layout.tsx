@@ -1,25 +1,26 @@
 import { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Lege-Cap-Ferret COMPLETE
 export const metadata: Metadata = {
-  title: 'Chauffage Climatisation Lege-Cap-Ferret 33950 | ClimGO Expert Local',
-  description: 'Expert chauffage climatisation Lege-Cap-Ferret 33950. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit sous 24h.',
+  title: 'Chauffage Climatisation Lege-Cap-Ferret 33950 | Expert Local #1 | ClimGO',
+  description: 'Expert chauffage climatisation Lege-Cap-Ferret 33950. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit sous 24h.',
   
-  keywords: 'climatisation gironde, chauffage gironde, pompe à chaleur gironde, chauffagiste bordeaux, installateur climatisation, artisan RGE, installation PAC air eau, entretien climatisation, dépannage chauffage, chaudière gaz condensation, plancher chauffant, radiateurs électriques, maintenance pompe à chaleur, réparation climatisation, devis gratuit, intervention urgence, certificat RGE, MaPrimeRénov, aide financière chauffage, prime CEE, crédit impôt, économie énergie, rénovation énergétique, audit énergétique, chauffage lège-cap-ferret, climatisation lège-cap-ferret, chauffagiste lège-cap-ferret, pompe à chaleur lège-cap-ferret, installation PAC lège-cap-ferret, dépannage chauffage lège-cap-ferret, entretien climatisation lège-cap-ferret, artisan RGE lège-cap-ferret, chaudière lège-cap-ferret, maintenance lège-cap-ferret, expert chauffage 33950, climatisation 33950, chauffagiste 33950, devis gratuit lège-cap-ferret, intervention urgence lège-cap-ferret, spécialiste CVC lège-cap-ferret, entreprise chauffage lège-cap-ferret, installateur agréé lège-cap-ferret, technicien qualifié lège-cap-ferret, service après-vente lège-cap-ferret',
+  keywords: 'climatisation Lege-Cap-Ferret, chauffage Lege-Cap-Ferret, pompe à chaleur Lege-Cap-Ferret, chauffagiste Lege-Cap-Ferret, installateur climatisation Lege-Cap-Ferret, artisan RGE Lege-Cap-Ferret, installation PAC Lege-Cap-Ferret, entretien climatisation Lege-Cap-Ferret, dépannage chauffage Lege-Cap-Ferret, chaudière Lege-Cap-Ferret, maintenance Lege-Cap-Ferret, réparation climatisation Lege-Cap-Ferret, devis gratuit Lege-Cap-Ferret, intervention urgence Lege-Cap-Ferret, certificat RGE Lege-Cap-Ferret, MaPrimeRénov Lege-Cap-Ferret, aide financière chauffage Lege-Cap-Ferret, prime CEE Lege-Cap-Ferret, crédit impôt Lege-Cap-Ferret, économie énergie Lege-Cap-Ferret, rénovation énergétique Lege-Cap-Ferret, audit énergétique Lege-Cap-Ferret, expert chauffage 33950, climatisation 33950, chauffagiste 33950, devis gratuit Lege-Cap-Ferret, intervention urgence Lege-Cap-Ferret, spécialiste CVC Lege-Cap-Ferret, entreprise chauffage Lege-Cap-Ferret, installateur agréé Lege-Cap-Ferret, technicien qualifié Lege-Cap-Ferret, service après-vente Lege-Cap-Ferret',
   
   // Open Graph optimisé COMPLET
   openGraph: {
-    title: 'Chauffage Climatisation Lege-Cap-Ferret 33950 | ClimGO Expert Local',
-    description: 'ClimGO, expert chauffage climatisation Lege-Cap-Ferret. Installation, dépannage, entretien PAC. Artisan RGE certifié. Devis gratuit.',
-    url: 'https://climgo.fr/villes/lege-cap-ferret-chauffage-climatisation',
+    title: 'Chauffage Climatisation Lege-Cap-Ferret 33950 | Expert Local #1 | ClimGO',
+    description: 'ClimGO, expert chauffage climatisation Lege-Cap-Ferret 33950. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit.',
+    url: 'https://www.climgo.fr/villes/lege-cap-ferret-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
     type: 'website',
     images: [{
-      url: 'https://climgo.fr/images/og-lege-cap-ferret-chauffage-climatisation.jpg',
+      url: 'https://www.climgo.fr/images/og/lege-cap-ferret-chauffage-climatisation.jpg',
       width: 1200,
       height: 630,
-      alt: 'Chauffage climatisation Lege-Cap-Ferret - ClimGO',
+      alt: 'Chauffage climatisation Lege-Cap-Ferret 33950 - ClimGO Expert Local #1',
     }],
   },
   
@@ -28,9 +29,9 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Lege-Cap-Ferret 33950 | ClimGO Expert Local',
-    description: 'Expert chauffage climatisation Lege-Cap-Ferret. Installation PAC, dépannage urgent. Artisan RGE certifié.',
-    images: ['https://climgo.fr/images/twitter-lege-cap-ferret-chauffage-climatisation.jpg'],
+    title: 'Chauffage Climatisation Lege-Cap-Ferret 33950 | Expert Local #1 | ClimGO',
+    description: 'Expert chauffage climatisation Lege-Cap-Ferret 33950. Installation PAC, dépannage urgent. Artisan RGE certifié #1.',
+    images: ['https://www.climgo.fr/images/og/lege-cap-ferret-chauffage-climatisation.jpg'],
   },
   
   // Métadonnées avancées COMPLÈTES
@@ -38,21 +39,21 @@ export const metadata: Metadata = {
     // Géolocalisation précise
     'geo.region': 'FR-33',
     'geo.placename': 'Lege-Cap-Ferret',
-    'geo.position': '44.7931;-1.2431',
-    'ICBM': '44.7931, -1.2431',
+    'geo.position': '44.8997;-0.7031',
+    'ICBM': '44.8997, -0.7031',
     'geo.country': 'France',
     'geo.state': 'Nouvelle-Aquitaine',
     
     // Dublin Core COMPLET
-    'DC.title': 'Chauffage Climatisation Lege-Cap-Ferret 33950 | ClimGO Expert Local',
-    'DC.description': 'Expert chauffage climatisation Lege-Cap-Ferret 33950. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié.',
+    'DC.title': 'Chauffage Climatisation Lege-Cap-Ferret 33950 | ClimGO Expert Local #1',
+    'DC.description': 'Expert chauffage climatisation Lege-Cap-Ferret 33950. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1.',
     'DC.creator': 'ClimGO',
     'DC.publisher': 'ClimGO',
     'DC.language': 'fr-FR',
     'DC.type': 'Service',
     'DC.format': 'text/html',
-    'DC.identifier': 'https://climgo.fr/villes/lege-cap-ferret-chauffage-climatisation',
-    'DC.source': 'https://climgo.fr',
+    'DC.identifier': 'https://www.climgo.fr/villes/lege-cap-ferret-chauffage-climatisation',
+    'DC.source': 'https://www.climgo.fr',
     'DC.coverage': 'Lege-Cap-Ferret, Gironde, France',
     'DC.rights': '© 2025 ClimGO. Tous droits réservés.',
     
@@ -60,7 +61,7 @@ export const metadata: Metadata = {
     'business.contact_data.locality': 'Lege-Cap-Ferret',
     'business.contact_data.postal_code': '33950',
     'business.contact_data.phone_number': '+33766460008',
-    'business.contact_data.website': 'https://climgo.fr',
+    'business.contact_data.website': 'https://www.climgo.fr',
     'business.contact_data.email': 'contact@climgo.fr',
     
     // Signaux SEO local AVANCÉS
@@ -71,7 +72,7 @@ export const metadata: Metadata = {
     'serviceType': 'Installation, Dépannage, Entretien',
     
     // Référencement avancé
-    'revisit-after': '7 days',
+    'revisit-after': '1 day',
     'robots': 'index,follow,noimageindex,max-video-preview:-1,max-image-preview:large,max-snippet:-1',
     'googlebot': 'index,follow,max-video-preview:-1,max-image-preview:large,max-snippet:-1',
     
@@ -93,11 +94,11 @@ export const metadata: Metadata = {
   },
   
   alternates: {
-    canonical: 'https://climgo.fr/villes/lege-cap-ferret-chauffage-climatisation',
+    canonical: 'https://www.climgo.fr/villes/lege-cap-ferret-chauffage-climatisation',
   },
   
   verification: {
-    google: 'VERIFICATION_CODE_TO_ADD',
+    google: 'Ljs9Q3ve_Z_ldbzUTagcBPPmmQ_LTJER2pD3j7Woj1g',
     other: {
       bing: 'VERIFICATION_CODE_TO_ADD'
     }
@@ -111,6 +112,7 @@ export default function LegeCapFerretLayout({
 }) {
   return (
     <>
+      <JsonLd type="city" city="Lege-Cap-Ferret" postalCode="33950" />
       {children}
     </>
   );

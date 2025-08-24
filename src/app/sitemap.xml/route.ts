@@ -22,6 +22,8 @@ const staticPages = [
   'contact',
   'services',
   'zones-interventions',
+  'aides-etat',
+  'a-propos',
   'blog',
   'mentions-legales',
   'politique-confidentialite'
@@ -71,7 +73,7 @@ export async function GET() {
   cities.forEach(city => {
     sitemap += `
   <url>
-    <loc>${baseUrl}/${city}-chauffage-climatisation</loc>
+    <loc>${baseUrl}/villes/${city}-chauffage-climatisation</loc>
     <lastmod>${currentDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -101,20 +103,6 @@ export async function GET() {
   } catch (_error) {
     console.log('Blog posts not available for sitemap')
   }
-
-  // PAGES COMBINÉES ULTRA-SEO ! 🎯
-  // Ex: "Chauffage Bordeaux", "Climatisation Mérignac"
-  cities.forEach(city => {
-    services.forEach(service => {
-      sitemap += `
-  <url>
-    <loc>${baseUrl}/blog?city=${city}&service=${service}</loc>
-    <lastmod>${currentDate}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>`
-    })
-  })
 
   sitemap += `
 </urlset>`

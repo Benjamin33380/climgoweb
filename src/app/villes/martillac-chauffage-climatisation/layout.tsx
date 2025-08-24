@@ -1,25 +1,26 @@
 import { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Martillac COMPLETE
 export const metadata: Metadata = {
-  title: 'Chauffage Climatisation Martillac 33650 | ClimGO Expert Local',
-  description: 'Expert chauffage climatisation Martillac 33650. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit sous 24h.',
+  title: 'Chauffage Climatisation Martillac 33650 | Expert Local #1 | ClimGO',
+  description: 'Expert chauffage climatisation Martillac 33650. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit sous 24h.',
   
-  keywords: 'climatisation gironde, chauffage gironde, pompe à chaleur gironde, chauffagiste bordeaux, installateur climatisation, artisan RGE, installation PAC air eau, entretien climatisation, dépannage chauffage, chaudière gaz condensation, plancher chauffant, radiateurs électriques, maintenance pompe à chaleur, réparation climatisation, devis gratuit, intervention urgence, certificat RGE, MaPrimeRénov, aide financière chauffage, prime CEE, crédit impôt, économie énergie, rénovation énergétique, audit énergétique, chauffage martillac, climatisation martillac, chauffagiste martillac, pompe à chaleur martillac, installation PAC martillac, dépannage chauffage martillac, entretien climatisation martillac, artisan RGE martillac, chaudière martillac, maintenance martillac, expert chauffage 33650, climatisation 33650, chauffagiste 33650, devis gratuit martillac, intervention urgence martillac, spécialiste CVC martillac, entreprise chauffage martillac, installateur agréé martillac, technicien qualifié martillac, service après-vente martillac',
+  keywords: 'climatisation Martillac, chauffage Martillac, pompe à chaleur Martillac, chauffagiste Martillac, installateur climatisation Martillac, artisan RGE Martillac, installation PAC Martillac, entretien climatisation Martillac, dépannage chauffage Martillac, chaudière Martillac, maintenance Martillac, réparation climatisation Martillac, devis gratuit Martillac, intervention urgence Martillac, certificat RGE Martillac, MaPrimeRénov Martillac, aide financière chauffage Martillac, prime CEE Martillac, crédit impôt Martillac, économie énergie Martillac, rénovation énergétique Martillac, audit énergétique Martillac, expert chauffage 33650, climatisation 33650, chauffagiste 33650, devis gratuit Martillac, intervention urgence Martillac, spécialiste CVC Martillac, entreprise chauffage Martillac, installateur agréé Martillac, technicien qualifié Martillac, service après-vente Martillac',
   
   // Open Graph optimisé COMPLET
   openGraph: {
-    title: 'Chauffage Climatisation Martillac 33650 | ClimGO Expert Local',
-    description: 'ClimGO, expert chauffage climatisation Martillac. Installation, dépannage, entretien PAC. Artisan RGE certifié. Devis gratuit.',
-    url: 'https://climgo.fr/villes/martillac-chauffage-climatisation',
+    title: 'Chauffage Climatisation Martillac 33650 | Expert Local #1 | ClimGO',
+    description: 'ClimGO, expert chauffage climatisation Martillac 33650. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit.',
+    url: 'https://www.climgo.fr/villes/martillac-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
     type: 'website',
     images: [{
-      url: 'https://climgo.fr/images/og-martillac-chauffage-climatisation.jpg',
+      url: 'https://www.climgo.fr/images/og/martillac-chauffage-climatisation.jpg',
       width: 1200,
       height: 630,
-      alt: 'Chauffage climatisation Martillac - ClimGO',
+      alt: 'Chauffage climatisation Martillac 33650 - ClimGO Expert Local #1',
     }],
   },
   
@@ -28,9 +29,9 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Martillac 33650 | ClimGO Expert Local',
-    description: 'Expert chauffage climatisation Martillac. Installation PAC, dépannage urgent. Artisan RGE certifié.',
-    images: ['https://climgo.fr/images/twitter-martillac-chauffage-climatisation.jpg'],
+    title: 'Chauffage Climatisation Martillac 33650 | Expert Local #1 | ClimGO',
+    description: 'Expert chauffage climatisation Martillac 33650. Installation PAC, dépannage urgent. Artisan RGE certifié #1.',
+    images: ['https://www.climgo.fr/images/og/martillac-chauffage-climatisation.jpg'],
   },
   
   // Métadonnées avancées COMPLÈTES
@@ -38,21 +39,21 @@ export const metadata: Metadata = {
     // Géolocalisation précise
     'geo.region': 'FR-33',
     'geo.placename': 'Martillac',
-    'geo.position': '44.7119;-0.5531',
-    'ICBM': '44.7119, -0.5531',
+    'geo.position': '44.8997;-0.7031',
+    'ICBM': '44.8997, -0.7031',
     'geo.country': 'France',
     'geo.state': 'Nouvelle-Aquitaine',
     
     // Dublin Core COMPLET
-    'DC.title': 'Chauffage Climatisation Martillac 33650 | ClimGO Expert Local',
-    'DC.description': 'Expert chauffage climatisation Martillac 33650. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié.',
+    'DC.title': 'Chauffage Climatisation Martillac 33650 | ClimGO Expert Local #1',
+    'DC.description': 'Expert chauffage climatisation Martillac 33650. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1.',
     'DC.creator': 'ClimGO',
     'DC.publisher': 'ClimGO',
     'DC.language': 'fr-FR',
     'DC.type': 'Service',
     'DC.format': 'text/html',
-    'DC.identifier': 'https://climgo.fr/villes/martillac-chauffage-climatisation',
-    'DC.source': 'https://climgo.fr',
+    'DC.identifier': 'https://www.climgo.fr/villes/martillac-chauffage-climatisation',
+    'DC.source': 'https://www.climgo.fr',
     'DC.coverage': 'Martillac, Gironde, France',
     'DC.rights': '© 2025 ClimGO. Tous droits réservés.',
     
@@ -60,7 +61,7 @@ export const metadata: Metadata = {
     'business.contact_data.locality': 'Martillac',
     'business.contact_data.postal_code': '33650',
     'business.contact_data.phone_number': '+33766460008',
-    'business.contact_data.website': 'https://climgo.fr',
+    'business.contact_data.website': 'https://www.climgo.fr',
     'business.contact_data.email': 'contact@climgo.fr',
     
     // Signaux SEO local AVANCÉS
@@ -71,7 +72,7 @@ export const metadata: Metadata = {
     'serviceType': 'Installation, Dépannage, Entretien',
     
     // Référencement avancé
-    'revisit-after': '7 days',
+    'revisit-after': '1 day',
     'robots': 'index,follow,noimageindex,max-video-preview:-1,max-image-preview:large,max-snippet:-1',
     'googlebot': 'index,follow,max-video-preview:-1,max-image-preview:large,max-snippet:-1',
     
@@ -93,11 +94,11 @@ export const metadata: Metadata = {
   },
   
   alternates: {
-    canonical: 'https://climgo.fr/villes/martillac-chauffage-climatisation',
+    canonical: 'https://www.climgo.fr/villes/martillac-chauffage-climatisation',
   },
   
   verification: {
-    google: 'VERIFICATION_CODE_TO_ADD',
+    google: 'Ljs9Q3ve_Z_ldbzUTagcBPPmmQ_LTJER2pD3j7Woj1g',
     other: {
       bing: 'VERIFICATION_CODE_TO_ADD'
     }
@@ -111,6 +112,7 @@ export default function MartillacLayout({
 }) {
   return (
     <>
+      <JsonLd type="city" city="Martillac" postalCode="33650" />
       {children}
     </>
   );

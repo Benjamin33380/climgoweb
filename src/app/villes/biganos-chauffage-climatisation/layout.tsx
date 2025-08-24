@@ -1,25 +1,26 @@
 import { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Biganos COMPLETE
 export const metadata: Metadata = {
-  title: 'Chauffage Climatisation Biganos 33380 | ClimGO Expert Local',
-  description: 'Expert chauffage climatisation Biganos 33380. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit sous 24h.',
+  title: 'Chauffage Climatisation Biganos 33380 | Expert Local #1 | ClimGO',
+  description: 'Expert chauffage climatisation Biganos 33380. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit sous 24h.',
   
-  keywords: 'climatisation gironde, chauffage gironde, pompe à chaleur gironde, chauffagiste bordeaux, installateur climatisation, artisan RGE, installation PAC air eau, entretien climatisation, dépannage chauffage, chaudière gaz condensation, plancher chauffant, radiateurs électriques, maintenance pompe à chaleur, réparation climatisation, devis gratuit, intervention urgence, certificat RGE, MaPrimeRénov, aide financière chauffage, prime CEE, crédit impôt, économie énergie, rénovation énergétique, audit énergétique, chauffage biganos, climatisation biganos, chauffagiste biganos, pompe à chaleur biganos, installation PAC biganos, dépannage chauffage biganos, entretien climatisation biganos, artisan RGE biganos, chaudière biganos, maintenance biganos, expert chauffage 33380, climatisation 33380, chauffagiste 33380, devis gratuit biganos, intervention urgence biganos, spécialiste CVC biganos, entreprise chauffage biganos, installateur agréé biganos, technicien qualifié biganos, service après-vente biganos',
+  keywords: 'climatisation Biganos, chauffage Biganos, pompe à chaleur Biganos, chauffagiste Biganos, installateur climatisation Biganos, artisan RGE Biganos, installation PAC Biganos, entretien climatisation Biganos, dépannage chauffage Biganos, chaudière Biganos, maintenance Biganos, réparation climatisation Biganos, devis gratuit Biganos, intervention urgence Biganos, certificat RGE Biganos, MaPrimeRénov Biganos, aide financière chauffage Biganos, prime CEE Biganos, crédit impôt Biganos, économie énergie Biganos, rénovation énergétique Biganos, audit énergétique Biganos, expert chauffage 33380, climatisation 33380, chauffagiste 33380, devis gratuit Biganos, intervention urgence Biganos, spécialiste CVC Biganos, entreprise chauffage Biganos, installateur agréé Biganos, technicien qualifié Biganos, service après-vente Biganos',
   
   // Open Graph optimisé COMPLET
   openGraph: {
-    title: 'Chauffage Climatisation Biganos 33380 | ClimGO Expert Local',
-    description: 'ClimGO, expert chauffage climatisation Biganos. Installation, dépannage, entretien PAC. Artisan RGE certifié. Devis gratuit.',
-    url: 'https://climgo.fr/villes/biganos-chauffage-climatisation',
+    title: 'Chauffage Climatisation Biganos 33380 | Expert Local #1 | ClimGO',
+    description: 'ClimGO, expert chauffage climatisation Biganos 33380. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit.',
+    url: 'https://www.climgo.fr/villes/biganos-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
     type: 'website',
     images: [{
-      url: 'https://www.climgo.fr/images/og-biganos-chauffage-climatisation.jpg',
+      url: 'https://www.climgo.fr/images/og/biganos-chauffage-climatisation.jpg',
       width: 1200,
       height: 630,
-      alt: 'Chauffage climatisation Biganos - ClimGO',
+      alt: 'Chauffage climatisation Biganos 33380 - ClimGO Expert Local #1',
     }],
   },
   
@@ -28,9 +29,9 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Biganos 33380 | ClimGO Expert Local',
-    description: 'Expert chauffage climatisation Biganos. Installation PAC, dépannage urgent. Artisan RGE certifié.',
-    images: ['https://www.climgo.fr/images/twitter-biganos-chauffage-climatisation.jpg'],
+    title: 'Chauffage Climatisation Biganos 33380 | Expert Local #1 | ClimGO',
+    description: 'Expert chauffage climatisation Biganos 33380. Installation PAC, dépannage urgent. Artisan RGE certifié #1.',
+    images: ['https://www.climgo.fr/images/og/biganos-chauffage-climatisation.jpg'],
   },
   
   // Métadonnées avancées COMPLÈTES
@@ -38,20 +39,20 @@ export const metadata: Metadata = {
     // Géolocalisation précise
     'geo.region': 'FR-33',
     'geo.placename': 'Biganos',
-    'geo.position': '44.6428;-0.9663',
-    'ICBM': '44.6428, -0.9663',
+    'geo.position': '44.8997;-0.7031',
+    'ICBM': '44.8997, -0.7031',
     'geo.country': 'France',
     'geo.state': 'Nouvelle-Aquitaine',
     
     // Dublin Core COMPLET
-    'DC.title': 'Chauffage Climatisation Biganos 33380 | ClimGO Expert Local',
-    'DC.description': 'Expert chauffage climatisation Biganos 33380. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié.',
+    'DC.title': 'Chauffage Climatisation Biganos 33380 | ClimGO Expert Local #1',
+    'DC.description': 'Expert chauffage climatisation Biganos 33380. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1.',
     'DC.creator': 'ClimGO',
     'DC.publisher': 'ClimGO',
     'DC.language': 'fr-FR',
     'DC.type': 'Service',
     'DC.format': 'text/html',
-    'DC.identifier': 'https://climgo.fr/villes/biganos-chauffage-climatisation',
+    'DC.identifier': 'https://www.climgo.fr/villes/biganos-chauffage-climatisation',
     'DC.source': 'https://www.climgo.fr',
     'DC.coverage': 'Biganos, Gironde, France',
     'DC.rights': '© 2025 ClimGO. Tous droits réservés.',
@@ -71,7 +72,7 @@ export const metadata: Metadata = {
     'serviceType': 'Installation, Dépannage, Entretien',
     
     // Référencement avancé
-    'revisit-after': '7 days',
+    'revisit-after': '1 day',
     'robots': 'index,follow,noimageindex,max-video-preview:-1,max-image-preview:large,max-snippet:-1',
     'googlebot': 'index,follow,max-video-preview:-1,max-image-preview:large,max-snippet:-1',
     
@@ -93,11 +94,11 @@ export const metadata: Metadata = {
   },
   
   alternates: {
-    canonical: 'https://climgo.fr/villes/biganos-chauffage-climatisation',
+    canonical: 'https://www.climgo.fr/villes/biganos-chauffage-climatisation',
   },
   
   verification: {
-    google: 'VERIFICATION_CODE_TO_ADD',
+    google: 'Ljs9Q3ve_Z_ldbzUTagcBPPmmQ_LTJER2pD3j7Woj1g',
     other: {
       bing: 'VERIFICATION_CODE_TO_ADD'
     }
@@ -111,6 +112,7 @@ export default function BiganosLayout({
 }) {
   return (
     <>
+      <JsonLd type="city" city="Biganos" postalCode="33380" />
       {children}
     </>
   );

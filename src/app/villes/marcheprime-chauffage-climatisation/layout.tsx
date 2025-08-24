@@ -1,25 +1,26 @@
 import { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Marcheprime COMPLETE
 export const metadata: Metadata = {
-  title: 'Chauffage Climatisation Marcheprime 33380 | ClimGO Expert Local',
-  description: 'Expert chauffage climatisation Marcheprime 33380. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit sous 24h.',
+  title: 'Chauffage Climatisation Marcheprime 33380 | Expert Local #1 | ClimGO',
+  description: 'Expert chauffage climatisation Marcheprime 33380. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit sous 24h.',
   
-  keywords: 'climatisation gironde, chauffage gironde, pompe à chaleur gironde, chauffagiste bordeaux, installateur climatisation, artisan RGE, installation PAC air eau, entretien climatisation, dépannage chauffage, chaudière gaz condensation, plancher chauffant, radiateurs électriques, maintenance pompe à chaleur, réparation climatisation, devis gratuit, intervention urgence, certificat RGE, MaPrimeRénov, aide financière chauffage, prime CEE, crédit impôt, économie énergie, rénovation énergétique, audit énergétique, chauffage marcheprime, climatisation marcheprime, chauffagiste marcheprime, pompe à chaleur marcheprime, installation PAC marcheprime, dépannage chauffage marcheprime, entretien climatisation marcheprime, artisan RGE marcheprime, chaudière marcheprime, maintenance marcheprime, expert chauffage 33380, climatisation 33380, chauffagiste 33380, devis gratuit marcheprime, intervention urgence marcheprime, spécialiste CVC marcheprime, entreprise chauffage marcheprime, installateur agréé marcheprime, technicien qualifié marcheprime, service après-vente marcheprime',
+  keywords: 'climatisation Marcheprime, chauffage Marcheprime, pompe à chaleur Marcheprime, chauffagiste Marcheprime, installateur climatisation Marcheprime, artisan RGE Marcheprime, installation PAC Marcheprime, entretien climatisation Marcheprime, dépannage chauffage Marcheprime, chaudière Marcheprime, maintenance Marcheprime, réparation climatisation Marcheprime, devis gratuit Marcheprime, intervention urgence Marcheprime, certificat RGE Marcheprime, MaPrimeRénov Marcheprime, aide financière chauffage Marcheprime, prime CEE Marcheprime, crédit impôt Marcheprime, économie énergie Marcheprime, rénovation énergétique Marcheprime, audit énergétique Marcheprime, expert chauffage 33380, climatisation 33380, chauffagiste 33380, devis gratuit Marcheprime, intervention urgence Marcheprime, spécialiste CVC Marcheprime, entreprise chauffage Marcheprime, installateur agréé Marcheprime, technicien qualifié Marcheprime, service après-vente Marcheprime',
   
   // Open Graph optimisé COMPLET
   openGraph: {
-    title: 'Chauffage Climatisation Marcheprime 33380 | ClimGO Expert Local',
-    description: 'ClimGO, expert chauffage climatisation Marcheprime. Installation, dépannage, entretien PAC. Artisan RGE certifié. Devis gratuit.',
-    url: 'https://climgo.fr/villes/marcheprime-chauffage-climatisation',
+    title: 'Chauffage Climatisation Marcheprime 33380 | Expert Local #1 | ClimGO',
+    description: 'ClimGO, expert chauffage climatisation Marcheprime 33380. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit.',
+    url: 'https://www.climgo.fr/villes/marcheprime-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
     type: 'website',
     images: [{
-      url: 'https://www.climgo.fr/images/og-marcheprime-chauffage-climatisation.jpg',
+      url: 'https://www.climgo.fr/images/og/marcheprime-chauffage-climatisation.jpg',
       width: 1200,
       height: 630,
-      alt: 'Chauffage climatisation Marcheprime - ClimGO',
+      alt: 'Chauffage climatisation Marcheprime 33380 - ClimGO Expert Local #1',
     }],
   },
   
@@ -28,9 +29,9 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Marcheprime 33380 | ClimGO Expert Local',
-    description: 'Expert chauffage climatisation Marcheprime. Installation PAC, dépannage urgent. Artisan RGE certifié.',
-    images: ['https://www.climgo.fr/images/twitter-marcheprime-chauffage-climatisation.jpg'],
+    title: 'Chauffage Climatisation Marcheprime 33380 | Expert Local #1 | ClimGO',
+    description: 'Expert chauffage climatisation Marcheprime 33380. Installation PAC, dépannage urgent. Artisan RGE certifié #1.',
+    images: ['https://www.climgo.fr/images/og/marcheprime-chauffage-climatisation.jpg'],
   },
   
   // Métadonnées avancées COMPLÈTES
@@ -38,20 +39,20 @@ export const metadata: Metadata = {
     // Géolocalisation précise
     'geo.region': 'FR-33',
     'geo.placename': 'Marcheprime',
-    'geo.position': '44.6897;-0.8531',
-    'ICBM': '44.6897, -0.8531',
+    'geo.position': '44.8997;-0.7031',
+    'ICBM': '44.8997, -0.7031',
     'geo.country': 'France',
     'geo.state': 'Nouvelle-Aquitaine',
     
     // Dublin Core COMPLET
-    'DC.title': 'Chauffage Climatisation Marcheprime 33380 | ClimGO Expert Local',
-    'DC.description': 'Expert chauffage climatisation Marcheprime 33380. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié.',
+    'DC.title': 'Chauffage Climatisation Marcheprime 33380 | ClimGO Expert Local #1',
+    'DC.description': 'Expert chauffage climatisation Marcheprime 33380. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1.',
     'DC.creator': 'ClimGO',
     'DC.publisher': 'ClimGO',
     'DC.language': 'fr-FR',
     'DC.type': 'Service',
     'DC.format': 'text/html',
-    'DC.identifier': 'https://climgo.fr/villes/marcheprime-chauffage-climatisation',
+    'DC.identifier': 'https://www.climgo.fr/villes/marcheprime-chauffage-climatisation',
     'DC.source': 'https://www.climgo.fr',
     'DC.coverage': 'Marcheprime, Gironde, France',
     'DC.rights': '© 2025 ClimGO. Tous droits réservés.',
@@ -71,7 +72,7 @@ export const metadata: Metadata = {
     'serviceType': 'Installation, Dépannage, Entretien',
     
     // Référencement avancé
-    'revisit-after': '7 days',
+    'revisit-after': '1 day',
     'robots': 'index,follow,noimageindex,max-video-preview:-1,max-image-preview:large,max-snippet:-1',
     'googlebot': 'index,follow,max-video-preview:-1,max-image-preview:large,max-snippet:-1',
     
@@ -93,11 +94,11 @@ export const metadata: Metadata = {
   },
   
   alternates: {
-    canonical: 'https://climgo.fr/villes/marcheprime-chauffage-climatisation',
+    canonical: 'https://www.climgo.fr/villes/marcheprime-chauffage-climatisation',
   },
   
   verification: {
-    google: 'VERIFICATION_CODE_TO_ADD',
+    google: 'Ljs9Q3ve_Z_ldbzUTagcBPPmmQ_LTJER2pD3j7Woj1g',
     other: {
       bing: 'VERIFICATION_CODE_TO_ADD'
     }
@@ -111,6 +112,7 @@ export default function MarcheprimeLayout({
 }) {
   return (
     <>
+      <JsonLd type="city" city="Marcheprime" postalCode="33380" />
       {children}
     </>
   );

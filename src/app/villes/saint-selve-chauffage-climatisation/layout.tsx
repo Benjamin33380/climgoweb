@@ -1,25 +1,26 @@
 import { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Saint-Selve COMPLETE
 export const metadata: Metadata = {
-  title: 'Chauffage Climatisation Saint-Selve 33650 | ClimGO Expert Local',
-  description: 'Expert chauffage climatisation Saint-Selve 33650. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit sous 24h.',
+  title: 'Chauffage Climatisation Saint-Selve 33650 | Expert Local #1 | ClimGO',
+  description: 'Expert chauffage climatisation Saint-Selve 33650. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit sous 24h.',
   
-  keywords: 'climatisation gironde, chauffage gironde, pompe à chaleur gironde, chauffagiste bordeaux, installateur climatisation, artisan RGE, installation PAC air eau, entretien climatisation, dépannage chauffage, chaudière gaz condensation, plancher chauffant, radiateurs électriques, maintenance pompe à chaleur, réparation climatisation, devis gratuit, intervention urgence, certificat RGE, MaPrimeRénov, aide financière chauffage, prime CEE, crédit impôt, économie énergie, rénovation énergétique, audit énergétique, chauffage saint-selve, climatisation saint-selve, chauffagiste saint-selve, pompe à chaleur saint-selve, installation PAC saint-selve, dépannage chauffage saint-selve, entretien climatisation saint-selve, artisan RGE saint-selve, chaudière saint-selve, maintenance saint-selve, expert chauffage 33650, climatisation 33650, chauffagiste 33650, devis gratuit saint-selve, intervention urgence saint-selve, spécialiste CVC saint-selve, entreprise chauffage saint-selve, installateur agréé saint-selve, technicien qualifié saint-selve, service après-vente saint-selve',
+  keywords: 'climatisation Saint-Selve, chauffage Saint-Selve, pompe à chaleur Saint-Selve, chauffagiste Saint-Selve, installateur climatisation Saint-Selve, artisan RGE Saint-Selve, installation PAC Saint-Selve, entretien climatisation Saint-Selve, dépannage chauffage Saint-Selve, chaudière Saint-Selve, maintenance Saint-Selve, réparation climatisation Saint-Selve, devis gratuit Saint-Selve, intervention urgence Saint-Selve, certificat RGE Saint-Selve, MaPrimeRénov Saint-Selve, aide financière chauffage Saint-Selve, prime CEE Saint-Selve, crédit impôt Saint-Selve, économie énergie Saint-Selve, rénovation énergétique Saint-Selve, audit énergétique Saint-Selve, expert chauffage 33650, climatisation 33650, chauffagiste 33650, devis gratuit Saint-Selve, intervention urgence Saint-Selve, spécialiste CVC Saint-Selve, entreprise chauffage Saint-Selve, installateur agréé Saint-Selve, technicien qualifié Saint-Selve, service après-vente Saint-Selve',
   
   // Open Graph optimisé COMPLET
   openGraph: {
-    title: 'Chauffage Climatisation Saint-Selve 33650 | ClimGO Expert Local',
-    description: 'ClimGO, expert chauffage climatisation Saint-Selve. Installation, dépannage, entretien PAC. Artisan RGE certifié. Devis gratuit.',
-    url: 'https://climgo.fr/villes/saint-selve-chauffage-climatisation',
+    title: 'Chauffage Climatisation Saint-Selve 33650 | Expert Local #1 | ClimGO',
+    description: 'ClimGO, expert chauffage climatisation Saint-Selve 33650. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit.',
+    url: 'https://www.climgo.fr/villes/saint-selve-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
     type: 'website',
     images: [{
-      url: 'https://climgo.fr/images/og-saint-selve-chauffage-climatisation.jpg',
+      url: 'https://www.climgo.fr/images/og/saint-selve-chauffage-climatisation.jpg',
       width: 1200,
       height: 630,
-      alt: 'Chauffage climatisation Saint-Selve - ClimGO',
+      alt: 'Chauffage climatisation Saint-Selve 33650 - ClimGO Expert Local #1',
     }],
   },
   
@@ -28,9 +29,9 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Saint-Selve 33650 | ClimGO Expert Local',
-    description: 'Expert chauffage climatisation Saint-Selve. Installation PAC, dépannage urgent. Artisan RGE certifié.',
-    images: ['https://climgo.fr/images/twitter-saint-selve-chauffage-climatisation.jpg'],
+    title: 'Chauffage Climatisation Saint-Selve 33650 | Expert Local #1 | ClimGO',
+    description: 'Expert chauffage climatisation Saint-Selve 33650. Installation PAC, dépannage urgent. Artisan RGE certifié #1.',
+    images: ['https://www.climgo.fr/images/og/saint-selve-chauffage-climatisation.jpg'],
   },
   
   // Métadonnées avancées COMPLÈTES
@@ -38,21 +39,21 @@ export const metadata: Metadata = {
     // Géolocalisation précise
     'geo.region': 'FR-33',
     'geo.placename': 'Saint-Selve',
-    'geo.position': '44.6939;-0.4697',
-    'ICBM': '44.6939, -0.4697',
+    'geo.position': '44.8997;-0.7031',
+    'ICBM': '44.8997, -0.7031',
     'geo.country': 'France',
     'geo.state': 'Nouvelle-Aquitaine',
     
     // Dublin Core COMPLET
-    'DC.title': 'Chauffage Climatisation Saint-Selve 33650 | ClimGO Expert Local',
-    'DC.description': 'Expert chauffage climatisation Saint-Selve 33650. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié.',
+    'DC.title': 'Chauffage Climatisation Saint-Selve 33650 | ClimGO Expert Local #1',
+    'DC.description': 'Expert chauffage climatisation Saint-Selve 33650. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1.',
     'DC.creator': 'ClimGO',
     'DC.publisher': 'ClimGO',
     'DC.language': 'fr-FR',
     'DC.type': 'Service',
     'DC.format': 'text/html',
-    'DC.identifier': 'https://climgo.fr/villes/saint-selve-chauffage-climatisation',
-    'DC.source': 'https://climgo.fr',
+    'DC.identifier': 'https://www.climgo.fr/villes/saint-selve-chauffage-climatisation',
+    'DC.source': 'https://www.climgo.fr',
     'DC.coverage': 'Saint-Selve, Gironde, France',
     'DC.rights': '© 2025 ClimGO. Tous droits réservés.',
     
@@ -60,7 +61,7 @@ export const metadata: Metadata = {
     'business.contact_data.locality': 'Saint-Selve',
     'business.contact_data.postal_code': '33650',
     'business.contact_data.phone_number': '+33766460008',
-    'business.contact_data.website': 'https://climgo.fr',
+    'business.contact_data.website': 'https://www.climgo.fr',
     'business.contact_data.email': 'contact@climgo.fr',
     
     // Signaux SEO local AVANCÉS
@@ -71,7 +72,7 @@ export const metadata: Metadata = {
     'serviceType': 'Installation, Dépannage, Entretien',
     
     // Référencement avancé
-    'revisit-after': '7 days',
+    'revisit-after': '1 day',
     'robots': 'index,follow,noimageindex,max-video-preview:-1,max-image-preview:large,max-snippet:-1',
     'googlebot': 'index,follow,max-video-preview:-1,max-image-preview:large,max-snippet:-1',
     
@@ -93,11 +94,11 @@ export const metadata: Metadata = {
   },
   
   alternates: {
-    canonical: 'https://climgo.fr/villes/saint-selve-chauffage-climatisation',
+    canonical: 'https://www.climgo.fr/villes/saint-selve-chauffage-climatisation',
   },
   
   verification: {
-    google: 'VERIFICATION_CODE_TO_ADD',
+    google: 'Ljs9Q3ve_Z_ldbzUTagcBPPmmQ_LTJER2pD3j7Woj1g',
     other: {
       bing: 'VERIFICATION_CODE_TO_ADD'
     }
@@ -111,6 +112,7 @@ export default function SaintSelveLayout({
 }) {
   return (
     <>
+      <JsonLd type="city" city="Saint-Selve" postalCode="33650" />
       {children}
     </>
   );

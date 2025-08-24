@@ -1,25 +1,26 @@
 import { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Sanguinet COMPLETE
 export const metadata: Metadata = {
-  title: 'Chauffage Climatisation Sanguinet 33470 | ClimGO Expert Local',
-  description: 'Expert chauffage climatisation Sanguinet 33470. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit sous 24h.',
+  title: 'Chauffage Climatisation Sanguinet 40460 | Expert Local #1 | ClimGO',
+  description: 'Expert chauffage climatisation Sanguinet 40460. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit sous 24h.',
   
-  keywords: 'climatisation gironde, chauffage gironde, pompe à chaleur gironde, chauffagiste bordeaux, installateur climatisation, artisan RGE, installation PAC air eau, entretien climatisation, dépannage chauffage, chaudière gaz condensation, plancher chauffant, radiateurs électriques, maintenance pompe à chaleur, réparation climatisation, devis gratuit, intervention urgence, certificat RGE, MaPrimeRénov, aide financière chauffage, prime CEE, crédit impôt, économie énergie, rénovation énergétique, audit énergétique, chauffage sanguinet, climatisation sanguinet, chauffagiste sanguinet, pompe à chaleur sanguinet, installation PAC sanguinet, dépannage chauffage sanguinet, entretien climatisation sanguinet, artisan RGE sanguinet, chaudière sanguinet, maintenance sanguinet, expert chauffage 40460, climatisation 40460, chauffagiste 40460, devis gratuit sanguinet, intervention urgence sanguinet, spécialiste CVC sanguinet, entreprise chauffage sanguinet, installateur agréé sanguinet, technicien qualifié sanguinet, service après-vente sanguinet',
+  keywords: 'climatisation Sanguinet, chauffage Sanguinet, pompe à chaleur Sanguinet, chauffagiste Sanguinet, installateur climatisation Sanguinet, artisan RGE Sanguinet, installation PAC Sanguinet, entretien climatisation Sanguinet, dépannage chauffage Sanguinet, chaudière Sanguinet, maintenance Sanguinet, réparation climatisation Sanguinet, devis gratuit Sanguinet, intervention urgence Sanguinet, certificat RGE Sanguinet, MaPrimeRénov Sanguinet, aide financière chauffage Sanguinet, prime CEE Sanguinet, crédit impôt Sanguinet, économie énergie Sanguinet, rénovation énergétique Sanguinet, audit énergétique Sanguinet, expert chauffage 40460, climatisation 40460, chauffagiste 40460, devis gratuit Sanguinet, intervention urgence Sanguinet, spécialiste CVC Sanguinet, entreprise chauffage Sanguinet, installateur agréé Sanguinet, technicien qualifié Sanguinet, service après-vente Sanguinet',
   
   // Open Graph optimisé COMPLET
   openGraph: {
-    title: 'Chauffage Climatisation Sanguinet 33470 | ClimGO Expert Local',
-    description: 'ClimGO, expert chauffage climatisation Sanguinet. Installation, dépannage, entretien PAC. Artisan RGE certifié. Devis gratuit.',
-    url: 'https://climgo.fr/villes/sanguinet-chauffage-climatisation',
+    title: 'Chauffage Climatisation Sanguinet 40460 | Expert Local #1 | ClimGO',
+    description: 'ClimGO, expert chauffage climatisation Sanguinet 40460. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit.',
+    url: 'https://www.climgo.fr/villes/sanguinet-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
     type: 'website',
     images: [{
-      url: 'https://www.climgo.fr/images/og-sanguinet-chauffage-climatisation.jpg',
+      url: 'https://www.climgo.fr/images/og/sanguinet-chauffage-climatisation.jpg',
       width: 1200,
       height: 630,
-      alt: 'Chauffage climatisation Sanguinet - ClimGO',
+      alt: 'Chauffage climatisation Sanguinet 40460 - ClimGO Expert Local #1',
     }],
   },
   
@@ -28,9 +29,9 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Sanguinet 33470 | ClimGO Expert Local',
-    description: 'Expert chauffage climatisation Sanguinet. Installation PAC, dépannage urgent. Artisan RGE certifié.',
-    images: ['https://www.climgo.fr/images/twitter-sanguinet-chauffage-climatisation.jpg'],
+    title: 'Chauffage Climatisation Sanguinet 40460 | Expert Local #1 | ClimGO',
+    description: 'Expert chauffage climatisation Sanguinet 40460. Installation PAC, dépannage urgent. Artisan RGE certifié #1.',
+    images: ['https://www.climgo.fr/images/og/sanguinet-chauffage-climatisation.jpg'],
   },
   
   // Métadonnées avancées COMPLÈTES
@@ -38,27 +39,27 @@ export const metadata: Metadata = {
     // Géolocalisation précise
     'geo.region': 'FR-33',
     'geo.placename': 'Sanguinet',
-    'geo.position': '44.4831;-1.0706',
-    'ICBM': '44.4831, -1.0706',
+    'geo.position': '44.8997;-0.7031',
+    'ICBM': '44.8997, -0.7031',
     'geo.country': 'France',
     'geo.state': 'Nouvelle-Aquitaine',
     
     // Dublin Core COMPLET
-    'DC.title': 'Chauffage Climatisation Sanguinet 33470 | ClimGO Expert Local',
-    'DC.description': 'Expert chauffage climatisation Sanguinet 33470. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié.',
+    'DC.title': 'Chauffage Climatisation Sanguinet 40460 | ClimGO Expert Local #1',
+    'DC.description': 'Expert chauffage climatisation Sanguinet 40460. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1.',
     'DC.creator': 'ClimGO',
     'DC.publisher': 'ClimGO',
     'DC.language': 'fr-FR',
     'DC.type': 'Service',
     'DC.format': 'text/html',
-    'DC.identifier': 'https://climgo.fr/villes/sanguinet-chauffage-climatisation',
+    'DC.identifier': 'https://www.climgo.fr/villes/sanguinet-chauffage-climatisation',
     'DC.source': 'https://www.climgo.fr',
     'DC.coverage': 'Sanguinet, Gironde, France',
     'DC.rights': '© 2025 ClimGO. Tous droits réservés.',
     
     // Données business locales COMPLÈTES
     'business.contact_data.locality': 'Sanguinet',
-    'business.contact_data.postal_code': '33470',
+    'business.contact_data.postal_code': '40460',
     'business.contact_data.phone_number': '+33766460008',
     'business.contact_data.website': 'https://www.climgo.fr',
     'business.contact_data.email': 'contact@climgo.fr',
@@ -71,7 +72,7 @@ export const metadata: Metadata = {
     'serviceType': 'Installation, Dépannage, Entretien',
     
     // Référencement avancé
-    'revisit-after': '7 days',
+    'revisit-after': '1 day',
     'robots': 'index,follow,noimageindex,max-video-preview:-1,max-image-preview:large,max-snippet:-1',
     'googlebot': 'index,follow,max-video-preview:-1,max-image-preview:large,max-snippet:-1',
     
@@ -93,11 +94,11 @@ export const metadata: Metadata = {
   },
   
   alternates: {
-    canonical: 'https://climgo.fr/villes/sanguinet-chauffage-climatisation',
+    canonical: 'https://www.climgo.fr/villes/sanguinet-chauffage-climatisation',
   },
   
   verification: {
-    google: 'VERIFICATION_CODE_TO_ADD',
+    google: 'Ljs9Q3ve_Z_ldbzUTagcBPPmmQ_LTJER2pD3j7Woj1g',
     other: {
       bing: 'VERIFICATION_CODE_TO_ADD'
     }
@@ -111,6 +112,7 @@ export default function SanguinetLayout({
 }) {
   return (
     <>
+      <JsonLd type="city" city="Sanguinet" postalCode="40460" />
       {children}
     </>
   );
