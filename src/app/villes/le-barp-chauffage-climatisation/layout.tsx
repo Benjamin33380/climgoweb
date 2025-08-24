@@ -3,15 +3,15 @@ import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Le Barp COMPLETE
 export const metadata: Metadata = {
-  title: 'Chauffage Climatisation Le Barp 33114 | Expert Local | ClimGO',
-  description: 'Expert chauffage climatisation Le Barp 33114. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit sous 24h.',
+  title: 'Chauffage Climatisation Le Barp 33114 | ClimGO',
+  description: 'Expert chauffage climatisation Le Barp 33114. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
   
   keywords: 'climatisation Le Barp, chauffage Le Barp, pompe à chaleur Le Barp, chauffagiste Le Barp, installateur climatisation Le Barp, artisan RGE Le Barp, installation PAC Le Barp, entretien climatisation Le Barp, dépannage chauffage Le Barp, chaudière Le Barp, maintenance Le Barp, réparation climatisation Le Barp, devis gratuit Le Barp, intervention urgence Le Barp, certificat RGE Le Barp, MaPrimeRénov Le Barp, aide financière chauffage Le Barp, prime CEE Le Barp, crédit impôt Le Barp, économie énergie Le Barp, rénovation énergétique Le Barp, audit énergétique Le Barp, expert chauffage 33114, climatisation 33114, chauffagiste 33114, devis gratuit Le Barp, intervention urgence Le Barp, spécialiste CVC Le Barp, entreprise chauffage Le Barp, installateur agréé Le Barp, technicien qualifié Le Barp, service après-vente Le Barp',
   
   // Open Graph optimisé COMPLET
   openGraph: {
-    title: 'Chauffage Climatisation Le Barp 33114 | Expert Local | ClimGO',
-    description: 'ClimGO, expert chauffage climatisation Le Barp 33114. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit.',
+    title: 'Chauffage Climatisation Le Barp 33114 | ClimGO',
+    description: 'Expert chauffage climatisation Le Barp 33114. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     url: 'https://www.climgo.fr/villes/le-barp-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       url: 'https://www.climgo.fr/images/og/le-barp-chauffage-climatisation.jpg',
       width: 1200,
       height: 630,
-      alt: 'Chauffage climatisation Le Barp 33114 - ClimGO Expert Local',
+      alt: 'Chauffage climatisation Le Barp 33114 - ClimGO',
     }],
   },
   
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Le Barp 33114 | Expert Local | ClimGO',
-    description: 'Expert chauffage climatisation Le Barp 33114. Installation PAC, dépannage urgent. Artisan RGE certifié.',
+    title: 'Chauffage Climatisation Le Barp 33114 | ClimGO',
+    description: 'Expert chauffage climatisation Le Barp 33114. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     images: ['https://www.climgo.fr/images/og/le-barp-chauffage-climatisation.jpg'],
   },
   
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
     'geo.state': 'Nouvelle-Aquitaine',
     
     // Dublin Core COMPLET
-    'DC.title': 'Chauffage Climatisation Le Barp 33114 | ClimGO Expert Local',
-    'DC.description': 'Expert chauffage climatisation Le Barp 33114. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié.',
+    'DC.title': 'Chauffage Climatisation Le Barp 33114 | ClimGO',
+    'DC.description': 'Expert chauffage climatisation Le Barp 33114. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     'DC.creator': 'ClimGO',
     'DC.publisher': 'ClimGO',
     'DC.language': 'fr-FR',

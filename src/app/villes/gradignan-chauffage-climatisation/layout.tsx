@@ -3,15 +3,15 @@ import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Gradignan COMPLETE
 export const metadata: Metadata = {
-  title: 'Chauffage Climatisation Gradignan 33170 | Expert Local | ClimGO',
-  description: 'Expert chauffage climatisation Gradignan 33170. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit sous 24h.',
+  title: 'Chauffage Climatisation Gradignan 33170 | ClimGO',
+  description: 'Expert chauffage climatisation Gradignan 33170. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
   
   keywords: 'climatisation Gradignan, chauffage Gradignan, pompe à chaleur Gradignan, chauffagiste Gradignan, installateur climatisation Gradignan, artisan RGE Gradignan, installation PAC Gradignan, entretien climatisation Gradignan, dépannage chauffage Gradignan, chaudière Gradignan, maintenance Gradignan, réparation climatisation Gradignan, devis gratuit Gradignan, intervention urgence Gradignan, certificat RGE Gradignan, MaPrimeRénov Gradignan, aide financière chauffage Gradignan, prime CEE Gradignan, crédit impôt Gradignan, économie énergie Gradignan, rénovation énergétique Gradignan, audit énergétique Gradignan, expert chauffage 33170, climatisation 33170, chauffagiste 33170, devis gratuit Gradignan, intervention urgence Gradignan, spécialiste CVC Gradignan, entreprise chauffage Gradignan, installateur agréé Gradignan, technicien qualifié Gradignan, service après-vente Gradignan',
   
   // Open Graph optimisé COMPLET
   openGraph: {
-    title: 'Chauffage Climatisation Gradignan 33170 | Expert Local | ClimGO',
-    description: 'ClimGO, expert chauffage climatisation Gradignan 33170. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit.',
+    title: 'Chauffage Climatisation Gradignan 33170 | ClimGO',
+    description: 'Expert chauffage climatisation Gradignan 33170. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     url: 'https://www.climgo.fr/villes/gradignan-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       url: 'https://www.climgo.fr/images/og/gradignan-chauffage-climatisation.jpg',
       width: 1200,
       height: 630,
-      alt: 'Chauffage climatisation Gradignan 33170 - ClimGO Expert Local',
+      alt: 'Chauffage climatisation Gradignan 33170 - ClimGO',
     }],
   },
   
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Gradignan 33170 | Expert Local | ClimGO',
-    description: 'Expert chauffage climatisation Gradignan 33170. Installation PAC, dépannage urgent. Artisan RGE certifié.',
+    title: 'Chauffage Climatisation Gradignan 33170 | ClimGO',
+    description: 'Expert chauffage climatisation Gradignan 33170. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     images: ['https://www.climgo.fr/images/og/gradignan-chauffage-climatisation.jpg'],
   },
   
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
     'geo.state': 'Nouvelle-Aquitaine',
     
     // Dublin Core COMPLET
-    'DC.title': 'Chauffage Climatisation Gradignan 33170 | ClimGO Expert Local',
-    'DC.description': 'Expert chauffage climatisation Gradignan 33170. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié.',
+    'DC.title': 'Chauffage Climatisation Gradignan 33170 | ClimGO',
+    'DC.description': 'Expert chauffage climatisation Gradignan 33170. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     'DC.creator': 'ClimGO',
     'DC.publisher': 'ClimGO',
     'DC.language': 'fr-FR',

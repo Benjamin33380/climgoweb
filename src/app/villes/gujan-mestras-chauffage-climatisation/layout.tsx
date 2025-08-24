@@ -3,15 +3,15 @@ import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Gujan-Mestras COMPLETE
 export const metadata: Metadata = {
-  title: 'Chauffage Climatisation Gujan-Mestras 33260 | Expert Local | ClimGO',
-  description: 'Expert chauffage climatisation Gujan-Mestras 33260. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit sous 24h.',
+  title: 'Chauffage Climatisation Gujan-Mestras 33260 | ClimGO',
+  description: 'Expert chauffage climatisation Gujan-Mestras 33260. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
   
   keywords: 'climatisation Gujan-Mestras, chauffage Gujan-Mestras, pompe à chaleur Gujan-Mestras, chauffagiste Gujan-Mestras, installateur climatisation Gujan-Mestras, artisan RGE Gujan-Mestras, installation PAC Gujan-Mestras, entretien climatisation Gujan-Mestras, dépannage chauffage Gujan-Mestras, chaudière Gujan-Mestras, maintenance Gujan-Mestras, réparation climatisation Gujan-Mestras, devis gratuit Gujan-Mestras, intervention urgence Gujan-Mestras, certificat RGE Gujan-Mestras, MaPrimeRénov Gujan-Mestras, aide financière chauffage Gujan-Mestras, prime CEE Gujan-Mestras, crédit impôt Gujan-Mestras, économie énergie Gujan-Mestras, rénovation énergétique Gujan-Mestras, audit énergétique Gujan-Mestras, expert chauffage 33260, climatisation 33260, chauffagiste 33260, devis gratuit Gujan-Mestras, intervention urgence Gujan-Mestras, spécialiste CVC Gujan-Mestras, entreprise chauffage Gujan-Mestras, installateur agréé Gujan-Mestras, technicien qualifié Gujan-Mestras, service après-vente Gujan-Mestras',
   
   // Open Graph optimisé COMPLET
   openGraph: {
-    title: 'Chauffage Climatisation Gujan-Mestras 33260 | Expert Local | ClimGO',
-    description: 'ClimGO, expert chauffage climatisation Gujan-Mestras 33260. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit.',
+    title: 'Chauffage Climatisation Gujan-Mestras 33260 | ClimGO',
+    description: 'Expert chauffage climatisation Gujan-Mestras 33260. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     url: 'https://www.climgo.fr/villes/gujan-mestras-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       url: 'https://www.climgo.fr/images/og/gujan-mestras-chauffage-climatisation.jpg',
       width: 1200,
       height: 630,
-      alt: 'Chauffage climatisation Gujan-Mestras 33260 - ClimGO Expert Local',
+      alt: 'Chauffage climatisation Gujan-Mestras 33260 - ClimGO',
     }],
   },
   
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Gujan-Mestras 33260 | Expert Local | ClimGO',
-    description: 'Expert chauffage climatisation Gujan-Mestras 33260. Installation PAC, dépannage urgent. Artisan RGE certifié.',
+    title: 'Chauffage Climatisation Gujan-Mestras 33260 | ClimGO',
+    description: 'Expert chauffage climatisation Gujan-Mestras 33260. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     images: ['https://www.climgo.fr/images/og/gujan-mestras-chauffage-climatisation.jpg'],
   },
   
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
     'geo.state': 'Nouvelle-Aquitaine',
     
     // Dublin Core COMPLET
-    'DC.title': 'Chauffage Climatisation Gujan-Mestras 33260 | ClimGO Expert Local',
-    'DC.description': 'Expert chauffage climatisation Gujan-Mestras 33260. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié.',
+    'DC.title': 'Chauffage Climatisation Gujan-Mestras 33260 | ClimGO',
+    'DC.description': 'Expert chauffage climatisation Gujan-Mestras 33260. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     'DC.creator': 'ClimGO',
     'DC.publisher': 'ClimGO',
     'DC.language': 'fr-FR',

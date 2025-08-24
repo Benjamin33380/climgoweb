@@ -3,15 +3,15 @@ import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Salles COMPLETE
 export const metadata: Metadata = {
-  title: 'Chauffage Climatisation Salles 33770 | Expert Local | ClimGO',
-  description: 'Expert chauffage climatisation Salles 33770. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit sous 24h.',
+  title: 'Chauffage Climatisation Salles 33770 | ClimGO',
+  description: 'Expert chauffage climatisation Salles 33770. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
   
   keywords: 'climatisation Salles, chauffage Salles, pompe à chaleur Salles, chauffagiste Salles, installateur climatisation Salles, artisan RGE Salles, installation PAC Salles, entretien climatisation Salles, dépannage chauffage Salles, chaudière Salles, maintenance Salles, réparation climatisation Salles, devis gratuit Salles, intervention urgence Salles, certificat RGE Salles, MaPrimeRénov Salles, aide financière chauffage Salles, prime CEE Salles, crédit impôt Salles, économie énergie Salles, rénovation énergétique Salles, audit énergétique Salles, expert chauffage 33770, climatisation 33770, chauffagiste 33770, devis gratuit Salles, intervention urgence Salles, spécialiste CVC Salles, entreprise chauffage Salles, installateur agréé Salles, technicien qualifié Salles, service après-vente Salles',
   
   // Open Graph optimisé COMPLET
   openGraph: {
-    title: 'Chauffage Climatisation Salles 33770 | Expert Local | ClimGO',
-    description: 'ClimGO, expert chauffage climatisation Salles 33770. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit.',
+    title: 'Chauffage Climatisation Salles 33770 | ClimGO',
+    description: 'Expert chauffage climatisation Salles 33770. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     url: 'https://www.climgo.fr/villes/salles-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       url: 'https://www.climgo.fr/images/og/salles-chauffage-climatisation.jpg',
       width: 1200,
       height: 630,
-      alt: 'Chauffage climatisation Salles 33770 - ClimGO Expert Local',
+      alt: 'Chauffage climatisation Salles 33770 - ClimGO',
     }],
   },
   
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Salles 33770 | Expert Local | ClimGO',
-    description: 'Expert chauffage climatisation Salles 33770. Installation PAC, dépannage urgent. Artisan RGE certifié.',
+    title: 'Chauffage Climatisation Salles 33770 | ClimGO',
+    description: 'Expert chauffage climatisation Salles 33770. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     images: ['https://www.climgo.fr/images/og/salles-chauffage-climatisation.jpg'],
   },
   
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
     'geo.state': 'Nouvelle-Aquitaine',
     
     // Dublin Core COMPLET
-    'DC.title': 'Chauffage Climatisation Salles 33770 | ClimGO Expert Local',
-    'DC.description': 'Expert chauffage climatisation Salles 33770. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié.',
+    'DC.title': 'Chauffage Climatisation Salles 33770 | ClimGO',
+    'DC.description': 'Expert chauffage climatisation Salles 33770. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     'DC.creator': 'ClimGO',
     'DC.publisher': 'ClimGO',
     'DC.language': 'fr-FR',

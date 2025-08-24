@@ -3,15 +3,15 @@ import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Eysines COMPLETE
 export const metadata: Metadata = {
-  title: 'Chauffage Climatisation Eysines 33320 | Expert Local | ClimGO',
-  description: 'Expert chauffage climatisation Eysines 33320. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit sous 24h.',
+  title: 'Chauffage Climatisation Eysines 33320 | ClimGO',
+  description: 'Expert chauffage climatisation Eysines 33320. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
   
   keywords: 'climatisation Eysines, chauffage Eysines, pompe à chaleur Eysines, chauffagiste Eysines, installateur climatisation Eysines, artisan RGE Eysines, installation PAC Eysines, entretien climatisation Eysines, dépannage chauffage Eysines, chaudière Eysines, maintenance Eysines, réparation climatisation Eysines, devis gratuit Eysines, intervention urgence Eysines, certificat RGE Eysines, MaPrimeRénov Eysines, aide financière chauffage Eysines, prime CEE Eysines, crédit impôt Eysines, économie énergie Eysines, rénovation énergétique Eysines, audit énergétique Eysines, expert chauffage 33320, climatisation 33320, chauffagiste 33320, devis gratuit Eysines, intervention urgence Eysines, spécialiste CVC Eysines, entreprise chauffage Eysines, installateur agréé Eysines, technicien qualifié Eysines, service après-vente Eysines',
   
   // Open Graph optimisé COMPLET
   openGraph: {
-    title: 'Chauffage Climatisation Eysines 33320 | Expert Local | ClimGO',
-    description: 'ClimGO, expert chauffage climatisation Eysines 33320. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit.',
+    title: 'Chauffage Climatisation Eysines 33320 | ClimGO',
+    description: 'Expert chauffage climatisation Eysines 33320. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     url: 'https://www.climgo.fr/villes/eysines-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       url: 'https://www.climgo.fr/images/og/eysines-chauffage-climatisation.jpg',
       width: 1200,
       height: 630,
-      alt: 'Chauffage climatisation Eysines 33320 - ClimGO Expert Local',
+      alt: 'Chauffage climatisation Eysines 33320 - ClimGO',
     }],
   },
   
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Eysines 33320 | Expert Local | ClimGO',
-    description: 'Expert chauffage climatisation Eysines 33320. Installation PAC, dépannage urgent. Artisan RGE certifié.',
+    title: 'Chauffage Climatisation Eysines 33320 | ClimGO',
+    description: 'Expert chauffage climatisation Eysines 33320. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     images: ['https://www.climgo.fr/images/og/eysines-chauffage-climatisation.jpg'],
   },
   
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
     'geo.state': 'Nouvelle-Aquitaine',
     
     // Dublin Core COMPLET
-    'DC.title': 'Chauffage Climatisation Eysines 33320 | ClimGO Expert Local',
-    'DC.description': 'Expert chauffage climatisation Eysines 33320. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié.',
+    'DC.title': 'Chauffage Climatisation Eysines 33320 | ClimGO',
+    'DC.description': 'Expert chauffage climatisation Eysines 33320. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     'DC.creator': 'ClimGO',
     'DC.publisher': 'ClimGO',
     'DC.language': 'fr-FR',

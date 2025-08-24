@@ -3,15 +3,15 @@ import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Andernos-les-Bains COMPLETE
 export const metadata: Metadata = {
-  title: 'Chauffage Climatisation Andernos-les-Bains 33510 | Expert Local | ClimGO',
-  description: 'Expert chauffage climatisation Andernos-les-Bains 33510. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit sous 24h.',
+  title: 'Chauffage Climatisation Andernos-les-Bains 33510 | ClimGO',
+  description: 'Expert chauffage climatisation Andernos-les-Bains 33510. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
   
   keywords: 'climatisation Andernos-les-Bains, chauffage Andernos-les-Bains, pompe à chaleur Andernos-les-Bains, chauffagiste Andernos-les-Bains, installateur climatisation Andernos-les-Bains, artisan RGE Andernos-les-Bains, installation PAC Andernos-les-Bains, entretien climatisation Andernos-les-Bains, dépannage chauffage Andernos-les-Bains, chaudière Andernos-les-Bains, maintenance Andernos-les-Bains, réparation climatisation Andernos-les-Bains, devis gratuit Andernos-les-Bains, intervention urgence Andernos-les-Bains, certificat RGE Andernos-les-Bains, MaPrimeRénov Andernos-les-Bains, aide financière chauffage Andernos-les-Bains, prime CEE Andernos-les-Bains, crédit impôt Andernos-les-Bains, économie énergie Andernos-les-Bains, rénovation énergétique Andernos-les-Bains, audit énergétique Andernos-les-Bains, expert chauffage 33510, climatisation 33510, chauffagiste 33510, devis gratuit Andernos-les-Bains, intervention urgence Andernos-les-Bains, spécialiste CVC Andernos-les-Bains, entreprise chauffage Andernos-les-Bains, installateur agréé Andernos-les-Bains, technicien qualifié Andernos-les-Bains, service après-vente Andernos-les-Bains',
   
   // Open Graph optimisé COMPLET
   openGraph: {
-    title: 'Chauffage Climatisation Andernos-les-Bains 33510 | Expert Local | ClimGO',
-    description: 'ClimGO, expert chauffage climatisation Andernos-les-Bains 33510. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit.',
+    title: 'Chauffage Climatisation Andernos-les-Bains 33510 | ClimGO',
+    description: 'Expert chauffage climatisation Andernos-les-Bains 33510. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     url: 'https://www.climgo.fr/villes/andernos-les-bains-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       url: 'https://www.climgo.fr/images/og/andernos-les-bains-chauffage-climatisation.jpg',
       width: 1200,
       height: 630,
-      alt: 'Chauffage climatisation Andernos-les-Bains 33510 - ClimGO Expert Local',
+      alt: 'Chauffage climatisation Andernos-les-Bains 33510 - ClimGO',
     }],
   },
   
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Andernos-les-Bains 33510 | Expert Local | ClimGO',
-    description: 'Expert chauffage climatisation Andernos-les-Bains 33510. Installation PAC, dépannage urgent. Artisan RGE certifié.',
+    title: 'Chauffage Climatisation Andernos-les-Bains 33510 | ClimGO',
+    description: 'Expert chauffage climatisation Andernos-les-Bains 33510. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     images: ['https://www.climgo.fr/images/og/andernos-les-bains-chauffage-climatisation.jpg'],
   },
   
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
     'geo.state': 'Nouvelle-Aquitaine',
     
     // Dublin Core COMPLET
-    'DC.title': 'Chauffage Climatisation Andernos-les-Bains 33510 | ClimGO Expert Local',
-    'DC.description': 'Expert chauffage climatisation Andernos-les-Bains 33510. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié.',
+    'DC.title': 'Chauffage Climatisation Andernos-les-Bains 33510 | ClimGO',
+    'DC.description': 'Expert chauffage climatisation Andernos-les-Bains 33510. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     'DC.creator': 'ClimGO',
     'DC.publisher': 'ClimGO',
     'DC.language': 'fr-FR',

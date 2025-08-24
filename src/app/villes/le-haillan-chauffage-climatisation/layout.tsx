@@ -3,15 +3,15 @@ import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Le Haillan COMPLETE
 export const metadata: Metadata = {
-  title: 'Chauffage Climatisation Le Haillan 33185 | Expert Local | ClimGO',
-  description: 'Expert chauffage climatisation Le Haillan 33185. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit sous 24h.',
+  title: 'Chauffage Climatisation Le Haillan 33185 | ClimGO',
+  description: 'Expert chauffage climatisation Le Haillan 33185. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
   
   keywords: 'climatisation Le Haillan, chauffage Le Haillan, pompe à chaleur Le Haillan, chauffagiste Le Haillan, installateur climatisation Le Haillan, artisan RGE Le Haillan, installation PAC Le Haillan, entretien climatisation Le Haillan, dépannage chauffage Le Haillan, chaudière Le Haillan, maintenance Le Haillan, réparation climatisation Le Haillan, devis gratuit Le Haillan, intervention urgence Le Haillan, certificat RGE Le Haillan, MaPrimeRénov Le Haillan, aide financière chauffage Le Haillan, prime CEE Le Haillan, crédit impôt Le Haillan, économie énergie Le Haillan, rénovation énergétique Le Haillan, audit énergétique Le Haillan, expert chauffage 33185, climatisation 33185, chauffagiste 33185, devis gratuit Le Haillan, intervention urgence Le Haillan, spécialiste CVC Le Haillan, entreprise chauffage Le Haillan, installateur agréé Le Haillan, technicien qualifié Le Haillan, service après-vente Le Haillan',
   
   // Open Graph optimisé COMPLET
   openGraph: {
-    title: 'Chauffage Climatisation Le Haillan 33185 | Expert Local | ClimGO',
-    description: 'ClimGO, expert chauffage climatisation Le Haillan 33185. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit.',
+    title: 'Chauffage Climatisation Le Haillan 33185 | ClimGO',
+    description: 'Expert chauffage climatisation Le Haillan 33185. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     url: 'https://www.climgo.fr/villes/le-haillan-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       url: 'https://www.climgo.fr/images/og/le-haillan-chauffage-climatisation.jpg',
       width: 1200,
       height: 630,
-      alt: 'Chauffage climatisation Le Haillan 33185 - ClimGO Expert Local',
+      alt: 'Chauffage climatisation Le Haillan 33185 - ClimGO',
     }],
   },
   
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Le Haillan 33185 | Expert Local | ClimGO',
-    description: 'Expert chauffage climatisation Le Haillan 33185. Installation PAC, dépannage urgent. Artisan RGE certifié.',
+    title: 'Chauffage Climatisation Le Haillan 33185 | ClimGO',
+    description: 'Expert chauffage climatisation Le Haillan 33185. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     images: ['https://www.climgo.fr/images/og/le-haillan-chauffage-climatisation.jpg'],
   },
   
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
     'geo.state': 'Nouvelle-Aquitaine',
     
     // Dublin Core COMPLET
-    'DC.title': 'Chauffage Climatisation Le Haillan 33185 | ClimGO Expert Local',
-    'DC.description': 'Expert chauffage climatisation Le Haillan 33185. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié.',
+    'DC.title': 'Chauffage Climatisation Le Haillan 33185 | ClimGO',
+    'DC.description': 'Expert chauffage climatisation Le Haillan 33185. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     'DC.creator': 'ClimGO',
     'DC.publisher': 'ClimGO',
     'DC.language': 'fr-FR',

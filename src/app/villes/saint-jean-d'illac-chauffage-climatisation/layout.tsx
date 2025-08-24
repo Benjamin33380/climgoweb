@@ -3,15 +3,15 @@ import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Saint-Jean-d\'Illac COMPLETE
 export const metadata: Metadata = {
-  title: 'Chauffage Climatisation Saint-Jean-d\'Illac 33127 | Expert Local | ClimGO',
-  description: 'Expert chauffage climatisation Saint-Jean-d\'Illac 33127. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit sous 24h.',
+  title: 'Chauffage Climatisation Saint-Jean-d\'Illac 33127 | ClimGO',
+  description: 'Expert chauffage climatisation Saint-Jean-d\'Illac 33127. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
   
   keywords: 'climatisation Saint-Jean-d\'Illac, chauffage Saint-Jean-d\'Illac, pompe à chaleur Saint-Jean-d\'Illac, chauffagiste Saint-Jean-d\'Illac, installateur climatisation Saint-Jean-d\'Illac, artisan RGE Saint-Jean-d\'Illac, installation PAC Saint-Jean-d\'Illac, entretien climatisation Saint-Jean-d\'Illac, dépannage chauffage Saint-Jean-d\'Illac, chaudière Saint-Jean-d\'Illac, maintenance Saint-Jean-d\'Illac, réparation climatisation Saint-Jean-d\'Illac, devis gratuit Saint-Jean-d\'Illac, intervention urgence Saint-Jean-d\'Illac, certificat RGE Saint-Jean-d\'Illac, MaPrimeRénov Saint-Jean-d\'Illac, aide financière chauffage Saint-Jean-d\'Illac, prime CEE Saint-Jean-d\'Illac, crédit impôt Saint-Jean-d\'Illac, économie énergie Saint-Jean-d\'Illac, rénovation énergétique Saint-Jean-d\'Illac, audit énergétique Saint-Jean-d\'Illac, expert chauffage 33127, climatisation 33127, chauffagiste 33127, devis gratuit Saint-Jean-d\'Illac, intervention urgence Saint-Jean-d\'Illac, spécialiste CVC Saint-Jean-d\'Illac, entreprise chauffage Saint-Jean-d\'Illac, installateur agréé Saint-Jean-d\'Illac, technicien qualifié Saint-Jean-d\'Illac, service après-vente Saint-Jean-d\'Illac',
   
   // Open Graph optimisé COMPLET
   openGraph: {
-    title: 'Chauffage Climatisation Saint-Jean-d\'Illac 33127 | Expert Local | ClimGO',
-    description: 'ClimGO, expert chauffage climatisation Saint-Jean-d\'Illac 33127. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit.',
+    title: 'Chauffage Climatisation Saint-Jean-d\'Illac 33127 | ClimGO',
+    description: 'Expert chauffage climatisation Saint-Jean-d\'Illac 33127. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     url: 'https://www.climgo.fr/villes/saint-jean-dillac-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       url: 'https://www.climgo.fr/images/og/saint-jean-dillac-chauffage-climatisation.jpg',
       width: 1200,
       height: 630,
-      alt: 'Chauffage climatisation Saint-Jean-d\'Illac 33127 - ClimGO Expert Local',
+      alt: 'Chauffage climatisation Saint-Jean-d\'Illac 33127 - ClimGO',
     }],
   },
   
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Saint-Jean-d\'Illac 33127 | Expert Local | ClimGO',
-    description: 'Expert chauffage climatisation Saint-Jean-d\'Illac 33127. Installation PAC, dépannage urgent. Artisan RGE certifié.',
+    title: 'Chauffage Climatisation Saint-Jean-d\'Illac 33127 | ClimGO',
+    description: 'Expert chauffage climatisation Saint-Jean-d\'Illac 33127. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     images: ['https://www.climgo.fr/images/og/saint-jean-dillac-chauffage-climatisation.jpg'],
   },
   
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
     'geo.state': 'Nouvelle-Aquitaine',
     
     // Dublin Core COMPLET
-    'DC.title': 'Chauffage Climatisation Saint-Jean-d\'Illac 33127 | ClimGO Expert Local',
-    'DC.description': 'Expert chauffage climatisation Saint-Jean-d\'Illac 33127. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié.',
+    'DC.title': 'Chauffage Climatisation Saint-Jean-d\'Illac 33127 | ClimGO',
+    'DC.description': 'Expert chauffage climatisation Saint-Jean-d\'Illac 33127. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     'DC.creator': 'ClimGO',
     'DC.publisher': 'ClimGO',
     'DC.language': 'fr-FR',

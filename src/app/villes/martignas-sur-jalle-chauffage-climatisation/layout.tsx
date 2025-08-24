@@ -3,15 +3,15 @@ import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Martignas-sur-Jalle COMPLETE
 export const metadata: Metadata = {
-  title: 'Chauffage Climatisation Martignas-sur-Jalle 33127 | Expert Local | ClimGO',
-  description: 'Expert chauffage climatisation Martignas-sur-Jalle 33127. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit sous 24h.',
+  title: 'Chauffage Climatisation Martignas-sur-Jalle 33127 | ClimGO',
+  description: 'Expert chauffage climatisation Martignas-sur-Jalle 33127. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
   
   keywords: 'climatisation Martignas-sur-Jalle, chauffage Martignas-sur-Jalle, pompe à chaleur Martignas-sur-Jalle, chauffagiste Martignas-sur-Jalle, installateur climatisation Martignas-sur-Jalle, artisan RGE Martignas-sur-Jalle, installation PAC Martignas-sur-Jalle, entretien climatisation Martignas-sur-Jalle, dépannage chauffage Martignas-sur-Jalle, chaudière Martignas-sur-Jalle, maintenance Martignas-sur-Jalle, réparation climatisation Martignas-sur-Jalle, devis gratuit Martignas-sur-Jalle, intervention urgence Martignas-sur-Jalle, certificat RGE Martignas-sur-Jalle, MaPrimeRénov Martignas-sur-Jalle, aide financière chauffage Martignas-sur-Jalle, prime CEE Martignas-sur-Jalle, crédit impôt Martignas-sur-Jalle, économie énergie Martignas-sur-Jalle, rénovation énergétique Martignas-sur-Jalle, audit énergétique Martignas-sur-Jalle, expert chauffage 33127, climatisation 33127, chauffagiste 33127, devis gratuit Martignas-sur-Jalle, intervention urgence Martignas-sur-Jalle, spécialiste CVC Martignas-sur-Jalle, entreprise chauffage Martignas-sur-Jalle, installateur agréé Martignas-sur-Jalle, technicien qualifié Martignas-sur-Jalle, service après-vente Martignas-sur-Jalle',
   
   // Open Graph optimisé COMPLET
   openGraph: {
-    title: 'Chauffage Climatisation Martignas-sur-Jalle 33127 | Expert Local | ClimGO',
-    description: 'ClimGO, expert chauffage climatisation Martignas-sur-Jalle 33127. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit.',
+    title: 'Chauffage Climatisation Martignas-sur-Jalle 33127 | ClimGO',
+    description: 'Expert chauffage climatisation Martignas-sur-Jalle 33127. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     url: 'https://www.climgo.fr/villes/martignas-sur-jalle-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       url: 'https://www.climgo.fr/images/og/martignas-sur-jalle-chauffage-climatisation.jpg',
       width: 1200,
       height: 630,
-      alt: 'Chauffage climatisation Martignas-sur-Jalle 33127 - ClimGO Expert Local',
+      alt: 'Chauffage climatisation Martignas-sur-Jalle 33127 - ClimGO',
     }],
   },
   
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Martignas-sur-Jalle 33127 | Expert Local | ClimGO',
-    description: 'Expert chauffage climatisation Martignas-sur-Jalle 33127. Installation PAC, dépannage urgent. Artisan RGE certifié.',
+    title: 'Chauffage Climatisation Martignas-sur-Jalle 33127 | ClimGO',
+    description: 'Expert chauffage climatisation Martignas-sur-Jalle 33127. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     images: ['https://www.climgo.fr/images/og/martignas-sur-jalle-chauffage-climatisation.jpg'],
   },
   
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
     'geo.state': 'Nouvelle-Aquitaine',
     
     // Dublin Core COMPLET
-    'DC.title': 'Chauffage Climatisation Martignas-sur-Jalle 33127 | ClimGO Expert Local',
-    'DC.description': 'Expert chauffage climatisation Martignas-sur-Jalle 33127. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié.',
+    'DC.title': 'Chauffage Climatisation Martignas-sur-Jalle 33127 | ClimGO',
+    'DC.description': 'Expert chauffage climatisation Martignas-sur-Jalle 33127. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     'DC.creator': 'ClimGO',
     'DC.publisher': 'ClimGO',
     'DC.language': 'fr-FR',

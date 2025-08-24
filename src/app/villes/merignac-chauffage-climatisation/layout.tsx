@@ -3,15 +3,15 @@ import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Merignac COMPLETE
 export const metadata: Metadata = {
-  title: 'Chauffage Climatisation Merignac 33700 | Expert Local | ClimGO',
-  description: 'Expert chauffage climatisation Merignac 33700. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit sous 24h.',
+  title: 'Chauffage Climatisation Merignac 33700 | ClimGO',
+  description: 'Expert chauffage climatisation Merignac 33700. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
   
   keywords: 'climatisation Merignac, chauffage Merignac, pompe à chaleur Merignac, chauffagiste Merignac, installateur climatisation Merignac, artisan RGE Merignac, installation PAC Merignac, entretien climatisation Merignac, dépannage chauffage Merignac, chaudière Merignac, maintenance Merignac, réparation climatisation Merignac, devis gratuit Merignac, intervention urgence Merignac, certificat RGE Merignac, MaPrimeRénov Merignac, aide financière chauffage Merignac, prime CEE Merignac, crédit impôt Merignac, économie énergie Merignac, rénovation énergétique Merignac, audit énergétique Merignac, expert chauffage 33700, climatisation 33700, chauffagiste 33700, devis gratuit Merignac, intervention urgence Merignac, spécialiste CVC Merignac, entreprise chauffage Merignac, installateur agréé Merignac, technicien qualifié Merignac, service après-vente Merignac',
   
   // Open Graph optimisé COMPLET
   openGraph: {
-    title: 'Chauffage Climatisation Merignac 33700 | Expert Local | ClimGO',
-    description: 'ClimGO, expert chauffage climatisation Merignac 33700. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit.',
+    title: 'Chauffage Climatisation Merignac 33700 | ClimGO',
+    description: 'Expert chauffage climatisation Merignac 33700. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     url: 'https://www.climgo.fr/villes/merignac-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       url: 'https://www.climgo.fr/images/og/merignac-chauffage-climatisation.jpg',
       width: 1200,
       height: 630,
-      alt: 'Chauffage climatisation Merignac 33700 - ClimGO Expert Local',
+      alt: 'Chauffage climatisation Merignac 33700 - ClimGO',
     }],
   },
   
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Merignac 33700 | Expert Local | ClimGO',
-    description: 'Expert chauffage climatisation Merignac 33700. Installation PAC, dépannage urgent. Artisan RGE certifié.',
+    title: 'Chauffage Climatisation Merignac 33700 | ClimGO',
+    description: 'Expert chauffage climatisation Merignac 33700. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     images: ['https://www.climgo.fr/images/og/merignac-chauffage-climatisation.jpg'],
   },
   
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
     'geo.state': 'Nouvelle-Aquitaine',
     
     // Dublin Core COMPLET
-    'DC.title': 'Chauffage Climatisation Merignac 33700 | ClimGO Expert Local',
-    'DC.description': 'Expert chauffage climatisation Merignac 33700. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié.',
+    'DC.title': 'Chauffage Climatisation Merignac 33700 | ClimGO',
+    'DC.description': 'Expert chauffage climatisation Merignac 33700. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     'DC.creator': 'ClimGO',
     'DC.publisher': 'ClimGO',
     'DC.language': 'fr-FR',

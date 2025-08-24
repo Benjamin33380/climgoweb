@@ -3,15 +3,15 @@ import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Bordeaux COMPLETE
 export const metadata: Metadata = {
-  title: 'Chauffage Climatisation Bordeaux 33000 | Expert Local | ClimGO',
-  description: 'Expert chauffage climatisation Bordeaux 33000. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit sous 24h.',
+  title: 'Chauffage Climatisation Bordeaux 33000 | ClimGO',
+  description: 'Expert chauffage climatisation Bordeaux 33000. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
   
   keywords: 'climatisation Bordeaux, chauffage Bordeaux, pompe à chaleur Bordeaux, chauffagiste Bordeaux, installateur climatisation Bordeaux, artisan RGE Bordeaux, installation PAC Bordeaux, entretien climatisation Bordeaux, dépannage chauffage Bordeaux, chaudière Bordeaux, maintenance Bordeaux, réparation climatisation Bordeaux, devis gratuit Bordeaux, intervention urgence Bordeaux, certificat RGE Bordeaux, MaPrimeRénov Bordeaux, aide financière chauffage Bordeaux, prime CEE Bordeaux, crédit impôt Bordeaux, économie énergie Bordeaux, rénovation énergétique Bordeaux, audit énergétique Bordeaux, expert chauffage 33000, climatisation 33000, chauffagiste 33000, devis gratuit Bordeaux, intervention urgence Bordeaux, spécialiste CVC Bordeaux, entreprise chauffage Bordeaux, installateur agréé Bordeaux, technicien qualifié Bordeaux, service après-vente Bordeaux',
   
   // Open Graph optimisé COMPLET
   openGraph: {
-    title: 'Chauffage Climatisation Bordeaux 33000 | Expert Local | ClimGO',
-    description: 'ClimGO, expert chauffage climatisation Bordeaux 33000. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit.',
+    title: 'Chauffage Climatisation Bordeaux 33000 | ClimGO',
+    description: 'Expert chauffage climatisation Bordeaux 33000. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     url: 'https://www.climgo.fr/villes/bordeaux-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       url: 'https://www.climgo.fr/images/og/bordeaux-chauffage-climatisation.jpg',
       width: 1200,
       height: 630,
-      alt: 'Chauffage climatisation Bordeaux 33000 - ClimGO Expert Local',
+      alt: 'Chauffage climatisation Bordeaux 33000 - ClimGO',
     }],
   },
   
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Bordeaux 33000 | Expert Local | ClimGO',
-    description: 'Expert chauffage climatisation Bordeaux 33000. Installation PAC, dépannage urgent. Artisan RGE certifié.',
+    title: 'Chauffage Climatisation Bordeaux 33000 | ClimGO',
+    description: 'Expert chauffage climatisation Bordeaux 33000. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     images: ['https://www.climgo.fr/images/og/bordeaux-chauffage-climatisation.jpg'],
   },
   
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
     'geo.state': 'Nouvelle-Aquitaine',
     
     // Dublin Core COMPLET
-    'DC.title': 'Chauffage Climatisation Bordeaux 33000 | ClimGO Expert Local',
-    'DC.description': 'Expert chauffage climatisation Bordeaux 33000. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié.',
+    'DC.title': 'Chauffage Climatisation Bordeaux 33000 | ClimGO',
+    'DC.description': 'Expert chauffage climatisation Bordeaux 33000. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     'DC.creator': 'ClimGO',
     'DC.publisher': 'ClimGO',
     'DC.language': 'fr-FR',

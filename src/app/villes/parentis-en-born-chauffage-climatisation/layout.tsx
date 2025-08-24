@@ -3,15 +3,15 @@ import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Parentis-en-Born COMPLETE
 export const metadata: Metadata = {
-  title: 'Chauffage Climatisation Parentis-en-Born 40160 | Expert Local | ClimGO',
-  description: 'Expert chauffage climatisation Parentis-en-Born 40160. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit sous 24h.',
+  title: 'Chauffage Climatisation Parentis-en-Born 40160 | ClimGO',
+  description: 'Expert chauffage climatisation Parentis-en-Born 40160. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
   
   keywords: 'climatisation Parentis-en-Born, chauffage Parentis-en-Born, pompe à chaleur Parentis-en-Born, chauffagiste Parentis-en-Born, installateur climatisation Parentis-en-Born, artisan RGE Parentis-en-Born, installation PAC Parentis-en-Born, entretien climatisation Parentis-en-Born, dépannage chauffage Parentis-en-Born, chaudière Parentis-en-Born, maintenance Parentis-en-Born, réparation climatisation Parentis-en-Born, devis gratuit Parentis-en-Born, intervention urgence Parentis-en-Born, certificat RGE Parentis-en-Born, MaPrimeRénov Parentis-en-Born, aide financière chauffage Parentis-en-Born, prime CEE Parentis-en-Born, crédit impôt Parentis-en-Born, économie énergie Parentis-en-Born, rénovation énergétique Parentis-en-Born, audit énergétique Parentis-en-Born, expert chauffage 40160, climatisation 40160, chauffagiste 40160, devis gratuit Parentis-en-Born, intervention urgence Parentis-en-Born, spécialiste CVC Parentis-en-Born, entreprise chauffage Parentis-en-Born, installateur agréé Parentis-en-Born, technicien qualifié Parentis-en-Born, service après-vente Parentis-en-Born',
   
   // Open Graph optimisé COMPLET
   openGraph: {
-    title: 'Chauffage Climatisation Parentis-en-Born 40160 | Expert Local | ClimGO',
-    description: 'ClimGO, expert chauffage climatisation Parentis-en-Born 40160. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit.',
+    title: 'Chauffage Climatisation Parentis-en-Born 40160 | ClimGO',
+    description: 'Expert chauffage climatisation Parentis-en-Born 40160. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     url: 'https://www.climgo.fr/villes/parentis-en-born-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       url: 'https://www.climgo.fr/images/og/parentis-en-born-chauffage-climatisation.jpg',
       width: 1200,
       height: 630,
-      alt: 'Chauffage climatisation Parentis-en-Born 40160 - ClimGO Expert Local',
+      alt: 'Chauffage climatisation Parentis-en-Born 40160 - ClimGO',
     }],
   },
   
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Parentis-en-Born 40160 | Expert Local | ClimGO',
-    description: 'Expert chauffage climatisation Parentis-en-Born 40160. Installation PAC, dépannage urgent. Artisan RGE certifié.',
+    title: 'Chauffage Climatisation Parentis-en-Born 40160 | ClimGO',
+    description: 'Expert chauffage climatisation Parentis-en-Born 40160. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     images: ['https://www.climgo.fr/images/og/parentis-en-born-chauffage-climatisation.jpg'],
   },
   
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
     'geo.state': 'Nouvelle-Aquitaine',
     
     // Dublin Core COMPLET
-    'DC.title': 'Chauffage Climatisation Parentis-en-Born 40160 | ClimGO Expert Local',
-    'DC.description': 'Expert chauffage climatisation Parentis-en-Born 40160. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié.',
+    'DC.title': 'Chauffage Climatisation Parentis-en-Born 40160 | ClimGO',
+    'DC.description': 'Expert chauffage climatisation Parentis-en-Born 40160. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     'DC.creator': 'ClimGO',
     'DC.publisher': 'ClimGO',
     'DC.language': 'fr-FR',

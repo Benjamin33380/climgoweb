@@ -3,15 +3,15 @@ import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Bruges COMPLETE
 export const metadata: Metadata = {
-  title: 'Chauffage Climatisation Bruges 33520 | Expert Local | ClimGO',
-  description: 'Expert chauffage climatisation Bruges 33520. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit sous 24h.',
+  title: 'Chauffage Climatisation Bruges 33520 | ClimGO',
+  description: 'Expert chauffage climatisation Bruges 33520. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
   
   keywords: 'climatisation Bruges, chauffage Bruges, pompe à chaleur Bruges, chauffagiste Bruges, installateur climatisation Bruges, artisan RGE Bruges, installation PAC Bruges, entretien climatisation Bruges, dépannage chauffage Bruges, chaudière Bruges, maintenance Bruges, réparation climatisation Bruges, devis gratuit Bruges, intervention urgence Bruges, certificat RGE Bruges, MaPrimeRénov Bruges, aide financière chauffage Bruges, prime CEE Bruges, crédit impôt Bruges, économie énergie Bruges, rénovation énergétique Bruges, audit énergétique Bruges, expert chauffage 33520, climatisation 33520, chauffagiste 33520, devis gratuit Bruges, intervention urgence Bruges, spécialiste CVC Bruges, entreprise chauffage Bruges, installateur agréé Bruges, technicien qualifié Bruges, service après-vente Bruges',
   
   // Open Graph optimisé COMPLET
   openGraph: {
-    title: 'Chauffage Climatisation Bruges 33520 | Expert Local | ClimGO',
-    description: 'ClimGO, expert chauffage climatisation Bruges 33520. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit.',
+    title: 'Chauffage Climatisation Bruges 33520 | ClimGO',
+    description: 'Expert chauffage climatisation Bruges 33520. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     url: 'https://www.climgo.fr/villes/bruges-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       url: 'https://www.climgo.fr/images/og/bruges-chauffage-climatisation.jpg',
       width: 1200,
       height: 630,
-      alt: 'Chauffage climatisation Bruges 33520 - ClimGO Expert Local',
+      alt: 'Chauffage climatisation Bruges 33520 - ClimGO',
     }],
   },
   
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Bruges 33520 | Expert Local | ClimGO',
-    description: 'Expert chauffage climatisation Bruges 33520. Installation PAC, dépannage urgent. Artisan RGE certifié.',
+    title: 'Chauffage Climatisation Bruges 33520 | ClimGO',
+    description: 'Expert chauffage climatisation Bruges 33520. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     images: ['https://www.climgo.fr/images/og/bruges-chauffage-climatisation.jpg'],
   },
   
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
     'geo.state': 'Nouvelle-Aquitaine',
     
     // Dublin Core COMPLET
-    'DC.title': 'Chauffage Climatisation Bruges 33520 | ClimGO Expert Local',
-    'DC.description': 'Expert chauffage climatisation Bruges 33520. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié.',
+    'DC.title': 'Chauffage Climatisation Bruges 33520 | ClimGO',
+    'DC.description': 'Expert chauffage climatisation Bruges 33520. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     'DC.creator': 'ClimGO',
     'DC.publisher': 'ClimGO',
     'DC.language': 'fr-FR',

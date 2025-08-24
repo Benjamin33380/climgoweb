@@ -3,15 +3,15 @@ import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Cestas COMPLETE
 export const metadata: Metadata = {
-  title: 'Chauffage Climatisation Cestas 33610 | Expert Local | ClimGO',
-  description: 'Expert chauffage climatisation Cestas 33610. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit sous 24h.',
+  title: 'Chauffage Climatisation Cestas 33610 | ClimGO',
+  description: 'Expert chauffage climatisation Cestas 33610. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
   
   keywords: 'climatisation Cestas, chauffage Cestas, pompe à chaleur Cestas, chauffagiste Cestas, installateur climatisation Cestas, artisan RGE Cestas, installation PAC Cestas, entretien climatisation Cestas, dépannage chauffage Cestas, chaudière Cestas, maintenance Cestas, réparation climatisation Cestas, devis gratuit Cestas, intervention urgence Cestas, certificat RGE Cestas, MaPrimeRénov Cestas, aide financière chauffage Cestas, prime CEE Cestas, crédit impôt Cestas, économie énergie Cestas, rénovation énergétique Cestas, audit énergétique Cestas, expert chauffage 33610, climatisation 33610, chauffagiste 33610, devis gratuit Cestas, intervention urgence Cestas, spécialiste CVC Cestas, entreprise chauffage Cestas, installateur agréé Cestas, technicien qualifié Cestas, service après-vente Cestas',
   
   // Open Graph optimisé COMPLET
   openGraph: {
-    title: 'Chauffage Climatisation Cestas 33610 | Expert Local | ClimGO',
-    description: 'ClimGO, expert chauffage climatisation Cestas 33610. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit.',
+    title: 'Chauffage Climatisation Cestas 33610 | ClimGO',
+    description: 'Expert chauffage climatisation Cestas 33610. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     url: 'https://www.climgo.fr/villes/cestas-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       url: 'https://www.climgo.fr/images/og/cestas-chauffage-climatisation.jpg',
       width: 1200,
       height: 630,
-      alt: 'Chauffage climatisation Cestas 33610 - ClimGO Expert Local',
+      alt: 'Chauffage climatisation Cestas 33610 - ClimGO',
     }],
   },
   
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Cestas 33610 | Expert Local | ClimGO',
-    description: 'Expert chauffage climatisation Cestas 33610. Installation PAC, dépannage urgent. Artisan RGE certifié.',
+    title: 'Chauffage Climatisation Cestas 33610 | ClimGO',
+    description: 'Expert chauffage climatisation Cestas 33610. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     images: ['https://www.climgo.fr/images/og/cestas-chauffage-climatisation.jpg'],
   },
   
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
     'geo.state': 'Nouvelle-Aquitaine',
     
     // Dublin Core COMPLET
-    'DC.title': 'Chauffage Climatisation Cestas 33610 | ClimGO Expert Local',
-    'DC.description': 'Expert chauffage climatisation Cestas 33610. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié.',
+    'DC.title': 'Chauffage Climatisation Cestas 33610 | ClimGO',
+    'DC.description': 'Expert chauffage climatisation Cestas 33610. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     'DC.creator': 'ClimGO',
     'DC.publisher': 'ClimGO',
     'DC.language': 'fr-FR',

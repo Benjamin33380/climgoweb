@@ -3,15 +3,15 @@ import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Bouliac COMPLETE
 export const metadata: Metadata = {
-  title: 'Chauffage Climatisation Bouliac 33270 | Expert Local | ClimGO',
-  description: 'Expert chauffage climatisation Bouliac 33270. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit sous 24h.',
+  title: 'Chauffage Climatisation Bouliac 33270 | ClimGO',
+  description: 'Expert chauffage climatisation Bouliac 33270. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
   
   keywords: 'climatisation Bouliac, chauffage Bouliac, pompe à chaleur Bouliac, chauffagiste Bouliac, installateur climatisation Bouliac, artisan RGE Bouliac, installation PAC Bouliac, entretien climatisation Bouliac, dépannage chauffage Bouliac, chaudière Bouliac, maintenance Bouliac, réparation climatisation Bouliac, devis gratuit Bouliac, intervention urgence Bouliac, certificat RGE Bouliac, MaPrimeRénov Bouliac, aide financière chauffage Bouliac, prime CEE Bouliac, crédit impôt Bouliac, économie énergie Bouliac, rénovation énergétique Bouliac, audit énergétique Bouliac, expert chauffage 33270, climatisation 33270, chauffagiste 33270, devis gratuit Bouliac, intervention urgence Bouliac, spécialiste CVC Bouliac, entreprise chauffage Bouliac, installateur agréé Bouliac, technicien qualifié Bouliac, service après-vente Bouliac',
   
   // Open Graph optimisé COMPLET
   openGraph: {
-    title: 'Chauffage Climatisation Bouliac 33270 | Expert Local | ClimGO',
-    description: 'ClimGO, expert chauffage climatisation Bouliac 33270. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit.',
+    title: 'Chauffage Climatisation Bouliac 33270 | ClimGO',
+    description: 'Expert chauffage climatisation Bouliac 33270. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     url: 'https://www.climgo.fr/villes/bouliac-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       url: 'https://www.climgo.fr/images/og/bouliac-chauffage-climatisation.jpg',
       width: 1200,
       height: 630,
-      alt: 'Chauffage climatisation Bouliac 33270 - ClimGO Expert Local',
+      alt: 'Chauffage climatisation Bouliac 33270 - ClimGO',
     }],
   },
   
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Bouliac 33270 | Expert Local | ClimGO',
-    description: 'Expert chauffage climatisation Bouliac 33270. Installation PAC, dépannage urgent. Artisan RGE certifié.',
+    title: 'Chauffage Climatisation Bouliac 33270 | ClimGO',
+    description: 'Expert chauffage climatisation Bouliac 33270. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     images: ['https://www.climgo.fr/images/og/bouliac-chauffage-climatisation.jpg'],
   },
   
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
     'geo.state': 'Nouvelle-Aquitaine',
     
     // Dublin Core COMPLET
-    'DC.title': 'Chauffage Climatisation Bouliac 33270 | ClimGO Expert Local',
-    'DC.description': 'Expert chauffage climatisation Bouliac 33270. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié.',
+    'DC.title': 'Chauffage Climatisation Bouliac 33270 | ClimGO',
+    'DC.description': 'Expert chauffage climatisation Bouliac 33270. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     'DC.creator': 'ClimGO',
     'DC.publisher': 'ClimGO',
     'DC.language': 'fr-FR',

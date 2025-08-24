@@ -23,10 +23,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'ClimGO - Expert Chauffage & Climatisation Gironde | Expert Local',
-    template: '%s | ClimGO - Expert Local Gironde'
+    default: 'ClimGO - Expert Chauffage Climatisation Gironde',
+    template: '%s | ClimGO Gironde'
   },
-  description: 'ClimGO, votre expert en climatisation, chauffage et pompe à chaleur en Gironde. Installation, entretien, dépannage 24h/7j. Devis gratuit. 07 66 46 00 08. Artisan RGE certifié.',
+  description: 'ClimGO, expert climatisation, chauffage et pompe à chaleur en Gironde. Installation, entretien, dépannage. Devis gratuit. Artisan RGE.',
   keywords: [
     'climatisation gironde',
     'chauffage gironde', 
@@ -168,8 +168,8 @@ export const metadata: Metadata = {
     canonical: 'https://www.climgo.fr',
   },
   openGraph: {
-    title: 'ClimGO - Expert Chauffage & Climatisation Gironde | Installation PAC, Entretien, Dépannage',
-    description: 'ClimGO, votre expert en climatisation, chauffage et pompe à chaleur en Gironde. Installation, entretien, dépannage 24h/7j. Devis gratuit. Artisan RGE certifié.',
+    title: 'ClimGO - Expert Chauffage Climatisation Gironde',
+    description: 'ClimGO, expert climatisation, chauffage et pompe à chaleur en Gironde. Installation, entretien, dépannage. Devis gratuit.',
     url: 'https://www.climgo.fr',
     siteName: 'ClimGO - Expert Chauffage Climatisation Gironde',
     locale: 'fr_FR',
@@ -187,8 +187,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'ClimGO - Expert Chauffage & Climatisation Gironde | Installation PAC, Entretien, Dépannage',
-    description: 'ClimGO, votre expert en climatisation, chauffage et pompe à chaleur en Gironde. Installation, entretien, dépannage 24h/7j.',
+    title: 'ClimGO - Expert Chauffage Climatisation Gironde',
+    description: 'ClimGO, expert climatisation, chauffage et pompe à chaleur en Gironde. Installation, entretien, dépannage.',
     images: ['/img/climdame.png'],
   },
   robots: {

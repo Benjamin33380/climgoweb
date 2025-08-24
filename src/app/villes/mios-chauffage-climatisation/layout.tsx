@@ -3,15 +3,15 @@ import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Mios COMPLETE
 export const metadata: Metadata = {
-  title: 'Chauffage Climatisation Mios 33380 | Expert Local | ClimGO',
-  description: 'Expert chauffage climatisation Mios 33380. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit sous 24h.',
+  title: 'Chauffage Climatisation Mios 33380 | ClimGO',
+  description: 'Expert chauffage climatisation Mios 33380. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
   
   keywords: 'climatisation Mios, chauffage Mios, pompe à chaleur Mios, chauffagiste Mios, installateur climatisation Mios, artisan RGE Mios, installation PAC Mios, entretien climatisation Mios, dépannage chauffage Mios, chaudière Mios, maintenance Mios, réparation climatisation Mios, devis gratuit Mios, intervention urgence Mios, certificat RGE Mios, MaPrimeRénov Mios, aide financière chauffage Mios, prime CEE Mios, crédit impôt Mios, économie énergie Mios, rénovation énergétique Mios, audit énergétique Mios, expert chauffage 33380, climatisation 33380, chauffagiste 33380, devis gratuit Mios, intervention urgence Mios, spécialiste CVC Mios, entreprise chauffage Mios, installateur agréé Mios, technicien qualifié Mios, service après-vente Mios',
   
   // Open Graph optimisé COMPLET
   openGraph: {
-    title: 'Chauffage Climatisation Mios 33380 | Expert Local | ClimGO',
-    description: 'ClimGO, expert chauffage climatisation Mios 33380. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit.',
+    title: 'Chauffage Climatisation Mios 33380 | ClimGO',
+    description: 'Expert chauffage climatisation Mios 33380. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     url: 'https://www.climgo.fr/villes/mios-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       url: 'https://www.climgo.fr/images/og/mios-chauffage-climatisation.jpg',
       width: 1200,
       height: 630,
-      alt: 'Chauffage climatisation Mios 33380 - ClimGO Expert Local',
+      alt: 'Chauffage climatisation Mios 33380 - ClimGO',
     }],
   },
   
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Mios 33380 | Expert Local | ClimGO',
-    description: 'Expert chauffage climatisation Mios 33380. Installation PAC, dépannage urgent. Artisan RGE certifié.',
+    title: 'Chauffage Climatisation Mios 33380 | ClimGO',
+    description: 'Expert chauffage climatisation Mios 33380. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     images: ['https://www.climgo.fr/images/og/mios-chauffage-climatisation.jpg'],
   },
   
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
     'geo.state': 'Nouvelle-Aquitaine',
     
     // Dublin Core COMPLET
-    'DC.title': 'Chauffage Climatisation Mios 33380 | ClimGO Expert Local',
-    'DC.description': 'Expert chauffage climatisation Mios 33380. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié.',
+    'DC.title': 'Chauffage Climatisation Mios 33380 | ClimGO',
+    'DC.description': 'Expert chauffage climatisation Mios 33380. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     'DC.creator': 'ClimGO',
     'DC.publisher': 'ClimGO',
     'DC.language': 'fr-FR',

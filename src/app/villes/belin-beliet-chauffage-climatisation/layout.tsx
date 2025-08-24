@@ -3,15 +3,15 @@ import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Belin-Beliet COMPLETE
 export const metadata: Metadata = {
-  title: 'Chauffage Climatisation Belin-Beliet 33830 | Expert Local | ClimGO',
-  description: 'Expert chauffage climatisation Belin-Beliet 33830. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit sous 24h.',
+  title: 'Chauffage Climatisation Belin-Beliet 33830 | ClimGO',
+  description: 'Expert chauffage climatisation Belin-Beliet 33830. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
   
   keywords: 'climatisation Belin-Beliet, chauffage Belin-Beliet, pompe à chaleur Belin-Beliet, chauffagiste Belin-Beliet, installateur climatisation Belin-Beliet, artisan RGE Belin-Beliet, installation PAC Belin-Beliet, entretien climatisation Belin-Beliet, dépannage chauffage Belin-Beliet, chaudière Belin-Beliet, maintenance Belin-Beliet, réparation climatisation Belin-Beliet, devis gratuit Belin-Beliet, intervention urgence Belin-Beliet, certificat RGE Belin-Beliet, MaPrimeRénov Belin-Beliet, aide financière chauffage Belin-Beliet, prime CEE Belin-Beliet, crédit impôt Belin-Beliet, économie énergie Belin-Beliet, rénovation énergétique Belin-Beliet, audit énergétique Belin-Beliet, expert chauffage 33830, climatisation 33830, chauffagiste 33830, devis gratuit Belin-Beliet, intervention urgence Belin-Beliet, spécialiste CVC Belin-Beliet, entreprise chauffage Belin-Beliet, installateur agréé Belin-Beliet, technicien qualifié Belin-Beliet, service après-vente Belin-Beliet',
   
   // Open Graph optimisé COMPLET
   openGraph: {
-    title: 'Chauffage Climatisation Belin-Beliet 33830 | Expert Local | ClimGO',
-    description: 'ClimGO, expert chauffage climatisation Belin-Beliet 33830. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit.',
+    title: 'Chauffage Climatisation Belin-Beliet 33830 | ClimGO',
+    description: 'Expert chauffage climatisation Belin-Beliet 33830. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     url: 'https://www.climgo.fr/villes/belin-beliet-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       url: 'https://www.climgo.fr/images/og/belin-beliet-chauffage-climatisation.jpg',
       width: 1200,
       height: 630,
-      alt: 'Chauffage climatisation Belin-Beliet 33830 - ClimGO Expert Local',
+      alt: 'Chauffage climatisation Belin-Beliet 33830 - ClimGO',
     }],
   },
   
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Belin-Beliet 33830 | Expert Local | ClimGO',
-    description: 'Expert chauffage climatisation Belin-Beliet 33830. Installation PAC, dépannage urgent. Artisan RGE certifié.',
+    title: 'Chauffage Climatisation Belin-Beliet 33830 | ClimGO',
+    description: 'Expert chauffage climatisation Belin-Beliet 33830. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     images: ['https://www.climgo.fr/images/og/belin-beliet-chauffage-climatisation.jpg'],
   },
   
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
     'geo.state': 'Nouvelle-Aquitaine',
     
     // Dublin Core COMPLET
-    'DC.title': 'Chauffage Climatisation Belin-Beliet 33830 | ClimGO Expert Local',
-    'DC.description': 'Expert chauffage climatisation Belin-Beliet 33830. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié.',
+    'DC.title': 'Chauffage Climatisation Belin-Beliet 33830 | ClimGO',
+    'DC.description': 'Expert chauffage climatisation Belin-Beliet 33830. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     'DC.creator': 'ClimGO',
     'DC.publisher': 'ClimGO',
     'DC.language': 'fr-FR',
