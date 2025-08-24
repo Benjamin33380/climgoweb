@@ -3,15 +3,15 @@ import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Lege-Cap-Ferret COMPLETE
 export const metadata: Metadata = {
-  title: 'Chauffage Climatisation Lege-Cap-Ferret 33950 | Expert Local #1 | ClimGO',
-  description: 'Expert chauffage climatisation Lege-Cap-Ferret 33950. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit sous 24h.',
+  title: 'Chauffage Climatisation Lege-Cap-Ferret 33950 | Expert Local | ClimGO',
+  description: 'Expert chauffage climatisation Lege-Cap-Ferret 33950. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit sous 24h.',
   
   keywords: 'climatisation Lege-Cap-Ferret, chauffage Lege-Cap-Ferret, pompe à chaleur Lege-Cap-Ferret, chauffagiste Lege-Cap-Ferret, installateur climatisation Lege-Cap-Ferret, artisan RGE Lege-Cap-Ferret, installation PAC Lege-Cap-Ferret, entretien climatisation Lege-Cap-Ferret, dépannage chauffage Lege-Cap-Ferret, chaudière Lege-Cap-Ferret, maintenance Lege-Cap-Ferret, réparation climatisation Lege-Cap-Ferret, devis gratuit Lege-Cap-Ferret, intervention urgence Lege-Cap-Ferret, certificat RGE Lege-Cap-Ferret, MaPrimeRénov Lege-Cap-Ferret, aide financière chauffage Lege-Cap-Ferret, prime CEE Lege-Cap-Ferret, crédit impôt Lege-Cap-Ferret, économie énergie Lege-Cap-Ferret, rénovation énergétique Lege-Cap-Ferret, audit énergétique Lege-Cap-Ferret, expert chauffage 33950, climatisation 33950, chauffagiste 33950, devis gratuit Lege-Cap-Ferret, intervention urgence Lege-Cap-Ferret, spécialiste CVC Lege-Cap-Ferret, entreprise chauffage Lege-Cap-Ferret, installateur agréé Lege-Cap-Ferret, technicien qualifié Lege-Cap-Ferret, service après-vente Lege-Cap-Ferret',
   
   // Open Graph optimisé COMPLET
   openGraph: {
-    title: 'Chauffage Climatisation Lege-Cap-Ferret 33950 | Expert Local #1 | ClimGO',
-    description: 'ClimGO, expert chauffage climatisation Lege-Cap-Ferret 33950. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit.',
+    title: 'Chauffage Climatisation Lege-Cap-Ferret 33950 | Expert Local | ClimGO',
+    description: 'ClimGO, expert chauffage climatisation Lege-Cap-Ferret 33950. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit.',
     url: 'https://www.climgo.fr/villes/lege-cap-ferret-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       url: 'https://www.climgo.fr/images/og/lege-cap-ferret-chauffage-climatisation.jpg',
       width: 1200,
       height: 630,
-      alt: 'Chauffage climatisation Lege-Cap-Ferret 33950 - ClimGO Expert Local #1',
+      alt: 'Chauffage climatisation Lege-Cap-Ferret 33950 - ClimGO Expert Local',
     }],
   },
   
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Lege-Cap-Ferret 33950 | Expert Local #1 | ClimGO',
-    description: 'Expert chauffage climatisation Lege-Cap-Ferret 33950. Installation PAC, dépannage urgent. Artisan RGE certifié #1.',
+    title: 'Chauffage Climatisation Lege-Cap-Ferret 33950 | Expert Local | ClimGO',
+    description: 'Expert chauffage climatisation Lege-Cap-Ferret 33950. Installation PAC, dépannage urgent. Artisan RGE certifié.',
     images: ['https://www.climgo.fr/images/og/lege-cap-ferret-chauffage-climatisation.jpg'],
   },
   
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
     'geo.state': 'Nouvelle-Aquitaine',
     
     // Dublin Core COMPLET
-    'DC.title': 'Chauffage Climatisation Lege-Cap-Ferret 33950 | ClimGO Expert Local #1',
-    'DC.description': 'Expert chauffage climatisation Lege-Cap-Ferret 33950. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1.',
+    'DC.title': 'Chauffage Climatisation Lege-Cap-Ferret 33950 | ClimGO Expert Local',
+    'DC.description': 'Expert chauffage climatisation Lege-Cap-Ferret 33950. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié.',
     'DC.creator': 'ClimGO',
     'DC.publisher': 'ClimGO',
     'DC.language': 'fr-FR',

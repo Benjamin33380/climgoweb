@@ -23,10 +23,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'ClimGO - Expert Chauffage & Climatisation Gironde | #1 Local',
+    default: 'ClimGO - Expert Chauffage & Climatisation Gironde | Expert Local',
     template: '%s | ClimGO - Expert Local Gironde'
   },
-  description: 'ClimGO, votre expert #1 en climatisation, chauffage et pompe à chaleur en Gironde. Installation, entretien, dépannage 24h/7j. Devis gratuit. 07 66 46 00 08. Artisan RGE certifié.',
+  description: 'ClimGO, votre expert en climatisation, chauffage et pompe à chaleur en Gironde. Installation, entretien, dépannage 24h/7j. Devis gratuit. 07 66 46 00 08. Artisan RGE certifié.',
   keywords: [
     'climatisation gironde',
     'chauffage gironde', 
@@ -168,8 +168,8 @@ export const metadata: Metadata = {
     canonical: 'https://www.climgo.fr',
   },
   openGraph: {
-    title: 'ClimGO - Expert #1 Chauffage & Climatisation Gironde | Installation PAC, Entretien, Dépannage',
-    description: 'ClimGO, votre expert #1 en climatisation, chauffage et pompe à chaleur en Gironde. Installation, entretien, dépannage 24h/7j. Devis gratuit. Artisan RGE certifié.',
+    title: 'ClimGO - Expert Chauffage & Climatisation Gironde | Installation PAC, Entretien, Dépannage',
+    description: 'ClimGO, votre expert en climatisation, chauffage et pompe à chaleur en Gironde. Installation, entretien, dépannage 24h/7j. Devis gratuit. Artisan RGE certifié.',
     url: 'https://www.climgo.fr',
     siteName: 'ClimGO - Expert Chauffage Climatisation Gironde',
     locale: 'fr_FR',
@@ -187,8 +187,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'ClimGO - Expert #1 Chauffage & Climatisation Gironde | Installation PAC, Entretien, Dépannage',
-    description: 'ClimGO, votre expert #1 en climatisation, chauffage et pompe à chaleur en Gironde. Installation, entretien, dépannage 24h/7j.',
+    title: 'ClimGO - Expert Chauffage & Climatisation Gironde | Installation PAC, Entretien, Dépannage',
+    description: 'ClimGO, votre expert en climatisation, chauffage et pompe à chaleur en Gironde. Installation, entretien, dépannage 24h/7j.',
     images: ['/img/climdame.png'],
   },
   robots: {
@@ -232,8 +232,8 @@ export const metadata: Metadata = {
     'google-site-verification': 'Ljs9Q3ve_Z_ldbzUTagcBPPmmQ_LTJER2pD3j7Woj1g',
     
     // Dublin Core COMPLET
-    'DC.title': 'ClimGO - Expert #1 Chauffage & Climatisation Gironde | Installation PAC, Entretien, Dépannage',
-    'DC.description': 'ClimGO, votre expert #1 en climatisation, chauffage et pompe à chaleur en Gironde. Installation, entretien, dépannage 24h/7j. Devis gratuit.',
+    'DC.title': 'ClimGO - Expert Chauffage & Climatisation Gironde | Installation PAC, Entretien, Dépannage',
+    'DC.description': 'ClimGO, votre expert en climatisation, chauffage et pompe à chaleur en Gironde. Installation, entretien, dépannage 24h/7j. Devis gratuit.',
     'DC.creator': 'ClimGO',
     'DC.publisher': 'ClimGO',
     'DC.language': 'fr-FR',

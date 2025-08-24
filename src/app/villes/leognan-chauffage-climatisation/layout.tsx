@@ -3,15 +3,15 @@ import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Leognan COMPLETE
 export const metadata: Metadata = {
-  title: 'Chauffage Climatisation Leognan 33850 | Expert Local #1 | ClimGO',
-  description: 'Expert chauffage climatisation Leognan 33850. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit sous 24h.',
+  title: 'Chauffage Climatisation Leognan 33850 | Expert Local | ClimGO',
+  description: 'Expert chauffage climatisation Leognan 33850. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit sous 24h.',
   
   keywords: 'climatisation Leognan, chauffage Leognan, pompe à chaleur Leognan, chauffagiste Leognan, installateur climatisation Leognan, artisan RGE Leognan, installation PAC Leognan, entretien climatisation Leognan, dépannage chauffage Leognan, chaudière Leognan, maintenance Leognan, réparation climatisation Leognan, devis gratuit Leognan, intervention urgence Leognan, certificat RGE Leognan, MaPrimeRénov Leognan, aide financière chauffage Leognan, prime CEE Leognan, crédit impôt Leognan, économie énergie Leognan, rénovation énergétique Leognan, audit énergétique Leognan, expert chauffage 33850, climatisation 33850, chauffagiste 33850, devis gratuit Leognan, intervention urgence Leognan, spécialiste CVC Leognan, entreprise chauffage Leognan, installateur agréé Leognan, technicien qualifié Leognan, service après-vente Leognan',
   
   // Open Graph optimisé COMPLET
   openGraph: {
-    title: 'Chauffage Climatisation Leognan 33850 | Expert Local #1 | ClimGO',
-    description: 'ClimGO, expert chauffage climatisation Leognan 33850. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit.',
+    title: 'Chauffage Climatisation Leognan 33850 | Expert Local | ClimGO',
+    description: 'ClimGO, expert chauffage climatisation Leognan 33850. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit.',
     url: 'https://www.climgo.fr/villes/leognan-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       url: 'https://www.climgo.fr/images/og/leognan-chauffage-climatisation.jpg',
       width: 1200,
       height: 630,
-      alt: 'Chauffage climatisation Leognan 33850 - ClimGO Expert Local #1',
+      alt: 'Chauffage climatisation Leognan 33850 - ClimGO Expert Local',
     }],
   },
   
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Leognan 33850 | Expert Local #1 | ClimGO',
-    description: 'Expert chauffage climatisation Leognan 33850. Installation PAC, dépannage urgent. Artisan RGE certifié #1.',
+    title: 'Chauffage Climatisation Leognan 33850 | Expert Local | ClimGO',
+    description: 'Expert chauffage climatisation Leognan 33850. Installation PAC, dépannage urgent. Artisan RGE certifié.',
     images: ['https://www.climgo.fr/images/og/leognan-chauffage-climatisation.jpg'],
   },
   
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
     'geo.state': 'Nouvelle-Aquitaine',
     
     // Dublin Core COMPLET
-    'DC.title': 'Chauffage Climatisation Leognan 33850 | ClimGO Expert Local #1',
-    'DC.description': 'Expert chauffage climatisation Leognan 33850. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1.',
+    'DC.title': 'Chauffage Climatisation Leognan 33850 | ClimGO Expert Local',
+    'DC.description': 'Expert chauffage climatisation Leognan 33850. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié.',
     'DC.creator': 'ClimGO',
     'DC.publisher': 'ClimGO',
     'DC.language': 'fr-FR',

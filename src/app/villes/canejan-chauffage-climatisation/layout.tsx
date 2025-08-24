@@ -3,15 +3,15 @@ import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Canejan COMPLETE
 export const metadata: Metadata = {
-  title: 'Chauffage Climatisation Canejan 33610 | Expert Local #1 | ClimGO',
-  description: 'Expert chauffage climatisation Canejan 33610. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit sous 24h.',
+  title: 'Chauffage Climatisation Canejan 33610 | Expert Local | ClimGO',
+  description: 'Expert chauffage climatisation Canejan 33610. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit sous 24h.',
   
   keywords: 'climatisation Canejan, chauffage Canejan, pompe à chaleur Canejan, chauffagiste Canejan, installateur climatisation Canejan, artisan RGE Canejan, installation PAC Canejan, entretien climatisation Canejan, dépannage chauffage Canejan, chaudière Canejan, maintenance Canejan, réparation climatisation Canejan, devis gratuit Canejan, intervention urgence Canejan, certificat RGE Canejan, MaPrimeRénov Canejan, aide financière chauffage Canejan, prime CEE Canejan, crédit impôt Canejan, économie énergie Canejan, rénovation énergétique Canejan, audit énergétique Canejan, expert chauffage 33610, climatisation 33610, chauffagiste 33610, devis gratuit Canejan, intervention urgence Canejan, spécialiste CVC Canejan, entreprise chauffage Canejan, installateur agréé Canejan, technicien qualifié Canejan, service après-vente Canejan',
   
   // Open Graph optimisé COMPLET
   openGraph: {
-    title: 'Chauffage Climatisation Canejan 33610 | Expert Local #1 | ClimGO',
-    description: 'ClimGO, expert chauffage climatisation Canejan 33610. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit.',
+    title: 'Chauffage Climatisation Canejan 33610 | Expert Local | ClimGO',
+    description: 'ClimGO, expert chauffage climatisation Canejan 33610. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit.',
     url: 'https://www.climgo.fr/villes/canejan-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       url: 'https://www.climgo.fr/images/og/canejan-chauffage-climatisation.jpg',
       width: 1200,
       height: 630,
-      alt: 'Chauffage climatisation Canejan 33610 - ClimGO Expert Local #1',
+      alt: 'Chauffage climatisation Canejan 33610 - ClimGO Expert Local',
     }],
   },
   
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Canejan 33610 | Expert Local #1 | ClimGO',
-    description: 'Expert chauffage climatisation Canejan 33610. Installation PAC, dépannage urgent. Artisan RGE certifié #1.',
+    title: 'Chauffage Climatisation Canejan 33610 | Expert Local | ClimGO',
+    description: 'Expert chauffage climatisation Canejan 33610. Installation PAC, dépannage urgent. Artisan RGE certifié.',
     images: ['https://www.climgo.fr/images/og/canejan-chauffage-climatisation.jpg'],
   },
   
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
     'geo.state': 'Nouvelle-Aquitaine',
     
     // Dublin Core COMPLET
-    'DC.title': 'Chauffage Climatisation Canejan 33610 | ClimGO Expert Local #1',
-    'DC.description': 'Expert chauffage climatisation Canejan 33610. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1.',
+    'DC.title': 'Chauffage Climatisation Canejan 33610 | ClimGO Expert Local',
+    'DC.description': 'Expert chauffage climatisation Canejan 33610. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié.',
     'DC.creator': 'ClimGO',
     'DC.publisher': 'ClimGO',
     'DC.language': 'fr-FR',

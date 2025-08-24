@@ -3,15 +3,15 @@ import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Cadaujac COMPLETE
 export const metadata: Metadata = {
-  title: 'Chauffage Climatisation Cadaujac 33140 | Expert Local #1 | ClimGO',
-  description: 'Expert chauffage climatisation Cadaujac 33140. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit sous 24h.',
+  title: 'Chauffage Climatisation Cadaujac 33140 | Expert Local | ClimGO',
+  description: 'Expert chauffage climatisation Cadaujac 33140. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit sous 24h.',
   
   keywords: 'climatisation Cadaujac, chauffage Cadaujac, pompe à chaleur Cadaujac, chauffagiste Cadaujac, installateur climatisation Cadaujac, artisan RGE Cadaujac, installation PAC Cadaujac, entretien climatisation Cadaujac, dépannage chauffage Cadaujac, chaudière Cadaujac, maintenance Cadaujac, réparation climatisation Cadaujac, devis gratuit Cadaujac, intervention urgence Cadaujac, certificat RGE Cadaujac, MaPrimeRénov Cadaujac, aide financière chauffage Cadaujac, prime CEE Cadaujac, crédit impôt Cadaujac, économie énergie Cadaujac, rénovation énergétique Cadaujac, audit énergétique Cadaujac, expert chauffage 33140, climatisation 33140, chauffagiste 33140, devis gratuit Cadaujac, intervention urgence Cadaujac, spécialiste CVC Cadaujac, entreprise chauffage Cadaujac, installateur agréé Cadaujac, technicien qualifié Cadaujac, service après-vente Cadaujac',
   
   // Open Graph optimisé COMPLET
   openGraph: {
-    title: 'Chauffage Climatisation Cadaujac 33140 | Expert Local #1 | ClimGO',
-    description: 'ClimGO, expert chauffage climatisation Cadaujac 33140. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit.',
+    title: 'Chauffage Climatisation Cadaujac 33140 | Expert Local | ClimGO',
+    description: 'ClimGO, expert chauffage climatisation Cadaujac 33140. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit.',
     url: 'https://www.climgo.fr/villes/cadaujac-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       url: 'https://www.climgo.fr/images/og/cadaujac-chauffage-climatisation.jpg',
       width: 1200,
       height: 630,
-      alt: 'Chauffage climatisation Cadaujac 33140 - ClimGO Expert Local #1',
+      alt: 'Chauffage climatisation Cadaujac 33140 - ClimGO Expert Local',
     }],
   },
   
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Cadaujac 33140 | Expert Local #1 | ClimGO',
-    description: 'Expert chauffage climatisation Cadaujac 33140. Installation PAC, dépannage urgent. Artisan RGE certifié #1.',
+    title: 'Chauffage Climatisation Cadaujac 33140 | Expert Local | ClimGO',
+    description: 'Expert chauffage climatisation Cadaujac 33140. Installation PAC, dépannage urgent. Artisan RGE certifié.',
     images: ['https://www.climgo.fr/images/og/cadaujac-chauffage-climatisation.jpg'],
   },
   
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
     'geo.state': 'Nouvelle-Aquitaine',
     
     // Dublin Core COMPLET
-    'DC.title': 'Chauffage Climatisation Cadaujac 33140 | ClimGO Expert Local #1',
-    'DC.description': 'Expert chauffage climatisation Cadaujac 33140. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1.',
+    'DC.title': 'Chauffage Climatisation Cadaujac 33140 | ClimGO Expert Local',
+    'DC.description': 'Expert chauffage climatisation Cadaujac 33140. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié.',
     'DC.creator': 'ClimGO',
     'DC.publisher': 'ClimGO',
     'DC.language': 'fr-FR',

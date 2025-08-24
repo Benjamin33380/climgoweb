@@ -3,15 +3,15 @@ import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées La Brede COMPLETE
 export const metadata: Metadata = {
-  title: 'Chauffage Climatisation La Brede 33650 | Expert Local #1 | ClimGO',
-  description: 'Expert chauffage climatisation La Brede 33650. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit sous 24h.',
+  title: 'Chauffage Climatisation La Brede 33650 | Expert Local | ClimGO',
+  description: 'Expert chauffage climatisation La Brede 33650. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit sous 24h.',
   
   keywords: 'climatisation La Brede, chauffage La Brede, pompe à chaleur La Brede, chauffagiste La Brede, installateur climatisation La Brede, artisan RGE La Brede, installation PAC La Brede, entretien climatisation La Brede, dépannage chauffage La Brede, chaudière La Brede, maintenance La Brede, réparation climatisation La Brede, devis gratuit La Brede, intervention urgence La Brede, certificat RGE La Brede, MaPrimeRénov La Brede, aide financière chauffage La Brede, prime CEE La Brede, crédit impôt La Brede, économie énergie La Brede, rénovation énergétique La Brede, audit énergétique La Brede, expert chauffage 33650, climatisation 33650, chauffagiste 33650, devis gratuit La Brede, intervention urgence La Brede, spécialiste CVC La Brede, entreprise chauffage La Brede, installateur agréé La Brede, technicien qualifié La Brede, service après-vente La Brede',
   
   // Open Graph optimisé COMPLET
   openGraph: {
-    title: 'Chauffage Climatisation La Brede 33650 | Expert Local #1 | ClimGO',
-    description: 'ClimGO, expert chauffage climatisation La Brede 33650. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit.',
+    title: 'Chauffage Climatisation La Brede 33650 | Expert Local | ClimGO',
+    description: 'ClimGO, expert chauffage climatisation La Brede 33650. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit.',
     url: 'https://www.climgo.fr/villes/la-brede-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       url: 'https://www.climgo.fr/images/og/la-brede-chauffage-climatisation.jpg',
       width: 1200,
       height: 630,
-      alt: 'Chauffage climatisation La Brede 33650 - ClimGO Expert Local #1',
+      alt: 'Chauffage climatisation La Brede 33650 - ClimGO Expert Local',
     }],
   },
   
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation La Brede 33650 | Expert Local #1 | ClimGO',
-    description: 'Expert chauffage climatisation La Brede 33650. Installation PAC, dépannage urgent. Artisan RGE certifié #1.',
+    title: 'Chauffage Climatisation La Brede 33650 | Expert Local | ClimGO',
+    description: 'Expert chauffage climatisation La Brede 33650. Installation PAC, dépannage urgent. Artisan RGE certifié.',
     images: ['https://www.climgo.fr/images/og/la-brede-chauffage-climatisation.jpg'],
   },
   
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
     'geo.state': 'Nouvelle-Aquitaine',
     
     // Dublin Core COMPLET
-    'DC.title': 'Chauffage Climatisation La Brede 33650 | ClimGO Expert Local #1',
-    'DC.description': 'Expert chauffage climatisation La Brede 33650. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1.',
+    'DC.title': 'Chauffage Climatisation La Brede 33650 | ClimGO Expert Local',
+    'DC.description': 'Expert chauffage climatisation La Brede 33650. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié.',
     'DC.creator': 'ClimGO',
     'DC.publisher': 'ClimGO',
     'DC.language': 'fr-FR',

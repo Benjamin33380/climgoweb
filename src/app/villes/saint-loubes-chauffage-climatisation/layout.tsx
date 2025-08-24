@@ -3,15 +3,15 @@ import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Saint-Loubes COMPLETE
 export const metadata: Metadata = {
-  title: 'Chauffage Climatisation Saint-Loubes 33450 | Expert Local #1 | ClimGO',
-  description: 'Expert chauffage climatisation Saint-Loubes 33450. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit sous 24h.',
+  title: 'Chauffage Climatisation Saint-Loubes 33450 | Expert Local | ClimGO',
+  description: 'Expert chauffage climatisation Saint-Loubes 33450. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit sous 24h.',
   
   keywords: 'climatisation Saint-Loubes, chauffage Saint-Loubes, pompe à chaleur Saint-Loubes, chauffagiste Saint-Loubes, installateur climatisation Saint-Loubes, artisan RGE Saint-Loubes, installation PAC Saint-Loubes, entretien climatisation Saint-Loubes, dépannage chauffage Saint-Loubes, chaudière Saint-Loubes, maintenance Saint-Loubes, réparation climatisation Saint-Loubes, devis gratuit Saint-Loubes, intervention urgence Saint-Loubes, certificat RGE Saint-Loubes, MaPrimeRénov Saint-Loubes, aide financière chauffage Saint-Loubes, prime CEE Saint-Loubes, crédit impôt Saint-Loubes, économie énergie Saint-Loubes, rénovation énergétique Saint-Loubes, audit énergétique Saint-Loubes, expert chauffage 33450, climatisation 33450, chauffagiste 33450, devis gratuit Saint-Loubes, intervention urgence Saint-Loubes, spécialiste CVC Saint-Loubes, entreprise chauffage Saint-Loubes, installateur agréé Saint-Loubes, technicien qualifié Saint-Loubes, service après-vente Saint-Loubes',
   
   // Open Graph optimisé COMPLET
   openGraph: {
-    title: 'Chauffage Climatisation Saint-Loubes 33450 | Expert Local #1 | ClimGO',
-    description: 'ClimGO, expert chauffage climatisation Saint-Loubes 33450. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit.',
+    title: 'Chauffage Climatisation Saint-Loubes 33450 | Expert Local | ClimGO',
+    description: 'ClimGO, expert chauffage climatisation Saint-Loubes 33450. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit.',
     url: 'https://www.climgo.fr/villes/saint-loubes-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       url: 'https://www.climgo.fr/images/og/saint-loubes-chauffage-climatisation.jpg',
       width: 1200,
       height: 630,
-      alt: 'Chauffage climatisation Saint-Loubes 33450 - ClimGO Expert Local #1',
+      alt: 'Chauffage climatisation Saint-Loubes 33450 - ClimGO Expert Local',
     }],
   },
   
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Saint-Loubes 33450 | Expert Local #1 | ClimGO',
-    description: 'Expert chauffage climatisation Saint-Loubes 33450. Installation PAC, dépannage urgent. Artisan RGE certifié #1.',
+    title: 'Chauffage Climatisation Saint-Loubes 33450 | Expert Local | ClimGO',
+    description: 'Expert chauffage climatisation Saint-Loubes 33450. Installation PAC, dépannage urgent. Artisan RGE certifié.',
     images: ['https://www.climgo.fr/images/og/saint-loubes-chauffage-climatisation.jpg'],
   },
   
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
     'geo.state': 'Nouvelle-Aquitaine',
     
     // Dublin Core COMPLET
-    'DC.title': 'Chauffage Climatisation Saint-Loubes 33450 | ClimGO Expert Local #1',
-    'DC.description': 'Expert chauffage climatisation Saint-Loubes 33450. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1.',
+    'DC.title': 'Chauffage Climatisation Saint-Loubes 33450 | ClimGO Expert Local',
+    'DC.description': 'Expert chauffage climatisation Saint-Loubes 33450. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié.',
     'DC.creator': 'ClimGO',
     'DC.publisher': 'ClimGO',
     'DC.language': 'fr-FR',

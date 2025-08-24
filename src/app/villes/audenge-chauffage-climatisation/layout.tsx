@@ -3,15 +3,15 @@ import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Audenge COMPLETE
 export const metadata: Metadata = {
-  title: 'Chauffage Climatisation Audenge 33980 | Expert Local #1 | ClimGO',
-  description: 'Expert chauffage climatisation Audenge 33980. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit sous 24h.',
+  title: 'Chauffage Climatisation Audenge 33980 | Expert Local | ClimGO',
+  description: 'Expert chauffage climatisation Audenge 33980. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit sous 24h.',
   
   keywords: 'climatisation Audenge, chauffage Audenge, pompe à chaleur Audenge, chauffagiste Audenge, installateur climatisation Audenge, artisan RGE Audenge, installation PAC Audenge, entretien climatisation Audenge, dépannage chauffage Audenge, chaudière Audenge, maintenance Audenge, réparation climatisation Audenge, devis gratuit Audenge, intervention urgence Audenge, certificat RGE Audenge, MaPrimeRénov Audenge, aide financière chauffage Audenge, prime CEE Audenge, crédit impôt Audenge, économie énergie Audenge, rénovation énergétique Audenge, audit énergétique Audenge, expert chauffage 33980, climatisation 33980, chauffagiste 33980, devis gratuit Audenge, intervention urgence Audenge, spécialiste CVC Audenge, entreprise chauffage Audenge, installateur agréé Audenge, technicien qualifié Audenge, service après-vente Audenge',
   
   // Open Graph optimisé COMPLET
   openGraph: {
-    title: 'Chauffage Climatisation Audenge 33980 | Expert Local #1 | ClimGO',
-    description: 'ClimGO, expert chauffage climatisation Audenge 33980. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit.',
+    title: 'Chauffage Climatisation Audenge 33980 | Expert Local | ClimGO',
+    description: 'ClimGO, expert chauffage climatisation Audenge 33980. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit.',
     url: 'https://www.climgo.fr/villes/audenge-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       url: 'https://www.climgo.fr/images/og/audenge-chauffage-climatisation.jpg',
       width: 1200,
       height: 630,
-      alt: 'Chauffage climatisation Audenge 33980 - ClimGO Expert Local #1',
+      alt: 'Chauffage climatisation Audenge 33980 - ClimGO Expert Local',
     }],
   },
   
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Audenge 33980 | Expert Local #1 | ClimGO',
-    description: 'Expert chauffage climatisation Audenge 33980. Installation PAC, dépannage urgent. Artisan RGE certifié #1.',
+    title: 'Chauffage Climatisation Audenge 33980 | Expert Local | ClimGO',
+    description: 'Expert chauffage climatisation Audenge 33980. Installation PAC, dépannage urgent. Artisan RGE certifié.',
     images: ['https://www.climgo.fr/images/og/audenge-chauffage-climatisation.jpg'],
   },
   
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
     'geo.state': 'Nouvelle-Aquitaine',
     
     // Dublin Core COMPLET
-    'DC.title': 'Chauffage Climatisation Audenge 33980 | ClimGO Expert Local #1',
-    'DC.description': 'Expert chauffage climatisation Audenge 33980. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1.',
+    'DC.title': 'Chauffage Climatisation Audenge 33980 | ClimGO Expert Local',
+    'DC.description': 'Expert chauffage climatisation Audenge 33980. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié.',
     'DC.creator': 'ClimGO',
     'DC.publisher': 'ClimGO',
     'DC.language': 'fr-FR',

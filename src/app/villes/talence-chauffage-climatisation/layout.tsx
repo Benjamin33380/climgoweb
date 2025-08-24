@@ -3,15 +3,15 @@ import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Talence COMPLETE
 export const metadata: Metadata = {
-  title: 'Chauffage Climatisation Talence 33400 | Expert Local #1 | ClimGO',
-  description: 'Expert chauffage climatisation Talence 33400. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit sous 24h.',
+  title: 'Chauffage Climatisation Talence 33400 | Expert Local | ClimGO',
+  description: 'Expert chauffage climatisation Talence 33400. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit sous 24h.',
   
   keywords: 'climatisation Talence, chauffage Talence, pompe à chaleur Talence, chauffagiste Talence, installateur climatisation Talence, artisan RGE Talence, installation PAC Talence, entretien climatisation Talence, dépannage chauffage Talence, chaudière Talence, maintenance Talence, réparation climatisation Talence, devis gratuit Talence, intervention urgence Talence, certificat RGE Talence, MaPrimeRénov Talence, aide financière chauffage Talence, prime CEE Talence, crédit impôt Talence, économie énergie Talence, rénovation énergétique Talence, audit énergétique Talence, expert chauffage 33400, climatisation 33400, chauffagiste 33400, devis gratuit Talence, intervention urgence Talence, spécialiste CVC Talence, entreprise chauffage Talence, installateur agréé Talence, technicien qualifié Talence, service après-vente Talence',
   
   // Open Graph optimisé COMPLET
   openGraph: {
-    title: 'Chauffage Climatisation Talence 33400 | Expert Local #1 | ClimGO',
-    description: 'ClimGO, expert chauffage climatisation Talence 33400. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit.',
+    title: 'Chauffage Climatisation Talence 33400 | Expert Local | ClimGO',
+    description: 'ClimGO, expert chauffage climatisation Talence 33400. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit.',
     url: 'https://www.climgo.fr/villes/talence-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       url: 'https://www.climgo.fr/images/og/talence-chauffage-climatisation.jpg',
       width: 1200,
       height: 630,
-      alt: 'Chauffage climatisation Talence 33400 - ClimGO Expert Local #1',
+      alt: 'Chauffage climatisation Talence 33400 - ClimGO Expert Local',
     }],
   },
   
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Talence 33400 | Expert Local #1 | ClimGO',
-    description: 'Expert chauffage climatisation Talence 33400. Installation PAC, dépannage urgent. Artisan RGE certifié #1.',
+    title: 'Chauffage Climatisation Talence 33400 | Expert Local | ClimGO',
+    description: 'Expert chauffage climatisation Talence 33400. Installation PAC, dépannage urgent. Artisan RGE certifié.',
     images: ['https://www.climgo.fr/images/og/talence-chauffage-climatisation.jpg'],
   },
   
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
     'geo.state': 'Nouvelle-Aquitaine',
     
     // Dublin Core COMPLET
-    'DC.title': 'Chauffage Climatisation Talence 33400 | ClimGO Expert Local #1',
-    'DC.description': 'Expert chauffage climatisation Talence 33400. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1.',
+    'DC.title': 'Chauffage Climatisation Talence 33400 | ClimGO Expert Local',
+    'DC.description': 'Expert chauffage climatisation Talence 33400. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié.',
     'DC.creator': 'ClimGO',
     'DC.publisher': 'ClimGO',
     'DC.language': 'fr-FR',

@@ -3,15 +3,15 @@ import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Ares COMPLETE
 export const metadata: Metadata = {
-  title: 'Chauffage Climatisation Ares 33640 | Expert Local #1 | ClimGO',
-  description: 'Expert chauffage climatisation Ares 33640. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit sous 24h.',
+  title: 'Chauffage Climatisation Ares 33640 | Expert Local | ClimGO',
+  description: 'Expert chauffage climatisation Ares 33640. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit sous 24h.',
   
   keywords: 'climatisation Ares, chauffage Ares, pompe à chaleur Ares, chauffagiste Ares, installateur climatisation Ares, artisan RGE Ares, installation PAC Ares, entretien climatisation Ares, dépannage chauffage Ares, chaudière Ares, maintenance Ares, réparation climatisation Ares, devis gratuit Ares, intervention urgence Ares, certificat RGE Ares, MaPrimeRénov Ares, aide financière chauffage Ares, prime CEE Ares, crédit impôt Ares, économie énergie Ares, rénovation énergétique Ares, audit énergétique Ares, expert chauffage 33640, climatisation 33640, chauffagiste 33640, devis gratuit Ares, intervention urgence Ares, spécialiste CVC Ares, entreprise chauffage Ares, installateur agréé Ares, technicien qualifié Ares, service après-vente Ares',
   
   // Open Graph optimisé COMPLET
   openGraph: {
-    title: 'Chauffage Climatisation Ares 33640 | Expert Local #1 | ClimGO',
-    description: 'ClimGO, expert chauffage climatisation Ares 33640. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit.',
+    title: 'Chauffage Climatisation Ares 33640 | Expert Local | ClimGO',
+    description: 'ClimGO, expert chauffage climatisation Ares 33640. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit.',
     url: 'https://www.climgo.fr/villes/ares-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       url: 'https://www.climgo.fr/images/og/ares-chauffage-climatisation.jpg',
       width: 1200,
       height: 630,
-      alt: 'Chauffage climatisation Ares 33640 - ClimGO Expert Local #1',
+      alt: 'Chauffage climatisation Ares 33640 - ClimGO Expert Local',
     }],
   },
   
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Ares 33640 | Expert Local #1 | ClimGO',
-    description: 'Expert chauffage climatisation Ares 33640. Installation PAC, dépannage urgent. Artisan RGE certifié #1.',
+    title: 'Chauffage Climatisation Ares 33640 | Expert Local | ClimGO',
+    description: 'Expert chauffage climatisation Ares 33640. Installation PAC, dépannage urgent. Artisan RGE certifié.',
     images: ['https://www.climgo.fr/images/og/ares-chauffage-climatisation.jpg'],
   },
   
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
     'geo.state': 'Nouvelle-Aquitaine',
     
     // Dublin Core COMPLET
-    'DC.title': 'Chauffage Climatisation Ares 33640 | ClimGO Expert Local #1',
-    'DC.description': 'Expert chauffage climatisation Ares 33640. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1.',
+    'DC.title': 'Chauffage Climatisation Ares 33640 | ClimGO Expert Local',
+    'DC.description': 'Expert chauffage climatisation Ares 33640. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié.',
     'DC.creator': 'ClimGO',
     'DC.publisher': 'ClimGO',
     'DC.language': 'fr-FR',

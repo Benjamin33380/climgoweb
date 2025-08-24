@@ -3,15 +3,15 @@ import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Pessac COMPLETE
 export const metadata: Metadata = {
-  title: 'Chauffage Climatisation Pessac 33600 | Expert Local #1 | ClimGO',
-  description: 'Expert chauffage climatisation Pessac 33600. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit sous 24h.',
+  title: 'Chauffage Climatisation Pessac 33600 | Expert Local | ClimGO',
+  description: 'Expert chauffage climatisation Pessac 33600. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit sous 24h.',
   
   keywords: 'climatisation Pessac, chauffage Pessac, pompe à chaleur Pessac, chauffagiste Pessac, installateur climatisation Pessac, artisan RGE Pessac, installation PAC Pessac, entretien climatisation Pessac, dépannage chauffage Pessac, chaudière Pessac, maintenance Pessac, réparation climatisation Pessac, devis gratuit Pessac, intervention urgence Pessac, certificat RGE Pessac, MaPrimeRénov Pessac, aide financière chauffage Pessac, prime CEE Pessac, crédit impôt Pessac, économie énergie Pessac, rénovation énergétique Pessac, audit énergétique Pessac, expert chauffage 33600, climatisation 33600, chauffagiste 33600, devis gratuit Pessac, intervention urgence Pessac, spécialiste CVC Pessac, entreprise chauffage Pessac, installateur agréé Pessac, technicien qualifié Pessac, service après-vente Pessac',
   
   // Open Graph optimisé COMPLET
   openGraph: {
-    title: 'Chauffage Climatisation Pessac 33600 | Expert Local #1 | ClimGO',
-    description: 'ClimGO, expert chauffage climatisation Pessac 33600. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit.',
+    title: 'Chauffage Climatisation Pessac 33600 | Expert Local | ClimGO',
+    description: 'ClimGO, expert chauffage climatisation Pessac 33600. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit.',
     url: 'https://www.climgo.fr/villes/pessac-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       url: 'https://www.climgo.fr/images/og/pessac-chauffage-climatisation.jpg',
       width: 1200,
       height: 630,
-      alt: 'Chauffage climatisation Pessac 33600 - ClimGO Expert Local #1',
+      alt: 'Chauffage climatisation Pessac 33600 - ClimGO Expert Local',
     }],
   },
   
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Pessac 33600 | Expert Local #1 | ClimGO',
-    description: 'Expert chauffage climatisation Pessac 33600. Installation PAC, dépannage urgent. Artisan RGE certifié #1.',
+    title: 'Chauffage Climatisation Pessac 33600 | Expert Local | ClimGO',
+    description: 'Expert chauffage climatisation Pessac 33600. Installation PAC, dépannage urgent. Artisan RGE certifié.',
     images: ['https://www.climgo.fr/images/og/pessac-chauffage-climatisation.jpg'],
   },
   
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
     'geo.state': 'Nouvelle-Aquitaine',
     
     // Dublin Core COMPLET
-    'DC.title': 'Chauffage Climatisation Pessac 33600 | ClimGO Expert Local #1',
-    'DC.description': 'Expert chauffage climatisation Pessac 33600. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1.',
+    'DC.title': 'Chauffage Climatisation Pessac 33600 | ClimGO Expert Local',
+    'DC.description': 'Expert chauffage climatisation Pessac 33600. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié.',
     'DC.creator': 'ClimGO',
     'DC.publisher': 'ClimGO',
     'DC.language': 'fr-FR',

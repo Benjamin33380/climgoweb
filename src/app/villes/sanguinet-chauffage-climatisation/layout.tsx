@@ -3,15 +3,15 @@ import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Sanguinet COMPLETE
 export const metadata: Metadata = {
-  title: 'Chauffage Climatisation Sanguinet 40460 | Expert Local #1 | ClimGO',
-  description: 'Expert chauffage climatisation Sanguinet 40460. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit sous 24h.',
+  title: 'Chauffage Climatisation Sanguinet 40460 | Expert Local | ClimGO',
+  description: 'Expert chauffage climatisation Sanguinet 40460. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit sous 24h.',
   
   keywords: 'climatisation Sanguinet, chauffage Sanguinet, pompe à chaleur Sanguinet, chauffagiste Sanguinet, installateur climatisation Sanguinet, artisan RGE Sanguinet, installation PAC Sanguinet, entretien climatisation Sanguinet, dépannage chauffage Sanguinet, chaudière Sanguinet, maintenance Sanguinet, réparation climatisation Sanguinet, devis gratuit Sanguinet, intervention urgence Sanguinet, certificat RGE Sanguinet, MaPrimeRénov Sanguinet, aide financière chauffage Sanguinet, prime CEE Sanguinet, crédit impôt Sanguinet, économie énergie Sanguinet, rénovation énergétique Sanguinet, audit énergétique Sanguinet, expert chauffage 40460, climatisation 40460, chauffagiste 40460, devis gratuit Sanguinet, intervention urgence Sanguinet, spécialiste CVC Sanguinet, entreprise chauffage Sanguinet, installateur agréé Sanguinet, technicien qualifié Sanguinet, service après-vente Sanguinet',
   
   // Open Graph optimisé COMPLET
   openGraph: {
-    title: 'Chauffage Climatisation Sanguinet 40460 | Expert Local #1 | ClimGO',
-    description: 'ClimGO, expert chauffage climatisation Sanguinet 40460. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit.',
+    title: 'Chauffage Climatisation Sanguinet 40460 | Expert Local | ClimGO',
+    description: 'ClimGO, expert chauffage climatisation Sanguinet 40460. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit.',
     url: 'https://www.climgo.fr/villes/sanguinet-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       url: 'https://www.climgo.fr/images/og/sanguinet-chauffage-climatisation.jpg',
       width: 1200,
       height: 630,
-      alt: 'Chauffage climatisation Sanguinet 40460 - ClimGO Expert Local #1',
+      alt: 'Chauffage climatisation Sanguinet 40460 - ClimGO Expert Local',
     }],
   },
   
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Sanguinet 40460 | Expert Local #1 | ClimGO',
-    description: 'Expert chauffage climatisation Sanguinet 40460. Installation PAC, dépannage urgent. Artisan RGE certifié #1.',
+    title: 'Chauffage Climatisation Sanguinet 40460 | Expert Local | ClimGO',
+    description: 'Expert chauffage climatisation Sanguinet 40460. Installation PAC, dépannage urgent. Artisan RGE certifié.',
     images: ['https://www.climgo.fr/images/og/sanguinet-chauffage-climatisation.jpg'],
   },
   
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
     'geo.state': 'Nouvelle-Aquitaine',
     
     // Dublin Core COMPLET
-    'DC.title': 'Chauffage Climatisation Sanguinet 40460 | ClimGO Expert Local #1',
-    'DC.description': 'Expert chauffage climatisation Sanguinet 40460. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1.',
+    'DC.title': 'Chauffage Climatisation Sanguinet 40460 | ClimGO Expert Local',
+    'DC.description': 'Expert chauffage climatisation Sanguinet 40460. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié.',
     'DC.creator': 'ClimGO',
     'DC.publisher': 'ClimGO',
     'DC.language': 'fr-FR',

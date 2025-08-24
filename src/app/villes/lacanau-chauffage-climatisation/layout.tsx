@@ -3,15 +3,15 @@ import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Lacanau COMPLETE
 export const metadata: Metadata = {
-  title: 'Chauffage Climatisation Lacanau 33680 | Expert Local #1 | ClimGO',
-  description: 'Expert chauffage climatisation Lacanau 33680. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit sous 24h.',
+  title: 'Chauffage Climatisation Lacanau 33680 | Expert Local | ClimGO',
+  description: 'Expert chauffage climatisation Lacanau 33680. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit sous 24h.',
   
   keywords: 'climatisation Lacanau, chauffage Lacanau, pompe à chaleur Lacanau, chauffagiste Lacanau, installateur climatisation Lacanau, artisan RGE Lacanau, installation PAC Lacanau, entretien climatisation Lacanau, dépannage chauffage Lacanau, chaudière Lacanau, maintenance Lacanau, réparation climatisation Lacanau, devis gratuit Lacanau, intervention urgence Lacanau, certificat RGE Lacanau, MaPrimeRénov Lacanau, aide financière chauffage Lacanau, prime CEE Lacanau, crédit impôt Lacanau, économie énergie Lacanau, rénovation énergétique Lacanau, audit énergétique Lacanau, expert chauffage 33680, climatisation 33680, chauffagiste 33680, devis gratuit Lacanau, intervention urgence Lacanau, spécialiste CVC Lacanau, entreprise chauffage Lacanau, installateur agréé Lacanau, technicien qualifié Lacanau, service après-vente Lacanau',
   
   // Open Graph optimisé COMPLET
   openGraph: {
-    title: 'Chauffage Climatisation Lacanau 33680 | Expert Local #1 | ClimGO',
-    description: 'ClimGO, expert chauffage climatisation Lacanau 33680. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit.',
+    title: 'Chauffage Climatisation Lacanau 33680 | Expert Local | ClimGO',
+    description: 'ClimGO, expert chauffage climatisation Lacanau 33680. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit.',
     url: 'https://www.climgo.fr/villes/lacanau-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       url: 'https://www.climgo.fr/images/og/lacanau-chauffage-climatisation.jpg',
       width: 1200,
       height: 630,
-      alt: 'Chauffage climatisation Lacanau 33680 - ClimGO Expert Local #1',
+      alt: 'Chauffage climatisation Lacanau 33680 - ClimGO Expert Local',
     }],
   },
   
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Lacanau 33680 | Expert Local #1 | ClimGO',
-    description: 'Expert chauffage climatisation Lacanau 33680. Installation PAC, dépannage urgent. Artisan RGE certifié #1.',
+    title: 'Chauffage Climatisation Lacanau 33680 | Expert Local | ClimGO',
+    description: 'Expert chauffage climatisation Lacanau 33680. Installation PAC, dépannage urgent. Artisan RGE certifié.',
     images: ['https://www.climgo.fr/images/og/lacanau-chauffage-climatisation.jpg'],
   },
   
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
     'geo.state': 'Nouvelle-Aquitaine',
     
     // Dublin Core COMPLET
-    'DC.title': 'Chauffage Climatisation Lacanau 33680 | ClimGO Expert Local #1',
-    'DC.description': 'Expert chauffage climatisation Lacanau 33680. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1.',
+    'DC.title': 'Chauffage Climatisation Lacanau 33680 | ClimGO Expert Local',
+    'DC.description': 'Expert chauffage climatisation Lacanau 33680. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié.',
     'DC.creator': 'ClimGO',
     'DC.publisher': 'ClimGO',
     'DC.language': 'fr-FR',

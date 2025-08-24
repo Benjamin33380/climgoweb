@@ -3,15 +3,15 @@ import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées La Teste-de-Buch COMPLETE
 export const metadata: Metadata = {
-  title: 'Chauffage Climatisation La Teste-de-Buch 33260 | Expert Local #1 | ClimGO',
-  description: 'Expert chauffage climatisation La Teste-de-Buch 33260. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit sous 24h.',
+  title: 'Chauffage Climatisation La Teste-de-Buch 33260 | Expert Local | ClimGO',
+  description: 'Expert chauffage climatisation La Teste-de-Buch 33260. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit sous 24h.',
   
   keywords: 'climatisation La Teste-de-Buch, chauffage La Teste-de-Buch, pompe à chaleur La Teste-de-Buch, chauffagiste La Teste-de-Buch, installateur climatisation La Teste-de-Buch, artisan RGE La Teste-de-Buch, installation PAC La Teste-de-Buch, entretien climatisation La Teste-de-Buch, dépannage chauffage La Teste-de-Buch, chaudière La Teste-de-Buch, maintenance La Teste-de-Buch, réparation climatisation La Teste-de-Buch, devis gratuit La Teste-de-Buch, intervention urgence La Teste-de-Buch, certificat RGE La Teste-de-Buch, MaPrimeRénov La Teste-de-Buch, aide financière chauffage La Teste-de-Buch, prime CEE La Teste-de-Buch, crédit impôt La Teste-de-Buch, économie énergie La Teste-de-Buch, rénovation énergétique La Teste-de-Buch, audit énergétique La Teste-de-Buch, expert chauffage 33260, climatisation 33260, chauffagiste 33260, devis gratuit La Teste-de-Buch, intervention urgence La Teste-de-Buch, spécialiste CVC La Teste-de-Buch, entreprise chauffage La Teste-de-Buch, installateur agréé La Teste-de-Buch, technicien qualifié La Teste-de-Buch, service après-vente La Teste-de-Buch',
   
   // Open Graph optimisé COMPLET
   openGraph: {
-    title: 'Chauffage Climatisation La Teste-de-Buch 33260 | Expert Local #1 | ClimGO',
-    description: 'ClimGO, expert chauffage climatisation La Teste-de-Buch 33260. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit.',
+    title: 'Chauffage Climatisation La Teste-de-Buch 33260 | Expert Local | ClimGO',
+    description: 'ClimGO, expert chauffage climatisation La Teste-de-Buch 33260. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit.',
     url: 'https://www.climgo.fr/villes/la-teste-de-buch-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       url: 'https://www.climgo.fr/images/og/la-teste-de-buch-chauffage-climatisation.jpg',
       width: 1200,
       height: 630,
-      alt: 'Chauffage climatisation La Teste-de-Buch 33260 - ClimGO Expert Local #1',
+      alt: 'Chauffage climatisation La Teste-de-Buch 33260 - ClimGO Expert Local',
     }],
   },
   
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation La Teste-de-Buch 33260 | Expert Local #1 | ClimGO',
-    description: 'Expert chauffage climatisation La Teste-de-Buch 33260. Installation PAC, dépannage urgent. Artisan RGE certifié #1.',
+    title: 'Chauffage Climatisation La Teste-de-Buch 33260 | Expert Local | ClimGO',
+    description: 'Expert chauffage climatisation La Teste-de-Buch 33260. Installation PAC, dépannage urgent. Artisan RGE certifié.',
     images: ['https://www.climgo.fr/images/og/la-teste-de-buch-chauffage-climatisation.jpg'],
   },
   
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
     'geo.state': 'Nouvelle-Aquitaine',
     
     // Dublin Core COMPLET
-    'DC.title': 'Chauffage Climatisation La Teste-de-Buch 33260 | ClimGO Expert Local #1',
-    'DC.description': 'Expert chauffage climatisation La Teste-de-Buch 33260. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1.',
+    'DC.title': 'Chauffage Climatisation La Teste-de-Buch 33260 | ClimGO Expert Local',
+    'DC.description': 'Expert chauffage climatisation La Teste-de-Buch 33260. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié.',
     'DC.creator': 'ClimGO',
     'DC.publisher': 'ClimGO',
     'DC.language': 'fr-FR',

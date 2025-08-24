@@ -3,15 +3,15 @@ import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Arcachon COMPLETE
 export const metadata: Metadata = {
-  title: 'Chauffage Climatisation Arcachon 33120 | Expert Local #1 | ClimGO',
-  description: 'Expert chauffage climatisation Arcachon 33120. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit sous 24h.',
+  title: 'Chauffage Climatisation Arcachon 33120 | Expert Local | ClimGO',
+  description: 'Expert chauffage climatisation Arcachon 33120. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit sous 24h.',
   
   keywords: 'climatisation Arcachon, chauffage Arcachon, pompe à chaleur Arcachon, chauffagiste Arcachon, installateur climatisation Arcachon, artisan RGE Arcachon, installation PAC Arcachon, entretien climatisation Arcachon, dépannage chauffage Arcachon, chaudière Arcachon, maintenance Arcachon, réparation climatisation Arcachon, devis gratuit Arcachon, intervention urgence Arcachon, certificat RGE Arcachon, MaPrimeRénov Arcachon, aide financière chauffage Arcachon, prime CEE Arcachon, crédit impôt Arcachon, économie énergie Arcachon, rénovation énergétique Arcachon, audit énergétique Arcachon, expert chauffage 33120, climatisation 33120, chauffagiste 33120, devis gratuit Arcachon, intervention urgence Arcachon, spécialiste CVC Arcachon, entreprise chauffage Arcachon, installateur agréé Arcachon, technicien qualifié Arcachon, service après-vente Arcachon',
   
   // Open Graph optimisé COMPLET
   openGraph: {
-    title: 'Chauffage Climatisation Arcachon 33120 | Expert Local #1 | ClimGO',
-    description: 'ClimGO, expert chauffage climatisation Arcachon 33120. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit.',
+    title: 'Chauffage Climatisation Arcachon 33120 | Expert Local | ClimGO',
+    description: 'ClimGO, expert chauffage climatisation Arcachon 33120. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit.',
     url: 'https://www.climgo.fr/villes/arcachon-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       url: 'https://www.climgo.fr/images/og/arcachon-chauffage-climatisation.jpg',
       width: 1200,
       height: 630,
-      alt: 'Chauffage climatisation Arcachon 33120 - ClimGO Expert Local #1',
+      alt: 'Chauffage climatisation Arcachon 33120 - ClimGO Expert Local',
     }],
   },
   
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Arcachon 33120 | Expert Local #1 | ClimGO',
-    description: 'Expert chauffage climatisation Arcachon 33120. Installation PAC, dépannage urgent. Artisan RGE certifié #1.',
+    title: 'Chauffage Climatisation Arcachon 33120 | Expert Local | ClimGO',
+    description: 'Expert chauffage climatisation Arcachon 33120. Installation PAC, dépannage urgent. Artisan RGE certifié.',
     images: ['https://www.climgo.fr/images/og/arcachon-chauffage-climatisation.jpg'],
   },
   
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
     'geo.state': 'Nouvelle-Aquitaine',
     
     // Dublin Core COMPLET
-    'DC.title': 'Chauffage Climatisation Arcachon 33120 | ClimGO Expert Local #1',
-    'DC.description': 'Expert chauffage climatisation Arcachon 33120. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1.',
+    'DC.title': 'Chauffage Climatisation Arcachon 33120 | ClimGO Expert Local',
+    'DC.description': 'Expert chauffage climatisation Arcachon 33120. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié.',
     'DC.creator': 'ClimGO',
     'DC.publisher': 'ClimGO',
     'DC.language': 'fr-FR',

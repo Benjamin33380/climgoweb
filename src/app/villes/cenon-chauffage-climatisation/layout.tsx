@@ -3,15 +3,15 @@ import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Cenon COMPLETE
 export const metadata: Metadata = {
-  title: 'Chauffage Climatisation Cenon 33150 | Expert Local #1 | ClimGO',
-  description: 'Expert chauffage climatisation Cenon 33150. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit sous 24h.',
+  title: 'Chauffage Climatisation Cenon 33150 | Expert Local | ClimGO',
+  description: 'Expert chauffage climatisation Cenon 33150. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit sous 24h.',
   
   keywords: 'climatisation Cenon, chauffage Cenon, pompe à chaleur Cenon, chauffagiste Cenon, installateur climatisation Cenon, artisan RGE Cenon, installation PAC Cenon, entretien climatisation Cenon, dépannage chauffage Cenon, chaudière Cenon, maintenance Cenon, réparation climatisation Cenon, devis gratuit Cenon, intervention urgence Cenon, certificat RGE Cenon, MaPrimeRénov Cenon, aide financière chauffage Cenon, prime CEE Cenon, crédit impôt Cenon, économie énergie Cenon, rénovation énergétique Cenon, audit énergétique Cenon, expert chauffage 33150, climatisation 33150, chauffagiste 33150, devis gratuit Cenon, intervention urgence Cenon, spécialiste CVC Cenon, entreprise chauffage Cenon, installateur agréé Cenon, technicien qualifié Cenon, service après-vente Cenon',
   
   // Open Graph optimisé COMPLET
   openGraph: {
-    title: 'Chauffage Climatisation Cenon 33150 | Expert Local #1 | ClimGO',
-    description: 'ClimGO, expert chauffage climatisation Cenon 33150. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1. Devis gratuit.',
+    title: 'Chauffage Climatisation Cenon 33150 | Expert Local | ClimGO',
+    description: 'ClimGO, expert chauffage climatisation Cenon 33150. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit.',
     url: 'https://www.climgo.fr/villes/cenon-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       url: 'https://www.climgo.fr/images/og/cenon-chauffage-climatisation.jpg',
       width: 1200,
       height: 630,
-      alt: 'Chauffage climatisation Cenon 33150 - ClimGO Expert Local #1',
+      alt: 'Chauffage climatisation Cenon 33150 - ClimGO Expert Local',
     }],
   },
   
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Cenon 33150 | Expert Local #1 | ClimGO',
-    description: 'Expert chauffage climatisation Cenon 33150. Installation PAC, dépannage urgent. Artisan RGE certifié #1.',
+    title: 'Chauffage Climatisation Cenon 33150 | Expert Local | ClimGO',
+    description: 'Expert chauffage climatisation Cenon 33150. Installation PAC, dépannage urgent. Artisan RGE certifié.',
     images: ['https://www.climgo.fr/images/og/cenon-chauffage-climatisation.jpg'],
   },
   
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
     'geo.state': 'Nouvelle-Aquitaine',
     
     // Dublin Core COMPLET
-    'DC.title': 'Chauffage Climatisation Cenon 33150 | ClimGO Expert Local #1',
-    'DC.description': 'Expert chauffage climatisation Cenon 33150. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié #1.',
+    'DC.title': 'Chauffage Climatisation Cenon 33150 | ClimGO Expert Local',
+    'DC.description': 'Expert chauffage climatisation Cenon 33150. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié.',
     'DC.creator': 'ClimGO',
     'DC.publisher': 'ClimGO',
     'DC.language': 'fr-FR',
