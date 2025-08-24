@@ -83,7 +83,7 @@ export default function BlogPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center">
             <h1 className="text-4xl font-bold text-foreground mb-4">
-              Blog ClimGo
+              Blog ClimGO - Conseils Chauffage Climatisation Gironde
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Découvrez nos conseils, actualités et guides sur le chauffage, 
@@ -124,6 +124,9 @@ export default function BlogPage() {
           </div>
         ) : (
           <>
+            <h2 className="text-3xl font-semibold text-foreground mb-8 text-center">
+              Nos Articles & Conseils
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredArticles
                 .slice((currentPage - 1) * articlesPerPage, currentPage * articlesPerPage)

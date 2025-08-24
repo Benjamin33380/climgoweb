@@ -3,12 +3,12 @@ import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Climatisation Gironde | Installation Climatiseur PAC Air/Air',
-  description: 'Climatisation Gironde. Installation climatiseur, PAC air/air, réversible. Entretien, dépannage.',
+  description: 'Climatisation Gironde. Installation climatiseur, PAC air/air, réversible. Entretien, dépannage. Expert RGE certifié ClimGO. Devis gratuit sous 48h.',
   keywords: 'climatisation Gironde, installation climatiseur, PAC air air, climatiseur réversible, entretien climatisation, dépannage clim, ClimGO',
   
   openGraph: {
     title: 'Climatisation Gironde | Installation Climatiseur PAC Air/Air',
-    description: 'Climatisation Gironde. Installation climatiseur, PAC air/air, réversible. Entretien, dépannage.',
+    description: 'Climatisation Gironde. Installation climatiseur, PAC air/air, réversible. Entretien, dépannage. Expert RGE certifié ClimGO. Devis gratuit sous 48h.',
     url: 'https://www.climgo.fr/climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     site: '@climgo_fr',
     creator: '@climgo_fr',
     title: 'Climatisation Gironde | Installation Climatiseur PAC Air/Air',
-    description: 'Climatisation Gironde. Installation climatiseur, PAC air/air, réversible. Entretien, dépannage.',
+    description: 'Climatisation Gironde. Installation climatiseur, PAC air/air, réversible. Entretien, dépannage. Expert RGE certifié ClimGO.',
     images: ['https://www.climgo.fr/images/og/climatisation-gironde.jpg'],
   },
   

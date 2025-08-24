@@ -3,12 +3,12 @@ import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Entretien Chauffage Climatisation Gironde | ClimGO',
-  description: 'Entretien chauffage climatisation Gironde. Maintenance PAC, chaudière, climatiseur.',
+  description: 'Entretien chauffage climatisation Gironde. Maintenance PAC, chaudière, climatiseur. Contrat entretien annuel. Intervention rapide. Expert RGE certifié ClimGO.',
   keywords: 'maintenance chauffage, entretien climatisation, contrat maintenance, révision annuelle, nettoyage installation, contrôle étanchéité, remplacement filtres, vérification sécurité, optimisation performance, diagnostic panne, réparation urgente, dépannage 24h, pièces détachées, garantie constructeur, expertise technique, prévention pannes, amélioration rendement, mise aux normes',
   
   openGraph: {
     title: 'Entretien Chauffage Climatisation Gironde | ClimGO',
-    description: 'Entretien chauffage climatisation Gironde. Maintenance PAC, chaudière, climatiseur.',
+    description: 'Entretien chauffage climatisation Gironde. Maintenance PAC, chaudière, climatiseur. Contrat entretien annuel. Intervention rapide. Expert RGE certifié ClimGO.',
     url: 'https://www.climgo.fr/maintenance',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     site: '@climgo_fr',
     creator: '@climgo_fr',
     title: 'Entretien Chauffage Climatisation Gironde | ClimGO',
-    description: 'Entretien chauffage climatisation Gironde. Maintenance PAC, chaudière, climatiseur.',
+    description: 'Entretien chauffage climatisation Gironde. Maintenance PAC, chaudière, climatiseur. Contrat entretien annuel. Intervention rapide.',
     images: ['https://www.climgo.fr/images/og/maintenance-gironde.jpg'],
   },
   
