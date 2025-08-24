@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { Users, Award, Clock, MapPin, Phone, Mail, CheckCircle, Star, Shield, Wrench, Settings, ThermometerSun } from 'lucide-react';
 import Link from 'next/link';
-import Image from 'next/image';
 
 export default function AProposPage() {
   const [activeTab, setActiveTab] = useState('histoire');

@@ -252,10 +252,10 @@ export function NewHeader() {
             <NavigationMenuItem>
               <NavigationMenuTrigger>Contact</NavigationMenuTrigger>
               <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-6">
+                <ul className="grid lg:w-[600px] gap-3 p-6">
                   <li className="row-span-3">
                     <NavigationMenuLink asChild>
-                      <a
+                      <Link
                         className="flex h-full w-full select-none flex-col justify-center rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md group"
                         href="/contact"
                         onMouseEnter={() => setIsContactHovered(true)}
@@ -277,7 +277,7 @@ export function NewHeader() {
                             Parlons de votre projet. Devis gratuit sous 48h.
                           </p>
                         </div>
-                      </a>
+                      </Link>
                     </NavigationMenuLink>
                   </li>
                   <ListItem 

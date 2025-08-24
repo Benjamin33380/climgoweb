@@ -16,6 +16,8 @@ export const metadata: Metadata = {
       height: 630,
       alt: 'Blog ClimGO',
     }],
+    locale: 'fr_FR',
+    siteName: 'ClimGO',
   },
   
   twitter: {
@@ -30,8 +32,22 @@ export const metadata: Metadata = {
     'DC.type': 'Blog',
     'google-site-verification': 'Ljs9Q3ve_Z_ldbzUTagcBPPmmQ_LTJER2pD3j7Woj1g'
   },
-  
-  robots: { index: true, follow: true }
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export default function BlogLayout({

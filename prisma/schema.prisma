@@ -1,0 +1,138 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model ContactRequest {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  prenom    String
+  nom       String
+  adresse   String?
+  ville     String?
+  email     String
+  telephone String?
+  message   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  status    String   @default("nouveau") // nouveau, lu, traité, fermé
+  
+  @@map("contact_requests")
+}
+
+model Admin {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  email     String   @unique
+  password  String
+  name      String
+  role      String   @default("admin") // admin, super_admin
+  isActive  Boolean  @default(true)
+  lastLogin DateTime?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  // Relations
+  articles  Article[]
+  sessions  AdminSession[]
+  
+  @@map("admins")
+}
+
+model AdminSession {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  token     String   @unique
+  adminId   String   @db.ObjectId
+  admin     Admin    @relation(fields: [adminId], references: [id])
+  ip        String?
+  userAgent String?
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  
+  @@map("admin_sessions")
+}
+
+model Article {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  content     String
+  slug        String   @unique
+  imageUrl    String?
+  excerpt     String?  // Résumé de l'article
+  published   Boolean  @default(false) // Pour publier/dépublier
+  
+  // Métadonnées SEO personnalisées
+  metaTitle     String?  // Titre personnalisé pour SEO
+  metaDesc      String?  // Description personnalisée pour SEO
+  metaKeywords  String?  // Mots-clés personnalisés pour SEO
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  adminId     String   @db.ObjectId
+  admin       Admin    @relation(fields: [adminId], references: [id])
+  comments    Comment[]
+  ratings     Rating[]
+}
+
+model Comment {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  content   String
+  author    String
+  email     String
+  approved  Boolean  @default(false)
+  articleId String   @db.ObjectId
+  article   Article  @relation(fields: [articleId], references: [id])
+  createdAt DateTime @default(now())
+  
+  @@map("comments")
+}
+
+model Rating {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  rating    Int      // 1-5 étoiles
+  articleId String   @db.ObjectId
+  article   Article  @relation(fields: [articleId], references: [id])
+  createdAt DateTime @default(now())
+  
+  @@map("ratings")
+}
+
+model BruteforceAttempt {
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  ip            String
+  userAgent     String
+  fingerprint   String   // Hash unique basé sur plusieurs paramètres
+  sessionId     String?
+  attempts      Int      @default(0)
+  lastAttempt   DateTime @default(now())
+  blockedUntil  DateTime?
+  isBlocked     Boolean  @default(false)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  
+  // Informations détaillées sur l'utilisateur
+  headers       Json     // Tous les headers HTTP
+  browser       String?
+  os            String?
+  device        String?
+  language      String?
+  timezone      String?
+  screenSize    String?
+  colorDepth    Int?
+  pixelRatio    Float?
+  canvasFingerprint String?
+  webglFingerprint String?
+  
+  @@index([ip])
+  @@index([fingerprint])
+  @@index([sessionId])
+  @@index([isBlocked])
+  @@map("bruteforce_attempts")
+}

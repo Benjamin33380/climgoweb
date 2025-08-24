@@ -1,9 +1,7 @@
 'use client';
 
-import { useMemo } from 'react';
 import Link from 'next/link';
 import { ChevronRight, ArrowRight, Phone, MapPin, Clock, Star, Building2, Mountain, TreePine, Waves, Home, Users } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Globe } from '@/components/ui/globe';
 
@@ -24,7 +22,7 @@ interface Zone {
 }
 
 // Simple Zone Card - showing ALL cities
-const SimpleZoneCard = ({ zone, index }: { zone: Zone; index: number }) => (
+const SimpleZoneCard = ({ zone }: { zone: Zone }) => (
   <div className="bg-white dark:bg-black rounded-xl xs:rounded-2xl p-4 xs:p-5 sm:p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-black/20 dark:border-white/20 hover:border-black/40 dark:hover:border-white/40">
     <div className="flex items-center justify-between mb-3 xs:mb-4 sm:mb-4 md:mb-6">
       <div className="bg-black/10 dark:bg-white/10 rounded-xl xs:rounded-2xl w-10 h-10 xs:w-12 xs:h-12 sm:w-12 sm:h-12 md:w-16 md:h-16 flex items-center justify-center shadow-sm">
@@ -44,9 +42,9 @@ const SimpleZoneCard = ({ zone, index }: { zone: Zone; index: number }) => (
     </p>
 
     <div className="grid grid-cols-1 xs:grid-cols-1 sm:grid-cols-2 gap-2 xs:gap-2 sm:gap-3">
-      {zone.cities.map((city, cityIndex) => (
+      {zone.cities.map((city) => (
         <Link
-          key={cityIndex}
+          key={city.name}
           href={city.url}
           className="flex items-center justify-between p-2 xs:p-2.5 sm:p-3 rounded-lg bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 transition-colors duration-200 group"
         >
@@ -188,13 +186,13 @@ export default function ZonesInterventions() {
           <nav className="text-sm text-black/60 dark:text-white/60 mb-8 md:mb-12 pt-6 md:pt-8">
             <Link href="/" className="hover:text-black dark:hover:text-white transition-colors">Accueil</Link>
             <ChevronRight className="w-4 h-4 mx-2 inline" />
-            <span className="text-black dark:text-white">Zones d'intervention</span>
+            <span className="text-black dark:text-white">Zones d&apos;intervention</span>
           </nav>
 
           {/* Hero Content */}
           <div className="text-center mb-12 md:mb-16">
             <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-black dark:text-white mb-6 md:mb-8 tracking-tight">
-              Zones d'Intervention
+              Zones d&apos;Intervention
             </h1>
             <p className="text-lg md:text-xl lg:text-2xl text-black/80 dark:text-white/80 max-w-4xl mx-auto leading-relaxed mb-12 md:mb-16">
               Nous intervenons dans toute la <span className="font-semibold text-black dark:text-white">Gironde</span>, 
@@ -232,16 +230,16 @@ export default function ZonesInterventions() {
         <div className="container mx-auto px-4 xs:px-5 sm:px-6">
           <div className="text-center mb-8 xs:mb-10 sm:mb-12 md:mb-16">
             <h2 className="text-2xl xs:text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-black dark:text-white mb-2 xs:mb-3 sm:mb-3 md:mb-4">
-              Nos Zones d'Intervention
+              Nos Zones d&apos;Intervention
             </h2>
             <p className="text-sm xs:text-base sm:text-base md:text-lg text-black/70 dark:text-white/70 max-w-2xl mx-auto px-2">
-              Découvrez toutes nos zones d'intervention avec leurs spécificités locales
+              Découvrez toutes nos zones d&apos;intervention avec leurs spécificités locales
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-6 xs:gap-7 sm:gap-8 md:gap-8 max-w-7xl mx-auto">
-            {zones.map((zone, index) => (
-              <SimpleZoneCard key={zone.id} zone={zone} index={index} />
+            {zones.map((zone) => (
+              <SimpleZoneCard key={zone.id} zone={zone} />
             ))}
           </div>
         </div>
@@ -255,11 +253,11 @@ export default function ZonesInterventions() {
           </div>
           
           <h2 className="text-2xl xs:text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-black dark:text-white mb-3 xs:mb-4 sm:mb-4 md:mb-6">
-            Besoin d'une Intervention ?
+            Besoin d&apos;une Intervention ?
           </h2>
           
           <p className="text-sm xs:text-base sm:text-base md:text-lg text-black/70 dark:text-white/70 mb-5 xs:mb-6 sm:mb-6 md:mb-8 max-w-2xl mx-auto px-2">
-            Notre équipe d'experts est à votre disposition dans toute la région. Devis gratuit et intervention rapide garantie !
+            Notre équipe d&apos;experts est à votre disposition dans toute la région. Devis gratuit et intervention rapide garantie !
           </p>
           
           <div className="flex flex-col xs:flex-col sm:flex-row gap-3 xs:gap-3 sm:gap-4 justify-center max-w-md xs:max-w-lg sm:max-w-none mx-auto">
