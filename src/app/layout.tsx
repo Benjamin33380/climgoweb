@@ -23,7 +23,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'ClimGO - Spécialiste Chauffage, Climatisation & Pompe à Chaleur Gironde',
+    default: 'ClimGO - Expert Chauffage Climatisation Gironde',
     template: '%s'
   },
   description: 'ClimGO, expert chauffage climatisation Gironde. Installation PAC, entretien, dépannage 24h/7j. Artisan RGE certifié. Devis gratuit.',
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     canonical: 'https://www.climgo.fr',
   },
   openGraph: {
-    title: 'ClimGO - Spécialiste Chauffage, Climatisation & Pompe à Chaleur Gironde',
+    title: 'ClimGO - Expert Chauffage Climatisation Gironde',
     description: 'ClimGO, expert chauffage climatisation Gironde. Installation PAC, entretien, dépannage 24h/7j. Artisan RGE certifié. Devis gratuit.',
     url: 'https://www.climgo.fr',
     siteName: 'ClimGO - Expert Chauffage Climatisation Gironde',
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
         url: '/img/climdame.png',
         width: 1200,
         height: 630,
-        alt: 'ClimGO - Spécialiste Chauffage, Climatisation & Pompe à Chaleur Gironde',
+        alt: 'ClimGO - Expert Chauffage Climatisation Gironde',
       },
     ],
   },
@@ -82,7 +82,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'ClimGO - Spécialiste Chauffage, Climatisation & Pompe à Chaleur Gironde',
+    title: 'ClimGO - Expert Chauffage Climatisation Gironde',
     description: 'ClimGO, expert chauffage climatisation Gironde. Installation PAC, entretien, dépannage 24h/7j. Artisan RGE certifié.',
     images: ['/img/climdame.png'],
   },

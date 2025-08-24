@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Chauffage Climatisation Villenave-D-Ornon 33140 | ClimGO Expert Local',
     description: 'ClimGO, expert chauffage climatisation Villenave-D-Ornon. Installation, dépannage, entretien PAC. Artisan RGE certifié. Devis gratuit.',
-    url: 'https://climgo.fr/villes/villenave-d-ornon-chauffage-climatisation',
+    url: 'https://www.climgo.fr/villes/villenave-d-ornon-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
     type: 'website',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     'DC.language': 'fr-FR',
     'DC.type': 'Service',
     'DC.format': 'text/html',
-    'DC.identifier': 'https://climgo.fr/villes/villenave-d-ornon-chauffage-climatisation',
+    'DC.identifier': 'https://www.climgo.fr/villes/villenave-d-ornon-chauffage-climatisation',
     'DC.source': 'https://www.climgo.fr',
     'DC.coverage': 'Villenave-D-Ornon, Gironde, France',
     'DC.rights': '© 2025 ClimGO. Tous droits réservés.',
@@ -93,7 +93,7 @@ export const metadata: Metadata = {
   },
   
   alternates: {
-    canonical: 'https://climgo.fr/villes/villenave-d-ornon-chauffage-climatisation',
+    canonical: 'https://www.climgo.fr/villes/villenave-d-ornon-chauffage-climatisation',
   },
   
   verification: {

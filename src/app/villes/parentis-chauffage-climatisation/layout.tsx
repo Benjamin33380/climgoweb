@@ -11,12 +11,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Chauffage Climatisation Parentis 40160 | ClimGO Expert Local',
     description: 'ClimGO, expert chauffage climatisation Parentis. Installation, dépannage, entretien PAC. Artisan RGE certifié. Devis gratuit.',
-    url: 'https://climgo.fr/villes/parentis-chauffage-climatisation',
+    url: 'https://www.climgo.fr/villes/parentis-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
     type: 'website',
     images: [{
-      url: 'https://climgo.fr/images/og-parentis-chauffage-climatisation.jpg',
+      url: 'https://www.climgo.fr/images/og-parentis-chauffage-climatisation.jpg',
       width: 1200,
       height: 630,
       alt: 'Chauffage climatisation Parentis - ClimGO',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     creator: '@climgo_fr',
     title: 'Chauffage Climatisation Parentis 40160 | ClimGO Expert Local',
     description: 'Expert chauffage climatisation Parentis. Installation PAC, dépannage urgent. Artisan RGE certifié.',
-    images: ['https://climgo.fr/images/twitter-parentis-chauffage-climatisation.jpg'],
+    images: ['https://www.climgo.fr/images/twitter-parentis-chauffage-climatisation.jpg'],
   },
   
   // Métadonnées avancées COMPLÈTES
@@ -51,8 +51,8 @@ export const metadata: Metadata = {
     'DC.language': 'fr-FR',
     'DC.type': 'Service',
     'DC.format': 'text/html',
-    'DC.identifier': 'https://climgo.fr/villes/parentis-chauffage-climatisation',
-    'DC.source': 'https://climgo.fr',
+    'DC.identifier': 'https://www.climgo.fr/villes/parentis-chauffage-climatisation',
+    'DC.source': 'https://www.climgo.fr',
     'DC.coverage': 'Parentis, Gironde, France',
     'DC.rights': '© 2025 ClimGO. Tous droits réservés.',
     
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     'business.contact_data.locality': 'Parentis',
     'business.contact_data.postal_code': '40160',
     'business.contact_data.phone_number': '+33766460008',
-    'business.contact_data.website': 'https://climgo.fr',
+    'business.contact_data.website': 'https://www.climgo.fr',
     'business.contact_data.email': 'contact@climgo.fr',
     
     // Signaux SEO local AVANCÉS
@@ -93,7 +93,7 @@ export const metadata: Metadata = {
   },
   
   alternates: {
-    canonical: 'https://climgo.fr/villes/parentis-chauffage-climatisation',
+    canonical: 'https://www.climgo.fr/villes/parentis-chauffage-climatisation',
   },
   
   verification: {
