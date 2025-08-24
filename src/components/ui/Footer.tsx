@@ -13,9 +13,10 @@ const zones = [
   { title: "Zones d'intervention", href: "/zones-interventions" },
 ];
 
+
+
 const entreprise = [
   { title: "À propos", href: "/a-propos" },
-  { title: "Aides & Subventions", href: "/aides-etat" },
   { title: "Politique de confidentialité", href: "/politique-confidentialite" },
   { title: "Mentions légales", href: "/mentions-legales" },
 ];
@@ -45,6 +46,15 @@ export default function Footer() {
               <p className="text-muted-foreground mb-6 leading-relaxed">
                 Spécialiste en climatisation, chauffage et maintenance depuis plus de 10 ans. Notre expertise au service de votre confort en Gironde et dans le Nord des Landes.
               </p>
+              
+              <div className="mb-6">
+                <Link 
+                  href="/a-propos" 
+                  className="text-sm text-[#FF8C00] hover:text-[#FFA500] transition-colors font-medium"
+                >
+                  En savoir plus sur ClimGO
+                </Link>
+              </div>
               
               {/* Note et avis */}
               <div className="flex items-center space-x-2 mb-6">
@@ -199,6 +209,16 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/zones-interventions" className="text-sm hover:text-primary transition-colors">
+                    Zones d'intervention
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/aides-etat" className="text-sm hover:text-primary transition-colors">
+                    Aides & Subventions
+                  </Link>
+                </li>
+                <li>
                   <Link 
                     href="/contact" 
                     className="inline-flex bg-white/20 dark:bg-white/10 backdrop-blur-md border border-black/40 dark:border-white/30 text-black dark:text-white px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-white/30 dark:hover:bg-white/20 transition-all duration-300"
@@ -208,25 +228,15 @@ export default function Footer() {
                 </li>
               </ul>
               
-              {/* Zones d'intervention */}
-              <div className="mt-8">
-                <h4 className="text-xs font-semibold text-muted-foreground mb-4 uppercase tracking-wider">
-                  Zones d'intervention
-                </h4>
-                <ul className="space-y-2">
-                  {zones.map((zone) => (
-                    <li key={zone.title}>
-                      <Link href={zone.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                        {zone.title}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+
+              
+
             </div>
 
           </div>
         </div>
+
+
 
 
 
