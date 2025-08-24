@@ -2,14 +2,14 @@ import { Metadata } from 'next';
 
 // Métadonnées ultra-optimisées Saint-Medard-En-Jalles COMPLETE
 export const metadata: Metadata = {
-  title: 'Chauffage Climatisation Saint-Medard-En-Jalles 33160 | ClimGO Expert Local',
+  title: 'Chauffage Climatisation Saint-Medard-En-Jalles 33160 | Expert Local',
   description: 'Expert chauffage climatisation Saint-Medard-En-Jalles 33160. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit sous 24h.',
   
   keywords: 'climatisation gironde, chauffage gironde, pompe à chaleur gironde, chauffagiste bordeaux, installateur climatisation, artisan RGE, installation PAC air eau, entretien climatisation, dépannage chauffage, chaudière gaz condensation, plancher chauffant, radiateurs électriques, maintenance pompe à chaleur, réparation climatisation, devis gratuit, intervention urgence, certificat RGE, MaPrimeRénov, aide financière chauffage, prime CEE, crédit impôt, économie énergie, rénovation énergétique, audit énergétique, chauffage saint-médard-en-jalles, climatisation saint-médard-en-jalles, chauffagiste saint-médard-en-jalles, pompe à chaleur saint-médard-en-jalles, installation PAC saint-médard-en-jalles, dépannage chauffage saint-médard-en-jalles, entretien climatisation saint-médard-en-jalles, artisan RGE saint-médard-en-jalles, chaudière saint-médard-en-jalles, maintenance saint-médard-en-jalles, expert chauffage 33160, climatisation 33160, chauffagiste 33160, devis gratuit saint-médard-en-jalles, intervention urgence saint-médard-en-jalles, spécialiste CVC saint-médard-en-jalles, entreprise chauffage saint-médard-en-jalles, installateur agréé saint-médard-en-jalles, technicien qualifié saint-médard-en-jalles, service après-vente saint-médard-en-jalles',
   
   // Open Graph optimisé COMPLET
   openGraph: {
-    title: 'Chauffage Climatisation Saint-Medard-En-Jalles 33160 | ClimGO Expert Local',
+    title: 'Chauffage Climatisation Saint-Medard-En-Jalles 33160 | Expert Local',
     description: 'ClimGO, expert chauffage climatisation Saint-Medard-En-Jalles. Installation, dépannage, entretien PAC. Artisan RGE certifié. Devis gratuit.',
     url: 'https://climgo.fr/saint-medard-en-jalles-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Saint-Medard-En-Jalles 33160 | ClimGO Expert Local',
+    title: 'Chauffage Climatisation Saint-Medard-En-Jalles 33160 | Expert Local',
     description: 'Expert chauffage climatisation Saint-Medard-En-Jalles. Installation PAC, dépannage urgent. Artisan RGE certifié.',
     images: ['https://climgo.fr/images/twitter-saint-medard-en-jalles-chauffage-climatisation.jpg'],
   },

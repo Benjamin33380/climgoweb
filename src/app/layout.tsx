@@ -22,7 +22,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: 'ClimGO - Spécialiste Climatisation & Chauffage Gironde',
-  description: 'ClimGO, votre spécialiste en climatisation, chauffage et maintenance en Gironde. Installation, entretien, dépannage. Devis gratuit. 07 66 46 00 08',
+  description: 'ClimGO, votre spécialiste en climatisation, chauffage et pompe à chaleur en Gironde. Installation, entretien, dépannage. Devis gratuit. 07 66 46 00 08',
   keywords: 'climatisation gironde, chauffage gironde, pompe à chaleur gironde, chauffagiste bordeaux, installateur climatisation, artisan RGE, installation PAC air eau, entretien climatisation, dépannage chauffage, chaudière gaz condensation, plancher chauffant, radiateurs électriques, maintenance pompe à chaleur, réparation climatisation, devis gratuit, intervention urgence, certificat RGE, MaPrimeRénov, aide financière chauffage, prime CEE, crédit impôt, économie énergie, rénovation énergétique, audit énergétique',
   authors: [{ name: 'ClimGO' }],
   creator: 'ClimGO',
@@ -38,16 +38,25 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'ClimGO - Spécialiste Climatisation & Chauffage Gironde',
-    description: 'ClimGO, votre spécialiste en climatisation, chauffage et maintenance en Gironde. Installation, entretien, dépannage. Devis gratuit.',
+    description: 'ClimGO, votre spécialiste en climatisation, chauffage et pompe à chaleur en Gironde. Installation, entretien, dépannage. Devis gratuit.',
     url: 'https://climgo.fr',
     siteName: 'ClimGO',
     locale: 'fr_FR',
     type: 'website',
+    images: [
+      {
+        url: '/img/climdame.png',
+        width: 1200,
+        height: 630,
+        alt: 'ClimGO - Spécialiste Climatisation & Chauffage en Gironde',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'ClimGO - Spécialiste Climatisation & Chauffage Gironde',
-    description: 'ClimGO, votre spécialiste en climatisation, chauffage et maintenance en Gironde.',
+    description: 'ClimGO, votre spécialiste en climatisation, chauffage et pompe à chaleur en Gironde.',
+    images: ['/img/climdame.png'],
   },
   robots: {
     index: true,

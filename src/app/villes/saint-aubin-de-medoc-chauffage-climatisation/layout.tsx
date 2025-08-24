@@ -2,14 +2,14 @@ import { Metadata } from 'next';
 
 // Métadonnées ultra-optimisées Saint-Aubin-De-Medoc COMPLETE
 export const metadata: Metadata = {
-  title: 'Chauffage Climatisation Saint-Aubin-De-Medoc 33160 | ClimGO Expert Local',
+  title: 'Chauffage Climatisation Saint-Aubin-De-Medoc 33160 | Expert Local',
   description: 'Expert chauffage climatisation Saint-Aubin-De-Medoc 33160. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit sous 24h.',
   
   keywords: 'climatisation gironde, chauffage gironde, pompe à chaleur gironde, chauffagiste bordeaux, installateur climatisation, artisan RGE, installation PAC air eau, entretien climatisation, dépannage chauffage, chaudière gaz condensation, plancher chauffant, radiateurs électriques, maintenance pompe à chaleur, réparation climatisation, devis gratuit, intervention urgence, certificat RGE, MaPrimeRénov, aide financière chauffage, prime CEE, crédit impôt, économie énergie, rénovation énergétique, audit énergétique, chauffage saint-aubin-de-médoc, climatisation saint-aubin-de-médoc, chauffagiste saint-aubin-de-médoc, pompe à chaleur saint-aubin-de-médoc, installation PAC saint-aubin-de-médoc, dépannage chauffage saint-aubin-de-médoc, entretien climatisation saint-aubin-de-médoc, artisan RGE saint-aubin-de-médoc, chaudière saint-aubin-de-médoc, maintenance saint-aubin-de-médoc, expert chauffage 33160, climatisation 33160, chauffagiste 33160, devis gratuit saint-aubin-de-médoc, intervention urgence saint-aubin-de-médoc, spécialiste CVC saint-aubin-de-médoc, entreprise chauffage saint-aubin-de-médoc, installateur agréé saint-aubin-de-médoc, technicien qualifié saint-aubin-de-médoc, service après-vente saint-aubin-de-médoc',
   
   // Open Graph optimisé COMPLET
   openGraph: {
-    title: 'Chauffage Climatisation Saint-Aubin-De-Medoc 33160 | ClimGO Expert Local',
+    title: 'Chauffage Climatisation Saint-Aubin-De-Medoc 33160 | Expert Local',
     description: 'ClimGO, expert chauffage climatisation Saint-Aubin-De-Medoc. Installation, dépannage, entretien PAC. Artisan RGE certifié. Devis gratuit.',
     url: 'https://climgo.fr/saint-aubin-de-medoc-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Saint-Aubin-De-Medoc 33160 | ClimGO Expert Local',
+    title: 'Chauffage Climatisation Saint-Aubin-De-Medoc 33160 | Expert Local',
     description: 'Expert chauffage climatisation Saint-Aubin-De-Medoc. Installation PAC, dépannage urgent. Artisan RGE certifié.',
     images: ['https://climgo.fr/images/twitter-saint-aubin-de-medoc-chauffage-climatisation.jpg'],
   },
