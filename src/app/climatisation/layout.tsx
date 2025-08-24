@@ -1,36 +1,37 @@
 import { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Climatisation Gironde | Installation Climatiseur PAC Air/Air | ClimGO',
-  description: 'Expert climatisation Gironde. Installation climatiseur reversible, PAC air/air multi-split. Artisan RGE. Devis gratuit, pose professionnelle.',
-  keywords: 'climatisation gironde, installation climatiseur, clim réversible, climatisation murale, climatisation gainable, climatisation cassette, pompe à chaleur air air, système multi-split, climatiseur mobile, rafraîchissement adiabatique, ventilation VMC, purification air, climatisation bureau, clim commerce, climatisation industrielle, maintenance climatisation, contrat entretien clim, réparation climatiseur, fluide frigorigène, détection fuite, nettoyage filtres clim',
+  title: 'Climatisation Gironde | Installation Climatiseur PAC Air/Air',
+  description: 'Climatisation Gironde. Installation climatiseur, PAC air/air, réversible. Entretien, dépannage.',
+  keywords: 'climatisation Gironde, installation climatiseur, PAC air air, climatiseur réversible, entretien climatisation, dépannage clim, ClimGO',
   
   openGraph: {
-    title: 'Climatisation Gironde | Installation Climatiseur PAC Air/Air | ClimGO',
-    description: 'Expert climatisation Gironde. Installation climatiseur reversible, PAC air/air multi-split. Artisan RGE. Devis gratuit, pose professionnelle.',
+    title: 'Climatisation Gironde | Installation Climatiseur PAC Air/Air',
+    description: 'Climatisation Gironde. Installation climatiseur, PAC air/air, réversible. Entretien, dépannage.',
     url: 'https://www.climgo.fr/climatisation',
+    siteName: 'ClimGO - Expert Chauffage Climatisation',
+    locale: 'fr_FR',
     type: 'website',
     images: [{
-      url: 'https://www.climgo.fr/images/og-climatisation.jpg',
+      url: 'https://www.climgo.fr/images/og/climatisation-gironde.jpg',
       width: 1200,
       height: 630,
-      alt: 'Climatisation ClimGO',
+      alt: 'Climatisation Gironde - Installation PAC Air/Air | ClimGO',
     }],
   },
   
   twitter: {
     card: 'summary_large_image',
-    title: 'Climatisation Gironde | Installation Climatiseur PAC Air/Air | ClimGO',
-    description: 'Expert climatisation Gironde. Installation climatiseur reversible, PAC air/air multi-split. Artisan RGE. Devis gratuit, pose professionnelle.',
+    site: '@climgo_fr',
+    creator: '@climgo_fr',
+    title: 'Climatisation Gironde | Installation Climatiseur PAC Air/Air',
+    description: 'Climatisation Gironde. Installation climatiseur, PAC air/air, réversible. Entretien, dépannage.',
+    images: ['https://www.climgo.fr/images/og/climatisation-gironde.jpg'],
   },
   
-  other: {
-    'DC.title': 'Climatisation Gironde | Installation Climatiseur PAC Air/Air | ClimGO',
-    'DC.description': 'Expert climatisation Gironde. Installation climatiseur reversible, PAC air/air multi-split. Artisan RGE. Devis gratuit, pose professionnelle.',
-    'DC.type': 'Service',
-    'category': 'Climatisation',
-    'priceRange': '1500-8000€',
-    'google-site-verification': 'Ljs9Q3ve_Z_ldbzUTagcBPPmmQ_LTJER2pD3j7Woj1g'
+  alternates: {
+    canonical: 'https://www.climgo.fr/climatisation',
   },
   
   robots: {
@@ -53,6 +54,7 @@ export default function ClimatisationLayout({
 }) {
   return (
     <>
+      <JsonLd type="service" service="climatisation" />
       {children}
     </>
   );

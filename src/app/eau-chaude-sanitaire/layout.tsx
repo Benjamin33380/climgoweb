@@ -1,36 +1,37 @@
 import { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Chauffe-eau Ballon Eau Chaude Gironde | ClimGO Installation',
-  description: 'Installation chauffe-eau Gironde. Ballon eau chaude, chauffe-eau thermodynamique, solaire. Remplacement urgence. Artisan qualifié.',
-  keywords: 'eau chaude sanitaire, chauffe-eau thermodynamique, ballon eau chaude, chauffe-eau solaire, préparateur ECS, production eau chaude, cumulus électrique, chauffe-eau gaz, ballon thermodynamique, installation sanitaire, remplacement chauffe-eau, détartrage ballon, isolation ballon, récupération chaleur, système solaire combiné, bouclage sanitaire, légionellose prévention, température eau chaude',
+  title: 'Chauffe-eau Ballon Eau Chaude Gironde | Installation ClimGO',
+  description: 'Installation chauffe-eau ballon eau chaude Gironde. Ballon thermodynamique, électrique, solaire. Devis gratuit.',
+  keywords: 'chauffe-eau gironde, ballon eau chaude, installation chauffe-eau, ballon thermodynamique, ballon électrique, ballon solaire, cumulus, production eau chaude, économies énergie, devis gratuit, ClimGO',
   
   openGraph: {
-    title: 'Chauffe-eau Ballon Eau Chaude Gironde | ClimGO Installation',
-    description: 'Installation chauffe-eau Gironde. Ballon eau chaude, chauffe-eau thermodynamique, solaire. Remplacement urgence. Artisan qualifié.',
+    title: 'Chauffe-eau Ballon Eau Chaude Gironde | Installation ClimGO',
+    description: 'Installation chauffe-eau ballon eau chaude Gironde. Ballon thermodynamique, électrique, solaire. Devis gratuit.',
     url: 'https://www.climgo.fr/eau-chaude-sanitaire',
+    siteName: 'ClimGO - Expert Chauffage Climatisation',
+    locale: 'fr_FR',
     type: 'website',
     images: [{
-      url: 'https://www.climgo.fr/images/og-eau-chaude-sanitaire.jpg',
+      url: 'https://www.climgo.fr/images/og/eau-chaude-sanitaire-gironde.jpg',
       width: 1200,
       height: 630,
-      alt: 'Eau chaude sanitaire ClimGO',
+      alt: 'Chauffe-eau Ballon Eau Chaude Gironde | ClimGO',
     }],
   },
   
   twitter: {
     card: 'summary_large_image',
-    title: 'Chauffe-eau Ballon Eau Chaude Gironde | ClimGO Installation',
-    description: 'Installation chauffe-eau Gironde. Ballon eau chaude, chauffe-eau thermodynamique, solaire. Remplacement urgence. Artisan qualifié.',
+    site: '@climgo_fr',
+    creator: '@climgo_fr',
+    title: 'Chauffe-eau Ballon Eau Chaude Gironde | Installation ClimGO',
+    description: 'Installation chauffe-eau ballon eau chaude Gironde. Ballon thermodynamique, électrique, solaire. Devis gratuit.',
+    images: ['https://www.climgo.fr/images/og/eau-chaude-sanitaire-gironde.jpg'],
   },
   
-  other: {
-    'DC.title': 'Chauffe-eau Ballon Eau Chaude Gironde | ClimGO Installation',
-    'DC.description': 'Installation chauffe-eau Gironde. Ballon eau chaude, chauffe-eau thermodynamique, solaire. Remplacement urgence. Artisan qualifié.',
-    'DC.type': 'Service',
-    'category': 'Eau chaude sanitaire',
-    'priceRange': '800-4000€',
-    'google-site-verification': 'Ljs9Q3ve_Z_ldbzUTagcBPPmmQ_LTJER2pD3j7Woj1g'
+  alternates: {
+    canonical: 'https://www.climgo.fr/eau-chaude-sanitaire',
   },
   
   robots: {
@@ -53,6 +54,7 @@ export default function EauChaudeSanitaireLayout({
 }) {
   return (
     <>
+      <JsonLd type="service" service="eau-chaude-sanitaire" />
       {children}
     </>
   );

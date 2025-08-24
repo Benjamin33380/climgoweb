@@ -1,33 +1,49 @@
 import { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Zones Intervention ClimGO | Chauffage Climatisation Gironde',
-  description: 'ClimGO intervient dans toute la Gironde pour vos projets chauffage climatisation. Bordeaux, Arcachon, Bassin, Médoc. Artisan local RGE.',
-  keywords: 'zones intervention, chauffage gironde, climatisation bordeaux, bassin arcachon, artisan local',
+  title: 'Zones d\'Intervention ClimGO | Chauffage Climatisation Gironde',
+  description: 'Zones d\'intervention ClimGO en Gironde. Bordeaux, Arcachon, Mérignac, Pessac et plus de 40 villes. Chauffage climatisation.',
+  keywords: 'zones intervention ClimGO, Gironde, Bordeaux, Arcachon, Mérignac, Pessac, chauffage climatisation, ClimGO',
   
   openGraph: {
-    title: 'Zones Intervention ClimGO | Chauffage Climatisation Gironde',
-    description: 'ClimGO intervient dans toute la Gironde pour vos projets chauffage climatisation. Bordeaux, Arcachon, Bassin, Médoc. Artisan local RGE.',
+    title: 'Zones d\'Intervention ClimGO | Chauffage Climatisation Gironde',
+    description: 'Zones d\'intervention ClimGO en Gironde. Bordeaux, Arcachon, Mérignac, Pessac et plus de 40 villes.',
     url: 'https://www.climgo.fr/zones-interventions',
-    type: 'website'
+    type: 'website',
   },
   
-  other: {
-    'DC.title': 'Zones Intervention ClimGO | Chauffage Climatisation Gironde',
-    'DC.type': 'WebPage',
-    'google-site-verification': 'Ljs9Q3ve_Z_ldbzUTagcBPPmmQ_LTJER2pD3j7Woj1g'
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Zones d\'Intervention ClimGO | Chauffage Climatisation Gironde',
+    description: 'Zones d\'intervention ClimGO en Gironde. Bordeaux, Arcachon, Mérignac, Pessac et plus de 40 villes.',
   },
   
-  robots: { index: true, follow: true }
+  alternates: {
+    canonical: 'https://www.climgo.fr/zones-interventions',
+  },
+  
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  }
 };
 
-export default function ZonesinterventionsLayout({
+export default function ZonesInterventionsLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
     <>
+      <JsonLd type="business" />
       {children}
     </>
   );

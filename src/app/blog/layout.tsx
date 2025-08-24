@@ -1,42 +1,28 @@
-import { Metadata } from 'next'
+import { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Blog ClimGO | Conseils Chauffage Climatisation Gironde',
-  description: 'Blog expert ClimGO : conseils chauffage, climatisation, maintenance. Guides techniques, aides financières, nouveautés. Conseils d\'artisan RGE certifié.',
-  keywords: 'blog chauffage, conseils climatisation, maintenance pompe à chaleur, aides financières chauffage, MaPrimeRénov, guide technique CVC, artisan RGE gironde, économies énergie, rénovation énergétique, entretien chaudière, optimisation chauffage, nouvelles technologies',
+  description: 'Blog ClimGO : conseils chauffage climatisation, actualités, guides techniques.',
+  keywords: 'blog ClimGO, conseils chauffage, conseils climatisation, actualités ClimGO, expert RGE Gironde',
   
   openGraph: {
     title: 'Blog ClimGO | Conseils Chauffage Climatisation Gironde',
-    description: 'Blog expert ClimGO : conseils chauffage, climatisation, maintenance. Guides techniques, aides financières, nouveautés.',
+    description: 'Blog ClimGO : conseils chauffage climatisation, actualités, guides techniques.',
     url: 'https://www.climgo.fr/blog',
     type: 'website',
-    images: [{
-      url: 'https://www.climgo.fr/images/og-blog.jpg',
-      width: 1200,
-      height: 630,
-      alt: 'Blog ClimGO',
-    }],
-    locale: 'fr_FR',
-    siteName: 'ClimGO',
   },
   
   twitter: {
     card: 'summary_large_image',
     title: 'Blog ClimGO | Conseils Chauffage Climatisation Gironde',
-    description: 'Blog expert ClimGO : conseils chauffage, climatisation, maintenance. Guides techniques, aides financières.',
+    description: 'Blog ClimGO : conseils chauffage climatisation, actualités, guides techniques.',
   },
   
-  other: {
-    'DC.title': 'Blog ClimGO | Conseils Chauffage Climatisation Gironde',
-    'DC.description': 'Blog expert ClimGO : conseils chauffage, climatisation, maintenance. Guides techniques, aides financières, nouveautés.',
-    'DC.type': 'Blog',
-    'google-site-verification': 'Ljs9Q3ve_Z_ldbzUTagcBPPmmQ_LTJER2pD3j7Woj1g'
+  alternates: {
+    canonical: 'https://www.climgo.fr/blog',
   },
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
+  
   robots: {
     index: true,
     follow: true,
@@ -47,7 +33,7 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
-  },
+  }
 };
 
 export default function BlogLayout({
@@ -57,6 +43,7 @@ export default function BlogLayout({
 }) {
   return (
     <>
+      <JsonLd type="business" />
       {children}
     </>
   );

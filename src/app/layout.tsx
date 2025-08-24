@@ -24,12 +24,12 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: {
     default: 'ClimGO - Expert Chauffage Climatisation Gironde',
-    template: '%s | ClimGO Gironde'
+    template: '%s'
   },
-  description: 'ClimGO, expert climatisation, chauffage et pompe à chaleur en Gironde. Installation, entretien, dépannage. Devis gratuit. Artisan RGE.',
+  description: 'ClimGO, votre expert en climatisation, chauffage et pompe à chaleur en Gironde. Installation, entretien, dépannage 24h/7j. Devis gratuit. 07 66 46 00 08. Artisan RGE certifié.',
   keywords: [
     'climatisation gironde',
-    'chauffage gironde', 
+    'chauffage gironde',
     'pompe à chaleur gironde',
     'chauffagiste bordeaux',
     'installateur climatisation gironde',
@@ -169,7 +169,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'ClimGO - Expert Chauffage Climatisation Gironde',
-    description: 'ClimGO, expert climatisation, chauffage et pompe à chaleur en Gironde. Installation, entretien, dépannage. Devis gratuit.',
+    description: 'ClimGO, votre expert en climatisation, chauffage et pompe à chaleur en Gironde. Installation, entretien, dépannage 24h/7j. Devis gratuit. Artisan RGE certifié.',
     url: 'https://www.climgo.fr',
     siteName: 'ClimGO - Expert Chauffage Climatisation Gironde',
     locale: 'fr_FR',
@@ -179,7 +179,7 @@ export const metadata: Metadata = {
         url: '/img/climdame.png',
         width: 1200,
         height: 630,
-        alt: 'ClimGO - Expert #1 Chauffage Climatisation Gironde - Installation PAC, Entretien, Dépannage',
+        alt: 'ClimGO - Expert Chauffage Climatisation Gironde',
       },
     ],
   },
@@ -188,19 +188,19 @@ export const metadata: Metadata = {
     site: '@climgo_fr',
     creator: '@climgo_fr',
     title: 'ClimGO - Expert Chauffage Climatisation Gironde',
-    description: 'ClimGO, expert climatisation, chauffage et pompe à chaleur en Gironde. Installation, entretien, dépannage.',
+    description: 'ClimGO, votre expert en climatisation, chauffage et pompe à chaleur en Gironde. Installation, entretien, dépannage 24h/7j.',
     images: ['/img/climdame.png'],
   },
   robots: {
     index: true,
     follow: true,
-          googleBot: {
-        index: true,
-        follow: true,
-        'max-video-preview': -1,
-        'max-image-preview': 'large',
-        'max-snippet': -1,
-      },
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
   verification: {
     google: 'Ljs9Q3ve_Z_ldbzUTagcBPPmmQ_LTJER2pD3j7Woj1g',
@@ -215,24 +215,24 @@ export const metadata: Metadata = {
     'business.contact_data.phone_number': '+33766460008',
     'business.contact_data.website': 'https://www.climgo.fr',
     'business.contact_data.email': 'contact@climgo.fr',
-    
+
     // Signaux SEO local AVANCÉS
     'rating': '4.8',
     'priceRange': '€€',
     'audience': 'Particuliers et Professionnels',
     'category': 'Chauffage, Climatisation, Pompe à chaleur, Maintenance',
     'serviceType': 'Installation, Dépannage, Entretien, Maintenance, Rénovation',
-    
+
     // Référencement avancé
     'revisit-after': '1 day',
     'robots': 'index,follow,noimageindex,max-video-preview:-1,max-image-preview:large,max-snippet:-1',
     'googlebot': 'index,follow,max-video-preview:-1,max-image-preview:large,max-snippet:-1',
-    
+
     // Vérifications
     'google-site-verification': 'Ljs9Q3ve_Z_ldbzUTagcBPPmmQ_LTJER2pD3j7Woj1g',
-    
+
     // Dublin Core COMPLET
-    'DC.title': 'ClimGO - Expert Chauffage & Climatisation Gironde | Installation PAC, Entretien, Dépannage',
+    'DC.title': 'ClimGO - Expert Chauffage Climatisation Gironde',
     'DC.description': 'ClimGO, votre expert en climatisation, chauffage et pompe à chaleur en Gironde. Installation, entretien, dépannage 24h/7j. Devis gratuit.',
     'DC.creator': 'ClimGO',
     'DC.publisher': 'ClimGO',
@@ -243,7 +243,7 @@ export const metadata: Metadata = {
     'DC.source': 'https://www.climgo.fr',
     'DC.coverage': 'Gironde, Nouvelle-Aquitaine, France',
     'DC.rights': '© 2025 ClimGO. Tous droits réservés.',
-    
+
     // Géolocalisation précise
     'geo.region': 'FR-33',
     'geo.placename': 'Gironde',
@@ -251,7 +251,7 @@ export const metadata: Metadata = {
     'ICBM': '44.837789, -0.57918',
     'geo.country': 'France',
     'geo.state': 'Nouvelle-Aquitaine',
-    
+
     // Mots-clés locaux ULTRA-OPTIMISÉS
     'local.keywords': 'chauffage climatisation gironde, expert chauffage bordeaux, installateur climatisation arcachon, artisan RGE mérignac, installation PAC pessac, entretien climatisation talence, dépannage chauffage bègles, chaudière gradignan, maintenance le bouscat, réparation cenon, devis gratuit floirac, intervention urgence eysines, certificat RGE bruges, MaPrimeRénov pessac, aide financière villenave d ornon, prime CEE leognan, crédit impôt saint médard en jalles, économie énergie saint aubin de médoc, rénovation énergétique saint jean d illac, audit énergétique saint loubes, expert chauffage saint selve, spécialiste CVC salles, entreprise chauffage sanguinet, installateur agréé saucats, technicien qualifié le barp, service après-vente le haillan, chauffage climatisation le teich, installation PAC lege cap ferret, maintenance gujan mestras, dépannage la teste de buch, entretien lacanau, réparation lanton, devis gratuit andernos les bains, intervention urgence ares, spécialiste audenge, expert begles, artisan belin beliet, installateur biganos, technicien biscarrosse, maintenance bordeaux, réparation bouliac, entretien cadaujac, installation canejan, dépannage cenon, devis cestas, intervention eysines, spécialiste floirac, expert gradignan, artisan la brede, installateur la teste de buch, technicien lacanau, maintenance lanton, réparation le barp, entretien le bouscat, installation le haillan, dépannage le teich, devis lege cap ferret, intervention gujan mestras, spécialiste saint aubin de médoc, expert saint jean d illac, artisan saint loubes, installateur saint médard en jalles, technicien saint selve, maintenance salles, réparation sanguinet, entretien saucats, installation talence, dépannage villenave d ornon'
   },
@@ -311,8 +311,8 @@ export default function RootLayout({
         <meta name="robots" content="index,follow,noimageindex,max-video-preview:-1,max-image-preview:large,max-snippet:-1" />
         <meta name="googlebot" content="index,follow,max-video-preview:-1,max-image-preview:large,max-snippet:-1" />
         <meta name="google-site-verification" content="Ljs9Q3ve_Z_ldbzUTagcBPPmmQ_LTJER2pD3j7Woj1g" />
-        <meta name="DC.title" content="ClimGO - Expert #1 Chauffage & Climatisation Gironde | Installation PAC, Entretien, Dépannage" />
-        <meta name="DC.description" content="ClimGO, votre expert #1 en climatisation, chauffage et pompe à chaleur en Gironde. Installation, entretien, dépannage 24h/7j. Devis gratuit." />
+        <meta name="DC.title" content="ClimGO - Expert Chauffage Climatisation Gironde" />
+        <meta name="DC.description" content="ClimGO, votre expert en climatisation, chauffage et pompe à chaleur en Gironde. Installation, entretien, dépannage 24h/7j. Devis gratuit." />
         <meta name="DC.creator" content="ClimGO" />
         <meta name="DC.publisher" content="ClimGO" />
         <meta name="DC.language" content="fr-FR" />
@@ -339,7 +339,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <ClientHeroUIProvider>
-            <GlobalScrollShadow 
+            <GlobalScrollShadow
               size={scrollShadowConfig.size}
               shadowColor={scrollShadowConfig.shadowColor}
               blurIntensity={scrollShadowConfig.blurIntensity}

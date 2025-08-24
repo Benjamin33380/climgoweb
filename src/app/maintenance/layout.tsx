@@ -1,32 +1,42 @@
 import { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Entretien Chauffage Climatisation Gironde | ClimGO Maintenance',
-  description: 'Entretien chauffage climatisation Gironde. Maintenance PAC, chaudière, climatiseur. Contrat entretien annuel. Intervention rapide.',
+  title: 'Entretien Chauffage Climatisation Gironde | ClimGO',
+  description: 'Entretien chauffage climatisation Gironde. Maintenance PAC, chaudière, climatiseur.',
   keywords: 'maintenance chauffage, entretien climatisation, contrat maintenance, révision annuelle, nettoyage installation, contrôle étanchéité, remplacement filtres, vérification sécurité, optimisation performance, diagnostic panne, réparation urgente, dépannage 24h, pièces détachées, garantie constructeur, expertise technique, prévention pannes, amélioration rendement, mise aux normes',
   
   openGraph: {
-    title: 'Entretien Chauffage Climatisation Gironde | ClimGO Maintenance',
-    description: 'Entretien chauffage climatisation Gironde. Maintenance PAC, chaudière, climatiseur. Contrat entretien annuel. Intervention rapide.',
+    title: 'Entretien Chauffage Climatisation Gironde | ClimGO',
+    description: 'Entretien chauffage climatisation Gironde. Maintenance PAC, chaudière, climatiseur.',
     url: 'https://www.climgo.fr/maintenance',
+    siteName: 'ClimGO - Expert Chauffage Climatisation',
+    locale: 'fr_FR',
     type: 'website',
     images: [{
-      url: 'https://www.climgo.fr/images/og-maintenance.jpg',
+      url: 'https://www.climgo.fr/images/og/maintenance-gironde.jpg',
       width: 1200,
       height: 630,
-      alt: 'Maintenance ClimGO',
+      alt: 'Maintenance Chauffage Climatisation Gironde | ClimGO',
     }],
   },
   
   twitter: {
     card: 'summary_large_image',
-    title: 'Entretien Chauffage Climatisation Gironde | ClimGO Maintenance',
-    description: 'Entretien chauffage climatisation Gironde. Maintenance PAC, chaudière, climatiseur. Contrat entretien annuel. Intervention rapide.',
+    site: '@climgo_fr',
+    creator: '@climgo_fr',
+    title: 'Entretien Chauffage Climatisation Gironde | ClimGO',
+    description: 'Entretien chauffage climatisation Gironde. Maintenance PAC, chaudière, climatiseur.',
+    images: ['https://www.climgo.fr/images/og/maintenance-gironde.jpg'],
+  },
+  
+  alternates: {
+    canonical: 'https://www.climgo.fr/maintenance',
   },
   
   other: {
-    'DC.title': 'Entretien Chauffage Climatisation Gironde | ClimGO Maintenance',
-    'DC.description': 'Entretien chauffage climatisation Gironde. Maintenance PAC, chaudière, climatiseur. Contrat entretien annuel. Intervention rapide.',
+    'DC.title': 'Entretien Chauffage Climatisation Gironde | ClimGO',
+    'DC.description': 'Entretien chauffage climatisation Gironde. Maintenance PAC, chaudière, climatiseur.',
     'DC.type': 'Service',
     'category': 'Maintenance',
     'priceRange': '120-300€',
@@ -53,6 +63,7 @@ export default function MaintenanceLayout({
 }) {
   return (
     <>
+      <JsonLd type="service" service="maintenance" />
       {children}
     </>
   );

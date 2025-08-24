@@ -1,24 +1,39 @@
 import { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Contact ClimGO | Devis Gratuit Chauffage Climatisation Gironde',
-  description: 'Contactez ClimGO pour votre projet chauffage climatisation en Gironde. Devis gratuit sous 24h. Artisan RGE. Tel: 07 66 46 00 08.',
-  keywords: 'contact chauffagiste, devis gratuit, rendez-vous technique, urgence chauffage, intervention rapide, artisan qualifié, expert local, proximité client, service personnalisé, satisfaction garantie, tarif transparent, financement possible',
+  title: 'Contactez ClimGO | Devis Gratuit Chauffage Climatisation',
+  description: 'Contactez ClimGO pour un devis gratuit chauffage climatisation. Installation, maintenance, dépannage.',
+  keywords: 'contact ClimGO, devis gratuit chauffage, devis climatisation Gironde, installation PAC, maintenance chauffage, dépannage urgence, ClimGO Gironde',
   
   openGraph: {
-    title: 'Contact ClimGO | Devis Gratuit Chauffage Climatisation Gironde',
-    description: 'Contactez ClimGO pour votre projet chauffage climatisation en Gironde. Devis gratuit sous 24h. Artisan RGE. Tel: 07 66 46 00 08.',
+    title: 'Contactez ClimGO | Devis Gratuit Chauffage Climatisation',
+    description: 'Contactez ClimGO pour un devis gratuit chauffage climatisation. Installation, maintenance, dépannage.',
     url: 'https://www.climgo.fr/contact',
-    type: 'website'
+    type: 'website',
   },
   
-  other: {
-    'DC.title': 'Contact ClimGO | Devis Gratuit Chauffage Climatisation Gironde',
-    'DC.type': 'ContactPage',
-    'google-site-verification': 'Ljs9Q3ve_Z_ldbzUTagcBPPmmQ_LTJER2pD3j7Woj1g'
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contactez ClimGO | Devis Gratuit Chauffage Climatisation',
+    description: 'Contactez ClimGO pour un devis gratuit chauffage climatisation. Installation, maintenance, dépannage.',
   },
   
-  robots: { index: true, follow: true }
+  alternates: {
+    canonical: 'https://www.climgo.fr/contact',
+  },
+  
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  }
 };
 
 export default function ContactLayout({
@@ -28,6 +43,7 @@ export default function ContactLayout({
 }) {
   return (
     <>
+      <JsonLd type="business" />
       {children}
     </>
   );

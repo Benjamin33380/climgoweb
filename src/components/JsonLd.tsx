@@ -19,9 +19,11 @@ export default function JsonLd({ type, city, postalCode, service }: JsonLdProps)
       "email": "contact@climgo.fr",
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "Zone d'activité",
+        "addressLocality": "Bordeaux",
         "addressRegion": "Gironde",
-        "addressCountry": "FR",
-        "addressLocality": "Bordeaux"
+        "postalCode": "33000",
+        "addressCountry": "FR"
       },
       "geo": {
         "@type": "GeoCoordinates",
@@ -105,7 +107,14 @@ export default function JsonLd({ type, city, postalCode, service }: JsonLdProps)
         "@type": "LocalBusiness",
         "name": "ClimGO",
         "telephone": "+33766460008",
-        "email": "contact@climgo.fr"
+        "email": "contact@climgo.fr",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": city,
+          "postalCode": postalCode,
+          "addressRegion": "Gironde",
+          "addressCountry": "FR"
+        }
       },
       "areaServed": {
         "@type": "City",
@@ -119,7 +128,13 @@ export default function JsonLd({ type, city, postalCode, service }: JsonLdProps)
         }
       },
       "serviceType": ["Chauffage", "Climatisation", "Maintenance"],
-      "url": `https://www.climgo.fr/villes/${city.toLowerCase().replace(/\s+/g, '-')}-chauffage-climatisation`
+      "url": `https://www.climgo.fr/villes/${city.toLowerCase().replace(/\s+/g, '-')}-chauffage-climatisation`,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR",
+        "description": "Devis gratuit"
+      }
     };
 
     return (
@@ -139,14 +154,27 @@ export default function JsonLd({ type, city, postalCode, service }: JsonLdProps)
       "provider": {
         "@type": "LocalBusiness",
         "name": "ClimGO",
-        "telephone": "+33766460008"
+        "telephone": "+33766460008",
+        "email": "contact@climgo.fr",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bordeaux",
+          "addressRegion": "Gironde",
+          "addressCountry": "FR"
+        }
       },
       "areaServed": {
         "@type": "State",
         "name": "Gironde",
         "addressCountry": "FR"
       },
-      "url": `https://www.climgo.fr/${service}`
+      "url": `https://www.climgo.fr/${service}`,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR",
+        "description": "Devis gratuit"
+      }
     };
 
     return (
