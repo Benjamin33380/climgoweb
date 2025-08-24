@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Chauffage Climatisation Le-Barp 33114 | ClimGO Expert Local',
     description: 'ClimGO, expert chauffage climatisation Le-Barp. Installation, dépannage, entretien PAC. Artisan RGE certifié. Devis gratuit.',
-    url: 'https://www.climgo.fr/le-barp-chauffage-climatisation',
+    url: 'https://climgo.fr/villes/le-barp-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
     type: 'website',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     'DC.language': 'fr-FR',
     'DC.type': 'Service',
     'DC.format': 'text/html',
-    'DC.identifier': 'https://www.climgo.fr/le-barp-chauffage-climatisation',
+    'DC.identifier': 'https://climgo.fr/villes/le-barp-chauffage-climatisation',
     'DC.source': 'https://www.climgo.fr',
     'DC.coverage': 'Le-Barp, Gironde, France',
     'DC.rights': '© 2025 ClimGO. Tous droits réservés.',
@@ -93,7 +93,7 @@ export const metadata: Metadata = {
   },
   
   alternates: {
-    canonical: 'https://www.climgo.fr/le-barp-chauffage-climatisation',
+    canonical: 'https://climgo.fr/villes/le-barp-chauffage-climatisation',
   },
   
   verification: {

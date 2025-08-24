@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Chauffage Climatisation Pessac 33600 | ClimGO Expert Local',
     description: 'ClimGO, expert chauffage climatisation Pessac. Installation, dépannage, entretien PAC. Artisan RGE certifié. Devis gratuit.',
-    url: 'https://www.climgo.fr/pessac-chauffage-climatisation',
+    url: 'https://climgo.fr/villes/pessac-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
     type: 'website',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     'DC.language': 'fr-FR',
     'DC.type': 'Service',
     'DC.format': 'text/html',
-    'DC.identifier': 'https://www.climgo.fr/pessac-chauffage-climatisation',
+    'DC.identifier': 'https://climgo.fr/villes/pessac-chauffage-climatisation',
     'DC.source': 'https://www.climgo.fr',
     'DC.coverage': 'Pessac, Gironde, France',
     'DC.rights': '© 2025 ClimGO. Tous droits réservés.',
@@ -93,7 +93,7 @@ export const metadata: Metadata = {
   },
   
   alternates: {
-    canonical: 'https://www.climgo.fr/pessac-chauffage-climatisation',
+    canonical: 'https://climgo.fr/villes/pessac-chauffage-climatisation',
   },
   
   verification: {

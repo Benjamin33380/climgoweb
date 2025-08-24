@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Chauffage Climatisation Audenge 33980 | ClimGO Expert Local',
     description: 'ClimGO, expert chauffage climatisation Audenge. Installation, dépannage, entretien PAC. Artisan RGE certifié. Devis gratuit.',
-    url: 'https://www.climgo.fr/audenge-chauffage-climatisation',
+    url: 'https://climgo.fr/villes/audenge-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
     type: 'website',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     'DC.language': 'fr-FR',
     'DC.type': 'Service',
     'DC.format': 'text/html',
-    'DC.identifier': 'https://www.climgo.fr/audenge-chauffage-climatisation',
+    'DC.identifier': 'https://climgo.fr/villes/audenge-chauffage-climatisation',
     'DC.source': 'https://www.climgo.fr',
     'DC.coverage': 'Audenge, Gironde, France',
     'DC.rights': '© 2025 ClimGO. Tous droits réservés.',
@@ -93,7 +93,7 @@ export const metadata: Metadata = {
   },
   
   alternates: {
-    canonical: 'https://www.climgo.fr/audenge-chauffage-climatisation',
+    canonical: 'https://climgo.fr/villes/audenge-chauffage-climatisation',
   },
   
   verification: {

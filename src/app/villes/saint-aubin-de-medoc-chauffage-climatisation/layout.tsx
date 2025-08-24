@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Chauffage Climatisation Saint-Aubin-De-Medoc 33160 | Expert Local',
     description: 'ClimGO, expert chauffage climatisation Saint-Aubin-De-Medoc. Installation, dépannage, entretien PAC. Artisan RGE certifié. Devis gratuit.',
-    url: 'https://climgo.fr/saint-aubin-de-medoc-chauffage-climatisation',
+    url: 'https://climgo.fr/villes/saint-aubin-de-medoc-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
     type: 'website',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     'DC.language': 'fr-FR',
     'DC.type': 'Service',
     'DC.format': 'text/html',
-    'DC.identifier': 'https://climgo.fr/saint-aubin-de-medoc-chauffage-climatisation',
+    'DC.identifier': 'https://climgo.fr/villes/saint-aubin-de-medoc-chauffage-climatisation',
     'DC.source': 'https://climgo.fr',
     'DC.coverage': 'Saint-Aubin-De-Medoc, Gironde, France',
     'DC.rights': '© 2025 ClimGO. Tous droits réservés.',
@@ -93,7 +93,7 @@ export const metadata: Metadata = {
   },
   
   alternates: {
-    canonical: 'https://climgo.fr/saint-aubin-de-medoc-chauffage-climatisation',
+    canonical: 'https://climgo.fr/villes/saint-aubin-de-medoc-chauffage-climatisation',
   },
   
   verification: {

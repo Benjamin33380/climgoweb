@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Chauffage Climatisation Saint-Jean-D-Illac 33127 | ClimGO Expert Local',
     description: 'ClimGO, expert chauffage climatisation Saint-Jean-D-Illac. Installation, dépannage, entretien PAC. Artisan RGE certifié. Devis gratuit.',
-    url: 'https://climgo.fr/saint-jean-d-illac-chauffage-climatisation',
+    url: 'https://climgo.fr/villes/saint-jean-d-illac-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
     type: 'website',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     'DC.language': 'fr-FR',
     'DC.type': 'Service',
     'DC.format': 'text/html',
-    'DC.identifier': 'https://climgo.fr/saint-jean-d-illac-chauffage-climatisation',
+    'DC.identifier': 'https://climgo.fr/villes/saint-jean-d-illac-chauffage-climatisation',
     'DC.source': 'https://climgo.fr',
     'DC.coverage': 'Saint-Jean-D-Illac, Gironde, France',
     'DC.rights': '© 2025 ClimGO. Tous droits réservés.',
@@ -93,7 +93,7 @@ export const metadata: Metadata = {
   },
   
   alternates: {
-    canonical: 'https://climgo.fr/saint-jean-d-illac-chauffage-climatisation',
+    canonical: 'https://climgo.fr/villes/saint-jean-d-illac-chauffage-climatisation',
   },
   
   verification: {

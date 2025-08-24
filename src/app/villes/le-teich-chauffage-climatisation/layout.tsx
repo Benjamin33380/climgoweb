@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Chauffage Climatisation Le-Teich 33470 | ClimGO Expert Local',
     description: 'ClimGO, expert chauffage climatisation Le-Teich. Installation, dépannage, entretien PAC. Artisan RGE certifié. Devis gratuit.',
-    url: 'https://climgo.fr/le-teich-chauffage-climatisation',
+    url: 'https://climgo.fr/villes/le-teich-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
     type: 'website',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     'DC.language': 'fr-FR',
     'DC.type': 'Service',
     'DC.format': 'text/html',
-    'DC.identifier': 'https://climgo.fr/le-teich-chauffage-climatisation',
+    'DC.identifier': 'https://climgo.fr/villes/le-teich-chauffage-climatisation',
     'DC.source': 'https://climgo.fr',
     'DC.coverage': 'Le-Teich, Gironde, France',
     'DC.rights': '© 2025 ClimGO. Tous droits réservés.',
@@ -93,7 +93,7 @@ export const metadata: Metadata = {
   },
   
   alternates: {
-    canonical: 'https://climgo.fr/le-teich-chauffage-climatisation',
+    canonical: 'https://climgo.fr/villes/le-teich-chauffage-climatisation',
   },
   
   verification: {

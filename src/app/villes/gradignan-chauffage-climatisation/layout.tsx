@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Chauffage Climatisation Gradignan 33170 | ClimGO Expert Local',
     description: 'ClimGO, expert chauffage climatisation Gradignan. Installation, dépannage, entretien PAC. Artisan RGE certifié. Devis gratuit.',
-    url: 'https://www.climgo.fr/gradignan-chauffage-climatisation',
+    url: 'https://climgo.fr/villes/gradignan-chauffage-climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
     type: 'website',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     'DC.language': 'fr-FR',
     'DC.type': 'Service',
     'DC.format': 'text/html',
-    'DC.identifier': 'https://www.climgo.fr/gradignan-chauffage-climatisation',
+    'DC.identifier': 'https://climgo.fr/villes/gradignan-chauffage-climatisation',
     'DC.source': 'https://www.climgo.fr',
     'DC.coverage': 'Gradignan, Gironde, France',
     'DC.rights': '© 2025 ClimGO. Tous droits réservés.',
@@ -93,7 +93,7 @@ export const metadata: Metadata = {
   },
   
   alternates: {
-    canonical: 'https://www.climgo.fr/gradignan-chauffage-climatisation',
+    canonical: 'https://climgo.fr/villes/gradignan-chauffage-climatisation',
   },
   
   verification: {
