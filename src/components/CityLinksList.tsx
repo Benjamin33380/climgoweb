@@ -12,7 +12,7 @@ const CityLinksList = () => {
           {cities.map((city, index) => (
             <span key={city} className="flex items-center">
               <Link
-                href={`/villes/${city.toLowerCase().replace(/\s+/g, '-').replace(/[éèê]/g, 'e').replace(/[àâ]/g, 'a').replace(/[ôö]/g, 'o').replace(/[ùûü]/g, 'u').replace(/[ç]/g, 'c')}-chauffage-climatisation`}
+                href={`/villes/${city.toLowerCase().replace(/\s+/g, '-').replace(/[éèê]/g, 'e').replace(/[àâ]/g, 'a').replace(/[ôö]/g, 'o').replace(/[ùûü]/g, 'u').replace(/[ç]/g, 'c').replace(/'/g, "'")}-chauffage-climatisation`}
                 className="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors duration-200 whitespace-nowrap"
               >
                 {city}

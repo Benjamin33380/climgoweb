@@ -29,33 +29,33 @@ export default function ServicesPage() {
       <section className="relative min-h-screen pt-24 md:pt-0 flex items-center justify-center overflow-hidden bg-white dark:bg-black">
         <div className="absolute inset-0 bg-white dark:bg-black" />
         
-        {/* Floating Particles */}
+        {/* Floating Particles - Réduits en opacité pour mode light */}
         {/* Red particles */}
-        <div className="absolute w-3 h-3 bg-[#FF8C00] rounded-full top-10 left-10 animate-bounce" />
-        <div className="absolute w-2 h-2 bg-[#FF8C00] rounded-full top-1/3 left-1/2 animate-pulse" />
-        <div className="absolute w-4 h-4 bg-[#FF8C00] rounded-full bottom-1/3 right-20 animate-bounce" />
-        <div className="absolute w-2 h-2 bg-[#FF8C00] rounded-full top-[15%] left-[25%] animate-pulse" />
+        <div className="absolute w-3 h-3 bg-[#FF8C00] rounded-full top-10 left-10 animate-bounce opacity-10 dark:opacity-100" />
+        <div className="absolute w-2 h-2 bg-[#FF8C00] rounded-full top-1/3 left-1/2 animate-pulse opacity-10 dark:opacity-100" />
+        <div className="absolute w-4 h-4 bg-[#FF8C00] rounded-full bottom-1/3 right-20 animate-bounce opacity-10 dark:opacity-100" />
+        <div className="absolute w-2 h-2 bg-[#FF8C00] rounded-full top-[15%] left-[25%] animate-pulse opacity-10 dark:opacity-100" />
 
         {/* Blue particles */}
-        <div className="absolute w-3 h-3 bg-[#2563EB] rounded-full top-20 right-10 animate-bounce" />
-        <div className="absolute w-2 h-2 bg-[#2563EB] rounded-full bottom-10 left-1/3 animate-pulse" />
-        <div className="absolute w-4 h-4 bg-[#2563EB] rounded-full top-1/2 right-1/4 animate-bounce" />
-        <div className="absolute w-3 h-3 bg-[#2563EB] rounded-full bottom-[25%] left-[60%] animate-pulse" />
+        <div className="absolute w-3 h-3 bg-[#2563EB] rounded-full top-20 right-10 animate-bounce opacity-10 dark:opacity-100" />
+        <div className="absolute w-2 h-2 bg-[#2563EB] rounded-full bottom-10 left-1/3 animate-pulse opacity-10 dark:opacity-100" />
+        <div className="absolute w-4 h-4 bg-[#2563EB] rounded-full top-1/2 right-1/4 animate-bounce opacity-10 dark:opacity-100" />
+        <div className="absolute w-3 h-3 bg-[#2563EB] rounded-full bottom-[25%] left-[60%] animate-pulse opacity-10 dark:opacity-100" />
 
         {/* Orange particles */}
-        <div className="absolute w-2 h-2 bg-[#FF8C00] rounded-full top-[35%] left-[15%] animate-pulse" />
-        <div className="absolute w-3 h-3 bg-[#2563EB] rounded-full bottom-[40%] right-[30%] animate-bounce" />
-        <div className="absolute w-2 h-2 bg-[#FF8C00] rounded-full top-[70%] left-[40%] animate-pulse" />
-        <div className="absolute w-4 h-4 bg-[#2563EB] rounded-full top-[20%] right-[45%] animate-bounce" />
+        <div className="absolute w-2 h-2 bg-[#FF8C00] rounded-full top-[35%] left-[15%] animate-pulse opacity-10 dark:opacity-100" />
+        <div className="absolute w-3 h-3 bg-[#2563EB] rounded-full bottom-[40%] right-[30%] animate-bounce opacity-10 dark:opacity-100" />
+        <div className="absolute w-2 h-2 bg-[#FF8C00] rounded-full top-[70%] left-[40%] animate-pulse opacity-10 dark:opacity-100" />
+        <div className="absolute w-4 h-4 bg-[#2563EB] rounded-full top-[20%] right-[45%] animate-bounce opacity-10 dark:opacity-100" />
 
         {/* Blue particles */}
-        <div className="absolute w-3 h-3 bg-[#2563EB] rounded-full top-[45%] left-[70%] animate-bounce" />
-        <div className="absolute w-2 h-2 bg-[#FF8C00] rounded-full bottom-[15%] left-[20%] animate-pulse" />
-        <div className="absolute w-4 h-4 bg-[#2563EB] rounded-full top-[60%] right-[15%] animate-bounce" />
-        <div className="absolute w-2 h-2 bg-[#FF8C00] rounded-full bottom-[50%] left-[80%] animate-pulse" />
+        <div className="absolute w-3 h-3 bg-[#2563EB] rounded-full top-[45%] left-[70%] animate-bounce opacity-10 dark:opacity-100" />
+        <div className="absolute w-2 h-2 bg-[#FF8C00] rounded-full bottom-[15%] left-[20%] animate-pulse opacity-10 dark:opacity-100" />
+        <div className="absolute w-4 h-4 bg-[#2563EB] rounded-full top-[60%] right-[15%] animate-bounce opacity-10 dark:opacity-100" />
+        <div className="absolute w-2 h-2 bg-[#FF8C00] rounded-full bottom-[50%] left-[80%] animate-pulse opacity-10 dark:opacity-100" />
 
-        {/* Background gradient effects */}
-        <div className="absolute inset-0 opacity-20">
+        {/* Background gradient effects - Réduits en opacité pour mode light */}
+        <div className="absolute inset-0 opacity-5 dark:opacity-20">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#FF8C00] rounded-full filter blur-3xl animate-pulse" />
           <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-[#2563EB] rounded-full filter blur-3xl animate-pulse" style={{animationDelay: '2s'}} />
           <div className="absolute top-1/2 left-1/2 w-48 h-48 bg-[#FF8C00] rounded-full filter blur-3xl animate-pulse" style={{animationDelay: '4s'}} />

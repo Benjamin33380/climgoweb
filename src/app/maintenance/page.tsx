@@ -142,11 +142,11 @@ export default function MaintenancePage() {
   }, [currentIndex]);
 
   return (
-    <div className="min-h-screen bg-[#F8F9F4] dark:bg-black dark:bg-black text-[#03144A] dark:text-white dark:text-white">
+    <div className="min-h-screen bg-white dark:bg-black text-[#03144A] dark:text-white">
       
       {/* Hero Section */}
-      <section className="relative min-h-screen pt-24 md:pt-0 flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-[#F8F9F4] dark:bg-black" />
+      <section className="relative min-h-screen pt-24 md:pt-0 flex items-center justify-center overflow-hidden bg-white dark:bg-black">
+        <div className="absolute inset-0 bg-white dark:bg-black" />
         
         {/* Background effects */}
         <div className="absolute w-2 h-2 bg-[#03144a] dark:bg-white rounded-full top-10 left-10" style={{ animation: 'float 4s ease-in-out infinite' }} />
@@ -156,13 +156,13 @@ export default function MaintenancePage() {
         <div className="absolute w-2 h-2 bg-[#10B981] rounded-full bottom-10 left-1/3" style={{ animation: 'float 4s ease-in-out infinite' }} />
         <div className="absolute w-2 h-2 bg-[#10B981] rounded-full top-1/2 right-1/4" style={{ animation: 'float 4s ease-in-out infinite' }} />
 
-        <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 opacity-5 dark:opacity-20">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#10B981] rounded-full filter blur-3xl animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-[#F8F9F4] dark:bg-black rounded-full filter blur-3xl animate-pulse" style={{animationDelay: '2s'}} />
+          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-white dark:bg-black rounded-full filter blur-3xl animate-pulse" style={{animationDelay: '2s'}} />
         </div>
 
         <div className="relative z-10 text-center max-w-5xl mx-auto px-6">
-          <div className="inline-flex items-center px-6 py-3 rounded-full border border-[#03144A] dark:border-white/20 text-sm tracking-widest uppercase mb-8 text-[#03144A] dark:text-white bg-[#F8F9F4] dark:bg-black backdrop-blur-sm">
+          <div className="inline-flex items-center px-6 py-3 rounded-full border border-[#03144A] dark:border-white/20 text-sm tracking-widest uppercase mb-8 text-[#03144A] dark:text-white bg-white dark:bg-black backdrop-blur-sm">
             <div className="w-2 h-2 bg-[#10B981] rounded-full mr-3 animate-pulse" />
             Nos solutions de maintenance
           </div>

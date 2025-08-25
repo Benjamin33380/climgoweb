@@ -142,11 +142,11 @@ export default function ChauffagePage() {
   }, [currentIndex]);
 
   return (
-    <div className="min-h-screen bg-[#F8F9F4] dark:bg-black dark:bg-black text-[#03144A] dark:text-white dark:text-white">
+    <div className="min-h-screen bg-white dark:bg-black text-[#03144A] dark:text-white">
       
       {/* Hero Section */}
-      <section className="relative min-h-screen pt-24 md:pt-0 flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-[#F8F9F4] dark:bg-black dark:bg-black" />
+      <section className="relative min-h-screen pt-24 md:pt-0 flex items-center justify-center overflow-hidden bg-white dark:bg-black">
+        <div className="absolute inset-0 bg-white dark:bg-black" />
         
         {/* Background effects */}
         {/* Blue particles */}
@@ -164,9 +164,9 @@ export default function ChauffagePage() {
         <div className="absolute w-2 h-2 bg-[#FF8C00] rounded-full bottom-[20%] right-[15%]" style={{ animation: 'float 5s ease-in-out infinite' }} />
         <div className="absolute w-2 h-2 bg-[#03144a] dark:bg-white rounded-full top-[60%] left-[45%]" style={{ animation: 'float 7s ease-in-out infinite' }} />
 
-        <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 opacity-5 dark:opacity-20">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#FF8C00] rounded-full filter blur-3xl animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-[#F8F9F4] dark:bg-black rounded-full filter blur-3xl animate-pulse" style={{animationDelay: '2s'}} />
+          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-white dark:bg-black rounded-full filter blur-3xl animate-pulse" style={{animationDelay: '2s'}} />
         </div>
 
         <div className="relative z-10 text-center max-w-5xl mx-auto px-6">
