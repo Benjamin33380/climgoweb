@@ -15,7 +15,7 @@ export default function ChauffagePage() {
       id: 'pac-air-eau',
       title: "Pompe à chaleur air/eau",
       subtitle: "Performance & Économies",
-      image: "/PacAirEau.png",
+      image: "/machine/pacaireau.png",
       badge: "Jusqu'à -70% sur votre facture",
       features: [
         "Coefficient de performance exceptionnel",
@@ -47,7 +47,7 @@ export default function ChauffagePage() {
       id: 'plancher-chauffant',
       title: "Plancher chauffant",
       subtitle: "Confort Invisible",
-      image: "/PlancherChauffantAnime.webp",
+      image: "/machine/extraplat.webp",
       badge: "Luxe & Discrétion",
       features: [
         "Chaleur homogène optimale",
@@ -63,7 +63,7 @@ export default function ChauffagePage() {
       id: 'radiateurs',
       title: "Radiateurs nouvelle génération",
       subtitle: "Design & Performance",
-      image: "/Radiateur.png",
+      image: "/machine/rad.webp",
       badge: "Montée en température rapide",
       features: [
         "Inertie intelligente avancée",

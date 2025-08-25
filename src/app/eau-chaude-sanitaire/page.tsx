@@ -15,7 +15,7 @@ export default function EauChaudeSanitairePage() {
       id: 'chauffe-eau-thermodynamique',
       title: "Chauffe-eau Thermodynamique",
       subtitle: "Économique & Écoresponsable",
-      image: "/AnimeThermodynamy.webp",
+      image: "/machine/thermo.webp",
       badge: "Jusqu'à -70% sur votre facture",
       features: [
         "Jusqu'à 70% d'économie d'énergie",
@@ -31,7 +31,7 @@ export default function EauChaudeSanitairePage() {
       id: 'chauffe-eau-electrique',
       title: "Chauffe-eau électrique",
       subtitle: "Simple & Fiable",
-      image: "/AnimeChauffeEauElec.webp",
+      image: "/machine/cumulus.webp",
       badge: "Installation rapide",
       features: [
         "Eau chaude disponible à toute heure",
@@ -47,7 +47,7 @@ export default function EauChaudeSanitairePage() {
       id: 'chauffe-eau-extra-plat',
       title: "Chauffe-eau extra plat",
       subtitle: "Confort & Gain de Place",
-      image: "/AnimeChauffeEauExtraPet.webp",
+      image: "/machine/extraplat.webp",
       badge: "Format compact",
       features: [
         "Format compact, idéal petits espaces",

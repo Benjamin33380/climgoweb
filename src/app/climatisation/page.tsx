@@ -15,7 +15,7 @@ export default function ClimatisationPage() {
       id: 'climatisation-murale',
       title: "Climatisation murale",
       subtitle: "Confort & Discrétion",
-      image: "/ClimatisationMurale.png",
+      image: "/machine/murale.webp",
       badge: "Installation rapide",
       features: [
         "Design ultra-moderne",
@@ -31,7 +31,7 @@ export default function ClimatisationPage() {
       id: 'climatisation-gainable',
       title: "Climatisation gainable",
       subtitle: "Invisible & Performante",
-      image: "/ClimatisationGainable.png",
+      image: "/machine/gainable.webp",
       badge: "Installation discrète",
       features: [
         "Intégration dans les faux-plafonds",
@@ -47,7 +47,7 @@ export default function ClimatisationPage() {
       id: 'climatisation-cassette',
       title: "Climatisation cassette",
       subtitle: "Performance Commerciale",
-      image: "/ClimatisationCassette.png",
+      image: "/machine/cassette.webp",
       badge: "Idéal commerce & bureaux",
       features: [
         "Puissance adaptée aux grands espaces",
@@ -63,7 +63,7 @@ export default function ClimatisationPage() {
       id: 'climatisation-console',
       title: "Climatisation console",
       subtitle: "Flexibilité & Mobilité",
-      image: "/ClimatisationConsole.png",
+      image: "/machine/console.webp",
       badge: "Installation au sol",
       features: [
         "Installation sans travaux",

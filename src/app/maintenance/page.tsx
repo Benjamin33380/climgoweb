@@ -15,7 +15,7 @@ export default function MaintenancePage() {
       id: 'maintenance-climatisation',
       title: "Maintenance climatisation",
       subtitle: "Entretien Professionnel",
-      image: "/MaintenanceClim.png",
+      image: "/machine/maintenance.png",
       badge: "Contrat annuel",
       features: [
         "Vérification complète du système",
@@ -47,7 +47,7 @@ export default function MaintenancePage() {
       id: 'maintenance-eau-chaude',
       title: "Maintenance Thermodynamique",
       subtitle: "Fiabilité & Durabilité",
-      image: "/MaintenanceEauChaude.png",
+      image: "/machine/thermo.webp",
       badge: "Préventif",
       features: [
         "Détartrage et nettoyage",
@@ -63,7 +63,7 @@ export default function MaintenancePage() {
       id: 'maintenance-pompe-chaleur',
       title: "Maintenance pompe à chaleur",
       subtitle: "Expertise Technique",
-      image: "/MaintenancePAC.png",
+      image: "/machine/pacaireau.png",
       badge: "Obligatoire",
       features: [
         "Contrôle du fluide frigorigène",
