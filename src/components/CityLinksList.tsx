@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 const cities = [
-  'Andernos-les-Bains', 'Arcachon', 'Arès', 'Audenge', 'Bègles', 'Belin-Béliet', 'Biganos', 'Biscarrosse', 'Bordeaux', 'Bouliac', 'Bruges', 'Cadaujac', 'Canéjan', 'Cenon', 'Cestas', 'Eysines', 'Floirac', 'Gradignan', 'Gujan-Mestras', 'La Brède', 'La Teste-de-Buch', 'Lacanau', 'Lanton', 'Le Barp', 'Le Bouscat', 'Le Haillan', 'Le Teich', 'Lège Cap Ferret', 'Léognan', 'Marcheprime', 'Martignas-sur-Jalle', 'Martillac', 'Mérignac', 'Mimizan', 'Mios', 'Parentis-en-Born', 'Pessac', 'Saint-Aubin-de-Médoc', "Saint-Jean-d'Illac", 'Saint-Loubès', "Saint-Médard-en-Jalles", 'Saint-Selve', 'Salles', 'Sanguinet', 'Saucats', 'Talence', "Villenave-d'Ornon"
+  'Andernos-les-Bains', 'Arcachon', 'Arès', 'Audenge', 'Bègles', 'Belin-Béliet', 'Biganos', 'Biscarrosse', 'Bordeaux', 'Bouliac', 'Bruges', 'Cadaujac', 'Canéjan', 'Cenon', 'Cestas', 'Eysines', 'Floirac', 'Gradignan', 'Gujan-Mestras', 'La Brède', 'La Teste-de-Buch', 'Lacanau', 'Lanton', 'Le Barp', 'Le Bouscat', 'Le Haillan', 'Le Teich', 'Lège Cap Ferret', 'Léognan', 'Marcheprime', 'Martignas-sur-Jalle', 'Martillac', 'Mérignac', 'Mimizan', 'Mios', 'Parentis', 'Pessac', 'Saint-Aubin-de-Médoc', "Saint-Jean-d'Illac", 'Saint-Loubès', "Saint-Médard-en-Jalles", 'Saint-Selve', 'Salles', 'Sanguinet', 'Saucats', 'Talence', "Villenave-d'Ornon"
 ];
 
 const CityLinksList = () => {
