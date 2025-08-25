@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Arcachon COMPLETE
 export const metadata: Metadata = {
@@ -112,7 +111,7 @@ export default function ArcachonLayout({
 }) {
   return (
     <>
-      <JsonLd type="city" city="Arcachon" postalCode="33120" />
+      
       {children}
     </>
   );

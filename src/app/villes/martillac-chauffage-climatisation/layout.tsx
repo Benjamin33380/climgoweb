@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Martillac COMPLETE
 export const metadata: Metadata = {
@@ -112,7 +111,7 @@ export default function MartillacLayout({
 }) {
   return (
     <>
-      <JsonLd type="city" city="Martillac" postalCode="33650" />
+      
       {children}
     </>
   );

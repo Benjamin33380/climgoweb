@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: "Eau Chaude Sanitaire | Installation Chauffe-eau Gironde",
@@ -59,7 +58,7 @@ export default function EauChaudeSanitaireLayout({
 }) {
   return (
     <>
-      <JsonLd type="service" service="eau-chaude-sanitaire" />
+      
       {children}
     </>
   );

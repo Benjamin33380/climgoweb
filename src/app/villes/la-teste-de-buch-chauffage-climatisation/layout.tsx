@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées La Teste-de-Buch COMPLETE
 export const metadata: Metadata = {
@@ -112,7 +111,7 @@ export default function LaTestedeBuchLayout({
 }) {
   return (
     <>
-      <JsonLd type="city" city="La Teste-de-Buch" postalCode="33260" />
+      
       {children}
     </>
   );

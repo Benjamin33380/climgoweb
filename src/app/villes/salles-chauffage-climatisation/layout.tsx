@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Salles COMPLETE
 export const metadata: Metadata = {
@@ -112,7 +111,7 @@ export default function SallesLayout({
 }) {
   return (
     <>
-      <JsonLd type="city" city="Salles" postalCode="33770" />
+      
       {children}
     </>
   );

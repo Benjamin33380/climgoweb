@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Bordeaux COMPLETE
 export const metadata: Metadata = {
@@ -112,7 +111,7 @@ export default function BordeauxLayout({
 }) {
   return (
     <>
-      <JsonLd type="city" city="Bordeaux" postalCode="33000" />
+      
       {children}
     </>
   );

@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Canejan COMPLETE
 export const metadata: Metadata = {
@@ -112,7 +111,7 @@ export default function CanejanLayout({
 }) {
   return (
     <>
-      <JsonLd type="city" city="Canejan" postalCode="33610" />
+      
       {children}
     </>
   );

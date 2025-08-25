@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Saint-Médard-en-Jalles COMPLETE
 export const metadata: Metadata = {
@@ -112,7 +111,7 @@ export default function SaintMedardEnJallesLayout({
 }) {
   return (
     <>
-      <JsonLd type="city" city="Saint-Médard-en-Jalles" postalCode="33160" />
+      
       {children}
     </>
   );

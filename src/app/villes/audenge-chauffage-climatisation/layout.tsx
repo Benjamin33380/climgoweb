@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Audenge COMPLETE
 export const metadata: Metadata = {
@@ -112,7 +111,7 @@ export default function AudengeLayout({
 }) {
   return (
     <>
-      <JsonLd type="city" city="Audenge" postalCode="33980" />
+      
       {children}
     </>
   );

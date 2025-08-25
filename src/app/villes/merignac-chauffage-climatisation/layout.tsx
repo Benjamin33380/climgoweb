@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Merignac COMPLETE
 export const metadata: Metadata = {
@@ -112,7 +111,7 @@ export default function MerignacLayout({
 }) {
   return (
     <>
-      <JsonLd type="city" city="Merignac" postalCode="33700" />
+      
       {children}
     </>
   );

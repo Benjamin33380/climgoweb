@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées La Brede COMPLETE
 export const metadata: Metadata = {
@@ -112,7 +111,7 @@ export default function LaBredeLayout({
 }) {
   return (
     <>
-      <JsonLd type="city" city="La Brede" postalCode="33650" />
+      
       {children}
     </>
   );

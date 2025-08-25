@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Le Barp COMPLETE
 export const metadata: Metadata = {
@@ -112,7 +111,7 @@ export default function LeBarpLayout({
 }) {
   return (
     <>
-      <JsonLd type="city" city="Le Barp" postalCode="33114" />
+      
       {children}
     </>
   );

@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Andernos-les-Bains COMPLETE
 export const metadata: Metadata = {
@@ -112,7 +111,7 @@ export default function AndernoslesBainsLayout({
 }) {
   return (
     <>
-      <JsonLd type="city" city="Andernos-les-Bains" postalCode="33510" />
+      
       {children}
     </>
   );

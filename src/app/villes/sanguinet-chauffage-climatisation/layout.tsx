@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Sanguinet COMPLETE
 export const metadata: Metadata = {
@@ -112,7 +111,7 @@ export default function SanguinetLayout({
 }) {
   return (
     <>
-      <JsonLd type="city" city="Sanguinet" postalCode="40460" />
+      
       {children}
     </>
   );

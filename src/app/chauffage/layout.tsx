@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Chauffage Gironde | Installation PAC, Plancher Chauffant',
@@ -54,7 +53,7 @@ export default function ChauffageLayout({
 }) {
   return (
     <>
-      <JsonLd type="service" service="chauffage" />
+      
       {children}
     </>
   );

@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Floirac COMPLETE
 export const metadata: Metadata = {
@@ -112,7 +111,7 @@ export default function FloiracLayout({
 }) {
   return (
     <>
-      <JsonLd type="city" city="Floirac" postalCode="33270" />
+      
       {children}
     </>
   );

@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Le Haillan COMPLETE
 export const metadata: Metadata = {
@@ -112,7 +111,7 @@ export default function LeHaillanLayout({
 }) {
   return (
     <>
-      <JsonLd type="city" city="Le Haillan" postalCode="33185" />
+      
       {children}
     </>
   );

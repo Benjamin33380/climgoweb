@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Gradignan COMPLETE
 export const metadata: Metadata = {
@@ -112,7 +111,7 @@ export default function GradignanLayout({
 }) {
   return (
     <>
-      <JsonLd type="city" city="Gradignan" postalCode="33170" />
+      
       {children}
     </>
   );

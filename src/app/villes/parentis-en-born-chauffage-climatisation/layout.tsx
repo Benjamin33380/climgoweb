@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Parentis-en-Born COMPLETE
 export const metadata: Metadata = {
@@ -112,7 +111,7 @@ export default function ParentisenBornLayout({
 }) {
   return (
     <>
-      <JsonLd type="city" city="Parentis-en-Born" postalCode="40160" />
+      
       {children}
     </>
   );

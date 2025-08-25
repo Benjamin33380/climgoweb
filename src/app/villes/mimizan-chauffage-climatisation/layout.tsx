@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Mimizan COMPLETE
 export const metadata: Metadata = {
@@ -112,7 +111,7 @@ export default function MimizanLayout({
 }) {
   return (
     <>
-      <JsonLd type="city" city="Mimizan" postalCode="40200" />
+      
       {children}
     </>
   );

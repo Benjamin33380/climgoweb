@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Lacanau COMPLETE
 export const metadata: Metadata = {
@@ -112,7 +111,7 @@ export default function LacanauLayout({
 }) {
   return (
     <>
-      <JsonLd type="city" city="Lacanau" postalCode="33680" />
+      
       {children}
     </>
   );

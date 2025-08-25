@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Zones d\'Intervention ClimGO | Chauffage Climatisation Gironde',
@@ -54,7 +53,7 @@ export default function ZonesInterventionsLayout({
 }) {
   return (
     <>
-      <JsonLd type="business" />
+      
       {children}
     </>
   );

@@ -15,7 +15,6 @@ const zones = [
 
 const entreprise = [
   { title: "À propos", href: "/a-propos" },
-  { title: "Blog", href: "/blog" },
   { title: "Politique de confidentialité", href: "/politique-confidentialite" },
   { title: "Mentions légales", href: "/mentions-legales" },
 ];
@@ -202,11 +201,7 @@ export default function Footer() {
                     Nos services
                   </Link>
                 </li>
-                <li>
-                  <Link href="/blog" className="text-sm hover:text-primary transition-colors">
-                    Blog & Conseils
-                  </Link>
-                </li>
+
                 <li>
                   <Link href="/contact" className="text-sm hover:text-primary transition-colors">
                     Contact

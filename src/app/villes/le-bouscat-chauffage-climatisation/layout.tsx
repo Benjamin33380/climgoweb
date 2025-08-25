@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Le Bouscat COMPLETE
 export const metadata: Metadata = {
@@ -112,7 +111,7 @@ export default function LeBouscatLayout({
 }) {
   return (
     <>
-      <JsonLd type="city" city="Le Bouscat" postalCode="33110" />
+      
       {children}
     </>
   );

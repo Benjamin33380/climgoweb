@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Mentions Légales | ClimGO',
@@ -54,7 +53,7 @@ export default function MentionsLegalesLayout({
 }) {
   return (
     <>
-      <JsonLd type="business" />
+      
       {children}
     </>
   );

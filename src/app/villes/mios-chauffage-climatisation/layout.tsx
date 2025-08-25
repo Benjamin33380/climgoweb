@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Mios COMPLETE
 export const metadata: Metadata = {
@@ -112,7 +111,7 @@ export default function MiosLayout({
 }) {
   return (
     <>
-      <JsonLd type="city" city="Mios" postalCode="33380" />
+      
       {children}
     </>
   );

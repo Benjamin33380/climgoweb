@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import CityLinksList from '@/components/CityLinksList';
 import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 
 export default function VillenaveDornon() {
@@ -807,17 +808,17 @@ export default function VillenaveDornon() {
         placeId={process.env.NEXT_PUBLIC_GOOGLE_PLACE_ID || "ClimGO-default-place-id"} 
       />
 
-      {/* Section FAQ - Style Chat Moderne */}
-      <FAQChat title="Questions Fréquentes"
-        subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Villenave-d'Ornon"
-        faqs={getCityFAQSet('villenave-d-ornon')}
-        initials={getCityInitials('villenave-d-ornon')}
-        ctaTitle="Une autre question ?"
-        ctaSubtitle="N'hésitez pas à nous contacter directement !"
-        phoneNumber="0123456789"
-        email="contact@climgo.fr" citySlug="villenave-d-ornon" />
 
 
+      {/* Section FAQ - Style Chat Moderne avec questions variées */}
+      <FAQChat
+
+
+
+      />
+
+      {/* Section Liste des Villes - Juste au-dessus de la carte */}
+      <CityLinksList />
 
       {/* Section Carte en pleine largeur */}
               <section className="relative w-full overflow-hidden bg-white dark:bg-black">

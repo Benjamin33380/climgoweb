@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Cestas COMPLETE
 export const metadata: Metadata = {
@@ -112,7 +111,7 @@ export default function CestasLayout({
 }) {
   return (
     <>
-      <JsonLd type="city" city="Cestas" postalCode="33610" />
+      
       {children}
     </>
   );

@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Saint-Jean-d\'Illac COMPLETE
 export const metadata: Metadata = {
@@ -112,7 +111,7 @@ export default function SaintJeandIllacLayout({
 }) {
   return (
     <>
-      <JsonLd type="city" city="Saint-Jean-d\'Illac" postalCode="33127" />
+      
       {children}
     </>
   );

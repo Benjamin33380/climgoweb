@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Blog ClimGO | Conseils Chauffage Climatisation Gironde',
@@ -54,7 +53,7 @@ export default function BlogLayout({
 }) {
   return (
     <>
-      <JsonLd type="business" />
+      
       {children}
     </>
   );

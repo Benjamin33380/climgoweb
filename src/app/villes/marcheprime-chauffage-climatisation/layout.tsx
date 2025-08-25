@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Marcheprime COMPLETE
 export const metadata: Metadata = {
@@ -112,7 +111,7 @@ export default function MarcheprimeLayout({
 }) {
   return (
     <>
-      <JsonLd type="city" city="Marcheprime" postalCode="33380" />
+      
       {children}
     </>
   );

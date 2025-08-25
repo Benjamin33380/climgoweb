@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Climatisation Gironde | Installation Climatiseur PAC Air/Air',
@@ -54,7 +53,7 @@ export default function ClimatisationLayout({
 }) {
   return (
     <>
-      <JsonLd type="service" service="climatisation" />
+      
       {children}
     </>
   );

@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Politique de Confidentialité | ClimGO',
@@ -54,7 +53,7 @@ export default function PolitiqueConfidentialiteLayout({
 }) {
   return (
     <>
-      <JsonLd type="business" />
+      
       {children}
     </>
   );

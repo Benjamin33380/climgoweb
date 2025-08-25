@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Saint-Loubes COMPLETE
 export const metadata: Metadata = {
@@ -112,7 +111,7 @@ export default function SaintLoubesLayout({
 }) {
   return (
     <>
-      <JsonLd type="city" city="Saint-Loubes" postalCode="33450" />
+      
       {children}
     </>
   );

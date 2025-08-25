@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Eysines COMPLETE
 export const metadata: Metadata = {
@@ -112,7 +111,7 @@ export default function EysinesLayout({
 }) {
   return (
     <>
-      <JsonLd type="city" city="Eysines" postalCode="33320" />
+      
       {children}
     </>
   );

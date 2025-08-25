@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Saucats COMPLETE
 export const metadata: Metadata = {
@@ -112,7 +111,7 @@ export default function SaucatsLayout({
 }) {
   return (
     <>
-      <JsonLd type="city" city="Saucats" postalCode="33650" />
+      
       {children}
     </>
   );

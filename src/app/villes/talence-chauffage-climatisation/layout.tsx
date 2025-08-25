@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Talence COMPLETE
 export const metadata: Metadata = {
@@ -112,7 +111,7 @@ export default function TalenceLayout({
 }) {
   return (
     <>
-      <JsonLd type="city" city="Talence" postalCode="33400" />
+      
       {children}
     </>
   );

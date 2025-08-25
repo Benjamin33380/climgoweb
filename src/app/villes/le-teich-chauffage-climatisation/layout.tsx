@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Le Teich COMPLETE
 export const metadata: Metadata = {
@@ -112,7 +111,7 @@ export default function LeTeichLayout({
 }) {
   return (
     <>
-      <JsonLd type="city" city="Le Teich" postalCode="33470" />
+      
       {children}
     </>
   );

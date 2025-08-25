@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Leognan COMPLETE
 export const metadata: Metadata = {
@@ -112,7 +111,7 @@ export default function LeognanLayout({
 }) {
   return (
     <>
-      <JsonLd type="city" city="Leognan" postalCode="33850" />
+      
       {children}
     </>
   );

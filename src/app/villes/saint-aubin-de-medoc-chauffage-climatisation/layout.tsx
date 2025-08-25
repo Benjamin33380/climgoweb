@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Saint-Aubin-de-Medoc COMPLETE
 export const metadata: Metadata = {
@@ -112,7 +111,7 @@ export default function SaintAubindeMedocLayout({
 }) {
   return (
     <>
-      <JsonLd type="city" city="Saint-Aubin-de-Medoc" postalCode="33160" />
+      
       {children}
     </>
   );

@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: "Contact ClimGO | Devis Gratuit Chauffage Climatisation",
@@ -59,7 +58,7 @@ export default function ContactLayout({
 }) {
   return (
     <>
-      <JsonLd type="business" />
+      
       {children}
     </>
   );

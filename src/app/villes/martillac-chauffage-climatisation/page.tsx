@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import CityLinksList from '@/components/CityLinksList';
 import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 
 export default function Martillac() {
@@ -797,14 +798,12 @@ export default function Martillac() {
       />
 
       {/* Section FAQ - Style Chat Moderne avec questions variées */}
-      <FAQChat title="Questions Fréquentes"
-        subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Martillac"
-        faqs={getCityFAQSet('martillac')}
-        initials={getCityInitials('martillac')}
-        ctaTitle="Une autre question ?"
-        ctaSubtitle="N'hésitez pas à nous contacter directement !"
-        phoneNumber="0123456789"
-        email="contact@climgo.fr" citySlug="martillac" />
+      <FAQChat
+
+      />
+
+      {/* Section Liste des Villes - Juste au-dessus de la carte */}
+      <CityLinksList />
 
       {/* Section Carte en pleine largeur */}
       <section className="relative w-full overflow-hidden bg-white dark:bg-black">

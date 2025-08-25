@@ -8,6 +8,7 @@ import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
+import CityLinksList from '@/components/CityLinksList';
 import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 // Composants SEO supprimés
 
@@ -806,8 +807,6 @@ export default function Bordeaux() {
         placeId={process.env.NEXT_PUBLIC_GOOGLE_PLACE_ID || "ClimGO-default-place-id"} 
       />
 
-
-
       {/* Section FAQ - Style Chat Moderne avec questions variées */}
       <FAQChat title="Questions Fréquentes"
         subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Bordeaux"
@@ -818,9 +817,8 @@ export default function Bordeaux() {
         phoneNumber="0123456789"
         email="contact@climgo.fr" citySlug="bordeaux" />
 
-
-
-
+      {/* Section Liste des Villes - Juste au-dessus de la carte */}
+      <CityLinksList />
 
       {/* Section Carte en pleine largeur */}
               <section className="relative w-full overflow-hidden bg-white dark:bg-black">

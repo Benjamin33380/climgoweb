@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Villenave-d\'Ornon COMPLETE
 export const metadata: Metadata = {
@@ -112,7 +111,7 @@ export default function VillenavedOrnonLayout({
 }) {
   return (
     <>
-      <JsonLd type="city" city="Villenave-d\'Ornon" postalCode="33140" />
+      
       {children}
     </>
   );

@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Cenon COMPLETE
 export const metadata: Metadata = {
@@ -112,7 +111,7 @@ export default function CenonLayout({
 }) {
   return (
     <>
-      <JsonLd type="city" city="Cenon" postalCode="33150" />
+      
       {children}
     </>
   );

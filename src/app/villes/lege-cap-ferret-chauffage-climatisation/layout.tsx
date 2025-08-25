@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Lege-Cap-Ferret COMPLETE
 export const metadata: Metadata = {
@@ -112,7 +111,7 @@ export default function LegeCapFerretLayout({
 }) {
   return (
     <>
-      <JsonLd type="city" city="Lege-Cap-Ferret" postalCode="33950" />
+      
       {children}
     </>
   );

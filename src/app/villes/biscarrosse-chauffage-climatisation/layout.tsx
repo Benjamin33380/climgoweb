@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Biscarrosse COMPLETE
 export const metadata: Metadata = {
@@ -112,7 +111,7 @@ export default function BiscarrosseLayout({
 }) {
   return (
     <>
-      <JsonLd type="city" city="Biscarrosse" postalCode="40600" />
+      
       {children}
     </>
   );

@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Martignas-sur-Jalle COMPLETE
 export const metadata: Metadata = {
@@ -112,7 +111,7 @@ export default function MartignassurJalleLayout({
 }) {
   return (
     <>
-      <JsonLd type="city" city="Martignas-sur-Jalle" postalCode="33127" />
+      
       {children}
     </>
   );

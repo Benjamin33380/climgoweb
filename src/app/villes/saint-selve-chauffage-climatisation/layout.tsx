@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Saint-Selve COMPLETE
 export const metadata: Metadata = {
@@ -112,7 +111,7 @@ export default function SaintSelveLayout({
 }) {
   return (
     <>
-      <JsonLd type="city" city="Saint-Selve" postalCode="33650" />
+      
       {children}
     </>
   );

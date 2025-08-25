@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Pessac COMPLETE
 export const metadata: Metadata = {
@@ -112,7 +111,7 @@ export default function PessacLayout({
 }) {
   return (
     <>
-      <JsonLd type="city" city="Pessac" postalCode="33600" />
+      
       {children}
     </>
   );

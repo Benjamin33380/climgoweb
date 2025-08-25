@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
 
 // Métadonnées ultra-optimisées Begles COMPLETE
 export const metadata: Metadata = {
@@ -112,7 +111,7 @@ export default function BeglesLayout({
 }) {
   return (
     <>
-      <JsonLd type="city" city="Begles" postalCode="33130" />
+      
       {children}
     </>
   );
