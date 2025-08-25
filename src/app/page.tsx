@@ -52,7 +52,7 @@ export default function HomePage() {
       { name: 'Salles', url: '/villes/salles-chauffage-climatisation' },
       { name: 'Belin-Béliet', url: '/villes/belin-beliet-chauffage-climatisation' },
       { name: 'Sanguinet', url: '/villes/sanguinet-chauffage-climatisation' },
-              { name: 'Parentis-en-Born', url: '/villes/parentis-en-born-chauffage-climatisation' },
+              { name: 'Parentis-en-Born', url: '/villes/parentis-chauffage-climatisation' },
       { name: 'Biscarrosse', url: '/villes/biscarrosse-chauffage-climatisation' },
       { name: 'Mimizan', url: '/villes/mimizan-chauffage-climatisation' },
       { name: 'Canéjan', url: '/villes/canejan-chauffage-climatisation' },

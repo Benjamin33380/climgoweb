@@ -35,7 +35,7 @@ export default function Lanton() {
       { name: 'Salles', url: '/salles-chauffage-climatisation' },
       { name: 'Belin-Béliet', url: '/belin-beliet-chauffage-climatisation' },
       { name: 'Sanguinet', url: '/sanguinet-chauffage-climatisation' },
-      { name: 'Parentis-en-Born', url: '/villes/parentis-en-born-chauffage-climatisation' },
+      { name: 'Parentis-en-Born', url: '/villes/parentis-chauffage-climatisation' },
       { name: 'Biscarrosse', url: '/biscarrosse-chauffage-climatisation' },
       { name: 'Mimizan', url: '/mimizan-chauffage-climatisation' },
       { name: 'Canéjan', url: '/canejan-chauffage-climatisation' },
