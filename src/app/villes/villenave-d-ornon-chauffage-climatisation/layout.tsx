@@ -2,106 +2,43 @@ import { Metadata } from 'next';
 
 // Métadonnées ultra-optimisées Villenave-D-Ornon COMPLETE
 export const metadata: Metadata = {
-  title: 'Chauffage Climatisation Villenave-D-Ornon 33140 | ClimGO Expert Local',
-  description: 'Expert chauffage climatisation Villenave-D-Ornon 33140. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié. Devis gratuit sous 24h.',
-  
-  keywords: 'climatisation gironde, chauffage gironde, pompe à chaleur gironde, chauffagiste bordeaux, installateur climatisation, artisan RGE, installation PAC air eau, entretien climatisation, dépannage chauffage, chaudière gaz condensation, plancher chauffant, radiateurs électriques, maintenance pompe à chaleur, réparation climatisation, devis gratuit, intervention urgence, certificat RGE, MaPrimeRénov, aide financière chauffage, prime CEE, crédit impôt, économie énergie, rénovation énergétique, audit énergétique, chauffage villenave-d-ornon, climatisation villenave-d-ornon, chauffagiste villenave-d-ornon, pompe à chaleur villenave-d-ornon, installation PAC villenave-d-ornon, dépannage chauffage villenave-d-ornon, entretien climatisation villenave-d-ornon, artisan RGE villenave-d-ornon, chaudière villenave-d-ornon, maintenance villenave-d-ornon, expert chauffage 33140, climatisation 33140, chauffagiste 33140, devis gratuit villenave-d-ornon, intervention urgence villenave-d-ornon, spécialiste CVC villenave-d-ornon, entreprise chauffage villenave-d-ornon, installateur agréé villenave-d-ornon, technicien qualifié villenave-d-ornon, service après-vente villenave-d-ornon',
-  
-  // Open Graph optimisé COMPLET
+  title: "Chauffage Climatisation Villenave-d'Ornon | Expert ClimGO",
+  description: "Expert chauffage et climatisation à Villenave-d'Ornon (33140). ClimGO, artisan RGE certifié. Installation PAC, maintenance, dépannage. Devis gratuit.",
+  keywords: [
+    "chauffage Villenave-d'Ornon",
+    "climatisation Villenave-d'Ornon",
+    "installation PAC 33140",
+    "artisan RGE Villenave-d'Ornon",
+    "maintenance chauffage",
+    "dépannage climatisation",
+  ],
   openGraph: {
-    title: 'Chauffage Climatisation Villenave-D-Ornon 33140 | ClimGO Expert Local',
-    description: 'ClimGO, expert chauffage climatisation Villenave-D-Ornon. Installation, dépannage, entretien PAC. Artisan RGE certifié. Devis gratuit.',
-    url: 'https://www.climgo.fr/villes/villenave-d-ornon-chauffage-climatisation',
-    siteName: 'ClimGO - Expert Chauffage Climatisation',
-    locale: 'fr_FR',
-    type: 'website',
-    images: [{
-      url: 'https://www.climgo.fr/images/og-villenave-d-ornon-chauffage-climatisation.jpg',
-      width: 1200,
-      height: 630,
-      alt: 'Chauffage climatisation Villenave-D-Ornon - ClimGO',
-    }],
+    title: "Chauffage Climatisation Villenave-d'Ornon | Expert ClimGO",
+    description: "Expert chauffage et climatisation à Villenave-d'Ornon (33140). ClimGO, artisan RGE certifié. Installation PAC, maintenance, dépannage.",
+    url: "https://www.climgo.fr/villes/villenave-d-ornon-chauffage-climatisation",
+    siteName: "ClimGO",
+    locale: "fr_FR",
+    type: "website",
+    images: [
+      {
+        url: "/img/climdame.png",
+        width: 1200,
+        height: 630,
+        alt: "ClimGO - Chauffage Climatisation Villenave-d'Ornon",
+      },
+    ],
   },
-  
-  // Twitter Cards COMPLET
   twitter: {
-    card: 'summary_large_image',
-    site: '@climgo_fr',
-    creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Villenave-D-Ornon 33140 | ClimGO Expert Local',
-    description: 'Expert chauffage climatisation Villenave-D-Ornon. Installation PAC, dépannage urgent. Artisan RGE certifié.',
-    images: ['https://www.climgo.fr/images/twitter-villenave-d-ornon-chauffage-climatisation.jpg'],
+    card: "summary_large_image",
+    site: "@climgo_fr",
+    creator: "@climgo_fr",
+    title: "Chauffage Climatisation Villenave-d'Ornon | Expert ClimGO",
+    description: "Expert chauffage et climatisation à Villenave-d'Ornon (33140). ClimGO, artisan RGE certifié. Installation PAC, maintenance, dépannage.",
+    images: ["/img/climdame.png"],
   },
-  
-  // Métadonnées avancées COMPLÈTES
-  other: {
-    // Géolocalisation précise
-    'geo.region': 'FR-33',
-    'geo.placename': 'Villenave-D-Ornon',
-    'geo.position': '44.7776;-0.5799',
-    'ICBM': '44.7776, -0.5799',
-    'geo.country': 'France',
-    'geo.state': 'Nouvelle-Aquitaine',
-    
-    // Dublin Core COMPLET
-    'DC.title': 'Chauffage Climatisation Villenave-D-Ornon 33140 | ClimGO Expert Local',
-    'DC.description': 'Expert chauffage climatisation Villenave-D-Ornon 33140. Installation PAC, dépannage urgent, entretien. Artisan RGE certifié.',
-    'DC.creator': 'ClimGO',
-    'DC.publisher': 'ClimGO',
-    'DC.language': 'fr-FR',
-    'DC.type': 'Service',
-    'DC.format': 'text/html',
-    'DC.identifier': 'https://www.climgo.fr/villes/villenave-d-ornon-chauffage-climatisation',
-    'DC.source': 'https://www.climgo.fr',
-    'DC.coverage': 'Villenave-D-Ornon, Gironde, France',
-    'DC.rights': '© 2025 ClimGO. Tous droits réservés.',
-    
-    // Données business locales COMPLÈTES
-    'business.contact_data.locality': 'Villenave-D-Ornon',
-    'business.contact_data.postal_code': '33140',
-    'business.contact_data.phone_number': '+33766460008',
-    'business.contact_data.website': 'https://www.climgo.fr',
-    'business.contact_data.email': 'contact@climgo.fr',
-    
-    // Signaux SEO local AVANCÉS
-    'rating': '4.8',
-    'priceRange': '€€',
-    'audience': 'Particuliers et Professionnels',
-    'category': 'Chauffage, Climatisation, Pompe à chaleur',
-    'serviceType': 'Installation, Dépannage, Entretien',
-    
-    // Référencement avancé
-    'revisit-after': '7 days',
-    'robots': 'index,follow,noimageindex,max-video-preview:-1,max-image-preview:large,max-snippet:-1',
-    'googlebot': 'index,follow,max-video-preview:-1,max-image-preview:large,max-snippet:-1',
-    
-    // Vérifications
-    'google-site-verification': 'Ljs9Q3ve_Z_ldbzUTagcBPPmmQ_LTJER2pD3j7Woj1g',
-    'bing-site-verification': 'VERIFICATION_CODE_TO_ADD'
-  },
-  
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-  
   alternates: {
-    canonical: 'https://www.climgo.fr/villes/villenave-d-ornon-chauffage-climatisation',
+    canonical: "https://www.climgo.fr/villes/villenave-d-ornon-chauffage-climatisation",
   },
-  
-  verification: {
-    google: 'VERIFICATION_CODE_TO_ADD',
-    other: {
-      bing: 'VERIFICATION_CODE_TO_ADD'
-    }
-  }
 };
 
 export default function VillenaveDOrnonLayout({

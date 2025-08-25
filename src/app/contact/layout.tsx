@@ -2,38 +2,43 @@ import { Metadata } from 'next';
 import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Contactez ClimGO | Devis Gratuit Chauffage Climatisation Gironde',
-  description: 'Contactez ClimGO pour un devis gratuit chauffage climatisation Gironde. Installation, maintenance, dépannage. 07 66 46 00 08.',
-  keywords: 'contact ClimGO, devis gratuit chauffage, devis climatisation Gironde, installation PAC, maintenance chauffage, dépannage urgence, ClimGO Gironde',
-
+  title: "Contact ClimGO | Devis Gratuit Chauffage Climatisation",
+  description: "Contactez ClimGO pour un devis gratuit en chauffage et climatisation en Gironde. Intervention rapide, artisan RGE certifié. Devis sous 24h.",
+  keywords: [
+    "devis chauffage Gironde",
+    "devis climatisation Gironde",
+    "contact ClimGO",
+    "artisan RGE Gironde",
+    "devis gratuit",
+    "intervention rapide",
+  ],
   openGraph: {
-    title: 'Contactez ClimGO | Devis Gratuit Chauffage Climatisation Gironde',
-    description: 'Contactez ClimGO pour un devis gratuit chauffage climatisation Gironde. Installation, maintenance, dépannage.',
-    url: 'https://www.climgo.fr/contact',
-    siteName: 'ClimGO - Expert Chauffage Climatisation',
-    locale: 'fr_FR',
-    type: 'website',
-    images: [{
-      url: 'https://www.climgo.fr/images/og/contact-climgo.jpg',
-      width: 1200,
-      height: 630,
-      alt: 'Contactez ClimGO | Devis Gratuit Chauffage Climatisation',
-    }],
+    title: "Contact ClimGO | Devis Gratuit Chauffage Climatisation",
+    description: "Contactez ClimGO pour un devis gratuit en chauffage et climatisation en Gironde. Intervention rapide, artisan RGE certifié.",
+    url: "https://www.climgo.fr/contact",
+    siteName: "ClimGO",
+    locale: "fr_FR",
+    type: "website",
+    images: [
+      {
+        url: "/img/climdame.png",
+        width: 1200,
+        height: 630,
+        alt: "Contact ClimGO - Devis Gratuit Gironde",
+      },
+    ],
   },
-
   twitter: {
-    card: 'summary_large_image',
-    site: '@climgo_fr',
-    creator: '@climgo_fr',
-    title: 'Contactez ClimGO | Devis Gratuit Chauffage Climatisation Gironde',
-    description: 'Contactez ClimGO pour un devis gratuit chauffage climatisation Gironde. Installation, maintenance, dépannage.',
-    images: ['https://www.climgo.fr/images/og/contact-climgo.jpg'],
+    card: "summary_large_image",
+    site: "@climgo_fr",
+    creator: "@climgo_fr",
+    title: "Contact ClimGO | Devis Gratuit Chauffage Climatisation",
+    description: "Contactez ClimGO pour un devis gratuit en chauffage et climatisation en Gironde. Intervention rapide, artisan RGE certifié.",
+    images: ["/img/climdame.png"],
   },
-
   alternates: {
-    canonical: 'https://www.climgo.fr/contact',
+    canonical: "https://www.climgo.fr/contact",
   },
-
   robots: {
     index: true,
     follow: true,

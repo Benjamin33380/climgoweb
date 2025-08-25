@@ -2,38 +2,43 @@ import { Metadata } from 'next';
 import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Services ClimGO | Chauffage Climatisation PAC Gironde | Expert RGE',
-  description: 'Services ClimGO : chauffage, climatisation, pompe à chaleur en Gironde. Installation, maintenance, dépannage. Expert RGE certifié. Devis gratuit sous 48h.',
-  keywords: 'services ClimGO, chauffage Gironde, climatisation Gironde, pompe à chaleur, installation PAC, maintenance chauffage, dépannage urgence, expert RGE, ClimGO',
-
+  title: "Services ClimGO | Chauffage Climatisation PAC Gironde",
+  description: "Services ClimGO : installation, maintenance et dépannage de chauffage, climatisation et pompes à chaleur en Gironde. Artisan RGE certifié, devis gratuit.",
+  keywords: [
+    "services chauffage Gironde",
+    "services climatisation Gironde",
+    "installation PAC Gironde",
+    "maintenance chauffage",
+    "dépannage climatisation",
+    "artisan RGE Gironde",
+  ],
   openGraph: {
-    title: 'Services ClimGO | Chauffage Climatisation PAC Gironde | Expert RGE',
-    description: 'Services ClimGO : chauffage, climatisation, pompe à chaleur en Gironde. Installation, maintenance, dépannage. Expert RGE certifié. Devis gratuit sous 48h.',
-    url: 'https://www.climgo.fr/services',
-    siteName: 'ClimGO - Expert Chauffage Climatisation',
-    locale: 'fr_FR',
-    type: 'website',
-    images: [{
-      url: 'https://www.climgo.fr/images/og/services-climgo.jpg',
-      width: 1200,
-      height: 630,
-      alt: 'Services ClimGO | Chauffage Climatisation PAC Gironde',
-    }],
+    title: "Services ClimGO | Chauffage Climatisation PAC Gironde",
+    description: "Services ClimGO : installation, maintenance et dépannage de chauffage, climatisation et pompes à chaleur en Gironde. Artisan RGE certifié.",
+    url: "https://www.climgo.fr/services",
+    siteName: "ClimGO",
+    locale: "fr_FR",
+    type: "website",
+    images: [
+      {
+        url: "/img/climdame.png",
+        width: 1200,
+        height: 630,
+        alt: "Services ClimGO - Chauffage Climatisation Gironde",
+      },
+    ],
   },
-
   twitter: {
-    card: 'summary_large_image',
-    site: '@climgo_fr',
-    creator: '@climgo_fr',
-    title: 'Services ClimGO | Chauffage Climatisation PAC Gironde | Expert RGE',
-    description: 'Services ClimGO : chauffage, climatisation, pompe à chaleur en Gironde. Installation, maintenance, dépannage. Expert RGE certifié.',
-    images: ['https://www.climgo.fr/images/og/services-climgo.jpg'],
+    card: "summary_large_image",
+    site: "@climgo_fr",
+    creator: "@climgo_fr",
+    title: "Services ClimGO | Chauffage Climatisation PAC Gironde",
+    description: "Services ClimGO : installation, maintenance et dépannage de chauffage, climatisation et pompes à chaleur en Gironde. Artisan RGE certifié.",
+    images: ["/img/climdame.png"],
   },
-
   alternates: {
-    canonical: 'https://www.climgo.fr/services',
+    canonical: "https://www.climgo.fr/services",
   },
-
   robots: {
     index: true,
     follow: true,

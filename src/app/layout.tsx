@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: "ClimGO - Expert Chauffage Climatisation Gironde",
-    template: "%s | ClimGO",
+    template: "%s",
   },
   description: DEFAULT_DESCRIPTION,
   keywords: [
