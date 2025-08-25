@@ -40,7 +40,7 @@ const BUSINESS = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "ClimGO - Expert Chauffage Climatisation Gironde",
+    default: "ClimGO - Chauffage & Climatisation Gironde",
     template: "%s",
   },
   description: DEFAULT_DESCRIPTION,
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     type: "website",
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: "ClimGO - Expert Chauffage Climatisation Gironde",
+    title: "ClimGO - Chauffage & Climatisation Gironde",
     description: DEFAULT_DESCRIPTION,
     locale: "fr_FR",
     images: [
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@climgo_fr",
     creator: "@climgo_fr",
-    title: "ClimGO - Expert Chauffage Climatisation Gironde",
+    title: "ClimGO - Chauffage & Climatisation Gironde",
     description: "Installation PAC, entretien, dépannage. Artisan RGE. Devis gratuit.",
     images: ["/img/climdame.png"],
   },

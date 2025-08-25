@@ -1,13 +1,13 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Aides et Subventions ClimGO | MaPrimeRénov, CEE, Éco-PTZ',
+  title: 'Aides Chauffage Climatisation 2025 | ClimGO',
   description: 'Découvrez toutes les aides de l\'État 2025 pour vos travaux chauffage climatisation. ClimGO vous accompagne dans vos démarches.',
   
   keywords: 'aides état 2025, MaPrimeRénov, CEE, prime CEE, TVA 5.5%, éco-PTZ, subventions chauffage, aides climatisation, pompe à chaleur aide, aide rénovation énergétique, financement travaux, ClimGO RGE, entreprise RGE gironde, aides locales, ANIL, prime chauffage, subvention PAC, aide installation climatisation, crédit impôt, financement pompe chaleur, aide thermodynamique',
   
   openGraph: {
-    title: 'Aides et Subventions ClimGO | MaPrimeRénov, CEE, Éco-PTZ',
+    title: 'Aides Chauffage Climatisation 2025 | ClimGO',
     description: 'Toutes les aides 2025 pour vos travaux chauffage climatisation. ClimGO vous accompagne : MaPrimeRénov\', CEE, TVA réduite. Devis gratuit.',
     url: 'https://www.climgo.fr/aides-etat',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Aides et Subventions ClimGO | MaPrimeRénov, CEE, Éco-PTZ',
+    title: 'Aides Chauffage Climatisation 2025 | ClimGO',
     description: 'MaPrimeRénov\', CEE, TVA 5,5%, Éco-PTZ : toutes les aides pour vos travaux. ClimGO vous accompagne.',
     images: ['https://www.climgo.fr/images/twitter-aides-etat-climgo.jpg'],
   },

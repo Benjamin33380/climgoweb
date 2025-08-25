@@ -15,6 +15,7 @@ const zones = [
 
 const entreprise = [
   { title: "À propos", href: "/a-propos" },
+  { title: "Blog", href: "/blog" },
   { title: "Politique de confidentialité", href: "/politique-confidentialite" },
   { title: "Mentions légales", href: "/mentions-legales" },
 ];
