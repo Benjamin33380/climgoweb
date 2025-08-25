@@ -820,6 +820,9 @@ export default function Audenge() {
       {/* Section Liste des Villes - Juste au-dessus de la carte */}
       <CityLinksList />
 
+      {/* Section Liste des Villes - Juste au-dessus de la carte */}
+      <CityLinksList />
+
       {/* Section Carte en pleine largeur */}
               <section className="relative w-full overflow-hidden bg-white dark:bg-black">
         <div className="relative z-10 w-full px-4">

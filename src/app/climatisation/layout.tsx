@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     locale: 'fr_FR',
     type: 'website',
     images: [{
-      url: 'https://www.climgo.fr/images/og/climatisation-gironde.jpg',
+      url: '/img/serp/clim.png',
       width: 1200,
       height: 630,
       alt: 'Climatisation Gironde - Installation PAC Air/Air | ClimGO',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     creator: '@climgo_fr',
     title: 'Climatisation Gironde | Installation Climatiseur PAC Air/Air',
     description: 'Climatisation Gironde. Installation climatiseur, PAC air/air, réversible. Entretien, dépannage. Expert RGE certifié ClimGO.',
-    images: ['https://www.climgo.fr/images/og/climatisation-gironde.jpg'],
+    images: ['/img/serp/clim.png'],
   },
   
   alternates: {

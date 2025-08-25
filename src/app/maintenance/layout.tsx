@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     locale: 'fr_FR',
     type: 'website',
     images: [{
-      url: 'https://www.climgo.fr/images/og/maintenance-gironde.jpg',
+      url: '/img/serp/sav.jpeg',
       width: 1200,
       height: 630,
       alt: 'Maintenance Chauffage Climatisation Gironde | ClimGO',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     creator: '@climgo_fr',
     title: 'Entretien Chauffage Climatisation Gironde | ClimGO',
     description: 'Entretien chauffage climatisation Gironde. Maintenance PAC, chaudière, climatiseur. Contrat entretien annuel. Intervention rapide.',
-    images: ['https://www.climgo.fr/images/og/maintenance-gironde.jpg'],
+    images: ['/img/serp/sav.jpeg'],
   },
   
   alternates: {

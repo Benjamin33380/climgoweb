@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     locale: 'fr_FR',
     type: 'website',
     images: [{
-      url: 'https://www.climgo.fr/images/og/chauffage-gironde.jpg',
+      url: '/img/serp/chauff.jpg',
       width: 1200,
       height: 630,
       alt: 'Chauffage Gironde - Installation PAC, Plancher Chauffant | ClimGO',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     creator: '@climgo_fr',
     title: 'Chauffage Gironde | Installation PAC, Plancher Chauffant',
     description: 'Expert chauffage Gironde. Installation pompe à chaleur, plancher chauffant, radiateurs.',
-    images: ['https://www.climgo.fr/images/og/chauffage-gironde.jpg'],
+    images: ['/img/serp/chauff.jpg'],
   },
   
   alternates: {

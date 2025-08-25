@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/img/climdame.png",
+        url: "/img/serp/ecs.webp",
         width: 1200,
         height: 630,
         alt: "ClimGO - Eau Chaude Sanitaire Gironde",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     creator: "@climgo_fr",
     title: "Eau Chaude Sanitaire | Installation Chauffe-eau Gironde",
     description: "Installation et maintenance de chauffe-eau en Gironde. ClimGO, expert en eau chaude sanitaire. Devis gratuit, intervention rapide.",
-    images: ["/img/climdame.png"],
+    images: ["/img/serp/ecs.webp"],
   },
   alternates: {
     canonical: "https://www.climgo.fr/eau-chaude-sanitaire",
