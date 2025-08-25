@@ -18,7 +18,7 @@ export default function AidesEtatPage() {
     {
       id: 0,
       title: "Certificats d'économies d'énergie (CEE)",
-      logo: "/LogoCEE.webp",
+      logo: "/logoannexe/cee.webp",
       color: "bg-blue-50",
       content: {
         description: "Le CEE est une aide proposée par les fournisseurs d'énergie pour financer vos travaux de rénovation énergétique. Elle permet de réduire directement le montant de votre facture, sans avance de trésorerie.",
@@ -29,7 +29,7 @@ export default function AidesEtatPage() {
     {
       id: 1,
       title: "TVA à taux réduit 5,5%",
-      logo: "/LogoTvA55.webp",
+      logo: "/logoannexe/tva55.webp",
       color: "bg-green-50",
       content: {
         description: "Il s'agit d'un taux de TVA abaissé à 5,5 % au lieu de 20 %, applicable sur les travaux de rénovation énergétique. Il est directement appliqué sur la facture.",
@@ -40,7 +40,7 @@ export default function AidesEtatPage() {
     {
       id: 2,
       title: "MaPrimeRénov'",
-      logo: "/LogoMaPrimRenov.webp",
+      logo: "/logoannexe/mpr.webp",
       color: "bg-purple-50",
       content: {
         description: "C'est une aide directe de l'État pour financer vos travaux. Elle est versée après les travaux, sur votre compte, sans avance de frais.",
@@ -51,7 +51,7 @@ export default function AidesEtatPage() {
     {
       id: 3,
       title: "Éco-PTZ (Prêt à taux zéro)",
-      logo: "/LogoEcoPret0Pourcent.webp",
+      logo: "/logoannexe/ecopret0.webp",
       color: "bg-orange-50",
       content: {
         description: "L'éco-PTZ est un prêt à 0 % d'intérêt pour financer vos travaux énergétiques. Il peut atteindre 50 000 €, remboursable sur 20 ans.",
@@ -63,7 +63,7 @@ export default function AidesEtatPage() {
     {
       id: 4,
       title: "Aides locales ANIL",
-      logo: "/LogoAnil.webp",
+      logo: "/logoannexe/anil.webp",
       color: "bg-indigo-50",
       content: {
         description: "En plus des aides de l'État, certaines collectivités (mairies, départements, régions) proposent des aides locales supplémentaires.",

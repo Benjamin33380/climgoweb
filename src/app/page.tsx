@@ -14,7 +14,8 @@ export default function HomePage() {
   // Images hero avec rotation
   const heroImages = [
     '/img/clim-caudéran.jpeg',
-    '/img/uicauderan.jpeg'
+    '/img/uicauderan.jpeg',
+    '/img/sdb-pyla.jpeg'
   ];
   
   // État pour l'index de l'image actuelle

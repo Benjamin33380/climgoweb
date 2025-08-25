@@ -153,7 +153,7 @@ function LocalBusinessSchema() {
         legalName: BUSINESS.legalName,
         url: SITE_URL,
         telephone: PHONE,
-        image: `${SITE_URL}/img/logo-social.png`, // fournis une image réelle 1200x630
+        image: `${SITE_URL}/img/climdame.png`, // image ClimGO 1200x630
         address: {
           "@type": "PostalAddress",
           streetAddress: BUSINESS.streetAddress,

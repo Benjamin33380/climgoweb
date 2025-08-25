@@ -31,7 +31,7 @@ export default function ChauffagePage() {
       id: 'pac-air-air',
       title: "Pompe à chaleur air/air",
       subtitle: "Réversible 4 Saisons",
-      image: "/PompeChaleurAirAir.webp",
+      image: "/machine/murale.webp",
       badge: "Chauffage + Climatisation",
       features: [
         "Système réversible intégral",

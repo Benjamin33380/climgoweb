@@ -31,7 +31,7 @@ export default function MaintenancePage() {
       id: 'maintenance-gainable',
       title: "Maintenance gainable",
       subtitle: "Sécurité & Performance",
-      image: "/MaintenanceChauffage.png",
+      image: "/machine/chauff.jpg",
       badge: "Intervention rapide",
       features: [
         "Contrôle des systèmes de sécurité",
