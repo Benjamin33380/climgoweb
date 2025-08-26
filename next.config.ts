@@ -1,25 +1,6 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  // Optimisations de performance
-  experimental: {
-    // Optimisations des images
-    optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
-    
-    // Optimisations des polices
-    fontLoaders: [
-      { loader: '@next/font/google', options: { subsets: ['latin'] } }
-    ],
-    
-    // Optimisations des bundles
-    bundlePagesExternals: true,
-    
-    // Optimisations des images
-    images: {
-      allowFutureImage: true,
-    },
-  },
-
   // Optimisations des images
   images: {
     formats: ['image/webp', 'image/avif'],
@@ -54,22 +35,6 @@ const nextConfig: NextConfig = {
         },
       };
     }
-
-    // Optimisations des images
-    config.module.rules.push({
-      test: /\.(png|jpe?g|gif|svg|webp|avif)$/i,
-      use: [
-        {
-          loader: 'url-loader',
-          options: {
-            limit: 8192,
-            fallback: 'file-loader',
-            publicPath: '/_next/static/images/',
-            outputPath: 'static/images/',
-          },
-        },
-      ],
-    });
 
     return config;
   },
@@ -186,18 +151,12 @@ const nextConfig: NextConfig = {
   // Optimisations de la génération statique
   output: 'standalone',
 
-  // Optimisations des variables d'environnement
-  env: {
-    CUSTOM_KEY: process.env.CUSTOM_KEY,
-  },
-
   // Optimisations des pages
   pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
 
   // Optimisations des composants
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
-    styledComponents: true,
   },
 };
 
