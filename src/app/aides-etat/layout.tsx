@@ -142,6 +142,59 @@ export default function AidesEtatLayout({
           })
         }}
       />
+
+      {/* JSON-LD FAQ - Questions spécifiques aides et subventions */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Quelles sont les aides disponibles pour une pompe à chaleur en 2025 ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "En 2025, vous pouvez bénéficier de MaPrimeRénov' (jusqu'à 5 000€), des primes CEE, de la TVA 5.5% et de l'Éco-PTZ. ClimGO vous accompagne gratuitement dans toutes vos démarches pour optimiser vos aides."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Comment calculer le montant de MaPrimeRénov' ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Le montant dépend de vos revenus (éco-bonus), de votre zone géographique et du type d'équipement. ClimGO réalise une simulation gratuite et vous aide à monter votre dossier pour maximiser vos aides."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Quels sont les délais pour recevoir MaPrimeRénov' ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Le versement intervient généralement 2 à 3 mois après la fin des travaux. ClimGO vous accompagne dans le suivi de votre dossier et vous informe de chaque étape de votre demande d'aide."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Puis-je cumuler plusieurs aides pour mes travaux ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Oui, vous pouvez cumuler MaPrimeRénov', les primes CEE et la TVA 5.5%. ClimGO optimise votre dossier pour obtenir le maximum d'aides et réduire votre reste à charge de 60 à 90%."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Faut-il être propriétaire pour bénéficier des aides ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Non, les locataires peuvent aussi bénéficier de certaines aides avec l'accord du propriétaire. ClimGO vous conseille sur les démarches spécifiques selon votre situation et vous accompagne dans votre projet."
+                }
+              }
+            ]
+          })
+        }}
+      />
       {children}
     </>
   );

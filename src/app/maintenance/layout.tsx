@@ -97,6 +97,59 @@ export default function MaintenanceLayout({
           })
         }}
       />
+
+      {/* JSON-LD FAQ - Questions spécifiques maintenance */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Quel est le prix d'un contrat de maintenance annuel ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Un contrat de maintenance annuel coûte entre 120€ et 300€ selon l'équipement et la fréquence. ClimGO propose des formules adaptées à vos besoins avec intervention rapide et pièces détachées garanties."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "À quelle fréquence faut-il entretenir sa PAC ou chaudière ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Un entretien annuel est obligatoire pour maintenir la garantie constructeur et optimiser les performances. ClimGO vous propose des contrats de maintenance préventive pour éviter les pannes coûteuses."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Quels sont vos délais d'intervention en cas de panne ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "ClimGO s'engage sur des délais rapides : diagnostic sous 4h, intervention sous 24h pour les urgences. Nos techniciens sont disponibles 7j/7 pour assurer votre confort en toutes circonstances."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Que comprend un entretien de climatisation ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "L'entretien comprend le nettoyage des filtres, le contrôle des performances, la vérification de l'étanchéité et l'optimisation des réglages. ClimGO garantit des installations performantes et durables."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Proposez-vous des pièces détachées d'origine ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Oui, ClimGO utilise exclusivement des pièces détachées d'origine garantissant la compatibilité et la durée de vie de vos équipements. Nous vous proposons également des alternatives économiques quand c'est possible."
+                }
+              }
+            ]
+          })
+        }}
+      />
       {children}
     </>
   );

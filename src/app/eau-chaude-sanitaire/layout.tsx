@@ -93,6 +93,59 @@ export default function EauChaudeSanitaireLayout({
           })
         }}
       />
+
+      {/* JSON-LD FAQ - Questions spécifiques eau chaude sanitaire */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Quel est le prix d'installation d'un chauffe-eau thermodynamique ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "L'installation d'un chauffe-eau thermodynamique coûte entre 2 500€ et 4 500€ selon la capacité et la complexité. ClimGO vous accompagne pour obtenir MaPrimeRénov' et réduire votre facture de 30 à 70%."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Combien de temps dure l'installation d'un chauffe-eau ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "L'installation d'un chauffe-eau prend 2 à 4 heures selon le type et la complexité. ClimGO s'engage sur des délais respectés et vous garantit une eau chaude disponible rapidement."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Quelle capacité de chauffe-eau choisir pour ma famille ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "La capacité dépend du nombre de personnes : 100L pour 1-2 personnes, 200L pour 3-4 personnes, 300L pour 5+ personnes. ClimGO vous conseille pour optimiser votre confort et vos économies."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Faut-il entretenir son chauffe-eau chaque année ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Oui, un entretien annuel est recommandé pour maintenir les performances et éviter la panne. ClimGO propose des contrats de maintenance préventive avec intervention rapide en cas de problème."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Un chauffe-eau thermodynamique est-il rentable ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Oui, il permet d'économiser 50 à 70% sur votre facture d'eau chaude. Avec MaPrimeRénov', l'investissement est rentabilisé en 3 à 5 ans. ClimGO vous accompagne dans votre projet d'économie d'énergie."
+                }
+              }
+            ]
+          })
+        }}
+      />
       {children}
     </>
   );

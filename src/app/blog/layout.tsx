@@ -87,6 +87,59 @@ export default function BlogLayout({
           })
         }}
       />
+
+      {/* JSON-LD FAQ - Questions spécifiques blog */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "À quelle fréquence ClimGO publie-t-il des articles ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "ClimGO publie régulièrement des articles de conseils, actualités et guides techniques sur le chauffage et la climatisation. Notre blog est mis à jour avec des contenus d'experts pour vous accompagner dans vos projets."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Les articles du blog ClimGO sont-ils écrits par des experts ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Oui, tous nos articles sont rédigés par nos experts techniques certifiés RGE. ClimGO partage son expertise de plus de 10 ans en chauffage et climatisation pour vous proposer des conseils fiables et pratiques."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Puis-je poser des questions sur les articles du blog ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Absolument ! ClimGO encourage les échanges et répond à vos questions sur nos articles. Contactez-nous pour des conseils personnalisés ou des précisions sur nos contenus techniques."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Le blog ClimGO traite-t-il des aides et subventions ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Oui, ClimGO publie régulièrement des articles sur les aides de l'État, MaPrimeRénov' et les subventions disponibles. Notre blog vous tient informé des dernières actualités pour optimiser vos projets de rénovation."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Les conseils du blog ClimGO sont-ils adaptés à la Gironde ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Oui, ClimGO adapte ses conseils au climat et aux spécificités de la Gironde. Notre expertise locale nous permet de vous proposer des solutions adaptées à votre région et à vos besoins spécifiques."
+                }
+              }
+            ]
+          })
+        }}
+      />
       {children}
     </>
   );

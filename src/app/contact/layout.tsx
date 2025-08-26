@@ -92,6 +92,59 @@ export default function ContactLayout({
           })
         }}
       />
+
+      {/* JSON-LD FAQ - Questions spécifiques contact */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Combien de temps pour recevoir un devis ClimGO ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "ClimGO s'engage à vous fournir un devis gratuit sous 24h. Nos experts se déplacent chez vous pour évaluer vos besoins et vous proposer la solution la plus adaptée à votre projet."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Quels sont vos horaires de contact et d'intervention ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Notre équipe est disponible du lundi au vendredi de 8h à 19h, le samedi de 9h à 13h. Pour les urgences, nous intervenons 7j/7 avec des délais d'intervention rapides."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Proposez-vous des devis à distance ou uniquement sur site ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Nous proposons des devis préliminaires par téléphone ou email, mais une visite sur site est recommandée pour un devis précis. ClimGO s'engage sur des devis détaillés et sans surprise."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Quels documents préparer pour un devis ClimGO ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Préparez vos factures d'énergie, plans de votre logement et informations sur votre installation actuelle. ClimGO vous accompagne dans la préparation de votre dossier pour optimiser les aides disponibles."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Intervenez-vous en urgence en cas de panne ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Oui, ClimGO propose un service d'urgence 7j/7. Nous nous engageons sur des délais d'intervention rapides : diagnostic sous 4h et intervention sous 24h pour assurer votre confort en toutes circonstances."
+                }
+              }
+            ]
+          })
+        }}
+      />
       {children}
     </>
   );

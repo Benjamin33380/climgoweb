@@ -93,6 +93,59 @@ export default function ServicesLayout({
           })
         }}
       />
+
+      {/* JSON-LD FAQ - Questions spécifiques services */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Quels sont les services principaux proposés par ClimGO ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "ClimGO propose l'installation, la maintenance et le dépannage de pompes à chaleur (air/air, air/eau), climatisation, chauffe-eau thermodynamiques, planchers chauffants et tous systèmes de chauffage. Nous assurons également le service d'urgence 7j/7."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "ClimGO propose-t-il des devis gratuits pour tous ses services ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Oui, ClimGO propose des devis gratuits et sans engagement pour tous ses services. Nos experts se déplacent chez vous pour évaluer vos besoins et vous proposer la solution la plus adaptée à votre projet et à votre budget."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Quels sont les délais d'intervention ClimGO ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "ClimGO s'engage sur des délais rapides : devis sous 24h, installation sous 15 jours et dépannage d'urgence sous 4h. Nous couvrons toute la Gironde et le Bassin d'Arcachon avec des techniciens disponibles 7j/7."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "ClimGO assure-t-il la maintenance de tous types d'équipements ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Oui, ClimGO assure la maintenance de tous types d'équipements thermiques : PAC, chaudières, climatiseurs, chauffe-eau. Nous proposons des contrats de maintenance préventive adaptés à vos besoins et à votre budget."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Proposez-vous des garanties sur vos installations ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Oui, ClimGO propose des garanties constructeur et des garanties de service sur toutes ses installations. Nous nous engageons sur la qualité de nos prestations et assurons le suivi de vos équipements dans la durée."
+                }
+              }
+            ]
+          })
+        }}
+      />
       {children}
     </>
   );

@@ -101,6 +101,59 @@ export default function ZonesInterventionsLayout({
           })
         }}
       />
+
+      {/* JSON-LD FAQ - Questions spécifiques zones d'intervention */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Dans quelles villes ClimGO intervient-il en Gironde ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "ClimGO intervient dans plus de 40 villes de Gironde : Bordeaux, Arcachon, Mérignac, Pessac, Talence, Cenon, Bègles, Floirac, Bruges, Eysines, Le Haillan, Saint-Médard-en-Jalles et bien d'autres. Nous couvrons toute la Gironde et le Bassin d'Arcachon."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Quel est le rayon d'intervention de ClimGO ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "ClimGO intervient dans un rayon de 25km autour de Marcheprime, couvrant toute la Gironde. Nos techniciens se déplacent chez vous pour l'installation, la maintenance et le dépannage de vos équipements thermiques."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "ClimGO propose-t-il des services d'urgence dans toutes ces zones ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Oui, ClimGO propose un service d'urgence 7j/7 dans toutes ses zones d'intervention. Nous nous engageons sur des délais rapides : diagnostic sous 4h et intervention sous 24h pour assurer votre confort en toutes circonstances."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Les tarifs sont-ils identiques dans toutes les zones ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Oui, ClimGO applique les mêmes tarifs transparents dans toutes ses zones d'intervention. Nos devis sont gratuits et détaillés, sans surprise, que vous soyez à Bordeaux, Arcachon ou dans une autre ville de Gironde."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "ClimGO peut-il intervenir en dehors de la Gironde ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "ClimGO se concentre principalement sur la Gironde et le Bassin d'Arcachon pour garantir des délais d'intervention rapides et un service de qualité. Nous pouvons étudier des interventions ponctuelles dans les départements limitrophes selon les cas."
+                }
+              }
+            ]
+          })
+        }}
+      />
       {children}
     </>
   );

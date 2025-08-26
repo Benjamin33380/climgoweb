@@ -88,6 +88,59 @@ export default function ChauffageLayout({
           })
         }}
       />
+
+      {/* JSON-LD FAQ - Questions spécifiques chauffage */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Quel est le prix d'installation d'une pompe à chaleur air/eau ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "L'installation d'une PAC air/eau coûte entre 12 000€ et 25 000€ selon la puissance et la complexité. ClimGO vous propose un devis gratuit et vous accompagne pour obtenir MaPrimeRénov' (jusqu'à 90% d'aides)."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Combien de temps dure l'installation d'un plancher chauffant ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "L'installation d'un plancher chauffant prend 3 à 5 jours selon la surface. ClimGO s'engage sur des délais respectés et vous accompagne à chaque étape de votre projet de rénovation énergétique."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Quelle puissance de PAC choisir pour ma maison ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "La puissance dépend de votre surface, isolation et zone climatique. ClimGO réalise une étude thermique gratuite pour dimensionner parfaitement votre installation et optimiser votre confort."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Les radiateurs à eau sont-ils compatibles avec une PAC ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Oui, les radiateurs à eau existants sont compatibles avec une PAC air/eau. ClimGO peut adapter votre installation actuelle ou vous proposer des radiateurs basse température plus performants."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Quelle est la durée de vie d'une pompe à chaleur ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Une PAC bien entretenue dure 15 à 20 ans. ClimGO propose des contrats de maintenance préventive pour maximiser la durée de vie et les performances de votre équipement."
+                }
+              }
+            ]
+          })
+        }}
+      />
       {children}
     </>
   );

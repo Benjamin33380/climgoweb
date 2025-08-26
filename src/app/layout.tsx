@@ -332,6 +332,59 @@ export default function RootLayout({
             })
           }}
         />
+
+        {/* JSON-LD FAQ - Questions les plus recherchées */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Combien coûte l'installation d'une pompe à chaleur en Gironde ?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Le coût d'installation d'une PAC varie entre 8 000€ et 25 000€ selon le type (air/air, air/eau, géothermie) et la surface. ClimGO propose des devis gratuits et vous accompagne pour obtenir les aides MaPrimeRénov'."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Quels sont les délais d'intervention ClimGO en Gironde ?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "ClimGO s'engage sur des délais rapides : devis sous 24h, installation sous 15 jours et dépannage d'urgence sous 4h. Nous couvrons toute la Gironde et le Bassin d'Arcachon."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Comment obtenir MaPrimeRénov' pour ma rénovation énergétique ?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "ClimGO vous accompagne dans vos démarches MaPrimeRénov'. Nous calculons les montants éligibles, montons votre dossier et vous aidons à obtenir jusqu'à 90% d'aides selon vos revenus et le type d'équipement."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Quelle est la différence entre PAC air/air et air/eau ?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "La PAC air/air chauffe et refroidit l'air ambiant. La PAC air/eau chauffe l'eau pour radiateurs/plancher chauffant et produit l'eau chaude sanitaire. ClimGO vous conseille selon vos besoins et votre installation existante."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "ClimGO est-il certifié RGE en Gironde ?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Oui, ClimGO est certifié RGE (Reconnu Garant de l'Environnement). Cette certification vous permet de bénéficier des aides de l'État et garantit la qualité de nos installations de chauffage et climatisation."
+                  }
+                }
+              ]
+            })
+          }}
+        />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}>
         <GoogleAnalytics />

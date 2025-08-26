@@ -86,6 +86,59 @@ export default function AProposLayout({
           })
         }}
       />
+
+      {/* JSON-LD FAQ - Questions spécifiques à propos */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Depuis combien de temps ClimGO exerce en Gironde ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "ClimGO exerce en Gironde depuis plus de 10 ans, depuis 2014. Notre expertise et notre connaissance du territoire nous permettent de vous proposer des solutions adaptées au climat et aux spécificités de la région."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "ClimGO est-il certifié RGE et qu'est-ce que cela signifie ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Oui, ClimGO est certifié RGE (Reconnu Garant de l'Environnement). Cette certification garantit la qualité de nos installations et vous permet de bénéficier des aides de l'État pour vos travaux de rénovation énergétique."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Quelle est la zone d'intervention de ClimGO ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "ClimGO couvre toute la Gironde, Bordeaux Métropole et le Bassin d'Arcachon. Nos techniciens se déplacent chez vous pour l'installation, la maintenance et le dépannage de vos équipements thermiques."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Quels sont les services proposés par ClimGO ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "ClimGO propose l'installation et la maintenance de pompes à chaleur, climatisation, chauffe-eau thermodynamiques, planchers chauffants et tous systèmes de chauffage. Nous assurons également le dépannage d'urgence 7j/7."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "ClimGO propose-t-il des garanties sur ses installations ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Oui, ClimGO propose des garanties constructeur et des garanties de service sur toutes nos installations. Nous nous engageons sur la qualité de nos prestations et assurons le suivi de vos équipements dans la durée."
+                }
+              }
+            ]
+          })
+        }}
+      />
       {children}
     </>
   );
