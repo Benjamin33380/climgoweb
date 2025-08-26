@@ -107,6 +107,41 @@ export default function AidesEtatLayout({
 }) {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Aides & Subventions Chauffage Climatisation 2025",
+            "description": "Découvrez toutes les aides de l'État 2025 pour vos travaux chauffage climatisation. ClimGO vous accompagne dans vos démarches.",
+            "provider": {
+              "@type": "HVACBusiness",
+              "name": "ClimGO",
+              "url": "https://www.climgo.fr",
+              "telephone": "+33766460008",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "28 rue de Cantelaude",
+                "addressLocality": "Marcheprime",
+                "addressRegion": "Nouvelle-Aquitaine",
+                "postalCode": "33380",
+                "addressCountry": "FR"
+              }
+            },
+            "areaServed": {
+              "@type": "Place",
+              "name": "Gironde, Bordeaux Métropole, Bassin d'Arcachon"
+            },
+            "serviceType": "Accompagnement aides État et subventions",
+            "url": "https://www.climgo.fr/aides-etat",
+            "offers": {
+              "@type": "Offer",
+              "description": "MaPrimeRénov', CEE, TVA 5.5%, Éco-PTZ - Accompagnement gratuit"
+            }
+          })
+        }}
+      />
       {children}
     </>
   );

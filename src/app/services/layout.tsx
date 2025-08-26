@@ -58,7 +58,41 @@ export default function ServicesLayout({
 }) {
   return (
     <>
-      
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Services ClimGO - Chauffage Climatisation PAC",
+            "description": "Services ClimGO : installation, maintenance et dépannage de chauffage, climatisation et pompes à chaleur en Gironde. Artisan RGE certifié.",
+            "provider": {
+              "@type": "HVACBusiness",
+              "name": "ClimGO",
+              "url": "https://www.climgo.fr",
+              "telephone": "+33766460008",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "28 rue de Cantelaude",
+                "addressLocality": "Marcheprime",
+                "addressRegion": "Nouvelle-Aquitaine",
+                "postalCode": "33380",
+                "addressCountry": "FR"
+              }
+            },
+            "areaServed": {
+              "@type": "Place",
+              "name": "Gironde, Bordeaux Métropole, Bassin d'Arcachon"
+            },
+            "serviceType": "Installation, maintenance et dépannage de systèmes thermiques",
+            "url": "https://www.climgo.fr/services",
+            "offers": {
+              "@type": "Offer",
+              "description": "Chauffage, climatisation, PAC - Devis gratuit"
+            }
+          })
+        }}
+      />
       {children}
     </>
   );

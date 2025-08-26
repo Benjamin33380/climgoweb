@@ -53,7 +53,33 @@ export default function MentionsLegalesLayout({
 }) {
   return (
     <>
-      
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Mentions Légales ClimGO",
+            "description": "Mentions légales ClimGO. Informations légales, hébergement, propriété intellectuelle. ClimGO SASU - Expert chauffage climatisation Gironde.",
+            "url": "https://www.climgo.fr/mentions-legales",
+            "mainEntity": {
+              "@type": "HVACBusiness",
+              "name": "ClimGO",
+              "legalName": "ClimGO SASU",
+              "url": "https://www.climgo.fr",
+              "telephone": "+33766460008",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "28 rue de Cantelaude",
+                "addressLocality": "Marcheprime",
+                "addressRegion": "Nouvelle-Aquitaine",
+                "postalCode": "33380",
+                "addressCountry": "FR"
+              }
+            }
+          })
+        }}
+      />
       {children}
     </>
   );

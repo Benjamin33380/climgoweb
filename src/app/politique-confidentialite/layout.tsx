@@ -53,7 +53,32 @@ export default function PolitiqueConfidentialiteLayout({
 }) {
   return (
     <>
-      
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Politique de Confidentialité ClimGO",
+            "description": "Politique de confidentialité ClimGO. Protection des données personnelles, cookies, RGPD. ClimGO respecte votre vie privée.",
+            "url": "https://www.climgo.fr/politique-confidentialite",
+            "mainEntity": {
+              "@type": "HVACBusiness",
+              "name": "ClimGO",
+              "url": "https://www.climgo.fr",
+              "telephone": "+33766460008",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "28 rue de Cantelaude",
+                "addressLocality": "Marcheprime",
+                "addressRegion": "Nouvelle-Aquitaine",
+                "postalCode": "33380",
+                "addressCountry": "FR"
+              }
+            }
+          })
+        }}
+      />
       {children}
     </>
   );

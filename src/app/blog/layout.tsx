@@ -53,7 +53,40 @@ export default function BlogLayout({
 }) {
   return (
     <>
-      
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Blog",
+            "name": "Blog ClimGO - Conseils Chauffage Climatisation",
+            "description": "Blog ClimGO : conseils chauffage climatisation, actualités, guides techniques. Expert RGE en Gironde. Découvrez nos articles d'experts et astuces pratiques.",
+            "url": "https://www.climgo.fr/blog",
+            "publisher": {
+              "@type": "HVACBusiness",
+              "name": "ClimGO",
+              "url": "https://www.climgo.fr",
+              "telephone": "+33766460008",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "28 rue de Cantelaude",
+                "addressLocality": "Marcheprime",
+                "addressRegion": "Nouvelle-Aquitaine",
+                "postalCode": "33380",
+                "addressCountry": "FR"
+              }
+            },
+            "mainEntity": {
+              "@type": "HVACBusiness",
+              "name": "ClimGO",
+              "areaServed": {
+                "@type": "Place",
+                "name": "Gironde, Bordeaux Métropole, Bassin d'Arcachon"
+              }
+            }
+          })
+        }}
+      />
       {children}
     </>
   );

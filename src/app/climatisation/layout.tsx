@@ -53,7 +53,41 @@ export default function ClimatisationLayout({
 }) {
   return (
     <>
-      
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Climatisation Gironde - Installation PAC Air/Air",
+            "description": "Climatisation Gironde. Installation climatiseur, PAC air/air, réversible. Entretien, dépannage. Expert RGE certifié ClimGO.",
+            "provider": {
+              "@type": "HVACBusiness",
+              "name": "ClimGO",
+              "url": "https://www.climgo.fr",
+              "telephone": "+33766460008",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "28 rue de Cantelaude",
+                "addressLocality": "Marcheprime",
+                "addressRegion": "Nouvelle-Aquitaine",
+                "postalCode": "33380",
+                "addressCountry": "FR"
+              }
+            },
+            "areaServed": {
+              "@type": "Place",
+              "name": "Gironde, Bordeaux Métropole, Bassin d'Arcachon"
+            },
+            "serviceType": "Installation et maintenance de systèmes de climatisation",
+            "url": "https://www.climgo.fr/climatisation",
+            "offers": {
+              "@type": "Offer",
+              "description": "Installation climatiseur, PAC air/air, entretien - Devis gratuit"
+            }
+          })
+        }}
+      />
       {children}
     </>
   );

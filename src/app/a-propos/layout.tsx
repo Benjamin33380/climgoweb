@@ -53,7 +53,39 @@ export default function AProposLayout({
 }) {
   return (
     <>
-      
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            "name": "À propos de ClimGO",
+            "description": "Découvrez ClimGO, votre expert en chauffage et climatisation en Gironde depuis plus de 10 ans. Artisan RGE certifié.",
+            "url": "https://www.climgo.fr/a-propos",
+            "mainEntity": {
+              "@type": "HVACBusiness",
+              "name": "ClimGO",
+              "legalName": "ClimGO",
+              "url": "https://www.climgo.fr",
+              "telephone": "+33766460008",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "28 rue de Cantelaude",
+                "addressLocality": "Marcheprime",
+                "addressRegion": "Nouvelle-Aquitaine",
+                "postalCode": "33380",
+                "addressCountry": "FR"
+              },
+              "areaServed": {
+                "@type": "Place",
+                "name": "Gironde, Bordeaux Métropole, Bassin d'Arcachon"
+              },
+              "foundingDate": "2014",
+              "description": "Expert en chauffage et climatisation en Gironde, artisan RGE certifié"
+            }
+          })
+        }}
+      />
       {children}
     </>
   );

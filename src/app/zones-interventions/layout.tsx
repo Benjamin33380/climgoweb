@@ -53,7 +53,54 @@ export default function ZonesInterventionsLayout({
 }) {
   return (
     <>
-      
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Zones d'Intervention ClimGO",
+            "description": "Zones d'intervention ClimGO en Gironde. Bordeaux, Arcachon, Mérignac, Pessac et plus de 40 villes. Chauffage climatisation.",
+            "url": "https://www.climgo.fr/zones-interventions",
+            "mainEntity": {
+              "@type": "HVACBusiness",
+              "name": "ClimGO",
+              "url": "https://www.climgo.fr",
+              "telephone": "+33766460008",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "28 rue de Cantelaude",
+                "addressLocality": "Marcheprime",
+                "addressRegion": "Nouvelle-Aquitaine",
+                "postalCode": "33380",
+                "addressCountry": "FR"
+              },
+              "areaServed": [
+                {
+                  "@type": "Place",
+                  "name": "Bordeaux"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Arcachon"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Mérignac"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Pessac"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Gironde"
+                }
+              ]
+            }
+          })
+        }}
+      />
       {children}
     </>
   );
