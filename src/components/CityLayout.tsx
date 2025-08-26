@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { CityConfig } from '@/config/cities';
+import { citiesConfig, CityConfig } from '@/config/cities';
 
 interface CityLayoutProps {
   cityData: CityConfig;
@@ -55,22 +55,7 @@ const SERVICES: Array<{ name: string; description: string; category: string }> =
   },
 ];
 
-// Villes voisines par région pour areaServed
-const NEARBY_CITIES = {
-  'Bordeaux Métropole': [
-    'Bordeaux', 'Mérignac', 'Pessac', 'Talence', 'Cenon', 'Bègles', 'Floirac', 
-    'Bruges', 'Eysines', 'Le Haillan', 'Saint-Médard-en-Jalles', 'Saint-Aubin-de-Médoc',
-    'Le Bouscat', 'Gradignan', 'Cestas', 'Canejan', 'Cadaujac', 'Bouliac', 'La Brède',
-    'Léognan', 'Saint-Selve', 'Martignas-sur-Jalle', 'Martillac', 'Saint-Loubès',
-    'Saint-Jean-d\'Illac', 'Villenave-d\'Ornon', 'Salles', 'Saucats'
-  ],
-  'Bassin d\'Arcachon': [
-    'Arcachon', 'La Teste-de-Buch', 'Gujan-Mestras', 'Le Teich', 'Biganos', 'Audenge',
-    'Lanton', 'Andernos-les-Bains', 'Arès', 'Lège-Cap-Ferret', 'Marcheprime', 'Le Barp',
-    'Mios', 'Belin-Béliet', 'Sanguinet', 'Parentis-en-Born', 'Biscarrosse', 'Mimizan',
-    'Lacanau'
-  ]
-};
+// Cette constante n'est plus utilisée - remplacée par le calcul géographique
 
 // FAQ spécifique à la ville
 export function generateCityFAQ(cityName: string) {
@@ -105,7 +90,7 @@ export function generateCityMetadata(cityData: CityConfig): Metadata {
 
   return {
     metadataBase: new URL(SITE),
-    title: `${BRAND} à ${cityData.name} – Chauffage, Climatisation & Entretien`,
+    title: `${BRAND} à ${cityData.name} – Chauffage, Climatisation & Pompes à chaleur`,
     description: `${BRAND} intervient à ${cityData.name} (${cityData.region}) : pompe à chaleur, climatisation, chauffe-eau, entretien & maintenance. Devis rapide, intervention soignée, garanties pro.`,
     alternates: { canonical: cityUrl },
     openGraph: {
@@ -137,13 +122,32 @@ export function generateCityMetadata(cityData: CityConfig): Metadata {
 function buildCityJsonLd(cityData: CityConfig) {
   const cityUrl = `${SITE}/villes/${cityData.slug}`;
   
-  // Récupère les villes voisines de la même région
-  const nearbyCities = NEARBY_CITIES[cityData.region as keyof typeof NEARBY_CITIES] || [];
+  // Récupère les villes voisines basées sur la proximité géographique
+  const nearbyCities: Array<{ name: string; distance: number }> = [];
+  
+  for (const city of citiesConfig) {
+    if (city.name === cityData.name) continue; // Exclure la ville elle-même
+    
+    // Calcul de la distance approximative (formule de Haversine simplifiée)
+    const latDiff = Math.abs(city.coordinates.lat - cityData.coordinates.lat);
+    const lngDiff = Math.abs(city.coordinates.lng - cityData.coordinates.lng);
+    const distance = Math.sqrt(latDiff * latDiff + lngDiff * lngDiff) * 111; // 111 km par degré
+    
+    if (distance <= 25) { // 25km de rayon
+      nearbyCities.push({ name: city.name, distance });
+    }
+  }
+  
+  // Trier par distance et prendre les plus proches
+  const sortedNearbyCities = nearbyCities
+    .sort((a, b) => a.distance - b.distance)
+    .slice(0, 15) // 15 villes maximum
+    .map(city => city.name);
   
   // Construit areaServed avec la ville principale et les villes voisines
   const areaServed = [
     { '@type': 'City', name: cityData.name },
-    ...nearbyCities.slice(0, 10).map(city => ({ '@type': 'City', name: city }))
+    ...sortedNearbyCities.map(city => ({ '@type': 'City', name: city }))
   ];
 
   const localBusiness: {
