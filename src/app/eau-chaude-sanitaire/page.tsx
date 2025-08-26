@@ -359,7 +359,7 @@ export default function EauChaudeSanitairePage() {
             {advantages.map((advantage, index) => (
               <div
                 key={index}
-                className="group text-center p-8 rounded-2xl bg-[#F8F9F4] dark:bg-black border border-[#03144A] dark:border-white/20 hover:border-[#FF6B6B]/50 transition-all duration-300 hover:bg-[#FF6B6B]/5"
+                className="group text-center p-8 rounded-2xl bg-[#F8F9F4] dark:bg-black border border-[#03144A] dark:border-white/20 hover:border-[#FF6B6B]/50 transition-all duration-300 hover:bg-[#FF6B6B]/5 min-h-[320px] flex flex-col items-center justify-center"
               >
                 <div className="text-5xl mb-6 transform group-hover:scale-110 transition-transform duration-300">
                   {advantage.icon}
@@ -367,7 +367,7 @@ export default function EauChaudeSanitairePage() {
                 <h3 className="text-xl font-medium mb-4 text-[#03144A] dark:text-white group-hover:text-[#FF6B6B] transition-colors">
                   {advantage.title}
                 </h3>
-                <p className="text-[#03144A] dark:text-white/80 group-hover:text-[#FF6B6B] transition-colors">
+                <p className="text-[#03144A] dark:text-white/80 group-hover:text-[#FF6B6B] transition-colors text-center">
                   {advantage.desc}
                 </p>
               </div>
