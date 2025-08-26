@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { NewHeader } from "@/components/ui/NewHeader";
@@ -7,25 +7,52 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { ClientHeroUIProvider } from "@/components/providers/HeroUIProvider";
 import { GlobalScrollShadow } from '@/components/ui/GlobalScrollShadow';
 import { scrollShadowConfig } from '@/config/scrollShadow';
+import { PerformanceOptimizations } from '@/components/PerformanceOptimizations';
+import { GoogleAnalytics } from '@/components/GoogleAnalytics';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
+  preload: true,
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
+  preload: true,
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#000000" },
+  ],
+  colorScheme: "light dark",
+  viewportFit: "cover",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.climgo.fr'),
-  title: "ClimGO - Chauffage & Climatisation Gironde",
+  title: {
+    default: "ClimGO - Chauffage & Climatisation Gironde",
+    template: "%s | ClimGO"
+  },
   description: "ClimGO, expert chauffage et climatisation en Gironde. Installation PAC, entretien et dépannage. Artisan RGE. Devis gratuit.",
   keywords: ["chauffage Gironde", "climatisation Gironde", "pompe à chaleur", "entretien clim", "installateur chauffage", "artisan RGE", "Bordeaux", "Bassin d'Arcachon", "PAC air-eau", "PAC air-air", "plancher chauffant", "radiateurs", "maintenance", "dépannage"],
   authors: [{ name: "ClimGO", url: "https://www.climgo.fr" }],
   creator: "ClimGO",
   publisher: "ClimGO",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   robots: {
     index: true,
     follow: true,
@@ -72,6 +99,9 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://www.climgo.fr",
+    languages: {
+      'fr-FR': 'https://www.climgo.fr',
+    },
   },
   verification: {
     google: "Ljs9Q3ve_Z_ldbzUTagcBPPmmQ_LTJER2pD3j7Woj1g",
@@ -80,6 +110,13 @@ export const metadata: Metadata = {
   manifest: "/favicon/site.webmanifest",
   other: {
     "zones-desservies": "Gironde, Bordeaux Métropole, Bassin d'Arcachon",
+    "mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-status-bar-style": "default",
+    "apple-mobile-web-app-title": "ClimGO",
+    "application-name": "ClimGO",
+    "msapplication-TileColor": "#0ea5e9",
+    "msapplication-config": "/browserconfig.xml",
   },
 };
 
@@ -91,6 +128,9 @@ export default function RootLayout({
   return (
     <html lang="fr" suppressHydrationWarning>
       <head>
+        <PerformanceOptimizations />
+        
+        {/* Schéma JSON-LD principal */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -294,6 +334,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}>
+        <GoogleAnalytics />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <ClientHeroUIProvider>
             <GlobalScrollShadow
