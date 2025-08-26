@@ -7,12 +7,9 @@ import { useState } from "react";
 import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
-import FAQChat from '@/components/FAQChat';
 import CityLinksList from '@/components/CityLinksList';
 import { CitySchema } from '@/components/CitySchema';
 import { getCityConfig } from '@/config/cities';
-import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
-// Composants SEO supprimés
 
 export default function Bordeaux() {
   // Schéma JSON-LD pour Bordeaux
@@ -808,19 +805,6 @@ export default function Bordeaux() {
       <GoogleReviews 
         placeId={process.env.NEXT_PUBLIC_GOOGLE_PLACE_ID || "ClimGO-default-place-id"} 
       />
-
-      {/* Section FAQ - Style Chat Moderne avec questions variées */}
-      <FAQChat title="Questions Fréquentes"
-        subtitle="Nos réponses à vos préoccupations les plus courantes sur le chauffage et la climatisation à Bordeaux"
-        faqs={getCityFAQSet('bordeaux')}
-        initials={getCityInitials('bordeaux')}
-        ctaTitle="Une autre question ?"
-        ctaSubtitle="N'hésitez pas à nous contacter directement !"
-        phoneNumber="0123456789"
-        email="contact@climgo.fr" citySlug="bordeaux" />
-
-      {/* Section Liste des Villes - Juste au-dessus de la carte */}
-      <CityLinksList />
 
       {/* Section Liste des Villes - Juste au-dessus de la carte */}
       <CityLinksList />

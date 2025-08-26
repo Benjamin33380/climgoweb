@@ -9,7 +9,6 @@ import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
 import CityLinksList from '@/components/CityLinksList';
-import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 
 export default function Andernos() {
 
@@ -816,9 +815,6 @@ export default function Andernos() {
 
 
       />
-
-      {/* Section Liste des Villes - Juste au-dessus de la carte */}
-      <CityLinksList />
 
       {/* Section Liste des Villes - Juste au-dessus de la carte */}
       <CityLinksList />

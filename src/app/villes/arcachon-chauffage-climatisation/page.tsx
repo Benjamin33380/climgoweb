@@ -11,7 +11,6 @@ import FAQChat from '@/components/FAQChat';
 import CityLinksList from '@/components/CityLinksList';
 import { CitySchema } from '@/components/CitySchema';
 import { getCityConfig } from '@/config/cities';
-import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 
 export default function Arcachon() {
   // Schéma JSON-LD pour Arcachon
@@ -810,17 +809,12 @@ export default function Arcachon() {
         placeId={process.env.NEXT_PUBLIC_GOOGLE_PLACE_ID || "ClimGO-default-place-id"} 
       />
 
-
-
       {/* Section FAQ - Style Chat Moderne avec questions variées */}
       <FAQChat
 
 
 
       />
-
-      {/* Section Liste des Villes - Juste au-dessus de la carte */}
-      <CityLinksList />
 
       {/* Section Liste des Villes - Juste au-dessus de la carte */}
       <CityLinksList />
