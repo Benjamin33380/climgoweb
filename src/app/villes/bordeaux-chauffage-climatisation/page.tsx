@@ -9,12 +9,14 @@ import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
 import CityLinksList from '@/components/CityLinksList';
+import { CitySchema } from '@/components/CitySchema';
+import { getCityConfig } from '@/config/cities';
 import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 // Composants SEO supprimés
 
 export default function Bordeaux() {
-
-
+  // Schéma JSON-LD pour Bordeaux
+  const cityData = getCityConfig('bordeaux-chauffage-climatisation')!;
 
   // Composant CitySearch
   const CitySearch = () => {
@@ -847,6 +849,9 @@ export default function Bordeaux() {
           </SimpleWrapper>
         </div>
       </section>
+
+      {/* Schéma JSON-LD pour Bordeaux */}
+      <CitySchema {...cityData} />
 
     </main>
   );

@@ -9,11 +9,13 @@ import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
 import FAQChat from '@/components/FAQChat';
 import CityLinksList from '@/components/CityLinksList';
+import { CitySchema } from '@/components/CitySchema';
+import { getCityConfig } from '@/config/cities';
 import { getCityFAQSet, getCityInitials } from '@/data/faqsOptimized';
 
 export default function Arcachon() {
-
-
+  // Schéma JSON-LD pour Arcachon
+  const cityData = getCityConfig('arcachon-chauffage-climatisation')!;
 
   // Composant CitySearch
   const CitySearch = () => {
@@ -847,6 +849,9 @@ export default function Arcachon() {
           </SimpleWrapper>
         </div>
       </section>
+
+      {/* Schéma JSON-LD pour Arcachon */}
+      <CitySchema {...cityData} />
 
     </main>
   );

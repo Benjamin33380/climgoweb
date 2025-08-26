@@ -159,6 +159,7 @@ export default function GoogleReviews({ placeId }: GoogleReviewsProps) {
                           const fallback = e.currentTarget.nextSibling as HTMLElement;
                           if (fallback) fallback.style.display = 'flex';
                         }}
+                        unoptimized={true}
                       />
                     ) : null}
                     <div 
