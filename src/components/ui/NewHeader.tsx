@@ -2,7 +2,7 @@
 import * as React from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Phone, Wrench, Wind, Droplet, Settings, FileText, Menu, Mail, MessageSquare } from "lucide-react"
+import { Phone, Wrench, Droplet, Settings, FileText, Menu, Mail, MessageSquare, AirVent } from "lucide-react"
 import { ModeToggle } from "@/components/ui/mode-toggle"
 import { Button } from "@/components/ui/button"
 import { LogoWithFallback } from "@/components/ui/Logo3D"
@@ -26,7 +26,7 @@ const services: { title: string; href: string; description: string; icon: React.
   {
     title: "Climatisation",
     href: "/climatisation", 
-    icon: <Wind className="w-4 h-4" />,
+    icon: <AirVent className="w-4 h-4" />,
     description: "Solutions de climatisation adaptées à vos besoins pour un confort optimal.",
   },
   {

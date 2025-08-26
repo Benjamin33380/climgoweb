@@ -21,11 +21,11 @@ export default function HomePage() {
   // État pour l'index de l'image actuelle
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
-  // Changement automatique d'image toutes les 20 secondes
+  // Changement automatique d'image toutes les 9 secondes
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
-    }, 20000); // 20 secondes
+    }, 9000); // 9 secondes
     
     return () => clearInterval(interval);
   }, [heroImages.length]);
@@ -397,6 +397,18 @@ export default function HomePage() {
                 style={{
                   animation: 'lightMove 4s infinite linear',
                   background:
+                    'linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 20%, rgba(0,0,0,1) 50%, rgba(0,0,0,0.8) 80%, rgba(0,0,0,0) 100%)',
+                  boxShadow: '0 0 24px rgba(0,0,0,.35)'
+                }}
+                aria-hidden="true"
+              />
+              
+              {/* Lumière qui défile - mode sombre seulement */}
+              <div
+                className="pointer-events-none absolute left-1/2 -translate-x-1/2 w-[2px] h-20 rounded-full hidden md:block dark:block"
+                style={{
+                  animation: 'lightMove 4s infinite linear',
+                  background:
                     'linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(255,255,255,0.8) 20%, rgba(255,255,255,1) 50%, rgba(255,255,255,0.8) 80%, rgba(0,0,0,0) 100%)',
                   boxShadow: '0 0 24px rgba(255,255,255,.35)'
                 }}
@@ -406,8 +418,8 @@ export default function HomePage() {
               {/* Étape 1 */}
               <div className="relative flex items-center mb-12 xs:mb-16">
                 {/* Pastille */}
-                <div className="absolute left-8 md:left-1/2 -translate-x-1/2 w-12 h-12 xs:w-14 xs:h-14 md:w-16 md:h-16 rounded-full shadow-lg bg-gradient-to-br from-orange-500 to-blue-600 flex items-center justify-center z-10">
-                  <svg className="w-5 h-5 xs:w-6 xs:h-6 md:w-7 md:h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8}>
+                <div className="absolute left-8 md:left-1/2 -translate-x-1/2 w-12 h-12 xs:w-14 xs:h-14 md:w-16 md:h-16 rounded-full shadow-lg bg-white dark:bg-black flex items-center justify-center z-10">
+                  <svg className="w-5 h-5 xs:w-6 xs:h-6 md:w-7 md:h-7 text-gray-900 dark:text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8}>
                     <path d="M9 12l2 2 4-4" strokeLinecap="round" strokeLinejoin="round"/>
                     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
                     <path d="M14 2v6h6" />
@@ -439,8 +451,8 @@ export default function HomePage() {
               {/* Étape 2 */}
               <div className="relative flex items-center mb-12 xs:mb-16">
                 <div className="hidden md:block w-5/12" />
-                <div className="absolute left-8 md:left-1/2 -translate-x-1/2 w-12 h-12 xs:w-14 xs:h-14 md:w-16 md:h-16 rounded-full shadow-lg bg-gradient-to-br from-blue-600 to-orange-500 flex items-center justify-center z-10">
-                  <svg className="w-5 h-5 xs:w-6 xs:h-6 md:w-7 md:h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8}>
+                <div className="absolute left-8 md:left-1/2 -translate-x-1/2 w-12 h-12 xs:w-14 xs:h-14 md:w-16 md:h-16 rounded-full shadow-lg bg-white dark:bg-black flex items-center justify-center z-10">
+                  <svg className="w-5 h-5 xs:w-6 xs:h-6 md:w-7 md:h-7 text-gray-900 dark:text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8}>
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" strokeLinecap="round" strokeLinejoin="round"/>
                     <path d="M9 12l2 2 4-4" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
@@ -467,8 +479,8 @@ export default function HomePage() {
 
               {/* Étape 3 */}
               <div className="relative flex items-center mb-12 xs:mb-16">
-                <div className="absolute left-8 md:left-1/2 -translate-x-1/2 w-12 h-12 xs:w-14 xs:h-14 md:w-16 md:h-16 rounded-full shadow-lg bg-gradient-to-br from-orange-600 to-blue-700 flex items-center justify-center z-10">
-                  <svg className="w-5 h-5 xs:w-6 xs:h-6 md:w-7 md:h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8}>
+                <div className="absolute left-8 md:left-1/2 -translate-x-1/2 w-12 h-12 xs:w-14 xs:h-14 md:w-16 md:h-16 rounded-full shadow-lg bg-white dark:bg-black flex items-center justify-center z-10">
+                  <svg className="w-5 h-5 xs:w-6 xs:h-6 md:w-7 md:h-7 text-gray-900 dark:text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8}>
                     <path d="M8 14s1.5 2 4 2 4-2 4-2" strokeLinecap="round" strokeLinejoin="round"/>
                     <path d="M9 9h.01" strokeLinecap="round" strokeLinejoin="round"/>
                     <path d="M15 9h.01" strokeLinecap="round" strokeLinejoin="round"/>
@@ -501,8 +513,8 @@ export default function HomePage() {
               {/* Étape 4 */}
               <div className="relative flex items-center">
                 <div className="hidden md:block w-5/12" />
-                <div className="absolute left-8 md:left-1/2 -translate-x-1/2 w-12 h-12 xs:w-14 xs:h-14 md:w-16 md:h-16 rounded-full shadow-lg bg-gradient-to-br from-blue-700 to-orange-600 flex items-center justify-center z-10">
-                  <Euro className="w-5 h-5 xs:w-6 xs:h-6 md:w-7 md:h-7 text-white" />
+                <div className="absolute left-8 md:left-1/2 -translate-x-1/2 w-12 h-12 xs:w-14 xs:h-14 md:w-16 md:h-16 rounded-full shadow-lg bg-white dark:bg-black flex items-center justify-center z-10">
+                  <Euro className="w-5 h-5 xs:w-6 xs:h-6 md:w-7 md:h-7 text-gray-900 dark:text-white" />
                 </div>
                 {/* Contenu mobile */}
                 <div className="ml-20 md:hidden w-full">
@@ -535,9 +547,6 @@ export default function HomePage() {
                 aria-label="Obtenez votre devis gratuit"
               >
                 Obtenez votre devis gratuit
-                <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
-                  <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
               </Link>
             </div>
           </div>

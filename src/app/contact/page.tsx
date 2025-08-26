@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Phone, Mail, MapPin, Clock, Star, User, MessageSquare, Building, Wrench, Wind, Droplet, Settings, FileText, Home } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Star, User, MessageSquare, Building, Wrench, Droplet, Settings, FileText, Home, AirVent } from 'lucide-react';
 import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import LocationMap from '@/components/LocationMap';
 
@@ -89,11 +89,11 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F8F9F4] dark:bg-black text-[#03144A] dark:text-white">
+    <div className="min-h-screen bg-white dark:bg-black text-[#03144A] dark:text-white">
       
       {/* Hero Section */}
       <section className="relative min-h-screen pt-24 md:pt-0 flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-[#F8F9F4] dark:bg-black" />
+        <div className="absolute inset-0 bg-white dark:bg-black" />
         
         {/* Background effects */}
         <div className="absolute w-2 h-2 bg-[#03144a] dark:bg-white rounded-full top-10 left-10" style={{ animation: 'float 4s ease-in-out infinite' }} />
@@ -107,11 +107,11 @@ export default function ContactPage() {
 
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#F97316] rounded-full filter blur-3xl animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-[#F8F9F4] dark:bg-black rounded-full filter blur-3xl animate-pulse" style={{animationDelay: '2s'}} />
+          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-white dark:bg-black rounded-full filter blur-3xl animate-pulse" style={{animationDelay: '2s'}} />
         </div>
 
         <div className="relative z-10 text-center max-w-5xl mx-auto px-6">
-          <div className="inline-flex items-center px-6 py-3 rounded-full border border-[#03144A] dark:border-white/20 text-sm tracking-widest uppercase mb-8 text-[#03144A] dark:text-white bg-[#F8F9F4] dark:bg-black backdrop-blur-sm">
+          <div className="inline-flex items-center px-6 py-3 rounded-full border border-[#03144A] dark:border-white/20 text-sm tracking-widest uppercase mb-8 text-[#03144A] dark:text-white bg-white dark:bg-black backdrop-blur-sm">
             <div className="w-2 h-2 bg-[#F97316] rounded-full mr-3 animate-pulse" />
             Parlons de votre projet
           </div>
@@ -448,7 +448,7 @@ export default function ContactPage() {
                   <div className="grid grid-cols-2 gap-4">
                     {[
                       { icon: <Wrench className="w-6 h-6" />, title: "Chauffage", desc: "Installation et maintenance de systèmes performants", hoverColor: "group-hover:text-[#FF8C00]", link: "/chauffage" },
-                      { icon: <Wind className="w-6 h-6" />, title: "Climatisation", desc: "Solutions de climatisation adaptées", hoverColor: "group-hover:text-[#2563EB]", link: "/climatisation" },
+                      { icon: <AirVent className="w-6 h-6" />, title: "Climatisation", desc: "Solutions de climatisation adaptées", hoverColor: "group-hover:text-[#2563EB]", link: "/climatisation" },
                       { icon: <Droplet className="w-6 h-6" />, title: "Eau chaude sanitaire", desc: "Systèmes d'eau chaude efficaces", hoverColor: "group-hover:text-[#0EA5E9]", link: "/eau-chaude-sanitaire" },
                       { icon: <Settings className="w-6 h-6" />, title: "Pompe à chaleur", desc: "Pompes à chaleur air-air et air-eau", hoverColor: "group-hover:text-[#8B5CF6]", link: "/services" },
                       { icon: <FileText className="w-6 h-6" />, title: "Maintenance", desc: "Entretien professionnel de vos équipements", hoverColor: "group-hover:text-[#10B981]", link: "/maintenance" }
@@ -472,7 +472,7 @@ export default function ContactPage() {
       </section>
 
       {/* Location Map Section */}
-      <LocationMap backgroundColor="bg-[#F8F9F4] dark:bg-black" />
+              <LocationMap backgroundColor="bg-white dark:bg-black" />
 
       <style jsx global>{`
         @keyframes float {

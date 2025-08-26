@@ -10,6 +10,47 @@ import LocationMap from '@/components/LocationMap';
 export default function MaintenancePage() {
   const solutionsRef = useRef<HTMLDivElement>(null);
 
+  // Carousel state for desktop
+  const [currentIndex, setCurrentIndex] = useState(0);
+  // For auto-scroll logic
+  const autoScrollRef = useRef<NodeJS.Timeout | null>(null);
+  const carouselHovering = useRef(false);
+
+  // Helper to clear interval
+  const clearAutoScroll = () => {
+    if (autoScrollRef.current) {
+      clearInterval(autoScrollRef.current);
+      autoScrollRef.current = null;
+    }
+  };
+
+  // Start auto-scroll
+  const startAutoScroll = () => {
+    clearAutoScroll();
+    autoScrollRef.current = setInterval(() => {
+      setCurrentIndex((prev) =>
+        prev === solutions.length - 1 ? 0 : prev + 1
+      );
+    }, 5000);
+  };
+
+  // Effect to start auto-scroll and clean up on unmount
+  useEffect(() => {
+    startAutoScroll();
+    return () => {
+      clearAutoScroll();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Reset auto-scroll when index is changed manually
+  useEffect(() => {
+    if (!carouselHovering.current) {
+      startAutoScroll();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentIndex]);
+
   const solutions = [
     {
       id: 'maintenance-climatisation',
@@ -100,46 +141,7 @@ export default function MaintenancePage() {
     }
   ];
 
-  // Carousel state for desktop
-  const [currentIndex, setCurrentIndex] = useState(0);
-  // For auto-scroll logic
-  const autoScrollRef = useRef<NodeJS.Timeout | null>(null);
-  const carouselHovering = useRef(false);
 
-  // Helper to clear interval
-  const clearAutoScroll = () => {
-    if (autoScrollRef.current) {
-      clearInterval(autoScrollRef.current);
-      autoScrollRef.current = null;
-    }
-  };
-
-  // Start auto-scroll
-  const startAutoScroll = () => {
-    clearAutoScroll();
-    autoScrollRef.current = setInterval(() => {
-      setCurrentIndex((prev) =>
-        prev === solutions.length - 1 ? 0 : prev + 1
-      );
-    }, 5000);
-  };
-
-  // Effect to start auto-scroll and clean up on unmount
-  useEffect(() => {
-    startAutoScroll();
-    return () => {
-      clearAutoScroll();
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  // Reset auto-scroll when index is changed manually
-  useEffect(() => {
-    if (!carouselHovering.current) {
-      startAutoScroll();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentIndex]);
 
   return (
     <div className="min-h-screen bg-white dark:bg-black text-[#03144A] dark:text-white">
@@ -188,7 +190,7 @@ export default function MaintenancePage() {
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <button
               onClick={() => solutionsRef.current?.scrollIntoView({ behavior: 'smooth' })}
-              className="group relative px-10 py-4 bg-[#F8F9F4] dark:bg-black text-[#03144A] dark:text-white rounded-full font-medium transition-all duration-300 hover:scale-105 overflow-hidden border border-[#03144A] dark:border-white/30"
+              className="group relative px-10 py-4 bg-white dark:bg-black text-[#03144A] dark:text-white rounded-full font-medium transition-all duration-300 hover:scale-105 overflow-hidden border border-[#03144A] dark:border-white/30"
             >
               <span className="relative z-10">Découvrir nos solutions</span>
               <div className="absolute inset-0 bg-gradient-to-r from-[#03144A] to-[#10B981] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -270,7 +272,7 @@ export default function MaintenancePage() {
                               </div>
                               <Link
                                 href="/contact"
-                                className="group px-8 py-3 bg-gradient-to-r from-[#03144A] to-[#10B981] rounded-full text-[#F8F9F4] font-medium transition-all duration-300 hover:scale-105"
+                                className="group px-8 py-3 bg-gradient-to-r from-[#03144A] to-[#10B981] rounded-full text-white font-medium transition-all duration-300 hover:scale-105"
                               >
                                 Devis gratuit
                               </Link>
@@ -306,7 +308,7 @@ export default function MaintenancePage() {
               </div>
             </div>
 
-                        {/* Mobile version : carrousel vertical optimisé */}
+            {/* Mobile version : carrousel vertical optimisé */}
             <div className="md:hidden space-y-6 px-4">
               {solutions.map((solution, index) => (
                 <div key={index} className="bg-white dark:bg-gray-900 rounded-2xl border border-[#03144A] dark:border-white/20 overflow-hidden shadow-lg">
@@ -329,7 +331,7 @@ export default function MaintenancePage() {
                         <p className="text-[#10B981] text-sm font-medium">{solution.subtitle}</p>
                       </div>
                       <div className="text-right ml-4">
-                        <p className="text-[#03144A] dark:text-white font-semibold text-sm">{solution.price}</p>
+                        <p className="text-[#10B981] text-sm font-medium">{solution.price}</p>
                       </div>
                     </div>
                     <p className="text-[#03144A] dark:text-white/80 text-sm leading-relaxed mb-4">{solution.description}</p>
@@ -351,7 +353,7 @@ export default function MaintenancePage() {
 
       {/* Advantages Section */}
       <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[#F8F9F4] dark:bg-black" />
+        <div className="absolute inset-0 bg-white dark:bg-black" />
         
         <div className="relative z-10 max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
@@ -367,7 +369,7 @@ export default function MaintenancePage() {
             {advantages.map((advantage, index) => (
               <div
                 key={index}
-                className="group text-center p-8 rounded-2xl bg-[#F8F9F4] dark:bg-black border border-[#03144A] dark:border-white/20 hover:border-[#10B981]/50 transition-all duration-300 hover:bg-[#10B981]/5"
+                className="group text-center p-8 rounded-2xl bg-white dark:bg-black border border-[#03144A] dark:border-white/20 hover:border-[#10B981]/50 transition-all duration-300 hover:bg-[#10B981]/5"
               >
                 <div className="text-5xl mb-6 transform group-hover:scale-110 transition-transform duration-300">
                   {advantage.icon}
@@ -400,7 +402,7 @@ export default function MaintenancePage() {
             
             <Link
               href="/contact"
-              className="inline-block px-8 md:px-10 py-3 md:py-4 bg-gradient-to-r from-[#03144A] to-[#10B981] rounded-full text-[#F8F9F4] font-medium transition-all duration-300 hover:scale-105 text-sm md:text-base"
+              className="inline-block px-8 md:px-10 py-3 md:py-4 bg-gradient-to-r from-[#03144A] to-[#10B981] rounded-full text-white font-medium transition-all duration-300 hover:scale-105 text-sm md:text-base"
             >
               Demander un devis gratuit
             </Link>
@@ -422,7 +424,7 @@ export default function MaintenancePage() {
       </section>
 
       {/* Location Map Section */}
-      <LocationMap backgroundColor="bg-[#F8F9F4] dark:bg-black" />
+              <LocationMap backgroundColor="bg-white dark:bg-black" />
 
       <style jsx global>{`
         @keyframes float {
