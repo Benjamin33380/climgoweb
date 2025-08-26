@@ -7,7 +7,7 @@ export const metadata: Metadata = generateCityMetadata(
   getCityConfig('le-bouscat-chauffage-climatisation')!
 );
 
-export default function Le-bouscatLayout({
+export default function Layout.tsxLayout({
   children,
 }: {
   children: React.ReactNode;

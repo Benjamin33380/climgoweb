@@ -7,7 +7,7 @@ export const metadata: Metadata = generateCityMetadata(
   getCityConfig('saint-loubes-chauffage-climatisation')!
 );
 
-export default function Saint-loubesLayout({
+export default function Layout.tsxLayout({
   children,
 }: {
   children: React.ReactNode;

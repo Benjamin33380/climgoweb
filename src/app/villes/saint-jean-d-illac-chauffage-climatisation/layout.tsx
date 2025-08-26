@@ -7,7 +7,7 @@ export const metadata: Metadata = generateCityMetadata(
   getCityConfig('saint-jean-d-illac-chauffage-climatisation')!
 );
 
-export default function Saint-jean-d-illacLayout({
+export default function Layout.tsxLayout({
   children,
 }: {
   children: React.ReactNode;

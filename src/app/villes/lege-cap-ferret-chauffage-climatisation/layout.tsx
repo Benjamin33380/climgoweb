@@ -7,7 +7,7 @@ export const metadata: Metadata = generateCityMetadata(
   getCityConfig('lege-cap-ferret-chauffage-climatisation')!
 );
 
-export default function Lege-cap-ferretLayout({
+export default function Layout.tsxLayout({
   children,
 }: {
   children: React.ReactNode;

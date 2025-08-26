@@ -7,7 +7,7 @@ export const metadata: Metadata = generateCityMetadata(
   getCityConfig('la-teste-de-buch-chauffage-climatisation')!
 );
 
-export default function La-teste-de-buchLayout({
+export default function Layout.tsxLayout({
   children,
 }: {
   children: React.ReactNode;

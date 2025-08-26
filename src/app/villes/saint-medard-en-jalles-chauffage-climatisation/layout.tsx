@@ -7,7 +7,7 @@ export const metadata: Metadata = generateCityMetadata(
   getCityConfig('saint-medard-en-jalles-chauffage-climatisation')!
 );
 
-export default function Saint-medard-en-jallesLayout({
+export default function Layout.tsxLayout({
   children,
 }: {
   children: React.ReactNode;

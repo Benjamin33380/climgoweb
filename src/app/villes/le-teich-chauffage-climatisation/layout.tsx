@@ -7,7 +7,7 @@ export const metadata: Metadata = generateCityMetadata(
   getCityConfig('le-teich-chauffage-climatisation')!
 );
 
-export default function Le-teichLayout({
+export default function Layout.tsxLayout({
   children,
 }: {
   children: React.ReactNode;

@@ -7,16 +7,12 @@ export const metadata: Metadata = generateCityMetadata(
   getCityConfig('la-brede-chauffage-climatisation')!
 );
 
-export default function La-bredeLayout({
+const cityData = getCityConfig('la-brede-chauffage-climatisation')!;
+
+export default function LaBredeLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const cityData = getCityConfig('la-brede-chauffage-climatisation')!;
-  
-  return (
-    <CityLayout cityData={cityData}>
-      {children}
-    </CityLayout>
-  );
+  return <CityLayout cityData={cityData}>{children}</CityLayout>;
 }

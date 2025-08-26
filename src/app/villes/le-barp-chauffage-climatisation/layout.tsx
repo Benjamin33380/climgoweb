@@ -7,7 +7,7 @@ export const metadata: Metadata = generateCityMetadata(
   getCityConfig('le-barp-chauffage-climatisation')!
 );
 
-export default function Le-barpLayout({
+export default function Layout.tsxLayout({
   children,
 }: {
   children: React.ReactNode;

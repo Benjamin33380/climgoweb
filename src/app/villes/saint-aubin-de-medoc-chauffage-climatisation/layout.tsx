@@ -7,7 +7,7 @@ export const metadata: Metadata = generateCityMetadata(
   getCityConfig('saint-aubin-de-medoc-chauffage-climatisation')!
 );
 
-export default function Saint-aubin-de-medocLayout({
+export default function Layout.tsxLayout({
   children,
 }: {
   children: React.ReactNode;

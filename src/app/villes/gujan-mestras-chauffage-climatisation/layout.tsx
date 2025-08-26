@@ -7,16 +7,12 @@ export const metadata: Metadata = generateCityMetadata(
   getCityConfig('gujan-mestras-chauffage-climatisation')!
 );
 
-export default function Gujan-mestrasLayout({
+const cityData = getCityConfig('gujan-mestras-chauffage-climatisation')!;
+
+export default function GujanMestrasLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const cityData = getCityConfig('gujan-mestras-chauffage-climatisation')!;
-  
-  return (
-    <CityLayout cityData={cityData}>
-      {children}
-    </CityLayout>
-  );
+  return <CityLayout cityData={cityData}>{children}</CityLayout>;
 }
