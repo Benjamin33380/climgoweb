@@ -7,16 +7,12 @@ export const metadata: Metadata = generateCityMetadata(
   getCityConfig('villenave-d-ornon-chauffage-climatisation')!
 );
 
-export default function Layout.tsxLayout({
+const cityData = getCityConfig('villenave-d-ornon-chauffage-climatisation')!;
+
+export default function VillenaveDOrnonLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const cityData = getCityConfig('villenave-d-ornon-chauffage-climatisation')!;
-  
-  return (
-    <CityLayout cityData={cityData}>
-      {children}
-    </CityLayout>
-  );
+  return <CityLayout cityData={cityData}>{children}</CityLayout>;
 }

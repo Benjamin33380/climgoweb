@@ -7,16 +7,12 @@ export const metadata: Metadata = generateCityMetadata(
   getCityConfig('martignas-sur-jalle-chauffage-climatisation')!
 );
 
-export default function Layout.tsxLayout({
+const cityData = getCityConfig('martignas-sur-jalle-chauffage-climatisation')!;
+
+export default function MartignasSurJalleLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const cityData = getCityConfig('martignas-sur-jalle-chauffage-climatisation')!;
-  
-  return (
-    <CityLayout cityData={cityData}>
-      {children}
-    </CityLayout>
-  );
+  return <CityLayout cityData={cityData}>{children}</CityLayout>;
 }

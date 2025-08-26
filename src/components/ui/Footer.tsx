@@ -9,10 +9,6 @@ const services = [
   { title: "Maintenance", href: "/maintenance", icon: <FileText className="w-4 h-4" /> },
 ];
 
-const zones = [
-  { title: "Zones d'intervention", href: "/zones-interventions" },
-];
-
 const entreprise = [
   { title: "À propos", href: "/a-propos" },
   { title: "Politique de confidentialité", href: "/politique-confidentialite" },

@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+
 interface OgImageProps {
   city: string;
   postalCode: string;
@@ -12,11 +14,12 @@ export default function OgImage({ city, postalCode, service = 'chauffage' }: OgI
   return (
     <div className="hidden">
       {/* Cette div est cachée mais génère l'image OG */}
-      <img 
+      <Image 
         src={imageUrl} 
         alt={`${service} ${city} ${postalCode} - ClimGO Expert Local`}
         width={1200}
         height={630}
+        priority
       />
     </div>
   );

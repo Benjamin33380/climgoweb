@@ -7,16 +7,12 @@ export const metadata: Metadata = generateCityMetadata(
   getCityConfig('saint-selve-chauffage-climatisation')!
 );
 
-export default function Layout.tsxLayout({
+const cityData = getCityConfig('saint-selve-chauffage-climatisation')!;
+
+export default function SaintSelveLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const cityData = getCityConfig('saint-selve-chauffage-climatisation')!;
-  
-  return (
-    <CityLayout cityData={cityData}>
-      {children}
-    </CityLayout>
-  );
+  return <CityLayout cityData={cityData}>{children}</CityLayout>;
 }

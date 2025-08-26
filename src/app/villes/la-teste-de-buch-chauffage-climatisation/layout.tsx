@@ -1,22 +1,12 @@
-import { Metadata } from 'next';
-import { getCityConfig } from '@/config/cities';
-import { generateCityMetadata } from '@/components/CityLayout';
 import CityLayout from '@/components/CityLayout';
+import { getCityConfig } from '@/config/cities';
 
-export const metadata: Metadata = generateCityMetadata(
-  getCityConfig('la-teste-de-buch-chauffage-climatisation')!
-);
+const cityData = getCityConfig('la-teste-de-buch-chauffage-climatisation')!;
 
-export default function Layout.tsxLayout({
+export default function LaTesteDeBuchLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const cityData = getCityConfig('la-teste-de-buch-chauffage-climatisation')!;
-  
-  return (
-    <CityLayout cityData={cityData}>
-      {children}
-    </CityLayout>
-  );
+  return <CityLayout cityData={cityData}>{children}</CityLayout>;
 }

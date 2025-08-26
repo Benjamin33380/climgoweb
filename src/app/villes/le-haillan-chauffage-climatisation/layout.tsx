@@ -7,16 +7,12 @@ export const metadata: Metadata = generateCityMetadata(
   getCityConfig('le-haillan-chauffage-climatisation')!
 );
 
-export default function Layout.tsxLayout({
+const cityData = getCityConfig('le-haillan-chauffage-climatisation')!;
+
+export default function LeHaillanLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const cityData = getCityConfig('le-haillan-chauffage-climatisation')!;
-  
-  return (
-    <CityLayout cityData={cityData}>
-      {children}
-    </CityLayout>
-  );
+  return <CityLayout cityData={cityData}>{children}</CityLayout>;
 }

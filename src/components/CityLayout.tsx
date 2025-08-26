@@ -146,7 +146,74 @@ function buildCityJsonLd(cityData: CityConfig) {
     ...nearbyCities.slice(0, 10).map(city => ({ '@type': 'City', name: city }))
   ];
 
-  const localBusiness: any = {
+  const localBusiness: {
+    '@context': string;
+    '@type': string;
+    name: string;
+    url: string;
+    image: string;
+    telephone: string;
+    address: {
+      '@type': string;
+      streetAddress: string;
+      addressLocality: string;
+      postalCode: string;
+      addressCountry: string;
+    };
+    areaServed: Array<{ '@type': string; name: string }>;
+    serviceArea: {
+      '@type': string;
+      geoMidpoint: {
+        '@type': string;
+        latitude: number;
+        longitude: number;
+      };
+      geoRadius: string;
+    };
+    place: {
+      '@type': string;
+      name: string;
+      address: {
+        '@type': string;
+        addressLocality: string;
+        addressRegion: string;
+        addressCountry: string;
+      };
+      geo: {
+        '@type': string;
+        latitude: number;
+        longitude: number;
+      };
+    };
+    sameAs?: string[];
+    geo: {
+      '@type': string;
+      latitude: number;
+      longitude: number;
+    };
+    openingHoursSpecification: Array<{
+      '@type': string;
+      dayOfWeek: string;
+      opens: string;
+      closes: string;
+    }>;
+    hasOfferCatalog: {
+      '@type': string;
+      name: string;
+      itemListElement: Array<{
+        '@type': string;
+        position: number;
+        itemOffered: {
+          '@type': string;
+          name: string;
+          description: string;
+          category: string;
+          areaServed: Array<{ '@type': string; name: string }>;
+          provider: { '@type': string; name: string };
+        };
+      }>;
+    };
+  } = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     name: BRAND,
