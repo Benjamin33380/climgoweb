@@ -33,7 +33,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.climgo.fr'),
   title: {
-    default: "ClimGO Audenge - Chauffage & Climatisation | Installation PAC, Entretien",
+    default: "ClimGO Audenge - Chauffage & Climatisation",
     template: "%s | ClimGO Audenge"
   },
   description: "Expert chauffage climatisation Audenge 33980. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     url: "https://www.climgo.fr/villes/audenge-chauffage-climatisation",
-    title: "ClimGO Audenge - Chauffage & Climatisation | Installation PAC, Entretien",
+    title: "ClimGO Audenge - Chauffage & Climatisation",
     description: "Expert chauffage climatisation Audenge 33980. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.",
     siteName: "ClimGO",
     images: [
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ClimGO Audenge - Chauffage & Climatisation | Installation PAC, Entretien",
+    title: "ClimGO Audenge - Chauffage & Climatisation",
     description: "Expert chauffage climatisation Audenge 33980. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.",
     images: ["/img/climdame.png"],
   },

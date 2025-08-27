@@ -33,7 +33,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.climgo.fr'),
   title: {
-    default: "ClimGO Gujan-Mestras - Chauffage & Climatisation | Installation PAC, Entretien",
+    default: "ClimGO Gujan-Mestras - Chauffage & Climatisation",
     template: "%s | ClimGO Gujan-Mestras"
   },
   description: "Expert chauffage climatisation à Gujan-Mestras. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     url: "https://www.climgo.fr/villes/gujan-mestras-chauffage-climatisation",
-    title: "ClimGO Gujan-Mestras - Chauffage & Climatisation | Installation PAC, Entretien",
+    title: "ClimGO Gujan-Mestras - Chauffage & Climatisation",
     description: "Expert chauffage climatisation à Gujan-Mestras. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
     siteName: "ClimGO",
     images: [
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Gujan-Mestras 33470 | ClimGO',
+    title: 'ClimGO Gujan-Mestras - Chauffage & Climatisation',
     description: 'Expert chauffage climatisation Gujan-Mestras 33470. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     images: ['https://www.climgo.fr/images/og/gujan-mestras-chauffage-climatisation.jpg'],
   },

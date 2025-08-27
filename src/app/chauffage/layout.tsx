@@ -2,12 +2,12 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Chauffage Gironde | Installation PAC, Plancher Chauffant',
-  description: 'Expert chauffage Gironde. Installation PAC, plancher chauffant, radiateurs. Artisan RGE certifié.',
+  description: 'Expert chauffage Gironde. Installation PAC air/eau, plancher chauffant, radiateurs nouvelle génération. Artisan RGE certifié. Devis gratuit et accompagnement MaPrimeRénov.',
   keywords: 'chauffage gironde, installation pompe à chaleur, plancher chauffant, radiateurs, artisan RGE, MaPrimeRénov, prime CEE, devis gratuit chauffage',
   
   openGraph: {
     title: 'Chauffage Gironde | Installation PAC, Plancher Chauffant',
-    description: 'Expert chauffage Gironde. Installation PAC, plancher chauffant, radiateurs. Artisan RGE certifié.',
+    description: 'Expert chauffage Gironde. Installation PAC air/eau, plancher chauffant, radiateurs nouvelle génération. Artisan RGE certifié. Devis gratuit et accompagnement MaPrimeRénov.',
     url: 'https://www.climgo.fr/chauffage',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     site: '@climgo_fr',
     creator: '@climgo_fr',
     title: 'Chauffage Gironde | Installation PAC, Plancher Chauffant',
-    description: 'Expert chauffage Gironde. Installation PAC, plancher chauffant, radiateurs.',
+    description: 'Expert chauffage Gironde. Installation PAC air/eau, plancher chauffant, radiateurs nouvelle génération. Artisan RGE certifié.',
     images: ['/img/serp/chauff.jpg'],
   },
   

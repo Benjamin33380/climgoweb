@@ -33,7 +33,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.climgo.fr'),
   title: {
-    default: "ClimGO Lanton - Chauffage & Climatisation | Installation PAC, Entretien",
+    default: "ClimGO Lanton - Chauffage & Climatisation",
     template: "%s | ClimGO Lanton"
   },
   description: "Expert chauffage climatisation à Lanton. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     url: "https://www.climgo.fr/villes/lanton-chauffage-climatisation",
-    title: "ClimGO Lanton - Chauffage & Climatisation | Installation PAC, Entretien",
+    title: "ClimGO Lanton - Chauffage & Climatisation",
     description: "Expert chauffage climatisation à Lanton. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
     siteName: "ClimGO",
     images: [
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Lanton 33138 | ClimGO',
+    title: 'ClimGO Lanton - Chauffage & Climatisation',
     description: 'Expert chauffage climatisation Lanton 33138. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     images: ['https://www.climgo.fr/images/og/lanton-chauffage-climatisation.jpg'],
   },
