@@ -88,6 +88,18 @@ export const metadata: Metadata = {
     },
   },
   
+  // Icons optimisés (favicon.svg priorisé)
+  icons: {
+    icon: [
+      { url: "/favicon/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+    ],
+    apple: [{ url: "/favicon/apple-touch-icon.png", sizes: "180x180" }],
+    shortcut: [{ url: "/favicon/favicon.svg", type: "image/svg+xml" }],
+  },
+  
   alternates: {
     canonical: 'https://www.climgo.fr/aides-etat',
   },
