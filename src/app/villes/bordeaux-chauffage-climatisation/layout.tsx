@@ -93,15 +93,7 @@ export const metadata: Metadata = {
     ],
     apple: [{ url: "/favicon/apple-touch-icon.png", sizes: "180x180" }],
     shortcut: [{ url: "/favicon/favicon.svg", type: "image/svg+xml" }],
-<<<<<<< Updated upstream
-=======
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "ClimGO Bordeaux - Chauffage & Climatisation | Installation PAC, Entretien",
-    description: "ClimGO, expert chauffage et climatisation à Bordeaux. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
-    images: ["/img/climdame.png"],
->>>>>>> Stashed changes
+
   },
   alternates: {
     canonical: "https://www.climgo.fr/villes/bordeaux-chauffage-climatisation",
