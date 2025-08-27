@@ -2,12 +2,12 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Entretien Chauffage Climatisation Gironde | ClimGO',
-  description: 'Entretien chauffage climatisation Gironde. Maintenance PAC, chaudière, climatiseur. Contrat entretien annuel. Intervention rapide. Expert RGE certifié ClimGO.',
+  description: 'Entretien chauffage climatisation Gironde. Maintenance PAC, chaudière, climatiseur. Contrat entretien annuel. Intervention rapide.',
   keywords: 'maintenance chauffage, entretien climatisation, contrat maintenance, révision annuelle, nettoyage installation, contrôle étanchéité, remplacement filtres, vérification sécurité, optimisation performance, diagnostic panne, réparation urgente, dépannage 24h, pièces détachées, garantie constructeur, expertise technique, prévention pannes, amélioration rendement, mise aux normes',
   
   openGraph: {
     title: 'Entretien Chauffage Climatisation Gironde | ClimGO',
-    description: 'Entretien chauffage climatisation Gironde. Maintenance PAC, chaudière, climatiseur. Contrat entretien annuel. Intervention rapide. Expert RGE certifié ClimGO.',
+    description: 'Entretien chauffage climatisation Gironde. Maintenance PAC, chaudière, climatiseur. Contrat entretien annuel. Intervention rapide.',
     url: 'https://www.climgo.fr/maintenance',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -31,6 +31,10 @@ export const metadata: Metadata = {
   
   alternates: {
     canonical: 'https://www.climgo.fr/maintenance',
+    languages: {
+      'x-default': 'https://www.climgo.fr/maintenance',
+      'fr-FR': 'https://www.climgo.fr/maintenance',
+    },
   },
   
   other: {
@@ -98,7 +102,7 @@ export default function MaintenanceLayout({
             },
             "areaServed": {
               "@type": "Place",
-              "name": "Gironde, Bordeaux Métropole, Bassin d'Arcachon"
+              "name": "Gironde, Bordeaux Métropole, Bassin d'Arcachon, Marcheprime, Biganos, Mios, Arcachon, Bordeaux, Andernos-les-Bains"
             },
             "serviceType": "Entretien et dépannage de systèmes thermiques",
             "url": "https://www.climgo.fr/maintenance",

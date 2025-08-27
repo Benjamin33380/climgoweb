@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     default: "ClimGO Biganos - Chauffage & Climatisation | Installation PAC, Entretien",
     template: "%s | ClimGO Biganos"
   },
-  description: "ClimGO, expert chauffage et climatisation à Biganos. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+  description: "Expert chauffage climatisation Biganos 33380. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.",
   keywords: ["chauffage Biganos", "climatisation Biganos", "pompe à chaleur Biganos", "installation PAC Biganos", "entretien chauffage Biganos", "artisan RGE Biganos", "PAC air-eau Biganos", "PAC air-air Biganos", "plancher chauffant Biganos", "radiateurs Biganos", "maintenance Biganos", "dépannage Biganos", "devis gratuit Biganos"],
   authors: [{ name: "ClimGO", url: "https://www.climgo.fr" }],
   creator: "ClimGO",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     url: "https://www.climgo.fr/villes/biganos-chauffage-climatisation",
     title: "ClimGO Biganos - Chauffage & Climatisation | Installation PAC, Entretien",
-    description: "ClimGO, expert chauffage et climatisation à Biganos. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+    description: "Expert chauffage climatisation Biganos 33380. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.",
     siteName: "ClimGO",
     images: [
       {
@@ -86,12 +86,13 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "ClimGO Biganos - Chauffage & Climatisation | Installation PAC, Entretien",
-    description: "ClimGO, expert chauffage et climatisation à Biganos. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+    description: "Expert chauffage climatisation Biganos 33380. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.",
     images: ["/img/climdame.png"],
   },
   alternates: {
     canonical: "https://www.climgo.fr/villes/biganos-chauffage-climatisation",
     languages: {
+      'x-default': 'https://www.climgo.fr/villes/biganos-chauffage-climatisation',
       'fr-FR': 'https://www.climgo.fr/villes/biganos-chauffage-climatisation',
     },
   },

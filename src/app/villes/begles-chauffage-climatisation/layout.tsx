@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     default: "ClimGO Bègles - Chauffage & Climatisation | Installation PAC, Entretien",
     template: "%s | ClimGO Bègles"
   },
-  description: "ClimGO, expert chauffage et climatisation à Bègles. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+  description: "Expert chauffage climatisation à Bègles. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
   keywords: ["chauffage Bègles", "climatisation Bègles", "pompe à chaleur Bègles", "installation PAC Bègles", "entretien chauffage Bègles", "artisan RGE Bègles", "PAC air-eau Bègles", "PAC air-air Bègles", "plancher chauffant Bègles", "radiateurs Bègles", "maintenance Bègles", "dépannage Bègles", "devis gratuit Bègles"],
   authors: [{ name: "ClimGO", url: "https://www.climgo.fr" }],
   creator: "ClimGO",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     url: "https://www.climgo.fr/villes/begles-chauffage-climatisation",
     title: "ClimGO Bègles - Chauffage & Climatisation | Installation PAC, Entretien",
-    description: "ClimGO, expert chauffage et climatisation à Bègles. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+    description: "Expert chauffage climatisation à Bègles. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
     siteName: "ClimGO",
     images: [
       {
@@ -73,6 +73,17 @@ export const metadata: Metadata = {
       },
     ],
   },
+  // Twitter Cards COMPLET
+  twitter: {
+    card: 'summary_large_image',
+    site: '@climgo_fr',
+    creator: '@climgo_fr',
+    title: 'Chauffage Climatisation Bègles 33130 | ClimGO',
+    description: 'Expert chauffage climatisation Bègles 33130. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
+    images: ['https://www.climgo.fr/images/og/begles-chauffage-climatisation.jpg'],
+  },
+  
+  // Icons optimisés (favicon.svg priorisé)
   icons: {
     icon: [
       { url: "/favicon/favicon.svg", type: "image/svg+xml" },
@@ -83,15 +94,10 @@ export const metadata: Metadata = {
     apple: [{ url: "/favicon/apple-touch-icon.png", sizes: "180x180" }],
     shortcut: [{ url: "/favicon/favicon.svg", type: "image/svg+xml" }],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "ClimGO Bègles - Chauffage & Climatisation | Installation PAC, Entretien",
-    description: "ClimGO, expert chauffage et climatisation à Bègles. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
-    images: ["/img/climdame.png"],
-  },
   alternates: {
     canonical: "https://www.climgo.fr/villes/begles-chauffage-climatisation",
     languages: {
+      'x-default': 'https://www.climgo.fr/villes/begles-chauffage-climatisation',
       'fr-FR': 'https://www.climgo.fr/villes/begles-chauffage-climatisation',
     },
   },

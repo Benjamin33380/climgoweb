@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     default: "ClimGO Arès - Chauffage & Climatisation | Installation PAC, Entretien",
     template: "%s | ClimGO Arès"
   },
-  description: "ClimGO, expert chauffage et climatisation à Arès. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+  description: "Expert chauffage climatisation Arès 33640. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.",
   keywords: ["chauffage Arès", "climatisation Arès", "pompe à chaleur Arès", "installation PAC Arès", "entretien chauffage Arès", "artisan RGE Arès", "PAC air-eau Arès", "PAC air-air Arès", "plancher chauffant Arès", "radiateurs Arès", "maintenance Arès", "dépannage Arès", "devis gratuit Arès"],
   authors: [{ name: "ClimGO", url: "https://www.climgo.fr" }],
   creator: "ClimGO",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     url: "https://www.climgo.fr/villes/ares-chauffage-climatisation",
     title: "ClimGO Arès - Chauffage & Climatisation | Installation PAC, Entretien",
-    description: "ClimGO, expert chauffage et climatisation à Arès. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+    description: "Expert chauffage climatisation Arès 33640. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.",
     siteName: "ClimGO",
     images: [
       {
@@ -86,12 +86,13 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "ClimGO Arès - Chauffage & Climatisation | Installation PAC, Entretien",
-    description: "ClimGO, expert chauffage et climatisation à Arès. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+    description: "Expert chauffage climatisation Arès 33640. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.",
     images: ["/img/climdame.png"],
   },
   alternates: {
     canonical: "https://www.climgo.fr/villes/ares-chauffage-climatisation",
     languages: {
+      'x-default': 'https://www.climgo.fr/villes/ares-chauffage-climatisation',
       'fr-FR': 'https://www.climgo.fr/villes/ares-chauffage-climatisation',
     },
   },

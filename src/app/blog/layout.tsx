@@ -2,12 +2,12 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Blog ClimGO | Conseils Chauffage Climatisation Gironde',
-  description: 'Blog ClimGO : conseils chauffage climatisation, actualités, guides techniques. Expert RGE en Gironde. Découvrez nos articles d\'experts et astuces pratiques.',
+  description: 'Blog ClimGO : conseils chauffage climatisation, actualités, guides techniques. Expert RGE en Gironde.',
   keywords: 'blog ClimGO, conseils chauffage, conseils climatisation, actualités ClimGO, expert RGE Gironde',
 
   openGraph: {
     title: 'Blog ClimGO | Conseils Chauffage Climatisation Gironde',
-    description: 'Blog ClimGO : conseils chauffage climatisation, actualités, guides techniques. Expert RGE en Gironde. Découvrez nos articles d\'experts et astuces pratiques.',
+    description: 'Blog ClimGO : conseils chauffage climatisation, actualités, guides techniques. Expert RGE en Gironde.',
     url: 'https://www.climgo.fr/blog',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -25,12 +25,16 @@ export const metadata: Metadata = {
     site: '@climgo_fr',
     creator: '@climgo_fr',
     title: 'Blog ClimGO | Conseils Chauffage Climatisation Gironde',
-    description: 'Blog ClimGO : conseils chauffage climatisation, actualités, guides techniques. Expert RGE en Gironde. Découvrez nos articles d\'experts.',
+    description: 'Blog ClimGO : conseils chauffage climatisation, actualités, guides techniques. Expert RGE en Gironde.',
     images: ['https://www.climgo.fr/images/og/blog-climgo.jpg'],
   },
 
   alternates: {
     canonical: 'https://www.climgo.fr/blog',
+    languages: {
+      'x-default': 'https://www.climgo.fr/blog',
+      'fr-FR': 'https://www.climgo.fr/blog',
+    },
   },
 
   robots: {

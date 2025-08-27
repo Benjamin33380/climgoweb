@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     default: "ClimGO Le Teich - Chauffage & Climatisation | Installation PAC, Entretien",
     template: "%s | ClimGO Le Teich"
   },
-  description: "ClimGO, expert chauffage et climatisation au Teich. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+  description: "Expert chauffage climatisation au Teich. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
   keywords: ["chauffage Le Teich", "climatisation Le Teich", "pompe à chaleur Le Teich", "installation PAC Le Teich", "entretien chauffage Le Teich", "artisan RGE Le Teich", "PAC air-eau Le Teich", "PAC air-air Le Teich", "plancher chauffant Le Teich", "radiateurs Le Teich", "maintenance Le Teich", "dépannage Le Teich", "devis gratuit Le Teich"],
   authors: [{ name: "ClimGO", url: "https://www.climgo.fr" }],
   creator: "ClimGO",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     url: "https://www.climgo.fr/villes/le-teich-chauffage-climatisation",
     title: "ClimGO Le Teich - Chauffage & Climatisation | Installation PAC, Entretien",
-    description: "ClimGO, expert chauffage et climatisation au Teich. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+    description: "Expert chauffage climatisation au Teich. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
     siteName: "ClimGO",
     images: [
       {
@@ -73,6 +73,17 @@ export const metadata: Metadata = {
       },
     ],
   },
+  // Twitter Cards COMPLET
+  twitter: {
+    card: 'summary_large_image',
+    site: '@climgo_fr',
+    creator: '@climgo_fr',
+    title: 'Chauffage Climatisation Le Teich 33470 | ClimGO',
+    description: 'Expert chauffage climatisation Le Teich 33470. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
+    images: ['https://www.climgo.fr/images/og/le-teich-chauffage-climatisation.jpg'],
+  },
+  
+  // Icons optimisés (favicon.svg priorisé)
   icons: {
     icon: [
       { url: "/favicon/favicon.svg", type: "image/svg+xml" },
@@ -83,15 +94,10 @@ export const metadata: Metadata = {
     apple: [{ url: "/favicon/apple-touch-icon.png", sizes: "180x180" }],
     shortcut: [{ url: "/favicon/favicon.svg", type: "image/svg+xml" }],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "ClimGO Le Teich - Chauffage & Climatisation | Installation PAC, Entretien",
-    description: "ClimGO, expert chauffage et climatisation au Teich. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
-    images: ["/img/climdame.png"],
-  },
   alternates: {
     canonical: "https://www.climgo.fr/villes/le-teich-chauffage-climatisation",
     languages: {
+      'x-default': 'https://www.climgo.fr/villes/le-teich-chauffage-climatisation',
       'fr-FR': 'https://www.climgo.fr/villes/le-teich-chauffage-climatisation',
     },
   },

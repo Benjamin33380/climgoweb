@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: "Services ClimGO | Chauffage Climatisation PAC Gironde",
-  description: "Services ClimGO : installation, maintenance et dépannage de chauffage, climatisation et pompes à chaleur en Gironde. Artisan RGE certifié, devis gratuit.",
+  description: "Services ClimGO : installation, maintenance et dépannage de chauffage, climatisation et pompes à chaleur en Gironde. Artisan RGE certifié.",
   keywords: [
     "services chauffage Gironde",
     "services climatisation Gironde",
@@ -37,6 +37,10 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://www.climgo.fr/services",
+    languages: {
+      'x-default': 'https://www.climgo.fr/services',
+      'fr-FR': 'https://www.climgo.fr/services',
+    },
   },
   robots: {
     index: true,
@@ -94,7 +98,7 @@ export default function ServicesLayout({
             },
             "areaServed": {
               "@type": "Place",
-              "name": "Gironde, Bordeaux Métropole, Bassin d'Arcachon"
+              "name": "Gironde, Bordeaux Métropole, Bassin d'Arcachon, Marcheprime, Biganos, Mios, Arcachon, Bordeaux, Andernos-les-Bains"
             },
             "serviceType": "Installation, maintenance et dépannage de systèmes thermiques",
             "url": "https://www.climgo.fr/services",

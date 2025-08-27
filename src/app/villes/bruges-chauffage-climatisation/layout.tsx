@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     default: "ClimGO Bruges - Chauffage & Climatisation | Installation PAC, Entretien",
     template: "%s | ClimGO Bruges"
   },
-  description: "ClimGO, expert chauffage et climatisation à Bruges. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+  description: "Expert chauffage climatisation Bruges 33520. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.",
   keywords: ["chauffage Bruges", "climatisation Bruges", "pompe à chaleur Bruges", "installation PAC Bruges", "entretien chauffage Bruges", "artisan RGE Bruges", "PAC air-eau Bruges", "PAC air-air Bruges", "plancher chauffant Bruges", "radiateurs Bruges", "maintenance Bruges", "dépannage Bruges", "devis gratuit Bruges"],
   authors: [{ name: "ClimGO", url: "https://www.climgo.fr" }],
   creator: "ClimGO",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     url: "https://www.climgo.fr/villes/bruges-chauffage-climatisation",
     title: "ClimGO Bruges - Chauffage & Climatisation | Installation PAC, Entretien",
-    description: "ClimGO, expert chauffage et climatisation à Bruges. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+    description: "Expert chauffage climatisation Bruges 33520. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.",
     siteName: "ClimGO",
     images: [
       {
@@ -86,12 +86,13 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "ClimGO Bruges - Chauffage & Climatisation | Installation PAC, Entretien",
-    description: "ClimGO, expert chauffage et climatisation à Bruges. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+    description: "Expert chauffage climatisation Bruges 33520. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.",
     images: ["/img/climdame.png"],
   },
   alternates: {
     canonical: "https://www.climgo.fr/villes/bruges-chauffage-climatisation",
     languages: {
+      'x-default': 'https://www.climgo.fr/villes/bruges-chauffage-climatisation',
       'fr-FR': 'https://www.climgo.fr/villes/bruges-chauffage-climatisation',
     },
   },

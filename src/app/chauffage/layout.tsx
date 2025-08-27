@@ -2,12 +2,12 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Chauffage Gironde | Installation PAC, Plancher Chauffant',
-  description: 'Expert chauffage Gironde. Installation pompe à chaleur, plancher chauffant, radiateurs. Artisan RGE certifié.',
+  description: 'Expert chauffage Gironde. Installation PAC, plancher chauffant, radiateurs. Artisan RGE certifié.',
   keywords: 'chauffage gironde, installation pompe à chaleur, plancher chauffant, radiateurs, artisan RGE, MaPrimeRénov, prime CEE, devis gratuit chauffage',
   
   openGraph: {
     title: 'Chauffage Gironde | Installation PAC, Plancher Chauffant',
-    description: 'Expert chauffage Gironde. Installation pompe à chaleur, plancher chauffant, radiateurs. Artisan RGE certifié.',
+    description: 'Expert chauffage Gironde. Installation PAC, plancher chauffant, radiateurs. Artisan RGE certifié.',
     url: 'https://www.climgo.fr/chauffage',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -25,12 +25,16 @@ export const metadata: Metadata = {
     site: '@climgo_fr',
     creator: '@climgo_fr',
     title: 'Chauffage Gironde | Installation PAC, Plancher Chauffant',
-    description: 'Expert chauffage Gironde. Installation pompe à chaleur, plancher chauffant, radiateurs.',
+    description: 'Expert chauffage Gironde. Installation PAC, plancher chauffant, radiateurs.',
     images: ['/img/serp/chauff.jpg'],
   },
   
   alternates: {
     canonical: 'https://www.climgo.fr/chauffage',
+    languages: {
+      'x-default': 'https://www.climgo.fr/chauffage',
+      'fr-FR': 'https://www.climgo.fr/chauffage',
+    },
   },
   
   robots: {
@@ -89,7 +93,7 @@ export default function ChauffageLayout({
             },
             "areaServed": {
               "@type": "Place",
-              "name": "Gironde, Bordeaux Métropole, Bassin d'Arcachon"
+              "name": "Gironde, Bordeaux Métropole, Bassin d'Arcachon, Marcheprime, Biganos, Mios, Arcachon, Bordeaux, Andernos-les-Bains"
             },
             "serviceType": "Installation et maintenance de systèmes de chauffage",
             "url": "https://www.climgo.fr/chauffage",

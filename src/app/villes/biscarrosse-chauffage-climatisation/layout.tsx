@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     default: "ClimGO Biscarrosse - Chauffage & Climatisation | Installation PAC, Entretien",
     template: "%s | ClimGO Biscarrosse"
   },
-  description: "ClimGO, expert chauffage et climatisation à Biscarrosse. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+  description: "Expert chauffage climatisation Biscarrosse 40600. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.",
   keywords: ["chauffage Biscarrosse", "climatisation Biscarrosse", "pompe à chaleur Biscarrosse", "installation PAC Biscarrosse", "entretien chauffage Biscarrosse", "artisan RGE Biscarrosse", "PAC air-eau Biscarrosse", "PAC air-air Biscarrosse", "plancher chauffant Biscarrosse", "radiateurs Biscarrosse", "maintenance Biscarrosse", "dépannage Biscarrosse", "devis gratuit Biscarrosse"],
   authors: [{ name: "ClimGO", url: "https://www.climgo.fr" }],
   creator: "ClimGO",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     url: "https://www.climgo.fr/villes/biscarrosse-chauffage-climatisation",
     title: "ClimGO Biscarrosse - Chauffage & Climatisation | Installation PAC, Entretien",
-    description: "ClimGO, expert chauffage et climatisation à Biscarrosse. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+    description: "Expert chauffage climatisation Biscarrosse 40600. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.",
     siteName: "ClimGO",
     images: [
       {
@@ -86,12 +86,13 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "ClimGO Biscarrosse - Chauffage & Climatisation | Installation PAC, Entretien",
-    description: "ClimGO, expert chauffage et climatisation à Biscarrosse. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+    description: "Expert chauffage climatisation Biscarrosse 40600. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.",
     images: ["/img/climdame.png"],
   },
   alternates: {
     canonical: "https://www.climgo.fr/villes/biscarrosse-chauffage-climatisation",
     languages: {
+      'x-default': 'https://www.climgo.fr/villes/biscarrosse-chauffage-climatisation',
       'fr-FR': 'https://www.climgo.fr/villes/biscarrosse-chauffage-climatisation',
     },
   },

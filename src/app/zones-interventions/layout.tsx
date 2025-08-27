@@ -31,6 +31,10 @@ export const metadata: Metadata = {
 
   alternates: {
     canonical: 'https://www.climgo.fr/zones-interventions',
+    languages: {
+      'x-default': 'https://www.climgo.fr/zones-interventions',
+      'fr-FR': 'https://www.climgo.fr/zones-interventions',
+    },
   },
 
   robots: {

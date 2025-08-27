@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     default: "ClimGO Le Barp - Chauffage & Climatisation | Installation PAC, Entretien",
     template: "%s | ClimGO Le Barp"
   },
-  description: "ClimGO, expert chauffage et climatisation au Barp. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+  description: "Expert chauffage climatisation au Barp. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
   keywords: ["chauffage Le Barp", "climatisation Le Barp", "pompe à chaleur Le Barp", "installation PAC Le Barp", "entretien chauffage Le Barp", "artisan RGE Le Barp", "PAC air-eau Le Barp", "PAC air-air Le Barp", "plancher chauffant Le Barp", "radiateurs Le Barp", "maintenance Le Barp", "dépannage Le Barp", "devis gratuit Le Barp"],
   authors: [{ name: "ClimGO", url: "https://www.climgo.fr" }],
   creator: "ClimGO",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     url: "https://www.climgo.fr/villes/le-barp-chauffage-climatisation",
     title: "ClimGO Le Barp - Chauffage & Climatisation | Installation PAC, Entretien",
-    description: "ClimGO, expert chauffage et climatisation au Barp. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+    description: "Expert chauffage climatisation au Barp. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
     siteName: "ClimGO",
     images: [
       {
@@ -73,6 +73,17 @@ export const metadata: Metadata = {
       },
     ],
   },
+  // Twitter Cards COMPLET
+  twitter: {
+    card: 'summary_large_image',
+    site: '@climgo_fr',
+    creator: '@climgo_fr',
+    title: 'Chauffage Climatisation Le Barp 33114 | ClimGO',
+    description: 'Expert chauffage climatisation Le Barp 33114. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
+    images: ['https://www.climgo.fr/images/og/le-barp-chauffage-climatisation.jpg'],
+  },
+  
+  // Icons optimisés (favicon.svg priorisé)
   icons: {
     icon: [
       { url: "/favicon/favicon.svg", type: "image/svg+xml" },
@@ -83,15 +94,10 @@ export const metadata: Metadata = {
     apple: [{ url: "/favicon/apple-touch-icon.png", sizes: "180x180" }],
     shortcut: [{ url: "/favicon/favicon.svg", type: "image/svg+xml" }],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "ClimGO Le Barp - Chauffage & Climatisation | Installation PAC, Entretien",
-    description: "ClimGO, expert chauffage et climatisation au Barp. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
-    images: ["/img/climdame.png"],
-  },
   alternates: {
     canonical: "https://www.climgo.fr/villes/le-barp-chauffage-climatisation",
     languages: {
+      'x-default': 'https://www.climgo.fr/villes/le-barp-chauffage-climatisation',
       'fr-FR': 'https://www.climgo.fr/villes/le-barp-chauffage-climatisation',
     },
   },

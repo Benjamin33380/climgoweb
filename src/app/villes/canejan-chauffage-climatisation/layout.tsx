@@ -36,8 +36,8 @@ export const metadata: Metadata = {
     default: "ClimGO Canéjan - Chauffage & Climatisation | Installation PAC, Entretien",
     template: "%s | ClimGO Canéjan"
   },
-  description: "ClimGO, expert chauffage et climatisation à Canéjan. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
-  keywords: ["chauffage Canéjan", "climatisation Canéjan", "pompe à chaleur Canéjan", "installation PAC Canéjan", "entretien chauffage Canéjan", "artisan RGE Canéjan", "PAC air-eau Canéjan", "PAC air-air Canéjan", "plancher chauffant Canéjan", "radiateurs Canéjan", "maintenance Canéjan", "dépannage Canéjan", "devis gratuit Canéjan"],
+  description: "Expert chauffage climatisation à Canejan. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
+  keywords: ["chauffage Canejan", "climatisation Canejan", "pompe à chaleur Canejan", "installation PAC Canejan", "entretien chauffage Canejan", "artisan RGE Canejan", "PAC air-eau Canejan", "PAC air-air Canejan", "plancher chauffant Canejan", "radiateurs Canejan", "maintenance Canejan", "dépannage Canejan", "devis gratuit Canejan"],
   authors: [{ name: "ClimGO", url: "https://www.climgo.fr" }],
   creator: "ClimGO",
   publisher: "ClimGO",
@@ -61,18 +61,29 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     url: "https://www.climgo.fr/villes/canejan-chauffage-climatisation",
-    title: "ClimGO Canéjan - Chauffage & Climatisation | Installation PAC, Entretien",
-    description: "ClimGO, expert chauffage et climatisation à Canéjan. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+    title: "ClimGO Canejan - Chauffage & Climatisation | Installation PAC, Entretien",
+    description: "Expert chauffage climatisation à Canejan. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
     siteName: "ClimGO",
     images: [
       {
         url: "/img/climdame.png",
         width: 1200,
         height: 630,
-        alt: "ClimGO Canéjan - Chauffage & Climatisation | Installation PAC, Entretien",
+        alt: "ClimGO Canejan - Chauffage & Climatisation | Installation PAC, Entretien",
       },
     ],
   },
+  // Twitter Cards COMPLET
+  twitter: {
+    card: 'summary_large_image',
+    site: '@climgo_fr',
+    creator: '@climgo_fr',
+    title: 'Chauffage Climatisation Canejan 33610 | ClimGO',
+    description: 'Expert chauffage climatisation Canejan 33610. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
+    images: ['https://www.climgo.fr/images/og/canejan-chauffage-climatisation.jpg'],
+  },
+  
+  // Icons optimisés (favicon.svg priorisé)
   icons: {
     icon: [
       { url: "/favicon/favicon.svg", type: "image/svg+xml" },
@@ -83,15 +94,10 @@ export const metadata: Metadata = {
     apple: [{ url: "/favicon/apple-touch-icon.png", sizes: "180x180" }],
     shortcut: [{ url: "/favicon/favicon.svg", type: "image/svg+xml" }],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "ClimGO Canéjan - Chauffage & Climatisation | Installation PAC, Entretien",
-    description: "ClimGO, expert chauffage et climatisation à Canéjan. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
-    images: ["/img/climdame.png"],
-  },
   alternates: {
     canonical: "https://www.climgo.fr/villes/canejan-chauffage-climatisation",
     languages: {
+      'x-default': 'https://www.climgo.fr/villes/canejan-chauffage-climatisation',
       'fr-FR': 'https://www.climgo.fr/villes/canejan-chauffage-climatisation',
     },
   },

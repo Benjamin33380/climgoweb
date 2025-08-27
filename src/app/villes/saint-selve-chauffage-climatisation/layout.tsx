@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     default: "ClimGO Saint-Selve - Chauffage & Climatisation | Installation PAC, Entretien",
     template: "%s | ClimGO Saint-Selve"
   },
-  description: "ClimGO, expert chauffage et climatisation à Saint-Selve. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+  description: "Expert chauffage climatisation Saint-Selve 33650. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.",
   keywords: ["chauffage Saint-Selve", "climatisation Saint-Selve", "pompe à chaleur Saint-Selve", "installation PAC Saint-Selve", "entretien chauffage Saint-Selve", "artisan RGE Saint-Selve", "PAC air-eau Saint-Selve", "PAC air-air Saint-Selve", "plancher chauffant Saint-Selve", "radiateurs Saint-Selve", "maintenance Saint-Selve", "dépannage Saint-Selve", "devis gratuit Saint-Selve"],
   authors: [{ name: "ClimGO", url: "https://www.climgo.fr" }],
   creator: "ClimGO",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     url: "https://www.climgo.fr/villes/saint-selve-chauffage-climatisation",
     title: "ClimGO Saint-Selve - Chauffage & Climatisation | Installation PAC, Entretien",
-    description: "ClimGO, expert chauffage et climatisation à Saint-Selve. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+    description: "Expert chauffage climatisation Saint-Selve 33650. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.",
     siteName: "ClimGO",
     images: [
       {
@@ -86,12 +86,13 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "ClimGO Saint-Selve - Chauffage & Climatisation | Installation PAC, Entretien",
-    description: "ClimGO, expert chauffage et climatisation à Saint-Selve. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+    description: "Expert chauffage climatisation Saint-Selve 33650. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.",
     images: ["/img/climdame.png"],
   },
   alternates: {
     canonical: "https://www.climgo.fr/villes/saint-selve-chauffage-climatisation",
     languages: {
+      'x-default': 'https://www.climgo.fr/villes/saint-selve-chauffage-climatisation',
       'fr-FR': 'https://www.climgo.fr/villes/saint-selve-chauffage-climatisation',
     },
   },

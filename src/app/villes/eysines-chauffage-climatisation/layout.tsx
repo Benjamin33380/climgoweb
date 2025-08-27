@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     default: "ClimGO Eysines - Chauffage & Climatisation | Installation PAC, Entretien",
     template: "%s | ClimGO Eysines"
   },
-  description: "ClimGO, expert chauffage et climatisation à Eysines. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+  description: "Expert chauffage climatisation à Eysines. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
   keywords: ["chauffage Eysines", "climatisation Eysines", "pompe à chaleur Eysines", "installation PAC Eysines", "entretien chauffage Eysines", "artisan RGE Eysines", "PAC air-eau Eysines", "PAC air-air Eysines", "plancher chauffant Eysines", "radiateurs Eysines", "maintenance Eysines", "dépannage Eysines", "devis gratuit Eysines"],
   authors: [{ name: "ClimGO", url: "https://www.climgo.fr" }],
   creator: "ClimGO",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     url: "https://www.climgo.fr/villes/eysines-chauffage-climatisation",
     title: "ClimGO Eysines - Chauffage & Climatisation | Installation PAC, Entretien",
-    description: "ClimGO, expert chauffage et climatisation à Eysines. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+    description: "Expert chauffage climatisation à Eysines. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
     siteName: "ClimGO",
     images: [
       {
@@ -73,6 +73,17 @@ export const metadata: Metadata = {
       },
     ],
   },
+  // Twitter Cards COMPLET
+  twitter: {
+    card: 'summary_large_image',
+    site: '@climgo_fr',
+    creator: '@climgo_fr',
+    title: 'Chauffage Climatisation Eysines 33320 | ClimGO',
+    description: 'Expert chauffage climatisation Eysines 33320. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
+    images: ['https://www.climgo.fr/images/og/eysines-chauffage-climatisation.jpg'],
+  },
+  
+  // Icons optimisés (favicon.svg priorisé)
   icons: {
     icon: [
       { url: "/favicon/favicon.svg", type: "image/svg+xml" },
@@ -83,15 +94,10 @@ export const metadata: Metadata = {
     apple: [{ url: "/favicon/apple-touch-icon.png", sizes: "180x180" }],
     shortcut: [{ url: "/favicon/favicon.svg", type: "image/svg+xml" }],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "ClimGO Eysines - Chauffage & Climatisation | Installation PAC, Entretien",
-    description: "ClimGO, expert chauffage et climatisation à Eysines. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
-    images: ["/img/climdame.png"],
-  },
   alternates: {
     canonical: "https://www.climgo.fr/villes/eysines-chauffage-climatisation",
     languages: {
+      'x-default': 'https://www.climgo.fr/villes/eysines-chauffage-climatisation',
       'fr-FR': 'https://www.climgo.fr/villes/eysines-chauffage-climatisation',
     },
   },

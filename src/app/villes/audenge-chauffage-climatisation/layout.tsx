@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     default: "ClimGO Audenge - Chauffage & Climatisation | Installation PAC, Entretien",
     template: "%s | ClimGO Audenge"
   },
-  description: "ClimGO, expert chauffage et climatisation à Audenge. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+  description: "Expert chauffage climatisation Audenge 33980. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.",
   keywords: ["chauffage Audenge", "climatisation Audenge", "pompe à chaleur Audenge", "installation PAC Audenge", "entretien chauffage Audenge", "artisan RGE Audenge", "PAC air-eau Audenge", "PAC air-air Audenge", "plancher chauffant Audenge", "radiateurs Audenge", "maintenance Audenge", "dépannage Audenge", "devis gratuit Audenge"],
   authors: [{ name: "ClimGO", url: "https://www.climgo.fr" }],
   creator: "ClimGO",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     url: "https://www.climgo.fr/villes/audenge-chauffage-climatisation",
     title: "ClimGO Audenge - Chauffage & Climatisation | Installation PAC, Entretien",
-    description: "ClimGO, expert chauffage et climatisation à Audenge. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+    description: "Expert chauffage climatisation Audenge 33980. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.",
     siteName: "ClimGO",
     images: [
       {
@@ -86,12 +86,13 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "ClimGO Audenge - Chauffage & Climatisation | Installation PAC, Entretien",
-    description: "ClimGO, expert chauffage et climatisation à Audenge. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+    description: "Expert chauffage climatisation Audenge 33980. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.",
     images: ["/img/climdame.png"],
   },
   alternates: {
     canonical: "https://www.climgo.fr/villes/audenge-chauffage-climatisation",
     languages: {
+      'x-default': 'https://www.climgo.fr/villes/audenge-chauffage-climatisation',
       'fr-FR': 'https://www.climgo.fr/villes/audenge-chauffage-climatisation',
     },
   },

@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     default: "ClimGO Bordeaux - Chauffage & Climatisation | Installation PAC, Entretien",
     template: "%s | ClimGO Bordeaux"
   },
-  description: "ClimGO, expert chauffage et climatisation à Bordeaux. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+  description: "Expert chauffage climatisation à Bordeaux. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
   keywords: ["chauffage Bordeaux", "climatisation Bordeaux", "pompe à chaleur Bordeaux", "installation PAC Bordeaux", "entretien chauffage Bordeaux", "artisan RGE Bordeaux", "PAC air-eau Bordeaux", "PAC air-air Bordeaux", "plancher chauffant Bordeaux", "radiateurs Bordeaux", "maintenance Bordeaux", "dépannage Bordeaux", "devis gratuit Bordeaux"],
   authors: [{ name: "ClimGO", url: "https://www.climgo.fr" }],
   creator: "ClimGO",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     url: "https://www.climgo.fr/villes/bordeaux-chauffage-climatisation",
     title: "ClimGO Bordeaux - Chauffage & Climatisation | Installation PAC, Entretien",
-    description: "ClimGO, expert chauffage et climatisation à Bordeaux. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+    description: "Expert chauffage climatisation à Bordeaux. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
     siteName: "ClimGO",
     images: [
       {
@@ -98,6 +98,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.climgo.fr/villes/bordeaux-chauffage-climatisation",
     languages: {
+      'x-default': 'https://www.climgo.fr/villes/bordeaux-chauffage-climatisation',
       'fr-FR': 'https://www.climgo.fr/villes/bordeaux-chauffage-climatisation',
     },
   },

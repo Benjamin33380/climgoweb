@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     default: "ClimGO Salles - Chauffage & Climatisation | Installation PAC, Entretien",
     template: "%s | ClimGO Salles"
   },
-  description: "ClimGO, expert chauffage et climatisation à Salles. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+  description: "Expert chauffage climatisation Salles 33770. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.",
   keywords: ["chauffage Salles", "climatisation Salles", "pompe à chaleur Salles", "installation PAC Salles", "entretien chauffage Salles", "artisan RGE Salles", "PAC air-eau Salles", "PAC air-air Salles", "plancher chauffant Salles", "radiateurs Salles", "maintenance Salles", "dépannage Salles", "devis gratuit Salles"],
   authors: [{ name: "ClimGO", url: "https://www.climgo.fr" }],
   creator: "ClimGO",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     url: "https://www.climgo.fr/villes/salles-chauffage-climatisation",
     title: "ClimGO Salles - Chauffage & Climatisation | Installation PAC, Entretien",
-    description: "ClimGO, expert chauffage et climatisation à Salles. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+    description: "Expert chauffage climatisation Salles 33770. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.",
     siteName: "ClimGO",
     images: [
       {
@@ -86,12 +86,13 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "ClimGO Salles - Chauffage & Climatisation | Installation PAC, Entretien",
-    description: "ClimGO, expert chauffage et climatisation à Salles. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+    description: "Expert chauffage climatisation Salles 33770. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.",
     images: ["/img/climdame.png"],
   },
   alternates: {
     canonical: "https://www.climgo.fr/villes/salles-chauffage-climatisation",
     languages: {
+      'x-default': 'https://www.climgo.fr/villes/salles-chauffage-climatisation',
       'fr-FR': 'https://www.climgo.fr/villes/salles-chauffage-climatisation',
     },
   },

@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     default: "ClimGO Saint-Jean-d'Illac - Chauffage & Climatisation | Installation PAC, Entretien",
     template: "%s | ClimGO Saint-Jean-d'Illac"
   },
-  description: "ClimGO, expert chauffage et climatisation à Saint-Jean-d'Illac. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+  description: "Expert chauffage climatisation à Saint-Jean-d'Illac. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
   keywords: ["chauffage Saint-Jean-d'Illac", "climatisation Saint-Jean-d'Illac", "pompe à chaleur Saint-Jean-d'Illac", "installation PAC Saint-Jean-d'Illac", "entretien chauffage Saint-Jean-d'Illac", "artisan RGE Saint-Jean-d'Illac", "PAC air-eau Saint-Jean-d'Illac", "PAC air-air Saint-Jean-d'Illac", "plancher chauffant Saint-Jean-d'Illac", "radiateurs Saint-Jean-d'Illac", "maintenance Saint-Jean-d'Illac", "dépannage Saint-Jean-d'Illac", "devis gratuit Saint-Jean-d'Illac"],
   authors: [{ name: "ClimGO", url: "https://www.climgo.fr" }],
   creator: "ClimGO",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     url: "https://www.climgo.fr/villes/saint-jean-d-illac-chauffage-climatisation",
     title: "ClimGO Saint-Jean-d'Illac - Chauffage & Climatisation | Installation PAC, Entretien",
-    description: "ClimGO, expert chauffage et climatisation à Saint-Jean-d'Illac. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+    description: "Expert chauffage climatisation à Saint-Jean-d'Illac. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
     siteName: "ClimGO",
     images: [
       {
@@ -73,6 +73,17 @@ export const metadata: Metadata = {
       },
     ],
   },
+  // Twitter Cards COMPLET
+  twitter: {
+    card: 'summary_large_image',
+    site: '@climgo_fr',
+    creator: '@climgo_fr',
+    title: 'Chauffage Climatisation Saint-Jean-d\'Illac 33127 | ClimGO',
+    description: 'Expert chauffage climatisation Saint-Jean-d\'Illac 33127. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
+    images: ['https://www.climgo.fr/images/og/saint-jean-d-illac-chauffage-climatisation.jpg'],
+  },
+  
+  // Icons optimisés (favicon.svg priorisé)
   icons: {
     icon: [
       { url: "/favicon/favicon.svg", type: "image/svg+xml" },
@@ -83,15 +94,10 @@ export const metadata: Metadata = {
     apple: [{ url: "/favicon/apple-touch-icon.png", sizes: "180x180" }],
     shortcut: [{ url: "/favicon/favicon.svg", type: "image/svg+xml" }],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "ClimGO Saint-Jean-d'Illac - Chauffage & Climatisation | Installation PAC, Entretien",
-    description: "ClimGO, expert chauffage et climatisation à Saint-Jean-d'Illac. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
-    images: ["/img/climdame.png"],
-  },
   alternates: {
     canonical: "https://www.climgo.fr/villes/saint-jean-d-illac-chauffage-climatisation",
     languages: {
+      'x-default': 'https://www.climgo.fr/villes/saint-jean-d-illac-chauffage-climatisation',
       'fr-FR': 'https://www.climgo.fr/villes/saint-jean-d-illac-chauffage-climatisation',
     },
   },

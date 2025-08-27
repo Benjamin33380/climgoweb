@@ -40,10 +40,10 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.climgo.fr'),
   title: {
-    default: "ClimGO - Chauffage & Climatisation Gironde",
+    default: "ClimGO - Spécialiste Chauffage & Climatisation en Gironde",
     template: "%s | ClimGO"
   },
-  description: "ClimGO, expert chauffage et climatisation en Gironde. Installation PAC, entretien et dépannage. Artisan RGE. Devis gratuit.",
+  description: "Expert chauffage climatisation Gironde. Installation PAC, entretien, dépannage. Artisan RGE. Devis gratuit. 07.66.46.00.08",
   keywords: ["chauffage Gironde", "climatisation Gironde", "pompe à chaleur", "entretien clim", "installateur chauffage", "artisan RGE", "Bordeaux", "Bassin d'Arcachon", "PAC air-eau", "PAC air-air", "plancher chauffant", "radiateurs", "maintenance", "dépannage"],
   authors: [{ name: "ClimGO", url: "https://www.climgo.fr" }],
   creator: "ClimGO",
@@ -68,8 +68,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     url: "https://www.climgo.fr",
-    title: "ClimGO - Chauffage & Climatisation Gironde",
-    description: "ClimGO, expert chauffage et climatisation en Gironde. Installation PAC, entretien et dépannage. Artisan RGE. Devis gratuit.",
+    title: "ClimGO - Spécialiste Chauffage & Climatisation en Gironde",
+    description: "Expert chauffage climatisation Gironde. Installation PAC, entretien, dépannage. Artisan RGE. Devis gratuit. 07.66.46.00.08",
     siteName: "ClimGO",
     images: [
       {
@@ -92,13 +92,14 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ClimGO - Chauffage & Climatisation Gironde",
-    description: "ClimGO, expert chauffage et climatisation en Gironde. Installation PAC, entretien et dépannage. Artisan RGE. Devis gratuit.",
+    title: "ClimGO - Spécialiste Chauffage & Climatisation en Gironde",
+    description: "Expert chauffage climatisation Gironde. Installation PAC, entretien, dépannage. Artisan RGE. Devis gratuit. 07.66.46.00.08",
     images: ["/img/climdame.png"],
   },
   alternates: {
     canonical: "https://www.climgo.fr",
     languages: {
+      'x-default': 'https://www.climgo.fr',
       'fr-FR': 'https://www.climgo.fr',
     },
   },
@@ -168,7 +169,7 @@ export default function RootLayout({
               ],
               "areaServed": {
                 "@type": "Place",
-                "name": "Gironde, Bordeaux Métropole, Bassin d'Arcachon, Marcheprime, Biganos, La Teste-de-Buch, Gujan-Mestras, Le Teich, Cestas, Pessac, Mérignac"
+                "name": "Gironde, Bassin d'Arcachon, Marcheprime, Biganos, La Teste-de-Buch, Arcachon, Mios, Cestas, Pessac, Mérignac, Bordeaux, Andernos-les-Bains"
               },
               "foundingDate": "2024",
               "founder": {

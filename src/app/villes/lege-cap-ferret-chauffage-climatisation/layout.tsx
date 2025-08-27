@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     default: "ClimGO Lège-Cap-Ferret - Chauffage & Climatisation | Installation PAC, Entretien",
     template: "%s | ClimGO Lège-Cap-Ferret"
   },
-  description: "ClimGO, expert chauffage et climatisation à Lège-Cap-Ferret. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+  description: "Expert chauffage climatisation à Lège-Cap-Ferret. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
   keywords: ["chauffage Lège-Cap-Ferret", "climatisation Lège-Cap-Ferret", "pompe à chaleur Lège-Cap-Ferret", "installation PAC Lège-Cap-Ferret", "entretien chauffage Lège-Cap-Ferret", "artisan RGE Lège-Cap-Ferret", "PAC air-eau Lège-Cap-Ferret", "PAC air-air Lège-Cap-Ferret", "plancher chauffant Lège-Cap-Ferret", "radiateurs Lège-Cap-Ferret", "maintenance Lège-Cap-Ferret", "dépannage Lège-Cap-Ferret", "devis gratuit Lège-Cap-Ferret"],
   authors: [{ name: "ClimGO", url: "https://www.climgo.fr" }],
   creator: "ClimGO",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     url: "https://www.climgo.fr/villes/lege-cap-ferret-chauffage-climatisation",
     title: "ClimGO Lège-Cap-Ferret - Chauffage & Climatisation | Installation PAC, Entretien",
-    description: "ClimGO, expert chauffage et climatisation à Lège-Cap-Ferret. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+    description: "Expert chauffage climatisation à Lège-Cap-Ferret. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
     siteName: "ClimGO",
     images: [
       {
@@ -73,6 +73,17 @@ export const metadata: Metadata = {
       },
     ],
   },
+  // Twitter Cards COMPLET
+  twitter: {
+    card: 'summary_large_image',
+    site: '@climgo_fr',
+    creator: '@climgo_fr',
+    title: 'Chauffage Climatisation Lège-Cap-Ferret 33950 | ClimGO',
+    description: 'Expert chauffage climatisation Lège-Cap-Ferret 33950. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
+    images: ['https://www.climgo.fr/images/og/lege-cap-ferret-chauffage-climatisation.jpg'],
+  },
+  
+  // Icons optimisés (favicon.svg priorisé)
   icons: {
     icon: [
       { url: "/favicon/favicon.svg", type: "image/svg+xml" },
@@ -83,15 +94,10 @@ export const metadata: Metadata = {
     apple: [{ url: "/favicon/apple-touch-icon.png", sizes: "180x180" }],
     shortcut: [{ url: "/favicon/favicon.svg", type: "image/svg+xml" }],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "ClimGO Lège-Cap-Ferret - Chauffage & Climatisation | Installation PAC, Entretien",
-    description: "ClimGO, expert chauffage et climatisation à Lège-Cap-Ferret. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
-    images: ["/img/climdame.png"],
-  },
   alternates: {
     canonical: "https://www.climgo.fr/villes/lege-cap-ferret-chauffage-climatisation",
     languages: {
+      'x-default': 'https://www.climgo.fr/villes/lege-cap-ferret-chauffage-climatisation',
       'fr-FR': 'https://www.climgo.fr/villes/lege-cap-ferret-chauffage-climatisation',
     },
   },

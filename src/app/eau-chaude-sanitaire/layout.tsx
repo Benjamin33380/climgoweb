@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: "Chauffe-eau Gironde | Installation & Maintenance",
-  description: "Installation et maintenance de chauffe-eau en Gironde. ClimGO, expert en eau chaude sanitaire. Devis gratuit, intervention rapide. Artisan RGE certifié.",
+  description: "Installation et maintenance de chauffe-eau en Gironde. ClimGO, expert en eau chaude sanitaire. Devis gratuit, intervention rapide.",
   keywords: [
     "chauffe-eau Gironde",
     "eau chaude sanitaire",
@@ -37,6 +37,10 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://www.climgo.fr/eau-chaude-sanitaire",
+    languages: {
+      'x-default': 'https://www.climgo.fr/eau-chaude-sanitaire',
+      'fr-FR': 'https://www.climgo.fr/eau-chaude-sanitaire',
+    },
   },
   robots: {
     index: true,
@@ -94,7 +98,7 @@ export default function EauChaudeSanitaireLayout({
             },
             "areaServed": {
               "@type": "Place",
-              "name": "Gironde, Bordeaux Métropole, Bassin d'Arcachon"
+              "name": "Gironde, Bordeaux Métropole, Bassin d'Arcachon, Marcheprime, Mios, Biganos, Arcachon, Bordeaux, Andernos-les-Bains"
             },
             "serviceType": "Installation et maintenance de systèmes d'eau chaude sanitaire",
             "url": "https://www.climgo.fr/eau-chaude-sanitaire",

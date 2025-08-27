@@ -31,6 +31,10 @@ export const metadata: Metadata = {
   
   alternates: {
     canonical: 'https://www.climgo.fr/politique-confidentialite',
+    languages: {
+      'x-default': 'https://www.climgo.fr/politique-confidentialite',
+      'fr-FR': 'https://www.climgo.fr/politique-confidentialite',
+    },
   },
   
   robots: {

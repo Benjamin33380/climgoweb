@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     default: "ClimGO Lacanau - Chauffage & Climatisation | Installation PAC, Entretien",
     template: "%s | ClimGO Lacanau"
   },
-  description: "ClimGO, expert chauffage et climatisation à Lacanau. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+  description: "Expert chauffage climatisation Lacanau 33680. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.",
   keywords: ["chauffage Lacanau", "climatisation Lacanau", "pompe à chaleur Lacanau", "installation PAC Lacanau", "entretien chauffage Lacanau", "artisan RGE Lacanau", "PAC air-eau Lacanau", "PAC air-air Lacanau", "plancher chauffant Lacanau", "radiateurs Lacanau", "maintenance Lacanau", "dépannage Lacanau", "devis gratuit Lacanau"],
   authors: [{ name: "ClimGO", url: "https://www.climgo.fr" }],
   creator: "ClimGO",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     url: "https://www.climgo.fr/villes/lacanau-chauffage-climatisation",
     title: "ClimGO Lacanau - Chauffage & Climatisation | Installation PAC, Entretien",
-    description: "ClimGO, expert chauffage et climatisation à Lacanau. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+    description: "Expert chauffage climatisation Lacanau 33680. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.",
     siteName: "ClimGO",
     images: [
       {
@@ -86,12 +86,13 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "ClimGO Lacanau - Chauffage & Climatisation | Installation PAC, Entretien",
-    description: "ClimGO, expert chauffage et climatisation à Lacanau. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+    description: "Expert chauffage climatisation Lacanau 33680. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.",
     images: ["/img/climdame.png"],
   },
   alternates: {
     canonical: "https://www.climgo.fr/villes/lacanau-chauffage-climatisation",
     languages: {
+      'x-default': 'https://www.climgo.fr/villes/lacanau-chauffage-climatisation',
       'fr-FR': 'https://www.climgo.fr/villes/lacanau-chauffage-climatisation',
     },
   },

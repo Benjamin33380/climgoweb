@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     default: "ClimGO Marcheprime - Chauffage & Climatisation | Installation PAC, Entretien",
     template: "%s | ClimGO Marcheprime"
   },
-  description: "ClimGO, expert chauffage et climatisation à Marcheprime. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+  description: "Expert chauffage climatisation à Marcheprime. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
   keywords: ["chauffage Marcheprime", "climatisation Marcheprime", "pompe à chaleur Marcheprime", "installation PAC Marcheprime", "entretien chauffage Marcheprime", "artisan RGE Marcheprime", "PAC air-eau Marcheprime", "PAC air-air Marcheprime", "plancher chauffant Marcheprime", "radiateurs Marcheprime", "maintenance Marcheprime", "dépannage Marcheprime", "devis gratuit Marcheprime"],
   authors: [{ name: "ClimGO", url: "https://www.climgo.fr" }],
   creator: "ClimGO",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     url: "https://www.climgo.fr/villes/marcheprime-chauffage-climatisation",
     title: "ClimGO Marcheprime - Chauffage & Climatisation | Installation PAC, Entretien",
-    description: "ClimGO, expert chauffage et climatisation à Marcheprime. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+    description: "Expert chauffage climatisation à Marcheprime. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
     siteName: "ClimGO",
     images: [
       {
@@ -73,6 +73,17 @@ export const metadata: Metadata = {
       },
     ],
   },
+  // Twitter Cards COMPLET
+  twitter: {
+    card: 'summary_large_image',
+    site: '@climgo_fr',
+    creator: '@climgo_fr',
+    title: 'Chauffage Climatisation Marcheprime 33380 | ClimGO',
+    description: 'Expert chauffage climatisation Marcheprime 33380. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
+    images: ['https://www.climgo.fr/images/og/marcheprime-chauffage-climatisation.jpg'],
+  },
+  
+  // Icons optimisés (favicon.svg priorisé)
   icons: {
     icon: [
       { url: "/favicon/favicon.svg", type: "image/svg+xml" },
@@ -83,15 +94,10 @@ export const metadata: Metadata = {
     apple: [{ url: "/favicon/apple-touch-icon.png", sizes: "180x180" }],
     shortcut: [{ url: "/favicon/favicon.svg", type: "image/svg+xml" }],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "ClimGO Marcheprime - Chauffage & Climatisation | Installation PAC, Entretien",
-    description: "ClimGO, expert chauffage et climatisation à Marcheprime. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
-    images: ["/img/climdame.png"],
-  },
   alternates: {
     canonical: "https://www.climgo.fr/villes/marcheprime-chauffage-climatisation",
     languages: {
+      'x-default': 'https://www.climgo.fr/villes/marcheprime-chauffage-climatisation',
       'fr-FR': 'https://www.climgo.fr/villes/marcheprime-chauffage-climatisation',
     },
   },

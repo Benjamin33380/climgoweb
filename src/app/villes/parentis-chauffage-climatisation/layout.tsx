@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     default: "ClimGO Parentis-en-Born - Chauffage & Climatisation | Installation PAC, Entretien",
     template: "%s | ClimGO Parentis-en-Born"
   },
-  description: "ClimGO, expert chauffage et climatisation à Parentis-en-Born. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+  description: "Expert chauffage climatisation Parentis-en-Born 40160. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.",
   keywords: ["chauffage Parentis-en-Born", "climatisation Parentis-en-Born", "pompe à chaleur Parentis-en-Born", "installation PAC Parentis-en-Born", "entretien chauffage Parentis-en-Born", "artisan RGE Parentis-en-Born", "PAC air-eau Parentis-en-Born", "PAC air-air Parentis-en-Born", "plancher chauffant Parentis-en-Born", "radiateurs Parentis-en-Born", "maintenance Parentis-en-Born", "dépannage Parentis-en-Born", "devis gratuit Parentis-en-Born"],
   authors: [{ name: "ClimGO", url: "https://www.climgo.fr" }],
   creator: "ClimGO",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     url: "https://www.climgo.fr/villes/parentis-chauffage-climatisation",
     title: "ClimGO Parentis-en-Born - Chauffage & Climatisation | Installation PAC, Entretien",
-    description: "ClimGO, expert chauffage et climatisation à Parentis-en-Born. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+    description: "Expert chauffage climatisation Parentis-en-Born 40160. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.",
     siteName: "ClimGO",
     images: [
       {
@@ -86,12 +86,13 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "ClimGO Parentis-en-Born - Chauffage & Climatisation | Installation PAC, Entretien",
-    description: "ClimGO, expert chauffage et climatisation à Parentis-en-Born. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+    description: "Expert chauffage climatisation Parentis-en-Born 40160. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.",
     images: ["/img/climdame.png"],
   },
   alternates: {
     canonical: "https://www.climgo.fr/villes/parentis-chauffage-climatisation",
     languages: {
+      'x-default': 'https://www.climgo.fr/villes/parentis-chauffage-climatisation',
       'fr-FR': 'https://www.climgo.fr/villes/parentis-chauffage-climatisation',
     },
   },

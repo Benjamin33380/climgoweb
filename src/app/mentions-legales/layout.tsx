@@ -31,6 +31,10 @@ export const metadata: Metadata = {
   
   alternates: {
     canonical: 'https://www.climgo.fr/mentions-legales',
+    languages: {
+      'x-default': 'https://www.climgo.fr/mentions-legales',
+      'fr-FR': 'https://www.climgo.fr/mentions-legales',
+    },
   },
   
   robots: {

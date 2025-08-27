@@ -2,12 +2,12 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Climatisation Gironde | Installation Climatiseur PAC Air/Air',
-  description: 'Climatisation Gironde. Installation climatiseur, PAC air/air, réversible. Entretien, dépannage. Expert RGE certifié ClimGO. Devis gratuit sous 48h.',
+  description: 'Climatisation Gironde. Installation climatiseur, PAC air/air, réversible. Entretien, dépannage. Expert RGE certifié.',
   keywords: 'climatisation Gironde, installation climatiseur, PAC air air, climatiseur réversible, entretien climatisation, dépannage clim, ClimGO',
   
   openGraph: {
     title: 'Climatisation Gironde | Installation Climatiseur PAC Air/Air',
-    description: 'Climatisation Gironde. Installation climatiseur, PAC air/air, réversible. Entretien, dépannage. Expert RGE certifié ClimGO. Devis gratuit sous 48h.',
+    description: 'Climatisation Gironde. Installation climatiseur, PAC air/air, réversible. Entretien, dépannage. Expert RGE certifié.',
     url: 'https://www.climgo.fr/climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -25,12 +25,16 @@ export const metadata: Metadata = {
     site: '@climgo_fr',
     creator: '@climgo_fr',
     title: 'Climatisation Gironde | Installation Climatiseur PAC Air/Air',
-    description: 'Climatisation Gironde. Installation climatiseur, PAC air/air, réversible. Entretien, dépannage. Expert RGE certifié ClimGO.',
+    description: 'Climatisation Gironde. Installation climatiseur, PAC air/air, réversible. Entretien, dépannage. Expert RGE certifié.',
     images: ['/img/serp/clim.png'],
   },
   
   alternates: {
     canonical: 'https://www.climgo.fr/climatisation',
+    languages: {
+      'x-default': 'https://www.climgo.fr/climatisation',
+      'fr-FR': 'https://www.climgo.fr/climatisation',
+    },
   },
   
   robots: {
@@ -89,7 +93,7 @@ export default function ClimatisationLayout({
             },
             "areaServed": {
               "@type": "Place",
-              "name": "Gironde, Bordeaux Métropole, Bassin d'Arcachon"
+              "name": "Gironde, Bordeaux Métropole, Bassin d'Arcachon, Marcheprime, Biganos, Mios, Arcachon, Bordeaux, Andernos-les-Bains"
             },
             "serviceType": "Installation et maintenance de systèmes de climatisation",
             "url": "https://www.climgo.fr/climatisation",

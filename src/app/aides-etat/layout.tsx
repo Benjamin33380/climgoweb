@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   
   openGraph: {
     title: 'Aides Chauffage Climatisation 2025 | ClimGO',
-    description: 'Toutes les aides 2025 pour vos travaux chauffage climatisation. ClimGO vous accompagne : MaPrimeRénov\', CEE, TVA réduite. Devis gratuit.',
+    description: 'Toutes les aides 2025 pour vos travaux chauffage climatisation. ClimGO vous accompagne : MaPrimeRénov\', CEE, TVA réduite.',
     url: 'https://www.climgo.fr/aides-etat',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -102,6 +102,10 @@ export const metadata: Metadata = {
   
   alternates: {
     canonical: 'https://www.climgo.fr/aides-etat',
+    languages: {
+      'x-default': 'https://www.climgo.fr/aides-etat',
+      'fr-FR': 'https://www.climgo.fr/aides-etat',
+    },
   },
   
   verification: {
@@ -143,7 +147,7 @@ export default function AidesEtatLayout({
             },
             "areaServed": {
               "@type": "Place",
-              "name": "Gironde, Bordeaux Métropole, Bassin d'Arcachon"
+              "name": "Gironde, Bordeaux Métropole, Bassin d'Arcachon, Marcheprime, Biganos, Mios, Arcachon, Bordeaux, Andernos-les-Bains"
             },
             "serviceType": "Accompagnement aides État et subventions",
             "url": "https://www.climgo.fr/aides-etat",

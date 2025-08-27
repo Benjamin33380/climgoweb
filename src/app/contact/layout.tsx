@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: "Contact ClimGO | Devis Gratuit Chauffage Climatisation",
-  description: "Contactez ClimGO pour un devis gratuit en chauffage et climatisation en Gironde. Intervention rapide, artisan RGE certifié. Devis sous 24h.",
+  description: "Contactez ClimGO pour un devis gratuit en chauffage et climatisation en Gironde. Intervention rapide, artisan RGE certifié.",
   keywords: [
     "devis chauffage Gironde",
     "devis climatisation Gironde",
@@ -37,6 +37,10 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://www.climgo.fr/contact",
+    languages: {
+      'x-default': 'https://www.climgo.fr/contact',
+      'fr-FR': 'https://www.climgo.fr/contact',
+    },
   },
   robots: {
     index: true,
@@ -94,7 +98,7 @@ export default function ContactLayout({
               },
               "areaServed": {
                 "@type": "Place",
-                "name": "Gironde, Bordeaux Métropole, Bassin d'Arcachon"
+                "name": "Gironde, Bordeaux Métropole, Bassin d'Arcachon, Marcheprime, Biganos, Mios, Arcachon, Bordeaux, Andernos-les-Bains"
               }
             },
             "offers": {

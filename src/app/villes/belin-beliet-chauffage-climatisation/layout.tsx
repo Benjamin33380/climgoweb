@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     default: "ClimGO Belin-Beliet - Chauffage & Climatisation | Installation PAC, Entretien",
     template: "%s | ClimGO Belin-Beliet"
   },
-  description: "ClimGO, expert chauffage et climatisation à Belin-Beliet. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+  description: "Expert chauffage climatisation Belin-Béliet 33830. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.",
   keywords: ["chauffage Belin-Beliet", "climatisation Belin-Beliet", "pompe à chaleur Belin-Beliet", "installation PAC Belin-Beliet", "entretien chauffage Belin-Beliet", "artisan RGE Belin-Beliet", "PAC air-eau Belin-Beliet", "PAC air-air Belin-Beliet", "plancher chauffant Belin-Beliet", "radiateurs Belin-Beliet", "maintenance Belin-Beliet", "dépannage Belin-Beliet", "devis gratuit Belin-Beliet"],
   authors: [{ name: "ClimGO", url: "https://www.climgo.fr" }],
   creator: "ClimGO",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     url: "https://www.climgo.fr/villes/belin-beliet-chauffage-climatisation",
     title: "ClimGO Belin-Beliet - Chauffage & Climatisation | Installation PAC, Entretien",
-    description: "ClimGO, expert chauffage et climatisation à Belin-Beliet. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+    description: "Expert chauffage climatisation Belin-Béliet 33830. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.",
     siteName: "ClimGO",
     images: [
       {
@@ -86,12 +86,13 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "ClimGO Belin-Beliet - Chauffage & Climatisation | Installation PAC, Entretien",
-    description: "ClimGO, expert chauffage et climatisation à Belin-Beliet. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+    description: "Expert chauffage climatisation Belin-Béliet 33830. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.",
     images: ["/img/climdame.png"],
   },
   alternates: {
     canonical: "https://www.climgo.fr/villes/belin-beliet-chauffage-climatisation",
     languages: {
+      'x-default': 'https://www.climgo.fr/villes/belin-beliet-chauffage-climatisation',
       'fr-FR': 'https://www.climgo.fr/villes/belin-beliet-chauffage-climatisation',
     },
   },

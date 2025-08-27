@@ -31,6 +31,10 @@ export const metadata: Metadata = {
   
   alternates: {
     canonical: 'https://www.climgo.fr/a-propos',
+    languages: {
+      'x-default': 'https://www.climgo.fr/a-propos',
+      'fr-FR': 'https://www.climgo.fr/a-propos',
+    },
   },
   
   robots: {
@@ -90,7 +94,7 @@ export default function AProposLayout({
               },
               "areaServed": {
                 "@type": "Place",
-                "name": "Gironde, Bordeaux Métropole, Bassin d'Arcachon"
+                "name": "Gironde, Bordeaux Métropole, Bassin d'Arcachon, Marcheprime, Biganos, Mios, Arcachon, Bordeaux, Andernos-les-Bains"
               },
               "foundingDate": "2014",
               "description": "Expert en chauffage et climatisation en Gironde, artisan RGE certifié"

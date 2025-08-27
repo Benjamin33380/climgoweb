@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     default: "ClimGO Andernos-les-Bains - Chauffage & Climatisation | Installation PAC, Entretien",
     template: "%s | ClimGO Andernos-les-Bains"
   },
-  description: "ClimGO, expert chauffage et climatisation à Andernos-les-Bains. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+  description: "Expert chauffage climatisation Andernos-les-Bains 33510. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.",
   keywords: ["chauffage Andernos-les-Bains", "climatisation Andernos-les-Bains", "pompe à chaleur Andernos-les-Bains", "installation PAC Andernos-les-Bains", "entretien chauffage Andernos-les-Bains", "artisan RGE Andernos-les-Bains", "PAC air-eau Andernos-les-Bains", "PAC air-air Andernos-les-Bains", "plancher chauffant Andernos-les-Bains", "radiateurs Andernos-les-Bains", "maintenance Andernos-les-Bains", "dépannage Andernos-les-Bains", "devis gratuit Andernos-les-Bains"],
   authors: [{ name: "ClimGO", url: "https://www.climgo.fr" }],
   creator: "ClimGO",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     url: "https://www.climgo.fr/villes/andernos-les-bains-chauffage-climatisation",
     title: "ClimGO Andernos-les-Bains - Chauffage & Climatisation | Installation PAC, Entretien",
-    description: "ClimGO, expert chauffage et climatisation à Andernos-les-Bains. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+    description: "Expert chauffage climatisation Andernos-les-Bains 33510. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.",
     siteName: "ClimGO",
     images: [
       {
@@ -86,12 +86,13 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "ClimGO Andernos-les-Bains - Chauffage & Climatisation | Installation PAC, Entretien",
-    description: "ClimGO, expert chauffage et climatisation à Andernos-les-Bains. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+    description: "Expert chauffage climatisation Andernos-les-Bains 33510. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.",
     images: ["/img/climdame.png"],
   },
   alternates: {
     canonical: "https://www.climgo.fr/villes/andernos-les-bains-chauffage-climatisation",
     languages: {
+      'x-default': 'https://www.climgo.fr/villes/andernos-les-bains-chauffage-climatisation',
       'fr-FR': 'https://www.climgo.fr/villes/andernos-les-bains-chauffage-climatisation',
     },
   },
