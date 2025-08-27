@@ -404,9 +404,9 @@ export default function HomePage() {
 
               {/* Lumière mobile - SEULEMENT sur mobile */}
               <div
-                className="pointer-events-none absolute left-8 w-[3px] h-16 rounded-full block md:hidden"
+                className="pointer-events-none absolute left-8 w-[3px] h-16 rounded-full block md:hidden z-5"
                 style={{
-                  animation: 'lightMoveMobile 3s infinite linear',
+                  animation: 'lightMoveMobile 4s infinite linear',
                   background: 'var(--light-effect-bg)',
                   boxShadow: 'var(--light-effect-shadow)'
                 }}

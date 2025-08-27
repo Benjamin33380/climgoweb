@@ -284,7 +284,7 @@ body {
   --light-effect-shadow: 0 0 24px rgba(255,255,255,.35);
 }
 
-/* Animation pour la timeline */
+/* Animation pour la timeline desktop */
 @keyframes lightMove {
   0% { 
     top: -10%; 
@@ -298,6 +298,24 @@ body {
   }
   100% { 
     top: 110%; 
+    opacity: 0; 
+  }
+}
+
+/* Animation pour la timeline mobile */
+@keyframes lightMoveMobile {
+  0% { 
+    top: -5%; 
+    opacity: 0; 
+  }
+  15% { 
+    opacity: 1; 
+  }
+  85% { 
+    opacity: 1; 
+  }
+  100% { 
+    top: 105%; 
     opacity: 0; 
   }
 }
