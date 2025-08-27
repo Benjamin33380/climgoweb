@@ -33,7 +33,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.climgo.fr'),
   title: {
-    default: "ClimGO Le Barp - Chauffage & Climatisation | Installation PAC, Entretien",
+    default: "ClimGO Le Barp - Chauffage & Climatisation",
     template: "%s | ClimGO Le Barp"
   },
   description: "Expert chauffage climatisation au Barp. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     url: "https://www.climgo.fr/villes/le-barp-chauffage-climatisation",
-    title: "ClimGO Le Barp - Chauffage & Climatisation | Installation PAC, Entretien",
+    title: "ClimGO Le Barp - Chauffage & Climatisation",
     description: "Expert chauffage climatisation au Barp. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
     siteName: "ClimGO",
     images: [
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Le Barp 33114 | ClimGO',
+    title: 'ClimGO Le Barp - Chauffage & Climatisation',
     description: 'Expert chauffage climatisation Le Barp 33114. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     images: ['https://www.climgo.fr/images/og/le-barp-chauffage-climatisation.jpg'],
   },

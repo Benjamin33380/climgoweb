@@ -33,7 +33,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.climgo.fr'),
   title: {
-    default: "ClimGO Floirac - Chauffage & Climatisation | Installation PAC, Entretien",
+    default: "ClimGO Floirac - Chauffage & Climatisation",
     template: "%s | ClimGO Floirac"
   },
   description: "Expert chauffage climatisation à Floirac. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     url: "https://www.climgo.fr/villes/floirac-chauffage-climatisation",
-    title: "ClimGO Floirac - Chauffage & Climatisation | Installation PAC, Entretien",
+    title: "ClimGO Floirac - Chauffage & Climatisation",
     description: "Expert chauffage climatisation à Floirac. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
     siteName: "ClimGO",
     images: [
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Floirac 33270 | ClimGO',
+    title: 'ClimGO Floirac - Chauffage & Climatisation',
     description: 'Expert chauffage climatisation Floirac 33270. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     images: ['https://www.climgo.fr/images/og/floirac-chauffage-climatisation.jpg'],
   },

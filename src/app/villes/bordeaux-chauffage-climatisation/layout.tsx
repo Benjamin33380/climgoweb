@@ -33,7 +33,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.climgo.fr'),
   title: {
-    default: "ClimGO Bordeaux - Chauffage & Climatisation | Installation PAC, Entretien",
+    default: "ClimGO Bordeaux - Chauffage & Climatisation",
     template: "%s | ClimGO Bordeaux"
   },
   description: "Expert chauffage climatisation à Bordeaux. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     url: "https://www.climgo.fr/villes/bordeaux-chauffage-climatisation",
-    title: "ClimGO Bordeaux - Chauffage & Climatisation | Installation PAC, Entretien",
+    title: "ClimGO Bordeaux - Chauffage & Climatisation",
     description: "Expert chauffage climatisation à Bordeaux. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
     siteName: "ClimGO",
     images: [
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Bordeaux 33000 | ClimGO',
+    title: 'ClimGO Bordeaux - Chauffage & Climatisation',
     description: 'Expert chauffage climatisation Bordeaux 33000. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     images: ['https://www.climgo.fr/images/og/bordeaux-chauffage-climatisation.jpg'],
   },

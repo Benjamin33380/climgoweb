@@ -33,8 +33,8 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.climgo.fr'),
   title: {
-    default: "ClimGO Belin-Beliet - Chauffage & Climatisation | Installation PAC, Entretien",
-    template: "%s | ClimGO Belin-Beliet"
+    default: "ClimGO Belin-Béliet - Chauffage & Climatisation",
+    template: "%s | ClimGO Belin-Béliet"
   },
   description: "Expert chauffage climatisation Belin-Béliet 33830. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.",
   keywords: ["chauffage Belin-Beliet", "climatisation Belin-Beliet", "pompe à chaleur Belin-Beliet", "installation PAC Belin-Beliet", "entretien chauffage Belin-Beliet", "artisan RGE Belin-Beliet", "PAC air-eau Belin-Beliet", "PAC air-air Belin-Beliet", "plancher chauffant Belin-Beliet", "radiateurs Belin-Beliet", "maintenance Belin-Beliet", "dépannage Belin-Beliet", "devis gratuit Belin-Beliet"],
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     url: "https://www.climgo.fr/villes/belin-beliet-chauffage-climatisation",
-    title: "ClimGO Belin-Beliet - Chauffage & Climatisation | Installation PAC, Entretien",
+    title: "ClimGO Belin-Béliet - Chauffage & Climatisation",
     description: "Expert chauffage climatisation Belin-Béliet 33830. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.",
     siteName: "ClimGO",
     images: [
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ClimGO Belin-Beliet - Chauffage & Climatisation | Installation PAC, Entretien",
+    title: "ClimGO Belin-Béliet - Chauffage & Climatisation",
     description: "Expert chauffage climatisation Belin-Béliet 33830. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.",
     images: ["/img/climdame.png"],
   },

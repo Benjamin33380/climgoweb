@@ -33,7 +33,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.climgo.fr'),
   title: {
-    default: "ClimGO Saucats - Chauffage & Climatisation | Installation PAC, Entretien",
+    default: "ClimGO Saucats - Chauffage & Climatisation",
     template: "%s | ClimGO Saucats"
   },
   description: "Expert chauffage climatisation à Saucats. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     url: "https://www.climgo.fr/villes/saucats-chauffage-climatisation",
-    title: "ClimGO Saucats - Chauffage & Climatisation | Installation PAC, Entretien",
+    title: "ClimGO Saucats - Chauffage & Climatisation",
     description: "Expert chauffage climatisation à Saucats. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
     siteName: "ClimGO",
     images: [
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Saucats 33650 | ClimGO',
+    title: 'ClimGO Saucats - Chauffage & Climatisation',
     description: 'Expert chauffage climatisation Saucats 33650. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     images: ['https://www.climgo.fr/images/og/saucats-chauffage-climatisation.jpg'],
   },

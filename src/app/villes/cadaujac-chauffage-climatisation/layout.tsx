@@ -33,7 +33,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.climgo.fr'),
   title: {
-    default: "ClimGO Cadaujac - Chauffage & Climatisation | Installation PAC, Entretien",
+    default: "ClimGO Cadaujac - Chauffage & Climatisation",
     template: "%s | ClimGO Cadaujac"
   },
   description: "Expert chauffage climatisation Cadaujac 33140. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     url: "https://www.climgo.fr/villes/cadaujac-chauffage-climatisation",
-    title: "ClimGO Cadaujac - Chauffage & Climatisation | Installation PAC, Entretien",
+    title: "ClimGO Cadaujac - Chauffage & Climatisation",
     description: "Expert chauffage climatisation Cadaujac 33140. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.",
     siteName: "ClimGO",
     images: [
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ClimGO Cadaujac - Chauffage & Climatisation | Installation PAC, Entretien",
+    title: "ClimGO Cadaujac - Chauffage & Climatisation",
     description: "Expert chauffage climatisation Cadaujac 33140. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.",
     images: ["/img/climdame.png"],
   },

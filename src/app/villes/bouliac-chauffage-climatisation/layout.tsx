@@ -33,7 +33,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.climgo.fr'),
   title: {
-    default: "ClimGO Bouliac - Chauffage & Climatisation | Installation PAC, Entretien",
+    default: "ClimGO Bouliac - Chauffage & Climatisation",
     template: "%s | ClimGO Bouliac"
   },
   description: "Expert chauffage climatisation à Bouliac. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     url: "https://www.climgo.fr/villes/bouliac-chauffage-climatisation",
-    title: "ClimGO Bouliac - Chauffage & Climatisation | Installation PAC, Entretien",
+    title: "ClimGO Bouliac - Chauffage & Climatisation",
     description: "Expert chauffage climatisation à Bouliac. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
     siteName: "ClimGO",
     images: [
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Bouliac 33270 | ClimGO',
+    title: 'ClimGO Bouliac - Chauffage & Climatisation',
     description: 'Expert chauffage climatisation Bouliac 33270. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     images: ['https://www.climgo.fr/images/og/bouliac-chauffage-climatisation.jpg'],
   },

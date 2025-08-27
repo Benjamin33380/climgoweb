@@ -33,7 +33,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.climgo.fr'),
   title: {
-    default: "ClimGO Talence - Chauffage & Climatisation | Installation PAC, Entretien",
+    default: "ClimGO Talence - Chauffage & Climatisation",
     template: "%s | ClimGO Talence"
   },
   description: "Expert chauffage climatisation à Talence. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     url: "https://www.climgo.fr/villes/talence-chauffage-climatisation",
-    title: "ClimGO Talence - Chauffage & Climatisation | Installation PAC, Entretien",
+    title: "ClimGO Talence - Chauffage & Climatisation",
     description: "Expert chauffage climatisation à Talence. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
     siteName: "ClimGO",
     images: [
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Talence 33400 | ClimGO',
+    title: 'ClimGO Talence - Chauffage & Climatisation',
     description: 'Expert chauffage climatisation Talence 33400. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     images: ['https://www.climgo.fr/images/og/talence-chauffage-climatisation.jpg'],
   },

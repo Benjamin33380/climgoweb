@@ -33,7 +33,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.climgo.fr'),
   title: {
-    default: "ClimGO Le Bouscat - Chauffage & Climatisation | Installation PAC, Entretien",
+    default: "ClimGO Le Bouscat - Chauffage & Climatisation",
     template: "%s | ClimGO Le Bouscat"
   },
   description: "Expert chauffage climatisation au Bouscat. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     url: "https://www.climgo.fr/villes/le-bouscat-chauffage-climatisation",
-    title: "ClimGO Le Bouscat - Chauffage & Climatisation | Installation PAC, Entretien",
+    title: "ClimGO Le Bouscat - Chauffage & Climatisation",
     description: "Expert chauffage climatisation au Bouscat. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
     siteName: "ClimGO",
     images: [
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Le Bouscat 33110 | ClimGO',
+    title: 'ClimGO Le Bouscat - Chauffage & Climatisation',
     description: 'Expert chauffage climatisation Le Bouscat 33110. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     images: ['https://www.climgo.fr/images/og/le-bouscat-chauffage-climatisation.jpg'],
   },

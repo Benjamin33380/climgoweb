@@ -33,7 +33,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.climgo.fr'),
   title: {
-    default: "ClimGO La Brède - Chauffage & Climatisation | Installation PAC, Entretien",
+    default: "ClimGO La Brède - Chauffage & Climatisation",
     template: "%s | ClimGO La Brède"
   },
   description: "Expert chauffage climatisation à La Brède. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     url: "https://www.climgo.fr/villes/la-brede-chauffage-climatisation",
-    title: "ClimGO La Brède - Chauffage & Climatisation | Installation PAC, Entretien",
+    title: "ClimGO La Brède - Chauffage & Climatisation",
     description: "Expert chauffage climatisation à La Brède. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
     siteName: "ClimGO",
     images: [
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation La Brède 33650 | ClimGO',
+    title: 'ClimGO La Brède - Chauffage & Climatisation',
     description: 'Expert chauffage climatisation La Brède 33650. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     images: ['https://www.climgo.fr/images/og/la-brede-chauffage-climatisation.jpg'],
   },

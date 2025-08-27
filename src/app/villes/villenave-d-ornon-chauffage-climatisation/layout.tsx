@@ -33,7 +33,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.climgo.fr'),
   title: {
-    default: "ClimGO Villenave-d'Ornon - Chauffage & Climatisation | Installation PAC, Entretien",
+    default: "ClimGO Villenave-d'Ornon - Chauffage & Climatisation",
     template: "%s | ClimGO Villenave-d'Ornon"
   },
   description: "Expert chauffage climatisation à Villenave-d'Ornon. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     url: "https://www.climgo.fr/villes/villenave-d-ornon-chauffage-climatisation",
-    title: "ClimGO Villenave-d'Ornon - Chauffage & Climatisation | Installation PAC, Entretien",
+    title: "ClimGO Villenave-d'Ornon - Chauffage & Climatisation",
     description: "Expert chauffage climatisation à Villenave-d'Ornon. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
     siteName: "ClimGO",
     images: [
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Villenave-d\'Ornon 33140 | ClimGO',
+    title: 'ClimGO Villenave-d\'Ornon - Chauffage & Climatisation',
     description: 'Expert chauffage climatisation Villenave-d\'Ornon 33140. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     images: ['https://www.climgo.fr/images/og/villenave-d-ornon-chauffage-climatisation.jpg'],
   },

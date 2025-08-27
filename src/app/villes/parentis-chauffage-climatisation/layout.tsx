@@ -33,7 +33,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.climgo.fr'),
   title: {
-    default: "ClimGO Parentis-en-Born - Chauffage & Climatisation | Installation PAC, Entretien",
+    default: "ClimGO Parentis-en-Born - Chauffage & Climatisation",
     template: "%s | ClimGO Parentis-en-Born"
   },
   description: "Expert chauffage climatisation Parentis-en-Born 40160. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     url: "https://www.climgo.fr/villes/parentis-chauffage-climatisation",
-    title: "ClimGO Parentis-en-Born - Chauffage & Climatisation | Installation PAC, Entretien",
+    title: "ClimGO Parentis-en-Born - Chauffage & Climatisation",
     description: "Expert chauffage climatisation Parentis-en-Born 40160. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.",
     siteName: "ClimGO",
     images: [
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ClimGO Parentis-en-Born - Chauffage & Climatisation | Installation PAC, Entretien",
+    title: "ClimGO Parentis-en-Born - Chauffage & Climatisation",
     description: "Expert chauffage climatisation Parentis-en-Born 40160. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.",
     images: ["/img/climdame.png"],
   },

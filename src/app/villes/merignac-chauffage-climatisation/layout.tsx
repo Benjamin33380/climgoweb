@@ -33,7 +33,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.climgo.fr'),
   title: {
-    default: "ClimGO Mérignac - Chauffage & Climatisation | Installation PAC, Entretien",
+    default: "ClimGO Mérignac - Chauffage & Climatisation",
     template: "%s | ClimGO Mérignac"
   },
   description: "Expert chauffage climatisation à Mérignac. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     url: "https://www.climgo.fr/villes/merignac-chauffage-climatisation",
-    title: "ClimGO Mérignac - Chauffage & Climatisation | Installation PAC, Entretien",
+    title: "ClimGO Mérignac - Chauffage & Climatisation",
     description: "Expert chauffage climatisation à Mérignac. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
     siteName: "ClimGO",
     images: [
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Mérignac 33700 | ClimGO',
+    title: 'ClimGO Mérignac - Chauffage & Climatisation',
     description: 'Expert chauffage climatisation Mérignac 33700. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     images: ['https://www.climgo.fr/images/og/merignac-chauffage-climatisation.jpg'],
   },

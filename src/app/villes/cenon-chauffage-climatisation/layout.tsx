@@ -33,7 +33,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.climgo.fr'),
   title: {
-    default: "ClimGO Cenon - Chauffage & Climatisation | Installation PAC, Entretien",
+    default: "ClimGO Cenon - Chauffage & Climatisation",
     template: "%s | ClimGO Cenon"
   },
   description: "Expert chauffage climatisation à Cenon. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     url: "https://www.climgo.fr/villes/cenon-chauffage-climatisation",
-    title: "ClimGO Cenon - Chauffage & Climatisation | Installation PAC, Entretien",
+    title: "ClimGO Cenon - Chauffage & Climatisation",
     description: "Expert chauffage climatisation à Cenon. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
     siteName: "ClimGO",
     images: [
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Cenon 33150 | ClimGO',
+    title: 'ClimGO Cenon - Chauffage & Climatisation',
     description: 'Expert chauffage climatisation Cenon 33150. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     images: ['https://www.climgo.fr/images/og/cenon-chauffage-climatisation.jpg'],
   },

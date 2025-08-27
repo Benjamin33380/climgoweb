@@ -33,7 +33,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.climgo.fr'),
   title: {
-    default: "ClimGO Cestas - Chauffage & Climatisation | Installation PAC, Entretien",
+    default: "ClimGO Cestas - Chauffage & Climatisation",
     template: "%s | ClimGO Cestas"
   },
   description: "Expert chauffage climatisation à Cestas. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     url: "https://www.climgo.fr/villes/cestas-chauffage-climatisation",
-    title: "ClimGO Cestas - Chauffage & Climatisation | Installation PAC, Entretien",
+    title: "ClimGO Cestas - Chauffage & Climatisation",
     description: "Expert chauffage climatisation à Cestas. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
     siteName: "ClimGO",
     images: [
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Cestas 33610 | ClimGO',
+    title: 'ClimGO Cestas - Chauffage & Climatisation',
     description: 'Expert chauffage climatisation Cestas 33610. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     images: ['https://www.climgo.fr/images/og/cestas-chauffage-climatisation.jpg'],
   },

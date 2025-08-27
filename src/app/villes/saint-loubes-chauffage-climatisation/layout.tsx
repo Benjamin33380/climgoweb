@@ -33,7 +33,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.climgo.fr'),
   title: {
-    default: "ClimGO Saint-Loubès - Chauffage & Climatisation | Installation PAC, Entretien",
+    default: "ClimGO Saint-Loubès - Chauffage & Climatisation",
     template: "%s | ClimGO Saint-Loubès"
   },
   description: "Expert chauffage climatisation à Saint-Loubès. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     url: "https://www.climgo.fr/villes/saint-loubes-chauffage-climatisation",
-    title: "ClimGO Saint-Loubès - Chauffage & Climatisation | Installation PAC, Entretien",
+    title: "ClimGO Saint-Loubès - Chauffage & Climatisation",
     description: "Expert chauffage climatisation à Saint-Loubès. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
     siteName: "ClimGO",
     images: [
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Saint-Loubès 33450 | ClimGO',
+    title: 'ClimGO Saint-Loubès - Chauffage & Climatisation',
     description: 'Expert chauffage climatisation Saint-Loubès 33450. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     images: ['https://www.climgo.fr/images/og/saint-loubes-chauffage-climatisation.jpg'],
   },

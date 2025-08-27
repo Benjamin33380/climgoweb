@@ -33,7 +33,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.climgo.fr'),
   title: {
-    default: "ClimGO Martignas-sur-Jalle - Chauffage & Climatisation | Installation PAC, Entretien",
+    default: "ClimGO Martignas-sur-Jalle - Chauffage & Climatisation",
     template: "%s | ClimGO Martignas-sur-Jalle"
   },
   description: "Expert chauffage climatisation à Martignas-sur-Jalle. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     url: "https://www.climgo.fr/villes/martignas-sur-jalle-chauffage-climatisation",
-    title: "ClimGO Martignas-sur-Jalle - Chauffage & Climatisation | Installation PAC, Entretien",
+    title: "ClimGO Martignas-sur-Jalle - Chauffage & Climatisation",
     description: "Expert chauffage climatisation à Martignas-sur-Jalle. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
     siteName: "ClimGO",
     images: [
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Martignas-sur-Jalle 33127 | ClimGO',
+    title: 'ClimGO Martignas-sur-Jalle - Chauffage & Climatisation',
     description: 'Expert chauffage climatisation Martignas-sur-Jalle 33127. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     images: ['https://www.climgo.fr/images/og/martignas-sur-jalle-chauffage-climatisation.jpg'],
   },

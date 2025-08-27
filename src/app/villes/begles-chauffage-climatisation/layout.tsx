@@ -33,7 +33,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.climgo.fr'),
   title: {
-    default: "ClimGO Bègles - Chauffage & Climatisation | Installation PAC, Entretien",
+    default: "ClimGO Bègles - Chauffage & Climatisation",
     template: "%s | ClimGO Bègles"
   },
   description: "Expert chauffage climatisation à Bègles. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     url: "https://www.climgo.fr/villes/begles-chauffage-climatisation",
-    title: "ClimGO Bègles - Chauffage & Climatisation | Installation PAC, Entretien",
+    title: "ClimGO Bègles - Chauffage & Climatisation",
     description: "Expert chauffage climatisation à Bègles. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
     siteName: "ClimGO",
     images: [
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Bègles 33130 | ClimGO',
+    title: 'ClimGO Bègles - Chauffage & Climatisation',
     description: 'Expert chauffage climatisation Bègles 33130. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     images: ['https://www.climgo.fr/images/og/begles-chauffage-climatisation.jpg'],
   },

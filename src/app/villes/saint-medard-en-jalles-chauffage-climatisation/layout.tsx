@@ -33,7 +33,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.climgo.fr'),
   title: {
-    default: "ClimGO Saint-Médard-en-Jalles - Chauffage & Climatisation | Installation PAC, Entretien",
+    default: "ClimGO Saint-Médard-en-Jalles - Chauffage & Climatisation",
     template: "%s | ClimGO Saint-Médard-en-Jalles"
   },
   description: "Expert chauffage climatisation à Saint-Médard-en-Jalles. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     url: "https://www.climgo.fr/villes/saint-medard-en-jalles-chauffage-climatisation",
-    title: "ClimGO Saint-Médard-en-Jalles - Chauffage & Climatisation | Installation PAC, Entretien",
+    title: "ClimGO Saint-Médard-en-Jalles - Chauffage & Climatisation",
     description: "Expert chauffage climatisation à Saint-Médard-en-Jalles. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
     siteName: "ClimGO",
     images: [
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Saint-Médard-en-Jalles 33160 | ClimGO',
+    title: 'ClimGO Saint-Médard-en-Jalles - Chauffage & Climatisation',
     description: 'Expert chauffage climatisation Saint-Médard-en-Jalles 33160. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     images: ['https://www.climgo.fr/images/og/saint-medard-en-jalles-chauffage-climatisation.jpg'],
   },

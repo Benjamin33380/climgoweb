@@ -33,7 +33,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.climgo.fr'),
   title: {
-    default: "ClimGO Marcheprime - Chauffage & Climatisation | Installation PAC, Entretien",
+    default: "ClimGO Marcheprime - Chauffage & Climatisation",
     template: "%s | ClimGO Marcheprime"
   },
   description: "Expert chauffage climatisation à Marcheprime. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     url: "https://www.climgo.fr/villes/marcheprime-chauffage-climatisation",
-    title: "ClimGO Marcheprime - Chauffage & Climatisation | Installation PAC, Entretien",
+    title: "ClimGO Marcheprime - Chauffage & Climatisation",
     description: "Expert chauffage climatisation à Marcheprime. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié.",
     siteName: "ClimGO",
     images: [
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Climatisation Marcheprime 33380 | ClimGO',
+    title: 'ClimGO Marcheprime - Chauffage & Climatisation',
     description: 'Expert chauffage climatisation Marcheprime 33380. Installation PAC, dépannage, entretien. Artisan RGE. Devis gratuit.',
     images: ['https://www.climgo.fr/images/og/marcheprime-chauffage-climatisation.jpg'],
   },
