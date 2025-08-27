@@ -79,7 +79,7 @@ export default function Services() {
               <div className="bg-[#10B981]/10 dark:bg-[#10B981]/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                 <TbTools className="w-12 h-12 text-[#10B981] dark:text-[#34D399]" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 group-hover:text-[#10B981] dark:group-hover:text-[#34D399] transition-colors">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 group-hover:text-[#10B981] dark:group-hover:text-[#10B981] transition-colors">
                 Maintenance
               </h3>
               <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">

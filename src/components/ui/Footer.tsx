@@ -25,8 +25,8 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             
             {/* À propos de ClimGO */}
-            <div className="lg:col-span-1">
-              <div className="flex items-center space-x-2 mb-6">
+            <div className="lg:col-span-1 text-center md:text-left">
+              <div className="flex items-center justify-center md:justify-start space-x-2 mb-6">
                 <Image
                   src="/favicon/logo.png"
                   alt="ClimGO Logo"
@@ -51,18 +51,22 @@ export default function Footer() {
               </div>
               
               {/* Note et avis */}
-              <div className="flex items-center space-x-2 mb-6">
-                <div className="flex space-x-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 text-yellow-500 fill-current" />
-                  ))}
+              <div className="text-center md:text-left mb-6">
+                <div className="flex justify-center md:justify-start items-center space-x-2 mb-2">
+                  <div className="flex space-x-1">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 text-yellow-500 fill-current" />
+                    ))}
+                  </div>
+                  <span className="font-semibold text-sm">5/5</span>
                 </div>
-                <span className="font-semibold">5/5</span>
-                <span className="text-muted-foreground text-sm">(22 avis Google)</span>
+                <div className="text-center md:text-left">
+                  <div className="text-muted-foreground text-xs">(22 avis Google)</div>
+                </div>
               </div>
 
               {/* Réseaux sociaux */}
-              <div className="flex space-x-3">
+              <div className="flex justify-center md:justify-start space-x-3">
                 <a 
                   href="#" 
                   className="flex items-center justify-center w-10 h-10 rounded-md border border-border hover:bg-accent hover:text-accent-foreground transition-colors"
@@ -123,7 +127,7 @@ export default function Footer() {
             </div>
 
             {/* Services */}
-            <div>
+            <div className="text-center md:text-left">
               <h3 className="text-sm font-semibold text-muted-foreground mb-6 uppercase tracking-wider">
                 Nos Services
               </h3>
@@ -132,7 +136,7 @@ export default function Footer() {
                   <li key={service.title}>
                     <Link 
                       href={service.href} 
-                      className="flex items-center space-x-3 text-sm hover:text-primary transition-colors"
+                      className="flex items-center justify-center md:justify-start space-x-3 text-sm hover:text-primary transition-colors"
                     >
                       {service.icon}
                       <span>{service.title}</span>
@@ -143,7 +147,7 @@ export default function Footer() {
             </div>
 
             {/* Contact */}
-            <div>
+            <div className="text-center md:text-left">
               <h3 className="text-sm font-semibold text-muted-foreground mb-6 uppercase tracking-wider">
                 Contact
               </h3>
@@ -151,7 +155,7 @@ export default function Footer() {
                 <li>
                   <a 
                     href="tel:0766460008" 
-                    className="flex items-center space-x-3 text-sm hover:text-primary transition-colors"
+                    className="flex items-center justify-center md:justify-start space-x-3 text-sm hover:text-primary transition-colors"
                   >
                     <Phone className="w-4 h-4" />
                     <span>07 66 46 00 08</span>
@@ -160,20 +164,20 @@ export default function Footer() {
                 <li>
                   <a 
                     href="mailto:contact@climgo.fr" 
-                    className="flex items-center space-x-3 text-sm hover:text-primary transition-colors"
+                    className="flex items-center justify-center md:justify-start space-x-3 text-sm hover:text-primary transition-colors"
                   >
                     <Mail className="w-4 h-4" />
                     <span>contact@climgo.fr</span>
                   </a>
                 </li>
                 <li>
-                  <div className="flex items-center space-x-3 text-sm text-muted-foreground">
+                  <div className="flex items-center justify-center md:justify-start space-x-3 text-sm text-muted-foreground">
                     <MapPin className="w-4 h-4" />
                     <span>Gironde - Landes</span>
                   </div>
                 </li>
                 <li>
-                  <div className="flex items-center space-x-3 text-sm text-muted-foreground">
+                  <div className="flex items-center justify-center md:justify-start space-x-3 text-sm text-muted-foreground">
                     <Clock className="w-4 h-4" />
                     <span>Lun-Ven: 8h-18h</span>
                   </div>
@@ -182,13 +186,13 @@ export default function Footer() {
             </div>
 
             {/* Navigation */}
-            <div>
+            <div className="text-center md:text-left">
               <h3 className="text-sm font-semibold text-muted-foreground mb-6 uppercase tracking-wider">
                 Navigation
               </h3>
               <ul className="space-y-3">
                 <li>
-                  <Link href="/" className="flex items-center space-x-3 text-sm hover:text-primary transition-colors">
+                  <Link href="/" className="flex items-center justify-center md:justify-start space-x-3 text-sm hover:text-primary transition-colors">
                     <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
                       <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                       <polyline points="9,22 9,12 15,12 15,22" />
@@ -197,7 +201,7 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services" className="flex items-center space-x-3 text-sm hover:text-primary transition-colors">
+                  <Link href="/services" className="flex items-center justify-center md:justify-start space-x-3 text-sm hover:text-primary transition-colors">
                     <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
                       <circle cx="12" cy="12" r="3" />
                       <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
@@ -207,7 +211,7 @@ export default function Footer() {
                 </li>
 
                 <li>
-                  <Link href="/blog" className="flex items-center space-x-3 text-sm hover:text-primary transition-colors">
+                  <Link href="/blog" className="flex items-center justify-center md:justify-start space-x-3 text-sm hover:text-primary transition-colors">
                     <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
                       <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
                       <polyline points="14,2 14,8 20,8" />
@@ -220,7 +224,7 @@ export default function Footer() {
                 </li>
 
                 <li>
-                  <Link href="/contact" className="flex items-center space-x-3 text-sm hover:text-primary transition-colors">
+                  <Link href="/contact" className="flex items-center justify-center md:justify-start space-x-3 text-sm hover:text-primary transition-colors">
                     <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
                       <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                       <polyline points="22,6 12,13 2,6" />
@@ -229,7 +233,7 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/zones-interventions" className="flex items-center space-x-3 text-sm hover:text-primary transition-colors">
+                  <Link href="/zones-interventions" className="flex items-center justify-center md:justify-start space-x-3 text-sm hover:text-primary transition-colors">
                     <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
                       <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                       <circle cx="12" cy="10" r="3" />
@@ -238,12 +242,12 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/aides-etat" className="flex items-center space-x-3 text-sm hover:text-primary transition-colors">
+                  <Link href="/aides-etat" className="flex items-center justify-center md:justify-start space-x-3 text-sm hover:text-primary transition-colors">
                     <BadgeEuro className="w-4 h-4" />
                     <span>Aides & Subventions</span>
                   </Link>
                 </li>
-                <li>
+                <li className="text-center md:text-left">
                   <Link 
                     href="/contact" 
                     className="inline-flex bg-white/20 dark:bg-white/10 backdrop-blur-md border border-black/40 dark:border-white/30 text-black dark:text-white px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-white/30 dark:hover:bg-white/20 transition-all duration-300"
@@ -268,7 +272,7 @@ export default function Footer() {
         {/* Section inférieure */}
         <div className="py-6 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-muted-foreground text-sm">
+            <div className="text-center md:text-left text-muted-foreground text-sm">
               © 2025 <span className="font-semibold">ClimGO</span>. Tous droits réservés. • Spécialiste climatisation, chauffage et pompes à chaleur.
             </div>
             

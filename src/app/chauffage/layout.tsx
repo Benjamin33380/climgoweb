@@ -76,7 +76,7 @@ export default function ChauffageLayout({
             "@context": "https://schema.org",
             "@type": "Service",
             "name": "Chauffage Gironde - Installation PAC, Plancher Chauffant",
-            "description": "Expert chauffage Gironde. Installation pompe à chaleur, plancher chauffant, radiateurs. Artisan RGE certifié.",
+            "description": "Expert chauffage Gironde. Installation pompe à chaleur, plancher chauffant, radiateurs. Artisan RGE certifié. 07.66.46.00.08",
             "provider": {
               "@type": "HVACBusiness",
               "name": "ClimGO",

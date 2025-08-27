@@ -3,7 +3,7 @@
 import { useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Wrench, Ruler, ShieldCheck, BadgeEuro } from 'lucide-react';
+import { Wrench, DraftingCompass, ShieldCheck, BadgeEuro } from 'lucide-react';
 import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import LocationMap from '@/components/LocationMap';
 
@@ -84,7 +84,7 @@ export default function ChauffagePage() {
       desc: "10 ans d'expérience dans le thermique"
     },
     {
-      icon: <Ruler className="inline w-6 h-6 text-[#FF8C00]" />,
+      icon: <DraftingCompass className="inline w-6 h-6 text-[#FF8C00]" />,
       title: "Installation sur mesure",
       desc: "Prestation certifiée"
     },
@@ -192,7 +192,7 @@ export default function ChauffagePage() {
                     {/* Solutions en Colonne - Cartes Grandes */}
           <div className="space-y-12">
             {solutions.map((solution, index) => (
-              <div key={index} className="bg-white dark:bg-gray-900 rounded-3xl border border-[#03144A] dark:border-white/20 overflow-hidden backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+              <div key={index} className="bg-white dark:bg-black rounded-3xl border border-[#03144A] dark:border-white/20 overflow-hidden backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
                   {/* Content Side */}
                   <div className="p-12 lg:p-16">
@@ -232,7 +232,7 @@ export default function ChauffagePage() {
                   </div>
 
                   {/* Image Side */}
-                  <div className="relative bg-gradient-to-br from-[#FF8C00]/5 to-[#03144A]/5 dark:from-[#FF8C00]/10 dark:to-[#03144A]/10 flex items-center justify-center p-12">
+                  <div className="relative bg-white dark:bg-black flex items-center justify-center p-12">
                     <div className="relative w-80 h-80">
                       <Image
                         src={solution.image}
@@ -267,7 +267,7 @@ export default function ChauffagePage() {
             {advantages.map((advantage, index) => (
               <div
                 key={index}
-                className="group text-center p-8 rounded-2xl bg-white dark:bg-black border border-[#03144A] dark:border-white/20 hover:border-[#FF8C00]/50 transition-all duration-300 hover:bg-[#FF8C00]/5"
+                className="group text-center p-8 rounded-2xl bg-white dark:bg-black border border-[#03144A] dark:border-white/20 hover:border-white/50 dark:hover:border-black/50 transition-all duration-300"
               >
                 <div className="text-5xl mb-6 transform group-hover:scale-110 transition-transform duration-300">
                   {advantage.icon}
@@ -287,7 +287,7 @@ export default function ChauffagePage() {
       {/* CTA Section - Optimisé Mobile */}
       <section className="py-12 md:py-24 relative">
         <div className="max-w-4xl mx-auto text-center px-4 md:px-6">
-          <div className="bg-gradient-to-br from-[#FF8C00]/5 to-[#03144A]/5 dark:from-[#FF8C00]/10 dark:to-[#03144A]/10 rounded-2xl md:rounded-3xl p-8 md:p-16 border border-[#03144A] dark:border-white/20 backdrop-blur-sm shadow-xl">
+          <div className="bg-white dark:bg-black rounded-2xl md:rounded-3xl p-8 md:p-16 border border-[#03144A] dark:border-white/20 backdrop-blur-sm shadow-xl">
             <h2 className="text-2xl md:text-4xl lg:text-5xl font-light mb-6 md:mb-8 leading-tight">
               Prêt à optimiser votre
               <br className="hidden sm:block" />

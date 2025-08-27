@@ -3,7 +3,7 @@
 import { useRef, useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Wrench, Ruler, ShieldCheck, BadgeEuro } from 'lucide-react';
+import { Wrench, DraftingCompass, ShieldCheck, BadgeEuro } from 'lucide-react';
 import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import LocationMap from '@/components/LocationMap';
 
@@ -72,7 +72,7 @@ export default function MaintenancePage() {
       id: 'maintenance-gainable',
       title: "Maintenance gainable",
       subtitle: "Sécurité & Performance",
-      image: "/machine/maintenance.png",
+      image: "/machine/gainable.webp",
       badge: "Intervention rapide",
       features: [
         "Contrôle des systèmes de sécurité",
@@ -102,7 +102,7 @@ export default function MaintenancePage() {
     },
     {
       id: 'maintenance-pompe-chaleur',
-      title: "Maintenance pompe à chaleur",
+      title: "Maintenance pompe à chaleur air/eau",
       subtitle: "Expertise Technique",
       image: "/machine/pacaireau.png",
       badge: "Obligatoire",
@@ -125,7 +125,7 @@ export default function MaintenancePage() {
       desc: "10 ans d'expérience dans l'entretien"
     },
     {
-      icon: <Ruler className="inline w-6 h-6 text-[#10B981]" />,
+      icon: <DraftingCompass className="inline w-6 h-6 text-[#10B981]" />,
       title: "Intervention sur mesure",
       desc: "Prestation certifiée"
     },
@@ -210,14 +210,6 @@ export default function MaintenancePage() {
       <section 
         ref={solutionsRef} 
         className="py-24 relative"
-        onMouseEnter={() => {
-          carouselHovering.current = true;
-          clearAutoScroll();
-        }}
-        onMouseLeave={() => {
-          carouselHovering.current = false;
-          startAutoScroll();
-        }}
       >
         <div className="max-w-7xl mx-auto px-6">
           
@@ -232,121 +224,68 @@ export default function MaintenancePage() {
             </p>
           </div>
 
-          {/* Carousel Solutions */}
-          <div className="relative">
-            {/* Desktop version : une solution visible à la fois */}
-            <div className="hidden md:block">
-              <div className="transition-all duration-700">
-                {solutions.map((solution, index) =>
-                  index === currentIndex ? (
-                    <div key={index} className="inline-block w-full px-4">
-                      <div className="bg-white dark:bg-gray-900 rounded-3xl border border-[#03144A] dark:border-white/20 overflow-hidden backdrop-blur-sm shadow-xl">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-                          {/* Content Side */}
-                          <div className="p-12 lg:p-16">
-                            <div className="mb-8">
-                              <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-[#03144A]/10 to-[#10B981]/10 border border-[#10B981] text-[#10B981] text-sm font-medium mb-6">
-                                {solution.badge}
-                              </div>
-                              <h3 className="text-3xl md:text-4xl font-light mb-4 text-[#03144A] dark:text-white">
-                                {solution.title}
-                              </h3>
-                              <p className="text-xl text-[#10B981] mb-6 font-light">
-                                {solution.subtitle}
-                              </p>
-                            </div>
-                            <p className="text-[#03144A] dark:text-white text-lg leading-relaxed mb-8">
-                              {solution.description}
-                            </p>
-                            <div className="space-y-4 mb-8">
-                              {solution.features.map((feature, i) => (
-                                <div key={i} className="flex items-center space-x-3">
-                                  <div className="w-2 h-2 bg-[#10B981] rounded-full flex-shrink-0" />
-                                  <span className="text-[#03144A] dark:text-white">{feature}</span>
-                                </div>
-                              ))}
-                            </div>
-                            <div className="flex items-center justify-between">
-                              <div className="text-2xl font-light text-[#03144A] dark:text-white">
-                                {solution.price}
-                              </div>
-                              <Link
-                                href="/contact"
-                                className="group px-8 py-3 bg-gradient-to-r from-[#03144A] to-[#10B981] rounded-full text-white font-medium transition-all duration-300 hover:scale-105"
-                              >
-                                Devis gratuit
-                              </Link>
-                            </div>
-                          </div>
-
-                          {/* Image Side */}
-                          <div className="relative bg-gradient-to-br from-[#10B981]/5 to-[#03144A]/5 dark:from-[#10B981]/10 dark:to-[#03144A]/10 flex items-center justify-center p-12">
-                            <div className="relative w-80 h-80">
-                              <div className="w-full h-full bg-gradient-to-br from-[#10B981]/10 to-[#03144A]/10 rounded-full flex items-center justify-center">
-                                <span className="text-6xl">🔧</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+          {/* Solutions en Colonne - Cartes Grandes */}
+          <div className="space-y-12">
+            {solutions.map((solution, index) => (
+              <div key={index} className="bg-white dark:bg-black rounded-3xl border border-[#03144A] dark:border-white/20 overflow-hidden backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                  {/* Content Side */}
+                  <div className="p-12 lg:p-16">
+                    <div className="mb-8">
+                      <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-[#03144A]/10 to-[#10B981]/10 border border-[#10B981] text-[#10B981] text-sm font-medium mb-6">
+                        {solution.badge}
                       </div>
+                      <h3 className="text-3xl md:text-4xl font-light mb-4 text-[#03144A] dark:text-white">
+                        {solution.title}
+                      </h3>
+                      <p className="text-xl text-[#10B981] mb-6 font-light">
+                        {solution.subtitle}
+                      </p>
                     </div>
-                  ) : null
-                )}
-              </div>
-
-              {/* Boutons de sélection */}
-              <div className="flex justify-center gap-4 mt-6">
-                {solutions.map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setCurrentIndex(i)}
-                    className={`w-4 h-4 rounded-full ${
-                      i === currentIndex ? 'bg-[#10B981]' : 'bg-[#03144A]/30'
-                    } transition-all duration-300`}
-                  />
-                ))}
-              </div>
-            </div>
-
-            {/* Mobile version : carrousel vertical optimisé */}
-            <div className="md:hidden space-y-6 px-4">
-              {solutions.map((solution, index) => (
-                <div key={index} className="bg-white dark:bg-gray-900 rounded-2xl border border-[#03144A] dark:border-white/20 overflow-hidden shadow-lg">
-                  <div className="w-full h-40 relative bg-gradient-to-br from-[#10B981]/5 to-[#03144A]/5 flex items-center justify-center">
-                    {solution.image ? (
-                      <Image
-                        src={solution.image}
-                        alt={solution.title}
-                        fill
-                        className="object-contain p-4"
-                      />
-                    ) : (
-                      <span className="text-4xl">🔧</span>
-                    )}
-                  </div>
-                  <div className="p-4">
-                    <div className="flex items-start justify-between mb-3">
-                      <div className="flex-1">
-                        <h3 className="text-lg font-semibold text-[#03144A] dark:text-white mb-1">{solution.title}</h3>
-                        <p className="text-[#10B981] text-sm font-medium">{solution.subtitle}</p>
-                      </div>
-                      <div className="text-right ml-4">
-                        <p className="text-[#10B981] text-sm font-medium">{solution.price}</p>
-                      </div>
-                    </div>
-                    <p className="text-[#03144A] dark:text-white/80 text-sm leading-relaxed mb-4">{solution.description}</p>
-                    <div className="grid grid-cols-2 gap-2 mb-4">
-                      {solution.features.slice(0, 4).map((feature, i) => (
-                        <div key={i} className="flex items-center text-xs text-[#03144A] dark:text-white/70">
-                          <div className="w-1.5 h-1.5 bg-[#10B981] rounded-full mr-2 flex-shrink-0"></div>
-                          <span>{feature}</span>
+                    <p className="text-[#03144A] dark:text-white text-lg leading-relaxed mb-8">
+                      {solution.description}
+                    </p>
+                    <div className="space-y-4 mb-8">
+                      {solution.features.map((feature, i) => (
+                        <div key={i} className="flex items-center space-x-3">
+                          <div className="w-2 h-2 bg-[#10B981] rounded-full flex-shrink-0" />
+                          <span className="text-[#03144A] dark:text-white">{feature}</span>
                         </div>
                       ))}
                     </div>
+                    <div className="flex items-center justify-between">
+                      <div className="text-2xl font-light text-[#03144A] dark:text-white">
+                        {solution.price}
+                      </div>
+                      <Link
+                        href="/contact"
+                        className="group px-8 py-3 bg-gradient-to-r from-[#03144A] to-[#10B981] rounded-full text-white font-medium transition-all duration-300 hover:scale-105"
+                      >
+                        Devis gratuit
+                      </Link>
+                    </div>
+                  </div>
+
+                  {/* Image Side */}
+                  <div className="relative bg-white dark:bg-black flex items-center justify-center p-12">
+                    <div className="relative w-80 h-80">
+                      {solution.image ? (
+                        <Image
+                          src={solution.image}
+                          alt={solution.title}
+                          fill
+                          className="object-contain filter drop-shadow-2xl"
+                        />
+                      ) : (
+                        <div className="w-full h-full bg-white dark:bg-black rounded-full flex items-center justify-center">
+                          <span className="text-6xl">🔧</span>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -369,7 +308,7 @@ export default function MaintenancePage() {
             {advantages.map((advantage, index) => (
               <div
                 key={index}
-                className="group text-center p-8 rounded-2xl bg-white dark:bg-black border border-[#03144A] dark:border-white/20 hover:border-[#10B981]/50 transition-all duration-300 hover:bg-[#10B981]/5"
+                className="group text-center p-8 rounded-2xl bg-white dark:bg-black border border-[#03144A] dark:border-white/20 hover:border-white/50 dark:hover:border-black/50 transition-all duration-300"
               >
                 <div className="text-5xl mb-6 transform group-hover:scale-110 transition-transform duration-300">
                   {advantage.icon}
@@ -389,7 +328,7 @@ export default function MaintenancePage() {
       {/* CTA Section - Optimisé Mobile */}
       <section className="py-12 md:py-24 relative">
         <div className="max-w-4xl mx-auto text-center px-4 md:px-6">
-          <div className="bg-gradient-to-br from-[#10B981]/5 to-[#03144A]/5 dark:from-[#10B981]/10 dark:to-[#03144A]/10 rounded-2xl md:rounded-3xl p-8 md:p-16 border border-[#03144A] dark:border-white/20 backdrop-blur-sm shadow-xl">
+          <div className="bg-white dark:bg-black rounded-2xl md:rounded-3xl p-8 md:p-16 border border-[#03144A] dark:border-white/20 backdrop-blur-sm shadow-xl">
             <h2 className="text-2xl md:text-4xl lg:text-5xl font-light mb-6 md:mb-8 leading-tight">
               Prêt à optimiser votre
               <br className="hidden sm:block" />
