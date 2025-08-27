@@ -159,10 +159,48 @@ export default function SaintSelveLayout({
               "sameAs": [
                 "https://www.climgo.fr"
               ],
-              "areaServed": {
-                "@type": "Place",
-                "name": "Saint-Selve, Bordeaux Métropole, Gironde, Nouvelle-Aquitaine"
-              },
+              "areaServed": [
+                {
+                  "@type": "Place",
+                  "name": "Saint-Selve"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Gradignan"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Villenave-d'Ornon"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Bordeaux"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Pessac"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Talence"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Canéjan"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Cestas"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Le Barp"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Marcheprime"
+                }
+              ],
               "foundingDate": "2025",
               "founder": {
                 "@type": "Person",

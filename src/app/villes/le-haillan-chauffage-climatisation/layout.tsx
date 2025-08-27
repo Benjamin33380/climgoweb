@@ -159,10 +159,48 @@ export default function LeHaillanLayout({
               "sameAs": [
                 "https://www.climgo.fr"
               ],
-              "areaServed": {
-                "@type": "Place",
-                "name": "Le Haillan, Bordeaux Métropole, Gironde, Nouvelle-Aquitaine"
-              },
+              "areaServed": [
+                {
+                  "@type": "Place",
+                  "name": "Le Haillan"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Bordeaux"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Mérignac"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Saint-Médard-en-Jalles"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Eysines"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Blanquefort"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Le Taillan-Médoc"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Martignas-sur-Jalle"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Saint-Aubin-de-Médoc"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Parempuyre"
+                }
+              ],
               "foundingDate": "2025",
               "founder": {
                 "@type": "Person",

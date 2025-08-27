@@ -82,14 +82,13 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
+      { url: "/favicon/favicon.svg", type: "image/svg+xml" },
       { url: "/favicon/favicon-16x16.png", sizes: "16x16", type: "image/png" },
       { url: "/favicon/favicon-32x32.png", sizes: "32x32", type: "image/png" },
       { url: "/favicon/favicon-96x96.png", sizes: "96x96", type: "image/png" },
-      { url: "/favicon/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon.ico", type: "image/x-icon" },
     ],
     apple: [{ url: "/favicon/apple-touch-icon.png", sizes: "180x180" }],
-    shortcut: [{ url: "/favicon/favicon-32x32.png", sizes: "32x32" }],
+    shortcut: [{ url: "/favicon/favicon.svg", type: "image/svg+xml" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -128,6 +127,7 @@ export default function RootLayout({
   return (
     <html lang="fr" suppressHydrationWarning>
       <head>
+        <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
         <PerformanceOptimizations />
         
         {/* Schéma JSON-LD principal */}

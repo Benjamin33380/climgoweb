@@ -159,10 +159,56 @@ export default function BordeauxLayout({
               "sameAs": [
                 "https://www.climgo.fr"
               ],
-              "areaServed": {
-                "@type": "Place",
-                "name": "Bordeaux, Gironde, Nouvelle-Aquitaine"
-              },
+              "areaServed": [
+                {
+                  "@type": "Place",
+                  "name": "Bordeaux"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Mérignac"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Pessac"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Talence"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Villenave-d'Ornon"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Bègles"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Cenon"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Floirac"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Bouliac"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Le Bouscat"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Le Haillan"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Saint-Médard-en-Jalles"
+                }
+              ],
               "foundingDate": "2025",
               "founder": {
                 "@type": "Person",

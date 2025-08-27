@@ -159,10 +159,48 @@ export default function LaBredeLayout({
               "sameAs": [
                 "https://www.climgo.fr"
               ],
-              "areaServed": {
-                "@type": "Place",
-                "name": "La Brède, Bordeaux Métropole, Gironde, Nouvelle-Aquitaine"
-              },
+              "areaServed": [
+                {
+                  "@type": "Place",
+                  "name": "La Brède"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Bordeaux"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Mérignac"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Pessac"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Villenave-d'Ornon"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Cestas"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Gradignan"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Canéjan"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Le Barp"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Saucats"
+                }
+              ],
               "foundingDate": "2025",
               "founder": {
                 "@type": "Person",

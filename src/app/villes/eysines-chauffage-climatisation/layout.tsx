@@ -159,10 +159,48 @@ export default function EysinesLayout({
               "sameAs": [
                 "https://www.climgo.fr"
               ],
-              "areaServed": {
-                "@type": "Place",
-                "name": "Eysines, Bordeaux Métropole, Gironde, Nouvelle-Aquitaine"
-              },
+              "areaServed": [
+                {
+                  "@type": "Place",
+                  "name": "Eysines"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Bordeaux"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Mérignac"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Le Bouscat"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Le Haillan"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Blanquefort"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Le Taillan-Médoc"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Parempuyre"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Ludon-Médoc"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Macau"
+                }
+              ],
               "foundingDate": "2025",
               "founder": {
                 "@type": "Person",

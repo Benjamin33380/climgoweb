@@ -159,10 +159,48 @@ export default function PessacLayout({
               "sameAs": [
                 "https://www.climgo.fr"
               ],
-              "areaServed": {
-                "@type": "Place",
-                "name": "Pessac, Bordeaux Métropole, Gironde, Nouvelle-Aquitaine"
-              },
+              "areaServed": [
+                {
+                  "@type": "Place",
+                  "name": "Pessac"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Bordeaux"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Mérignac"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Talence"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Gradignan"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Canéjan"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Cestas"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Le Barp"
+                },
+                {
+                  "@type": "Place",
+                  "name": "La Brède"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Saucats"
+                }
+              ],
               "foundingDate": "2025",
               "founder": {
                 "@type": "Person",

@@ -159,10 +159,48 @@ export default function SaintLoubesLayout({
               "sameAs": [
                 "https://www.climgo.fr"
               ],
-              "areaServed": {
-                "@type": "Place",
-                "name": "Saint-Loubès, Bordeaux Métropole, Gironde, Nouvelle-Aquitaine"
-              },
+              "areaServed": [
+                {
+                  "@type": "Place",
+                  "name": "Saint-Loubès"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Bordeaux"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Cenon"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Floirac"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Lormont"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Carbon-Blanc"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Ambarès-et-Lagrave"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Bassens"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Ludon-Médoc"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Parempuyre"
+                }
+              ],
               "foundingDate": "2025",
               "founder": {
                 "@type": "Person",

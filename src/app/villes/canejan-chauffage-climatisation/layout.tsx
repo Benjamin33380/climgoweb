@@ -159,10 +159,48 @@ export default function CanejanLayout({
               "sameAs": [
                 "https://www.climgo.fr"
               ],
-              "areaServed": {
-                "@type": "Place",
-                "name": "Canéjan, Bordeaux Métropole, Gironde, Nouvelle-Aquitaine"
-              },
+              "areaServed": [
+                {
+                  "@type": "Place",
+                  "name": "Canéjan"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Bordeaux"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Pessac"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Gradignan"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Cestas"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Le Barp"
+                },
+                {
+                  "@type": "Place",
+                  "name": "La Brède"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Marcheprime"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Saucats"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Mios"
+                }
+              ],
               "foundingDate": "2025",
               "founder": {
                 "@type": "Person",

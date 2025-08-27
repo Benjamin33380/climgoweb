@@ -159,10 +159,48 @@ export default function SaintAubinDeMedocLayout({
               "sameAs": [
                 "https://www.climgo.fr"
               ],
-              "areaServed": {
-                "@type": "Place",
-                "name": "Saint-Aubin-de-Médoc, Bordeaux Métropole, Gironde, Nouvelle-Aquitaine"
-              },
+              "areaServed": [
+                {
+                  "@type": "Place",
+                  "name": "Saint-Aubin-de-Médoc"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Bordeaux"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Mérignac"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Le Haillan"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Blanquefort"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Le Taillan-Médoc"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Eysines"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Bruges"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Parempuyre"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Ludon-Médoc"
+                }
+              ],
               "foundingDate": "2025",
               "founder": {
                 "@type": "Person",

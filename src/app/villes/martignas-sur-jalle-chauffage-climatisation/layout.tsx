@@ -159,10 +159,48 @@ export default function MartignasSurJalleLayout({
               "sameAs": [
                 "https://www.climgo.fr"
               ],
-              "areaServed": {
-                "@type": "Place",
-                "name": "Martignas-sur-Jalle, Bordeaux Métropole, Gironde, Nouvelle-Aquitaine"
-              },
+              "areaServed": [
+                {
+                  "@type": "Place",
+                  "name": "Martignas-sur-Jalle"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Mérignac"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Bordeaux"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Saint-Médard-en-Jalles"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Eysines"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Le Haillan"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Saint-Aubin-de-Médoc"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Le Taillan-Médoc"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Blanquefort"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Bruges"
+                }
+              ],
               "foundingDate": "2025",
               "founder": {
                 "@type": "Person",

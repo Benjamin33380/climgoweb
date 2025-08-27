@@ -159,10 +159,48 @@ export default function SaintJeanDIlacLayout({
               "sameAs": [
                 "https://www.climgo.fr"
               ],
-              "areaServed": {
-                "@type": "Place",
-                "name": "Saint-Jean-d'Illac, Bordeaux Métropole, Gironde, Nouvelle-Aquitaine"
-              },
+              "areaServed": [
+                {
+                  "@type": "Place",
+                  "name": "Saint-Jean-d'Illac"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Mérignac"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Bordeaux"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Le Haillan"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Eysines"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Gradignan"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Canéjan"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Villenave-d'Ornon"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Pessac"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Talence"
+                }
+              ],
               "foundingDate": "2025",
               "founder": {
                 "@type": "Person",

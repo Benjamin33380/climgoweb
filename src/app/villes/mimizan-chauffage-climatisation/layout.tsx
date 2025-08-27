@@ -159,10 +159,48 @@ export default function MimizanLayout({
               "sameAs": [
                 "https://www.climgo.fr"
               ],
-              "areaServed": {
-                "@type": "Place",
-                "name": "Mimizan, Landes, Nouvelle-Aquitaine"
-              },
+              "areaServed": [
+                {
+                  "@type": "Place",
+                  "name": "Mimizan"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Biscarrosse"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Arcachon"
+                },
+                {
+                  "@type": "Place",
+                  "name": "La Teste-de-Buch"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Le Teich"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Gujan-Mestras"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Biganos"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Audenge"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Lanton"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Andernos-les-Bains"
+                }
+              ],
               "foundingDate": "2025",
               "founder": {
                 "@type": "Person",

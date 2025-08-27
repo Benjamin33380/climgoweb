@@ -159,10 +159,48 @@ export default function LegeCapFerretLayout({
               "sameAs": [
                 "https://www.climgo.fr"
               ],
-              "areaServed": {
-                "@type": "Place",
-                "name": "Lège-Cap-Ferret, Bassin d'Arcachon, Gironde, Nouvelle-Aquitaine"
-              },
+              "areaServed": [
+                {
+                  "@type": "Place",
+                  "name": "Lège-Cap-Ferret"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Arcachon"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Andernos-les-Bains"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Lanton"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Audenge"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Lège"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Pyla-sur-Mer"
+                },
+                {
+                  "@type": "Place",
+                  "name": "La Teste-de-Buch"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Le Teich"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Gujan-Mestras"
+                }
+              ],
               "foundingDate": "2025",
               "founder": {
                 "@type": "Person",

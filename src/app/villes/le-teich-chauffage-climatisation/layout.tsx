@@ -159,10 +159,40 @@ export default function LeTeichLayout({
               "sameAs": [
                 "https://www.climgo.fr"
               ],
-              "areaServed": {
-                "@type": "Place",
-                "name": "Le Teich, Bassin d'Arcachon, Gironde, Nouvelle-Aquitaine"
-              },
+              "areaServed": [
+                {
+                  "@type": "Place",
+                  "name": "Le Teich"
+                },
+                {
+                  "@type": "Place",
+                  "name": "La Teste-de-Buch"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Gujan-Mestras"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Arcachon"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Biganos"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Audenge"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Lanton"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Andernos-les-Bains"
+                }
+              ],
               "foundingDate": "2025",
               "founder": {
                 "@type": "Person",

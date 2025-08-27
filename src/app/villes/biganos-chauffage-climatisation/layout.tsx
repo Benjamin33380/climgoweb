@@ -159,10 +159,48 @@ export default function BiganosLayout({
               "sameAs": [
                 "https://www.climgo.fr"
               ],
-              "areaServed": {
-                "@type": "Place",
-                "name": "Biganos, Bassin d'Arcachon, Gironde, Nouvelle-Aquitaine"
-              },
+              "areaServed": [
+                {
+                  "@type": "Place",
+                  "name": "Biganos"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Arcachon"
+                },
+                {
+                  "@type": "Place",
+                  "name": "La Teste-de-Buch"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Le Teich"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Gujan-Mestras"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Audenge"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Lanton"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Andernos-les-Bains"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Lège-Cap-Ferret"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Pyla-sur-Mer"
+                }
+              ],
               "foundingDate": "2025",
               "founder": {
                 "@type": "Person",

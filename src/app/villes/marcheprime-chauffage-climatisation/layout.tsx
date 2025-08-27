@@ -159,10 +159,48 @@ export default function MarcheprimeLayout({
               "sameAs": [
                 "https://www.climgo.fr"
               ],
-              "areaServed": {
-                "@type": "Place",
-                "name": "Marcheprime, Bassin d'Arcachon, Gironde, Nouvelle-Aquitaine"
-              },
+              "areaServed": [
+                {
+                  "@type": "Place",
+                  "name": "Marcheprime"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Bordeaux"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Canéjan"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Cestas"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Le Barp"
+                },
+                {
+                  "@type": "Place",
+                  "name": "La Brède"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Saucats"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Mios"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Gujan-Mestras"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Biganos"
+                }
+              ],
               "foundingDate": "2025",
               "founder": {
                 "@type": "Person",

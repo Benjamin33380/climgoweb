@@ -159,10 +159,48 @@ export default function BouliacLayout({
               "sameAs": [
                 "https://www.climgo.fr"
               ],
-              "areaServed": {
-                "@type": "Place",
-                "name": "Bouliac, Bordeaux Métropole, Gironde, Nouvelle-Aquitaine"
-              },
+              "areaServed": [
+                {
+                  "@type": "Place",
+                  "name": "Bouliac"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Bordeaux"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Villenave-d'Ornon"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Cenon"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Floirac"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Lormont"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Carbon-Blanc"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Ambarès-et-Lagrave"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Bassens"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Saint-Loubès"
+                }
+              ],
               "foundingDate": "2025",
               "founder": {
                 "@type": "Person",

@@ -159,10 +159,48 @@ export default function MerignacLayout({
               "sameAs": [
                 "https://www.climgo.fr"
               ],
-              "areaServed": {
-                "@type": "Place",
-                "name": "Mérignac, Bordeaux Métropole, Gironde, Nouvelle-Aquitaine"
-              },
+              "areaServed": [
+                {
+                  "@type": "Place",
+                  "name": "Mérignac"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Bordeaux"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Pessac"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Le Haillan"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Saint-Médard-en-Jalles"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Le Taillan-Médoc"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Martignas-sur-Jalle"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Le Bouscat"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Eysines"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Blanquefort"
+                }
+              ],
               "foundingDate": "2025",
               "founder": {
                 "@type": "Person",

@@ -159,10 +159,48 @@ export default function BeglesLayout({
               "sameAs": [
                 "https://www.climgo.fr"
               ],
-              "areaServed": {
-                "@type": "Place",
-                "name": "Bègles, Bordeaux Métropole, Gironde, Nouvelle-Aquitaine"
-              },
+              "areaServed": [
+                {
+                  "@type": "Place",
+                  "name": "Bègles"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Bordeaux"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Talence"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Villenave-d'Ornon"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Cenon"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Floirac"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Bouliac"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Lormont"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Carbon-Blanc"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Ambarès-et-Lagrave"
+                }
+              ],
               "foundingDate": "2025",
               "founder": {
                 "@type": "Person",
