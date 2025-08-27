@@ -17,7 +17,7 @@ const entreprise = [
 
 export default function Footer() {
   return (
-    <footer className="border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <footer className="border-t bg-white dark:bg-black backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section principale */}
