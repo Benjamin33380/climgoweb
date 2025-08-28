@@ -108,7 +108,7 @@ export default function BordeauxLayout({
   // 1) Entreprise locale
   const localBusiness = {
     "@context": "https://schema.org",
-    "@type": "HVACBusiness",
+    "@type": "LocalBusiness",
     name: "ClimGO",
     url: PAGE_URL,
     image: `${SITE}/img/climdame.png`,
@@ -121,6 +121,8 @@ export default function BordeauxLayout({
       addressCountry: "FR",
     },
     areaServed: { "@type": "City", name: "Bordeaux" },
+    serviceType: "Chauffage et Climatisation",
+    description: "Installation, entretien et dépannage de systèmes de chauffage et climatisation à Bordeaux"
   };
 
   // 2) Contexte de la page
@@ -135,19 +137,29 @@ export default function BordeauxLayout({
       "Installation, entretien et dépannage PAC & clim à Bordeaux. Devis rapide.",
   };
 
-  // 3) Fil d’Ariane
+  // 3) Fil d'Ariane
   const breadcrumb = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Accueil", item: `${SITE}/` },
+      { 
+        "@type": "ListItem", 
+        position: 1, 
+        name: "Accueil", 
+        item: `${SITE}/` 
+      },
       {
         "@type": "ListItem",
         position: 2,
         name: "Zones desservies",
         item: `${SITE}/zones-desservies`,
       },
-      { "@type": "ListItem", position: 3, name: "Bordeaux", item: PAGE_URL },
+      { 
+        "@type": "ListItem", 
+        position: 3, 
+        name: "Bordeaux", 
+        item: PAGE_URL 
+      },
     ],
   };
 

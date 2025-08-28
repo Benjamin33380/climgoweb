@@ -109,10 +109,10 @@ export const metadata: Metadata = {
 export default function ArcachonLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  // 1) Entreprise locale (HVACBusiness)
+  // 1) Entreprise locale (LocalBusiness)
   const localBusiness = {
     "@context": "https://schema.org",
-    "@type": "HVACBusiness",
+    "@type": "LocalBusiness",
     name: "ClimGO",
     url: PAGE_URL,
     image: `${SITE}/img/climdame.png`,
@@ -125,6 +125,8 @@ export default function ArcachonLayout({
       addressCountry: "FR",
     },
     areaServed: { "@type": "City", name: "Arcachon" },
+    serviceType: "Chauffage et Climatisation",
+    description: "Installation, entretien et dépannage de systèmes de chauffage et climatisation à Arcachon"
   };
 
   // 2) Contexte de la page
@@ -139,19 +141,29 @@ export default function ArcachonLayout({
       "Installation, entretien et dépannage PAC & clim à Arcachon. Devis rapide.",
   };
 
-  // 3) Fil d’Ariane
+  // 3) Fil d'Ariane
   const breadcrumb = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Accueil", item: `${SITE}/` },
+      { 
+        "@type": "ListItem", 
+        position: 1, 
+        name: "Accueil", 
+        item: `${SITE}/` 
+      },
       {
         "@type": "ListItem",
         position: 2,
         name: "Zones desservies",
         item: `${SITE}/zones-desservies`,
       },
-      { "@type": "ListItem", position: 3, name: "Arcachon", item: PAGE_URL },
+      { 
+        "@type": "ListItem", 
+        position: 3, 
+        name: "Arcachon", 
+        item: PAGE_URL 
+      },
     ],
   };
 

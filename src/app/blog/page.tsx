@@ -1,9 +1,5 @@
-'use client';
-
-import { useState, useEffect } from 'react';
-import BlogCard from '@/components/BlogCard';
-import BlogSearch from '@/components/BlogSearch';
-import BlogPagination from '@/components/BlogPagination';
+import BlogSearchWrapper from '@/components/BlogSearchWrapper';
+import { Suspense } from 'react';
 
 interface Article {
   id: string;
@@ -19,62 +15,23 @@ interface Article {
   };
 }
 
-export default function BlogPage() {
-  const [articles, setArticles] = useState<Article[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [filteredArticles, setFilteredArticles] = useState<Article[]>([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
-  const articlesPerPage = 9;
-
-  useEffect(() => {
-    fetchArticles();
-  }, []);
-
-  useEffect(() => {
-    if (searchQuery) {
-      const filtered = articles.filter(article =>
-        article.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        article.excerpt.toLowerCase().includes(searchQuery.toLowerCase())
-      );
-      setFilteredArticles(filtered);
-      setCurrentPage(1);
-    } else {
-      setFilteredArticles(articles);
-      setCurrentPage(1);
+async function getArticles(): Promise<Article[]> {
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.climgo.fr'}/api/blog`, {
+      cache: 'no-store'
+    });
+    if (response.ok) {
+      const data = await response.json();
+      return data.articles || [];
     }
-  }, [searchQuery, articles]);
-
-  useEffect(() => {
-    const total = Math.ceil(filteredArticles.length / articlesPerPage);
-    setTotalPages(total);
-  }, [filteredArticles]);
-
-  const fetchArticles = async () => {
-    try {
-      const response = await fetch('/api/blog');
-      if (response.ok) {
-        const data = await response.json();
-        // L'API retourne { articles, pagination }
-        const articles = data.articles || [];
-        setArticles(articles);
-        setFilteredArticles(articles);
-      }
-    } catch (error) {
-      console.error('Erreur lors de la récupération des articles:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-lg">Chargement...</div>
-      </div>
-    );
+  } catch (error) {
+    console.error('Erreur lors de la récupération des articles:', error);
   }
+  return [];
+}
+
+export default async function BlogPage() {
+  const articles = await getArticles();
 
   return (
     <div className="min-h-screen bg-background">
@@ -94,55 +51,9 @@ export default function BlogPage() {
       </div>
 
       {/* Search */}
-      <div className="bg-card border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <BlogSearch onSearch={setSearchQuery} currentQuery={searchQuery} />
-        </div>
-      </div>
-
-      {/* Articles */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {filteredArticles.length === 0 ? (
-          <div className="text-center py-16">
-            <h2 className="text-2xl font-semibold text-foreground mb-4">
-              {searchQuery ? 'Aucun article trouvé' : 'Aucun article disponible'}
-            </h2>
-            <p className="text-muted-foreground">
-              {searchQuery 
-                ? 'Essayez de modifier vos critères de recherche.'
-                : 'Revenez bientôt pour découvrir nos premiers articles !'
-              }
-            </p>
-            {searchQuery && (
-              <button
-                onClick={() => setSearchQuery('')}
-                className="mt-4 text-primary hover:text-primary/80 underline"
-              >
-                Effacer la recherche
-              </button>
-            )}
-          </div>
-        ) : (
-          <>
-            <h2 className="text-3xl font-semibold text-foreground mb-8 text-center">
-              Nos Articles & Conseils
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredArticles
-                .slice((currentPage - 1) * articlesPerPage, currentPage * articlesPerPage)
-                .map((article) => (
-                  <BlogCard key={article.id} article={article} />
-                ))}
-            </div>
-            
-            <BlogPagination
-              currentPage={currentPage}
-              totalPages={totalPages}
-              onPageChange={setCurrentPage}
-            />
-          </>
-        )}
-      </div>
+      <Suspense fallback={<div className="bg-card border-b py-8 text-center">Chargement de la recherche...</div>}>
+        <BlogSearchWrapper articles={articles} />
+      </Suspense>
     </div>
   );
 }

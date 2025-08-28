@@ -310,18 +310,18 @@ export function NewHeader() {
         </div>
 
         {/* Contact et CTA */}
-        <div className="flex items-center space-x-4">
-          <a 
+        <div className="flex items-center space-x-4 my-4 justify-center lg:justify-end lg:w-full">
+          <Link
             href="tel:0766460008" 
-            className="hidden md:flex items-center space-x-2 text-sm font-medium hover:text-primary"
+            className="hidden lg:flex items-center space-x-2 text-sm font-medium hover:text-primary w-fit mx-4"
           >
             <Phone className="w-4 h-4" />
-            <span>07 66 46 00 08</span>
-          </a>
+            <span className="">07 66 46 00 08</span>
+          </Link>
           
           <Link 
             href="/contact" 
-            className="hidden sm:inline-flex bg-white/20 dark:bg-white/10 backdrop-blur-md border border-black/40 dark:border-white/30 text-black dark:text-white px-4 py-2 rounded-xl text-sm font-medium hover:bg-white/30 dark:hover:bg-white/20 transition-all duration-300"
+            className="hidden xl:inline-flex bg-white/20 dark:bg-white/10 backdrop-blur-md border border-black/40 dark:border-white/30 text-black dark:text-white px-4 py-2 rounded-xl text-sm font-medium hover:bg-white/30 dark:hover:bg-white/20 transition-all duration-300"
           >
             Devis gratuit
           </Link>

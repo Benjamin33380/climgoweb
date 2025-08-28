@@ -57,7 +57,7 @@ export default function BlogLayout({ children }: { children: React.ReactNode }) 
     url: PAGE_URL,
     description: 'Blog ClimGO : conseils experts en chauffage, climatisation et pompes à chaleur. Actualités, guides techniques, astuces d\'entretien et conseils RGE pour la Gironde et le Bassin d\'Arcachon.',
     publisher: {
-      '@type': 'HVACBusiness',
+      '@type': 'LocalBusiness',
       name: 'ClimGO',
       url: SITE,
       telephone: '+33766460008',
@@ -68,6 +68,8 @@ export default function BlogLayout({ children }: { children: React.ReactNode }) 
         postalCode: '33380',
         addressCountry: 'FR',
       },
+      serviceType: 'Chauffage et Climatisation',
+      description: 'Expert en installation, entretien et dépannage de systèmes de chauffage et climatisation'
     },
   };
 
