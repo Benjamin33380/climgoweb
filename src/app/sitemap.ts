@@ -1,4 +1,4 @@
-import { cities, services } from '@/config/cities'
+import { getAllCities } from '@/config/cities'
 import { MetadataRoute } from 'next'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -26,7 +26,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: page === '' ? 1 : 0.9
   }))
 
-  // Pages services
+  // Pages services (hardcodées car pas d'export dans cities.ts)
+  const services = ['chauffage', 'climatisation', 'maintenance', 'eau-chaude-sanitaire']
   const serviceUrls = services.map(service => ({
     url: `${baseUrl}/${service}`,
     lastModified: currentDate,
@@ -34,9 +35,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.9
   }))
 
-  // Pages villes
+  // Pages villes - Utilisation de getAllCities() pour obtenir toutes les villes
+  const cities = getAllCities()
   const cityUrls = cities.map(city => ({
-    url: `${baseUrl}/villes/${city}-chauffage-climatisation`,
+    url: `${baseUrl}/villes/${city.slug}`,
     lastModified: currentDate,
     changeFrequency: 'weekly' as const,
     priority: 0.8
@@ -50,22 +52,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const { PrismaClient } = await import('@prisma/client')
     const prisma = new PrismaClient()
     
-    const posts = await prisma.post.findMany({
+    const articles = await prisma.article.findMany({
       where: { published: true },
       select: { slug: true, createdAt: true, updatedAt: true },
       orderBy: { createdAt: 'desc' }
     })
 
-    blogUrls = posts.map(post => ({
-      url: `${baseUrl}/blog/${post.slug}`,
-      lastModified: post.updatedAt || post.createdAt,
+    blogUrls = articles.map(article => ({
+      url: `${baseUrl}/blog/${article.slug}`,
+      lastModified: article.updatedAt || article.createdAt,
       changeFrequency: 'monthly' as const,
       priority: 0.7
     }))
 
     await prisma.$disconnect()
   } catch (error) {
-    console.log('Blog posts not available for sitemap:', error)
+    console.log('Blog articles not available for sitemap:', error)
     // Fallback : pas d'articles du blog
   }
 
