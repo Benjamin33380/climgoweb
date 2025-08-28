@@ -62,7 +62,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${baseUrl}/blog/${article.slug}`,
       lastModified: article.updatedAt || article.createdAt,
       changeFrequency: 'monthly' as const,
-      priority: 0.7
+      priority: 0.8
     }))
 
     await prisma.$disconnect()
