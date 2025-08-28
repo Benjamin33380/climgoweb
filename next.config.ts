@@ -6,34 +6,9 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'lh3.googleusercontent.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'lh4.googleusercontent.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'lh5.googleusercontent.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'lh6.googleusercontent.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'maps.googleapis.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'maps.gstatic.com',
+        hostname: '**',
       },
     ],
-  },
-
-  // Configuration webpack simple
-  webpack: (config) => {
-    return config;
   },
 
   // Compression
@@ -48,9 +23,6 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: false,
   },
-
-  // Output
-  output: 'standalone',
 
   // Extensions de pages
   pageExtensions: ['tsx', 'ts', 'jsx', 'js'],

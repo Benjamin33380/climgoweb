@@ -101,7 +101,7 @@ export default function BlogPage() {
       </div>
 
       {/* Articles */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {filteredArticles.length === 0 ? (
           <div className="text-center py-16">
             <h2 className="text-2xl font-semibold text-foreground mb-4">
@@ -142,7 +142,7 @@ export default function BlogPage() {
             />
           </>
         )}
-      </main>
+      </div>
     </div>
   );
 }

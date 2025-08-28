@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { ChevronRight, ArrowRight, Phone, MapPin, Clock, Star, Building2, Mountain, TreePine, Waves, Home, Users } from 'lucide-react';
-import { Badge } from '@/components/ui/badge';
 import { Globe } from '@/components/ui/globe';
 import LocationMap from '@/components/LocationMap';
 

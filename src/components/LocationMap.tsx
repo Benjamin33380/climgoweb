@@ -1,6 +1,5 @@
 'use client';
 
-import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 
 interface LocationMapProps {
   backgroundColor?: string;

@@ -120,8 +120,7 @@ export default function BlogLayout({ children }: { children: React.ReactNode }) 
   };
 
   return (
-    <html lang="fr">
-      <head>
+      <>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(blogJsonLd) }}
@@ -131,10 +130,7 @@ export default function BlogLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
         />
-      </head>
-      <body>
         <main id="content" role="main">{children}</main>
-      </body>
-    </html>
+      </>
   );
 }
