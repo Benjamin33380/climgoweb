@@ -9,7 +9,7 @@ const OG_IMAGE = `${SITE}/images/og/blog-climgo.jpg`;
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
   title: 'Blog ClimGO | Conseils Chauffage Climatisation Gironde',
-  description: 'Blog ClimGO : conseils experts en chauffage, climatisation et pompes à chaleur. Actualités, guides techniques, astuces d\'entretien et conseils RGE pour la Gironde et le Bassin d\'Arcachon.',
+  description: 'Blog ClimGO : conseils experts en chauffage et climatisation. Actualités, guides techniques et conseils RGE pour la Gironde.',
   keywords: 'blog ClimGO, conseils chauffage, conseils climatisation, actualités ClimGO, expert RGE Gironde',
   alternates: {
     canonical: PATH,
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     url: PAGE_URL,
     title: 'Blog ClimGO | Conseils Chauffage Climatisation Gironde',
-    description: 'Blog ClimGO : conseils experts en chauffage, climatisation et pompes à chaleur. Actualités, guides techniques, astuces d\'entretien et conseils RGE pour la Gironde et le Bassin d\'Arcachon.',
+    description: 'Blog ClimGO : conseils experts en chauffage et climatisation. Actualités, guides techniques et conseils RGE pour la Gironde.',
     images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: 'Blog ClimGO | Conseils Chauffage Climatisation Gironde' }],
   },
   twitter: {
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     site: '@climgo_fr',
     creator: '@climgo_fr',
     title: 'Blog ClimGO | Conseils Chauffage Climatisation Gironde',
-    description: 'Blog ClimGO : conseils experts en chauffage, climatisation et pompes à chaleur. Actualités, guides techniques, astuces d\'entretien et conseils RGE pour la Gironde et le Bassin d\'Arcachon.',
+    description: 'Blog ClimGO : conseils experts en chauffage et climatisation. Actualités, guides techniques et conseils RGE pour la Gironde.',
     images: [OG_IMAGE],
   },
   robots: {
@@ -55,7 +55,7 @@ export default function BlogLayout({ children }: { children: React.ReactNode }) 
     '@type': 'Blog',
     name: 'Blog ClimGO – Conseils Chauffage Climatisation',
     url: PAGE_URL,
-    description: 'Blog ClimGO : conseils experts en chauffage, climatisation et pompes à chaleur. Actualités, guides techniques, astuces d\'entretien et conseils RGE pour la Gironde et le Bassin d\'Arcachon.',
+    description: 'Blog ClimGO : conseils experts en chauffage et climatisation. Actualités, guides techniques et conseils RGE pour la Gironde.',
     publisher: {
       '@type': 'LocalBusiness',
       name: 'ClimGO',

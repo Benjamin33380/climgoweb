@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     default: "ClimGO La Teste-de-Buch - Chauffage & Climatisation",
     template: "%s | ClimGO La Teste-de-Buch"
   },
-  description: "Expert chauffage climatisation La Teste-de-Buch. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit.",
+  description: "Expert chauffage climatisation La Teste-de-Buch. Installation PAC, entretien et dépannage. Artisan RGE certifié.",
   keywords: ["chauffage La Teste-de-Buch", "climatisation La Teste-de-Buch", "pompe à chaleur La Teste-de-Buch", "installation PAC La Teste-de-Buch", "entretien chauffage La Teste-de-Buch", "artisan RGE La Teste-de-Buch", "PAC air-eau La Teste-de-Buch", "PAC air-air La Teste-de-Buch", "plancher chauffant La Teste-de-Buch", "radiateurs La Teste-de-Buch", "maintenance La Teste-de-Buch", "dépannage La Teste-de-Buch", "devis gratuit La Teste-de-Buch"],
   authors: [{ name: "ClimGO", url: "https://www.climgo.fr" }],
   creator: "ClimGO",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     url: "https://www.climgo.fr/villes/la-teste-de-buch-chauffage-climatisation",
     title: "ClimGO La Teste-de-Buch - Chauffage & Climatisation",
-    description: "Expert chauffage climatisation La Teste-de-Buch. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit.",
+    description: "Expert chauffage climatisation La Teste-de-Buch. Installation PAC, entretien et dépannage. Artisan RGE certifié.",
     siteName: "ClimGO",
     images: [
       {
