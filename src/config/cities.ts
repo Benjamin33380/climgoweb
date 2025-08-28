@@ -304,6 +304,14 @@ export const citiesConfig: CityConfig[] = [
     region: "Bassin d'Arcachon"
   },
   {
+    name: "Belin-Béliet",
+    slug: "belin-beliet-chauffage-climatisation",
+    services: ["Chauffage", "Climatisation", "Pompe à Chaleur", "Maintenance", "Eau Chaude Sanitaire"],
+    description: "ClimGO, expert chauffage et climatisation à Belin-Béliet. Installation PAC, entretien et dépannage. Artisan RGE certifié. Devis gratuit sous 24h.",
+    coordinates: { lat: 44.5000, lng: -0.7833 },
+    region: "Bassin d'Arcachon"
+  },
+  {
     name: "Le Barp",
     slug: "le-barp-chauffage-climatisation",
     services: ["Chauffage", "Climatisation", "Pompe à Chaleur", "Maintenance", "Eau Chaude Sanitaire"],
