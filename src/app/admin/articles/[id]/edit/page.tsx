@@ -2,16 +2,19 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter, useParams } from 'next/navigation';
-import dynamic from 'next/dynamic';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import AdminNav from '@/components/AdminNav';
 
-// Import dynamique de l'éditeur markdown
-const MDEditor = dynamic(
-  () => import('@uiw/react-md-editor'),
-  { ssr: false }
+// Éditeur de texte simple
+const MDEditor = ({ value, onChange }: { value: string; onChange: (value: string) => void }) => (
+      <textarea
+      value={value}
+      onChange={(e) => onChange(e.target.value)}
+      className="w-full h-64 p-4 border border-gray-300 rounded-lg resize-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+      placeholder="Rédigez votre article ici..."
+    />
 );
 
 interface Article {
@@ -200,14 +203,10 @@ export default function EditArticle() {
                 <label className="block text-sm font-medium text-foreground mb-2">
                   Contenu de l'article *
                 </label>
-                <div data-color-mode="light">
-                  <MDEditor
-                    value={formData.content}
-                    onChange={(val) => setFormData(prev => ({ ...prev, content: val || '' }))}
-                    height={400}
-                    preview="edit"
-                  />
-                </div>
+                <MDEditor
+                  value={formData.content}
+                  onChange={(val) => setFormData(prev => ({ ...prev, content: val || '' }))}
+                />
               </div>
 
               {/* Options */}

@@ -1,4 +1,4 @@
-import { TbSnowflake, TbFlame, TbDroplet, TbTools } from 'react-icons/tb';
+import { Snowflake, Flame, Droplets, Wrench } from 'lucide-react';
 import Link from 'next/link';
 import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 
@@ -25,7 +25,7 @@ export default function Services() {
             <Link href="/climatisation" className="group block bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#2563EB]/50 dark:hover:border-[#60A5FA] h-80 flex flex-col">
             <div className="text-center flex flex-col justify-center h-full">
               <div className="bg-[#2563EB]/10 dark:bg-[#2563EB]/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <TbSnowflake className="w-12 h-12 text-[#2563EB] dark:text-[#60A5FA]" />
+                <Snowflake className="w-12 h-12 text-[#2563EB] dark:text-[#60A5FA]" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 group-hover:text-[#2563EB] dark:group-hover:text-[#60A5FA] transition-colors">
                 Climatisation
@@ -43,7 +43,7 @@ export default function Services() {
             <Link href="/chauffage" className="group block bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#FF8C00]/50 dark:hover:border-[#FFA500] h-80 flex flex-col">
             <div className="text-center flex flex-col justify-center h-full">
               <div className="bg-[#FF8C00]/10 dark:bg-[#FF8C00]/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <TbFlame className="w-12 h-12 text-[#FF8C00] dark:text-[#FFA500]" />
+                <Flame className="w-12 h-12 text-[#FF8C00] dark:text-[#FFA500]" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 group-hover:text-[#FF8C00] dark:group-hover:text-[#FFA500] transition-colors">
                 Chauffage
@@ -60,7 +60,7 @@ export default function Services() {
             <Link href="/eau-chaude-sanitaire" className="group block bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#FF6B6B]/50 dark:hover:border-[#FF6B6B] h-80 flex flex-col">
             <div className="text-center flex flex-col justify-center h-full">
               <div className="bg-[#FF6B6B]/10 dark:bg-[#FF6B6B]/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <TbDroplet className="w-12 h-12 text-[#FF6B6B] dark:text-[#FF6B6B]" />
+                <Droplets className="w-12 h-12 text-[#FF6B6B] dark:text-[#FF6B6B]" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 group-hover:text-[#FF6B6B] dark:group-hover:text-[#FF6B6B] transition-colors">
                 Eau Chaude Sanitaire
@@ -77,7 +77,7 @@ export default function Services() {
             <Link href="/maintenance" className="group block bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#10B981]/50 dark:hover:border-[#34D399] h-80 flex flex-col">
             <div className="text-center flex flex-col justify-center h-full">
               <div className="bg-[#10B981]/10 dark:bg-[#10B981]/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <TbTools className="w-12 h-12 text-[#10B981] dark:text-[#34D399]" />
+                <Wrench className="w-12 h-12 text-[#10B981] dark:text-[#34D399]" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 group-hover:text-[#10B981] dark:group-hover:text-[#10B981] transition-colors">
                 Maintenance
