@@ -2,12 +2,12 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Blog ClimGO | Conseils Chauffage Climatisation Gironde',
-  description: 'Blog ClimGO : conseils chauffage climatisation, actualités, guides techniques. Expert RGE en Gironde.',
+  description: 'Blog ClimGO : conseils experts en chauffage, climatisation, chauffe-eau et pompes à chaleur. Actualités, guides techniques, astuces d\'entretien et conseils RGE.',
   keywords: 'blog ClimGO, conseils chauffage, conseils climatisation, actualités ClimGO, expert RGE Gironde',
 
   openGraph: {
     title: 'Blog ClimGO | Conseils Chauffage Climatisation Gironde',
-    description: 'Blog ClimGO : conseils chauffage climatisation, actualités, guides techniques. Expert RGE en Gironde.',
+    description: 'Blog ClimGO : conseils experts en chauffage, climatisation, chauffe-eau et pompes à chaleur. Actualités, guides techniques, astuces d\'entretien et conseils RGE.',
     url: 'https://www.climgo.fr/blog',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     site: '@climgo_fr',
     creator: '@climgo_fr',
     title: 'Blog ClimGO | Conseils Chauffage Climatisation Gironde',
-    description: 'Blog ClimGO : conseils chauffage climatisation, actualités, guides techniques. Expert RGE en Gironde.',
+    description: 'Blog ClimGO : conseils experts en chauffage, climatisation, chauffe-eau et pompes à chaleur. Actualités, guides techniques, astuces d\'entretien et conseils RGE.',
     images: ['https://www.climgo.fr/images/og/blog-climgo.jpg'],
   },
 

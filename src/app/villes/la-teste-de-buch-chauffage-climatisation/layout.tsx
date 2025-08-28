@@ -86,7 +86,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "ClimGO La Teste-de-Buch - Chauffage & Climatisation",
-    description: "Expert chauffage climatisation La Teste-de-Buch. Installation PAC air/eau, climatisation réversible, entretien et dépannage. Artisan RGE certifié. Devis gratuit.",
+    description: "Expert chauffage climatisation La Teste-de-Buch. Installation PAC, entretien et dépannage. Artisan RGE certifié.",
     images: ["/img/climdame.png"],
   },
   alternates: {
