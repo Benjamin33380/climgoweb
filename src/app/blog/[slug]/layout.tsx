@@ -73,7 +73,7 @@ export async function generateMetadata({ params }: LayoutProps): Promise<Metadat
   const title = `${article.title} - Blog ClimGo`;
   const description = article.excerpt || 'Découvrez cet article sur le blog ClimGo';
   const image = article.imageUrl || 'https://www.climgo.fr/logo.png';
-  const url = `https://climgo.fr/blog/${slug}`;
+  const url = `https://www.climgo.fr/blog/${slug}`;
   const publishedTime = article.createdAt.toISOString();
   const author = article.admin.name;
   
@@ -193,7 +193,7 @@ export default async function ArticleLayout({ children, params }: LayoutProps) {
             "@type": "BlogPosting",
             "mainEntityOfPage": {
               "@type": "WebPage",
-              "@id": `https://climgo.fr/blog/${slug}`
+              "@id": `https://www.climgo.fr/blog/${slug}`
             },
             "headline": "Article ClimGo",
             "description": "Article du blog ClimGo",
