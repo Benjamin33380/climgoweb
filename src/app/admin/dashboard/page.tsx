@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import AdminNav from '@/components/AdminNav';
-import RecentArticles from '@/components/RecentArticles';
+// import RecentArticles from '@/components/RecentArticles';
 
 interface Article {
   id: string;
@@ -90,35 +90,9 @@ export default function AdminDashboard() {
     router.push('/admin/login');
   };
 
-  const handlePublishToggle = async (articleId: string, currentStatus: boolean) => {
-    try {
-      const token = localStorage.getItem('adminToken');
-      const response = await fetch(`/api/admin/articles/${articleId}`, {
-        method: 'PATCH',
-        headers: {
-          'Authorization': `Bearer ${token}`,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ published: !currentStatus })
-      });
-
-      if (response.ok) {
-        // Mettre à jour l'état local
-        setArticles(prev => 
-          prev.map(article => 
-            article.id === articleId 
-              ? { ...article, published: !currentStatus }
-              : article
-          )
-        );
-      } else {
-        throw new Error('Erreur lors de la mise à jour');
-      }
-    } catch (error) {
-      console.error('Erreur lors de la mise à jour:', error);
-      alert('Erreur lors de la mise à jour du statut');
-    }
-  };
+  // const handlePublishToggle = async (articleId: string, currentStatus: boolean) => {
+  //   // Fonction supprimée car non utilisée
+  // };
 
   if (loading) {
     return (
@@ -197,10 +171,31 @@ export default function AdminDashboard() {
               </div>
             </CardHeader>
             <CardContent>
-              <RecentArticles 
-                articles={articles} 
-                onPublishToggle={handlePublishToggle}
-              />
+              <div className="space-y-4">
+                {articles.slice(0, 5).map((article) => (
+                  <div key={article.id} className="p-3 border rounded-lg">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="font-medium">{article.title}</span>
+                      <span className="text-sm text-gray-500">
+                        {new Date(article.createdAt).toLocaleDateString()}
+                      </span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <span className="text-xs text-gray-500">
+                        Commentaires: {article._count.comments}
+                      </span>
+                      <span className="text-xs text-gray-500">
+                        Notes: {article._count.ratings}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+                {articles.length === 0 && (
+                  <p className="text-gray-500 text-center py-4">
+                    Aucun article créé
+                  </p>
+                )}
+              </div>
             </CardContent>
           </Card>
 

@@ -5,8 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Star, MessageSquare, Calendar, User, ArrowLeft } from 'lucide-react';
 import { PrismaClient } from '@prisma/client';
 
-import MarkdownRenderer from '@/components/MarkdownRenderer';
-import InternalLinking from '@/components/InternalLinking';
+// import MarkdownRenderer from '@/components/MarkdownRenderer';
+// import InternalLinking from '@/components/InternalLinking';
 
 const prisma = new PrismaClient();
 
@@ -163,7 +163,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
               <Card>
                 <CardContent className="p-8">
-                  <MarkdownRenderer content={article.content} />
+                  <div className="prose prose-lg max-w-none">
+                    <div dangerouslySetInnerHTML={{ __html: article.content }} />
+                  </div>
                 </CardContent>
               </Card>
 
@@ -186,10 +188,20 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                   <CardTitle>Navigation interne</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <InternalLinking 
-                    currentArticleId={article.id}
-                    allArticles={allArticles}
-                  />
+                  <div className="space-y-3">
+                    {allArticles.slice(0, 5).map((relatedArticle) => (
+                      <Link 
+                        key={relatedArticle.id} 
+                        href={`/blog/${relatedArticle.slug}`}
+                        className="block p-3 border rounded-lg hover:bg-gray-50 transition-colors"
+                      >
+                        <h4 className="font-medium text-sm mb-1">{relatedArticle.title}</h4>
+                        <p className="text-xs text-gray-600 line-clamp-2">
+                          {relatedArticle.excerpt || 'Aucun extrait disponible'}
+                        </p>
+                      </Link>
+                    ))}
+                  </div>
                 </CardContent>
               </Card>
 
