@@ -491,7 +491,7 @@ export default function HomePage() {
                     Votre satisfaction, notre fierté
                   </h3>
                   <p className="text-sm xs:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
-                    <strong>95% de clients nous recommandent</strong>. Suivi après installation, entretien et maintenance
+                    <strong>95% de clients nous recommandent</strong>. Suivi après installation, entretien & maintenance
                     pour un confort qui dure.
                   </p>
                 </div>
