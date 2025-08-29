@@ -8,13 +8,20 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Badge } from '@/components/ui/badge';
-import { Loader2, Mail, Send, Users, TrendingUp, FileText, Eye, EyeOff } from 'lucide-react';
+import { Loader2, Mail, Send, Users, TrendingUp, FileText, Eye, EyeOff, Trash2 } from 'lucide-react';
 
 export default function NewsletterAdminPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
   const [showPreview, setShowPreview] = useState(false);
+  const [subscribers, setSubscribers] = useState<Array<{
+    id: string;
+    email: string;
+    created_at: string;
+    preferences?: Record<string, boolean>;
+  }>>([]);
+  const [loadingSubscribers, setLoadingSubscribers] = useState(false);
   
   // Formulaire de newsletter
   const [newsletterForm, setNewsletterForm] = useState({
@@ -23,8 +30,8 @@ export default function NewsletterAdminPage() {
     previewText: ''
   });
 
-  // Statistiques (exemple)
-  const [stats] = useState({
+  // Statistiques dynamiques
+  const [stats, setStats] = useState({
     totalSubscribers: 0,
     activeSubscribers: 0,
     sentNewsletters: 0,
@@ -53,6 +60,52 @@ export default function NewsletterAdminPage() {
   const handlePreviewToggle = () => {
     setShowPreview(!showPreview);
   };
+
+  // Charger les inscrits à la newsletter
+  const loadSubscribers = async () => {
+    setLoadingSubscribers(true);
+    try {
+      const response = await fetch('/api/admin/newsletter/subscribers');
+      if (response.ok) {
+        const data = await response.json();
+        setSubscribers(data.subscribers || []);
+        setStats(prev => ({
+          ...prev,
+          totalSubscribers: data.subscribers?.length || 0,
+          activeSubscribers: data.subscribers?.length || 0
+        }));
+      }
+    } catch (error) {
+      console.error('Erreur lors du chargement des inscrits:', error);
+    } finally {
+      setLoadingSubscribers(false);
+    }
+  };
+
+  // Supprimer un inscrit
+  const deleteSubscriber = async (id: string) => {
+    if (!confirm('Êtes-vous sûr de vouloir supprimer cet inscrit ?')) return;
+    
+    try {
+      const response = await fetch('/api/admin/newsletter/subscribers', {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id })
+      });
+      
+      if (response.ok) {
+        setSuccess('Inscrit supprimé avec succès');
+        loadSubscribers(); // Recharger la liste
+      }
+    } catch (error) {
+      setError('Erreur lors de la suppression');
+    }
+  };
+
+  // Charger les inscrits au montage du composant
+  useEffect(() => {
+    loadSubscribers();
+  }, []);
 
   const renderPreview = () => {
     if (!showPreview) return null;
@@ -248,6 +301,59 @@ export default function NewsletterAdminPage() {
 
           {/* Aperçu */}
           {renderPreview()}
+        </CardContent>
+      </Card>
+
+      {/* Gestion des inscrits */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <Users className="h-5 w-5 text-green-500" />
+            Gestion des inscrits ({subscribers.length})
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          {loadingSubscribers ? (
+            <div className="text-center py-8">
+              <Loader2 className="h-8 w-8 mx-auto animate-spin text-gray-400" />
+              <p className="text-gray-500 mt-2">Chargement des inscrits...</p>
+            </div>
+          ) : subscribers.length === 0 ? (
+            <div className="text-center py-8">
+              <Users className="h-16 w-16 mx-auto mb-4 text-gray-300" />
+              <h3 className="text-lg font-semibold mb-2">Aucun inscrit</h3>
+              <p className="text-gray-600">
+                Les inscriptions depuis le footer apparaîtront ici.
+              </p>
+            </div>
+          ) : (
+            <div className="space-y-3">
+              {subscribers.map((subscriber) => (
+                <div
+                  key={subscriber.id}
+                  className="flex items-center justify-between p-4 border rounded-lg hover:bg-gray-50 transition-colors"
+                >
+                  <div className="flex items-center gap-3">
+                    <Mail className="h-5 w-5 text-blue-500" />
+                    <div>
+                      <p className="font-medium">{subscriber.email}</p>
+                      <p className="text-sm text-gray-500">
+                        Inscrit le {new Date(subscriber.created_at).toLocaleDateString('fr-FR')}
+                      </p>
+                    </div>
+                  </div>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => deleteSubscriber(subscriber.id)}
+                    className="text-red-600 hover:text-red-700 hover:bg-red-50"
+                  >
+                    <Trash2 className="h-4 w-4" />
+                  </Button>
+                </div>
+              ))}
+            </div>
+          )}
         </CardContent>
       </Card>
 

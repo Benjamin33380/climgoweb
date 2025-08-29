@@ -26,6 +26,7 @@ export default function NewsletterSignup() {
       const { data: existingSubscriber } = await supabase
         .from('newsletter_subscribers')
         .select('id')
+        .select('id')
         .eq('email', email)
         .single();
 
