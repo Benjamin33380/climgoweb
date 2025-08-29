@@ -10,7 +10,7 @@ export default redis
 // Fonctions utilitaires pour le cache
 export const cacheUtils = {
   // Mettre en cache un article
-  cacheArticle: async (slug: string, article: any) => {
+  cacheArticle: async (slug: string, article: Record<string, unknown>) => {
     await redis.set(`article:${slug}`, JSON.stringify(article), { ex: 3600 }) // 1 heure
   },
   
@@ -21,7 +21,7 @@ export const cacheUtils = {
   },
   
   // Mettre en cache les commentaires
-  cacheComments: async (articleId: string, comments: any[]) => {
+  cacheComments: async (articleId: string, comments: Record<string, unknown>[]) => {
     await redis.set(`comments:${articleId}`, JSON.stringify(comments), { ex: 1800 }) // 30 min
   },
   

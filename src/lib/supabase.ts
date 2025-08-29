@@ -52,6 +52,6 @@ export interface Rating {
 export interface NewsletterSubscriber {
   id: string
   email: string
-  preferences: any
+  preferences: Record<string, unknown>
   subscribed_at: string
 }
