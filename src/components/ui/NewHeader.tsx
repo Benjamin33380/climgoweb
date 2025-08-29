@@ -321,7 +321,7 @@ export function NewHeader() {
           {/* Bouton Devis gratuit */}
           <Link
             href="/contact"
-            className="px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/80 transition-colors border border-border font-medium"
+            className="px-4 py-2 bg-background text-foreground border border-border rounded-md hover:bg-accent hover:text-accent-foreground transition-colors font-medium"
           >
             Devis gratuit
           </Link>

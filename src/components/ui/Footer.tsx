@@ -260,7 +260,7 @@ export default function Footer() {
                 <li className="text-center md:text-left">
                   <Link 
                     href="/contact" 
-                    className="inline-flex bg-white/20 dark:bg-white/10 backdrop-blur-md border border-black/40 dark:border-white/30 text-black dark:text-white px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-white/30 dark:hover:bg-white/20 transition-all duration-300"
+                    className="inline-flex bg-background text-foreground border border-border px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
                   >
                     Devis gratuit
                   </Link>
