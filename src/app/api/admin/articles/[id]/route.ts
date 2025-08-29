@@ -1,7 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { PrismaClient } from '@prisma/client';
-
-const prisma = new PrismaClient();
 
 // Middleware simplifié pour vérifier l'authentification
 function verifyToken(request: NextRequest) {
@@ -16,53 +13,78 @@ function verifyToken(request: NextRequest) {
     throw new Error('Token invalide');
   }
 
-  return { id: 'admin-1' };
+  return { adminId: 'admin-1' };
 }
 
-// PATCH - Modifier un article
-export async function PATCH(
+// GET - Récupérer un article par ID
+export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const decoded = verifyToken(request) as any; // eslint-disable-line @typescript-eslint/no-explicit-any
-    const { id } = await params;
-    const { title, content, excerpt, published, imageUrl } = await request.json();
+    verifyToken(request);
 
-    // Vérifier que l'admin est propriétaire de l'article
-    const existingArticle = await prisma.article.findUnique({
-      where: { id },
-      select: { adminId: true }
-    });
+    // TODO: Remplacer par Supabase
+    const article = null;
 
-    if (!existingArticle) {
+    if (!article) {
       return NextResponse.json(
         { error: 'Article non trouvé' },
         { status: 404 }
       );
     }
 
-    if (existingArticle.adminId !== decoded.id) {
+    return NextResponse.json(article);
+  } catch (error) {
+    if (error instanceof Error && error.message.includes('Token')) {
       return NextResponse.json(
-        { error: 'Non autorisé à modifier cet article' },
-        { status: 403 }
+        { error: 'Non autorisé' },
+        { status: 401 }
+      );
+    }
+    
+    console.error('Erreur lors de la récupération de l\'article:', error);
+    return NextResponse.json(
+      { error: 'Erreur interne du serveur' },
+      { status: 500 }
+    );
+  }
+}
+
+// PUT - Mettre à jour un article
+export async function PUT(
+  request: NextRequest,
+  { params }: { params: Promise<{ id: string }> }
+) {
+  try {
+    const decoded = verifyToken(request);
+    const { id } = await params;
+    
+    const formData = await request.formData();
+    const title = formData.get('title') as string;
+    const content = formData.get('content') as string;
+    const excerpt = formData.get('excerpt') as string;
+    const published = formData.get('published') === 'true';
+
+    if (!title || !content) {
+      return NextResponse.json(
+        { error: 'Titre et contenu requis' },
+        { status: 400 }
       );
     }
 
-    // Mettre à jour l'article
-    const updatedArticle = await prisma.article.update({
-      where: { id },
-      data: {
-        ...(title && { title }),
-        ...(content && { content }),
-        ...(excerpt && { excerpt }),
-        ...(typeof published === 'boolean' && { published }),
-        ...(imageUrl && { imageUrl }),
-        updatedAt: new Date()
-      }
-    });
+    // TODO: Remplacer par Supabase
+    const article = {
+      id,
+      title,
+      content_markdown: content,
+      excerpt,
+      published,
+      author_id: decoded.adminId,
+      updated_at: new Date().toISOString()
+    };
 
-    return NextResponse.json(updatedArticle);
+    return NextResponse.json(article);
   } catch (error) {
     if (error instanceof Error && error.message.includes('Token')) {
       return NextResponse.json(
@@ -76,8 +98,6 @@ export async function PATCH(
       { error: 'Erreur interne du serveur' },
       { status: 500 }
     );
-  } finally {
-    await prisma.$disconnect();
   }
 }
 
@@ -87,45 +107,10 @@ export async function DELETE(
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const decoded = verifyToken(request) as any; // eslint-disable-line @typescript-eslint/no-explicit-any
-    const { id } = await params;
-    // Vérifier que l'admin est propriétaire de l'article
-    const existingArticle = await prisma.article.findUnique({
-      where: { id },
-      select: { adminId: true }
-    });
+    verifyToken(request);
 
-    if (!existingArticle) {
-      return NextResponse.json(
-        { error: 'Article non trouvé' },
-        { status: 404 }
-      );
-    }
-
-    if (existingArticle.adminId !== decoded.id) {
-      return NextResponse.json(
-        { error: 'Non autorisé à supprimer cet article' },
-        { status: 403 }
-      );
-    }
-
-    // Supprimer l'article et ses relations
-    await prisma.$transaction([
-      // Supprimer les commentaires
-      prisma.comment.deleteMany({
-        where: { articleId: id }
-      }),
-      // Supprimer les ratings
-      prisma.rating.deleteMany({
-        where: { articleId: id }
-      }),
-      // Supprimer l'article
-      prisma.article.delete({
-        where: { id }
-      })
-    ]);
-
-    return NextResponse.json({ message: 'Article supprimé avec succès' });
+    // TODO: Remplacer par Supabase
+    return NextResponse.json({ message: 'Article supprimé' });
   } catch (error) {
     if (error instanceof Error && error.message.includes('Token')) {
       return NextResponse.json(
@@ -139,7 +124,5 @@ export async function DELETE(
       { error: 'Erreur interne du serveur' },
       { status: 500 }
     );
-  } finally {
-    await prisma.$disconnect();
   }
 } 

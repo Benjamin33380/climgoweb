@@ -44,38 +44,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8
   }))
 
-  // Articles du blog - Récupération depuis la base de données
-  let blogUrls: MetadataRoute.Sitemap = []
+  // Articles du blog - TODO: Remplacer par Supabase
+  const blogUrls: MetadataRoute.Sitemap = []
   
-  try {
-    // Vérifier si on est en production et si Prisma est disponible
-    if (process.env.NODE_ENV === 'production' && process.env.DATABASE_URL) {
-      // Import dynamique de Prisma pour éviter les erreurs de build
-      const { PrismaClient } = await import('@prisma/client')
-      const prisma = new PrismaClient()
-      
-      const articles = await prisma.article.findMany({
-        where: { published: true },
-        select: { slug: true, createdAt: true, updatedAt: true },
-        orderBy: { createdAt: 'desc' }
-      })
-
-      blogUrls = articles.map(article => ({
-        url: `${baseUrl}/blog/${article.slug}`,
-        lastModified: article.updatedAt || article.createdAt,
-        changeFrequency: 'monthly' as const,
-        priority: 0.8
-      }))
-
-      await prisma.$disconnect()
-    } else {
-      // Fallback : pas d'articles du blog en développement
-      console.log('Blog articles not available for sitemap (development mode or no DB)')
-    }
-  } catch (error) {
-    console.log('Blog articles not available for sitemap:', error)
-    // Fallback : pas d'articles du blog
-  }
+  // TODO: Remplacer par Supabase pour récupérer les articles
+  console.log('Blog articles not available for sitemap (Supabase à configurer)')
 
   return [
     ...staticUrls,

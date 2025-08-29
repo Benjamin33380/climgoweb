@@ -1,28 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { PrismaClient } from '@prisma/client';
 
-const prisma = new PrismaClient();
-
+// GET - Récupérer un article par slug
 export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ slug: string }> }
 ) {
   try {
-    const { slug } = await params;
-    const article = await prisma.article.findUnique({
-      where: { 
-        slug,
-        published: true // Seulement les articles publiés
-      },
-      include: {
-        admin: {
-          select: {
-            name: true,
-            email: true
-          }
-        }
-      }
-    });
+    // TODO: Remplacer par Supabase
+    const article = null;
 
     if (!article) {
       return NextResponse.json(
@@ -38,7 +23,5 @@ export async function GET(
       { error: 'Erreur interne du serveur' },
       { status: 500 }
     );
-  } finally {
-    await prisma.$disconnect();
   }
 } 

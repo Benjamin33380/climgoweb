@@ -1,7 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { PrismaClient } from '@prisma/client';
-
-const prisma = new PrismaClient();
 
 // Middleware simplifié pour vérifier l'authentification
 function verifyToken(request: NextRequest) {
@@ -24,25 +21,8 @@ export async function GET(request: NextRequest) {
   try {
     verifyToken(request);
 
-    const articles = await prisma.article.findMany({
-      include: {
-        admin: {
-          select: {
-            name: true,
-            email: true
-          }
-        },
-        _count: {
-          select: {
-            comments: true,
-            ratings: true
-          }
-        }
-      },
-      orderBy: {
-        createdAt: 'desc'
-      }
-    });
+    // TODO: Remplacer par Supabase
+    const articles: Record<string, unknown>[] = [];
 
     return NextResponse.json(articles);
   } catch (error) {
@@ -58,15 +38,13 @@ export async function GET(request: NextRequest) {
       { error: 'Erreur interne du serveur' },
       { status: 500 }
     );
-  } finally {
-    await prisma.$disconnect();
   }
 }
 
 // POST - Créer un nouvel article
 export async function POST(request: NextRequest) {
   try {
-    const decoded = verifyToken(request) as any; // eslint-disable-line @typescript-eslint/no-explicit-any
+    const decoded = verifyToken(request);
     
     const formData = await request.formData();
     const title = formData.get('title') as string;
@@ -97,27 +75,21 @@ export async function POST(request: NextRequest) {
 
     const imageUrl = null;
 
-    // Upload d'image désactivé pour le moment (Cloudinary supprimé)
-    // if (image) {
-    //   // Gérer l'upload d'image ici
-    // }
+    // TODO: Remplacer par Supabase
+    const article = {
+      id: 'temp-id',
+      title,
+      slug,
+      content_markdown: content,
+      excerpt,
+      image_url: imageUrl,
+      published,
+      author_id: decoded.adminId,
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString()
+    };
 
-    // Créer l'article
-    const article = await prisma.article.create({
-      data: {
-        title,
-        content,
-        slug,
-        excerpt: excerpt || content.substring(0, 160),
-        imageUrl,
-        published,
-        metaTitle: title,
-        metaDesc: excerpt || content.substring(0, 160),
-        adminId: decoded.id
-      }
-    });
-
-    return NextResponse.json(article, { status: 201 });
+    return NextResponse.json(article);
   } catch (error) {
     if (error instanceof Error && error.message.includes('Token')) {
       return NextResponse.json(
@@ -131,7 +103,5 @@ export async function POST(request: NextRequest) {
       { error: 'Erreur interne du serveur' },
       { status: 500 }
     );
-  } finally {
-    await prisma.$disconnect();
   }
 } 

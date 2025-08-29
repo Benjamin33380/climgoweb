@@ -39,6 +39,14 @@ export interface Comment {
   content: string
   is_approved: boolean
   created_at: string
+  users?: {
+    username?: string
+    avatar_url?: string
+  }
+  articles?: {
+    title?: string
+    slug?: string
+  }
 }
 
 export interface Rating {
@@ -47,6 +55,15 @@ export interface Rating {
   user_id: string
   rating: number
   created_at: string
+  updated_at?: string
+  users?: {
+    username?: string
+    email?: string
+  }
+  articles?: {
+    title?: string
+    slug?: string
+  }
 }
 
 export interface NewsletterSubscriber {

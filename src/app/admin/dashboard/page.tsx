@@ -1,237 +1,249 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
-import Link from 'next/link';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import AdminNav from '@/components/AdminNav';
-// import RecentArticles from '@/components/RecentArticles';
+import { Badge } from '@/components/ui/badge';
+import { 
+  Users, 
+  FileText, 
+  MessageSquare, 
+  Star, 
+  TrendingUp, 
+  Activity,
+  Calendar,
+  Eye,
+  ThumbsUp,
+  Mail
+} from 'lucide-react';
 
-interface Article {
-  id: string;
-  title: string;
-  slug: string;
-  published: boolean;
-  createdAt: string;
-  _count: {
-    comments: number;
-    ratings: number;
-  };
-}
-
-interface Comment {
-  id: string;
-  content: string;
-  author: string;
-  email: string;
-  approved: boolean;
-  createdAt: string;
-  article: {
-    title: string;
-    slug: string;
-  };
+interface DashboardStats {
+  totalUsers: number;
+  totalArticles: number;
+  totalComments: number;
+  totalRatings: number;
+  averageRating: number;
+  recentActivity: Array<{
+    id: string;
+    type: 'user' | 'article' | 'comment' | 'rating';
+    action: string;
+    timestamp: string;
+    details: string;
+  }>;
 }
 
 export default function AdminDashboard() {
-  const [articles, setArticles] = useState<Article[]>([]);
-  const [comments, setComments] = useState<Comment[]>([]);
+  const [stats, setStats] = useState<DashboardStats>({
+    totalUsers: 0,
+    totalArticles: 0,
+    totalComments: 0,
+    totalRatings: 0,
+    averageRating: 0,
+    recentActivity: []
+  });
   const [loading, setLoading] = useState(true);
-  const router = useRouter();
 
   useEffect(() => {
-    // Vérifier l'authentification
-    const token = localStorage.getItem('adminToken');
-    if (!token) {
-      router.push('/admin/login');
-      return;
-    }
-
-    fetchData();
-  }, [router]);
-
-  const fetchData = async () => {
-    try {
-      const token = localStorage.getItem('adminToken');
-      
-      // Récupérer les articles
-      const articlesResponse = await fetch('/api/admin/articles', {
-        headers: {
-          'Authorization': `Bearer ${token}`
-        }
+    // TODO: Remplacer par Supabase
+    // Simuler des données pour le moment
+    setTimeout(() => {
+      setStats({
+        totalUsers: 156,
+        totalArticles: 23,
+        totalComments: 89,
+        totalRatings: 234,
+        averageRating: 4.7,
+        recentActivity: [
+          {
+            id: '1',
+            type: 'user',
+            action: 'Nouveau utilisateur inscrit',
+            timestamp: new Date(Date.now() - 1000 * 60 * 30).toISOString(),
+            details: 'Marie Dupont s\'est inscrite'
+          },
+          {
+            id: '2',
+            type: 'article',
+            action: 'Article publié',
+            timestamp: new Date(Date.now() - 1000 * 60 * 60 * 2).toISOString(),
+            details: 'Nouveau guide sur la climatisation'
+          },
+          {
+            id: '3',
+            type: 'comment',
+            action: 'Commentaire approuvé',
+            timestamp: new Date(Date.now() - 1000 * 60 * 60 * 4).toISOString(),
+            details: 'Commentaire sur l\'article chauffage'
+          },
+          {
+            id: '4',
+            type: 'rating',
+            action: 'Nouvel avis',
+            timestamp: new Date(Date.now() - 1000 * 60 * 60 * 6).toISOString(),
+            details: '5 étoiles pour la maintenance'
+          }
+        ]
       });
-
-      if (articlesResponse.ok) {
-        const articlesData = await articlesResponse.json();
-        setArticles(articlesData);
-      }
-
-      // Récupérer les commentaires
-      const commentsResponse = await fetch('/api/admin/comments', {
-        headers: {
-          'Authorization': `Bearer ${token}`
-        }
-      });
-
-      if (commentsResponse.ok) {
-        const commentsData = await commentsResponse.json();
-        setComments(commentsData);
-      }
-    } catch (error) {
-      console.error('Erreur lors de la récupération des données:', error);
-    } finally {
       setLoading(false);
+    }, 1000);
+  }, []);
+
+  const getActivityIcon = (type: string) => {
+    switch (type) {
+      case 'user': return <Users className="h-4 w-4" />;
+      case 'article': return <FileText className="h-4 w-4" />;
+      case 'comment': return <MessageSquare className="h-4 w-4" />;
+      case 'rating': return <Star className="h-4 w-4" />;
+      default: return <Activity className="h-4 w-4" />;
     }
   };
 
-  const handleLogout = () => {
-    localStorage.removeItem('adminToken');
-    localStorage.removeItem('adminData');
-    router.push('/admin/login');
+  const getActivityColor = (type: string) => {
+    switch (type) {
+      case 'user': return 'bg-blue-100 text-blue-800';
+      case 'article': return 'bg-green-100 text-green-800';
+      case 'comment': return 'bg-yellow-100 text-yellow-800';
+      case 'rating': return 'bg-purple-100 text-purple-800';
+      default: return 'bg-gray-100 text-gray-800';
+    }
   };
-
-  // const handlePublishToggle = async (articleId: string, currentStatus: boolean) => {
-  //   // Fonction supprimée car non utilisée
-  // };
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-lg">Chargement...</div>
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600"></div>
       </div>
     );
   }
 
-  const pendingComments = comments.filter(c => !c.approved);
-  const publishedArticles = articles.filter(a => a.published);
-  const draftArticles = articles.filter(a => !a.published);
-
   return (
-    <div className="min-h-screen">
-      {/* Navigation */}
-      <AdminNav onLogout={handleLogout} />
+    <div className="container mx-auto px-4 py-8">
+      <div className="mb-8">
+        <h1 className="text-3xl font-bold text-gray-900">Tableau de bord</h1>
+        <p className="text-gray-600 mt-2">
+          Vue d'ensemble de votre plateforme ClimGO
+        </p>
+      </div>
 
-      {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Total Articles</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">{articles.length}</div>
-            </CardContent>
-          </Card>
+      {/* Statistiques principales */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <Card>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-sm font-medium">Utilisateurs</CardTitle>
+            <Users className="h-4 w-4 text-blue-600" />
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-bold">{stats.totalUsers}</div>
+            <p className="text-xs text-gray-600">
+              +12% ce mois
+            </p>
+          </CardContent>
+        </Card>
 
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Articles Publiés</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold text-green-600">{publishedArticles.length}</div>
-            </CardContent>
-          </Card>
+        <Card>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-sm font-medium">Articles</CardTitle>
+            <FileText className="h-4 w-4 text-green-600" />
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-bold">{stats.totalArticles}</div>
+            <p className="text-xs text-gray-600">
+              +3 cette semaine
+            </p>
+          </CardContent>
+        </Card>
 
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Brouillons</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold text-yellow-600">{draftArticles.length}</div>
-            </CardContent>
-          </Card>
+        <Card>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-sm font-medium">Commentaires</CardTitle>
+            <MessageSquare className="h-4 w-4 text-yellow-600" />
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-bold">{stats.totalComments}</div>
+            <p className="text-xs text-gray-600">
+              +8 aujourd'hui
+            </p>
+          </CardContent>
+        </Card>
 
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Commentaires en attente</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold text-red-600">{pendingComments.length}</div>
-            </CardContent>
-          </Card>
-        </div>
+        <Card>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-sm font-medium">Note moyenne</CardTitle>
+            <Star className="h-4 w-4 text-purple-600" />
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-bold">{stats.averageRating}/5</div>
+            <p className="text-xs text-gray-600">
+              {stats.totalRatings} avis
+            </p>
+          </CardContent>
+        </Card>
+      </div>
 
-        {/* Articles récents */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <Card>
-            <CardHeader>
-              <div className="flex items-center justify-between">
-                <div>
-                  <CardTitle>Articles Récents</CardTitle>
-                  <CardDescription>
-                    Vos derniers articles créés
-                  </CardDescription>
+      {/* Graphique de tendance */}
+      <Card className="mb-8">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <TrendingUp className="h-5 w-5 text-green-600" />
+            Évolution de l'activité
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="h-64 flex items-center justify-center text-gray-500">
+            <div className="text-center">
+              <TrendingUp className="h-16 w-16 mx-auto mb-4 text-gray-300" />
+              <p>Graphique d'évolution à implémenter</p>
+              <p className="text-sm">Intégration Chart.js prévue</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Activité récente */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <Activity className="h-5 w-5 text-blue-600" />
+            Activité récente
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-4">
+            {stats.recentActivity.map((activity) => (
+              <div key={activity.id} className="flex items-center gap-4 p-3 border rounded-lg">
+                <div className={`p-2 rounded-full ${getActivityColor(activity.type)}`}>
+                  {getActivityIcon(activity.type)}
                 </div>
-                <Link href="/admin/articles">
-                  <Button variant="outline" size="sm">
-                    Voir tous
-                  </Button>
-                </Link>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                {articles.slice(0, 5).map((article) => (
-                  <div key={article.id} className="p-3 border rounded-lg">
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="font-medium">{article.title}</span>
-                      <span className="text-sm text-gray-500">
-                        {new Date(article.createdAt).toLocaleDateString()}
-                      </span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <span className="text-xs text-gray-500">
-                        Commentaires: {article._count.comments}
-                      </span>
-                      <span className="text-xs text-gray-500">
-                        Notes: {article._count.ratings}
-                      </span>
-                    </div>
-                  </div>
-                ))}
-                {articles.length === 0 && (
-                  <p className="text-gray-500 text-center py-4">
-                    Aucun article créé
+                <div className="flex-1">
+                  <p className="font-medium text-gray-900">{activity.action}</p>
+                  <p className="text-sm text-gray-600">{activity.details}</p>
+                </div>
+                <div className="text-right">
+                  <p className="text-xs text-gray-500">
+                    {new Date(activity.timestamp).toLocaleString('fr-FR')}
                   </p>
-                )}
+                </div>
               </div>
-            </CardContent>
-          </Card>
+            ))}
+          </div>
+        </CardContent>
+      </Card>
 
-          <Card>
-            <CardHeader>
-              <CardTitle>Commentaires en attente</CardTitle>
-              <CardDescription>
-                Commentaires nécessitant une modération
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                {pendingComments.slice(0, 5).map((comment) => (
-                  <div key={comment.id} className="p-3 border rounded-lg">
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="font-medium">{comment.author}</span>
-                      <span className="text-sm text-gray-500">
-                        {new Date(comment.createdAt).toLocaleDateString()}
-                      </span>
-                    </div>
-                    <p className="text-sm text-gray-600 mb-2">{comment.content}</p>
-                    <div className="text-xs text-gray-500">
-                      Article: {comment.article.title}
-                    </div>
-                  </div>
-                ))}
-                {pendingComments.length === 0 && (
-                  <p className="text-gray-500 text-center py-4">
-                    Aucun commentaire en attente
-                  </p>
-                )}
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </main>
+      {/* Actions rapides */}
+      <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
+        <Button className="w-full" variant="outline">
+          <FileText className="h-4 w-4 mr-2" />
+          Nouvel article
+        </Button>
+        <Button className="w-full" variant="outline">
+          <Mail className="h-4 w-4 mr-2" />
+          Newsletter
+        </Button>
+        <Button className="w-full" variant="outline">
+          <Users className="h-4 w-4 mr-2" />
+          Gérer utilisateurs
+        </Button>
+      </div>
     </div>
   );
 } 
