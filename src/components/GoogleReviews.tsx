@@ -110,23 +110,23 @@ export default function GoogleReviews({ placeId }: GoogleReviewsProps) {
   }
 
   return (
-    <section className="py-20 bg-white dark:bg-black">
-      <div className="container mx-auto px-4">
+    <section className="py-12 sm:py-16 md:py-20 bg-white dark:bg-black">
+      <div className="container mx-auto px-4 sm:px-6">
         <SimpleWrapper>
-          <div className="text-center mb-16">
-            <h2 className="text-xl xs:text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-gray-900 dark:text-white mb-4">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-gray-900 dark:text-white mb-4 px-4">
               Avis clients Google
             </h2>
             <div className="flex items-center justify-center gap-2 mb-4">
               <div className="flex">{renderStars(Math.round(averageRating))}</div>
-              <span className="text-2xl font-semibold text-gray-900 dark:text-white">
+              <span className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white">
                 {averageRating.toFixed(1)}
               </span>
-              <span className="text-gray-600 dark:text-gray-400">
+              <span className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">
                 ({totalReviews} avis)
               </span>
             </div>
-            <div className="w-24 h-1 bg-black dark:bg-white mx-auto"></div>
+            <div className="w-20 sm:w-24 h-1 bg-black dark:bg-white mx-auto"></div>
           </div>
         </SimpleWrapper>
 
@@ -135,24 +135,24 @@ export default function GoogleReviews({ placeId }: GoogleReviewsProps) {
           <div 
             className="flex animate-scroll hover:animate-pause"
             style={{
-              width: `${infiniteReviews.length * 380}px`,
+              width: `${infiniteReviews.length * 320}px`,
               animationDuration: `${reviews.length * 6}s`
             }}
           >
             {infiniteReviews.map((review, index) => (
               <div
                 key={`${review.id || review.time}-${Math.floor(index / reviews.length)}`}
-                className="flex-shrink-0 w-[360px] mx-2"
+                className="flex-shrink-0 w-[300px] sm:w-[360px] mx-1 sm:mx-2"
               >
-                <div className="bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-700 h-[280px] flex flex-col hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                  <div className="flex items-center mb-4">
+                <div className="bg-white dark:bg-black backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg border border-gray-200 dark:border-gray-700 h-[240px] sm:h-[280px] flex flex-col hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                  <div className="flex items-center mb-3 sm:mb-4">
                     {review.profile_photo_url ? (
                       <Image
                         src={review.profile_photo_url}
                         alt={review.author_name}
                         width={48}
                         height={48}
-                        className="w-12 h-12 rounded-full mr-3 object-cover border-2 border-gray-200 dark:border-gray-500"
+                        className="w-10 h-10 sm:w-12 sm:h-12 rounded-full mr-2 sm:mr-3 object-cover border-2 border-gray-200 dark:border-gray-500"
                         onError={(e) => {
                           // Cache l'image et affiche le fallback
                           e.currentTarget.style.display = 'none';
@@ -163,13 +163,13 @@ export default function GoogleReviews({ placeId }: GoogleReviewsProps) {
                       />
                     ) : null}
                     <div 
-                      className="w-12 h-12 rounded-full mr-3 bg-gradient-to-br from-orange-500 to-blue-600 flex items-center justify-center text-white font-semibold text-lg border-2 border-gray-200 dark:border-gray-500"
+                      className="w-10 h-10 sm:w-12 sm:h-12 rounded-full mr-2 sm:mr-3 bg-gradient-to-br from-orange-500 to-blue-600 flex items-center justify-center text-white font-semibold text-base sm:text-lg border-2 border-gray-200 dark:border-gray-500"
                       style={{ display: review.profile_photo_url ? 'none' : 'flex' }}
                     >
                       {review.author_name.charAt(0).toUpperCase()}
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-semibold text-gray-900 dark:text-white text-sm">
+                      <h4 className="font-semibold text-gray-900 dark:text-white text-xs sm:text-sm">
                         {review.author_name}
                       </h4>
                       <div className="flex items-center gap-1 mt-1">
@@ -178,13 +178,13 @@ export default function GoogleReviews({ placeId }: GoogleReviewsProps) {
                     </div>
                   </div>
                   
-                  <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4 flex-1 overflow-hidden">
+                  <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4 flex-1 overflow-hidden">
                     <span className="text-gray-400">"</span>
-                    {review.text.length > 140 ? review.text.substring(0, 140) + '...' : review.text}
+                    {review.text.length > 120 ? review.text.substring(0, 120) + '...' : review.text}
                     <span className="text-gray-400">"</span>
                   </p>
                   
-                  <div className="flex justify-between items-center text-xs text-gray-500 dark:text-gray-400 border-t border-gray-100 dark:border-gray-700 pt-3">
+                  <div className="flex justify-between items-center text-xs text-gray-500 dark:text-gray-400 border-t border-gray-100 dark:border-gray-700 pt-2 sm:pt-3">
                     <span className="font-medium">{review.relative_time_description}</span>
                     <a
                       href={review.author_url}

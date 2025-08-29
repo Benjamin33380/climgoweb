@@ -23,7 +23,7 @@ export default function BlogCard({ article }: BlogCardProps) {
   return (
     <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 group h-full flex flex-col">
       {article.imageUrl && (
-        <div className="relative h-48 w-full overflow-hidden">
+        <div className="relative h-40 sm:h-48 w-full overflow-hidden">
           <Image
             src={article.imageUrl}
             alt={article.title}
@@ -34,8 +34,8 @@ export default function BlogCard({ article }: BlogCardProps) {
         </div>
       )}
       
-      <CardHeader className="flex-grow">
-        <div className="flex items-center justify-between mb-3">
+      <CardHeader className="flex-grow p-4 sm:p-6">
+        <div className="flex items-center justify-between mb-2 sm:mb-3">
           <Badge variant="secondary" className="text-xs">
             <Calendar className="w-3 h-3 mr-1" />
             {new Date(article.createdAt).toLocaleDateString('fr-FR', {
@@ -44,7 +44,7 @@ export default function BlogCard({ article }: BlogCardProps) {
               day: 'numeric'
             })}
           </Badge>
-          <div className="flex items-center space-x-3 text-xs text-muted-foreground">
+          <div className="flex items-center space-x-2 sm:space-x-3 text-xs text-muted-foreground">
             <span className="flex items-center">
               <MessageSquare className="w-3 h-3 mr-1" />
               {article._count.comments}
@@ -56,15 +56,15 @@ export default function BlogCard({ article }: BlogCardProps) {
           </div>
         </div>
         
-        <CardTitle className="line-clamp-2 group-hover:text-primary transition-colors">
+        <CardTitle className="line-clamp-2 group-hover:text-primary transition-colors text-base sm:text-lg">
           <Link href={`/blog/${article.slug}`}>
             {article.title}
           </Link>
         </CardTitle>
       </CardHeader>
       
-      <CardContent className="flex-grow">
-        <CardDescription className="line-clamp-3 mb-4 text-muted-foreground">
+      <CardContent className="flex-grow p-4 sm:p-6 pt-0">
+        <CardDescription className="line-clamp-3 mb-3 sm:mb-4 text-muted-foreground text-sm">
           {article.excerpt}
         </CardDescription>
         

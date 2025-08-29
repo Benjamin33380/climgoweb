@@ -93,6 +93,118 @@ body {
   animation: spin-3d 1.5s ease-in-out;
 }
 
+/* Utilitaires de responsivité personnalisés */
+@layer utilities {
+  /* Espacement responsive */
+  .responsive-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+  
+  .responsive-margin {
+    @apply my-8 sm:my-12 lg:my-16;
+  }
+  
+  /* Taille de texte responsive */
+  .responsive-text {
+    @apply text-sm sm:text-base lg:text-lg;
+  }
+  
+  .responsive-heading {
+    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl;
+  }
+  
+  /* Grille responsive */
+  .responsive-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+  }
+  
+  .responsive-grid-2 {
+    @apply grid grid-cols-1 sm:grid-cols-2;
+  }
+  
+  /* Espacement responsive */
+  .responsive-gap {
+    @apply gap-4 sm:gap-6 lg:gap-8;
+  }
+  
+  .responsive-gap-small {
+    @apply gap-2 sm:gap-3 lg:gap-4;
+  }
+  
+  /* Hauteur responsive */
+  .responsive-height {
+    @apply h-64 sm:h-72 lg:h-80;
+  }
+  
+  /* Padding responsive */
+  .responsive-p {
+    @apply p-4 sm:p-6 lg:p-8;
+  }
+  
+  /* Border radius responsive */
+  .responsive-rounded {
+    @apply rounded-lg sm:rounded-xl lg:rounded-2xl;
+  }
+  
+  /* Shadow responsive */
+  .responsive-shadow {
+    @apply shadow-md sm:shadow-lg lg:shadow-xl;
+  }
+  
+  /* Transform responsive */
+  .responsive-transform {
+    @apply hover:-translate-y-1 sm:hover:-translate-y-2;
+  }
+}
+
+/* Optimisations pour mobile */
+@media (max-width: 640px) {
+  .mobile-optimized {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  
+  .mobile-padding {
+    padding: 1rem;
+  }
+  
+  .mobile-margin {
+    margin: 1rem 0;
+  }
+}
+
+/* Optimisations pour tablette */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .tablet-optimized {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .tablet-padding {
+    padding: 1.5rem;
+  }
+  
+  .tablet-margin {
+    margin: 1.5rem 0;
+  }
+}
+
+/* Optimisations pour desktop */
+@media (min-width: 1025px) {
+  .desktop-optimized {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  
+  .desktop-padding {
+    padding: 2rem;
+  }
+  
+  .desktop-margin {
+    margin: 2rem 0;
+  }
+}
+
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);

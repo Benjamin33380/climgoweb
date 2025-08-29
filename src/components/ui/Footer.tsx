@@ -21,12 +21,12 @@ export default function Footer() {
       <div className="w-full px-4 sm:px-6 lg:px-8">
         
         {/* Section principale */}
-        <div className="py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="py-12 sm:py-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12">
             
             {/* À propos de ClimGO */}
-            <div className="lg:col-span-1 text-center md:text-left">
-              <div className="flex items-center justify-center md:justify-start space-x-2 mb-6">
+            <div className="sm:col-span-1 text-center sm:text-left">
+              <div className="flex items-center justify-center sm:justify-start space-x-2 mb-4 sm:mb-6">
                 <Image
                   src="/favicon/logo.png"
                   alt="ClimGO Logo"
@@ -34,14 +34,14 @@ export default function Footer() {
                   height={32}
                   className="w-8 h-8"
                 />
-                <span className="font-bold text-xl">ClimGO</span>
+                <span className="font-bold text-lg sm:text-xl">ClimGO</span>
               </div>
               
-              <p className="text-muted-foreground mb-6 leading-relaxed">
+              <p className="text-muted-foreground mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
                 Spécialiste en climatisation, chauffage et maintenance depuis plus de 10 ans. Notre expertise au service de votre confort en Gironde et dans le Nord des Landes.
               </p>
               
-              <div className="mb-6">
+              <div className="mb-4 sm:mb-6">
                 <Link 
                   href="/a-propos" 
                   className="text-sm text-[#FF8C00] hover:text-[#FFA500] transition-colors font-medium"
@@ -51,63 +51,63 @@ export default function Footer() {
               </div>
               
               {/* Note et avis */}
-              <div className="text-center md:text-left mb-6">
-                <div className="flex justify-center md:justify-start items-center space-x-2 mb-2">
+              <div className="text-center sm:text-left mb-4 sm:mb-6">
+                <div className="flex justify-center sm:justify-start items-center space-x-2 mb-2">
                   <div className="flex space-x-1">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 text-yellow-500 fill-current" />
+                      <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-500 fill-current" />
                     ))}
                   </div>
-                  <span className="font-semibold text-sm">5/5</span>
+                  <span className="font-semibold text-xs sm:text-sm">5/5</span>
                 </div>
-                <div className="text-center md:text-left">
+                <div className="text-center sm:text-left">
                   <div className="text-muted-foreground text-xs">(22 avis Google)</div>
                 </div>
               </div>
 
               {/* Réseaux sociaux */}
-              <div className="flex justify-center md:justify-start space-x-3">
+              <div className="flex justify-center sm:justify-start space-x-2 sm:space-x-3">
                 <a 
                   href="#" 
-                  className="flex items-center justify-center w-10 h-10 rounded-md border border-border hover:bg-accent hover:text-accent-foreground transition-colors"
+                  className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-md border border-border hover:bg-accent hover:text-accent-foreground transition-colors"
                   aria-label="Facebook"
                 >
-                  <Facebook className="w-4 h-4" />
+                  <Facebook className="w-3 h-3 sm:w-4 sm:h-4" />
                 </a>
                 <a 
                   href="#" 
-                  className="flex items-center justify-center w-10 h-10 rounded-md border border-border hover:bg-accent hover:text-accent-foreground transition-colors"
+                  className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-md border border-border hover:bg-accent hover:text-accent-foreground transition-colors"
                   aria-label="Instagram"
                 >
-                  <Instagram className="w-4 h-4" />
+                  <Instagram className="w-3 h-3 sm:w-4 sm:h-4" />
                 </a>
                 <a 
                   href="#" 
-                  className="flex items-center justify-center w-10 h-10 rounded-md border border-border hover:bg-accent hover:text-accent-foreground transition-colors"
+                  className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-md border border-border hover:bg-accent hover:text-accent-foreground transition-colors"
                   aria-label="LinkedIn"
                 >
-                  <Linkedin className="w-4 h-4" />
+                  <Linkedin className="w-3 h-3 sm:w-4 sm:h-4" />
                 </a>
                 <a 
                   href="#" 
-                  className="flex items-center justify-center w-10 h-10 rounded-md border border-border hover:bg-accent hover:text-accent-foreground transition-colors"
+                  className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-md border border-border hover:bg-accent hover:text-accent-foreground transition-colors"
                   aria-label="Twitter"
                 >
-                  <Twitter className="w-4 h-4" />
+                  <Twitter className="w-3 h-3 sm:w-4 sm:h-4" />
                 </a>
                 <a 
                   href="#" 
-                  className="flex items-center justify-center w-10 h-10 rounded-md border border-border hover:bg-accent hover:text-accent-foreground transition-colors"
+                  className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-md border border-border hover:bg-accent hover:text-accent-foreground transition-colors"
                   aria-label="GitHub"
                 >
-                  <Github className="w-4 h-4" />
+                  <Github className="w-3 h-3 sm:w-4 sm:h-4" />
                 </a>
                 <a 
                   href="https://vercel.com" 
-                  className="flex items-center justify-center w-10 h-10 rounded-md border border-border hover:bg-accent hover:text-accent-foreground transition-colors"
+                  className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-md border border-border hover:bg-accent hover:text-accent-foreground transition-colors"
                   aria-label="Vercel"
                 >
-                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                  <svg className="w-3 h-3 sm:w-4 sm:h-4" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12 2L24 22H0L12 2Z"/>
                   </svg>
                 </a>
@@ -117,11 +117,11 @@ export default function Footer() {
               <div className="mt-4">
                 <a 
                   href="https://www.oxelya.com" 
+                  className="text-xs text-muted-foreground hover:text-foreground transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  www.oxelya.com
+                  Développé par Oxelya
                 </a>
               </div>
             </div>
