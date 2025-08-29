@@ -1,0 +1,9 @@
+# Forcer HTTPS partout
+http://www.climgo.fr/* https://www.climgo.fr/:splat 301!
+http://climgo.fr/* https://www.climgo.fr/:splat 301!
+
+# Redirection www vers non-www (optionnel)
+https://climgo.fr/* https://www.climgo.fr/:splat 301!
+
+# Gestion des erreurs 404
+/* /404.html 404
