@@ -9,7 +9,7 @@
           "value": "http"
         }
       ],
-      "destination": "https://:host/:path*",
+      "destination": "https://climgo.fr/:path*",
       "permanent": true
     }
   ],
