@@ -112,7 +112,7 @@ export const metadata: Metadata = {
     "zones-desservies": "Gironde, Bordeaux Métropole, Bassin d'Arcachon",
     "mobile-web-app-capable": "yes",
     "apple-mobile-web-app-capable": "yes",
-    "apple-mobile-web-app-status-bar-style": "default",
+    "apple-mobile-web-app-status-bar-style": "black-translucent",
     "apple-mobile-web-app-title": "ClimGO",
     "application-name": "ClimGO",
     "msapplication-TileColor": "#0ea5e9",
@@ -130,6 +130,11 @@ export default function RootLayout({
       <head>
         <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
         <PerformanceOptimizations />
+        
+        {/* Meta tags pour Safari status bar */}
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+        <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
         
         {/* Schéma JSON-LD principal */}
         <script
