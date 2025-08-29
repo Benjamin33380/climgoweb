@@ -113,12 +113,6 @@ export default function AdminLogin() {
                 {loading ? 'Connexion...' : 'Se connecter'}
               </Button>
             </form>
-
-            <div className="mt-4 text-center text-sm text-gray-600">
-              <p>Identifiants de test :</p>
-              <p><strong>Email :</strong> admin@climgo.fr</p>
-              <p><strong>Mot de passe :</strong> admin123</p>
-            </div>
           </CardContent>
         </Card>
       </div>

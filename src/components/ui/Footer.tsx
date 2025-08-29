@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin, Wrench, Droplet, FileText, Star, Github, Twitter, AirVent, BadgeEuro } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin, Wrench, Droplet, FileText, Star, Github, Twitter, AirVent, BadgeEuro, Send } from 'lucide-react';
+import { useState } from 'react';
 
 const services = [
   { title: "Chauffage", href: "/chauffage", icon: <Wrench className="w-4 h-4" /> },
@@ -121,8 +122,31 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Développé par Oxelya
+                  Développé par www.oxelya.com
                 </a>
+              </div>
+
+              {/* Newsletter */}
+              <div className="mt-6">
+                <h4 className="text-sm font-semibold text-foreground mb-3">Newsletter</h4>
+                <p className="text-xs text-muted-foreground mb-3">
+                  Restez informé de nos actualités et offres spéciales
+                </p>
+                <form className="flex space-x-2">
+                  <input
+                    type="email"
+                    placeholder="Votre email"
+                    className="flex-1 px-3 py-2 text-xs border border-border rounded-md bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                    required
+                  />
+                  <button
+                    type="submit"
+                    className="px-3 py-2 bg-primary text-primary-foreground text-xs rounded-md hover:bg-primary/80 transition-colors flex items-center justify-center"
+                    aria-label="S'inscrire à la newsletter"
+                  >
+                    <Send className="w-3 h-3" />
+                  </button>
+                </form>
               </div>
             </div>
 

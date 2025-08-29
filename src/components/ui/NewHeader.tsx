@@ -2,7 +2,7 @@
 import * as React from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Phone, Wrench, Droplet, Settings, FileText, Menu, Mail, MessageSquare, AirVent } from "lucide-react"
+import { Phone, Wrench, Droplet, Settings, FileText, Menu, Mail, MessageSquare, AirVent, User } from "lucide-react"
 import { ModeToggle } from "@/components/ui/mode-toggle"
 import { Button } from "@/components/ui/button"
 import { LogoWithFallback } from "@/components/ui/Logo3D"
@@ -323,6 +323,15 @@ export function NewHeader() {
             className="hidden sm:inline-flex bg-accent text-accent-foreground px-4 py-2 rounded-md text-sm font-medium hover:bg-accent/80 transition-colors"
           >
             Devis gratuit
+          </Link>
+
+          {/* Icône de connexion client */}
+          <Link
+            href="/client-auth"
+            className="flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground hover:bg-primary/80 transition-colors"
+            title="Connexion client"
+          >
+            <User className="w-4 h-4" />
           </Link>
 
           <ModeToggle />
