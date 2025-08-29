@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import { AdminAuthProvider } from '@/hooks/useAdminAuth';
 
 export const metadata: Metadata = {
   title: 'Admin ClimGO | Conseils Chauffage Climatisation Gironde',
@@ -56,10 +57,10 @@ export default function AdminLayout({
   children: React.ReactNode;
 }) {
   return (
-    <>
-    <main className="min-h-screen dark:bg-gray-900">
+    <AdminAuthProvider>
+      <div className="min-h-screen bg-gray-50">
         {children}
-    </main>
-    </>
+      </div>
+    </AdminAuthProvider>
   );
 }
