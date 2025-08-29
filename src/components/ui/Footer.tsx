@@ -122,7 +122,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Développé par www.oxelya.com
+                  Oxelya
                 </a>
               </div>
 
