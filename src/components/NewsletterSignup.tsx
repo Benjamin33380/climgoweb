@@ -87,7 +87,7 @@ export default function NewsletterSignup() {
       </form>
       
       {message && (
-        <div className={`mt-2 text-xs ${messageType === 'success' ? 'text-green-500' : 'text-red-500'}`}>
+        <div className={`mt-2 text-xs ${messageType === 'success' ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}`}>
           {message}
         </div>
       )}

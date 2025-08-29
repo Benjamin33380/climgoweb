@@ -318,9 +318,10 @@ export function NewHeader() {
             <span>07 66 46 00 08</span>
           </Link>
           
-          <Link 
-            href="/contact" 
-            className="hidden sm:inline-flex bg-accent text-accent-foreground px-4 py-2 rounded-md text-sm font-medium hover:bg-accent/80 transition-colors"
+          {/* Bouton Devis gratuit */}
+          <Link
+            href="/contact"
+            className="px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/80 transition-colors border border-border font-medium"
           >
             Devis gratuit
           </Link>
