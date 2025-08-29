@@ -9,6 +9,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { User, Mail, Lock, Eye, EyeOff, Star } from 'lucide-react';
+// import { supabase } from '@/lib/supabase';
 
 export default function ClientAuth() {
   const [mode, setMode] = useState<'login' | 'register'>('login');
@@ -43,47 +44,112 @@ export default function ClientAuth() {
           return;
         }
 
-        // TODO: Remplacer par Supabase Auth
-        // const { data, error } = await supabase.auth.signUp({
-        //   email: formData.email,
-        //   password: formData.password,
-        //   options: {
-        //     data: {
-        //       username: formData.username,
-        //       avatar_url: formData.avatar_url
-        //     }
-        //   }
-        // });
-
-        // Simulation d'inscription
-        setSuccess('Compte créé avec succès ! Vous pouvez maintenant vous connecter.');
+        // TODO: Activer quand Supabase est configuré
+        setSuccess('Compte créé avec succès ! (Simulation - Supabase à configurer)');
         setMode('login');
         setFormData({ username: '', email: '', password: '', confirmPassword: '', avatar_url: '' });
-      } else {
-        // TODO: Remplacer par Supabase Auth
-        // const { data, error } = await supabase.auth.signInWithPassword({
-        //   email: formData.email,
-        //   password: formData.password,
-        // });
+        
+        /*
+        // Inscription avec Supabase
+        const { data, error: signUpError } = await supabase.auth.signUp({
+          email: formData.email,
+          password: formData.password,
+          options: {
+            data: {
+              username: formData.username,
+              avatar_url: formData.avatar_url || null
+            }
+          }
+        });
 
-        // Simulation de connexion
+        if (signUpError) {
+          throw signUpError;
+        }
+
+        if (data.user) {
+          // Créer le profil utilisateur dans la table users
+          const { error: profileError } = await supabase
+            .from('users')
+            .insert([
+              {
+                id: data.user.id,
+                username: formData.username,
+                email: formData.email,
+                avatar_url: formData.avatar_url || null,
+                role: 'client',
+                activity_points: 100,
+                created_at: new Date().toISOString()
+              }
+            ]);
+
+          if (profileError) {
+            console.error('Erreur création profil:', profileError);
+          }
+
+          setSuccess('Compte créé avec succès ! Vérifiez votre email pour confirmer votre compte.');
+          setMode('login');
+          setFormData({ username: '', email: '', password: '', confirmPassword: '', avatar_url: '' });
+        }
+        */
+      } else {
+        // TODO: Activer quand Supabase est configuré
         if (formData.email && formData.password) {
-          localStorage.setItem('clientToken', 'client-token-123');
           localStorage.setItem('clientUser', JSON.stringify({
             id: 'client-1',
-            username: formData.email.split('@')[0],
             email: formData.email,
+            username: formData.email.split('@')[0],
             role: 'client',
-            activity_points: 100
+            activity_points: 100,
+            avatar_url: null
           }));
           
-          router.push('/blog');
+          setSuccess('Connexion réussie ! (Simulation - Supabase à configurer)');
+          setTimeout(() => {
+            router.push('/blog');
+          }, 1500);
         } else {
           setError('Veuillez remplir tous les champs');
         }
+        
+        /*
+        // Connexion avec Supabase
+        const { data, error: signInError } = await supabase.auth.signInWithPassword({
+          email: formData.email,
+          password: formData.password,
+        });
+
+        if (signInError) {
+          throw signInError;
+        }
+
+        if (data.user) {
+          // Récupérer le profil utilisateur
+          const { data: profile } = await supabase
+            .from('users')
+            .select('*')
+            .eq('id', data.user.id)
+            .single();
+
+          // Stocker les informations utilisateur
+          localStorage.setItem('clientUser', JSON.stringify({
+            id: data.user.id,
+            email: data.user.email,
+            username: profile?.username || data.user.email?.split('@')[0],
+            role: profile?.role || 'client',
+            activity_points: profile?.activity_points || 100,
+            avatar_url: profile?.avatar_url
+          }));
+
+          setSuccess('Connexion réussie ! Redirection...');
+          setTimeout(() => {
+            router.push('/blog');
+          }, 1500);
+        }
+        */
       }
-    } catch (err) {
-      setError('Erreur lors de l\'opération');
+    } catch (err: unknown) {
+      const errorMessage = err instanceof Error ? err.message : 'Erreur lors de l\'opération';
+      setError(errorMessage);
     } finally {
       setLoading(false);
     }

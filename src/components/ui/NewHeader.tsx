@@ -328,7 +328,7 @@ export function NewHeader() {
           {/* Icône de connexion client */}
           <Link
             href="/client-auth"
-            className="flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground hover:bg-primary/80 transition-colors"
+            className="flex items-center justify-center w-8 h-8 rounded-md border border-border bg-background text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
             title="Connexion client"
           >
             <User className="w-4 h-4" />

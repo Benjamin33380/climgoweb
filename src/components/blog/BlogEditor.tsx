@@ -96,11 +96,38 @@ export default function BlogEditor({ article, onSave, mode }: BlogEditorProps) {
       
       setSuccess(mode === 'create' ? 'Article créé avec succès !' : 'Article mis à jour avec succès !');
       
+      // Si c'est un nouvel article et qu'il est publié, envoyer la newsletter
+      if (mode === 'create' && formData.published) {
+        try {
+          await fetch('/api/newsletter/send-automatic', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              type: 'new_article',
+              data: {
+                title: formData.title,
+                excerpt: formData.excerpt,
+                slug: formData.slug,
+                author: 'Admin ClimGO'
+              }
+            })
+          });
+          
+          setSuccess('Article publié et newsletter envoyée automatiquement !');
+        } catch (newsletterError) {
+          console.error('Erreur envoi newsletter:', newsletterError);
+          setSuccess('Article publié mais erreur lors de l\'envoi de la newsletter');
+        }
+      }
+      
       if (onSave) {
         onSave();
       }
-    } catch (error) {
-      setError('Erreur lors de la sauvegarde');
+    } catch (err: unknown) {
+      const errorMessage = err instanceof Error ? err.message : 'Erreur lors de la sauvegarde';
+      setError(errorMessage);
     } finally {
       setLoading(false);
     }
