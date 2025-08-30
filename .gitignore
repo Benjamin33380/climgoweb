@@ -36,6 +36,9 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
+# SSL certificates for development
+certs/
+
 # vercel
 .vercel
 

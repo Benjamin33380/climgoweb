@@ -2,115 +2,56 @@
 
 import { useState, useEffect } from 'react';
 import { useUser } from '@/hooks/useUser';
+import { supabase } from '@/lib/supabase';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Badge } from '@/components/ui/badge';
-import { 
-  User, 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Calendar, 
-  Globe, 
-  Edit, 
-  Save, 
-  X, 
-  Camera,
-  Shield,
-  MessageSquare,
-  Star,
-  Heart,
-  Eye,
-  Loader2
-} from 'lucide-react';
-import { supabase } from '@/lib/supabase';
+import { Card } from '@/components/ui/card';
+import { Separator } from '@/components/ui/separator';
+import { User, Mail, Phone, MapPin, Calendar, Edit3, Save, X, Camera, Shield } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
 interface UserProfile {
   id: string;
   email: string;
   username?: string;
-  avatar_url?: string;
   first_name?: string;
   last_name?: string;
   phone?: string;
   address?: string;
-  postal_code?: string;
   city?: string;
-  country?: string;
-  birth_date?: string;
+  postal_code?: string;
   bio?: string;
-  website?: string;
-  points_activity: number;
-  is_admin: boolean;
-  is_banned: boolean;
-  email_verified: boolean;
-  newsletter_subscribed: boolean;
-  preferences: Record<string, unknown>;
-  created_at: string;
-  last_login?: string;
-}
-
-interface UserStats {
-  comment_count: number;
-  rating_count: number;
-  like_count: number;
-  article_views: number;
+  avatar_url?: string;
+  birth_date?: string;
+  is_admin?: boolean;
+  created_at?: string;
+  newsletter_subscribed?: boolean;
 }
 
 export default function ProfilePage() {
-  const { user, loading: userLoading, refreshUser } = useUser();
+  const { user, loading } = useUser();
   const router = useRouter();
-  const [loading, setLoading] = useState(false);
-  const [saving, setSaving] = useState(false);
-  const [error, setError] = useState('');
-  const [success, setSuccess] = useState('');
-  const [isEditing, setIsEditing] = useState(false);
   const [profile, setProfile] = useState<UserProfile | null>(null);
-  const [stats, setStats] = useState<UserStats>({
-    comment_count: 0,
-    rating_count: 0,
-    like_count: 0,
-    article_views: 0
-  });
-
-  // Formulaire de profil
-  const [profileForm, setProfileForm] = useState({
-    username: '',
-    first_name: '',
-    last_name: '',
-    phone: '',
-    address: '',
-    postal_code: '',
-    city: '',
-    country: 'France',
-    birth_date: '',
-    bio: '',
-    website: '',
-    newsletter_subscribed: false
-  });
+  const [isEditing, setIsEditing] = useState(false);
+  const [isSaving, setSaving] = useState(false);
+  const [editedProfile, setEditedProfile] = useState<Partial<UserProfile>>({});
 
   useEffect(() => {
-    if (!userLoading && !user) {
+    if (!loading && !user) {
       router.push('/auth');
       return;
     }
 
     if (user) {
-      loadProfile();
-      loadStats();
+      fetchProfile();
     }
-  }, [user, userLoading]);
+  }, [user, loading, router]);
 
-  const loadProfile = async () => {
+  const fetchProfile = async () => {
     if (!user) return;
-    
-    setLoading(true);
+
     try {
       const { data, error } = await supabase
         .from('users')
@@ -119,117 +60,51 @@ export default function ProfilePage() {
         .single();
 
       if (error) throw error;
-
       setProfile(data);
-      setProfileForm({
-        username: data.username || '',
-        first_name: data.first_name || '',
-        last_name: data.last_name || '',
-        phone: data.phone || '',
-        address: data.address || '',
-        postal_code: data.postal_code || '',
-        city: data.city || '',
-        country: data.country || 'France',
-        birth_date: data.birth_date || '',
-        bio: data.bio || '',
-        website: data.website || '',
-        newsletter_subscribed: data.newsletter_subscribed || false
-      });
-    } catch (error: unknown) {
-      setError('Erreur lors du chargement du profil: ' + (error instanceof Error ? error.message : 'Erreur inconnue'));
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const loadStats = async () => {
-    if (!user) return;
-
-    try {
-      // Récupérer les statistiques utilisateur
-      const [commentsRes, ratingsRes, likesRes] = await Promise.all([
-        supabase.from('comments').select('id').eq('user_id', user.id),
-        supabase.from('ratings').select('id').eq('user_id', user.id),
-        supabase.from('article_likes').select('id').eq('user_id', user.id)
-      ]);
-
-      setStats({
-        comment_count: commentsRes.data?.length || 0,
-        rating_count: ratingsRes.data?.length || 0,
-        like_count: likesRes.data?.length || 0,
-        article_views: 0 // À implémenter avec les vues d'articles
-      });
+      setEditedProfile(data);
     } catch (error) {
-      console.error('Erreur lors du chargement des statistiques:', error);
+      console.error('Erreur lors du chargement du profil:', error);
     }
   };
 
   const handleSave = async () => {
-    if (!user) return;
+    if (!user || !profile) return;
 
     setSaving(true);
-    setError('');
-    setSuccess('');
-
     try {
       const { error } = await supabase
         .from('users')
-        .update({
-          username: profileForm.username || null,
-          first_name: profileForm.first_name || null,
-          last_name: profileForm.last_name || null,
-          phone: profileForm.phone || null,
-          address: profileForm.address || null,
-          postal_code: profileForm.postal_code || null,
-          city: profileForm.city || null,
-          country: profileForm.country || null,
-          birth_date: profileForm.birth_date || null,
-          bio: profileForm.bio || null,
-          website: profileForm.website || null,
-          newsletter_subscribed: profileForm.newsletter_subscribed,
-          updated_at: new Date().toISOString()
-        })
+        .update(editedProfile)
         .eq('id', user.id);
 
       if (error) throw error;
 
-      setSuccess('Profil mis à jour avec succès !');
+      setProfile({ ...profile, ...editedProfile });
       setIsEditing(false);
-      await loadProfile();
-      await refreshUser();
-    } catch (error: unknown) {
-      setError('Erreur lors de la sauvegarde: ' + (error instanceof Error ? error.message : 'Erreur inconnue'));
+    } catch (error) {
+      console.error('Erreur lors de la sauvegarde:', error);
+      alert('Erreur lors de la sauvegarde du profil');
     } finally {
       setSaving(false);
     }
   };
 
   const handleCancel = () => {
-    if (profile) {
-      setProfileForm({
-        username: profile.username || '',
-        first_name: profile.first_name || '',
-        last_name: profile.last_name || '',
-        phone: profile.phone || '',
-        address: profile.address || '',
-        postal_code: profile.postal_code || '',
-        city: profile.city || '',
-        country: profile.country || 'France',
-        birth_date: profile.birth_date || '',
-        bio: profile.bio || '',
-        website: profile.website || '',
-        newsletter_subscribed: profile.newsletter_subscribed || false
-      });
-    }
+    setEditedProfile(profile || {});
     setIsEditing(false);
-    setError('');
-    setSuccess('');
   };
 
-  if (userLoading || loading) {
+  const handleInputChange = (field: keyof UserProfile, value: string) => {
+    setEditedProfile(prev => ({ ...prev, [field]: value }));
+  };
+
+  if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <Loader2 className="h-8 w-8 animate-spin" />
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto"></div>
+          <p className="mt-2 text-muted-foreground">Chargement...</p>
+        </div>
       </div>
     );
   }
@@ -238,62 +113,59 @@ export default function ProfilePage() {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4">Accès refusé</h1>
-          <p className="text-muted-foreground">Vous devez être connecté pour accéder à cette page.</p>
+          <p className="text-muted-foreground">Profil non trouvé</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="container mx-auto p-6 max-w-4xl">
-      <div className="flex items-center justify-between mb-6">
-        <h1 className="text-3xl font-bold">Mon Profil</h1>
-        {!isEditing ? (
-          <Button onClick={() => setIsEditing(true)} className="flex items-center gap-2">
-            <Edit className="h-4 w-4" />
-            Modifier
-          </Button>
-        ) : (
-          <div className="flex gap-2">
-            <Button onClick={handleSave} disabled={saving} className="flex items-center gap-2">
-              {saving ? <Loader2 className="h-4 w-4 animate-spin" /> : <Save className="h-4 w-4" />}
-              Sauvegarder
-            </Button>
-            <Button variant="outline" onClick={handleCancel} disabled={saving}>
-              <X className="h-4 w-4" />
-              Annuler
-            </Button>
+    <div className="min-h-screen bg-background py-8">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="mb-8">
+          <div className="flex items-center justify-between">
+            <div>
+              <h1 className="text-3xl font-bold text-foreground">Mon Profil</h1>
+              <p className="text-muted-foreground mt-1">
+                Gérez vos informations personnelles et préférences
+              </p>
+            </div>
+            <div className="flex items-center gap-2">
+              {profile.is_admin && (
+                <div className="flex items-center gap-2 px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm">
+                  <Shield className="w-4 h-4" />
+                  Administrateur
+                </div>
+              )}
+              {!isEditing ? (
+                <Button onClick={() => setIsEditing(true)} variant="outline">
+                  <Edit3 className="w-4 h-4 mr-2" />
+                  Modifier
+                </Button>
+              ) : (
+                <div className="flex gap-2">
+                  <Button onClick={handleSave} disabled={isSaving}>
+                    <Save className="w-4 h-4 mr-2" />
+                    {isSaving ? 'Sauvegarde...' : 'Sauvegarder'}
+                  </Button>
+                  <Button onClick={handleCancel} variant="outline">
+                    <X className="w-4 h-4 mr-2" />
+                    Annuler
+                  </Button>
+                </div>
+              )}
+            </div>
           </div>
-        )}
-      </div>
+        </div>
 
-      {error && (
-        <Alert variant="destructive" className="mb-6">
-          <AlertDescription>{error}</AlertDescription>
-        </Alert>
-      )}
-
-      {success && (
-        <Alert className="mb-6">
-          <AlertDescription>{success}</AlertDescription>
-        </Alert>
-      )}
-
-      <Tabs defaultValue="profile" className="space-y-6">
-        <TabsList className="grid w-full grid-cols-3">
-          <TabsTrigger value="profile">Profil</TabsTrigger>
-          <TabsTrigger value="stats">Statistiques</TabsTrigger>
-          <TabsTrigger value="preferences">Préférences</TabsTrigger>
-        </TabsList>
-
-        <TabsContent value="profile" className="space-y-6">
-          {/* En-tête du profil */}
-          <Card>
-            <CardContent className="p-6">
-              <div className="flex items-start gap-6">
-                <div className="relative">
-                  <div className="w-24 h-24 rounded-full bg-muted flex items-center justify-center">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Sidebar - Avatar et infos de base */}
+          <div className="lg:col-span-1">
+            <Card className="p-6">
+              <div className="text-center">
+                <div className="relative inline-block">
+                  <div className="w-24 h-24 rounded-full bg-muted flex items-center justify-center mx-auto mb-4">
                     {profile.avatar_url ? (
                       <img
                         src={profile.avatar_url}
@@ -305,333 +177,202 @@ export default function ProfilePage() {
                     )}
                   </div>
                   {isEditing && (
-                    <Button
-                      size="icon"
-                      variant="outline"
-                      className="absolute -bottom-2 -right-2 w-8 h-8 rounded-full"
-                    >
+                    <button className="absolute bottom-0 right-0 p-2 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-colors">
                       <Camera className="w-4 h-4" />
-                    </Button>
+                    </button>
                   )}
                 </div>
                 
-                <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-2">
-                    <h2 className="text-2xl font-bold">
-                      {profile.first_name && profile.last_name 
-                        ? `${profile.first_name} ${profile.last_name}`
-                        : profile.username || 'Utilisateur'
-                      }
-                    </h2>
-                    {profile.is_admin && (
-                      <Badge variant="secondary" className="flex items-center gap-1">
-                        <Shield className="w-3 h-3" />
-                        Admin
-                      </Badge>
-                    )}
+                <h2 className="text-xl font-semibold">
+                  {profile.first_name && profile.last_name 
+                    ? `${profile.first_name} ${profile.last_name}`
+                    : profile.username || 'Utilisateur'
+                  }
+                </h2>
+                <p className="text-muted-foreground text-sm">{profile.email}</p>
+                
+                {profile.created_at && (
+                  <div className="flex items-center justify-center gap-2 mt-4 text-sm text-muted-foreground">
+                    <Calendar className="w-4 h-4" />
+                    Membre depuis {new Date(profile.created_at).toLocaleDateString('fr-FR', { 
+                      year: 'numeric', 
+                      month: 'long' 
+                    })}
                   </div>
-                  <p className="text-muted-foreground mb-2">{profile.email}</p>
-                  {profile.bio && (
-                    <p className="text-sm">{profile.bio}</p>
-                  )}
-                  <div className="flex items-center gap-4 mt-3 text-sm text-muted-foreground">
-                    <span>Membre depuis {new Date(profile.created_at).toLocaleDateString('fr-FR')}</span>
-                    <span>•</span>
-                    <span>{profile.points_activity} points d'activité</span>
-                  </div>
-                </div>
+                )}
               </div>
-            </CardContent>
-          </Card>
+            </Card>
+          </div>
 
-          {/* Informations personnelles */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <User className="h-5 w-5" />
+          {/* Main Content */}
+          <div className="lg:col-span-2 space-y-6">
+            {/* Informations personnelles */}
+            <Card className="p-6">
+              <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                <User className="w-5 h-5" />
                 Informations personnelles
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
+              </h3>
+              
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="space-y-2">
+                <div>
                   <Label htmlFor="username">Nom d'utilisateur</Label>
                   <Input
                     id="username"
-                    value={profileForm.username}
-                    onChange={(e) => setProfileForm(prev => ({ ...prev, username: e.target.value }))}
+                    value={isEditing ? (editedProfile.username || '') : (profile.username || '')}
+                    onChange={(e) => handleInputChange('username', e.target.value)}
                     disabled={!isEditing}
                     placeholder="Votre nom d'utilisateur"
                   />
                 </div>
-
-                <div className="space-y-2">
+                
+                <div>
                   <Label htmlFor="email">Email</Label>
                   <Input
                     id="email"
+                    type="email"
                     value={profile.email}
                     disabled
                     className="bg-muted"
                   />
+                  <p className="text-xs text-muted-foreground mt-1">
+                    L'email ne peut pas être modifié
+                  </p>
                 </div>
-
-                <div className="space-y-2">
+                
+                <div>
                   <Label htmlFor="first_name">Prénom</Label>
                   <Input
                     id="first_name"
-                    value={profileForm.first_name}
-                    onChange={(e) => setProfileForm(prev => ({ ...prev, first_name: e.target.value }))}
+                    value={isEditing ? (editedProfile.first_name || '') : (profile.first_name || '')}
+                    onChange={(e) => handleInputChange('first_name', e.target.value)}
                     disabled={!isEditing}
                     placeholder="Votre prénom"
                   />
                 </div>
-
-                <div className="space-y-2">
+                
+                <div>
                   <Label htmlFor="last_name">Nom</Label>
                   <Input
                     id="last_name"
-                    value={profileForm.last_name}
-                    onChange={(e) => setProfileForm(prev => ({ ...prev, last_name: e.target.value }))}
+                    value={isEditing ? (editedProfile.last_name || '') : (profile.last_name || '')}
+                    onChange={(e) => handleInputChange('last_name', e.target.value)}
                     disabled={!isEditing}
                     placeholder="Votre nom"
                   />
                 </div>
-
-                <div className="space-y-2">
+                
+                <div>
                   <Label htmlFor="phone">Téléphone</Label>
                   <Input
                     id="phone"
-                    value={profileForm.phone}
-                    onChange={(e) => setProfileForm(prev => ({ ...prev, phone: e.target.value }))}
+                    type="tel"
+                    value={isEditing ? (editedProfile.phone || '') : (profile.phone || '')}
+                    onChange={(e) => handleInputChange('phone', e.target.value)}
                     disabled={!isEditing}
                     placeholder="Votre numéro de téléphone"
                   />
                 </div>
-
-                <div className="space-y-2">
+                
+                <div>
                   <Label htmlFor="birth_date">Date de naissance</Label>
                   <Input
                     id="birth_date"
                     type="date"
-                    value={profileForm.birth_date}
-                    onChange={(e) => setProfileForm(prev => ({ ...prev, birth_date: e.target.value }))}
+                    value={isEditing ? (editedProfile.birth_date || '') : (profile.birth_date || '')}
+                    onChange={(e) => handleInputChange('birth_date', e.target.value)}
                     disabled={!isEditing}
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="website">Site web</Label>
-                  <Input
-                    id="website"
-                    value={profileForm.website}
-                    onChange={(e) => setProfileForm(prev => ({ ...prev, website: e.target.value }))}
-                    disabled={!isEditing}
-                    placeholder="https://votre-site.com"
                   />
                 </div>
               </div>
-
-              <div className="space-y-2">
+              
+              <Separator className="my-4" />
+              
+              <div>
                 <Label htmlFor="bio">Biographie</Label>
                 <Textarea
                   id="bio"
-                  value={profileForm.bio}
-                  onChange={(e) => setProfileForm(prev => ({ ...prev, bio: e.target.value }))}
+                  value={isEditing ? (editedProfile.bio || '') : (profile.bio || '')}
+                  onChange={(e) => handleInputChange('bio', e.target.value)}
                   disabled={!isEditing}
                   placeholder="Parlez-nous de vous..."
                   rows={3}
                 />
               </div>
-            </CardContent>
-          </Card>
+            </Card>
 
-          {/* Adresse */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <MapPin className="h-5 w-5" />
+            {/* Adresse */}
+            <Card className="p-6">
+              <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                <MapPin className="w-5 h-5" />
                 Adresse
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="space-y-2">
-                <Label htmlFor="address">Adresse</Label>
-                <Input
-                  id="address"
-                  value={profileForm.address}
-                  onChange={(e) => setProfileForm(prev => ({ ...prev, address: e.target.value }))}
-                  disabled={!isEditing}
-                  placeholder="Votre adresse complète"
-                />
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="postal_code">Code postal</Label>
+              </h3>
+              
+              <div className="space-y-4">
+                <div>
+                  <Label htmlFor="address">Adresse</Label>
                   <Input
-                    id="postal_code"
-                    value={profileForm.postal_code}
-                    onChange={(e) => setProfileForm(prev => ({ ...prev, postal_code: e.target.value }))}
+                    id="address"
+                    value={isEditing ? (editedProfile.address || '') : (profile.address || '')}
+                    onChange={(e) => handleInputChange('address', e.target.value)}
                     disabled={!isEditing}
-                    placeholder="33000"
+                    placeholder="Votre adresse complète"
                   />
                 </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="city">Ville</Label>
-                  <Input
-                    id="city"
-                    value={profileForm.city}
-                    onChange={(e) => setProfileForm(prev => ({ ...prev, city: e.target.value }))}
-                    disabled={!isEditing}
-                    placeholder="Bordeaux"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="country">Pays</Label>
-                  <Input
-                    id="country"
-                    value={profileForm.country}
-                    onChange={(e) => setProfileForm(prev => ({ ...prev, country: e.target.value }))}
-                    disabled={!isEditing}
-                    placeholder="France"
-                  />
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <Label htmlFor="city">Ville</Label>
+                    <Input
+                      id="city"
+                      value={isEditing ? (editedProfile.city || '') : (profile.city || '')}
+                      onChange={(e) => handleInputChange('city', e.target.value)}
+                      disabled={!isEditing}
+                      placeholder="Votre ville"
+                    />
+                  </div>
+                  
+                  <div>
+                    <Label htmlFor="postal_code">Code postal</Label>
+                    <Input
+                      id="postal_code"
+                      value={isEditing ? (editedProfile.postal_code || '') : (profile.postal_code || '')}
+                      onChange={(e) => handleInputChange('postal_code', e.target.value)}
+                      disabled={!isEditing}
+                      placeholder="Code postal"
+                    />
+                  </div>
                 </div>
               </div>
-            </CardContent>
-          </Card>
-        </TabsContent>
-
-        <TabsContent value="stats" className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <Card>
-              <CardContent className="p-4">
-                <div className="flex items-center gap-3">
-                  <MessageSquare className="h-8 w-8 text-blue-500" />
-                  <div>
-                    <div className="text-2xl font-bold">{stats.comment_count}</div>
-                    <div className="text-sm text-muted-foreground">Commentaires</div>
-                  </div>
-                </div>
-              </CardContent>
             </Card>
 
-            <Card>
-              <CardContent className="p-4">
-                <div className="flex items-center gap-3">
-                  <Star className="h-8 w-8 text-yellow-500" />
+            {/* Préférences */}
+            <Card className="p-6">
+              <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                <Mail className="w-5 h-5" />
+                Préférences de communication
+              </h3>
+              
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
                   <div>
-                    <div className="text-2xl font-bold">{stats.rating_count}</div>
-                    <div className="text-sm text-muted-foreground">Évaluations</div>
+                    <p className="font-medium">Newsletter</p>
+                    <p className="text-sm text-muted-foreground">
+                      Recevez nos derniers articles et conseils
+                    </p>
                   </div>
+                  <input
+                    type="checkbox"
+                    checked={isEditing ? (editedProfile.newsletter_subscribed || false) : (profile.newsletter_subscribed || false)}
+                    onChange={(e) => handleInputChange('newsletter_subscribed', e.target.checked.toString())}
+                    disabled={!isEditing}
+                    className="w-4 h-4"
+                  />
                 </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardContent className="p-4">
-                <div className="flex items-center gap-3">
-                  <Heart className="h-8 w-8 text-red-500" />
-                  <div>
-                    <div className="text-2xl font-bold">{stats.like_count}</div>
-                    <div className="text-sm text-muted-foreground">J'aime donnés</div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardContent className="p-4">
-                <div className="flex items-center gap-3">
-                  <Eye className="h-8 w-8 text-green-500" />
-                  <div>
-                    <div className="text-2xl font-bold">{profile.points_activity}</div>
-                    <div className="text-sm text-muted-foreground">Points d'activité</div>
-                  </div>
-                </div>
-              </CardContent>
+              </div>
             </Card>
           </div>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>Activité récente</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="text-center py-8 text-muted-foreground">
-                <MessageSquare className="h-12 w-12 mx-auto mb-4 opacity-50" />
-                <p>Aucune activité récente à afficher</p>
-              </div>
-            </CardContent>
-          </Card>
-        </TabsContent>
-
-        <TabsContent value="preferences" className="space-y-6">
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Mail className="h-5 w-5" />
-                Préférences de communication
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h4 className="font-medium">Newsletter</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Recevez nos derniers articles et actualités
-                  </p>
-                </div>
-                <input
-                  type="checkbox"
-                  checked={profileForm.newsletter_subscribed}
-                  onChange={(e) => setProfileForm(prev => ({ ...prev, newsletter_subscribed: e.target.checked }))}
-                  disabled={!isEditing}
-                  className="w-4 h-4"
-                />
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>Informations du compte</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                <div>
-                  <span className="font-medium">Statut du compte:</span>
-                  <Badge variant={profile.is_banned ? "destructive" : "secondary"} className="ml-2">
-                    {profile.is_banned ? "Banni" : "Actif"}
-                  </Badge>
-                </div>
-                <div>
-                  <span className="font-medium">Email vérifié:</span>
-                  <Badge variant={profile.email_verified ? "secondary" : "destructive"} className="ml-2">
-                    {profile.email_verified ? "Vérifié" : "Non vérifié"}
-                  </Badge>
-                </div>
-                <div>
-                  <span className="font-medium">Dernière connexion:</span>
-                  <span className="ml-2 text-muted-foreground">
-                    {profile.last_login 
-                      ? new Date(profile.last_login).toLocaleDateString('fr-FR')
-                      : 'Jamais'
-                    }
-                  </span>
-                </div>
-                <div>
-                  <span className="font-medium">Membre depuis:</span>
-                  <span className="ml-2 text-muted-foreground">
-                    {new Date(profile.created_at).toLocaleDateString('fr-FR')}
-                  </span>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </TabsContent>
-      </Tabs>
+        </div>
+      </div>
     </div>
   );
 }

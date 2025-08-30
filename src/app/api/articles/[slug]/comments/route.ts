@@ -1,17 +1,51 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { supabase } from '@/lib/supabase';
 
-// GET - Récupérer les commentaires d'un article
 export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ slug: string }> }
 ) {
   try {
-    // TODO: Remplacer par Supabase
-    const comments: Record<string, unknown>[] = [];
+    const { slug } = await params;
 
-    return NextResponse.json(comments);
+    // Récupérer l'article pour avoir son ID
+    const { data: article, error: articleError } = await supabase
+      .from('articles')
+      .select('id')
+      .eq('slug', slug)
+      .single();
+
+    if (articleError || !article) {
+      return NextResponse.json(
+        { error: 'Article non trouvé' },
+        { status: 404 }
+      );
+    }
+
+    // Récupérer les commentaires avec les informations utilisateur
+    const { data: comments, error: commentsError } = await supabase
+      .from('comments')
+      .select(`
+        id,
+        content,
+        created_at,
+        user:users(username, avatar_url)
+      `)
+      .eq('article_id', article.id)
+      .eq('is_approved', true)
+      .order('created_at', { ascending: false });
+
+    if (commentsError) {
+      console.error('Erreur lors de la récupération des commentaires:', commentsError);
+      return NextResponse.json(
+        { error: 'Erreur lors de la récupération des commentaires' },
+        { status: 500 }
+      );
+    }
+
+    return NextResponse.json({ comments: comments || [] });
   } catch (error) {
-    console.error('Erreur lors de la récupération des commentaires:', error);
+    console.error('Erreur API commentaires:', error);
     return NextResponse.json(
       { error: 'Erreur interne du serveur' },
       { status: 500 }
@@ -19,38 +53,100 @@ export async function GET(
   }
 }
 
-// POST - Créer un commentaire
 export async function POST(
   request: NextRequest,
   { params }: { params: Promise<{ slug: string }> }
 ) {
   try {
-    const { content, userId } = await request.json();
     const { slug } = await params;
+    const { content } = await request.json();
 
-    if (!content || !userId) {
+    // Vérifier l'authentification
+    const authHeader = request.headers.get('authorization');
+    if (!authHeader) {
       return NextResponse.json(
-        { error: 'Contenu et userId requis' },
+        { error: 'Non autorisé' },
+        { status: 401 }
+      );
+    }
+
+    const token = authHeader.replace('Bearer ', '');
+    const { data: { user }, error: authError } = await supabase.auth.getUser(token);
+
+    if (authError || !user) {
+      return NextResponse.json(
+        { error: 'Non autorisé' },
+        { status: 401 }
+      );
+    }
+
+    // Validation du contenu
+    if (!content || content.trim().length < 10) {
+      return NextResponse.json(
+        { error: 'Le commentaire doit contenir au moins 10 caractères' },
         { status: 400 }
       );
     }
 
-    // TODO: Remplacer par Supabase
-    const comment = {
-      id: 'temp-id',
-      content,
-      user_id: userId,
-      article_slug: slug,
-      is_approved: false,
-      created_at: new Date().toISOString()
-    };
+    // Récupérer l'article
+    const { data: article, error: articleError } = await supabase
+      .from('articles')
+      .select('id')
+      .eq('slug', slug)
+      .single();
 
-    return NextResponse.json(comment, { status: 201 });
+    if (articleError || !article) {
+      return NextResponse.json(
+        { error: 'Article non trouvé' },
+        { status: 404 }
+      );
+    }
+
+    // Créer le commentaire
+    const { data: comment, error: commentError } = await supabase
+      .from('comments')
+      .insert({
+        article_id: article.id,
+        user_id: user.id,
+        content: content.trim(),
+        is_approved: false // Modération requise
+      })
+      .select()
+      .single();
+
+    if (commentError) {
+      console.error('Erreur lors de la création du commentaire:', commentError);
+      return NextResponse.json(
+        { error: 'Erreur lors de la création du commentaire' },
+        { status: 500 }
+      );
+    }
+
+    // Notifier l'admin (optionnel)
+    try {
+      await supabase
+        .from('admin_notifications')
+        .insert({
+          type: 'new_comment',
+          title: 'Nouveau commentaire',
+          message: `Nouveau commentaire sur l'article "${slug}" en attente de modération`,
+          data: { comment_id: comment.id, article_slug: slug }
+        });
+    } catch (notifError) {
+      console.error('Erreur notification admin:', notifError);
+      // Ne pas faire échouer la création du commentaire pour une erreur de notification
+    }
+
+    return NextResponse.json({
+      success: true,
+      message: 'Commentaire soumis avec succès. Il sera visible après modération.',
+      comment
+    });
   } catch (error) {
-    console.error('Erreur lors de la création du commentaire:', error);
+    console.error('Erreur API création commentaire:', error);
     return NextResponse.json(
       { error: 'Erreur interne du serveur' },
       { status: 500 }
     );
   }
-} 
+}

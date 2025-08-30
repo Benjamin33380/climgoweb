@@ -96,6 +96,15 @@ export function UserMenu({ user, onLogout }: UserMenuProps) {
 
           <div className="py-2">
             <Link
+              href="/dashboard"
+              className="flex items-center gap-3 px-4 py-2 text-sm hover:bg-accent transition-colors"
+              onClick={() => setIsOpen(false)}
+            >
+              <User className="w-4 h-4" />
+              Tableau de bord
+            </Link>
+
+            <Link
               href="/profile"
               className="flex items-center gap-3 px-4 py-2 text-sm hover:bg-accent transition-colors"
               onClick={() => setIsOpen(false)}

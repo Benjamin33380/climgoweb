@@ -1,143 +1,67 @@
-"use client"
+'use client';
 
-import createGlobe, { COBEOptions } from "cobe"
-import { useCallback, useEffect, useRef, useState } from "react"
-import Image from "next/image"
+import React, { useEffect, useRef } from 'react';
+import createGlobe from 'cobe';
 
-import { cn } from "@/lib/utils"
-
-const GLOBE_CONFIG: COBEOptions = {
-  width: 800,
-  height: 800,
-  onRender: () => {},
-  devicePixelRatio: 2,
-  phi: 0.8, // Rotation pour centrer sur l'Europe
-  theta: 0.9, // Angle plus élevé pour voir le pôle nord
-  dark: 1, // Fond sombre pour ne voir que les points
-  diffuse: 0,
-  mapSamples: 16000,
-  mapBrightness: 4, // Points vifs
-  baseColor: [1, 0.647, 0], // Points orange ClimGO
-  markerColor: [37 / 255, 99 / 255, 235 / 255], // Blue-600 pour cohérence
-  glowColor: [0, 0, 0], // Pas de lueur
-  markers: [
-    // Gironde/Bordeaux - notre zone principale (markers très discrets)
-    { location: [44.8378, -0.5792], size: 0.08 }, // Bordeaux - marker principal
-    { location: [44.6596, -1.1211], size: 0.05 },  // Arcachon
-    { location: [44.7922, -0.6121], size: 0.04 }, // Pessac
-    { location: [44.8049, -0.6075], size: 0.04 }, // Mérignac
-    { location: [44.8138, -0.5811], size: 0.04 }, // Talence
-    { location: [44.9778, -0.6319], size: 0.03 }, // Le Bouscat
-    { location: [44.6397, -1.0389], size: 0.03 }, // La Teste-de-Buch
-    { location: [44.7561, -1.0561], size: 0.03 }, // Gujan-Mestras
-  ],
+interface GlobeConfig {
+  width: number;
+  height: number;
+  onRender: (state: any) => void;
+  devicePixelRatio: number;
+  phi: number;
+  theta: number;
+  dark: number;
+  diffuse: number;
+  mapSamples: number;
+  mapBrightness: number;
+  baseColor: [number, number, number];
+  markerColor: [number, number, number];
+  glowColor: [number, number, number];
+  markers: Array<{
+    location: [number, number];
+    size: number;
+    color: [number, number, number];
+  }>;
 }
 
-export function Globe({
-  className,
-  config = GLOBE_CONFIG,
-  showLogo = false,
-}: {
-  className?: string
-  config?: COBEOptions
-  showLogo?: boolean
-}) {
-  const phiRef = useRef(0)
-  const widthRef = useRef(0)
-  const canvasRef = useRef<HTMLCanvasElement>(null)
-  const pointerInteracting = useRef<number | null>(null)
-  const pointerInteractionMovement = useRef(0)
-  const [r, setR] = useState(0)
+interface GlobeProps {
+  className?: string;
+  config: GlobeConfig;
+}
 
-  const updatePointerInteraction = (value: number | null) => {
-    pointerInteracting.current = value
-    if (canvasRef.current) {
-      canvasRef.current.style.cursor = value ? "grabbing" : "grab"
-    }
-  }
-
-  const updateMovement = (clientX: number) => {
-    if (pointerInteracting.current !== null) {
-      const delta = clientX - pointerInteracting.current
-      pointerInteractionMovement.current = delta
-      setR(delta / 200)
-    }
-  }
-
-  const onRender = useCallback(
-    (state: Record<string, number>) => {
-      if (!pointerInteracting.current) phiRef.current += 0.005
-      state.phi = phiRef.current + r
-      state.width = widthRef.current * 2
-      state.height = widthRef.current * 2
-    },
-    [r],
-  )
-
-  const onResize = useCallback(() => {
-    if (canvasRef.current) {
-      widthRef.current = canvasRef.current.offsetWidth
-    }
-  }, [])
+export function Globe({ className = "w-full h-full", config }: GlobeProps) {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const globeRef = useRef<any>(null);
 
   useEffect(() => {
-    window.addEventListener("resize", onResize)
-    onResize()
+    if (!canvasRef.current) return;
 
-    const globe = createGlobe(canvasRef.current!, {
+    globeRef.current = createGlobe(canvasRef.current, {
       ...config,
-      width: widthRef.current * 2,
-      height: widthRef.current * 2,
-      onRender,
-    })
+      onRender: (state: any) => {
+        // Auto-rotation
+        state.phi = config.phi + Date.now() * 0.0001;
+        config.onRender(state);
+      },
+    });
 
-    setTimeout(() => {
-      if (canvasRef.current) {
-        canvasRef.current.style.opacity = "1"
+    return () => {
+      if (globeRef.current) {
+        globeRef.current.destroy();
       }
-    })
-    return () => globe.destroy()
-  }, [config, onRender, onResize])
+    };
+  }, [config]);
 
   return (
-    <div
-      className={cn(
-        "absolute inset-0 mx-auto aspect-[1/1] w-full max-w-[600px]",
-        className,
-      )}
-    >
-      <canvas
-        className={cn(
-          "size-full opacity-0 transition-opacity duration-500 [contain:layout_paint_size]",
-        )}
-        ref={canvasRef}
-        onPointerDown={(e) =>
-          updatePointerInteraction(
-            e.clientX - pointerInteractionMovement.current,
-          )
-        }
-        onPointerUp={() => updatePointerInteraction(null)}
-        onPointerOut={() => updatePointerInteraction(null)}
-        onMouseMove={(e) => updateMovement(e.clientX)}
-        onTouchMove={(e) =>
-          e.touches[0] && updateMovement(e.touches[0].clientX)
-        }
-      />
-      
-      {/* Logo overlay au centre du globe */}
-      {showLogo && (
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div className="bg-white/90 dark:bg-black/90 backdrop-blur-sm rounded-full p-3 shadow-lg border border-gray-200/50 dark:border-gray-600/30">
-            <Image
-              src="/favicon/logo.png"
-              alt="ClimGO"
-              width={32}
-              height={32}
-              className="w-8 h-8"
-            />
-          </div>
-        </div>
-      )}
-    </div>
-  )
+    <canvas
+      ref={canvasRef}
+      className={className}
+      style={{
+        width: '100%',
+        height: '100%',
+        maxWidth: '100%',
+        aspectRatio: '1',
+      }}
+    />
+  );
 }

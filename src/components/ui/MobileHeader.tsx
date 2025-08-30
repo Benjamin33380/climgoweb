@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Menu, X, Phone, Mail, Flame, AirVent, Droplet, FileText, BookOpen, MapPin, Info, Cog, BadgeEuro } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { LogoWithFallback } from '@/components/ui/Logo3D';
+import Image from 'next/image';
 import { UserMenu } from '@/components/auth/UserMenu';
 import { useUser } from '@/hooks/useUser';
 import { ModeToggle } from '@/components/ui/mode-toggle';

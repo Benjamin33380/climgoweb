@@ -1,3 +1,8 @@
+# 📋 TEMPLATE .env ORGANISÉ PAR APPLICATION
+
+Copiez ce contenu dans votre fichier `.env` et remplacez les valeurs marquées `REMPLACER_PAR_...`
+
+```env
 # =============================================================================
 # 🌐 CONFIGURATION SITE WEB - ClimGO
 # =============================================================================
@@ -22,8 +27,8 @@ NEXT_PUBLIC_GOOGLE_PLACE_ID=ChIJBa27vbqRXgURhTwbyljm6jU
 # Settings → API → Reset Keys
 
 NEXT_PUBLIC_SUPABASE_URL=https://mpgyuwiwhfulbbilhkoy.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=sb_publishable_T9lJUZvvCTQQwiF-TSLu_g_GFm-E7Fd
-SUPABASE_SERVICE_ROLE_KEY=sb_secret_xLP8N1xR-JXeqvmjGVJqsg_H3Hbb3Qy
+NEXT_PUBLIC_SUPABASE_ANON_KEY=REMPLACER_PAR_NOUVELLE_ANON_KEY
+SUPABASE_SERVICE_ROLE_KEY=REMPLACER_PAR_NOUVELLE_SERVICE_ROLE_KEY
 
 # =============================================================================
 # ☁️ CLOUDINARY - GESTION DES IMAGES
@@ -32,9 +37,9 @@ SUPABASE_SERVICE_ROLE_KEY=sb_secret_xLP8N1xR-JXeqvmjGVJqsg_H3Hbb3Qy
 # Dashboard → Settings → Security → Generate New API Key
 
 CLOUDINARY_CLOUD_NAME=deudb7u9g
-CLOUDINARY_API_KEY=341816138128319
-CLOUDINARY_API_SECRET=ZluXD0ZTKL73IK4pqJ_7aUbEFo4
-CLOUDINARY_URL=cloudinary://341816138128319:ZluXD0ZTKL73IK4pqJ_7aUbEFo4@deudb7u9g
+CLOUDINARY_API_KEY=REMPLACER_PAR_NOUVELLE_API_KEY
+CLOUDINARY_API_SECRET=REMPLACER_PAR_NOUVEAU_SECRET
+CLOUDINARY_URL=cloudinary://NOUVELLE_API_KEY:NOUVEAU_SECRET@deudb7u9g
 
 # =============================================================================
 # 📧 RESEND - ENVOI D'EMAILS / NEWSLETTER
@@ -42,7 +47,7 @@ CLOUDINARY_URL=cloudinary://341816138128319:ZluXD0ZTKL73IK4pqJ_7aUbEFo4@deudb7u9
 # ⚠️ URGENT : RÉGÉNÉRER CETTE CLÉ SUR https://resend.com/api-keys
 # Supprimer l'ancienne clé → Create API Key
 
-RESEND_API_KEY=re_A4vzw9CB_68yaAaZLStE6wDA3cZx1gCSU
+RESEND_API_KEY=REMPLACER_PAR_NOUVELLE_RESEND_KEY
 
 # =============================================================================
 # 📮 SMTP - FORMULAIRE DE CONTACT
@@ -52,8 +57,8 @@ RESEND_API_KEY=re_A4vzw9CB_68yaAaZLStE6wDA3cZx1gCSU
 # Autre : Changer le mot de passe du compte email
 
 SMTP_USER=contact@climgo.fr
-SMTP_PASSWORD=climgo13ben
-SMTP_PASS=climgo13ben
+SMTP_PASSWORD=REMPLACER_PAR_NOUVEAU_MOT_DE_PASSE
+SMTP_PASS=REMPLACER_PAR_NOUVEAU_MOT_DE_PASSE
 
 # =============================================================================
 # 🔴 UPSTASH REDIS - CACHE ET SESSIONS
@@ -61,8 +66,8 @@ SMTP_PASS=climgo13ben
 # ⚠️ URGENT : RÉGÉNÉRER CES TOKENS SUR https://console.upstash.com/
 # Sélectionner votre base Redis → Settings → Reset Token
 
-UPSTASH_REDIS_REST_URL="https://saving-locust-14245.upstash.io"
-UPSTASH_REDIS_REST_TOKEN="ATelAAIncDFkNGQyMmVhY2YxM2I0NjdmOTBmMGU1MTczMmIyOWEwMnAxMTQyNDU"
+UPSTASH_REDIS_REST_URL=REMPLACER_PAR_NOUVELLE_URL
+UPSTASH_REDIS_REST_TOKEN=REMPLACER_PAR_NOUVEAU_TOKEN
 
 # =============================================================================
 # 🔒 SÉCURITÉ - JWT ET AUTHENTIFICATION
@@ -70,5 +75,72 @@ UPSTASH_REDIS_REST_TOKEN="ATelAAIncDFkNGQyMmVhY2YxM2I0NjdmOTBmMGU1MTczMmIyOWEwMn
 # ⚠️ URGENT : GÉNÉRER UN NOUVEAU SECRET
 # Commande : node -e "console.log(require('crypto').randomBytes(64).toString('hex'))"
 
-JWT_SECRET="671ef5543141cf9795e6d4945da6e47d2cea9ccbdd030fbdb3112c90a64c0da2d510c2a530abbf8997494dad64d668d5adfac7e9bd4b3d9639887db022f16ac8"
+JWT_SECRET="REMPLACER_PAR_NOUVEAU_SECRET_64_CARACTERES"
 
+# =============================================================================
+# 📊 MONGODB (LEGACY - PEUT-ÊTRE SUPPRIMÉ)
+# =============================================================================
+# ⚠️ Cette variable semble être un reste de l'ancienne config
+# Vérifiez si elle est encore utilisée
+
+DATABASE_URL="mongodb+srv://climgocontact:faXXK2PSu1xrjD3WQcluster0.uq5codb.mongodb.net/climgodb?retryWrites=true&w=majority&appName=Cluster0"
+```
+
+## 📋 ORDRE DE REMPLACEMENT RECOMMANDÉ
+
+### 🔥 PRIORITÉ 1 : SUPABASE (pour débloquer l'admin)
+```env
+NEXT_PUBLIC_SUPABASE_ANON_KEY=VOTRE_NOUVELLE_ANON_KEY
+SUPABASE_SERVICE_ROLE_KEY=VOTRE_NOUVELLE_SERVICE_ROLE_KEY
+```
+
+### 🔥 PRIORITÉ 2 : CLOUDINARY (pour les images)
+```env
+CLOUDINARY_API_KEY=VOTRE_NOUVELLE_API_KEY
+CLOUDINARY_API_SECRET=VOTRE_NOUVEAU_SECRET
+CLOUDINARY_URL=cloudinary://NOUVELLE_API_KEY:NOUVEAU_SECRET@deudb7u9g
+```
+
+### 🔥 PRIORITÉ 3 : RESEND (pour les emails)
+```env
+RESEND_API_KEY=VOTRE_NOUVELLE_RESEND_KEY
+```
+
+### 🔥 PRIORITÉ 4 : REDIS (pour le cache)
+```env
+UPSTASH_REDIS_REST_URL=VOTRE_NOUVELLE_URL
+UPSTASH_REDIS_REST_TOKEN=VOTRE_NOUVEAU_TOKEN
+```
+
+### 🔥 PRIORITÉ 5 : SMTP (pour le contact)
+```env
+SMTP_PASSWORD=VOTRE_NOUVEAU_MOT_DE_PASSE
+SMTP_PASS=VOTRE_NOUVEAU_MOT_DE_PASSE
+```
+
+### 🔥 PRIORITÉ 6 : JWT SECRET
+```bash
+# Générer un nouveau secret
+node -e "console.log(require('crypto').randomBytes(64).toString('hex'))"
+```
+
+## 🎯 INSTRUCTIONS
+
+1. **Copiez** ce template dans votre fichier `.env`
+2. **Remplacez** chaque `REMPLACER_PAR_...` par la vraie valeur
+3. **Commencez par SUPABASE** pour débloquer l'admin
+4. **Testez** après chaque service : `npm run dev`
+5. **Vérifiez l'admin** : `http://localhost:3001/admin/login`
+
+## ⚡ COMMANDES UTILES
+
+```bash
+# Générer JWT Secret
+node -e "console.log(require('crypto').randomBytes(64).toString('hex'))"
+
+# Tester l'admin
+npm run check-admin
+
+# Redémarrer le serveur
+npm run dev
+```
