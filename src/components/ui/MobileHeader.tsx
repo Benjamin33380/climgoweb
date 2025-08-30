@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Menu, X, Phone, Mail } from 'lucide-react';
+import { Menu, X, Phone, Mail, Flame, AirVent, Droplet, FileText, BookOpen, MapPin, Info, Cog, BadgeEuro } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { LogoWithFallback } from '@/components/ui/Logo3D';
 import { UserMenu } from '@/components/auth/UserMenu';
@@ -10,10 +10,10 @@ import { useUser } from '@/hooks/useUser';
 import { ModeToggle } from '@/components/ui/mode-toggle';
 
 const services = [
-  { title: "Chauffage", href: "/chauffage" },
-  { title: "Climatisation", href: "/climatisation" },
-  { title: "Eau chaude sanitaire", href: "/eau-chaude-sanitaire" },
-  { title: "Maintenance", href: "/maintenance" },
+  { title: "Chauffage", href: "/chauffage", icon: <Flame className="w-5 h-5" /> },
+  { title: "Climatisation", href: "/climatisation", icon: <AirVent className="w-5 h-5" /> },
+  { title: "Eau chaude sanitaire", href: "/eau-chaude-sanitaire", icon: <Droplet className="w-5 h-5" /> },
+  { title: "Maintenance", href: "/maintenance", icon: <FileText className="w-5 h-5" /> },
 ];
 
 export default function MobileHeader() {
@@ -28,10 +28,7 @@ export default function MobileHeader() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <LogoWithFallback fallbackPngUrl="/favicon/logo.png" isHovered={false} />
-            <div className="flex flex-col">
-              <span className="font-bold text-lg text-gray-900 dark:text-white">ClimGO</span>
-              <span className="text-xs text-gray-600 dark:text-gray-400">Devis gratuit</span>
-            </div>
+            <span className="font-bold text-lg text-gray-900 dark:text-white">ClimGO</span>
           </Link>
 
           {/* Actions Mobile */}
@@ -51,9 +48,9 @@ export default function MobileHeader() {
 
       {/* Menu Mobile Overlay */}
       {isMenuOpen && (
-        <div className="lg:hidden fixed inset-0 z-40 bg-black bg-opacity-50" onClick={() => setIsMenuOpen(false)}>
-          <div className="fixed right-0 top-16 h-full w-80 bg-white dark:bg-gray-900 shadow-xl transform transition-transform duration-300 ease-in-out">
-            <div className="p-6 space-y-6">
+        <div className="lg:hidden fixed inset-0 z-40 bg-black/80 backdrop-blur-sm" onClick={() => setIsMenuOpen(false)}>
+          <div className="fixed inset-0 top-16 bg-white dark:bg-gray-900 shadow-2xl transform transition-transform duration-300 ease-in-out overflow-hidden">
+            <div className="h-full overflow-y-auto p-6 space-y-6">
               {/* Navigation */}
               <nav className="space-y-4">
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Services</h3>
@@ -61,34 +58,66 @@ export default function MobileHeader() {
                   <Link
                     key={service.title}
                     href={service.href}
-                    className="block py-3 px-4 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
+                    className="flex items-center py-3 px-4 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors space-x-3"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    {service.title}
+                    <div className="flex-shrink-0 text-gray-700 dark:text-gray-300">
+                      {service.icon}
+                    </div>
+                    <span>{service.title}</span>
                   </Link>
                 ))}
                 
                 <div className="border-t border-gray-200 dark:border-gray-700 pt-4 mt-4">
                   <Link
                     href="/zones-interventions"
-                    className="block py-3 px-4 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
+                    className="flex items-center py-3 px-4 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors space-x-3"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    Zones d'intervention
+                    <div className="flex-shrink-0 text-gray-700 dark:text-gray-300">
+                      <MapPin className="w-5 h-5" />
+                    </div>
+                    <span>Zones d'intervention</span>
+                  </Link>
+                  <Link
+                    href="/aides-etat"
+                    className="flex items-center py-3 px-4 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors space-x-3"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <div className="flex-shrink-0 text-gray-700 dark:text-gray-300">
+                      <BadgeEuro className="w-5 h-5" />
+                    </div>
+                    <span>Aides et Subventions</span>
                   </Link>
                   <Link
                     href="/blog"
-                    className="block py-3 px-4 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
+                    className="flex items-center py-3 px-4 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors space-x-3"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    Blog
+                    <div className="flex-shrink-0 text-gray-700 dark:text-gray-300">
+                      <BookOpen className="w-5 h-5" />
+                    </div>
+                    <span>Blog</span>
                   </Link>
                   <Link
                     href="/contact"
-                    className="block py-3 px-4 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
+                    className="flex items-center py-3 px-4 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors space-x-3"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    Contact
+                    <div className="flex-shrink-0 text-gray-700 dark:text-gray-300">
+                      <Mail className="w-5 h-5" />
+                    </div>
+                    <span>Contact</span>
+                  </Link>
+                  <Link
+                    href="/a-propos"
+                    className="flex items-center py-3 px-4 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors space-x-3"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <div className="flex-shrink-0 text-gray-700 dark:text-gray-300">
+                      <Info className="w-5 h-5" />
+                    </div>
+                    <span>À Propos</span>
                   </Link>
                 </div>
               </nav>

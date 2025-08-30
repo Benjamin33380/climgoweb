@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin, Wrench, Droplet, FileText, Star, Github, Twitter, AirVent, BadgeEuro } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin, Flame, Droplet, FileText, Star, Github, Twitter, AirVent, BadgeEuro } from 'lucide-react';
 import NewsletterSignup from '@/components/NewsletterSignup';
 
 const services = [
-  { title: "Chauffage", href: "/chauffage", icon: <Wrench className="w-4 h-4" /> },
+  { title: "Chauffage", href: "/chauffage", icon: <Flame className="w-4 h-4" /> },
   { title: "Climatisation", href: "/climatisation", icon: <AirVent className="w-4 h-4" /> },
   { title: "Eau chaude sanitaire", href: "/eau-chaude-sanitaire", icon: <Droplet className="w-4 h-4" /> },
   { title: "Maintenance", href: "/maintenance", icon: <FileText className="w-4 h-4" /> },

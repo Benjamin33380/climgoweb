@@ -24,8 +24,9 @@ export default function Services() {
           <SimpleWrapper>
             <Link href="/climatisation" className="group block bg-white dark:bg-black backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 sm:hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#2563EB]/50 dark:hover:border-[#60A5FA] h-64 sm:h-72 lg:h-80 flex flex-col">
             <div className="text-center flex flex-col justify-center h-full">
-              <div className="bg-[#2563EB]/10 dark:bg-[#2563EB]/20 rounded-full w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Snowflake className="w-8 h-8 sm:w-12 sm:h-12 text-[#2563EB] dark:text-[#60A5FA]" />
+              {/* Icône service avec pastille uniforme */}
+              <div className="bg-[#2563EB]/10 dark:bg-[#2563EB]/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Snowflake className="w-10 h-10 text-[#2563EB] dark:text-[#60A5FA]" />
               </div>
               <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-[#2563EB] dark:group-hover:text-[#60A5FA] transition-colors px-2">
                 Climatisation
@@ -42,8 +43,9 @@ export default function Services() {
           <SimpleWrapper>
             <Link href="/chauffage" className="group block bg-white dark:bg-black backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 sm:hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#FF8C00]/50 dark:hover:border-[#FFA500] h-64 sm:h-72 lg:h-80 flex flex-col">
             <div className="text-center flex flex-col justify-center h-full">
-              <div className="bg-[#FF8C00]/10 dark:bg-[#FF8C00]/20 rounded-full w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Flame className="w-8 h-8 sm:w-12 sm:h-12 text-[#FF8C00] dark:text-[#FFA500]" />
+              {/* Icône service avec pastille uniforme */}
+              <div className="bg-[#FF8C00]/10 dark:bg-[#FF8C00]/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Flame className="w-10 h-10 text-[#FF8C00] dark:text-[#FFA500]" />
               </div>
               <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-[#FF8C00] dark:group-hover:text-[#FFA500] transition-colors px-2">
                 Chauffage
@@ -59,8 +61,9 @@ export default function Services() {
           <SimpleWrapper>
             <Link href="/eau-chaude-sanitaire" className="group block bg-white dark:bg-black backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 sm:hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#FF6B6B]/50 dark:hover:border-[#FF6B6B] h-64 sm:h-72 lg:h-80 flex flex-col">
             <div className="text-center flex flex-col justify-center h-full">
-              <div className="bg-[#FF6B6B]/10 dark:bg-[#FF6B6B]/20 rounded-full w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Droplets className="w-8 h-8 sm:w-12 sm:h-12 text-[#FF6B6B] dark:text-[#FF6B6B]" />
+              {/* Icône service avec pastille uniforme */}
+              <div className="bg-[#FF6B6B]/10 dark:bg-[#FF6B6B]/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Droplets className="w-10 h-10 text-[#FF6B6B] dark:text-[#FF6B6B]" />
               </div>
               <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-[#FF6B6B] dark:group-hover:text-[#FF6B6B] transition-colors px-2">
                 Eau Chaude Sanitaire
@@ -76,8 +79,9 @@ export default function Services() {
           <SimpleWrapper>
             <Link href="/maintenance" className="group block bg-white dark:bg-black backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 sm:hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#10B981]/50 dark:hover:border-[#34D399] h-64 sm:h-72 lg:h-80 flex flex-col">
             <div className="text-center flex flex-col justify-center h-full">
-              <div className="bg-[#10B981]/10 dark:bg-[#10B981]/20 rounded-full w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Wrench className="w-8 h-8 sm:w-12 sm:h-12 text-[#10B981] dark:text-[#34D399]" />
+              {/* Icône service avec pastille uniforme */}
+              <div className="bg-[#10B981]/10 dark:bg-[#10B981]/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Wrench className="w-10 h-10 text-[#10B981] dark:text-[#34D399]" />
               </div>
               <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-[#10B981] dark:group-hover:text-[#10B981] transition-colors px-2">
                 Maintenance
