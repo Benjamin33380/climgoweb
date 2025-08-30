@@ -1,7 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { NewHeader } from "@/components/ui/NewHeader";
+import { NewHeader } from "@/components/ui/NewHeader"
+import MobileHeader from "@/components/ui/MobileHeader";
 import Footer from "@/components/ui/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ClientHeroUIProvider } from "@/components/providers/HeroUIProvider";
@@ -404,7 +405,13 @@ export default function RootLayout({
                 blurIntensity={scrollShadowConfig.blurIntensity}
                 className="min-h-screen bg-background text-foreground"
               >
-                <NewHeader />
+                {/* Header Desktop */}
+                <div className="hidden lg:block">
+                  <NewHeader />
+                </div>
+                {/* Header Mobile */}
+                <MobileHeader />
+                
                 <main className="flex-1">{children}</main>
                 <Footer />
               </GlobalScrollShadow>
