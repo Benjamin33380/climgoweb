@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Logo3D } from '@/components/ui/Logo3D';
+
 import { getCityClientProfiles } from '@/data/clientProfiles';
 
 interface FAQItem {
@@ -131,11 +131,11 @@ export default function FAQChat({
                           </div>
                         </div>
                         <div className="ml-2 sm:ml-3 flex-shrink-0 flex items-end">
-                          <div className="w-10 sm:w-12 h-10 sm:h-12 flex items-center justify-center">
-                            <Logo3D 
-                              glbUrl="/favicon/logo.glb" 
-                              isHovered={false}
-                              className="w-8 sm:w-10 h-8 sm:h-10"
+                          <div className="w-10 sm:w-12 h-10 sm:h-12 flex items-center justify-center bg-white dark:bg-gray-800 rounded-full shadow-sm border border-gray-200 dark:border-gray-600">
+                            <img 
+                              src="/favicon/logo.png" 
+                              alt="ClimGO Expert" 
+                              className="w-6 sm:w-8 h-6 sm:h-8 object-contain"
                             />
                           </div>
                         </div>

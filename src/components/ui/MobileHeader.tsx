@@ -28,7 +28,7 @@ export default function MobileHeader() {
         <div className="flex h-16 items-center justify-between px-4">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <LogoWithFallback fallbackPngUrl="/favicon/logo.png" isHovered={false} />
+            <LogoWithFallback isHovered={false} />
             <span className="font-bold text-lg text-gray-900 dark:text-white">ClimGO</span>
           </Link>
 

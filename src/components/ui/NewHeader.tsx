@@ -126,21 +126,20 @@ export function NewHeader() {
               <NavigationMenuItem>
                 <NavigationMenuTrigger>Nos Services</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                  <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[480px] lg:grid-cols-[.7fr_1fr]">
                     <li className="row-span-3">
                       <NavigationMenuLink asChild>
                         <a
-                          className="flex h-full w-full select-none flex-col justify-center rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md group"
+                          className="flex h-full w-full select-none flex-col justify-center rounded-md bg-gradient-to-b from-muted/50 to-muted p-5 no-underline outline-none focus:shadow-md group"
                           href="/services"
                           onMouseEnter={() => setIsServicesHovered(true)}
                           onMouseLeave={() => setIsServicesHovered(false)}
                         >
-                          <div className="flex justify-center items-center mb-5 flex-grow">
+                          <div className="flex justify-center items-center mb-4 flex-grow">
                             <LogoWithFallback
                               glbUrl="/favicon/logo.glb"
-                              fallbackPngUrl="/favicon/logo.png"
                               isHovered={isServicesHovered}
-                              className="transition-all duration-300"
+                              className="w-20 h-20 transition-all duration-300"
                             />
                           </div>
                           <div className="text-center">
@@ -268,7 +267,6 @@ export function NewHeader() {
                           <div className="flex justify-center items-center mb-4">
                             <LogoWithFallback
                               glbUrl="/favicon/logo.glb"
-                              fallbackPngUrl="/favicon/logo.png"
                               isHovered={isContactHovered}
                               className="w-16 h-16 transition-all duration-300"
                             />

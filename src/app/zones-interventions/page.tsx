@@ -187,13 +187,13 @@ export default function ZonesInterventions() {
         
         <div className="relative z-10 container mx-auto px-4 pt-8 md:pt-12 lg:min-h-screen lg:flex lg:flex-col lg:justify-center">
           {/* Hero Content - Mobile: Globe above, Desktop: Side by side */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start lg:items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 xl:gap-20 items-center">
             {/* Title and Description - Mobile: Below, Desktop: Left */}
             <div className="text-left order-last lg:order-first">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-black dark:text-white mb-6 md:mb-8 tracking-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-black dark:text-white mb-6 md:mb-8 tracking-tight leading-tight">
                 Zones d&apos;Intervention
               </h1>
-              <p className="text-lg md:text-xl lg:text-2xl text-black/80 dark:text-white/80 leading-relaxed mb-8 md:mb-12">
+              <p className="text-lg md:text-xl lg:text-xl xl:text-2xl text-black/80 dark:text-white/80 leading-relaxed mb-8 md:mb-12 max-w-2xl">
                 Nous intervenons dans toute la <span className="font-semibold text-black dark:text-white whitespace-nowrap">Gironde</span>, sur le <span className="font-semibold text-black dark:text-white whitespace-nowrap">Bassin d'Arcachon</span>, <span className="font-semibold text-black dark:text-white whitespace-nowrap">Bordeaux Métropole</span> et dans le <span className="font-semibold text-black dark:text-white whitespace-nowrap">Nord des Landes</span>.
               </p>
               
@@ -221,69 +221,16 @@ export default function ZonesInterventions() {
               
               {/* Globe - Visible on Mobile, Hidden on Desktop */}
               <div className="flex lg:hidden items-center justify-center mt-40 mb-8">
-                <div className="w-full h-64 max-w-sm">
-                  <Globe 
-                    className="w-full h-full"
-                    config={{
-                      width: 800,
-                      height: 800,
-                      onRender: () => {},
-                      devicePixelRatio: 2,
-                      phi: 0.8,
-                      theta: 0.9,
-                      dark: 0.2,
-                      diffuse: 0.3,
-                      mapSamples: 16000,
-                      mapBrightness: 8,
-                      baseColor: [1, 1, 1],
-                      markerColor: [0, 0, 0],
-                      glowColor: [0.8, 0.8, 0.8],
-                      markers: [
-                        { location: [44.8378, -0.5792], size: 0.12, color: [0, 0, 0] },
-                        { location: [44.6596, -1.1211], size: 0.08, color: [0, 0, 0] },
-                        { location: [44.7922, -0.6121], size: 0.07, color: [0, 0, 0] },
-                        { location: [44.8049, -0.6075], size: 0.07, color: [0, 0, 0] },
-                        { location: [44.8138, -0.5811], size: 0.07, color: [0, 0, 0] },
-                        { location: [44.9778, -0.6319], size: 0.06, color: [0, 0, 0] },
-                        { location: [44.7561, -1.0561], size: 0.06, color: [0, 0, 0] },
-                      ]
-                    }}
-                  />
+                <div className="w-96 h-96 max-w-md">
+                  <Globe className="w-full h-full" />
                 </div>
               </div>
             </div>
             
             {/* Globe - Hidden on Mobile, Visible on Desktop */}
-            <div className="hidden lg:flex items-center justify-end order-first lg:order-last">
-              <div className="w-full h-[500px] xl:h-[600px] max-w-xl xl:max-w-2xl transform translate-x-6 xl:translate-x-8">
-                <Globe 
-                  className="w-full h-full"
-                  config={{
-                    width: 800,
-                    height: 800,
-                    onRender: () => {},
-                    devicePixelRatio: 2,
-                    phi: 0.8,
-                    theta: 0.9,
-                    dark: 0.2,
-                    diffuse: 0.3,
-                    mapSamples: 16000,
-                    mapBrightness: 8,
-                    baseColor: [1, 1, 1],
-                    markerColor: [0, 0, 0],
-                    glowColor: [0.8, 0.8, 0.8],
-                    markers: [
-                      { location: [44.8378, -0.5792], size: 0.12, color: [0, 0, 0] },
-                      { location: [44.6596, -1.1211], size: 0.08, color: [0, 0, 0] },
-                      { location: [44.7922, -0.6121], size: 0.07, color: [0, 0, 0] },
-                      { location: [44.8049, -0.6075], size: 0.07, color: [0, 0, 0] },
-                      { location: [44.8138, -0.5811], size: 0.07, color: [0, 0, 0] },
-                      { location: [44.9778, -0.6319], size: 0.06, color: [0, 0, 0] },
-                      { location: [44.6397, -1.0389], size: 0.07, color: [0, 0, 0] },
-                      { location: [44.7561, -1.0561], size: 0.06, color: [0, 0, 0] },
-                    ]
-                  }}
-                />
+            <div className="hidden lg:flex items-center justify-center order-first lg:order-last">
+              <div className="w-[750px] h-[750px] xl:w-[850px] xl:h-[850px]">
+                <Globe className="w-full h-full" />
               </div>
             </div>
 

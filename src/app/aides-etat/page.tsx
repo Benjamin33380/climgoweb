@@ -150,6 +150,11 @@ export default function AidesEtatPage() {
                           width={40}
                           height={40}
                           className="object-contain w-8 h-8 xs:w-10 xs:h-10 sm:w-12 sm:h-12"
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            target.style.display = 'none';
+                            target.parentElement!.innerHTML = '<div class="w-8 h-8 xs:w-10 xs:h-10 sm:w-12 sm:h-12 bg-primary/20 rounded flex items-center justify-center text-primary font-bold text-xs">€</div>';
+                          }}
                         />
                       </div>
                       <span className="text-base xs:text-lg sm:text-xl md:text-xl font-semibold text-foreground">
