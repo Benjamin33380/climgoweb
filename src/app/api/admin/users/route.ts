@@ -90,7 +90,13 @@ export async function PATCH(request: NextRequest) {
       );
     }
 
-    let updateData: any = {};
+    let updateData: { 
+      is_banned?: boolean; 
+      banned_reason?: string; 
+      banned_until?: string;
+      email_verified?: boolean;
+      is_admin?: boolean;
+    } = {};
 
     switch (action) {
       case 'ban':

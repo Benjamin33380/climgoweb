@@ -102,8 +102,8 @@ export default function AdminUsersPage() {
       const data = await response.json();
       setUsers(data.users);
       setPagination(data.pagination);
-    } catch (error: any) {
-      setError(error.message);
+    } catch (error: unknown) {
+      setError(error instanceof Error ? error.message : 'Erreur inconnue');
     } finally {
       setLoading(false);
     }
@@ -129,8 +129,8 @@ export default function AdminUsersPage() {
 
       setSuccess(`Action "${action}" effectuée avec succès`);
       await loadUsers();
-    } catch (error: any) {
-      setError(error.message);
+    } catch (error: unknown) {
+      setError(error instanceof Error ? error.message : 'Erreur inconnue');
     } finally {
       setActionLoading(null);
     }

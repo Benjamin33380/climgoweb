@@ -51,7 +51,7 @@ interface UserProfile {
   is_banned: boolean;
   email_verified: boolean;
   newsletter_subscribed: boolean;
-  preferences: Record<string, any>;
+  preferences: Record<string, unknown>;
   created_at: string;
   last_login?: string;
 }
@@ -135,8 +135,8 @@ export default function ProfilePage() {
         website: data.website || '',
         newsletter_subscribed: data.newsletter_subscribed || false
       });
-    } catch (error: any) {
-      setError('Erreur lors du chargement du profil: ' + error.message);
+    } catch (error: unknown) {
+      setError('Erreur lors du chargement du profil: ' + (error instanceof Error ? error.message : 'Erreur inconnue'));
     } finally {
       setLoading(false);
     }
@@ -197,8 +197,8 @@ export default function ProfilePage() {
       setIsEditing(false);
       await loadProfile();
       await refreshUser();
-    } catch (error: any) {
-      setError('Erreur lors de la sauvegarde: ' + error.message);
+    } catch (error: unknown) {
+      setError('Erreur lors de la sauvegarde: ' + (error instanceof Error ? error.message : 'Erreur inconnue'));
     } finally {
       setSaving(false);
     }

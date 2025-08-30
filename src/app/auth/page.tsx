@@ -54,8 +54,8 @@ export default function AuthPage() {
           router.push('/');
         }, 1000);
       }
-    } catch (error: any) {
-      setError(error.message || 'Erreur lors de la connexion');
+    } catch (error: unknown) {
+      setError(error instanceof Error ? error.message : 'Erreur lors de la connexion');
     } finally {
       setLoading(false);
     }
@@ -98,8 +98,8 @@ export default function AuthPage() {
         setSuccess('Inscription réussie ! Vérifiez votre email pour confirmer votre compte.');
         setRegisterForm({ email: '', password: '', confirmPassword: '', username: '' });
       }
-    } catch (error: any) {
-      setError(error.message || 'Erreur lors de l\'inscription');
+    } catch (error: unknown) {
+      setError(error instanceof Error ? error.message : 'Erreur lors de l\'inscription');
     } finally {
       setLoading(false);
     }

@@ -25,7 +25,7 @@ interface Notification {
   type: string;
   title: string;
   message: string;
-  data: Record<string, any>;
+  data: Record<string, unknown>;
   is_read: boolean;
   user_id?: string;
   related_id?: string;

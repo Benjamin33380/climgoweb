@@ -118,8 +118,8 @@ export default function AdminDashboard() {
       setChartData(data.chartData);
       setTopArticles(data.topArticles);
       setRecentActivity(data.recentActivity);
-    } catch (error: any) {
-      setError(error.message);
+            } catch (error: unknown) {
+      setError(error instanceof Error ? error.message : 'Erreur inconnue');
     } finally {
       setLoading(false);
     }

@@ -16,7 +16,7 @@ export function ArticleTracker({ articleId, articleSlug }: ArticleTrackerProps) 
   const [scrollPercentage, setScrollPercentage] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
   const trackedRef = useRef(false);
-  const scrollTimeoutRef = useRef<NodeJS.Timeout>();
+  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   // Générer un ID de session unique
   useEffect(() => {

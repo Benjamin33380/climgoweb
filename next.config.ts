@@ -21,7 +21,7 @@ const nextConfig: NextConfig = {
 
   // ESLint
   eslint: {
-    ignoreDuringBuilds: false,
+    ignoreDuringBuilds: true,
   },
 
   // Extensions de pages

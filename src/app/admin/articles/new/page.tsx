@@ -170,7 +170,7 @@ export default function NewArticlePage() {
 
       setSuccess('Image uploadée avec succès !');
     } catch (error: unknown) {
-      setError('Erreur lors de l\'upload: ' + error.message);
+      setError('Erreur lors de l\'upload: ' + (error instanceof Error ? error.message : 'Erreur inconnue'));
     } finally {
       setUploading(false);
     }
@@ -237,7 +237,7 @@ export default function NewArticlePage() {
       }, 2000);
 
     } catch (error: unknown) {
-      setError('Erreur lors de la sauvegarde: ' + error.message);
+      setError('Erreur lors de la sauvegarde: ' + (error instanceof Error ? error.message : 'Erreur inconnue'));
     } finally {
       setSaving(false);
     }

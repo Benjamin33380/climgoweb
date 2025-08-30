@@ -5,7 +5,7 @@ import { Resend } from 'resend';
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Fonction pour envoyer la newsletter automatiquement
-async function sendArticleNewsletter(article: any) {
+async function sendArticleNewsletter(article: { title: string; excerpt: string; slug: string; category?: string; image_url?: string; image_alt?: string; reading_time?: number; tags?: string[] }) {
   try {
     // Récupérer tous les abonnés actifs
     const { data: subscribers } = await supabase
@@ -58,7 +58,7 @@ async function sendArticleNewsletter(article: any) {
           </div>
           
           <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb; font-size: 14px; color: #6b7280;">
-            <p><strong>Temps de lecture estimé:</strong> ${article.reading_time} minute${article.reading_time > 1 ? 's' : ''}</p>
+            <p><strong>Temps de lecture estimé:</strong> ${article.reading_time || 5} minute${(article.reading_time || 5) > 1 ? 's' : ''}</p>
             ${article.tags && article.tags.length > 0 ? `<p><strong>Tags:</strong> ${article.tags.join(', ')}</p>` : ''}
           </div>
         </div>
