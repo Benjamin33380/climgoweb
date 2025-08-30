@@ -47,7 +47,7 @@ interface ArticleForm {
 export default function NewArticlePage() {
   const { user } = useUser();
   const router = useRouter();
-  const [loading, setLoading] = useState(false);
+  const [_loading, _setLoading] = useState(false);
   const [saving, setSaving] = useState(false);
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState('');
@@ -160,16 +160,16 @@ export default function NewArticlePage() {
         throw new Error('Erreur lors de l\'upload de l\'image');
       }
 
-      const data = await response.json();
+      const _data = await response.json();
       
       setForm(prev => ({
         ...prev,
-        image_url: data.secure_url,
+        image_url: _data.secure_url,
         image_alt: prev.image_alt || form.title
       }));
 
       setSuccess('Image uploadée avec succès !');
-    } catch (error: any) {
+    } catch (error: unknown) {
       setError('Erreur lors de l\'upload: ' + error.message);
     } finally {
       setUploading(false);
@@ -236,7 +236,7 @@ export default function NewArticlePage() {
         router.push('/admin/articles');
       }, 2000);
 
-    } catch (error: any) {
+    } catch (error: unknown) {
       setError('Erreur lors de la sauvegarde: ' + error.message);
     } finally {
       setSaving(false);

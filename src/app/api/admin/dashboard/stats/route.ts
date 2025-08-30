@@ -128,7 +128,7 @@ export async function GET(request: NextRequest) {
   }
 }
 
-function getDeviceBreakdown(sessions: any[]) {
+function getDeviceBreakdown(sessions: Array<Record<string, unknown>>) {
   const devices = sessions.reduce((acc, session) => {
     const device = session.device_type || 'Unknown';
     acc[device] = (acc[device] || 0) + 1;
@@ -141,7 +141,7 @@ function getDeviceBreakdown(sessions: any[]) {
   }));
 }
 
-function calculateAverageReadingTime(views: any[]) {
+function calculateAverageReadingTime(views: Array<Record<string, unknown>>) {
   const validReadingTimes = views
     .map(v => v.reading_time)
     .filter(time => time && time > 0);
@@ -153,7 +153,7 @@ function calculateAverageReadingTime(views: any[]) {
   );
 }
 
-function calculateBounceRate(views: any[]) {
+function calculateBounceRate(views: Array<Record<string, unknown>>) {
   // Bounce rate simplifié : vues avec moins de 30 secondes de lecture
   const totalViews = views.length;
   if (totalViews === 0) return 0;
@@ -162,7 +162,7 @@ function calculateBounceRate(views: any[]) {
   return Math.round((bounces / totalViews) * 100);
 }
 
-function generateChartData(users: any[], sessions: any[], views: any[], period: number) {
+function generateChartData(users: Array<Record<string, unknown>>, sessions: Array<Record<string, unknown>>, views: Array<Record<string, unknown>>, period: number) {
   const data = [];
   const now = new Date();
   
