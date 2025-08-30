@@ -70,7 +70,7 @@ export default function NewsletterSignup() {
         />
         <button
           type="submit"
-          className="px-3 py-2 bg-foreground text-background text-xs rounded-md hover:bg-foreground/90 transition-colors flex items-center justify-center disabled:opacity-50"
+          className="px-3 py-2 text-xs rounded-md transition-colors flex items-center justify-center disabled:opacity-50 bg-background text-foreground border border-border hover:bg-accent hover:text-accent-foreground"
           aria-label="S'inscrire à la newsletter"
           disabled={loading}
         >

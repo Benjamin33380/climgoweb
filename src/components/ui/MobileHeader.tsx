@@ -140,12 +140,13 @@ export default function MobileHeader() {
                 <div className="space-y-3">
                   <h4 className="text-sm font-medium">Contact rapide</h4>
                   <div className="flex space-x-2">
-                    <Button size="sm" className="flex-1 bg-foreground text-background hover:bg-foreground/90" asChild>
-                      <Link href="tel:0556000000">
-                        <Phone className="h-4 w-4 mr-2" />
-                        Appeler
-                      </Link>
-                    </Button>
+                    <Link 
+                      href="tel:0556000000"
+                      className="flex-1 flex items-center justify-center px-3 py-2 text-xs rounded-md transition-colors bg-background text-foreground border border-border hover:bg-accent hover:text-accent-foreground"
+                    >
+                      <Phone className="h-4 w-4 mr-2" />
+                      Appeler
+                    </Link>
                     <Button size="sm" variant="outline" className="flex-1" asChild>
                       <Link href="/contact">
                         <Mail className="h-4 w-4 mr-2" />

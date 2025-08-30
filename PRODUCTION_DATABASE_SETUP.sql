@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS users (
   bio TEXT,
   website TEXT,
   points_activity INTEGER DEFAULT 0,
-  is_admin BOOLEAN DEFAULT FALSE,
+  is_admin BOOLEAN DEFAULT FALSE,o l
   is_banned BOOLEAN DEFAULT FALSE,
   email_verified BOOLEAN DEFAULT FALSE,
   newsletter_subscribed BOOLEAN DEFAULT FALSE,

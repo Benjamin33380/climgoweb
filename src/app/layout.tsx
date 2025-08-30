@@ -10,6 +10,7 @@ import { UserProvider } from "@/hooks/useUser";
 import { GlobalScrollShadow } from '@/components/ui/GlobalScrollShadow';
 import { scrollShadowConfig } from '@/config/scrollShadow';
 import { PerformanceOptimizations } from '@/components/PerformanceOptimizations';
+
 import { GoogleAnalytics } from '@/components/GoogleAnalytics';
 
 const geistSans = Geist({
@@ -114,7 +115,8 @@ export const metadata: Metadata = {
     "zones-desservies": "Gironde, Bordeaux Métropole, Bassin d'Arcachon",
     "mobile-web-app-capable": "yes",
     "apple-mobile-web-app-capable": "yes",
-    "apple-mobile-web-app-status-bar-style": "black-translucent",
+    "apple-mobile-web-app-status-bar-style": "default",
+    "theme-color": "#ffffff",
     "apple-mobile-web-app-title": "ClimGO",
     "application-name": "ClimGO",
     "msapplication-TileColor": "#0ea5e9",
