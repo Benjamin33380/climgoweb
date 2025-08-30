@@ -55,6 +55,7 @@ export function AdminAuthProvider({ children }: { children: React.ReactNode }) {
 
       if (response.ok) {
         const data = await response.json();
+        console.log('Réponse API login:', data); // Debug
         
         // Vérifier si l'utilisateur est admin
         if (data.user && data.user.is_admin) {
@@ -69,12 +70,15 @@ export function AdminAuthProvider({ children }: { children: React.ReactNode }) {
           localStorage.setItem('adminUser', JSON.stringify(adminUser));
           
           setUser(adminUser);
+          console.log('Redirection vers dashboard...'); // Debug
           router.push('/admin/dashboard');
           return true;
         } else {
+          console.log('Utilisateur non admin:', data.user); // Debug
           return false;
         }
       } else {
+        console.log('Erreur response:', response.status); // Debug
         return false;
       }
     } catch (error) {
