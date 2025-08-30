@@ -5,383 +5,648 @@ import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Loader2, MessageSquare, Star, Send, User, Calendar } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
+import { 
+  MessageSquare, 
+  Star, 
+  Heart, 
+  Reply, 
+  Flag, 
+  User as UserIcon,
+  Send,
+  Loader2,
+  ThumbsUp,
+  AlertCircle
+} from 'lucide-react';
+import { useUser } from '@/hooks/useUser';
+import { supabase } from '@/lib/supabase';
 
 interface Comment {
   id: string;
   content: string;
-  user_id: string;
-  article_slug: string;
-  is_approved: boolean;
   created_at: string;
+  updated_at: string;
+  is_approved: boolean;
+  like_count: number;
+  parent_id?: string;
+  user_id: string;
   users?: {
     username?: string;
+    email: string;
     avatar_url?: string;
   };
+  replies?: Comment[];
+  user_liked?: boolean;
 }
 
 interface Rating {
   id: string;
   rating: number;
-  user_id: string;
-  article_slug: string;
+  review?: string;
   created_at: string;
+  user_id: string;
   users?: {
     username?: string;
-    email?: string;
+    email: string;
   };
 }
 
 interface CommentSectionProps {
-  articleSlug: string;
   articleId: string;
-  initialComments?: Comment[];
-  initialRatings?: Rating[];
+  articleSlug: string;
+  isVipOnly: boolean;
 }
 
-export default function CommentSection({
-  articleSlug,
-  articleId,
-  initialComments = [],
-  initialRatings = []
-}: CommentSectionProps) {
-  const [comments, setComments] = useState<Comment[]>(initialComments);
-  const [ratings, setRatings] = useState<Rating[]>(initialRatings);
-  const [newComment, setNewComment] = useState('');
-  const [newRating, setNewRating] = useState(0);
-  const [loading, setLoading] = useState(false);
+export function CommentSection({ articleId, articleSlug, isVipOnly }: CommentSectionProps) {
+  const { user } = useUser();
+  const [comments, setComments] = useState<Comment[]>([]);
+  const [ratings, setRatings] = useState<Rating[]>([]);
+  const [userRating, setUserRating] = useState<Rating | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [currentUser, setCurrentUser] = useState<{
-    id: string;
-    username: string;
-    email: string;
-    avatar_url?: string;
-  } | null>(null);
+
+  // Formulaires
+  const [newComment, setNewComment] = useState('');
+  const [replyTo, setReplyTo] = useState<string | null>(null);
+  const [replyContent, setReplyContent] = useState('');
+  const [newRating, setNewRating] = useState(0);
+  const [newReview, setNewReview] = useState('');
+  const [hoverRating, setHoverRating] = useState(0);
 
   useEffect(() => {
-    // TODO: Remplacer par Supabase Auth
-    // Simuler un utilisateur connecté
-    setIsAuthenticated(true);
-    setCurrentUser({
-      id: 'user-1',
-      username: 'Visiteur',
-      email: 'visiteur@example.com'
-    });
-  }, []);
+    loadComments();
+    loadRatings();
+    if (user) {
+      loadUserRating();
+    }
+  }, [articleId, user]);
 
-  const loadCommentsAndRatings = async () => {
+  const loadComments = async () => {
     try {
-      // TODO: Remplacer par Supabase
-      // Simuler le chargement des données
-      await new Promise(resolve => setTimeout(resolve, 500));
-      
-      // Données simulées
-      const mockComments: Comment[] = [
-        {
-          id: '1',
-          content: 'Excellent article ! Très informatif sur la climatisation.',
-          user_id: 'user-2',
-          article_slug: articleSlug,
-          is_approved: true,
-          created_at: new Date(Date.now() - 1000 * 60 * 60 * 2).toISOString(),
-          users: { username: 'Marie D.', avatar_url: '' }
-        },
-        {
-          id: '2',
-          content: 'Je recommande vivement ces conseils pour le chauffage.',
-          user_id: 'user-3',
-          article_slug: articleSlug,
-          is_approved: true,
-          created_at: new Date(Date.now() - 1000 * 60 * 60 * 4).toISOString(),
-          users: { username: 'Pierre L.', avatar_url: '' }
-        }
-      ];
+      const { data, error } = await supabase
+        .from('comments')
+        .select(`
+          *,
+          users(username, email, avatar_url)
+        `)
+        .eq('article_id', articleId)
+        .eq('is_approved', true)
+        .is('parent_id', null)
+        .order('created_at', { ascending: false });
 
-      const mockRatings: Rating[] = [
-        {
-          id: '1',
-          rating: 5,
-          user_id: 'user-2',
-          article_slug: articleSlug,
-          created_at: new Date(Date.now() - 1000 * 60 * 60 * 1).toISOString(),
-          users: { username: 'Marie D.', email: 'marie@example.com' }
-        },
-        {
-          id: '2',
-          rating: 4,
-          user_id: 'user-3',
-          article_slug: articleSlug,
-          created_at: new Date(Date.now() - 1000 * 60 * 60 * 3).toISOString(),
-          users: { username: 'Pierre L.', email: 'pierre@example.com' }
-        }
-      ];
+      if (error) throw error;
 
-      setComments(mockComments);
-      setRatings(mockRatings);
+      // Charger les réponses pour chaque commentaire
+      const commentsWithReplies = await Promise.all(
+        (data || []).map(async (comment) => {
+          const { data: replies } = await supabase
+            .from('comments')
+            .select(`
+              *,
+              users(username, email, avatar_url)
+            `)
+            .eq('parent_id', comment.id)
+            .eq('is_approved', true)
+            .order('created_at', { ascending: true });
+
+          return {
+            ...comment,
+            replies: replies || []
+          };
+        })
+      );
+
+      setComments(commentsWithReplies);
     } catch (error) {
-      console.error('Erreur lors du chargement:', error);
+      console.error('Erreur lors du chargement des commentaires:', error);
     }
   };
 
-  useEffect(() => {
-    loadCommentsAndRatings();
-  }, [articleSlug]);
+  const loadRatings = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('ratings')
+        .select(`
+          *,
+          users(username, email)
+        `)
+        .eq('article_id', articleId)
+        .eq('is_approved', true)
+        .order('created_at', { ascending: false });
+
+      if (error) throw error;
+      setRatings(data || []);
+    } catch (error) {
+      console.error('Erreur lors du chargement des évaluations:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const loadUserRating = async () => {
+    if (!user) return;
+
+    try {
+      const { data, error } = await supabase
+        .from('ratings')
+        .select('*')
+        .eq('article_id', articleId)
+        .eq('user_id', user.id)
+        .single();
+
+      if (data) {
+        setUserRating(data);
+        setNewRating(data.rating);
+        setNewReview(data.review || '');
+      }
+    } catch (error) {
+      // Pas d'évaluation existante, c'est normal
+    }
+  };
 
   const handleCommentSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!newComment.trim() || !isAuthenticated) return;
+    if (!user || !newComment.trim()) return;
 
-    setLoading(true);
+    setSubmitting(true);
+    setError('');
+    setSuccess('');
+
+    try {
+      const { error } = await supabase
+        .from('comments')
+        .insert([
+          {
+            article_id: articleId,
+            user_id: user.id,
+            content: newComment.trim(),
+            is_approved: false // Modération requise
+          }
+        ]);
+
+      if (error) throw error;
+
+      setNewComment('');
+      setSuccess('Commentaire soumis ! Il sera visible après modération.');
+      
+      // Créer une notification admin
+      await supabase
+        .from('admin_notifications')
+        .insert([
+          {
+            type: 'comment',
+            title: 'Nouveau commentaire',
+            message: `${user.username || user.email} a commenté l'article "${articleSlug}"`,
+            user_id: user.id,
+            related_id: articleId,
+            data: { article_slug: articleSlug, comment_preview: newComment.substring(0, 100) }
+          }
+        ]);
+
+    } catch (error: any) {
+      setError('Erreur lors de l\'envoi du commentaire: ' + error.message);
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  const handleReplySubmit = async (parentId: string) => {
+    if (!user || !replyContent.trim()) return;
+
+    setSubmitting(true);
     setError('');
 
     try {
-      // TODO: Remplacer par Supabase
-      // Simuler l'ajout d'un commentaire
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      const { error } = await supabase
+        .from('comments')
+        .insert([
+          {
+            article_id: articleId,
+            user_id: user.id,
+            parent_id: parentId,
+            content: replyContent.trim(),
+            is_approved: false
+          }
+        ]);
 
-      const newCommentObj: Comment = {
-        id: Date.now().toString(),
-        content: newComment,
-        user_id: currentUser!.id,
-        article_slug: articleSlug,
-        is_approved: false, // En attente de modération
-        created_at: new Date().toISOString(),
-        users: { username: currentUser!.username, avatar_url: currentUser!.avatar_url }
-      };
+      if (error) throw error;
 
-      setComments(prev => [newCommentObj, ...prev]);
-      setNewComment('');
-      setSuccess('Commentaire ajouté ! Il sera visible après modération.');
-
-      // Recharger les commentaires
-      setTimeout(loadCommentsAndRatings, 1000);
-    } catch (_error) {
-      setError('Erreur lors de l\'ajout du commentaire');
+      setReplyContent('');
+      setReplyTo(null);
+      setSuccess('Réponse soumise ! Elle sera visible après modération.');
+    } catch (error: any) {
+      setError('Erreur lors de l\'envoi de la réponse: ' + error.message);
     } finally {
-      setLoading(false);
+      setSubmitting(false);
     }
   };
 
   const handleRatingSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (newRating === 0 || !isAuthenticated) return;
+    if (!user || newRating === 0) return;
 
-    setLoading(true);
+    setSubmitting(true);
     setError('');
+    setSuccess('');
 
     try {
-      // TODO: Remplacer par Supabase
-      // Simuler l'ajout d'un avis
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      if (userRating) {
+        // Mettre à jour l'évaluation existante
+        const { error } = await supabase
+          .from('ratings')
+          .update({
+            rating: newRating,
+            review: newReview.trim() || null,
+            updated_at: new Date().toISOString()
+          })
+          .eq('id', userRating.id);
 
-      const newRatingObj: Rating = {
-        id: Date.now().toString(),
-        rating: newRating,
-        user_id: currentUser!.id,
-        article_slug: articleSlug,
-        created_at: new Date().toISOString(),
-        users: { username: currentUser!.username, email: currentUser!.email }
-      };
+        if (error) throw error;
+        setSuccess('Évaluation mise à jour !');
+      } else {
+        // Créer une nouvelle évaluation
+        const { error } = await supabase
+          .from('ratings')
+          .insert([
+            {
+              article_id: articleId,
+              user_id: user.id,
+              rating: newRating,
+              review: newReview.trim() || null
+            }
+          ]);
 
-      setRatings(prev => [newRatingObj, ...prev]);
-      setNewRating(0);
-      setSuccess('Avis ajouté avec succès !');
+        if (error) throw error;
+        setSuccess('Évaluation soumise !');
+      }
 
-      // Recharger les avis
-      setTimeout(loadCommentsAndRatings, 1000);
-    } catch (_error) {
-      setError('Erreur lors de l\'ajout de l\'avis');
+      await loadRatings();
+      await loadUserRating();
+    } catch (error: any) {
+      setError('Erreur lors de l\'envoi de l\'évaluation: ' + error.message);
     } finally {
-      setLoading(false);
+      setSubmitting(false);
     }
   };
 
-  const averageRating = ratings.length > 0 
-    ? ratings.reduce((sum, r) => sum + r.rating, 0) / ratings.length 
-    : 0;
+  const handleLikeComment = async (commentId: string) => {
+    if (!user) return;
 
-  const approvedComments = comments.filter(c => c.is_approved);
+    try {
+      // Vérifier si déjà liké
+      const { data: existingLike } = await supabase
+        .from('comment_likes')
+        .select('id')
+        .eq('comment_id', commentId)
+        .eq('user_id', user.id)
+        .single();
 
-  if (!isAuthenticated) {
+      if (existingLike) {
+        // Retirer le like
+        await supabase
+          .from('comment_likes')
+          .delete()
+          .eq('id', existingLike.id);
+      } else {
+        // Ajouter le like
+        await supabase
+          .from('comment_likes')
+          .insert([
+            {
+              comment_id: commentId,
+              user_id: user.id
+            }
+          ]);
+      }
+
+      // Recharger les commentaires
+      await loadComments();
+    } catch (error) {
+      console.error('Erreur lors du like:', error);
+    }
+  };
+
+  const calculateAverageRating = () => {
+    if (ratings.length === 0) return 0;
+    const sum = ratings.reduce((acc, rating) => acc + rating.rating, 0);
+    return Math.round((sum / ratings.length) * 10) / 10;
+  };
+
+  const renderStars = (rating: number, interactive: boolean = false, onHover?: (rating: number) => void, onClick?: (rating: number) => void) => {
+    return (
+      <div className="flex items-center gap-1">
+        {[1, 2, 3, 4, 5].map((star) => (
+          <Star
+            key={star}
+            className={`h-5 w-5 ${
+              star <= (interactive ? hoverRating || rating : rating)
+                ? 'fill-yellow-400 text-yellow-400'
+                : 'text-gray-300'
+            } ${interactive ? 'cursor-pointer hover:text-yellow-400' : ''}`}
+            onMouseEnter={() => interactive && onHover && onHover(star)}
+            onMouseLeave={() => interactive && onHover && onHover(0)}
+            onClick={() => interactive && onClick && onClick(star)}
+          />
+        ))}
+      </div>
+    );
+  };
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center py-8">
+        <Loader2 className="h-8 w-8 animate-spin" />
+      </div>
+    );
+  }
+
+  // Si l'article est VIP et l'utilisateur n'est pas connecté
+  if (isVipOnly && !user) {
     return (
       <Card className="mt-8">
-        <CardHeader>
-          <CardTitle>Commentaires et avis</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p className="text-gray-600 text-center py-8">
-            Connectez-vous pour laisser un commentaire ou un avis
+        <CardContent className="p-6 text-center">
+          <AlertCircle className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />
+          <h3 className="text-lg font-semibold mb-2">Contenu réservé aux membres</h3>
+          <p className="text-muted-foreground mb-4">
+            Connectez-vous pour voir les commentaires et laisser votre avis sur cet article.
           </p>
+          <Button asChild>
+            <a href="/auth">Se connecter</a>
+          </Button>
         </CardContent>
       </Card>
     );
   }
 
+  const averageRating = calculateAverageRating();
+
   return (
     <div className="mt-8 space-y-6">
-      {/* Avis */}
+      {error && (
+        <Alert variant="destructive">
+          <AlertDescription>{error}</AlertDescription>
+        </Alert>
+      )}
+
+      {success && (
+        <Alert>
+          <AlertDescription>{success}</AlertDescription>
+        </Alert>
+      )}
+
+      {/* Section des évaluations */}
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Star className="h-5 w-5 text-yellow-500" />
-            Donnez votre avis
+            <Star className="h-5 w-5" />
+            Évaluations ({ratings.length})
           </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <form onSubmit={handleRatingSubmit} className="space-y-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Note : {newRating}/5
-              </label>
-              <div className="flex gap-1">
-                {[1, 2, 3, 4, 5].map((star) => (
-                  <button
-                    key={star}
-                    type="button"
-                    onClick={() => setNewRating(star)}
-                    className={`p-1 rounded ${
-                      star <= newRating 
-                        ? 'text-yellow-400 hover:text-yellow-500' 
-                        : 'text-gray-300 hover:text-yellow-400'
-                    }`}
-                  >
-                    <Star className={`h-6 w-6 ${star <= newRating ? 'fill-current' : ''}`} />
-                  </button>
-                ))}
-              </div>
+          {ratings.length > 0 && (
+            <div className="flex items-center gap-2">
+              {renderStars(averageRating)}
+              <span className="text-sm text-muted-foreground">
+                {averageRating}/5 ({ratings.length} avis)
+              </span>
             </div>
-            <Button
-              type="submit"
-              disabled={loading || newRating === 0}
-              className="w-full"
-            >
-              {loading ? (
-                <>
-                  <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-                  Envoi...
-                </>
-              ) : (
-                <>
-                  <Send className="h-4 w-4 mr-2" />
-                  Envoyer l'avis
-                </>
-              )}
-            </Button>
-          </form>
-        </CardContent>
-      </Card>
-
-      {/* Statistiques */}
-      <Card>
-        <CardHeader>
-          <CardTitle>Statistiques</CardTitle>
+          )}
         </CardHeader>
-        <CardContent>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-blue-600">{approvedComments.length}</div>
-              <div className="text-sm text-gray-600">Commentaires</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-yellow-600">{averageRating.toFixed(1)}/5</div>
-              <div className="text-sm text-gray-600">Note moyenne</div>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* Commentaires */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <MessageSquare className="h-5 w-5 text-blue-500" />
-            Commentaires ({approvedComments.length})
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          {/* Formulaire de commentaire */}
-          <form onSubmit={handleCommentSubmit} className="mb-6">
-            <div className="space-y-4">
-              <div>
-                <label htmlFor="comment" className="block text-sm font-medium text-gray-700 mb-2">
-                  Votre commentaire
+        <CardContent className="space-y-4">
+          {user && (
+            <form onSubmit={handleRatingSubmit} className="space-y-4 p-4 border border-border rounded-lg">
+              <div className="space-y-2">
+                <label className="text-sm font-medium">
+                  {userRating ? 'Modifier votre évaluation' : 'Évaluer cet article'}
                 </label>
-                <Textarea
-                  id="comment"
-                  value={newComment}
-                  onChange={(e) => setNewComment(e.target.value)}
-                  placeholder="Partagez votre expérience ou posez une question..."
-                  rows={4}
-                  required
-                />
+                {renderStars(
+                  newRating,
+                  true,
+                  setHoverRating,
+                  setNewRating
+                )}
               </div>
+              
+              <Textarea
+                value={newReview}
+                onChange={(e) => setNewReview(e.target.value)}
+                placeholder="Laissez un commentaire sur cet article (optionnel)"
+                rows={3}
+              />
+              
               <Button
                 type="submit"
-                disabled={loading || !newComment.trim()}
-                className="w-full"
+                disabled={submitting || newRating === 0}
+                className="flex items-center gap-2"
               >
-                {loading ? (
-                  <>
-                    <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-                    Envoi...
-                  </>
-                ) : (
-                  <>
-                    <Send className="h-4 w-4 mr-2" />
-                    Envoyer le commentaire
-                  </>
-                )}
+                {submitting ? <Loader2 className="h-4 w-4 animate-spin" /> : <Star className="h-4 w-4" />}
+                {userRating ? 'Mettre à jour' : 'Évaluer'}
               </Button>
-            </div>
-          </form>
+            </form>
+          )}
 
-          {/* Liste des commentaires */}
+          {/* Liste des évaluations */}
           <div className="space-y-4">
-            {approvedComments.length === 0 ? (
-              <p className="text-gray-500 text-center py-8">
-                Aucun commentaire pour le moment. Soyez le premier à commenter !
-              </p>
-            ) : (
-              approvedComments.map((comment) => (
-                <div key={comment.id} className="border rounded-lg p-4">
-                  <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                      <User className="h-4 w-4 text-blue-600" />
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-2">
-                        <span className="font-medium text-gray-900">
-                          {comment.users?.username || 'Utilisateur'}
-                        </span>
-                        <span className="text-sm text-gray-500">
-                          <Calendar className="h-3 w-3 inline mr-1" />
-                          {new Date(comment.created_at).toLocaleDateString('fr-FR')}
+            {ratings.map((rating) => (
+              <div key={rating.id} className="p-4 border border-border rounded-lg">
+                <div className="flex items-start justify-between mb-2">
+                  <div className="flex items-center gap-3">
+                    <UserIcon className="h-8 w-8 text-muted-foreground" />
+                    <div>
+                      <p className="font-medium">
+                        {rating.users?.username || rating.users?.email}
+                      </p>
+                      <div className="flex items-center gap-2">
+                        {renderStars(rating.rating)}
+                        <span className="text-sm text-muted-foreground">
+                          {new Date(rating.created_at).toLocaleDateString('fr-FR')}
                         </span>
                       </div>
-                      <p className="text-gray-700">{comment.content}</p>
                     </div>
                   </div>
                 </div>
-              ))
+                {rating.review && (
+                  <p className="text-sm mt-2">{rating.review}</p>
+                )}
+              </div>
+            ))}
+            
+            {ratings.length === 0 && (
+              <div className="text-center py-8 text-muted-foreground">
+                <Star className="h-12 w-12 mx-auto mb-4 opacity-50" />
+                <p>Aucune évaluation pour le moment</p>
+                {user && <p className="text-sm">Soyez le premier à évaluer cet article !</p>}
+              </div>
             )}
           </div>
         </CardContent>
       </Card>
 
-      {/* Messages d'état */}
-      {error && (
-        <Alert className="border-red-200 bg-red-50">
-          <AlertDescription className="text-red-800">{error}</AlertDescription>
-        </Alert>
-      )}
+      {/* Section des commentaires */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <MessageSquare className="h-5 w-5" />
+            Commentaires ({comments.length})
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          {user && (
+            <form onSubmit={handleCommentSubmit} className="space-y-4 p-4 border border-border rounded-lg">
+              <Textarea
+                value={newComment}
+                onChange={(e) => setNewComment(e.target.value)}
+                placeholder="Partagez votre avis sur cet article..."
+                rows={4}
+                required
+              />
+              <Button
+                type="submit"
+                disabled={submitting || !newComment.trim()}
+                className="flex items-center gap-2"
+              >
+                {submitting ? <Loader2 className="h-4 w-4 animate-spin" /> : <Send className="h-4 w-4" />}
+                Publier le commentaire
+              </Button>
+            </form>
+          )}
 
-      {success && (
-        <Alert className="border-green-200 bg-green-50">
-          <AlertDescription className="text-green-800">{success}</AlertDescription>
-        </Alert>
-      )}
+          {/* Liste des commentaires */}
+          <div className="space-y-4">
+            {comments.map((comment) => (
+              <div key={comment.id} className="space-y-3">
+                <div className="p-4 border border-border rounded-lg">
+                  <div className="flex items-start justify-between mb-3">
+                    <div className="flex items-center gap-3">
+                      {comment.users?.avatar_url ? (
+                        <img
+                          src={comment.users.avatar_url}
+                          alt="Avatar"
+                          className="w-8 h-8 rounded-full object-cover"
+                        />
+                      ) : (
+                        <UserIcon className="h-8 w-8 text-muted-foreground" />
+                      )}
+                      <div>
+                        <p className="font-medium">
+                          {comment.users?.username || comment.users?.email}
+                        </p>
+                        <p className="text-sm text-muted-foreground">
+                          {new Date(comment.created_at).toLocaleDateString('fr-FR')}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <p className="mb-3">{comment.content}</p>
+                  
+                  <div className="flex items-center gap-4">
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => handleLikeComment(comment.id)}
+                      className="flex items-center gap-1"
+                      disabled={!user}
+                    >
+                      <ThumbsUp className="h-4 w-4" />
+                      {comment.like_count || 0}
+                    </Button>
+                    
+                    {user && (
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={() => setReplyTo(replyTo === comment.id ? null : comment.id)}
+                        className="flex items-center gap-1"
+                      >
+                        <Reply className="h-4 w-4" />
+                        Répondre
+                      </Button>
+                    )}
+                  </div>
+
+                  {/* Formulaire de réponse */}
+                  {replyTo === comment.id && (
+                    <div className="mt-4 p-3 bg-muted rounded-lg">
+                      <Textarea
+                        value={replyContent}
+                        onChange={(e) => setReplyContent(e.target.value)}
+                        placeholder="Votre réponse..."
+                        rows={3}
+                      />
+                      <div className="flex gap-2 mt-2">
+                        <Button
+                          size="sm"
+                          onClick={() => handleReplySubmit(comment.id)}
+                          disabled={submitting || !replyContent.trim()}
+                        >
+                          Répondre
+                        </Button>
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          onClick={() => setReplyTo(null)}
+                        >
+                          Annuler
+                        </Button>
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {/* Réponses */}
+                {comment.replies && comment.replies.length > 0 && (
+                  <div className="ml-8 space-y-3">
+                    {comment.replies.map((reply) => (
+                      <div key={reply.id} className="p-3 border border-border rounded-lg bg-muted/50">
+                        <div className="flex items-center gap-3 mb-2">
+                          {reply.users?.avatar_url ? (
+                            <img
+                              src={reply.users.avatar_url}
+                              alt="Avatar"
+                              className="w-6 h-6 rounded-full object-cover"
+                            />
+                          ) : (
+                            <UserIcon className="h-6 w-6 text-muted-foreground" />
+                          )}
+                          <div>
+                            <p className="text-sm font-medium">
+                              {reply.users?.username || reply.users?.email}
+                            </p>
+                            <p className="text-xs text-muted-foreground">
+                              {new Date(reply.created_at).toLocaleDateString('fr-FR')}
+                            </p>
+                          </div>
+                        </div>
+                        <p className="text-sm">{reply.content}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+            
+            {comments.length === 0 && (
+              <div className="text-center py-8 text-muted-foreground">
+                <MessageSquare className="h-12 w-12 mx-auto mb-4 opacity-50" />
+                <p>Aucun commentaire pour le moment</p>
+                {user && <p className="text-sm">Soyez le premier à commenter !</p>}
+              </div>
+            )}
+          </div>
+
+          {!user && (
+            <div className="text-center py-6 border border-border rounded-lg">
+              <p className="text-muted-foreground mb-4">
+                Connectez-vous pour commenter et évaluer cet article
+              </p>
+              <Button asChild>
+                <a href="/auth">Se connecter</a>
+              </Button>
+            </div>
+          )}
+        </CardContent>
+      </Card>
     </div>
   );
 }

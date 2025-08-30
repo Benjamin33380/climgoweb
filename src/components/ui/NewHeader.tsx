@@ -6,6 +6,9 @@ import { Phone, Wrench, Droplet, Settings, FileText, Menu, Mail, MessageSquare, 
 import { ModeToggle } from "@/components/ui/mode-toggle"
 import { Button } from "@/components/ui/button"
 import { LogoWithFallback } from "@/components/ui/Logo3D"
+import { UserMenu } from "@/components/auth/UserMenu"
+import { NotificationCenter } from "@/components/admin/NotificationCenter"
+import { useUser } from "@/hooks/useUser"
 import { useState } from "react"
 import {
   NavigationMenu,
@@ -96,6 +99,7 @@ const entreprise: { title: string; href: string; description: string }[] = [
 ]
 
 export function NewHeader() {
+  const { user, logout } = useUser()
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isServicesHovered, setIsServicesHovered] = useState(false)
   const [isContactHovered, setIsContactHovered] = useState(false)
@@ -326,14 +330,11 @@ export function NewHeader() {
             Devis gratuit
           </Link>
 
-          {/* Icône de connexion client */}
-          <Link
-            href="/client-auth"
-            className="flex items-center justify-center w-10 h-10 rounded-md border border-border bg-background text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
-            title="Connexion client"
-          >
-            <User className="w-5 h-5" />
-          </Link>
+          {/* Centre de notifications admin */}
+          {user?.is_admin && <NotificationCenter />}
+
+          {/* Menu utilisateur */}
+          <UserMenu user={user} onLogout={logout} />
 
           <ModeToggle />
 

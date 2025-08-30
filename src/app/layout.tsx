@@ -5,6 +5,7 @@ import { NewHeader } from "@/components/ui/NewHeader";
 import Footer from "@/components/ui/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ClientHeroUIProvider } from "@/components/providers/HeroUIProvider";
+import { UserProvider } from "@/hooks/useUser";
 import { GlobalScrollShadow } from '@/components/ui/GlobalScrollShadow';
 import { scrollShadowConfig } from '@/config/scrollShadow';
 import { PerformanceOptimizations } from '@/components/PerformanceOptimizations';
@@ -396,16 +397,18 @@ export default function RootLayout({
         <GoogleAnalytics />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <ClientHeroUIProvider>
-            <GlobalScrollShadow
-              size={scrollShadowConfig.size}
-              shadowColor={scrollShadowConfig.shadowColor}
-              blurIntensity={scrollShadowConfig.blurIntensity}
-              className="min-h-screen bg-background text-foreground"
-            >
-              <NewHeader />
-              <main className="flex-1">{children}</main>
-              <Footer />
-            </GlobalScrollShadow>
+            <UserProvider>
+              <GlobalScrollShadow
+                size={scrollShadowConfig.size}
+                shadowColor={scrollShadowConfig.shadowColor}
+                blurIntensity={scrollShadowConfig.blurIntensity}
+                className="min-h-screen bg-background text-foreground"
+              >
+                <NewHeader />
+                <main className="flex-1">{children}</main>
+                <Footer />
+              </GlobalScrollShadow>
+            </UserProvider>
           </ClientHeroUIProvider>
         </ThemeProvider>
       </body>

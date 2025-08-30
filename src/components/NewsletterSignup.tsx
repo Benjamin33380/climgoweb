@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Send } from 'lucide-react';
-// import { supabase } from '@/lib/supabase';
+import { supabase } from '@/lib/supabase';
 
 export default function NewsletterSignup() {
   const [email, setEmail] = useState('');
@@ -16,12 +16,6 @@ export default function NewsletterSignup() {
     setMessage('');
 
     try {
-      // TODO: Activer quand Supabase est configuré
-      setMessage('Newsletter - À configurer avec Supabase');
-      setMessageType('success');
-      setEmail('');
-      
-      /*
       // Vérifier si l'email existe déjà
       const { data: existingSubscriber } = await supabase
         .from('newsletter_subscribers')
@@ -42,7 +36,7 @@ export default function NewsletterSignup() {
           {
             email,
             preferences: { general: true, articles: true, offers: true },
-            created_at: new Date().toISOString()
+            subscribed_at: new Date().toISOString()
           }
         ]);
 
@@ -53,7 +47,6 @@ export default function NewsletterSignup() {
       setMessage('Inscription réussie ! Vous recevrez nos newsletters.');
       setMessageType('success');
       setEmail('');
-      */
     } catch (error: unknown) {
       const errorMessage = error instanceof Error ? error.message : 'Erreur lors de l\'inscription';
       setMessage(errorMessage);

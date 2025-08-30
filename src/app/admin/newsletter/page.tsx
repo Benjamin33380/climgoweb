@@ -18,7 +18,7 @@ export default function NewsletterAdminPage() {
   const [subscribers, setSubscribers] = useState<Array<{
     id: string;
     email: string;
-    created_at: string;
+    subscribed_at: string;
     preferences?: Record<string, boolean>;
   }>>([]);
   const [loadingSubscribers, setLoadingSubscribers] = useState(false);
@@ -338,7 +338,7 @@ export default function NewsletterAdminPage() {
                     <div>
                       <p className="font-medium">{subscriber.email}</p>
                       <p className="text-sm text-gray-500">
-                        Inscrit le {new Date(subscriber.created_at).toLocaleDateString('fr-FR')}
+                        Inscrit le {new Date(subscriber.subscribed_at).toLocaleDateString('fr-FR')}
                       </p>
                     </div>
                   </div>
