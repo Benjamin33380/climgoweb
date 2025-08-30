@@ -71,7 +71,12 @@ export function AdminAuthProvider({ children }: { children: React.ReactNode }) {
           
           setUser(adminUser);
           console.log('Redirection vers dashboard...'); // Debug
-          router.push('/admin/dashboard');
+          
+          // Forcer la redirection
+          setTimeout(() => {
+            window.location.href = '/admin/dashboard';
+          }, 100);
+          
           return true;
         } else {
           console.log('Utilisateur non admin:', data.user); // Debug
