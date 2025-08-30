@@ -1,6 +1,21 @@
--- Migration pour le système d'utilisateurs complet ClimGO
+-- =====================================================
+-- CLIMGO PRODUCTION DATABASE SETUP
+-- =====================================================
+-- Script complet pour configurer la base de données ClimGO en production
+-- À exécuter dans l'éditeur SQL de Supabase
+-- 
+-- INSTRUCTIONS :
+-- 1. Copiez-collez TOUT ce contenu dans l'éditeur SQL Supabase
+-- 2. Exécutez le script complet
+-- 3. Vérifiez que toutes les tables sont créées
+-- 4. Créez l'utilisateur admin avec le script createAdminSupabase.js
+-- =====================================================
 
--- Table des utilisateurs étendue
+-- =====================================================
+-- 1. TABLES PRINCIPALES
+-- =====================================================
+
+-- Table des utilisateurs étendue (liée à auth.users)
 CREATE TABLE IF NOT EXISTS users (
   id UUID PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,
   email TEXT NOT NULL UNIQUE,
@@ -44,7 +59,7 @@ CREATE TABLE IF NOT EXISTS user_sessions (
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
--- Table des articles de blog étendue
+-- Table des articles de blog
 CREATE TABLE IF NOT EXISTS articles (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   title TEXT NOT NULL,
@@ -129,7 +144,7 @@ CREATE TABLE IF NOT EXISTS article_views (
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
--- Table des abonnés newsletter (mise à jour)
+-- Table des abonnés newsletter
 CREATE TABLE IF NOT EXISTS newsletter_subscribers (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   email TEXT NOT NULL UNIQUE,
@@ -170,7 +185,10 @@ CREATE TABLE IF NOT EXISTS admin_notifications (
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
--- Indexes pour les performances
+-- =====================================================
+-- 2. INDEXES POUR LES PERFORMANCES
+-- =====================================================
+
 CREATE INDEX IF NOT EXISTS idx_users_email ON users(email);
 CREATE INDEX IF NOT EXISTS idx_users_username ON users(username);
 CREATE INDEX IF NOT EXISTS idx_users_is_admin ON users(is_admin);
@@ -205,7 +223,20 @@ CREATE INDEX IF NOT EXISTS idx_newsletter_subscribers_is_active ON newsletter_su
 CREATE INDEX IF NOT EXISTS idx_admin_notifications_is_read ON admin_notifications(is_read);
 CREATE INDEX IF NOT EXISTS idx_admin_notifications_created_at ON admin_notifications(created_at);
 
--- Fonctions et triggers pour maintenir les compteurs
+-- =====================================================
+-- 3. FONCTIONS ET TRIGGERS
+-- =====================================================
+
+-- Fonction pour mettre à jour updated_at automatiquement
+CREATE OR REPLACE FUNCTION update_updated_at_column()
+RETURNS TRIGGER AS $$
+BEGIN
+  NEW.updated_at = NOW();
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Fonction pour maintenir les compteurs d'articles
 CREATE OR REPLACE FUNCTION update_article_comment_count()
 RETURNS TRIGGER AS $$
 BEGIN
@@ -260,30 +291,130 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
--- Fonction pour mettre à jour updated_at
-CREATE OR REPLACE FUNCTION update_updated_at_column()
-RETURNS TRIGGER AS $$
+-- Fonction pour incrémenter le compteur de vues
+CREATE OR REPLACE FUNCTION increment_article_views(article_id UUID)
+RETURNS VOID AS $$
 BEGIN
-  NEW.updated_at = NOW();
+  UPDATE articles 
+  SET view_count = view_count + 1 
+  WHERE id = article_id;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+-- Fonction pour les notifications admin
+CREATE OR REPLACE FUNCTION notify_admin_new_comment()
+RETURNS TRIGGER AS $$
+DECLARE
+  article_title TEXT;
+  article_slug TEXT;
+  user_name TEXT;
+BEGIN
+  SELECT title, slug INTO article_title, article_slug
+  FROM articles WHERE id = NEW.article_id;
+  
+  SELECT COALESCE(username, email) INTO user_name
+  FROM users WHERE id = NEW.user_id;
+  
+  INSERT INTO admin_notifications (
+    type, title, message, user_id, related_id, data
+  ) VALUES (
+    'comment',
+    'Nouveau commentaire',
+    user_name || ' a commenté l''article "' || article_title || '"',
+    NEW.user_id,
+    NEW.article_id,
+    json_build_object(
+      'article_slug', article_slug,
+      'comment_id', NEW.id,
+      'comment_preview', LEFT(NEW.content, 100)
+    )
+  );
+  
   RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
 
--- Triggers
-DROP TRIGGER IF EXISTS trigger_update_article_comment_count ON comments;
-CREATE TRIGGER trigger_update_article_comment_count
-  AFTER INSERT OR DELETE ON comments
-  FOR EACH ROW EXECUTE FUNCTION update_article_comment_count();
+CREATE OR REPLACE FUNCTION notify_admin_new_rating()
+RETURNS TRIGGER AS $$
+DECLARE
+  article_title TEXT;
+  article_slug TEXT;
+  user_name TEXT;
+BEGIN
+  SELECT title, slug INTO article_title, article_slug
+  FROM articles WHERE id = NEW.article_id;
+  
+  SELECT COALESCE(username, email) INTO user_name
+  FROM users WHERE id = NEW.user_id;
+  
+  INSERT INTO admin_notifications (
+    type, title, message, user_id, related_id, data
+  ) VALUES (
+    'rating',
+    'Nouvelle évaluation',
+    user_name || ' a évalué l''article "' || article_title || '" (' || NEW.rating || '/5)',
+    NEW.user_id,
+    NEW.article_id,
+    json_build_object(
+      'article_slug', article_slug,
+      'rating_id', NEW.id,
+      'rating', NEW.rating,
+      'review_preview', LEFT(COALESCE(NEW.review, ''), 100)
+    )
+  );
+  
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
 
-DROP TRIGGER IF EXISTS trigger_update_article_like_count ON article_likes;
-CREATE TRIGGER trigger_update_article_like_count
-  AFTER INSERT OR DELETE ON article_likes
-  FOR EACH ROW EXECUTE FUNCTION update_article_like_count();
+CREATE OR REPLACE FUNCTION notify_admin_new_user()
+RETURNS TRIGGER AS $$
+BEGIN
+  INSERT INTO admin_notifications (
+    type, title, message, user_id, related_id, data
+  ) VALUES (
+    'user_registration',
+    'Nouvelle inscription',
+    COALESCE(NEW.username, NEW.email) || ' s''est inscrit sur le site',
+    NEW.id,
+    NEW.id,
+    json_build_object(
+      'email', NEW.email,
+      'username', NEW.username
+    )
+  );
+  
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
 
-DROP TRIGGER IF EXISTS trigger_update_comment_like_count ON comment_likes;
-CREATE TRIGGER trigger_update_comment_like_count
-  AFTER INSERT OR DELETE ON comment_likes
-  FOR EACH ROW EXECUTE FUNCTION update_comment_like_count();
+-- Fonction de maintenance
+CREATE OR REPLACE FUNCTION maintenance_cleanup()
+RETURNS VOID AS $$
+BEGIN
+  -- Nettoyer les anciennes sessions (plus de 24h inactives)
+  UPDATE user_sessions 
+  SET is_active = false, session_end = NOW()
+  WHERE is_active = true 
+    AND created_at < NOW() - INTERVAL '24 hours';
+    
+  -- Supprimer les anciennes sessions (plus de 30 jours)
+  DELETE FROM user_sessions 
+  WHERE created_at < NOW() - INTERVAL '30 days';
+  
+  -- Nettoyer les anciennes notifications (plus de 90 jours)
+  DELETE FROM admin_notifications 
+  WHERE created_at < NOW() - INTERVAL '90 days';
+  
+  -- Nettoyer les anciennes vues (plus de 1 an)
+  DELETE FROM article_views 
+  WHERE created_at < NOW() - INTERVAL '1 year';
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+-- =====================================================
+-- 4. TRIGGERS
+-- =====================================================
 
 -- Triggers pour updated_at
 DROP TRIGGER IF EXISTS trigger_users_updated_at ON users;
@@ -306,7 +437,43 @@ CREATE TRIGGER trigger_ratings_updated_at
   BEFORE UPDATE ON ratings
   FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
 
--- RLS (Row Level Security) policies
+-- Triggers pour les compteurs
+DROP TRIGGER IF EXISTS trigger_update_article_comment_count ON comments;
+CREATE TRIGGER trigger_update_article_comment_count
+  AFTER INSERT OR DELETE ON comments
+  FOR EACH ROW EXECUTE FUNCTION update_article_comment_count();
+
+DROP TRIGGER IF EXISTS trigger_update_article_like_count ON article_likes;
+CREATE TRIGGER trigger_update_article_like_count
+  AFTER INSERT OR DELETE ON article_likes
+  FOR EACH ROW EXECUTE FUNCTION update_article_like_count();
+
+DROP TRIGGER IF EXISTS trigger_update_comment_like_count ON comment_likes;
+CREATE TRIGGER trigger_update_comment_like_count
+  AFTER INSERT OR DELETE ON comment_likes
+  FOR EACH ROW EXECUTE FUNCTION update_comment_like_count();
+
+-- Triggers pour les notifications admin
+DROP TRIGGER IF EXISTS trigger_notify_admin_new_comment ON comments;
+CREATE TRIGGER trigger_notify_admin_new_comment
+  AFTER INSERT ON comments
+  FOR EACH ROW EXECUTE FUNCTION notify_admin_new_comment();
+
+DROP TRIGGER IF EXISTS trigger_notify_admin_new_rating ON ratings;
+CREATE TRIGGER trigger_notify_admin_new_rating
+  AFTER INSERT ON ratings
+  FOR EACH ROW EXECUTE FUNCTION notify_admin_new_rating();
+
+DROP TRIGGER IF EXISTS trigger_notify_admin_new_user ON users;
+CREATE TRIGGER trigger_notify_admin_new_user
+  AFTER INSERT ON users
+  FOR EACH ROW EXECUTE FUNCTION notify_admin_new_user();
+
+-- =====================================================
+-- 5. ROW LEVEL SECURITY (RLS)
+-- =====================================================
+
+-- Activer RLS sur toutes les tables
 ALTER TABLE users ENABLE ROW LEVEL SECURITY;
 ALTER TABLE user_sessions ENABLE ROW LEVEL SECURITY;
 ALTER TABLE articles ENABLE ROW LEVEL SECURITY;
@@ -334,6 +501,14 @@ CREATE POLICY "Admins can view all users" ON users
     )
   );
 
+CREATE POLICY "Admins can manage all users" ON users
+  FOR ALL USING (
+    EXISTS (
+      SELECT 1 FROM users 
+      WHERE id = auth.uid() AND is_admin = true
+    )
+  );
+
 -- Policies pour articles
 CREATE POLICY "Published articles are viewable by everyone" ON articles
   FOR SELECT USING (published = true AND is_vip_only = false);
@@ -355,7 +530,7 @@ CREATE POLICY "Admins can manage all articles" ON articles
   );
 
 -- Policies pour comments
-CREATE POLICY "Comments are viewable by everyone" ON comments
+CREATE POLICY "Approved comments are viewable by everyone" ON comments
   FOR SELECT USING (is_approved = true);
 
 CREATE POLICY "Users can create comments" ON comments
@@ -364,8 +539,16 @@ CREATE POLICY "Users can create comments" ON comments
 CREATE POLICY "Users can update their own comments" ON comments
   FOR UPDATE USING (auth.uid() = user_id);
 
+CREATE POLICY "Admins can manage all comments" ON comments
+  FOR ALL USING (
+    EXISTS (
+      SELECT 1 FROM users 
+      WHERE id = auth.uid() AND is_admin = true
+    )
+  );
+
 -- Policies pour ratings
-CREATE POLICY "Ratings are viewable by everyone" ON ratings
+CREATE POLICY "Approved ratings are viewable by everyone" ON ratings
   FOR SELECT USING (is_approved = true);
 
 CREATE POLICY "Users can create ratings" ON ratings
@@ -373,6 +556,14 @@ CREATE POLICY "Users can create ratings" ON ratings
 
 CREATE POLICY "Users can update their own ratings" ON ratings
   FOR UPDATE USING (auth.uid() = user_id);
+
+CREATE POLICY "Admins can manage all ratings" ON ratings
+  FOR ALL USING (
+    EXISTS (
+      SELECT 1 FROM users 
+      WHERE id = auth.uid() AND is_admin = true
+    )
+  );
 
 -- Policies pour likes
 CREATE POLICY "Users can manage their own article likes" ON article_likes
@@ -388,6 +579,14 @@ CREATE POLICY "Newsletter subscribers can view their own subscription" ON newsle
 CREATE POLICY "Anyone can subscribe to newsletter" ON newsletter_subscribers
   FOR INSERT WITH CHECK (true);
 
+CREATE POLICY "Admins can manage newsletter" ON newsletter_subscribers
+  FOR ALL USING (
+    EXISTS (
+      SELECT 1 FROM users 
+      WHERE id = auth.uid() AND is_admin = true
+    )
+  );
+
 -- Policies pour admin notifications
 CREATE POLICY "Admins can view all notifications" ON admin_notifications
   FOR SELECT USING (
@@ -397,28 +596,42 @@ CREATE POLICY "Admins can view all notifications" ON admin_notifications
     )
   );
 
--- Fonction pour créer un utilisateur admin
-CREATE OR REPLACE FUNCTION create_admin_user(admin_email TEXT, admin_password TEXT)
-RETURNS TEXT AS $$
-DECLARE
-  user_id UUID;
-BEGIN
-  -- Cette fonction doit être appelée côté serveur avec les privilèges appropriés
-  INSERT INTO auth.users (email, encrypted_password, email_confirmed_at, created_at, updated_at)
-  VALUES (admin_email, crypt(admin_password, gen_salt('bf')), NOW(), NOW(), NOW())
-  RETURNING id INTO user_id;
-  
-  INSERT INTO users (id, email, is_admin, email_verified, created_at)
-  VALUES (user_id, admin_email, true, true, NOW());
-  
-  RETURN 'Admin user created successfully';
-EXCEPTION
-  WHEN OTHERS THEN
-    RETURN 'Error creating admin user: ' || SQLERRM;
-END;
-$$ LANGUAGE plpgsql SECURITY DEFINER;
+CREATE POLICY "Admins can manage notifications" ON admin_notifications
+  FOR ALL USING (
+    EXISTS (
+      SELECT 1 FROM users 
+      WHERE id = auth.uid() AND is_admin = true
+    )
+  );
 
--- Vues utiles pour l'admin
+-- Policies pour les vues d'articles
+CREATE POLICY "Anyone can create article views" ON article_views
+  FOR INSERT WITH CHECK (true);
+
+CREATE POLICY "Admins can view all article views" ON article_views
+  FOR SELECT USING (
+    EXISTS (
+      SELECT 1 FROM users 
+      WHERE id = auth.uid() AND is_admin = true
+    )
+  );
+
+-- Policies pour les sessions
+CREATE POLICY "Users can view their own sessions" ON user_sessions
+  FOR SELECT USING (auth.uid() = user_id);
+
+CREATE POLICY "Admins can view all sessions" ON user_sessions
+  FOR SELECT USING (
+    EXISTS (
+      SELECT 1 FROM users 
+      WHERE id = auth.uid() AND is_admin = true
+    )
+  );
+
+-- =====================================================
+-- 6. VUES UTILES POUR L'ADMIN
+-- =====================================================
+
 CREATE OR REPLACE VIEW admin_user_stats AS
 SELECT 
   u.id,
@@ -427,6 +640,7 @@ SELECT
   u.created_at,
   u.last_login,
   u.is_banned,
+  u.is_admin,
   u.points_activity,
   COUNT(DISTINCT c.id) as comment_count,
   COUNT(DISTINCT r.id) as rating_count,
@@ -435,7 +649,7 @@ FROM users u
 LEFT JOIN comments c ON u.id = c.user_id
 LEFT JOIN ratings r ON u.id = r.user_id  
 LEFT JOIN article_likes al ON u.id = al.user_id
-GROUP BY u.id, u.email, u.username, u.created_at, u.last_login, u.is_banned, u.points_activity;
+GROUP BY u.id, u.email, u.username, u.created_at, u.last_login, u.is_banned, u.is_admin, u.points_activity;
 
 CREATE OR REPLACE VIEW admin_article_stats AS
 SELECT 
@@ -457,7 +671,56 @@ LEFT JOIN article_views av ON a.id = av.article_id
 GROUP BY a.id, a.title, a.slug, a.published, a.is_vip_only, a.created_at, a.published_at, 
          a.view_count, a.like_count, a.comment_count, u.username;
 
--- Données de test (optionnel)
--- INSERT INTO users (id, email, username, is_admin, email_verified) 
--- VALUES ('00000000-0000-0000-0000-000000000001', 'admin@climgo.fr', 'admin', true, true)
--- ON CONFLICT (id) DO NOTHING;
+-- =====================================================
+-- 7. DONNÉES DE TEST (OPTIONNEL)
+-- =====================================================
+
+-- Insérer un article de bienvenue (optionnel)
+-- Décommentez si vous voulez un article de test
+/*
+INSERT INTO articles (
+  title, 
+  slug, 
+  content_markdown, 
+  published, 
+  meta_title, 
+  meta_description,
+  excerpt
+) VALUES (
+  'Bienvenue sur le blog ClimGO',
+  'bienvenue-blog-climgo',
+  '# Bienvenue sur le blog ClimGO
+
+Découvrez notre nouveau blog dédié au chauffage et à la climatisation en Gironde !
+
+## Fonctionnalités disponibles
+
+- **Commentaires** : Partagez vos expériences
+- **Évaluations** : Notez nos articles de 1 à 5 étoiles
+- **Newsletter** : Restez informé de nos dernières actualités
+- **Panel admin** : Gestion complète du contenu
+
+*ClimGO - Votre expert chauffage et climatisation en Gironde*',
+  true,
+  'Bienvenue sur le blog ClimGO - Expert chauffage climatisation Gironde',
+  'Découvrez le nouveau blog ClimGO avec commentaires, évaluations et newsletter. Expert chauffage climatisation en Gironde.',
+  'Découvrez notre nouveau blog dédié au chauffage et à la climatisation en Gironde avec toutes les fonctionnalités interactives.'
+) ON CONFLICT (slug) DO NOTHING;
+*/
+
+-- =====================================================
+-- SCRIPT TERMINÉ
+-- =====================================================
+-- 
+-- ✅ Base de données configurée avec succès !
+-- 
+-- PROCHAINES ÉTAPES :
+-- 1. Exécutez : npm run create-admin-supabase
+-- 2. Testez la connexion admin : http://localhost:3000/admin/login
+-- 3. Vérifiez que toutes les fonctionnalités marchent
+-- 
+-- IDENTIFIANTS ADMIN :
+-- Email: contact@climgo.fr
+-- Mot de passe: benclimgo06
+-- 
+-- =====================================================

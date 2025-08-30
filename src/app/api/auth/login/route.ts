@@ -15,11 +15,25 @@ export async function POST(request: NextRequest) {
     // Authentification sécurisée avec Supabase
     const { createClient } = require('@supabase/supabase-js');
     const supabase = createClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://dummy.supabase.co',
-      process.env.SUPABASE_SERVICE_ROLE_KEY || 'dummy-key'
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.SUPABASE_SERVICE_ROLE_KEY!
     );
 
-    // Vérifier les credentials avec Supabase
+    // Vérifier d'abord si l'utilisateur existe et est admin
+    const { data: profile, error: profileError } = await supabase
+      .from('users')
+      .select('id, email, is_admin')
+      .eq('email', email)
+      .single();
+
+    if (profileError || !profile?.is_admin) {
+      return NextResponse.json(
+        { error: 'Accès non autorisé' },
+        { status: 403 }
+      );
+    }
+
+    // Vérifier les credentials avec Supabase Auth
     const { data, error } = await supabase.auth.signInWithPassword({
       email,
       password
@@ -32,33 +46,15 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Vérifier si l'utilisateur est admin
-    const { data: profile } = await supabase
-      .from('users')
-      .select('is_admin')
-      .eq('id', data.user.id)
-      .single();
-
-    if (!profile?.is_admin) {
-      return NextResponse.json(
-        { error: 'Accès non autorisé' },
-        { status: 403 }
-      );
-    }
-
     return NextResponse.json({
-      token: data.session?.access_token,
+      session: data.session,
       user: {
         id: data.user.id,
         email: data.user.email,
+        is_admin: true,
         role: 'admin'
       }
     });
-
-    return NextResponse.json(
-      { error: 'Identifiants invalides' },
-      { status: 401 }
-    );
   } catch (error) {
     console.error('Erreur lors de la connexion:', error);
     return NextResponse.json(

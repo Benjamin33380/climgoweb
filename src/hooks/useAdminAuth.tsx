@@ -44,26 +44,36 @@ export function AdminAuthProvider({ children }: { children: React.ReactNode }) {
 
   const login = async (email: string, password: string): Promise<boolean> => {
     try {
-      // TODO: Remplacer par Supabase Auth
-      // const { data, error } = await supabase.auth.signInWithPassword({
-      //   email,
-      //   password,
-      // });
+      // Connexion avec Supabase Auth
+      const response = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
 
-      // Simulation de connexion admin
-      if (email === 'admin@climgo.fr' && password === 'admin123') {
-        const adminUser = {
-          id: 'admin-1',
-          email: 'admin@climgo.fr',
-          role: 'admin'
-        };
-
-        // Stocker les données
-        localStorage.setItem('adminToken', 'admin-token-123');
-        localStorage.setItem('adminUser', JSON.stringify(adminUser));
+      if (response.ok) {
+        const data = await response.json();
         
-        setUser(adminUser);
-        return true;
+        // Vérifier si l'utilisateur est admin
+        if (data.user && data.user.is_admin) {
+          const adminUser = {
+            id: data.user.id,
+            email: data.user.email,
+            role: 'admin'
+          };
+
+          // Stocker les données
+          localStorage.setItem('adminToken', data.session.access_token);
+          localStorage.setItem('adminUser', JSON.stringify(adminUser));
+          
+          setUser(adminUser);
+          router.push('/admin/dashboard');
+          return true;
+        } else {
+          return false;
+        }
       } else {
         return false;
       }

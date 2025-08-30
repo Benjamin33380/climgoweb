@@ -1,8 +1,17 @@
+require('dotenv').config();
 const { createClient } = require('@supabase/supabase-js');
 
 // Configuration Supabase
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://dummy.supabase.co';
-const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || 'dummy-key';
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+if (!supabaseUrl || !supabaseServiceKey) {
+  console.error('❌ Variables d\'environnement Supabase manquantes !');
+  console.log('Vérifiez que vous avez bien configuré :');
+  console.log('- NEXT_PUBLIC_SUPABASE_URL');
+  console.log('- SUPABASE_SERVICE_ROLE_KEY');
+  process.exit(1);
+}
 
 const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
