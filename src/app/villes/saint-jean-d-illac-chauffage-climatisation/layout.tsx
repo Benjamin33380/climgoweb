@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { PerformanceOptimizations } from '@/components/PerformanceOptimizations';
-import { GoogleAnalytics } from '@/components/GoogleAnalytics';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

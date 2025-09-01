@@ -2,7 +2,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { PerformanceOptimizations } from "@/components/PerformanceOptimizations";
-import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const SITE = "https://www.climgo.fr";
 const PATH = "/villes/bordeaux-chauffage-climatisation";
