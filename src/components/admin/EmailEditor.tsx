@@ -71,8 +71,8 @@ export default function EmailEditor({ onSend, loading = false, recipients = [] }
         articleExcerpt: 'Extrait de l\'article',
         articleUrl: '#',
         unsubscribeUrl: '#',
-        ctaUrl: '#',
-        ctaText: 'En savoir plus'
+        ctaUrl: customVariables.ctaUrl || '',
+        ctaText: customVariables.ctaText || ''
       }
     ) : '';
 
@@ -141,8 +141,8 @@ export default function EmailEditor({ onSend, loading = false, recipients = [] }
       articleExcerpt: customVariables.articleExcerpt || 'Extrait de l\'article',
       articleUrl: customVariables.articleUrl || '#',
       unsubscribeUrl: '#',
-      ctaUrl: customVariables.ctaUrl || '#',
-      ctaText: customVariables.ctaText || 'En savoir plus'
+      ctaUrl: customVariables.ctaUrl || '',
+      ctaText: customVariables.ctaText || ''
     };
 
     try {
@@ -265,11 +265,13 @@ export default function EmailEditor({ onSend, loading = false, recipients = [] }
                 className="w-full p-3 border border-gray-300 rounded-md bg-white text-gray-900 focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800 dark:border-gray-600 dark:text-white"
               >
                 <option value="">Sélectionner un template</option>
-                {Object.entries(emailTemplates).map(([key, template]) => (
-                  <option key={key} value={key}>
-                    {template.name} - {template.description}
-                  </option>
-                ))}
+                {Object.entries(emailTemplates)
+                  .filter(([key]) => key !== 'templateArticleCreatedNotification') // Exclure le template automatique
+                  .map(([key, template]) => (
+                    <option key={key} value={key}>
+                      {template.name} - {template.description}
+                    </option>
+                  ))}
               </select>
             </div>
 
@@ -285,15 +287,21 @@ export default function EmailEditor({ onSend, loading = false, recipients = [] }
               />
             </div>
 
-            {/* Contenu (pour template personnalisé) */}
-            {selectedTemplate === 'templateCustomMail' && (
+            {/* Contenu (pour template personnalisé et newsletter) */}
+            {(selectedTemplate === 'templateCustomMail' || selectedTemplate === 'templateNewsletter') && (
               <div className="space-y-2">
-                <Label htmlFor="content" className="text-gray-900 dark:text-gray-100">Contenu</Label>
+                <Label htmlFor="content" className="text-gray-900 dark:text-gray-100">
+                  {selectedTemplate === 'templateNewsletter' ? 'Contenu de la newsletter' : 'Contenu de votre email'}
+                </Label>
                 <Textarea
                   id="content"
                   value={content}
                   onChange={(e) => setContent(e.target.value)}
-                  placeholder="Contenu de votre email..."
+                  placeholder={
+                    selectedTemplate === 'templateNewsletter' 
+                      ? 'Contenu de votre newsletter...' 
+                      : 'Contenu de votre email...'
+                  }
                   rows={8}
                   className="resize-none text-gray-900 dark:text-white bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600"
                 />
@@ -307,17 +315,35 @@ export default function EmailEditor({ onSend, loading = false, recipients = [] }
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {currentTemplate.variables
                     .filter(variable => !['firstName', 'unsubscribeUrl', 'subject', 'content'].includes(variable))
-                    .map(variable => (
-                      <div key={variable} className="space-y-1">
-                        <Label className="text-xs font-medium text-gray-900 dark:text-gray-100">{variable}</Label>
-                        <Input
-                          value={customVariables[variable] || ''}
-                          onChange={(e) => handleVariableChange(variable, e.target.value)}
-                          placeholder={variable}
-                          className="text-sm text-gray-900 dark:text-white bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600"
-                        />
-                      </div>
-                    ))}
+                    .map(variable => {
+                      const getVariableDescription = (varName: string) => {
+                        switch (varName) {
+                          case 'ctaUrl': return 'URL du bouton d\'action (ex: lien vers un article)';
+                          case 'ctaText': return 'Texte du bouton (ex: "En savoir plus")';
+                          case 'articleTitle': return 'Titre de l\'article';
+                          case 'articleExcerpt': return 'Extrait de l\'article';
+                          case 'articleUrl': return 'Lien vers l\'article';
+                          default: return varName;
+                        }
+                      };
+                      
+                      return (
+                        <div key={variable} className="space-y-1">
+                          <Label className="text-xs font-medium text-gray-900 dark:text-gray-100">
+                            {variable}
+                            <span className="ml-2 text-xs text-gray-500 font-normal">
+                              {getVariableDescription(variable)}
+                            </span>
+                          </Label>
+                          <Input
+                            value={customVariables[variable] || ''}
+                            onChange={(e) => handleVariableChange(variable, e.target.value)}
+                            placeholder={getVariableDescription(variable)}
+                            className="text-sm text-gray-900 dark:text-white bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600"
+                          />
+                        </div>
+                      );
+                    })}
                 </div>
               </div>
             )}

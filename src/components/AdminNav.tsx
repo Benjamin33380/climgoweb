@@ -9,7 +9,6 @@ import {
   MessageSquare, 
   Mail, 
   BarChart3, 
-  Settings,
   LogOut,
   Star,
   MessageCircle
@@ -72,13 +71,6 @@ export function AdminNav() {
       icon: Mail,
       color: 'text-red-600'
     },
-    {
-      title: 'Paramètres',
-      description: 'Configuration du système',
-      href: '/admin/settings',
-      icon: Settings,
-      color: 'text-gray-600'
-    }
   ];
 
   const handleLogout = async () => {

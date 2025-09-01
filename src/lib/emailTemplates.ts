@@ -544,6 +544,8 @@ export const emailTemplates: Record<string, EmailTemplate> = {
               </div>
               {{#if ctaUrl}}
               <a href="{{ctaUrl}}" class="cta-button">{{ctaText}}</a>
+              {{else}}
+              <a href="https://climgo.fr" class="cta-button">Visiter notre site</a>
               {{/if}}
             </div>
           </div>
@@ -569,8 +571,26 @@ export const emailTemplates: Record<string, EmailTemplate> = {
 
 export function replaceTemplateVariables(template: string, variables: Record<string, string>): string {
   let result = template;
+  
+  // Remplacer les variables simples
   Object.entries(variables).forEach(([key, value]) => {
     result = result.replace(new RegExp(`{{${key}}}`, 'g'), value || '');
   });
+  
+  // Gérer les variables conditionnelles pour ctaUrl et ctaText
+  if (variables.ctaUrl && variables.ctaText && variables.ctaUrl.trim() !== '' && variables.ctaText.trim() !== '') {
+    // Si ctaUrl et ctaText sont définis et non vides, afficher le bouton personnalisé
+    result = result.replace(/{{#if ctaUrl}}([\s\S]*?){{else}}([\s\S]*?){{\/if}}/g, '$1');
+    // Remplacer les variables dans le bouton personnalisé
+    result = result.replace(/\{\{ctaUrl\}\}/g, variables.ctaUrl);
+    result = result.replace(/\{\{ctaText\}\}/g, variables.ctaText);
+  } else {
+    // Sinon, afficher le bouton par défaut
+    result = result.replace(/{{#if ctaUrl}}([\s\S]*?){{else}}([\s\S]*?){{\/if}}/g, '$2');
+  }
+  
+  // Nettoyer les variables non remplacées restantes
+  result = result.replace(/\{\{[^}]+\}\}/g, '');
+  
   return result;
 } 

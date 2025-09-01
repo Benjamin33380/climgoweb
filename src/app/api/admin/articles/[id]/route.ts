@@ -252,7 +252,38 @@ export async function DELETE(
       );
     }
 
-    // Supprimer l'article (les commentaires et ratings seront supprimés automatiquement grâce aux relations)
+    // Supprimer d'abord les relations (commentaires et ratings)
+    // MongoDB ne gère pas automatiquement les suppressions en cascade
+    console.log(`🗑️ [Admin] Suppression des relations pour l'article ${articleId}`);
+    
+    try {
+      // Supprimer les commentaires
+      const deletedComments = await prisma.comment.deleteMany({
+        where: { articleId: articleId }
+      });
+      console.log(`🗑️ [Admin] ${deletedComments.count} commentaires supprimés`);
+
+      // Supprimer les ratings
+      const deletedRatings = await prisma.rating.deleteMany({
+        where: { articleId: articleId }
+      });
+      console.log(`🗑️ [Admin] ${deletedRatings.count} ratings supprimés`);
+
+      // Supprimer les notifications liées
+      const deletedNotifications = await prisma.notification.deleteMany({
+        where: { articleId: articleId }
+      });
+      console.log(`🗑️ [Admin] ${deletedNotifications.count} notifications supprimées`);
+
+    } catch (relationError) {
+      console.error('❌ [Admin] Erreur lors de la suppression des relations:', relationError);
+      return NextResponse.json(
+        { error: 'Erreur lors de la suppression des relations de l\'article' },
+        { status: 500 }
+      );
+    }
+
+    // Maintenant supprimer l'article
     await prisma.article.delete({
       where: { id: articleId }
     });
