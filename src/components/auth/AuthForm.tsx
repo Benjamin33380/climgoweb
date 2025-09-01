@@ -1,258 +1,217 @@
 'use client';
 
 import { useState } from 'react';
+import { useUser } from '@/components/providers/UserProvider';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Loader2, Mail, Lock, User, Eye, EyeOff } from 'lucide-react';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
-interface AuthFormProps {
-  mode: 'login' | 'register';
-  onSuccess?: () => void;
-  onModeChange?: (mode: 'login' | 'register') => void;
-}
-
-export default function AuthForm({ mode, onSuccess, onModeChange }: AuthFormProps) {
-  const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-    username: '',
-    confirmPassword: ''
-  });
+export function AuthForm() {
+  const [isLogin, setIsLogin] = useState(true);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [success, setSuccess] = useState('');
+
+  const { login, register } = useUser();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setError('');
+    setSuccess('');
 
     try {
-      if (mode === 'register') {
-        if (formData.password !== formData.confirmPassword) {
-          setError('Les mots de passe ne correspondent pas');
-          return;
-        }
-      }
-
-      // TODO: Remplacer par Supabase Auth
-      // Simuler l'authentification
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      if (mode === 'login') {
-        // Simuler la connexion
-        if (formData.email === 'admin@climgo.fr' && formData.password === 'admin123') {
-          setError('');
-          onSuccess?.();
+      if (isLogin) {
+        const result = await login(email, password);
+        if (result.success) {
+          setSuccess('Connexion réussie !');
+          // Redirection sera gérée par le hook useAuth
         } else {
-          setError('Email ou mot de passe incorrect');
+          setError(result.error || 'Erreur de connexion');
         }
       } else {
-        // Simuler l'inscription
-        setError('');
-        onSuccess?.();
+        const result = await register(email, password, firstName, lastName);
+        if (result.success) {
+          setSuccess('Inscription réussie !');
+          // Redirection sera gérée par le hook useAuth
+        } else {
+          setError(result.error || 'Erreur d\'inscription');
+        }
       }
     } catch (error) {
-      setError('Une erreur est survenue');
+      console.error('Erreur lors de la connexion ou de l\'inscription:', error);
+      setError('Une erreur inattendue s\'est produite');
     } finally {
       setLoading(false);
     }
   };
 
-  const toggleMode = () => {
-    const newMode = mode === 'login' ? 'register' : 'login';
-    onModeChange?.(newMode);
-    setFormData({
-      email: '',
-      password: '',
-      username: '',
-      confirmPassword: ''
-    });
+  const switchMode = () => {
+    setIsLogin(!isLogin);
     setError('');
+    setSuccess('');
+    setEmail('');
+    setPassword('');
+    setFirstName('');
+    setLastName('');
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold text-gray-900">
-            {mode === 'login' ? 'Connexion' : 'Inscription'}
-          </h2>
-          <p className="mt-2 text-sm text-gray-600">
-            {mode === 'login' 
-              ? 'Connectez-vous à votre compte ClimGO' 
-              : 'Créez votre compte ClimGO'
+    <div className="flex justify-center items-center min-h-screen bg-gray-50">
+      <Card className="w-full max-w-md">
+        <CardHeader className="text-center">
+          <CardTitle className="text-2xl font-bold">
+            {isLogin ? 'Connexion' : 'Inscription'}
+          </CardTitle>
+          <CardDescription>
+            {isLogin 
+              ? 'Connectez-vous à votre compte ClimGo' 
+              : 'Créez votre compte ClimGo'
             }
-          </p>
-        </div>
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Tabs value={isLogin ? 'login' : 'register'} className="w-full">
+            <TabsList className="grid w-full grid-cols-2">
+              <TabsTrigger 
+                value="login" 
+                onClick={() => setIsLogin(true)}
+                className={isLogin ? 'bg-primary text-primary-foreground' : ''}
+              >
+                Connexion
+              </TabsTrigger>
+              <TabsTrigger 
+                value="register" 
+                onClick={() => setIsLogin(false)}
+                className={!isLogin ? 'bg-primary text-primary-foreground' : ''}
+              >
+                Inscription
+              </TabsTrigger>
+            </TabsList>
 
-        <Card>
-          <CardHeader>
-            <CardTitle>
-              {mode === 'login' ? 'Se connecter' : 'Créer un compte'}
-            </CardTitle>
-            <CardDescription>
-              {mode === 'login' 
-                ? 'Entrez vos identifiants pour accéder à votre espace' 
-                : 'Remplissez le formulaire pour créer votre compte'
-              }
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <form onSubmit={handleSubmit} className="space-y-4">
-              {error && (
-                <Alert className="border-red-200 bg-red-50">
-                  <AlertDescription className="text-red-800">{error}</AlertDescription>
-                </Alert>
-              )}
-
-              {mode === 'register' && (
-                <div>
-                  <Label htmlFor="username">Nom d'utilisateur</Label>
-                  <div className="relative">
-                    <User className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
-                    <Input
-                      id="username"
-                      type="text"
-                      value={formData.username}
-                      onChange={(e) => setFormData(prev => ({ ...prev, username: e.target.value }))}
-                      placeholder="Votre nom d'utilisateur"
-                      className="pl-10"
-                      required
-                    />
-                  </div>
-                </div>
-              )}
-
-              <div>
-                <Label htmlFor="email">Email</Label>
-                <div className="relative">
-                  <Mail className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+            <TabsContent value="login" className="mt-6">
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="space-y-2">
+                  <Label htmlFor="email">Email</Label>
                   <Input
                     id="email"
                     type="email"
-                    value={formData.email}
-                    onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
                     placeholder="votre@email.com"
-                    className="pl-10"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     required
                   />
                 </div>
-              </div>
-
-              <div>
-                <Label htmlFor="password">Mot de passe</Label>
-                <div className="relative">
-                  <Lock className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                <div className="space-y-2">
+                  <Label htmlFor="password">Mot de passe</Label>
                   <Input
                     id="password"
-                    type={showPassword ? 'text' : 'password'}
-                    value={formData.password}
-                    onChange={(e) => setFormData(prev => ({ ...prev, password: e.target.value }))}
+                    type="password"
                     placeholder="Votre mot de passe"
-                    className="pl-10 pr-10"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                     required
                   />
-                  <button
-                    type="button"
-                    onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3 top-3 text-gray-400 hover:text-gray-600"
-                  >
-                    {showPassword ? (
-                      <EyeOff className="h-4 w-4" />
-                    ) : (
-                      <Eye className="h-4 w-4" />
-                    )}
-                  </button>
                 </div>
-              </div>
+                <Button 
+                  type="submit" 
+                  className="w-full" 
+                  disabled={loading}
+                >
+                  {loading ? 'Connexion...' : 'Se connecter'}
+                </Button>
+              </form>
+            </TabsContent>
 
-              {mode === 'register' && (
-                <div>
-                  <Label htmlFor="confirmPassword">Confirmer le mot de passe</Label>
-                  <div className="relative">
-                    <Lock className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+            <TabsContent value="register" className="mt-6">
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="firstName">Prénom</Label>
                     <Input
-                      id="confirmPassword"
-                      type={showConfirmPassword ? 'text' : 'password'}
-                      value={formData.confirmPassword}
-                      onChange={(e) => setFormData(prev => ({ ...prev, confirmPassword: e.target.value }))}
-                      placeholder="Confirmez votre mot de passe"
-                      className="pl-10 pr-10"
-                      required
+                      id="firstName"
+                      type="text"
+                      placeholder="Prénom"
+                      value={firstName}
+                      onChange={(e) => setFirstName(e.target.value)}
                     />
-                    <button
-                      type="button"
-                      onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                      className="absolute right-3 top-3 text-gray-400 hover:text-gray-600"
-                    >
-                      {showConfirmPassword ? (
-                        <EyeOff className="h-4 w-4" />
-                      ) : (
-                        <Eye className="h-4 w-4" />
-                      )}
-                    </button>
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="lastName">Nom</Label>
+                    <Input
+                      id="lastName"
+                      type="text"
+                      placeholder="Nom"
+                      value={lastName}
+                      onChange={(e) => setLastName(e.target.value)}
+                    />
                   </div>
                 </div>
-              )}
-
-              <Button
-                type="submit"
-                disabled={loading}
-                className="w-full"
-              >
-                {loading ? (
-                  <>
-                    <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-                    {mode === 'login' ? 'Connexion...' : 'Création...'}
-                  </>
-                ) : (
-                  <>
-                    {mode === 'login' ? 'Se connecter' : 'Créer le compte'}
-                  </>
-                )}
-              </Button>
-            </form>
-
-            <div className="mt-6 text-center">
-              <button
-                type="button"
-                onClick={toggleMode}
-                className="text-sm text-blue-600 hover:text-blue-800 hover:underline"
-              >
-                {mode === 'login' 
-                  ? 'Pas encore de compte ? S\'inscrire' 
-                  : 'Déjà un compte ? Se connecter'
-                }
-              </button>
-            </div>
-
-            {mode === 'login' && (
-              <div className="mt-4 text-center">
-                <button
-                  type="button"
-                  className="text-sm text-gray-600 hover:text-gray-800 hover:underline"
+                <div className="space-y-2">
+                  <Label htmlFor="register-email">Email</Label>
+                  <Input
+                    id="register-email"
+                    type="email"
+                    placeholder="votre@email.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="register-password">Mot de passe</Label>
+                  <Input
+                    id="register-password"
+                    type="password"
+                    placeholder="Au moins 8 caractères"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                  />
+                </div>
+                <Button 
+                  type="submit" 
+                  className="w-full" 
+                  disabled={loading}
                 >
-                  Mot de passe oublié ?
-                </button>
-              </div>
-            )}
-          </CardContent>
-        </Card>
+                  {loading ? 'Inscription...' : 'S\'inscrire'}
+                </Button>
+              </form>
+            </TabsContent>
+          </Tabs>
 
-        <div className="text-center text-sm text-gray-500">
-          <p>
-            En continuant, vous acceptez nos{' '}
-            <a href="/politique-confidentialite" className="text-blue-600 hover:underline">
-              conditions d'utilisation
-            </a>
-          </p>
-        </div>
-      </div>
+          {error && (
+            <div className="mt-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded">
+              {error}
+            </div>
+          )}
+
+          {success && (
+            <div className="mt-4 p-3 bg-green-100 border border-green-400 text-green-700 rounded">
+              {success}
+            </div>
+          )}
+
+          <div className="mt-6 text-center">
+            <button
+              type="button"
+              onClick={switchMode}
+              className="text-sm text-blue-600 hover:text-blue-800 underline"
+            >
+              {isLogin 
+                ? 'Pas encore de compte ? S\'inscrire' 
+                : 'Déjà un compte ? Se connecter'
+              }
+            </button>
+          </div>
+        </CardContent>
+      </Card>
     </div>
   );
 }

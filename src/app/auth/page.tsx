@@ -9,10 +9,11 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Loader2, Mail, Lock, User, Eye, EyeOff } from 'lucide-react';
-import { supabase } from '@/lib/supabase';
+import { useUser } from '@/components/providers/UserProvider';
 
 export default function AuthPage() {
   const router = useRouter();
+  const { login, register } = useUser();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
@@ -29,7 +30,8 @@ export default function AuthPage() {
     email: '',
     password: '',
     confirmPassword: '',
-    username: ''
+    firstName: '',
+    lastName: ''
   });
 
   const handleLogin = async (e: React.FormEvent) => {
@@ -39,23 +41,19 @@ export default function AuthPage() {
     setSuccess('');
 
     try {
-      const { data, error } = await supabase.auth.signInWithPassword({
-        email: loginForm.email,
-        password: loginForm.password,
-      });
+      const result = await login(loginForm.email, loginForm.password);
 
-      if (error) {
-        throw error;
-      }
-
-      if (data.user) {
+      if (result.success) {
         setSuccess('Connexion réussie ! Redirection...');
         setTimeout(() => {
           router.push('/');
         }, 1000);
+      } else {
+        setError(result.error || 'Erreur lors de la connexion');
       }
-    } catch (error: unknown) {
-      setError(error instanceof Error ? error.message : 'Erreur lors de la connexion');
+    } catch (error) {
+      console.error('Erreur lors de la connexion:', error);
+      setError('Erreur lors de la connexion');
     } finally {
       setLoading(false);
     }
@@ -73,33 +71,37 @@ export default function AuthPage() {
       return;
     }
 
-    if (registerForm.password.length < 6) {
-      setError('Le mot de passe doit contenir au moins 6 caractères');
+    if (registerForm.password.length < 8) {
+      setError('Le mot de passe doit contenir au moins 8 caractères');
       setLoading(false);
       return;
     }
 
     try {
-      const { data, error } = await supabase.auth.signUp({
-        email: registerForm.email,
-        password: registerForm.password,
-        options: {
-          data: {
-            username: registerForm.username || null,
+      const result = await register(
+        registerForm.email,
+        registerForm.password,
+        registerForm.firstName || undefined,
+        registerForm.lastName || undefined
+      );
+
+      if (result.success) {
+        setSuccess('Inscription réussie ! Vous pouvez maintenant vous connecter.');
+        setRegisterForm({ email: '', password: '', confirmPassword: '', firstName: '', lastName: '' });
+        
+        // Rediriger vers l'onglet de connexion
+        setTimeout(() => {
+          const loginTab = document.querySelector('[value="login"]') as HTMLElement;
+          if (loginTab) {
+            loginTab.click();
           }
-        }
-      });
-
-      if (error) {
-        throw error;
+        }, 2000);
+      } else {
+        setError(result.error || 'Erreur lors de l\'inscription');
       }
-
-      if (data.user) {
-        setSuccess('Inscription réussie ! Vérifiez votre email pour confirmer votre compte.');
-        setRegisterForm({ email: '', password: '', confirmPassword: '', username: '' });
-      }
-    } catch (error: unknown) {
-      setError(error instanceof Error ? error.message : 'Erreur lors de l\'inscription');
+    } catch (error) {
+      console.error('Erreur lors de l\'inscription:', error);
+      setError('Erreur lors de l\'inscription');
     } finally {
       setLoading(false);
     }
@@ -133,7 +135,7 @@ export default function AuthPage() {
               <TabsTrigger value="register">Inscription</TabsTrigger>
             </TabsList>
 
-            <TabsContent value="login" className="space-y-4">
+            <TabsContent value="login" className="space-y-4 mt-6">
               <form onSubmit={handleLogin} className="space-y-4">
                 <div className="space-y-2">
                   <Label htmlFor="login-email">Email</Label>
@@ -200,21 +202,39 @@ export default function AuthPage() {
               </form>
             </TabsContent>
 
-            <TabsContent value="register" className="space-y-4">
+            <TabsContent value="register" className="space-y-4 mt-6">
               <form onSubmit={handleRegister} className="space-y-4">
-                <div className="space-y-2">
-                  <Label htmlFor="register-username">Nom d'utilisateur (optionnel)</Label>
-                  <div className="relative">
-                    <User className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
-                    <Input
-                      id="register-username"
-                      type="text"
-                      placeholder="Votre nom d'utilisateur"
-                      value={registerForm.username}
-                      onChange={(e) => setRegisterForm(prev => ({ ...prev, username: e.target.value }))}
-                      className="pl-10"
-                      disabled={loading}
-                    />
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="register-firstname">Prénom</Label>
+                    <div className="relative">
+                      <User className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+                      <Input
+                        id="register-firstname"
+                        type="text"
+                        placeholder="Prénom"
+                        value={registerForm.firstName}
+                        onChange={(e) => setRegisterForm(prev => ({ ...prev, firstName: e.target.value }))}
+                        className="pl-10"
+                        disabled={loading}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="register-lastname">Nom</Label>
+                    <div className="relative">
+                      <User className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+                      <Input
+                        id="register-lastname"
+                        type="text"
+                        placeholder="Nom"
+                        value={registerForm.lastName}
+                        onChange={(e) => setRegisterForm(prev => ({ ...prev, lastName: e.target.value }))}
+                        className="pl-10"
+                        disabled={loading}
+                      />
+                    </div>
                   </div>
                 </div>
 
@@ -242,7 +262,7 @@ export default function AuthPage() {
                     <Input
                       id="register-password"
                       type={showPassword ? 'text' : 'password'}
-                      placeholder="Au moins 6 caractères"
+                      placeholder="Au moins 8 caractères"
                       value={registerForm.password}
                       onChange={(e) => setRegisterForm(prev => ({ ...prev, password: e.target.value }))}
                       className="pl-10 pr-10"
@@ -318,4 +338,4 @@ export default function AuthPage() {
       </Card>
     </div>
   );
-}
+} 

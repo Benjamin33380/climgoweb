@@ -1,5 +1,6 @@
 import BlogSearchWrapper from '@/components/BlogSearchWrapper';
 import { Suspense } from 'react';
+import { prisma } from '@/lib/prisma';
 
 interface Article {
   id: string;
@@ -17,21 +18,59 @@ interface Article {
 
 async function getArticles(): Promise<Article[]> {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.climgo.fr'}/api/blog`, {
-      cache: 'no-store'
+    console.log('🔍 [BlogPage] Récupération des articles depuis Prisma...');
+    
+    // Récupérer directement depuis Prisma
+    const dbArticles = await prisma.article.findMany({
+      where: {
+        published: true
+      },
+      select: {
+        id: true,
+        title: true,
+        slug: true,
+        excerpt: true,
+        imageUrl: true,
+        published: true,
+        createdAt: true,
+        _count: {
+          select: {
+            comments: true,
+            ratings: true
+          }
+        }
+      },
+      orderBy: {
+        createdAt: 'desc'
+      }
     });
-    if (response.ok) {
-      const data = await response.json();
-      return data.articles || [];
-    }
+    
+    // Transformer les données pour correspondre à l'interface Article
+    const articles: Article[] = dbArticles.map(article => ({
+      id: article.id,
+      title: article.title,
+      slug: article.slug,
+      excerpt: article.excerpt || '', // Convertir null en chaîne vide
+      imageUrl: article.imageUrl,
+      published: article.published,
+      createdAt: article.createdAt?.toISOString() || new Date().toISOString(),
+      _count: article._count
+    }));
+    
+    console.log('✅ [BlogPage] Articles récupérés depuis Prisma:', articles.length);
+    return articles;
+    
   } catch (error) {
-    console.error('Erreur lors de la récupération des articles:', error);
+    console.error('❌ [BlogPage] Erreur lors de la récupération des articles:', error);
+    return [];
   }
-  return [];
 }
 
 export default async function BlogPage() {
   const articles = await getArticles();
+  
+  console.log('📚 [BlogPage] Articles récupérés:', articles.length);
+  console.log('📚 [BlogPage] Articles:', articles);
 
   return (
     <div className="min-h-screen bg-background">

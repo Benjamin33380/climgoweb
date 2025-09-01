@@ -2,14 +2,14 @@
 import * as React from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Phone, Wrench, Droplet, Settings, FileText, Menu, Mail, MessageSquare, AirVent, User } from "lucide-react"
+import { Phone, Wrench, Droplet, Settings, FileText, Menu, Mail, MessageSquare, AirVent } from "lucide-react"
 import { ModeToggle } from "@/components/ui/mode-toggle"
 import { Button } from "@/components/ui/button"
 import { LogoWithFallback } from "@/components/ui/Logo3D"
 import { UserMenu } from "@/components/auth/UserMenu"
-import { NotificationCenter } from "@/components/admin/NotificationCenter"
-import { useUser } from "@/hooks/useUser"
-import { useState } from "react"
+import { useUser } from "@/components/providers/UserProvider"
+import UserPoints from "@/components/ui/UserPoints"
+import { useState, useEffect } from "react"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -98,9 +98,29 @@ const entreprise: { title: string; href: string; description: string }[] = [
   },
 ]
 
-export function NewHeader() {
-  const { user, logout } = useUser()
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+export default function NewHeader() {
+  const { user } = useUser();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [userPoints, setUserPoints] = useState<number | null>(null);
+
+  // Récupérer les points de l'utilisateur depuis la base de données
+  useEffect(() => {
+    if (user?.id) {
+      fetchUserPoints();
+    }
+  }, [user?.id]);
+
+  const fetchUserPoints = async () => {
+    try {
+      const response = await fetch(`/api/user/points`);
+      if (response.ok) {
+        const data = await response.json();
+        setUserPoints(data.points);
+      }
+    } catch (error) {
+      console.error('Erreur lors de la récupération des points:', error);
+    }
+  };
   const [isServicesHovered, setIsServicesHovered] = useState(false)
   const [isContactHovered, setIsContactHovered] = useState(false)
 
@@ -223,30 +243,37 @@ export function NewHeader() {
               <NavigationMenuItem>
                 <NavigationMenuTrigger>Blog</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                  <ul className="grid lg:w-[600px] gap-3 p-6">
+                    <li className="row-span-3">
+                      <NavigationMenuLink asChild>
+                        <Link
+                          className="flex h-full w-full select-none flex-col justify-center rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md group"
+                          href="/blog"
+                        >
+                          <div className="flex justify-center items-center mb-4">
+                          <LogoWithFallback
+                              glbUrl="/favicon/logo.glb"
+                              isHovered={isContactHovered}
+                              className="w-16 h-16 transition-all duration-300"
+                            />
+                          </div>
+                          <div className="text-center">
+                            <div className="mb-2 text-lg font-medium">
+                              Blog ClimGO
+                            </div>
+                            <p className="text-sm leading-tight text-muted-foreground">
+                              Conseils d'experts en chauffage et climatisation
+                            </p>
+                          </div>
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
                     <ListItem
                       href="/blog"
                       title="Tous les articles"
+                      icon={<FileText className="w-4 h-4" />}
                     >
                       Découvrez nos conseils d'experts en chauffage et climatisation
-                    </ListItem>
-                    <ListItem
-                      href="/blog?category=chauffage"
-                      title="Chauffage"
-                    >
-                      Conseils et guides pour vos systèmes de chauffage
-                    </ListItem>
-                    <ListItem
-                      href="/blog?category=climatisation"
-                      title="Climatisation"
-                    >
-                      Tout savoir sur la climatisation et la pompe à chaleur
-                    </ListItem>
-                    <ListItem
-                      href="/blog?category=maintenance"
-                      title="Maintenance"
-                    >
-                      Entretien et dépannage de vos équipements
                     </ListItem>
                   </ul>
                 </NavigationMenuContent>
@@ -328,11 +355,15 @@ export function NewHeader() {
             Devis gratuit
           </Link>
 
-          {/* Centre de notifications admin */}
-          {user?.is_admin && <NotificationCenter />}
+          {/* Affichage des points utilisateur */}
+          {user && userPoints !== null && (
+            <div className="flex items-center gap-2">
+              <UserPoints points={userPoints} size="sm" showLabel={false} />
+            </div>
+          )}
 
           {/* Menu utilisateur */}
-          <UserMenu user={user} onLogout={logout} />
+          <UserMenu />
 
           <ModeToggle />
 

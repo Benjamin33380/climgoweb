@@ -1,8 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useUser } from '@/hooks/useUser';
-import { supabase } from '@/lib/supabase';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
@@ -10,16 +8,14 @@ import { Switch } from '@/components/ui/switch';
 import { Label } from '@/components/ui/label';
 import { 
   Mail, 
-  Bell, 
   Shield, 
-  Eye, 
   MessageCircle, 
-  Star,
   Save,
   ArrowLeft
 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { useUser } from '@/components/providers/UserProvider';
 
 interface UserPreferences {
   newsletter_subscribed: boolean;
@@ -58,38 +54,19 @@ export default function PreferencesPage() {
     if (user) {
       fetchPreferences();
     }
-  }, [user, loading, router]);
+  }, [user, loading, router]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const fetchPreferences = async () => {
     if (!user) return;
 
     try {
-      const { data, error } = await supabase
-        .from('users')
-        .select(`
-          newsletter_subscribed,
-          email_notifications,
-          comment_notifications,
-          rating_notifications,
-          marketing_emails,
-          profile_public,
-          show_activity
-        `)
-        .eq('id', user.id)
-        .single();
-
-      if (error) throw error;
+      const response = await fetch('/api/user/preferences');
       
-      if (data) {
-        setPreferences({
-          newsletter_subscribed: data.newsletter_subscribed || false,
-          email_notifications: data.email_notifications ?? true,
-          comment_notifications: data.comment_notifications ?? true,
-          rating_notifications: data.rating_notifications ?? true,
-          marketing_emails: data.marketing_emails || false,
-          profile_public: data.profile_public || false,
-          show_activity: data.show_activity ?? true
-        });
+      if (response.ok) {
+        const data = await response.json();
+        if (data.preferences) {
+          setPreferences(data.preferences);
+        }
       }
     } catch (error) {
       console.error('Erreur lors du chargement des préférences:', error);
@@ -107,22 +84,27 @@ export default function PreferencesPage() {
     setSaveStatus({ type: null, message: '' });
 
     try {
-      const { error } = await supabase
-        .from('users')
-        .update(preferences)
-        .eq('id', user.id);
-
-      if (error) throw error;
-
-      setSaveStatus({
-        type: 'success',
-        message: 'Préférences sauvegardées avec succès !'
+      const response = await fetch('/api/user/preferences', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(preferences)
       });
 
-      // Effacer le message après 3 secondes
-      setTimeout(() => {
-        setSaveStatus({ type: null, message: '' });
-      }, 3000);
+      if (response.ok) {
+        setSaveStatus({
+          type: 'success',
+          message: 'Préférences sauvegardées avec succès !'
+        });
+
+        // Effacer le message après 3 secondes
+        setTimeout(() => {
+          setSaveStatus({ type: null, message: '' });
+        }, 3000);
+      } else {
+        throw new Error('Erreur lors de la sauvegarde');
+      }
     } catch (error) {
       console.error('Erreur lors de la sauvegarde:', error);
       setSaveStatus({

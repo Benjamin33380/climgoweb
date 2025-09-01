@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { prisma } from '@/lib/prisma';
 
 // Middleware simplifié pour vérifier l'authentification
 function verifyToken(request: NextRequest) {
@@ -17,25 +18,32 @@ function verifyToken(request: NextRequest) {
 }
 
 // GET - Récupérer tous les commentaires
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
-    verifyToken(request);
-
-    // TODO: Remplacer par Supabase
-    const comments: Record<string, unknown>[] = [];
+    const comments = await prisma.comment.findMany({
+      orderBy: { createdAt: 'desc' },
+      include: {
+        author: {
+          select: {
+            firstName: true,
+            lastName: true,
+            email: true
+          }
+        },
+        article: {
+          select: {
+            title: true,
+            slug: true
+          }
+        }
+      }
+    });
 
     return NextResponse.json(comments);
   } catch (error) {
-    if (error instanceof Error && error.message.includes('Token')) {
-      return NextResponse.json(
-        { error: 'Non autorisé' },
-        { status: 401 }
-      );
-    }
-    
     console.error('Erreur lors de la récupération des commentaires:', error);
     return NextResponse.json(
-      { error: 'Erreur interne du serveur' },
+      { error: 'Erreur lors de la récupération des commentaires' },
       { status: 500 }
     );
   }

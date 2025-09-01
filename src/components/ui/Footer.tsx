@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin, Flame, Droplet, FileText, Star, Github, Twitter, AirVent, BadgeEuro } from 'lucide-react';
-import NewsletterSignup from '@/components/NewsletterSignup';
+import NewsletterSignup from './NewsletterSignup';
 
 const services = [
   { title: "Chauffage", href: "/chauffage", icon: <Flame className="w-4 h-4" /> },
@@ -23,7 +23,7 @@ export default function Footer() {
         
         {/* Section principale */}
         <div className="py-12 sm:py-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8 lg:gap-12">
             
             {/* À propos de ClimGO */}
             <div className="sm:col-span-1 text-center sm:text-left">
@@ -116,24 +116,16 @@ export default function Footer() {
               
               {/* Lien Oxelya */}
               <div className="mt-4">
-                <a 
+                <Link
                   href="https://www.oxelya.com" 
                   className="text-xs text-muted-foreground hover:text-foreground transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   Oxelya
-                </a>
+                </Link>
               </div>
 
-              {/* Newsletter */}
-              <div className="mt-6">
-                <h4 className="text-sm font-semibold text-foreground mb-3">Newsletter</h4>
-                <p className="text-xs text-muted-foreground mb-3">
-                  Restez informé de nos actualités et offres spéciales
-                </p>
-                <NewsletterSignup />
-              </div>
             </div>
 
             {/* Services */}
@@ -266,11 +258,10 @@ export default function Footer() {
                   </Link>
                 </li>
               </ul>
-              
-
-              
-
             </div>
+
+            {/* Newsletter */}
+            <NewsletterSignup />
 
           </div>
         </div>

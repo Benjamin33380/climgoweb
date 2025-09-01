@@ -1,101 +1,130 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useUser } from '@/hooks/useUser';
-import { supabase } from '@/lib/supabase';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { Card } from '@/components/ui/card';
-import { Separator } from '@/components/ui/separator';
-import { User, Mail, Phone, MapPin, Calendar, Edit3, Save, X, Camera, Shield } from 'lucide-react';
-import { useRouter } from 'next/navigation';
-
-interface UserProfile {
-  id: string;
-  email: string;
-  username?: string;
-  first_name?: string;
-  last_name?: string;
-  phone?: string;
-  address?: string;
-  city?: string;
-  postal_code?: string;
-  bio?: string;
-  avatar_url?: string;
-  birth_date?: string;
-  is_admin?: boolean;
-  created_at?: string;
-  newsletter_subscribed?: boolean;
-}
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Alert, AlertDescription } from '@/components/ui/alert';
+import { Loader2, User, Shield, Eye, EyeOff, Save, Edit3, Lock } from 'lucide-react';
+import { useUser } from '@/components/providers/UserProvider';
+import { ProtectedRoute } from '@/components/auth/ProtectedRoute';
 
 export default function ProfilePage() {
-  const { user, loading } = useUser();
-  const router = useRouter();
-  const [profile, setProfile] = useState<UserProfile | null>(null);
+  const { loading, user } = useUser();
   const [isEditing, setIsEditing] = useState(false);
-  const [isSaving, setSaving] = useState(false);
-  const [editedProfile, setEditedProfile] = useState<Partial<UserProfile>>({});
+  const [isChangingPassword, setIsChangingPassword] = useState(false);
+  const [saveLoading, setSaveLoading] = useState(false);
+  const [passwordLoading, setPasswordLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
 
+  // Formulaires
+  const [profileForm, setProfileForm] = useState({
+    firstName: '',
+    lastName: '',
+    email: ''
+  });
+
+  const [passwordForm, setPasswordForm] = useState({
+    currentPassword: '',
+    newPassword: '',
+    confirmPassword: ''
+  });
+
+  const [showPasswords, setShowPasswords] = useState({
+    current: false,
+    new: false,
+    confirm: false
+  });
+
+  // Initialiser le formulaire avec les données utilisateur
   useEffect(() => {
-    if (!loading && !user) {
-      router.push('/auth');
+    if (user) {
+      setProfileForm({
+        firstName: user.firstName || '',
+        lastName: user.lastName || '',
+        email: user.email
+      });
+    }
+  }, [user]);
+
+  const handleProfileUpdate = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSaveLoading(true);
+    setError('');
+    setSuccess('');
+
+    try {
+      const response = await fetch('/api/user/profile', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(profileForm)
+      });
+
+      if (response.ok) {
+        setSuccess('Profil mis à jour avec succès !');
+        setIsEditing(false);
+        setTimeout(() => setSuccess(''), 3000);
+      } else {
+        const data = await response.json();
+        setError(data.error || 'Erreur lors de la mise à jour du profil');
+      }
+    } catch (error) {
+      setError('Erreur lors de la mise à jour du profil');
+      console.error('Erreur lors de la mise à jour du profil:', error);
+    } finally {
+      setSaveLoading(false);
+    }
+  };
+
+  const handlePasswordChange = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setPasswordLoading(true);
+    setError('');
+    setSuccess('');
+
+    if (passwordForm.newPassword !== passwordForm.confirmPassword) {
+      setError('Les nouveaux mots de passe ne correspondent pas');
+      setPasswordLoading(false);
       return;
     }
 
-    if (user) {
-      fetchProfile();
+    if (passwordForm.newPassword.length < 8) {
+      setError('Le nouveau mot de passe doit contenir au moins 8 caractères');
+      setPasswordLoading(false);
+      return;
     }
-  }, [user, loading, router]);
-
-  const fetchProfile = async () => {
-    if (!user) return;
 
     try {
-      const { data, error } = await supabase
-        .from('users')
-        .select('*')
-        .eq('id', user.id)
-        .single();
+      const response = await fetch('/api/user/password', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          currentPassword: passwordForm.currentPassword,
+          newPassword: passwordForm.newPassword
+        })
+      });
 
-      if (error) throw error;
-      setProfile(data);
-      setEditedProfile(data);
+      if (response.ok) {
+        setSuccess('Mot de passe modifié avec succès !');
+        setPasswordForm({ currentPassword: '', newPassword: '', confirmPassword: '' });
+        setIsChangingPassword(false);
+        setTimeout(() => setSuccess(''), 3000);
+      } else {
+        const data = await response.json();
+        setError(data.error || 'Erreur lors du changement de mot de passe');
+      }
     } catch (error) {
-      console.error('Erreur lors du chargement du profil:', error);
-    }
-  };
-
-  const handleSave = async () => {
-    if (!user || !profile) return;
-
-    setSaving(true);
-    try {
-      const { error } = await supabase
-        .from('users')
-        .update(editedProfile)
-        .eq('id', user.id);
-
-      if (error) throw error;
-
-      setProfile({ ...profile, ...editedProfile });
-      setIsEditing(false);
-    } catch (error) {
-      console.error('Erreur lors de la sauvegarde:', error);
-      alert('Erreur lors de la sauvegarde du profil');
+      setError('Erreur lors du changement de mot de passe');
+      console.error('Erreur lors du changement de mot de passe:', error);
     } finally {
-      setSaving(false);
+      setPasswordLoading(false);
     }
-  };
-
-  const handleCancel = () => {
-    setEditedProfile(profile || {});
-    setIsEditing(false);
-  };
-
-  const handleInputChange = (field: keyof UserProfile, value: string) => {
-    setEditedProfile(prev => ({ ...prev, [field]: value }));
   };
 
   if (loading) {
@@ -109,270 +138,283 @@ export default function ProfilePage() {
     );
   }
 
-  if (!user || !profile) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <p className="text-muted-foreground">Profil non trouvé</p>
-        </div>
-      </div>
-    );
-  }
-
   return (
-    <div className="min-h-screen bg-background py-8">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="mb-8">
-          <div className="flex items-center justify-between">
-            <div>
-              <h1 className="text-3xl font-bold text-foreground">Mon Profil</h1>
-              <p className="text-muted-foreground mt-1">
-                Gérez vos informations personnelles et préférences
-              </p>
-            </div>
-            <div className="flex items-center gap-2">
-              {profile.is_admin && (
-                <div className="flex items-center gap-2 px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm">
-                  <Shield className="w-4 h-4" />
-                  Administrateur
-                </div>
-              )}
-              {!isEditing ? (
-                <Button onClick={() => setIsEditing(true)} variant="outline">
-                  <Edit3 className="w-4 h-4 mr-2" />
-                  Modifier
-                </Button>
-              ) : (
-                <div className="flex gap-2">
-                  <Button onClick={handleSave} disabled={isSaving}>
-                    <Save className="w-4 h-4 mr-2" />
-                    {isSaving ? 'Sauvegarde...' : 'Sauvegarder'}
-                  </Button>
-                  <Button onClick={handleCancel} variant="outline">
-                    <X className="w-4 h-4 mr-2" />
-                    Annuler
-                  </Button>
-                </div>
-              )}
-            </div>
+    <ProtectedRoute>
+      <div className="min-h-screen bg-background py-8">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Header */}
+          <div className="mb-8">
+            <h1 className="text-3xl font-bold text-foreground">Mon Profil</h1>
+            <p className="text-muted-foreground mt-2">
+              Gérez vos informations personnelles et votre compte
+            </p>
           </div>
-        </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Sidebar - Avatar et infos de base */}
-          <div className="lg:col-span-1">
-            <Card className="p-6">
-              <div className="text-center">
-                <div className="relative inline-block">
-                  <div className="w-24 h-24 rounded-full bg-muted flex items-center justify-center mx-auto mb-4">
-                    {profile.avatar_url ? (
-                      <img
-                        src={profile.avatar_url}
-                        alt="Avatar"
-                        className="w-24 h-24 rounded-full object-cover"
-                      />
+          {error && (
+            <Alert variant="destructive" className="mb-6">
+              <AlertDescription>{error}</AlertDescription>
+            </Alert>
+          )}
+
+          {success && (
+            <Alert className="mb-6">
+              <AlertDescription>{success}</AlertDescription>
+            </Alert>
+          )}
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {/* Informations personnelles */}
+            <Card>
+              <CardHeader>
+                <div className="flex items-center justify-between">
+                  <CardTitle className="flex items-center gap-2">
+                    <User className="h-5 w-5" />
+                    Informations personnelles
+                  </CardTitle>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => setIsEditing(!isEditing)}
+                  >
+                    {isEditing ? (
+                      <>
+                        <Edit3 className="h-4 w-4 mr-2" />
+                        Annuler
+                      </>
                     ) : (
-                      <User className="w-12 h-12 text-muted-foreground" />
+                      <>
+                        <Edit3 className="h-4 w-4 mr-2" />
+                        Modifier
+                      </>
                     )}
-                  </div>
-                  {isEditing && (
-                    <button className="absolute bottom-0 right-0 p-2 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-colors">
-                      <Camera className="w-4 h-4" />
-                    </button>
-                  )}
+                  </Button>
                 </div>
-                
-                <h2 className="text-xl font-semibold">
-                  {profile.first_name && profile.last_name 
-                    ? `${profile.first_name} ${profile.last_name}`
-                    : profile.username || 'Utilisateur'
-                  }
-                </h2>
-                <p className="text-muted-foreground text-sm">{profile.email}</p>
-                
-                {profile.created_at && (
-                  <div className="flex items-center justify-center gap-2 mt-4 text-sm text-muted-foreground">
-                    <Calendar className="w-4 h-4" />
-                    Membre depuis {new Date(profile.created_at).toLocaleDateString('fr-FR', { 
-                      year: 'numeric', 
-                      month: 'long' 
-                    })}
+              </CardHeader>
+              <CardContent>
+                {isEditing ? (
+                  <form onSubmit={handleProfileUpdate} className="space-y-4">
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="firstName">Prénom</Label>
+                        <Input
+                          id="firstName"
+                          value={profileForm.firstName}
+                          onChange={(e) => setProfileForm(prev => ({ ...prev, firstName: e.target.value }))}
+                          placeholder="Prénom"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="lastName">Nom</Label>
+                        <Input
+                          id="lastName"
+                          value={profileForm.lastName}
+                          onChange={(e) => setProfileForm(prev => ({ ...prev, lastName: e.target.value }))}
+                          placeholder="Nom"
+                        />
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="email">Email</Label>
+                      <Input
+                        id="email"
+                        type="email"
+                        value={profileForm.email}
+                        onChange={(e) => setProfileForm(prev => ({ ...prev, email: e.target.value }))}
+                        placeholder="votre@email.com"
+                        required
+                      />
+                    </div>
+                    <div className="flex gap-2">
+                      <Button type="submit" disabled={saveLoading}>
+                        {saveLoading ? (
+                          <>
+                            <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                            Sauvegarder...
+                          </>
+                        ) : (
+                          <>
+                            <Save className="h-4 w-4 mr-2" />
+                            Sauvegarder
+                          </>
+                        )}
+                      </Button>
+                    </div>
+                  </form>
+                ) : (
+                  <div className="space-y-4">
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <Label className="text-sm font-medium text-muted-foreground">Prénom</Label>
+                        <p className="text-foreground">{user?.firstName || 'Non renseigné'}</p>
+                      </div>
+                      <div>
+                        <Label className="text-sm font-medium text-muted-foreground">Nom</Label>
+                        <p className="text-foreground">{user?.lastName || 'Non renseigné'}</p>
+                      </div>
+                    </div>
+                    <div>
+                      <Label className="text-sm font-medium text-muted-foreground">Email</Label>
+                      <p className="text-foreground">{user?.email}</p>
+                    </div>
                   </div>
                 )}
-              </div>
-            </Card>
-          </div>
-
-          {/* Main Content */}
-          <div className="lg:col-span-2 space-y-6">
-            {/* Informations personnelles */}
-            <Card className="p-6">
-              <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
-                <User className="w-5 h-5" />
-                Informations personnelles
-              </h3>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <Label htmlFor="username">Nom d'utilisateur</Label>
-                  <Input
-                    id="username"
-                    value={isEditing ? (editedProfile.username || '') : (profile.username || '')}
-                    onChange={(e) => handleInputChange('username', e.target.value)}
-                    disabled={!isEditing}
-                    placeholder="Votre nom d'utilisateur"
-                  />
-                </div>
-                
-                <div>
-                  <Label htmlFor="email">Email</Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    value={profile.email}
-                    disabled
-                    className="bg-muted"
-                  />
-                  <p className="text-xs text-muted-foreground mt-1">
-                    L'email ne peut pas être modifié
-                  </p>
-                </div>
-                
-                <div>
-                  <Label htmlFor="first_name">Prénom</Label>
-                  <Input
-                    id="first_name"
-                    value={isEditing ? (editedProfile.first_name || '') : (profile.first_name || '')}
-                    onChange={(e) => handleInputChange('first_name', e.target.value)}
-                    disabled={!isEditing}
-                    placeholder="Votre prénom"
-                  />
-                </div>
-                
-                <div>
-                  <Label htmlFor="last_name">Nom</Label>
-                  <Input
-                    id="last_name"
-                    value={isEditing ? (editedProfile.last_name || '') : (profile.last_name || '')}
-                    onChange={(e) => handleInputChange('last_name', e.target.value)}
-                    disabled={!isEditing}
-                    placeholder="Votre nom"
-                  />
-                </div>
-                
-                <div>
-                  <Label htmlFor="phone">Téléphone</Label>
-                  <Input
-                    id="phone"
-                    type="tel"
-                    value={isEditing ? (editedProfile.phone || '') : (profile.phone || '')}
-                    onChange={(e) => handleInputChange('phone', e.target.value)}
-                    disabled={!isEditing}
-                    placeholder="Votre numéro de téléphone"
-                  />
-                </div>
-                
-                <div>
-                  <Label htmlFor="birth_date">Date de naissance</Label>
-                  <Input
-                    id="birth_date"
-                    type="date"
-                    value={isEditing ? (editedProfile.birth_date || '') : (profile.birth_date || '')}
-                    onChange={(e) => handleInputChange('birth_date', e.target.value)}
-                    disabled={!isEditing}
-                  />
-                </div>
-              </div>
-              
-              <Separator className="my-4" />
-              
-              <div>
-                <Label htmlFor="bio">Biographie</Label>
-                <Textarea
-                  id="bio"
-                  value={isEditing ? (editedProfile.bio || '') : (profile.bio || '')}
-                  onChange={(e) => handleInputChange('bio', e.target.value)}
-                  disabled={!isEditing}
-                  placeholder="Parlez-nous de vous..."
-                  rows={3}
-                />
-              </div>
+              </CardContent>
             </Card>
 
-            {/* Adresse */}
-            <Card className="p-6">
-              <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
-                <MapPin className="w-5 h-5" />
-                Adresse
-              </h3>
-              
-              <div className="space-y-4">
-                <div>
-                  <Label htmlFor="address">Adresse</Label>
-                  <Input
-                    id="address"
-                    value={isEditing ? (editedProfile.address || '') : (profile.address || '')}
-                    onChange={(e) => handleInputChange('address', e.target.value)}
-                    disabled={!isEditing}
-                    placeholder="Votre adresse complète"
-                  />
-                </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* Informations du compte */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Shield className="h-5 w-5" />
+                  Informations du compte
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
                   <div>
-                    <Label htmlFor="city">Ville</Label>
-                    <Input
-                      id="city"
-                      value={isEditing ? (editedProfile.city || '') : (profile.city || '')}
-                      onChange={(e) => handleInputChange('city', e.target.value)}
-                      disabled={!isEditing}
-                      placeholder="Votre ville"
-                    />
+                    <Label className="text-sm font-medium text-muted-foreground">Rôle</Label>
+                    <p className="text-foreground capitalize">{user?.role?.toLowerCase()}</p>
                   </div>
-                  
                   <div>
-                    <Label htmlFor="postal_code">Code postal</Label>
-                    <Input
-                      id="postal_code"
-                      value={isEditing ? (editedProfile.postal_code || '') : (profile.postal_code || '')}
-                      onChange={(e) => handleInputChange('postal_code', e.target.value)}
-                      disabled={!isEditing}
-                      placeholder="Code postal"
-                    />
-                  </div>
-                </div>
-              </div>
-            </Card>
-
-            {/* Préférences */}
-            <Card className="p-6">
-              <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
-                <Mail className="w-5 h-5" />
-                Préférences de communication
-              </h3>
-              
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="font-medium">Newsletter</p>
-                    <p className="text-sm text-muted-foreground">
-                      Recevez nos derniers articles et conseils
+                    <Label className="text-sm font-medium text-muted-foreground">Statut</Label>
+                    <p className="text-foreground">
+                      {user?.isActive ? 'Actif' : 'Inactif'}
                     </p>
                   </div>
-                  <input
-                    type="checkbox"
-                    checked={isEditing ? (editedProfile.newsletter_subscribed || false) : (profile.newsletter_subscribed || false)}
-                    onChange={(e) => handleInputChange('newsletter_subscribed', e.target.checked.toString())}
-                    disabled={!isEditing}
-                    className="w-4 h-4"
-                  />
+                  <div>
+                    <Label className="text-sm font-medium text-muted-foreground">Membre depuis</Label>
+                    <p className="text-foreground">
+                      {user?.createdAt ? new Date(user.createdAt).toLocaleDateString('fr-FR') : 'N/A'}
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </CardContent>
             </Card>
           </div>
+
+          {/* Changement de mot de passe */}
+          <Card className="mt-6">
+            <CardHeader>
+              <div className="flex items-center justify-between">
+                <CardTitle className="flex items-center gap-2">
+                  <Lock className="h-5 w-5" />
+                  Changer le mot de passe
+                </CardTitle>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setIsChangingPassword(!isChangingPassword)}
+                >
+                  {isChangingPassword ? 'Annuler' : 'Modifier'}
+                </Button>
+              </div>
+            </CardHeader>
+            <CardContent>
+              {isChangingPassword ? (
+                <form onSubmit={handlePasswordChange} className="space-y-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="currentPassword">Mot de passe actuel</Label>
+                    <div className="relative">
+                      <Input
+                        id="currentPassword"
+                        type={showPasswords.current ? 'text' : 'password'}
+                        value={passwordForm.currentPassword}
+                        onChange={(e) => setPasswordForm(prev => ({ ...prev, currentPassword: e.target.value }))}
+                        placeholder="Votre mot de passe actuel"
+                        required
+                      />
+                      <Button
+                        type="button"
+                        variant="ghost"
+                        size="icon"
+                        className="absolute right-0 top-0 h-full px-3 py-2 hover:bg-transparent"
+                        onClick={() => setShowPasswords(prev => ({ ...prev, current: !prev.current }))}
+                      >
+                        {showPasswords.current ? (
+                          <EyeOff className="h-4 w-4 text-muted-foreground" />
+                        ) : (
+                          <Eye className="h-4 w-4 text-muted-foreground" />
+                        )}
+                      </Button>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="newPassword">Nouveau mot de passe</Label>
+                      <div className="relative">
+                        <Input
+                          id="newPassword"
+                          type={showPasswords.new ? 'text' : 'password'}
+                          value={passwordForm.newPassword}
+                          onChange={(e) => setPasswordForm(prev => ({ ...prev, newPassword: e.target.value }))}
+                          placeholder="Au moins 8 caractères"
+                          required
+                        />
+                        <Button
+                          type="button"
+                          variant="ghost"
+                          size="icon"
+                          className="absolute right-0 top-0 h-full px-3 py-2 hover:bg-transparent"
+                          onClick={() => setShowPasswords(prev => ({ ...prev, new: !prev.new }))}
+                        >
+                          {showPasswords.new ? (
+                            <EyeOff className="h-4 w-4 text-muted-foreground" />
+                          ) : (
+                            <Eye className="h-4 w-4 text-muted-foreground" />
+                          )}
+                        </Button>
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="confirmPassword">Confirmer le nouveau mot de passe</Label>
+                      <div className="relative">
+                        <Input
+                          id="confirmPassword"
+                          type={showPasswords.confirm ? 'text' : 'password'}
+                          value={passwordForm.confirmPassword}
+                          onChange={(e) => setPasswordForm(prev => ({ ...prev, confirmPassword: e.target.value }))}
+                          placeholder="Confirmez le nouveau mot de passe"
+                          required
+                        />
+                        <Button
+                          type="button"
+                          variant="ghost"
+                          size="icon"
+                          className="absolute right-0 top-0 h-full px-3 py-2 hover:bg-transparent"
+                          onClick={() => setShowPasswords(prev => ({ ...prev, confirm: !prev.confirm }))}
+                        >
+                          {showPasswords.confirm ? (
+                            <EyeOff className="h-4 w-4 text-muted-foreground" />
+                          ) : (
+                            <Eye className="h-4 w-4 text-muted-foreground" />
+                          )}
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <Button type="submit" disabled={passwordLoading}>
+                    {passwordLoading ? (
+                      <>
+                        <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                        Modifier le mot de passe...
+                      </>
+                    ) : (
+                      'Modifier le mot de passe'
+                    )}
+                  </Button>
+                </form>
+              ) : (
+                <p className="text-muted-foreground">
+                  Cliquez sur "Modifier" pour changer votre mot de passe.
+                </p>
+              )}
+            </CardContent>
+          </Card>
         </div>
       </div>
-    </div>
+    </ProtectedRoute>
   );
 }

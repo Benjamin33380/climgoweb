@@ -1,31 +1,66 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { prisma } from '@/lib/prisma';
+import { authenticateToken } from '@/lib/auth';
 
-// Middleware simplifié pour vérifier l'authentification
-function verifyToken(request: NextRequest) {
-  const token = request.headers.get('authorization')?.replace('Bearer ', '');
-  
-  if (!token) {
-    throw new Error('Token manquant');
-  }
-
-  // Vérification simple du token (à améliorer en production)
-  if (token !== 'admin-token') {
-    throw new Error('Token invalide');
-  }
-
-  return { adminId: 'admin-1' };
-}
-
-// GET - Récupérer un article par ID
+// GET - Récupérer un article spécifique
 export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    verifyToken(request);
+    const { id } = await params;
+    
+    // Vérifier l'authentification admin
+    const token = request.cookies.get('auth-token')?.value;
+    if (!token) {
+      return NextResponse.json(
+        { error: 'Token manquant' },
+        { status: 401 }
+      );
+    }
 
-    // TODO: Remplacer par Supabase
-    const article = null;
+    const decoded = await authenticateToken(token);
+    if (!decoded) {
+      return NextResponse.json(
+        { error: 'Token invalide' },
+        { status: 401 }
+      );
+    }
+
+    // Vérifier que l'utilisateur est admin
+    const adminUser = await prisma.user.findUnique({
+      where: { id: decoded.userId },
+      select: { role: true }
+    });
+
+    if (!adminUser || adminUser.role !== 'ADMIN') {
+      return NextResponse.json(
+        { error: 'Accès refusé' },
+        { status: 403 }
+      );
+    }
+
+    const articleId = id;
+
+    // Récupérer l'article avec l'auteur
+    const article = await prisma.article.findUnique({
+      where: { id: articleId },
+      include: {
+        author: {
+          select: {
+            id: true,
+            email: true,
+            firstName: true,
+            lastName: true
+          }
+        },
+        _count: {
+          select: {
+            comments: true
+          }
+        }
+      }
+    });
 
     if (!article) {
       return NextResponse.json(
@@ -34,68 +69,132 @@ export async function GET(
       );
     }
 
-    return NextResponse.json(article);
+    // Nettoyer les données pour gérer les valeurs nulles
+    const cleanedArticle = {
+      ...article,
+      createdAt: article.createdAt || new Date(),
+      updatedAt: article.updatedAt || new Date()
+    };
+
+    return NextResponse.json({ article: cleanedArticle });
+
   } catch (error) {
-    if (error instanceof Error && error.message.includes('Token')) {
-      return NextResponse.json(
-        { error: 'Non autorisé' },
-        { status: 401 }
-      );
-    }
-    
     console.error('Erreur lors de la récupération de l\'article:', error);
     return NextResponse.json(
-      { error: 'Erreur interne du serveur' },
+      { error: 'Erreur lors de la récupération de l\'article' },
       { status: 500 }
     );
   }
 }
 
-// PUT - Mettre à jour un article
+// PUT - Modifier un article
 export async function PUT(
   request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const decoded = verifyToken(request);
     const { id } = await params;
     
-    const formData = await request.formData();
-    const title = formData.get('title') as string;
-    const content = formData.get('content') as string;
-    const excerpt = formData.get('excerpt') as string;
-    const published = formData.get('published') === 'true';
-
-    if (!title || !content) {
+    // Vérifier l'authentification admin
+    const token = request.cookies.get('auth-token')?.value;
+    if (!token) {
       return NextResponse.json(
-        { error: 'Titre et contenu requis' },
+        { error: 'Token manquant' },
+        { status: 401 }
+      );
+    }
+
+    const decoded = await authenticateToken(token);
+    if (!decoded) {
+      return NextResponse.json(
+        { error: 'Token invalide' },
+        { status: 401 }
+      );
+    }
+
+    // Vérifier que l'utilisateur est admin
+    const adminUser = await prisma.user.findUnique({
+      where: { id: decoded.userId },
+      select: { role: true }
+    });
+
+    if (!adminUser || adminUser.role !== 'ADMIN') {
+      return NextResponse.json(
+        { error: 'Accès refusé' },
+        { status: 403 }
+      );
+    }
+
+    const articleId = id;
+    const { title, content, excerpt, imageUrl, published, slug } = await request.json();
+
+    // Validation des données
+    if (!title || !content || !slug) {
+      return NextResponse.json(
+        { error: 'Titre, contenu et slug sont requis' },
         { status: 400 }
       );
     }
 
-    // TODO: Remplacer par Supabase
-    const article = {
-      id,
-      title,
-      content_markdown: content,
-      excerpt,
-      published,
-      author_id: decoded.adminId,
-      updated_at: new Date().toISOString()
-    };
+    // Vérifier que l'article existe
+    const existingArticle = await prisma.article.findUnique({
+      where: { id: articleId }
+    });
 
-    return NextResponse.json(article);
-  } catch (error) {
-    if (error instanceof Error && error.message.includes('Token')) {
+    if (!existingArticle) {
       return NextResponse.json(
-        { error: 'Non autorisé' },
-        { status: 401 }
+        { error: 'Article non trouvé' },
+        { status: 404 }
       );
     }
-    
-    console.error('Erreur lors de la mise à jour de l\'article:', error);
+
+    // Vérifier que le slug est unique (sauf pour cet article)
+    if (slug !== existingArticle.slug) {
+      const articleWithSlug = await prisma.article.findUnique({
+        where: { slug }
+      });
+
+      if (articleWithSlug) {
+        return NextResponse.json(
+          { error: 'Un autre article utilise déjà ce slug' },
+          { status: 400 }
+        );
+      }
+    }
+
+    // Mettre à jour l'article
+    const updatedArticle = await prisma.article.update({
+      where: { id: articleId },
+      data: {
+        title,
+        slug,
+        content,
+        excerpt: excerpt || null,
+        imageUrl: imageUrl || null,
+        published: published || false,
+        updatedAt: new Date()
+      },
+      include: {
+        author: {
+          select: {
+            id: true,
+            email: true,
+            firstName: true,
+            lastName: true
+          }
+        }
+      }
+    });
+
+    return NextResponse.json({
+      message: 'Article modifié avec succès',
+      article: updatedArticle
+    });
+
+  } catch (error) {
+    console.error('Erreur lors de la modification de l\'article:', error);
     return NextResponse.json(
-      { error: 'Erreur interne du serveur' },
+      { error: 'Erreur lors de la modification de l\'article' },
       { status: 500 }
     );
   }
@@ -107,21 +206,65 @@ export async function DELETE(
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    verifyToken(request);
-
-    // TODO: Remplacer par Supabase
-    return NextResponse.json({ message: 'Article supprimé' });
-  } catch (error) {
-    if (error instanceof Error && error.message.includes('Token')) {
+    const { id } = await params;
+    
+    // Vérifier l'authentification admin
+    const token = request.cookies.get('auth-token')?.value;
+    if (!token) {
       return NextResponse.json(
-        { error: 'Non autorisé' },
+        { error: 'Token manquant' },
         { status: 401 }
       );
     }
-    
+
+    const decoded = await authenticateToken(token);
+    if (!decoded) {
+      return NextResponse.json(
+        { error: 'Token invalide' },
+        { status: 401 }
+      );
+    }
+
+    // Vérifier que l'utilisateur est admin
+    const adminUser = await prisma.user.findUnique({
+      where: { id: decoded.userId },
+      select: { role: true }
+    });
+
+    if (!adminUser || adminUser.role !== 'ADMIN') {
+      return NextResponse.json(
+        { error: 'Accès refusé' },
+        { status: 403 }
+      );
+    }
+
+    const articleId = id;
+
+    // Vérifier que l'article existe
+    const article = await prisma.article.findUnique({
+      where: { id: articleId }
+    });
+
+    if (!article) {
+      return NextResponse.json(
+        { error: 'Article non trouvé' },
+        { status: 404 }
+      );
+    }
+
+    // Supprimer l'article (les commentaires et ratings seront supprimés automatiquement grâce aux relations)
+    await prisma.article.delete({
+      where: { id: articleId }
+    });
+
+    return NextResponse.json({
+      message: 'Article supprimé avec succès'
+    });
+
+  } catch (error) {
     console.error('Erreur lors de la suppression de l\'article:', error);
     return NextResponse.json(
-      { error: 'Erreur interne du serveur' },
+      { error: 'Erreur lors de la suppression de l\'article' },
       { status: 500 }
     );
   }

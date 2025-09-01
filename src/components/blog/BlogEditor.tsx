@@ -7,7 +7,8 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Loader2, Upload, Eye, EyeOff, Save, X } from 'lucide-react';
+import { Loader2, Eye, EyeOff, Save, X } from 'lucide-react';
+import Image from 'next/image';
 
 interface BlogEditorProps {
   article?: {
@@ -43,7 +44,7 @@ export default function BlogEditor({ article, onSave, mode }: BlogEditorProps) {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
   const [showPreview, setShowPreview] = useState(false);
-  const [imageFile, setImageFile] = useState<File | null>(null);
+  const [, setImageFile] = useState<File | null>(null);
   const [imagePreview, setImagePreview] = useState<string>('');
 
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -290,10 +291,12 @@ export default function BlogEditor({ article, onSave, mode }: BlogEditorProps) {
 
               {(imagePreview || formData.image_url) && (
                 <div className="relative">
-                  <img
+                  <Image
                     src={imagePreview || formData.image_url}
                     alt="Aperçu"
                     className="w-full max-w-md h-48 object-cover rounded-lg"
+                    width={1200}
+                    height={630}
                   />
                   <Button
                     type="button"

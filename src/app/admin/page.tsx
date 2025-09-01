@@ -1,5 +1,10 @@
-import { redirect } from "next/navigation";
+import { AdminNav } from '@/components/AdminNav';
+import { ProtectedRoute } from '@/components/auth/ProtectedRoute';
 
 export default function Admin() {
-    redirect('/admin/dashboard');
+  return (
+    <ProtectedRoute requireAdmin={true}>
+      <AdminNav />
+    </ProtectedRoute>
+  );
 }

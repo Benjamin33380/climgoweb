@@ -1,51 +1,130 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase';
+import { prisma } from '@/lib/prisma';
+import { authenticateToken } from '@/lib/auth';
 
-export async function GET(
+// Fonction pour extraire le token depuis les cookies
+async function getAuthUser(request: NextRequest) {
+  try {
+    const authToken = request.cookies.get('auth-token')?.value;
+    
+    if (!authToken) {
+      return { success: false, user: null };
+    }
+
+    const decoded = await authenticateToken(authToken);
+    if (!decoded) {
+      return { success: false, user: null };
+    }
+
+    // Récupérer les informations complètes de l'utilisateur
+    const user = await prisma.user.findUnique({
+      where: { id: decoded.userId },
+      select: {
+        id: true,
+        email: true,
+        firstName: true,
+        lastName: true,
+        role: true,
+        isActive: true
+      }
+    });
+
+    if (!user || !user.isActive) {
+      return { success: false, user: null };
+    }
+
+    return { success: true, user };
+  } catch (error) {
+    console.error('Erreur lors de la vérification du token:', error);
+    return { success: false, user: null };
+  }
+}
+
+// POST - Créer un nouveau commentaire
+export async function POST(
   request: NextRequest,
   { params }: { params: Promise<{ slug: string }> }
 ) {
   try {
-    const { slug } = await params;
+    // Vérifier l'authentification
+    const authResult = await getAuthUser(request);
+    if (!authResult.success || !authResult.user) {
+      return NextResponse.json(
+        { error: 'Vous devez être connecté pour commenter' },
+        { status: 401 }
+      );
+    }
 
-    // Récupérer l'article pour avoir son ID
-    const { data: article, error: articleError } = await supabase
-      .from('articles')
-      .select('id')
-      .eq('slug', slug)
-      .single();
+    const { content } = await request.json();
 
-    if (articleError || !article) {
+    if (!content || typeof content !== 'string' || content.trim().length === 0) {
+      return NextResponse.json(
+        { error: 'Le contenu du commentaire est requis' },
+        { status: 400 }
+      );
+    }
+
+    // Récupérer l'article par le slug
+    const article = await prisma.article.findUnique({
+      where: { slug: (await params).slug, published: true },
+      select: { id: true }
+    });
+
+    if (!article) {
       return NextResponse.json(
         { error: 'Article non trouvé' },
         { status: 404 }
       );
     }
 
-    // Récupérer les commentaires avec les informations utilisateur
-    const { data: comments, error: commentsError } = await supabase
-      .from('comments')
-      .select(`
-        id,
-        content,
-        created_at,
-        user:users(username, avatar_url)
-      `)
-      .eq('article_id', article.id)
-      .eq('is_approved', true)
-      .order('created_at', { ascending: false });
+    // Créer le commentaire - automatiquement approuvé pour les utilisateurs connectés
+    const comment = await prisma.comment.create({
+      data: {
+        content: content.trim(),
+        authorId: authResult.user.id,
+        articleId: article.id,
+        isApproved: true // Automatiquement approuvé pour les utilisateurs connectés
+      },
+      include: {
+        author: {
+          select: {
+            id: true,
+            firstName: true,
+            lastName: true,
+            email: true
+          }
+        }
+      }
+    });
 
-    if (commentsError) {
-      console.error('Erreur lors de la récupération des commentaires:', commentsError);
-      return NextResponse.json(
-        { error: 'Erreur lors de la récupération des commentaires' },
-        { status: 500 }
-      );
-    }
+    // Ajouter 8 points à l'utilisateur pour avoir commenté
+    await prisma.user.update({
+      where: { id: authResult.user.id },
+      data: {
+        points: {
+          increment: 8
+        }
+      }
+    });
 
-    return NextResponse.json({ comments: comments || [] });
+    // Transformer la réponse pour correspondre à l'interface
+    const transformedComment = {
+      id: comment.id,
+      content: comment.content,
+      author: {
+        id: comment.author.id,
+        firstName: comment.author.firstName,
+        lastName: comment.author.lastName,
+        email: comment.author.email
+      },
+      isApproved: comment.isApproved,
+      createdAt: comment.createdAt.toISOString()
+    };
+
+    return NextResponse.json(transformedComment, { status: 201 });
+
   } catch (error) {
-    console.error('Erreur API commentaires:', error);
+    console.error('Erreur lors de la création du commentaire:', error);
     return NextResponse.json(
       { error: 'Erreur interne du serveur' },
       { status: 500 }
@@ -53,97 +132,64 @@ export async function GET(
   }
 }
 
-export async function POST(
+// GET - Récupérer les commentaires d'un article
+export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ slug: string }> }
 ) {
   try {
-    const { slug } = await params;
-    const { content } = await request.json();
+    // Récupérer l'article par le slug
+    const article = await prisma.article.findUnique({
+      where: { slug: (await params).slug, published: true },
+      select: { id: true }
+    });
 
-    // Vérifier l'authentification
-    const authHeader = request.headers.get('authorization');
-    if (!authHeader) {
-      return NextResponse.json(
-        { error: 'Non autorisé' },
-        { status: 401 }
-      );
-    }
-
-    const token = authHeader.replace('Bearer ', '');
-    const { data: { user }, error: authError } = await supabase.auth.getUser(token);
-
-    if (authError || !user) {
-      return NextResponse.json(
-        { error: 'Non autorisé' },
-        { status: 401 }
-      );
-    }
-
-    // Validation du contenu
-    if (!content || content.trim().length < 10) {
-      return NextResponse.json(
-        { error: 'Le commentaire doit contenir au moins 10 caractères' },
-        { status: 400 }
-      );
-    }
-
-    // Récupérer l'article
-    const { data: article, error: articleError } = await supabase
-      .from('articles')
-      .select('id')
-      .eq('slug', slug)
-      .single();
-
-    if (articleError || !article) {
+    if (!article) {
       return NextResponse.json(
         { error: 'Article non trouvé' },
         { status: 404 }
       );
     }
 
-    // Créer le commentaire
-    const { data: comment, error: commentError } = await supabase
-      .from('comments')
-      .insert({
-        article_id: article.id,
-        user_id: user.id,
-        content: content.trim(),
-        is_approved: false // Modération requise
-      })
-      .select()
-      .single();
-
-    if (commentError) {
-      console.error('Erreur lors de la création du commentaire:', commentError);
-      return NextResponse.json(
-        { error: 'Erreur lors de la création du commentaire' },
-        { status: 500 }
-      );
-    }
-
-    // Notifier l'admin (optionnel)
-    try {
-      await supabase
-        .from('admin_notifications')
-        .insert({
-          type: 'new_comment',
-          title: 'Nouveau commentaire',
-          message: `Nouveau commentaire sur l'article "${slug}" en attente de modération`,
-          data: { comment_id: comment.id, article_slug: slug }
-        });
-    } catch (notifError) {
-      console.error('Erreur notification admin:', notifError);
-      // Ne pas faire échouer la création du commentaire pour une erreur de notification
-    }
-
-    return NextResponse.json({
-      success: true,
-      message: 'Commentaire soumis avec succès. Il sera visible après modération.',
-      comment
+    // Récupérer les commentaires approuvés
+    const comments = await prisma.comment.findMany({
+      where: {
+        articleId: article.id,
+        isApproved: true
+      },
+      include: {
+        author: {
+          select: {
+            id: true,
+            firstName: true,
+            lastName: true,
+            email: true
+          }
+        }
+      },
+      orderBy: {
+        createdAt: 'desc'
+      }
     });
+
+    // Transformer les commentaires
+    const transformedComments = comments.map(comment => ({
+      id: comment.id,
+      content: comment.content,
+      author: {
+        id: comment.author.id,
+        firstName: comment.author.firstName,
+        lastName: comment.author.lastName,
+        email: comment.author.email
+      },
+      isApproved: comment.isApproved,
+      createdAt: comment.createdAt.toISOString()
+    }));
+
+    return NextResponse.json({ comments: transformedComments });
+
   } catch (error) {
-    console.error('Erreur API création commentaire:', error);
+    console.error('Erreur lors de la récupération des commentaires:', error);
     return NextResponse.json(
       { error: 'Erreur interne du serveur' },
       { status: 500 }

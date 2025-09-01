@@ -1,209 +1,338 @@
-import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { supabase } from '@/lib/supabase';
-import CommentSection from '@/components/blog/CommentSection';
-import { Card } from '@/components/ui/card';
+import { Metadata } from 'next';
+import { prisma } from '@/lib/prisma';
+import { formatDate } from '@/lib/utils';
 import { Badge } from '@/components/ui/badge';
-import { Calendar, Clock, User, Eye, Star } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
+import MarkdownRenderer from '@/components/ui/MarkdownRenderer';
+import ActionButtons from './ActionButtons';
+import InternalLinking from './InternalLinking';
+import CommentSection from './CommentSection';
+import { 
+  Calendar, 
+  User, 
+  MessageSquare, 
+  Clock,
+  Eye 
+} from 'lucide-react';
+import Image from 'next/image';
 
-interface BlogPageProps {
-  params: Promise<{ slug: string }>;
+interface ArticlePageProps {
+  params: Promise<{
+    slug: string;
+  }>;
 }
 
-interface Article {
-  id: string;
-  title: string;
-  content: string;
-  excerpt: string;
-  slug: string;
-  featured_image?: string;
-  category: string;
-  tags: string[];
-  reading_time: number;
-  published_at: string;
-  author: {
-    username: string;
-    avatar_url?: string;
-  };
-  views_count: number;
-  is_vip: boolean;
-}
-
-async function getArticle(slug: string): Promise<Article | null> {
-  try {
-    const { data, error } = await supabase
-      .from('articles')
-      .select(`
-        id,
-        title,
-        content,
-        excerpt,
-        slug,
-        featured_image,
-        category,
-        tags,
-        reading_time,
-        published_at,
-        views_count,
-        is_vip,
-        author:users(username, avatar_url)
-      `)
-      .eq('slug', slug)
-      .eq('is_published', true)
-      .single();
-
-    if (error || !data) {
-      return null;
+// Générer les métadonnées dynamiques
+export async function generateMetadata({ params }: ArticlePageProps): Promise<Metadata> {
+  const article = await prisma.article.findUnique({
+    where: { slug: (await params).slug, published: true },
+    include: {
+      author: {
+        select: {
+          firstName: true,
+          lastName: true,
+          email: true
+        }
+      }
     }
+  });
 
-    return data as any;
-  } catch (error) {
-    console.error('Erreur lors de la récupération de l\'article:', error);
-    return null;
-  }
-}
-
-export async function generateMetadata({ params }: BlogPageProps): Promise<Metadata> {
-  const { slug } = await params;
-  const article = await getArticle(slug);
-  
   if (!article) {
     return {
-      title: 'Article non trouvé - ClimGO',
-      description: 'Cet article n\'existe pas ou n\'est plus disponible'
+      title: 'Article non trouvé',
+      description: 'L\'article demandé n\'existe pas ou n\'est pas publié.'
     };
   }
 
+  const authorName = article.author.firstName && article.author.lastName 
+    ? `${article.author.firstName} ${article.author.lastName}`
+    : article.author.email;
+
   return {
-    title: `${article.title} - ClimGO`,
-    description: article.excerpt,
-    keywords: `${article.category}, ${article.tags.join(', ')}, chauffage, climatisation, ClimGO`,
+    title: `${article.title} | ClimGO Blog`,
+    description: article.excerpt || article.content.substring(0, 160),
     openGraph: {
       title: article.title,
-      description: article.excerpt,
+      description: article.excerpt || article.content.substring(0, 160),
       type: 'article',
-      images: article.featured_image ? [article.featured_image] : [],
-      publishedTime: article.published_at,
-      authors: [article.author.username]
+      images: article.imageUrl ? [
+        {
+          url: article.imageUrl,
+          width: 1200,
+          height: 630,
+          alt: article.title,
+        }
+      ] : [],
+      authors: [authorName],
+      publishedTime: article.createdAt?.toISOString() || new Date().toISOString(),
+      modifiedTime: article.updatedAt?.toISOString() || new Date().toISOString(),
     },
     twitter: {
       card: 'summary_large_image',
       title: article.title,
-      description: article.excerpt,
-      images: article.featured_image ? [article.featured_image] : []
-    }
+      description: article.excerpt || article.content.substring(0, 160),
+      images: article.imageUrl ? [article.imageUrl] : [],
+    },
   };
 }
 
-export default async function BlogPage({ params }: BlogPageProps) {
-  const { slug } = await params;
-  const article = await getArticle(slug);
-  
+// Générer les articles statiques au build
+export async function generateStaticParams() {
+  const articles = await prisma.article.findMany({
+    where: { published: true },
+    select: { slug: true }
+  });
+
+  return articles.map((article) => ({
+    slug: article.slug,
+  }));
+}
+
+export default async function ArticlePage({ params }: ArticlePageProps) {
+  const article = await prisma.article.findUnique({
+    where: { slug: (await params).slug, published: true },
+    include: {
+      author: {
+        select: {
+          firstName: true,
+          lastName: true,
+          email: true
+        }
+      },
+      _count: {
+        select: {
+          comments: true,
+          ratings: true
+        }
+      }
+    }
+  });
+
   if (!article) {
     notFound();
   }
 
-  // Incrémenter le compteur de vues (optionnel)
-  try {
-    await supabase
-      .from('articles')
-      .update({ views_count: (article.views_count || 0) + 1 })
-      .eq('id', article.id);
-  } catch (error) {
-    console.error('Erreur lors de l\'incrémentation des vues:', error);
-  }
+  // Récupérer tous les articles publiés pour le maillage interne
+  const dbAllArticles = await prisma.article.findMany({
+    where: { published: true },
+    select: {
+      id: true,
+      title: true,
+      slug: true,
+      excerpt: true,
+      imageUrl: true,
+      createdAt: true
+    },
+    orderBy: {
+      createdAt: 'desc'
+    }
+  });
 
-  const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('fr-FR', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
-  };
+  // Transformer les articles pour le maillage interne
+  const allArticles = dbAllArticles.map(article => ({
+    id: article.id,
+    title: article.title,
+    slug: article.slug,
+    excerpt: article.excerpt,
+    imageUrl: article.imageUrl,
+    createdAt: article.createdAt?.toISOString() || new Date().toISOString()
+  }));
+
+  // Récupérer les commentaires approuvés
+  const dbComments = await prisma.comment.findMany({
+    where: {
+      articleId: article.id,
+      isApproved: true
+    },
+    include: {
+      author: {
+        select: {
+          id: true,
+          firstName: true,
+          lastName: true,
+          email: true
+        }
+      }
+    },
+    orderBy: {
+      createdAt: 'desc'
+    }
+  });
+
+  // Récupérer les ratings
+  const dbRatings = await prisma.rating.findMany({
+    where: {
+      articleId: article.id
+    },
+    include: {
+      author: {
+        select: {
+          id: true,
+          firstName: true,
+          lastName: true
+        }
+      }
+    },
+    orderBy: {
+      createdAt: 'desc'
+    }
+  });
+
+  // Transformer les commentaires pour correspondre à l'interface
+  const comments = dbComments.map(comment => ({
+    id: comment.id,
+    content: comment.content,
+    author: {
+      id: comment.author.id,
+      firstName: comment.author.firstName,
+      lastName: comment.author.lastName,
+      email: comment.author.email
+    },
+    isApproved: comment.isApproved,
+    createdAt: comment.createdAt.toISOString()
+  }));
+
+  // Transformer les ratings pour correspondre à l'interface
+  const ratings = dbRatings.map(rating => ({
+    id: rating.id,
+    value: rating.value,
+    author: {
+      id: rating.author.id,
+      firstName: rating.author.firstName,
+      lastName: rating.author.lastName
+    },
+    createdAt: rating.createdAt.toISOString()
+  }));
+
+  // Parser le contenu Markdown
+  // Calculer le temps de lecture (environ 200 mots par minute)
+  const wordCount = article.content.split(/\s+/).length;
+  const readingTime = Math.ceil(wordCount / 200);
+
+  const authorName = article.author.firstName && article.author.lastName 
+    ? `${article.author.firstName} ${article.author.lastName}`
+    : article.author.email;
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Header de l'article */}
-        <article className="mb-12">
-          <header className="mb-8">
-            {/* Badge VIP si applicable */}
-            {article.is_vip && (
-              <div className="mb-4">
-                <Badge variant="secondary" className="bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200">
-                  <Star className="w-3 h-3 mr-1" />
-                  Article VIP
-                </Badge>
-              </div>
-            )}
-
-            {/* Catégorie et tags */}
-            <div className="flex flex-wrap items-center gap-2 mb-4">
-              <Badge variant="outline">{article.category}</Badge>
-              {article.tags.map((tag) => (
-                <Badge key={tag} variant="secondary" className="text-xs">
-                  {tag}
-                </Badge>
-              ))}
-            </div>
-
-            {/* Titre */}
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 leading-tight">
-              {article.title}
-            </h1>
-
-            {/* Excerpt */}
-            <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
-              {article.excerpt}
-            </p>
-
-            {/* Métadonnées */}
-            <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <User className="w-4 h-4" />
-                <span>{article.author.username}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Calendar className="w-4 h-4" />
-                <span>{formatDate(article.published_at)}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4" />
-                <span>{article.reading_time} min de lecture</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Eye className="w-4 h-4" />
-                <span>{article.views_count || 0} vues</span>
-              </div>
-            </div>
-          </header>
-
-          {/* Image à la une */}
-          {article.featured_image && (
-            <div className="mb-8">
-              <img
-                src={article.featured_image}
-                alt={article.title}
-                className="w-full h-64 md:h-96 object-cover rounded-lg shadow-lg"
-              />
-            </div>
-          )}
-
-          {/* Contenu de l'article */}
-          <div 
-            className="prose prose-lg dark:prose-invert max-w-none mb-12"
-            dangerouslySetInnerHTML={{ __html: article.content }}
+      {/* Hero Section avec image */}
+      {article.imageUrl && (
+        <div className="relative h-96 w-full overflow-hidden">
+          <Image
+            src={article.imageUrl}
+            width={1200}
+            height={630}
+            alt={article.title}
+            className="w-full h-full object-cover"
           />
-        </article>
+          <div className="absolute inset-0 bg-black/20" />
+        </div>
+      )}
 
-        {/* Section des commentaires */}
-        <Card className="p-6">
-          <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2">
-            <Star className="w-6 h-6" />
-            Commentaires et avis
-          </h2>
-          <CommentSection articleSlug={slug} />
-        </Card>
+      {/* Contenu principal avec sidebar */}
+      <div className="container mx-auto px-4 py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          {/* Sidebar gauche - Boutons d'action */}
+          <div className="lg:col-span-2 order-2 lg:order-1">
+            <ActionButtons
+              articleSlug={article.slug}
+              articleId={article.id}
+            />
+          </div>
+
+          {/* Contenu central - Article */}
+          <div className="lg:col-span-7 order-1 lg:order-2">
+            {/* En-tête de l'article */}
+            <div className="mb-8">
+              <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+                {article.title}
+              </h1>
+              
+              {article.excerpt && (
+                <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
+                  {article.excerpt}
+                </p>
+              )}
+
+              {/* Métadonnées de l'article */}
+              <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
+                <div className="flex items-center gap-2">
+                  <User className="h-4 w-4" />
+                  <span>{authorName}</span>
+                </div>
+                
+                <div className="flex items-center gap-2">
+                  <Calendar className="h-4 w-4" />
+                  <span>{article.createdAt ? formatDate(article.createdAt) : 'Date inconnue'}</span>
+                </div>
+                
+                <div className="flex items-center gap-2">
+                  <Clock className="h-4 w-4" />
+                  <span>{readingTime} min de lecture</span>
+                </div>
+                
+                <div className="flex items-center gap-2">
+                  <MessageSquare className="h-4 w-4" />
+                  <span>{article._count?.comments || 0} commentaire{(article._count?.comments || 0) !== 1 ? 's' : ''}</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Contenu Markdown */}
+            <Card className="mb-8">
+              <CardContent className="p-8">
+                <MarkdownRenderer 
+                  content={article.content}
+                  className="prose-headings:text-foreground prose-p:text-foreground prose-strong:text-foreground prose-code:text-foreground prose-blockquote:text-muted-foreground prose-li:text-foreground"
+                />
+              </CardContent>
+            </Card>
+
+            {/* Footer de l'article */}
+            <div className="border-t pt-8 mb-12">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <Badge variant="outline">
+                    Article publié le {article.createdAt ? formatDate(article.createdAt) : 'Date inconnue'}
+                  </Badge>
+                  {article.updatedAt && article.createdAt && article.updatedAt > article.createdAt && (
+                    <Badge variant="secondary">
+                      Modifié le {formatDate(article.updatedAt)}
+                    </Badge>
+                  )}
+                </div>
+                
+                <div className="text-sm text-muted-foreground">
+                  <span className="flex items-center gap-1">
+                    <Eye className="h-4 w-4" />
+                    Article ClimGO
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Sidebar droite - Maillage interne */}
+          <div className="lg:col-span-3 order-3">
+            <InternalLinking
+              currentArticleId={article.id}
+              articles={allArticles}
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Section des commentaires et ratings en bas */}
+      <div className="bg-card border-t">
+        <div className="container mx-auto px-4 py-12">
+          <CommentSection
+            articleSlug={article.slug}
+            articleId={article.id}
+            initialComments={comments}
+            initialRatings={ratings}
+          />
+        </div>
       </div>
     </div>
   );

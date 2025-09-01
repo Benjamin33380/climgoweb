@@ -1,11 +1,12 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useUser } from '@/hooks/useUser';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Textarea } from '@/components/ui/textarea';
-import { Star, MessageCircle, Trash2 } from 'lucide-react';
+import { Star, MessageCircle } from 'lucide-react';
+import { useUser } from '@/components/providers/UserProvider';
+import Image from 'next/image';
 
 interface Comment {
   id: string;
@@ -83,7 +84,7 @@ export default function CommentSection({ articleSlug }: CommentSectionProps) {
       setLoading(false);
     };
     loadData();
-  }, [articleSlug, user]);
+  }, [articleSlug, user]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const submitComment = async () => {
     if (!user || !newComment.trim()) return;
@@ -231,10 +232,12 @@ export default function CommentSection({ articleSlug }: CommentSectionProps) {
                   <div className="flex items-start gap-3">
                     <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
                       {comment.user.avatar_url ? (
-                        <img 
+                        <Image 
                           src={comment.user.avatar_url} 
                           alt={comment.user.username}
                           className="w-10 h-10 rounded-full object-cover"
+                          width={40}
+                          height={40}
                         />
                       ) : (
                         <span className="text-blue-600 font-semibold">

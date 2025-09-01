@@ -1,62 +1,55 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { authenticateUser } from '@/lib/auth';
 
-// POST - Connexion admin
 export async function POST(request: NextRequest) {
   try {
+    console.log('🔐 [API Login] Début de la requête de connexion');
+    
     const { email, password } = await request.json();
+    console.log('🔐 [API Login] Tentative de connexion pour:', email);
 
     if (!email || !password) {
+      console.log('🔐 [API Login] Email ou mot de passe manquant');
       return NextResponse.json(
         { error: 'Email et mot de passe requis' },
         { status: 400 }
       );
     }
 
-    // Authentification sécurisée avec Supabase
-    const { createClient } = require('@supabase/supabase-js');
-    const supabase = createClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.SUPABASE_SERVICE_ROLE_KEY!
-    );
-
-    // Vérifier d'abord si l'utilisateur existe et est admin
-    const { data: profile, error: profileError } = await supabase
-      .from('users')
-      .select('id, email, is_admin')
-      .eq('email', email)
-      .single();
-
-    if (profileError || !profile?.is_admin) {
-      return NextResponse.json(
-        { error: 'Accès non autorisé' },
-        { status: 403 }
-      );
-    }
-
-    // Vérifier les credentials avec Supabase Auth
-    const { data, error } = await supabase.auth.signInWithPassword({
-      email,
-      password
+    const result = await authenticateUser(email, password);
+    console.log('🔐 [API Login] Résultat de authenticateUser:', { 
+      success: result.success, 
+      hasUser: !!result.user, 
+      hasToken: !!result.token,
+      userRole: result.user?.role 
     });
 
-    if (error || !data.user) {
+    if (!result.success) {
       return NextResponse.json(
-        { error: 'Identifiants invalides' },
+        { error: result.error },
         { status: 401 }
       );
     }
 
-    return NextResponse.json({
-      session: data.session,
-      user: {
-        id: data.user.id,
-        email: data.user.email,
-        is_admin: true,
-        role: 'admin'
-      }
+    // Créer la réponse avec les cookies
+    const response = NextResponse.json({
+      user: result.user,
+      message: 'Connexion réussie'
     });
+
+    // Définir le cookie sécurisé
+    if (result.token) {
+      response.cookies.set('auth-token', result.token, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: 'lax',
+        maxAge: 24 * 60 * 60 // 24 heures
+      });
+    }
+
+    return response;
   } catch (error) {
-    console.error('Erreur lors de la connexion:', error);
+    console.error('Erreur de connexion:', error);
     return NextResponse.json(
       { error: 'Erreur interne du serveur' },
       { status: 500 }

@@ -1,146 +1,112 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
-import { User, Settings, LogOut, UserCircle, Mail, Shield } from 'lucide-react';
+import { useState } from 'react';
+import { useUser } from '@/components/providers/UserProvider';
 import { Button } from '@/components/ui/button';
-import { supabase } from '@/lib/supabase';
+import { User, Settings, LogOut, Shield } from 'lucide-react';
 
-interface UserMenuProps {
-  user?: {
-    id: string;
-    email: string;
-    username?: string;
-    avatar_url?: string;
-    is_admin?: boolean;
-  } | null;
-  onLogout: () => void;
-}
-
-export function UserMenu({ user, onLogout }: UserMenuProps) {
+export function UserMenu() {
+  const { user, logout } = useUser();
   const [isOpen, setIsOpen] = useState(false);
-  const menuRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        setIsOpen(false);
-      }
-    }
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
-  const handleLogout = async () => {
-    await supabase.auth.signOut();
-    onLogout();
-    setIsOpen(false);
-  };
 
   if (!user) {
     return (
-      <Link
-        href="/auth"
-        className="flex items-center justify-center w-10 h-10 rounded-md border border-border bg-background text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
-        title="Connexion / Inscription"
-      >
-        <User className="w-5 h-5" />
-      </Link>
+      <Button variant="ghost" size="icon" asChild>
+        <a href="/auth" className="h-8 w-8 rounded-full p-0">
+          <User className="h-4 w-4" />
+        </a>
+      </Button>
     );
   }
 
+  const handleLogout = async () => {
+    await logout();
+    setIsOpen(false);
+  };
+
+  const getInitials = () => {
+    if (user.firstName && user.lastName) {
+      return `${user.firstName[0]}${user.lastName[0]}`.toUpperCase();
+    }
+    return user.email[0].toUpperCase();
+  };
+
+  const getDisplayName = () => {
+    if (user.firstName && user.lastName) {
+      return `${user.firstName} ${user.lastName}`;
+    }
+    return user.email;
+  };
+
   return (
-    <div className="relative" ref={menuRef}>
+    <div className="relative">
       <Button
         variant="ghost"
-        size="icon"
         onClick={() => setIsOpen(!isOpen)}
-        className="w-10 h-10 rounded-md border border-border bg-background text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
-        title={`Connecté en tant que ${user.username || user.email}`}
+        className="relative h-8 w-8 rounded-full p-0"
       >
-        {user.avatar_url ? (
-          <img
-            src={user.avatar_url}
-            alt="Avatar"
-            className="w-6 h-6 rounded-full object-cover"
-          />
-        ) : (
-          <UserCircle className="w-5 h-5" />
-        )}
+        <div className="h-8 w-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-medium">
+          {getInitials()}
+        </div>
       </Button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-64 bg-background border border-border rounded-lg shadow-lg z-50">
+        <div className="absolute right-0 mt-2 w-56 bg-background border border-border rounded-lg shadow-lg z-50">
           <div className="p-4 border-b border-border">
-            <div className="flex items-center gap-3">
-              {user.avatar_url ? (
-                <img
-                  src={user.avatar_url}
-                  alt="Avatar"
-                  className="w-10 h-10 rounded-full object-cover"
-                />
-              ) : (
-                <UserCircle className="w-10 h-10 text-muted-foreground" />
-              )}
-              <div className="flex-1 min-w-0">
-                <p className="font-medium text-sm truncate">
-                  {user.username || 'Utilisateur'}
-                </p>
-                <p className="text-xs text-muted-foreground truncate">
-                  {user.email}
-                </p>
+            <div className="flex flex-col space-y-1">
+              <p className="text-sm font-medium leading-none">{getDisplayName()}</p>
+              <p className="text-xs leading-none text-muted-foreground">
+                {user.email}
+              </p>
+              <div className="flex items-center space-x-1 mt-1">
+                {user.role === 'ADMIN' && (
+                  <Shield className="h-3 w-3 text-yellow-600" />
+                )}
+                <span className="text-xs text-muted-foreground capitalize">
+                  {user.role.toLowerCase()}
+                </span>
               </div>
             </div>
           </div>
 
           <div className="py-2">
-            <Link
-              href="/dashboard"
-              className="flex items-center gap-3 px-4 py-2 text-sm hover:bg-accent transition-colors"
+            <a
+              href="/profile"
+              className="flex items-center gap-3 px-4 py-2 text-sm hover:bg-accent transition-colors cursor-pointer"
               onClick={() => setIsOpen(false)}
             >
               <User className="w-4 h-4" />
-              Tableau de bord
-            </Link>
+              <span>Profil</span>
+            </a>
 
-            <Link
-              href="/profile"
-              className="flex items-center gap-3 px-4 py-2 text-sm hover:bg-accent transition-colors"
-              onClick={() => setIsOpen(false)}
-            >
-              <Settings className="w-4 h-4" />
-              Mon profil
-            </Link>
-
-            <Link
-              href="/profile/preferences"
-              className="flex items-center gap-3 px-4 py-2 text-sm hover:bg-accent transition-colors"
-              onClick={() => setIsOpen(false)}
-            >
-              <Mail className="w-4 h-4" />
-              Préférences
-            </Link>
-
-            {user.is_admin && (
-              <Link
+            {user.role === 'ADMIN' && (
+              <a
                 href="/admin"
-                className="flex items-center gap-3 px-4 py-2 text-sm hover:bg-accent transition-colors text-blue-600"
+                className="flex items-center gap-3 px-4 py-2 text-sm hover:bg-accent transition-colors cursor-pointer"
                 onClick={() => setIsOpen(false)}
               >
                 <Shield className="w-4 h-4" />
-                Administration
-              </Link>
+                <span>Administration</span>
+              </a>
             )}
+
+            <a
+              href="/profile/preferences"
+              className="flex items-center gap-3 px-4 py-2 text-sm hover:bg-accent transition-colors cursor-pointer"
+              onClick={() => setIsOpen(false)}
+            >
+              <Settings className="w-4 h-4" />
+              <span>Préférences</span>
+            </a>
           </div>
 
           <div className="border-t border-border py-2">
             <button
               onClick={handleLogout}
-              className="flex items-center gap-3 px-4 py-2 text-sm hover:bg-accent transition-colors w-full text-left text-red-600 hover:text-red-700"
+              className="flex items-center gap-3 px-4 py-2 text-sm hover:bg-accent transition-colors w-full text-left text-red-600 hover:text-red-700 cursor-pointer"
             >
               <LogOut className="w-4 h-4" />
-              Se déconnecter
+              <span>Déconnexion</span>
             </button>
           </div>
         </div>

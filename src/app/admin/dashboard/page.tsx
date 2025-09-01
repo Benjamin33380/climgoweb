@@ -3,16 +3,17 @@
 import { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { ProtectedRoute } from '@/components/auth/ProtectedRoute';
+import { NotificationTester } from '@/components/admin/NotificationTester';
+import AnalyticsWidget from '@/components/admin/AnalyticsWidget';
 import {
   Users,
   FileText,
   MessageSquare,
   Mail,
   Eye,
-  TrendingUp,
   Globe,
   Smartphone,
   Monitor,
@@ -94,13 +95,13 @@ export default function AdminDashboard() {
   const [error, setError] = useState('');
   const [period, setPeriod] = useState('30');
   const [stats, setStats] = useState<DashboardStats | null>(null);
-  const [chartData, setChartData] = useState<ChartData[]>([]);
+  const [, setChartData] = useState<ChartData[]>([]);
   const [topArticles, setTopArticles] = useState<TopArticle[]>([]);
   const [recentActivity, setRecentActivity] = useState<RecentActivity[]>([]);
 
   useEffect(() => {
     loadDashboardData();
-  }, [period]);
+  }, [period]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const loadDashboardData = async () => {
     setLoading(true);
@@ -175,7 +176,8 @@ export default function AdminDashboard() {
   }
 
   return (
-    <div className="container mx-auto p-6 space-y-6">
+    <ProtectedRoute requireAdmin={true}>
+      <div className="container mx-auto p-6 space-y-6">
       <div className="flex items-center justify-between">
         <h1 className="text-3xl font-bold">Dashboard Admin</h1>
         <div className="flex items-center gap-2">
@@ -259,37 +261,7 @@ export default function AdminDashboard() {
         <TabsContent value="overview" className="space-y-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Statistiques d'engagement */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <TrendingUp className="h-5 w-5" />
-                  Engagement
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <Eye className="h-4 w-4 text-blue-500" />
-                    <span className="text-sm">Vues totales</span>
-                  </div>
-                  <span className="font-bold">{stats?.engagement.total_views || 0}</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <Clock className="h-4 w-4 text-green-500" />
-                    <span className="text-sm">Temps de lecture moyen</span>
-                  </div>
-                  <span className="font-bold">{stats?.engagement.avg_reading_time || 0}s</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <Activity className="h-4 w-4 text-red-500" />
-                    <span className="text-sm">Taux de rebond</span>
-                  </div>
-                  <span className="font-bold">{stats?.engagement.bounce_rate || 0}%</span>
-                </div>
-              </CardContent>
-            </Card>
+            <AnalyticsWidget />
 
             {/* Top articles */}
             <Card>
@@ -433,6 +405,9 @@ export default function AdminDashboard() {
         </TabsContent>
 
         <TabsContent value="activity" className="space-y-6">
+          {/* Test des notifications */}
+          <NotificationTester />
+          
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -471,6 +446,7 @@ export default function AdminDashboard() {
           </Card>
         </TabsContent>
       </Tabs>
-    </div>
+      </div>
+    </ProtectedRoute>
   );
 }

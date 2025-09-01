@@ -1,129 +1,76 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase';
+import { prisma } from '@/lib/prisma';
+import { authenticateToken } from '@/lib/auth';
 
-export async function GET(
-  request: NextRequest,
-  { params }: { params: Promise<{ slug: string }> }
-) {
+// Fonction pour extraire le token depuis les cookies
+async function getAuthUser(request: NextRequest) {
   try {
-    const { slug } = await params;
-    const { searchParams } = new URL(request.url);
-    const userId = searchParams.get('userId');
-
-    // Récupérer l'article pour avoir son ID
-    const { data: article, error: articleError } = await supabase
-      .from('articles')
-      .select('id')
-      .eq('slug', slug)
-      .single();
-
-    if (articleError || !article) {
-      return NextResponse.json(
-        { error: 'Article non trouvé' },
-        { status: 404 }
-      );
+    const authToken = request.cookies.get('auth-token')?.value;
+    
+    if (!authToken) {
+      return { success: false, user: null };
     }
 
-    // Si userId est fourni, récupérer la note de cet utilisateur
-    if (userId) {
-      const { data: userRating, error: userRatingError } = await supabase
-        .from('ratings')
-        .select('rating')
-        .eq('article_id', article.id)
-        .eq('user_id', userId)
-        .single();
+    const decoded = await authenticateToken(authToken);
+    if (!decoded) {
+      return { success: false, user: null };
+    }
 
-      if (userRatingError && userRatingError.code !== 'PGRST116') {
-        console.error('Erreur lors de la récupération de la note utilisateur:', userRatingError);
+    // Récupérer les informations complètes de l'utilisateur
+    const user = await prisma.user.findUnique({
+      where: { id: decoded.userId },
+      select: {
+        id: true,
+        email: true,
+        firstName: true,
+        lastName: true,
+        role: true,
+        isActive: true
       }
-
-      return NextResponse.json({ 
-        userRating: userRating?.rating || 0 
-      });
-    }
-
-    // Récupérer toutes les notes avec les informations utilisateur
-    const { data: ratings, error: ratingsError } = await supabase
-      .from('ratings')
-      .select(`
-        id,
-        rating,
-        created_at,
-        user:users(username)
-      `)
-      .eq('article_id', article.id)
-      .order('created_at', { ascending: false });
-
-    if (ratingsError) {
-      console.error('Erreur lors de la récupération des notes:', ratingsError);
-      return NextResponse.json(
-        { error: 'Erreur lors de la récupération des notes' },
-        { status: 500 }
-      );
-    }
-
-    // Calculer la moyenne
-    const averageRating = ratings && ratings.length > 0 
-      ? ratings.reduce((sum, r) => sum + r.rating, 0) / ratings.length 
-      : 0;
-
-    return NextResponse.json({ 
-      ratings: ratings || [], 
-      averageRating: Math.round(averageRating * 10) / 10,
-      totalRatings: ratings?.length || 0
     });
+
+    if (!user || !user.isActive) {
+      return { success: false, user: null };
+    }
+
+    return { success: true, user };
   } catch (error) {
-    console.error('Erreur API ratings:', error);
-    return NextResponse.json(
-      { error: 'Erreur interne du serveur' },
-      { status: 500 }
-    );
+    console.error('Erreur lors de la vérification du token:', error);
+    return { success: false, user: null };
   }
 }
 
+// POST - Créer ou mettre à jour un rating
 export async function POST(
   request: NextRequest,
   { params }: { params: Promise<{ slug: string }> }
 ) {
   try {
-    const { slug } = await params;
-    const { rating } = await request.json();
-
     // Vérifier l'authentification
-    const authHeader = request.headers.get('authorization');
-    if (!authHeader) {
+    const authResult = await getAuthUser(request);
+    if (!authResult.success || !authResult.user) {
       return NextResponse.json(
-        { error: 'Non autorisé' },
+        { error: 'Vous devez être connecté pour noter un article' },
         { status: 401 }
       );
     }
 
-    const token = authHeader.replace('Bearer ', '');
-    const { data: { user }, error: authError } = await supabase.auth.getUser(token);
+    const { value } = await request.json();
 
-    if (authError || !user) {
-      return NextResponse.json(
-        { error: 'Non autorisé' },
-        { status: 401 }
-      );
-    }
-
-    // Validation de la note
-    if (!rating || rating < 1 || rating > 5) {
+    if (!value || typeof value !== 'number' || value < 1 || value > 5) {
       return NextResponse.json(
         { error: 'La note doit être comprise entre 1 et 5' },
         { status: 400 }
       );
     }
 
-    // Récupérer l'article
-    const { data: article, error: articleError } = await supabase
-      .from('articles')
-      .select('id')
-      .eq('slug', slug)
-      .single();
+    // Récupérer l'article par le slug
+    const article = await prisma.article.findUnique({
+      where: { slug: (await params).slug, published: true },
+      select: { id: true }
+    });
 
-    if (articleError || !article) {
+    if (!article) {
       return NextResponse.json(
         { error: 'Article non trouvé' },
         { status: 404 }
@@ -131,60 +78,127 @@ export async function POST(
     }
 
     // Vérifier si l'utilisateur a déjà noté cet article
-    const { data: existingRating } = await supabase
-      .from('ratings')
-      .select('id')
-      .eq('article_id', article.id)
-      .eq('user_id', user.id)
-      .single();
+    const existingRating = await prisma.rating.findUnique({
+      where: {
+        authorId_articleId: {
+          authorId: authResult.user.id,
+          articleId: article.id
+        }
+      }
+    });
 
-    let result;
     if (existingRating) {
-      // Mettre à jour la note existante
-      const { data, error } = await supabase
-        .from('ratings')
-        .update({ rating })
-        .eq('id', existingRating.id)
-        .select()
-        .single();
-
-      if (error) {
-        console.error('Erreur lors de la mise à jour de la note:', error);
-        return NextResponse.json(
-          { error: 'Erreur lors de la mise à jour de la note' },
-          { status: 500 }
-        );
-      }
-      result = data;
-    } else {
-      // Créer une nouvelle note
-      const { data, error } = await supabase
-        .from('ratings')
-        .insert({
-          article_id: article.id,
-          user_id: user.id,
-          rating
-        })
-        .select()
-        .single();
-
-      if (error) {
-        console.error('Erreur lors de la création de la note:', error);
-        return NextResponse.json(
-          { error: 'Erreur lors de la création de la note' },
-          { status: 500 }
-        );
-      }
-      result = data;
+      return NextResponse.json(
+        { error: 'Vous avez déjà noté cet article. Vous ne pouvez noter qu\'une seule fois par article.' },
+        { status: 400 }
+      );
     }
 
-    return NextResponse.json({
-      success: true,
-      message: 'Note enregistrée avec succès',
-      rating: result
+    // Créer un nouveau rating
+    const rating = await prisma.rating.create({
+      data: {
+        value,
+        authorId: authResult.user.id,
+        articleId: article.id
+      },
+      include: {
+        author: {
+          select: {
+            id: true,
+            firstName: true,
+            lastName: true
+          }
+        }
+      }
     });
+
+    // Ajouter 4 points à l'utilisateur pour avoir noté l'article
+    await prisma.user.update({
+      where: { id: authResult.user.id },
+      data: {
+        points: {
+          increment: 4
+        }
+      }
+    });
+
+    // Transformer la réponse pour correspondre à l'interface
+    const transformedRating = {
+      id: rating.id,
+      value: rating.value,
+      author: {
+        id: rating.author.id,
+        firstName: rating.author.firstName,
+        lastName: rating.author.lastName
+      },
+      createdAt: rating.createdAt.toISOString()
+    };
+
+    return NextResponse.json(transformedRating, { status: 201 });
+
   } catch (error) {
-    console.error('Erreur API création note:', error);
+    console.error('Erreur lors de la création du rating:', error);
+    return NextResponse.json(
+      { error: 'Erreur interne du serveur' },
+      { status: 500 }
+    );
+  }
+}
+
+// GET - Récupérer les ratings d'un article
+export async function GET(
+  request : NextRequest, // eslint-disable-line @typescript-eslint/no-unused-vars
+  { params }: { params: Promise<{ slug: string }> }
+) {
+  try {
+    // Récupérer l'article par le slug
+    const article = await prisma.article.findUnique({
+      where: { slug: (await params).slug, published: true },
+      select: { id: true }
+    });
+
+    if (!article) {
+      return NextResponse.json(
+        { error: 'Article non trouvé' },
+        { status: 404 }
+      );
+    }
+
+    // Récupérer tous les ratings
+    const ratings = await prisma.rating.findMany({
+      where: {
+        articleId: article.id
+      },
+      include: {
+        author: {
+          select: {
+            id: true,
+            firstName: true,
+            lastName: true
+          }
+        }
+      },
+      orderBy: {
+        createdAt: 'desc'
+      }
+    });
+
+    // Transformer les ratings
+    const transformedRatings = ratings.map(rating => ({
+      id: rating.id,
+      value: rating.value,
+      author: {
+        id: rating.author.id,
+        firstName: rating.author.firstName,
+        lastName: rating.author.lastName
+      },
+      createdAt: rating.createdAt.toISOString()
+    }));
+
+    return NextResponse.json({ ratings: transformedRatings });
+
+  } catch (error) {
+    console.error('Erreur lors de la récupération des ratings:', error);
     return NextResponse.json(
       { error: 'Erreur interne du serveur' },
       { status: 500 }

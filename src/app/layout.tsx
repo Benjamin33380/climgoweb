@@ -1,17 +1,15 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { NewHeader } from "@/components/ui/NewHeader"
+import NewHeader from "@/components/ui/NewHeader"
 import MobileHeader from "@/components/ui/MobileHeader";
 import Footer from "@/components/ui/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
-import { ClientHeroUIProvider } from "@/components/providers/HeroUIProvider";
-import { UserProvider } from "@/hooks/useUser";
+import { UserProvider } from "@/components/providers/UserProvider";
 import { GlobalScrollShadow } from '@/components/ui/GlobalScrollShadow';
 import { scrollShadowConfig } from '@/config/scrollShadow';
 import { PerformanceOptimizations } from '@/components/PerformanceOptimizations';
-
-import { GoogleAnalytics } from '@/components/GoogleAnalytics';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,10 +30,6 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
   userScalable: true,
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#000000" },
-  ],
   colorScheme: "light dark",
   viewportFit: "cover",
 };
@@ -116,10 +110,8 @@ export const metadata: Metadata = {
     "mobile-web-app-capable": "yes",
     "apple-mobile-web-app-capable": "yes",
     "apple-mobile-web-app-status-bar-style": "default",
-    "theme-color": "#ffffff",
     "apple-mobile-web-app-title": "ClimGO",
     "application-name": "ClimGO",
-    "msapplication-TileColor": "#0ea5e9",
     "msapplication-config": "/browserconfig.xml",
   },
 };
@@ -136,7 +128,7 @@ export default function RootLayout({
         <PerformanceOptimizations />
         
         {/* Meta tags pour Safari status bar */}
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
         <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
         
@@ -397,10 +389,9 @@ export default function RootLayout({
         />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}>
-        <GoogleAnalytics />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <ClientHeroUIProvider>
             <UserProvider>
+              <GoogleAnalytics />
               <GlobalScrollShadow
                 size={scrollShadowConfig.size}
                 shadowColor={scrollShadowConfig.shadowColor}
@@ -418,7 +409,6 @@ export default function RootLayout({
                 <Footer />
               </GlobalScrollShadow>
             </UserProvider>
-          </ClientHeroUIProvider>
         </ThemeProvider>
       </body>
     </html>

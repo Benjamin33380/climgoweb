@@ -2,13 +2,13 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Menu, X, Phone, Mail, Flame, AirVent, Droplet, FileText, BookOpen, MapPin, Info, Cog, BadgeEuro } from 'lucide-react';
+import { Menu, X, Phone, Mail, Flame, AirVent, Droplet, FileText, BookOpen, MapPin, Info, BadgeEuro, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 import Image from 'next/image';
 import { UserMenu } from '@/components/auth/UserMenu';
-import { useUser } from '@/hooks/useUser';
 import { ModeToggle } from '@/components/ui/mode-toggle';
+import { useUser } from '@/components/providers/UserProvider';
 
 const services = [
   { title: "Chauffage", href: "/chauffage", icon: <Flame className="w-5 h-5" /> },
@@ -18,13 +18,13 @@ const services = [
 ];
 
 export default function MobileHeader() {
+  const { user } = useUser();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { user, logout } = useUser();
 
   return (
     <>
       {/* Header Mobile */}
-      <header className="lg:hidden sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <header className="lg:hidden sticky top-0 z-50 w-full border-b backdrop-blur">
         <div className="flex h-16 items-center justify-between px-4">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
@@ -38,10 +38,21 @@ export default function MobileHeader() {
             <span className="font-bold text-lg">ClimGO</span>
           </Link>
 
-          {/* Actions Mobile */}
-          <div className="flex items-center space-x-2">
-            <UserMenu user={user} onLogout={logout} />
-            <Button
+                      {/* Actions Mobile */}
+            <div className="flex items-center space-x-2">
+              <UserMenu />
+              
+              {/* Lien profil */}
+              {user && (
+                <Button variant="ghost" size="sm" asChild>
+                  <Link href="/profile">
+                    <User className="h-4 w-4 mr-2" />
+                    Profil
+                  </Link>
+                </Button>
+              )}
+              
+              <Button
               variant="ghost"
               size="icon"
               className="h-10 w-10 text-gray-700 dark:text-gray-300"

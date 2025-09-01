@@ -31,6 +31,7 @@ export default function AdminLogin() {
       }
       // Si succès, le hook redirige automatiquement
     } catch (err) {
+      console.error('Erreur de connexion:', err);
       setError('Erreur de connexion');
     } finally {
       setLoading(false);

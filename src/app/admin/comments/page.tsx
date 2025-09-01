@@ -1,22 +1,21 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useAdminAuth } from '@/hooks/useAdminAuth';
-import { supabase } from '@/lib/supabase';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
-import { Trash2, CheckCircle, XCircle, MessageCircle, Calendar, User, Search, Filter } from 'lucide-react';
+import { Trash2, CheckCircle, XCircle, MessageCircle, Calendar, User, Search } from 'lucide-react';
 import Link from 'next/link';
 
 interface Comment {
   id: string;
   content: string;
-  created_at: string;
-  is_approved: boolean;
-  user: {
-    username: string;
+  createdAt: string;
+  isApproved: boolean;
+  author: {
+    firstName: string;
+    lastName: string;
     email: string;
   };
   article: {
@@ -26,43 +25,33 @@ interface Comment {
 }
 
 export default function AdminCommentsPage() {
-  const { user, loading } = useAdminAuth();
   const [comments, setComments] = useState<Comment[]>([]);
   const [filteredComments, setFilteredComments] = useState<Comment[]>([]);
-  const [loadingComments, setLoadingComments] = useState(true);
+  const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const [filterStatus, setFilterStatus] = useState<'all' | 'pending' | 'approved'>('all');
 
   useEffect(() => {
-    if (user) {
-      loadComments();
-    }
-  }, [user]);
+    loadComments();
+  }, []);
 
   useEffect(() => {
     filterComments();
-  }, [comments, searchTerm, filterStatus]);
+  }, [comments, searchTerm, filterStatus]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const loadComments = async () => {
     try {
-      const { data, error } = await supabase
-        .from('comments')
-        .select(`
-          id,
-          content,
-          created_at,
-          is_approved,
-          user:users(username, email),
-          article:articles(title, slug)
-        `)
-        .order('created_at', { ascending: false });
-
-      if (error) throw error;
-      setComments((data as any) || []);
+      const response = await fetch('/api/admin/comments');
+      if (response.ok) {
+        const data = await response.json();
+        setComments(data);
+      } else {
+        throw new Error('Erreur lors du chargement des commentaires');
+      }
     } catch (error) {
       console.error('Erreur lors du chargement des commentaires:', error);
     } finally {
-      setLoadingComments(false);
+      setLoading(false);
     }
   };
 
@@ -71,16 +60,18 @@ export default function AdminCommentsPage() {
 
     // Filtrer par statut
     if (filterStatus === 'pending') {
-      filtered = filtered.filter(c => !c.is_approved);
+      filtered = filtered.filter(c => !c.isApproved);
     } else if (filterStatus === 'approved') {
-      filtered = filtered.filter(c => c.is_approved);
+      filtered = filtered.filter(c => c.isApproved);
     }
 
     // Filtrer par terme de recherche
     if (searchTerm) {
       filtered = filtered.filter(c => 
         c.content.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        c.user.username.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        c.author.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        c.author.lastName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        c.author.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
         c.article.title.toLowerCase().includes(searchTerm.toLowerCase())
       );
     }
@@ -90,13 +81,19 @@ export default function AdminCommentsPage() {
 
   const approveComment = async (commentId: string) => {
     try {
-      const { error } = await supabase
-        .from('comments')
-        .update({ is_approved: true })
-        .eq('id', commentId);
+      const response = await fetch(`/api/admin/comments/${commentId}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ isApproved: true })
+      });
 
-      if (error) throw error;
-      await loadComments();
+      if (response.ok) {
+        await loadComments();
+      } else {
+        throw new Error('Erreur lors de l\'approbation');
+      }
     } catch (error) {
       console.error('Erreur lors de l\'approbation:', error);
     }
@@ -104,13 +101,19 @@ export default function AdminCommentsPage() {
 
   const rejectComment = async (commentId: string) => {
     try {
-      const { error } = await supabase
-        .from('comments')
-        .update({ is_approved: false })
-        .eq('id', commentId);
+      const response = await fetch(`/api/admin/comments/${commentId}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ isApproved: false })
+      });
 
-      if (error) throw error;
-      await loadComments();
+      if (response.ok) {
+        await loadComments();
+      } else {
+        throw new Error('Erreur lors du rejet');
+      }
     } catch (error) {
       console.error('Erreur lors du rejet:', error);
     }
@@ -120,19 +123,21 @@ export default function AdminCommentsPage() {
     if (!confirm('Êtes-vous sûr de vouloir supprimer ce commentaire définitivement ?')) return;
 
     try {
-      const { error } = await supabase
-        .from('comments')
-        .delete()
-        .eq('id', commentId);
+      const response = await fetch(`/api/admin/comments/${commentId}`, {
+        method: 'DELETE'
+      });
 
-      if (error) throw error;
-      await loadComments();
+      if (response.ok) {
+        await loadComments();
+      } else {
+        throw new Error('Erreur lors de la suppression');
+      }
     } catch (error) {
       console.error('Erreur lors de la suppression:', error);
     }
   };
 
-  if (loading || loadingComments) {
+  if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
         <div className="text-center">
@@ -143,8 +148,8 @@ export default function AdminCommentsPage() {
     );
   }
 
-  const pendingComments = comments.filter(c => !c.is_approved);
-  const approvedComments = comments.filter(c => c.is_approved);
+  const pendingComments = comments.filter(c => !c.isApproved);
+  const approvedComments = comments.filter(c => c.isApproved);
 
   return (
     <div className="space-y-6">
@@ -229,7 +234,7 @@ export default function AdminCommentsPage() {
               <div 
                 key={comment.id} 
                 className={`border rounded-lg p-4 ${
-                  !comment.is_approved 
+                  !comment.isApproved 
                     ? 'bg-yellow-50 dark:bg-yellow-900/20 border-yellow-200 dark:border-yellow-800' 
                     : 'bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800'
                 }`}
@@ -238,16 +243,18 @@ export default function AdminCommentsPage() {
                   <div className="flex items-center gap-3">
                     <User className="w-4 h-4 text-muted-foreground" />
                     <div>
-                      <p className="font-medium">{comment.user.username}</p>
-                      <p className="text-sm text-muted-foreground">{comment.user.email}</p>
+                      <p className="font-medium">
+                        {comment.author.firstName} {comment.author.lastName}
+                      </p>
+                      <p className="text-sm text-muted-foreground">{comment.author.email}</p>
                     </div>
-                    <Badge variant={comment.is_approved ? 'secondary' : 'destructive'}>
-                      {comment.is_approved ? 'Approuvé' : 'En attente'}
+                    <Badge variant={comment.isApproved ? 'secondary' : 'destructive'}>
+                      {comment.isApproved ? 'Approuvé' : 'En attente'}
                     </Badge>
                   </div>
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <Calendar className="w-4 h-4" />
-                    {new Date(comment.created_at).toLocaleDateString('fr-FR', {
+                    {new Date(comment.createdAt).toLocaleDateString('fr-FR', {
                       year: 'numeric',
                       month: 'short',
                       day: 'numeric',
@@ -276,7 +283,7 @@ export default function AdminCommentsPage() {
                 </div>
 
                 <div className="flex gap-2">
-                  {!comment.is_approved ? (
+                  {!comment.isApproved ? (
                     <Button
                       size="sm"
                       onClick={() => approveComment(comment.id)}

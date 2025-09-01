@@ -1,7 +1,7 @@
 "use client"
 
 import createGlobe, { COBEOptions } from "cobe"
-import { useCallback, useEffect, useRef, useState } from "react"
+import { useCallback, useEffect, useRef, useState, useMemo } from "react"
 
 import { cn } from "@/lib/utils"
 
@@ -81,7 +81,7 @@ export function Globe({
   }, [])
 
   // Configuration adaptative selon le mode
-  const adaptiveConfig = {
+  const adaptiveConfig = useMemo(() => ({
     ...config,
     dark: isDarkMode ? 1 : 0,
     diffuse: isDarkMode ? 0.6 : 0.8,
@@ -89,9 +89,9 @@ export function Globe({
     baseColor: isDarkMode ? [0.2, 0.2, 0.2] as [number, number, number] : [1, 1, 1] as [number, number, number],
     markerColor: isDarkMode ? [0.8, 0.8, 0.8] as [number, number, number] : [0.1, 0.1, 0.1] as [number, number, number],
     glowColor: isDarkMode ? [0.4, 0.4, 0.4] as [number, number, number] : [1, 1, 1] as [number, number, number],
-  }
-  let phi = 0
-  let width = 0
+  }), [config, isDarkMode])
+  const phiRef = useRef(0)
+  const widthRef = useRef(0)
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const pointerInteracting = useRef<number | null>(null)
   const pointerInteractionMovement = useRef(0)
@@ -116,30 +116,32 @@ export function Globe({
   }
 
   const onRender = useCallback(
-    (state: Record<string, any>) => {
+    (state: Record<string, any>) => { // eslint-disable-line @typescript-eslint/no-explicit-any
       // Auto-rotation seulement si pas de drag
       if (!isDragging) {
-        phi += 0.005
+        phiRef.current += 0.005
       }
       // Appliquer la rotation totale
-      state.phi = phi + r
+      state.phi = phiRef.current + r
       // Maintenir les proportions carrées
-      const size = width * 2
+      const size = widthRef.current * 2
       state.width = size
       state.height = size
     },
     [r, isDragging],
   )
 
-  const onResize = () => {
-    if (canvasRef.current) {
-      // Prendre la plus petite dimension pour garder le cercle parfait
-      const rect = canvasRef.current.getBoundingClientRect()
-      width = Math.min(rect.width, rect.height)
-    }
-  }
+  // Fonction onResize déplacée dans useEffect pour éviter les re-renders
 
   useEffect(() => {
+    const onResize = () => {
+      if (canvasRef.current) {
+        // Prendre la plus petite dimension pour garder le cercle parfait
+        const rect = canvasRef.current.getBoundingClientRect()
+        widthRef.current = Math.min(rect.width, rect.height)
+      }
+    }
+
     window.addEventListener("resize", onResize)
     onResize()
 
@@ -147,8 +149,8 @@ export function Globe({
 
     const globe = createGlobe(canvasRef.current, {
       ...adaptiveConfig,
-      width: width * 2,
-      height: width * 2,
+      width: widthRef.current * 2,
+      height: widthRef.current * 2,
       onRender,
     })
 
@@ -158,7 +160,7 @@ export function Globe({
       }
     })
     return () => globe.destroy()
-  }, [isDarkMode, onRender])
+  }, [isDarkMode, onRender, adaptiveConfig])
 
   return (
     <div

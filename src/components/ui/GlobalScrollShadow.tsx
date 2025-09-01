@@ -19,8 +19,21 @@ export function GlobalScrollShadow({
 }: GlobalScrollShadowProps) {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [maxScroll, setMaxScroll] = useState(0);
+  const [isSafariMobile, setIsSafariMobile] = useState(false);
 
   useEffect(() => {
+    // Détecter Safari mobile
+    const detectSafariMobile = () => {
+      const userAgent = navigator.userAgent;
+      const isIOS = /iPad|iPhone|iPod/.test(userAgent);
+      const isSafari = /Safari/.test(userAgent) && !/Chrome/.test(userAgent);
+      const isMobile = /Mobile|Android|iPhone|iPad/.test(userAgent);
+      
+      return isIOS && isSafari && isMobile;
+    };
+
+    setIsSafariMobile(detectSafariMobile());
+
     const handleScroll = () => {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       const scrollHeight = document.documentElement.scrollHeight;
@@ -41,6 +54,11 @@ export function GlobalScrollShadow({
       window.removeEventListener('resize', handleScroll);
     };
   }, []);
+
+  // Désactiver complètement sur Safari mobile
+  if (isSafariMobile) {
+    return <>{children}</>;
+  }
 
   // Calculer l'opacité des ombres
   const topShadowOpacity = Math.min(scrollPosition / size, 1);

@@ -1,6 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useUser } from '@/components/providers/UserProvider';
+import { ProtectedRoute } from '@/components/auth/ProtectedRoute';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -10,45 +12,25 @@ import {
   Users, 
   Search, 
   Filter, 
-  MoreHorizontal,
-  Shield,
-  Ban,
-  CheckCircle,
-  XCircle,
   Mail,
   Calendar,
-  MapPin,
   Activity,
   Loader2,
-  AlertTriangle
+  Edit,
+  Trash2,
+  UserPlus
 } from 'lucide-react';
-import { useUser } from '@/hooks/useUser';
 
 interface UserData {
   id: string;
   email: string;
-  username?: string;
-  first_name?: string;
-  last_name?: string;
-  avatar_url?: string;
-  phone?: string;
-  city?: string;
-  country?: string;
-  points_activity: number;
-  is_admin: boolean;
-  is_banned: boolean;
-  email_verified: boolean;
-  created_at: string;
-  last_login?: string;
-  comment_count: number;
-  rating_count: number;
-  like_count: number;
-  current_session?: {
-    ip_address: string;
-    country: string;
-    city: string;
-    created_at: string;
-  };
+  firstName?: string;
+  lastName?: string;
+  role: 'USER' | 'ADMIN';
+  isActive: boolean;
+  emailVerified: boolean;
+  createdAt: string;
+  updatedAt: string;
 }
 
 interface Pagination {
@@ -58,7 +40,23 @@ interface Pagination {
   totalPages: number;
 }
 
+interface UserFormData {
+  email: string;
+  password: string;
+  firstName: string;
+  lastName: string;
+  role: 'USER' | 'ADMIN';
+}
+
 export default function AdminUsersPage() {
+  return (
+    <ProtectedRoute requireAdmin={true}>
+      <AdminUsersContent />
+    </ProtectedRoute>
+  );
+}
+
+function AdminUsersContent() {
   const { user } = useUser();
   const [users, setUsers] = useState<UserData[]>([]);
   const [loading, setLoading] = useState(true);
@@ -73,13 +71,32 @@ export default function AdminUsersPage() {
     totalPages: 0
   });
   const [selectedUser, setSelectedUser] = useState<UserData | null>(null);
-  const [actionLoading, setActionLoading] = useState<string | null>(null);
+  
+  // États pour les modales CRUD
+  const [showAddModal, setShowAddModal] = useState(false);
+  const [showEditModal, setShowEditModal] = useState(false);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [userToDelete, setUserToDelete] = useState<UserData | null>(null);
+  const [formData, setFormData] = useState<UserFormData>({
+    email: '',
+    password: '',
+    firstName: '',
+    lastName: '',
+    role: 'USER'
+  });
+  const [editFormData, setEditFormData] = useState<UserFormData>({
+    email: '',
+    password: '',
+    firstName: '',
+    lastName: '',
+    role: 'USER'
+  });
 
   useEffect(() => {
-    if (user?.is_admin) {
+    if (user?.role === 'ADMIN') {
       loadUsers();
     }
-  }, [user, pagination.page, search, statusFilter]);
+  }, [user, pagination.page, search, statusFilter]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const loadUsers = async () => {
     setLoading(true);
@@ -93,10 +110,19 @@ export default function AdminUsersPage() {
         status: statusFilter
       });
 
-      const response = await fetch(`/api/admin/users?${params}`);
+      const response = await fetch(`/api/admin/users?${params}`, {
+        credentials: 'include' // Inclure les cookies automatiquement
+      });
       
       if (!response.ok) {
-        throw new Error('Erreur lors du chargement des utilisateurs');
+        if (response.status === 401) {
+          setError('Session expirée, veuillez vous reconnecter');
+        } else if (response.status === 403) {
+          setError('Accès refusé, droits insuffisants');
+        } else {
+          throw new Error('Erreur lors du chargement des utilisateurs');
+        }
+        return;
       }
 
       const data = await response.json();
@@ -109,48 +135,111 @@ export default function AdminUsersPage() {
     }
   };
 
-  const handleUserAction = async (userId: string, action: string, reason?: string) => {
-    setActionLoading(userId);
-    setError('');
-    setSuccess('');
-
+  // Fonction pour ajouter un utilisateur
+  const handleAddUser = async () => {
     try {
       const response = await fetch('/api/admin/users', {
-        method: 'PATCH',
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ userId, action, reason })
+        credentials: 'include',
+        body: JSON.stringify(formData)
       });
 
       if (!response.ok) {
-        throw new Error('Erreur lors de l\'action');
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Erreur lors de la création');
       }
 
-      setSuccess(`Action "${action}" effectuée avec succès`);
+      setSuccess('Utilisateur créé avec succès');
+      setShowAddModal(false);
+      setFormData({ email: '', password: '', firstName: '', lastName: '', role: 'USER' });
       await loadUsers();
     } catch (error: unknown) {
       setError(error instanceof Error ? error.message : 'Erreur inconnue');
-    } finally {
-      setActionLoading(null);
     }
   };
 
-  const handleBanUser = (userData: UserData) => {
-    const reason = prompt('Raison du bannissement:');
-    if (reason) {
-      handleUserAction(userData.id, 'ban', reason);
+  // Fonction pour modifier un utilisateur
+  const handleEditUser = async () => {
+    if (!selectedUser) return;
+
+    try {
+      const response = await fetch(`/api/admin/users/${selectedUser.id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        credentials: 'include',
+        body: JSON.stringify(editFormData)
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Erreur lors de la modification');
+      }
+
+      setSuccess('Utilisateur modifié avec succès');
+      setShowEditModal(false);
+      setSelectedUser(null);
+      await loadUsers();
+    } catch (error: unknown) {
+      setError(error instanceof Error ? error.message : 'Erreur inconnue');
     }
+  };
+
+  // Fonction pour supprimer un utilisateur
+  const handleDeleteUser = async () => {
+    if (!userToDelete) return;
+
+    try {
+      const response = await fetch(`/api/admin/users/${userToDelete.id}`, {
+        method: 'DELETE',
+        credentials: 'include'
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Erreur lors de la suppression');
+      }
+
+      setSuccess('Utilisateur supprimé avec succès');
+      setShowDeleteModal(false);
+      setUserToDelete(null);
+      await loadUsers();
+    } catch (error: unknown) {
+      setError(error instanceof Error ? error.message : 'Erreur inconnue');
+    }
+  };
+
+  // Ouvrir la modale d'édition
+  const openEditModal = (userData: UserData) => {
+    setSelectedUser(userData);
+    setEditFormData({
+      email: userData.email,
+      password: '', // Pas de mot de passe pour l'édition
+      firstName: userData.firstName || '',
+      lastName: userData.lastName || '',
+      role: userData.role
+    });
+    setShowEditModal(true);
+  };
+
+  // Ouvrir la modale de suppression
+  const openDeleteModal = (userData: UserData) => {
+    setUserToDelete(userData);
+    setShowDeleteModal(true);
   };
 
   const getStatusBadge = (userData: UserData) => {
-    if (userData.is_banned) {
-      return <Badge variant="destructive"><Ban className="h-3 w-3 mr-1" />Banni</Badge>;
+    if (!userData.isActive) {
+      return <Badge variant="destructive">Inactif</Badge>;
     }
-    if (userData.is_admin) {
-      return <Badge variant="secondary"><Shield className="h-3 w-3 mr-1" />Admin</Badge>;
+    if (userData.role === 'ADMIN') {
+      return <Badge variant="secondary">Admin</Badge>;
     }
-    return <Badge variant="secondary"><CheckCircle className="h-3 w-3 mr-1" />Actif</Badge>;
+    return <Badge variant="secondary">Actif</Badge>;
   };
 
   const formatDate = (dateString: string) => {
@@ -163,24 +252,15 @@ export default function AdminUsersPage() {
     });
   };
 
-  if (!user?.is_admin) {
-    return (
-      <div className="container mx-auto p-6">
-        <Alert variant="destructive">
-          <AlertTriangle className="h-4 w-4" />
-          <AlertDescription>
-            Accès refusé. Vous devez être administrateur pour accéder à cette page.
-          </AlertDescription>
-        </Alert>
-      </div>
-    );
-  }
-
   return (
     <div className="container mx-auto p-6 space-y-6">
       <div className="flex items-center justify-between">
         <h1 className="text-3xl font-bold">Gestion des utilisateurs</h1>
         <div className="flex items-center gap-2">
+          <Button onClick={() => setShowAddModal(true)} className="flex items-center gap-2">
+            <UserPlus className="h-4 w-4" />
+            Ajouter un utilisateur
+          </Button>
           <Badge variant="outline">{pagination.total} utilisateurs</Badge>
         </div>
       </div>
@@ -222,7 +302,8 @@ export default function AdminUsersPage() {
               >
                 <option value="all">Tous</option>
                 <option value="active">Actifs</option>
-                <option value="banned">Bannis</option>
+                <option value="inactive">Inactifs</option>
+                <option value="admin">Admins</option>
               </select>
             </div>
           </div>
@@ -257,23 +338,15 @@ export default function AdminUsersPage() {
                   <div className="flex items-start justify-between">
                     <div className="flex items-start gap-4">
                       <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center">
-                        {userData.avatar_url ? (
-                          <img
-                            src={userData.avatar_url}
-                            alt="Avatar"
-                            className="w-12 h-12 rounded-full object-cover"
-                          />
-                        ) : (
-                          <Users className="h-6 w-6 text-muted-foreground" />
-                        )}
+                        <Users className="h-6 w-6 text-muted-foreground" />
                       </div>
                       
                       <div className="flex-1">
                         <div className="flex items-center gap-2 mb-1">
                           <h3 className="font-medium">
-                            {userData.first_name && userData.last_name
-                              ? `${userData.first_name} ${userData.last_name}`
-                              : userData.username || 'Utilisateur'
+                            {userData.firstName && userData.lastName
+                              ? `${userData.firstName} ${userData.lastName}`
+                              : 'Utilisateur'
                             }
                           </h3>
                           {getStatusBadge(userData)}
@@ -284,43 +357,26 @@ export default function AdminUsersPage() {
                             <Mail className="h-3 w-3" />
                             {userData.email}
                           </span>
-                          {userData.phone && (
-                            <span>{userData.phone}</span>
-                          )}
                         </div>
 
                         <div className="flex items-center gap-4 text-xs text-muted-foreground">
                           <span className="flex items-center gap-1">
                             <Calendar className="h-3 w-3" />
-                            Inscrit le {formatDate(userData.created_at)}
+                            Inscrit le {formatDate(userData.createdAt)}
                           </span>
-                          {userData.last_login && (
-                            <span>
-                              Dernière connexion: {formatDate(userData.last_login)}
-                            </span>
-                          )}
-                          {userData.current_session && (
-                            <span className="flex items-center gap-1">
-                              <MapPin className="h-3 w-3" />
-                              {userData.current_session.city}, {userData.current_session.country}
-                            </span>
-                          )}
+                          <span className="flex items-center gap-1">
+                            <Activity className="h-3 w-3" />
+                            Rôle: {userData.role}
+                          </span>
                         </div>
 
-                        {/* Statistiques d'activité */}
+                        {/* Statut email */}
                         <div className="flex items-center gap-4 mt-2">
-                          <Badge variant="outline" className="text-xs">
-                            <Activity className="h-3 w-3 mr-1" />
-                            {userData.points_activity} points
+                          <Badge variant={userData.emailVerified ? "default" : "outline"} className="text-xs">
+                            {userData.emailVerified ? 'Email vérifié' : 'Email non vérifié'}
                           </Badge>
-                          <Badge variant="outline" className="text-xs">
-                            {userData.comment_count} commentaires
-                          </Badge>
-                          <Badge variant="outline" className="text-xs">
-                            {userData.rating_count} évaluations
-                          </Badge>
-                          <Badge variant="outline" className="text-xs">
-                            {userData.like_count} likes
+                          <Badge variant={userData.isActive ? "default" : "destructive"} className="text-xs">
+                            {userData.isActive ? 'Actif' : 'Inactif'}
                           </Badge>
                         </div>
                       </div>
@@ -328,68 +384,27 @@ export default function AdminUsersPage() {
 
                     {/* Actions */}
                     <div className="flex items-center gap-2">
-                      {actionLoading === userData.id ? (
-                        <Loader2 className="h-4 w-4 animate-spin" />
-                      ) : (
-                        <div className="flex items-center gap-1">
-                          {!userData.email_verified && (
-                            <Button
-                              size="sm"
-                              variant="outline"
-                              onClick={() => handleUserAction(userData.id, 'verify_email')}
-                              className="text-xs"
-                            >
-                              <CheckCircle className="h-3 w-3 mr-1" />
-                              Vérifier email
-                            </Button>
-                          )}
-                          
-                          {!userData.is_admin && (
-                            <Button
-                              size="sm"
-                              variant="outline"
-                              onClick={() => handleUserAction(userData.id, 'make_admin')}
-                              className="text-xs"
-                            >
-                              <Shield className="h-3 w-3 mr-1" />
-                              Admin
-                            </Button>
-                          )}
-                          
-                          {userData.is_admin && userData.id !== user.id && (
-                            <Button
-                              size="sm"
-                              variant="outline"
-                              onClick={() => handleUserAction(userData.id, 'remove_admin')}
-                              className="text-xs"
-                            >
-                              <XCircle className="h-3 w-3 mr-1" />
-                              Retirer admin
-                            </Button>
-                          )}
-                          
-                          {userData.is_banned ? (
-                            <Button
-                              size="sm"
-                              variant="outline"
-                              onClick={() => handleUserAction(userData.id, 'unban')}
-                              className="text-xs text-green-600"
-                            >
-                              <CheckCircle className="h-3 w-3 mr-1" />
-                              Débannir
-                            </Button>
-                          ) : userData.id !== user.id && (
-                            <Button
-                              size="sm"
-                              variant="outline"
-                              onClick={() => handleBanUser(userData)}
-                              className="text-xs text-red-600"
-                            >
-                              <Ban className="h-3 w-3 mr-1" />
-                              Bannir
-                            </Button>
-                          )}
-                        </div>
+                      {/* Boutons d'édition et suppression */}
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        onClick={() => openEditModal(userData)}
+                        className="text-xs"
+                      >
+                        <Edit className="h-3 w-3 mr-1" />
+                        Modifier
+                      </Button>
+                      
+                      {userData.id !== user?.id && (
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          onClick={() => openDeleteModal(userData)}
+                          className="text-xs text-red-600"
+                        >
+                          <Trash2 className="h-3 w-3 mr-1" />
+                          Supprimer
+                        </Button>
                       )}
                     </div>
                   </div>
@@ -445,6 +460,143 @@ export default function AdminUsersPage() {
           )}
         </CardContent>
       </Card>
+
+      {/* Modale d'ajout d'utilisateur */}
+      {showAddModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-background border border-border rounded-lg p-6 w-full max-w-md">
+            <h2 className="text-xl font-bold mb-4">Ajouter un utilisateur</h2>
+            <div className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium mb-1">Email *</label>
+                <Input
+                  type="email"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  placeholder="email@exemple.com"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-1">Mot de passe *</label>
+                <Input
+                  type="password"
+                  value={formData.password}
+                  onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                  placeholder="Mot de passe"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-1">Prénom</label>
+                <Input
+                  value={formData.firstName}
+                  onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                  placeholder="Prénom"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-1">Nom</label>
+                <Input
+                  value={formData.lastName}
+                  onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
+                  placeholder="Nom"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-1">Rôle</label>
+                <select
+                  value={formData.role}
+                  onChange={(e) => setFormData({ ...formData, role: e.target.value as 'USER' | 'ADMIN' })}
+                  className="w-full px-3 py-2 border border-border rounded-md"
+                >
+                  <option value="USER">Utilisateur</option>
+                  <option value="ADMIN">Administrateur</option>
+                </select>
+              </div>
+            </div>
+            <div className="flex gap-2 mt-6">
+              <Button onClick={handleAddUser} className="flex-1">Ajouter</Button>
+              <Button variant="outline" onClick={() => setShowAddModal(false)} className="flex-1">Annuler</Button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Modale de modification d'utilisateur */}
+      {showEditModal && selectedUser && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-background border border-border rounded-lg p-6 w-full max-w-md">
+            <h2 className="text-xl font-bold mb-4">Modifier l'utilisateur</h2>
+            <div className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium mb-1">Email *</label>
+                <Input
+                  type="email"
+                  value={editFormData.email}
+                  onChange={(e) => setEditFormData({ ...editFormData, email: e.target.value })}
+                  placeholder="email@exemple.com"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-1">Nouveau mot de passe (optionnel)</label>
+                <Input
+                  type="password"
+                  value={editFormData.password}
+                  onChange={(e) => setEditFormData({ ...editFormData, password: e.target.value })}
+                  placeholder="Laisser vide pour ne pas changer"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-1">Prénom</label>
+                <Input
+                  value={editFormData.firstName}
+                  onChange={(e) => setEditFormData({ ...editFormData, firstName: e.target.value })}
+                  placeholder="Prénom"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-1">Nom</label>
+                <Input
+                  value={editFormData.lastName}
+                  onChange={(e) => setEditFormData({ ...editFormData, lastName: e.target.value })}
+                  placeholder="Nom"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-1">Rôle</label>
+                <select
+                  value={editFormData.role}
+                  onChange={(e) => setEditFormData({ ...editFormData, role: e.target.value as 'USER' | 'ADMIN' })}
+                  className="w-full px-3 py-2 border border-border rounded-md"
+                >
+                  <option value="USER">Utilisateur</option>
+                  <option value="ADMIN">Administrateur</option>
+                </select>
+              </div>
+            </div>
+            <div className="flex gap-2 mt-6">
+              <Button onClick={handleEditUser} className="flex-1">Modifier</Button>
+              <Button variant="outline" onClick={() => setShowEditModal(false)} className="flex-1">Annuler</Button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Modale de confirmation de suppression */}
+      {showDeleteModal && userToDelete && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-background border border-border rounded-lg p-6 w-full max-w-md">
+            <h2 className="text-xl font-bold mb-4">Confirmer la suppression</h2>
+            <p className="text-muted-foreground mb-6">
+              Êtes-vous sûr de vouloir supprimer l'utilisateur <strong>{userToDelete.email}</strong> ? 
+              Cette action est irréversible.
+            </p>
+            <div className="flex gap-2">
+              <Button variant="destructive" onClick={handleDeleteUser} className="flex-1">Supprimer</Button>
+              <Button variant="outline" onClick={() => setShowDeleteModal(false)} className="flex-1">Annuler</Button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
