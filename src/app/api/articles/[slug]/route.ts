@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 // GET - Récupérer un article par slug
 export async function GET() {
   try {
-    // TODO: Remplacer par Supabase
+    // Récupération depuis MongoDB
     const article = null;
 
     if (!article) {

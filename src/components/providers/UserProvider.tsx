@@ -37,31 +37,21 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
 
   const checkAuth = async () => {
     try {
-      console.log('🔍 [UserProvider] Vérification de l\'authentification...');
       const response = await fetch('/api/auth/me');
-      console.log('🔍 [UserProvider] Réponse de /api/auth/me:', response.status, response.statusText);
       
       if (response.ok) {
         const userData = await response.json();
-        console.log('🔍 [UserProvider] Données utilisateur reçues:', userData);
         setUser(userData.user);
-        console.log('🔍 [UserProvider] Utilisateur défini:', userData.user);
-      } else {
-        console.log('🔍 [UserProvider] Échec de l\'authentification:', response.status);
-        const errorData = await response.text();
-        console.log('🔍 [UserProvider] Détails de l\'erreur:', errorData);
       }
     } catch (error) {
       console.error('❌ [UserProvider] Erreur lors de la vérification de l\'authentification:', error);
     } finally {
-      console.log('🔍 [UserProvider] Fin de la vérification, loading = false');
       setLoading(false);
     }
   };
 
   const login = async (email: string, password: string) => {
     try {
-      console.log('🔐 [UserProvider] Tentative de connexion pour:', email);
       const response = await fetch('/api/auth/login', {
         method: 'POST',
         headers: {
@@ -71,14 +61,11 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
       });
 
       const data = await response.json();
-      console.log('🔐 [UserProvider] Réponse de connexion:', response.status, data);
 
       if (response.ok) {
-        console.log('🔐 [UserProvider] Connexion réussie, utilisateur:', data.user);
         setUser(data.user);
         return { success: true };
       } else {
-        console.log('🔐 [UserProvider] Échec de connexion:', data.error);
         return { success: false, error: data.error };
       }
     } catch (error) {

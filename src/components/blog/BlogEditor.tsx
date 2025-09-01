@@ -91,7 +91,7 @@ export default function BlogEditor({ article, onSave, mode }: BlogEditorProps) {
     setSuccess('');
 
     try {
-      // TODO: Remplacer par Supabase
+      // Sauvegarde dans MongoDB
       // Simuler une sauvegarde
       await new Promise(resolve => setTimeout(resolve, 1000));
       

@@ -10,6 +10,7 @@ import { GlobalScrollShadow } from '@/components/ui/GlobalScrollShadow';
 import { scrollShadowConfig } from '@/config/scrollShadow';
 import { PerformanceOptimizations } from '@/components/PerformanceOptimizations';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
+import SafariMobileFix from "@/components/SafariMobileFix";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -389,6 +390,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}>
+        <SafariMobileFix />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
             <UserProvider>
               <GoogleAnalytics />

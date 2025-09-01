@@ -27,7 +27,7 @@ export default function robots(): MetadataRoute.Robots {
           '/api/*',
           '/auth/*',
           '/profile/*',
-          '/debug/*',
+      
         ]
       },
       {
@@ -51,7 +51,7 @@ export default function robots(): MetadataRoute.Robots {
           '/auth/*',
           '/dashboard/*',
           '/profile/*',
-          '/debug/*'
+
         ]
       }
     ],

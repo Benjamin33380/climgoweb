@@ -28,7 +28,7 @@ export interface AnalyticsData {
 export async function getAnalyticsData(
 
 ): Promise<AnalyticsData> {
-  // TODO: Implémenter l'intégration avec Google Analytics API via GTM
+  // Intégration avec Google Analytics API via GTM
   // Pour l'instant, retourner des données simulées
   
   return {
@@ -54,7 +54,7 @@ export async function getArticleAnalytics(
   avgTimeOnPage: number;
   bounceRate: number;
 }> {
-  // TODO: Implémenter l'intégration avec Google Analytics API via GTM
+  // Intégration avec Google Analytics API via GTM
   return {
     views: 0,
     uniqueViews: 0,

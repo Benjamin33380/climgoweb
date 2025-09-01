@@ -63,12 +63,11 @@ export async function PATCH(request: NextRequest) {
       );
     }
 
-    // TODO: Remplacer par Supabase
-    const comment = {
-      id: commentId,
-      is_approved: approved,
-      updated_at: new Date().toISOString()
-    };
+    // Mise à jour du commentaire dans MongoDB
+    const comment = await prisma.comment.update({
+      where: { id: commentId },
+      data: { isApproved: approved }
+    });
 
     return NextResponse.json(comment);
   } catch (error) {
@@ -101,7 +100,11 @@ export async function DELETE(request: NextRequest) {
       );
     }
 
-    // TODO: Remplacer par Supabase
+    // Suppression du commentaire dans MongoDB
+    await prisma.comment.delete({
+      where: { id: commentId }
+    });
+    
     return NextResponse.json({ message: 'Commentaire supprimé' });
   } catch (error) {
     if (error instanceof Error && error.message.includes('Token')) {

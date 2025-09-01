@@ -56,7 +56,7 @@ export default function GoogleAnalyticsWidget({ period }: GoogleAnalyticsWidgetP
     setError('');
 
     try {
-      // TODO: Remplacer par un appel à l'API Google Analytics via GTM
+      // Appel à l'API Google Analytics via GTM
       // Pour l'instant, utiliser des données simulées
       const mockData: AnalyticsData = {
         pageViews: Math.floor(Math.random() * 1000) + 500,

@@ -61,7 +61,7 @@ export function Logo3D({
             enableZoom={false} 
             enablePan={false}
             autoRotate={true}
-            autoRotateSpeed={1.5}
+            autoRotateSpeed={3.0}
           />
         </Suspense>
       </Canvas>
@@ -108,7 +108,7 @@ export function LogoWithFallback({
             enableZoom={false} 
             enablePan={false}
             autoRotate={true}
-            autoRotateSpeed={1.5}
+            autoRotateSpeed={3.0}
           />
         </Suspense>
       </Canvas>

@@ -527,3 +527,85 @@ body {
     -webkit-background-color: var(--background) !important;
   }
 }
+
+/* Solution spécifique pour le fond bleu Safari mobile */
+@supports (-webkit-touch-callout: none) {
+  /* Force le fond sur tous les éléments */
+  * {
+    -webkit-tap-highlight-color: transparent !important;
+  }
+  
+  /* Règles spécifiques pour le body et html */
+  html {
+    background: #ffffff !important;
+    -webkit-background: #ffffff !important;
+    background-color: #ffffff !important;
+    -webkit-background-color: #ffffff !important;
+  }
+  
+  body {
+    background: #ffffff !important;
+    -webkit-background: #ffffff !important;
+    background-color: #ffffff !important;
+    -webkit-background-color: #ffffff !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+  
+  /* Mode sombre */
+  .dark html {
+    background: #000000 !important;
+    -webkit-background: #000000 !important;
+    background-color: #000000 !important;
+    -webkit-background-color: #000000 !important;
+  }
+  
+  .dark body {
+    background: #000000 !important;
+    -webkit-background: #000000 !important;
+    background-color: #000000 !important;
+    -webkit-background-color: #000000 !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+  
+  /* Force le fond sur les conteneurs principaux */
+  #__next, [data-nextjs-page] {
+    background: inherit !important;
+    -webkit-background: inherit !important;
+  }
+  
+  /* Force le fond sur tous les éléments avec bg-background */
+  .bg-background {
+    background-color: #ffffff !important;
+    -webkit-background-color: #ffffff !important;
+  }
+  
+  .dark .bg-background {
+    background-color: #000000 !important;
+    -webkit-background-color: #000000 !important;
+  }
+  
+  /* Force le fond sur le main et les sections */
+  main, section, div {
+    background-color: inherit !important;
+    -webkit-background-color: inherit !important;
+  }
+}
+
+/* Règles supplémentaires pour Safari mobile */
+@media only screen and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+  html, body {
+    background-color: #ffffff !important;
+    -webkit-background-color: #ffffff !important;
+  }
+  
+  .dark html, .dark body {
+    background-color: #000000 !important;
+    -webkit-background-color: #000000 !important;
+  }
+  
+  /* Force le fond sur tous les éléments */
+  * {
+    background-color: inherit !important;
+    -webkit-background-color: inherit !important;
+  }
+}

@@ -147,7 +147,7 @@ export async function POST(
 
 // GET - Récupérer les ratings d'un article
 export async function GET(
-  request : NextRequest, // eslint-disable-line @typescript-eslint/no-unused-vars
+  _request: Request,
   { params }: { params: Promise<{ slug: string }> }
 ) {
   try {

@@ -2,7 +2,7 @@
 import * as React from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Phone, Wrench, Droplet, Settings, FileText, Menu, Mail, MessageSquare, AirVent } from "lucide-react"
+import { Phone, Wrench, Droplet, Settings, FileText, Menu, Mail, MessageSquare, AirVent, Building, BadgeEuro } from "lucide-react"
 import { ModeToggle } from "@/components/ui/mode-toggle"
 import { Button } from "@/components/ui/button"
 import { LogoWithFallback } from "@/components/ui/Logo3D"
@@ -75,26 +75,18 @@ const zones: { title: string; href: string; description: string }[] = [
   },
 ]
 
-const entreprise: { title: string; href: string; description: string }[] = [
+const entreprise: { title: string; href: string; description: string; icon: React.ReactNode }[] = [
   {
     title: "À propos",
     href: "/a-propos",
     description: "Découvrez ClimGO : notre histoire, nos valeurs et notre expertise.",
+    icon: <Building className="w-4 h-4" />,
   },
   {
     title: "Aides & Subventions",
     href: "/aides-etat",
     description: "MaPrimeRénov', CEE, TVA 5,5% : toutes les aides pour vos travaux 2025.",
-  },
-  {
-    title: "Politique de confidentialité",
-    href: "/politique-confidentialite",
-    description: "Comment nous protégeons et utilisons vos données personnelles.",
-  },
-  {
-    title: "Mentions légales",
-    href: "/mentions-legales",
-    description: "Informations légales et réglementaires de l'entreprise.",
+    icon: <BadgeEuro className="w-4 h-4" />,
   },
 ]
 
@@ -232,6 +224,7 @@ export default function NewHeader() {
                         key={item.title}
                         title={item.title}
                         href={item.href}
+                        icon={item.icon}
                       >
                         {item.description}
                       </ListItem>

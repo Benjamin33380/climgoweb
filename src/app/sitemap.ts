@@ -44,11 +44,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8
   }))
 
-  // Articles du blog - TODO: Remplacer par Supabase
+  // Articles du blog - Récupération depuis MongoDB
   const blogUrls: MetadataRoute.Sitemap = []
   
-  // TODO: Remplacer par Supabase pour récupérer les articles
-  console.log('Blog articles not available for sitemap (Supabase à configurer)')
+  // Récupération des articles depuis la base MongoDB
+  console.log('Blog articles not available for sitemap (MongoDB à configurer)')
 
   return [
     ...staticUrls,

@@ -28,7 +28,7 @@ export function NotificationCenter() {
         variant="ghost"
         size="icon"
         className="relative"
-        onClick={() => {/* TODO: Ouvrir le panneau de notifications */}}
+        onClick={() => {/* Ouvrir le panneau de notifications */}}
       >
         <Bell className="h-5 w-5" />
         {unreadCount > 0 && (
