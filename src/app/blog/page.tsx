@@ -1,6 +1,7 @@
 import BlogSearchWrapper from '@/components/BlogSearchWrapper';
 import { Suspense } from 'react';
 import { prisma } from '@/lib/prisma';
+import AutoRefreshBlog from '@/components/blog/AutoRefreshBlog';
 
 interface Article {
   id: string;
@@ -73,26 +74,28 @@ export default async function BlogPage() {
   console.log('📚 [BlogPage] Articles:', articles);
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Header */}
-      <div className="bg-card border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="text-center">
-            <h1 className="text-4xl font-bold text-foreground mb-4">
-              Blog ClimGO - Conseils Chauffage Climatisation Gironde
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Découvrez nos conseils, actualités et guides sur le chauffage, 
-              la climatisation et la maintenance de vos systèmes
-            </p>
+    <AutoRefreshBlog>
+      <div className="min-h-screen bg-background">
+        {/* Header */}
+        <div className="bg-card border-b">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div className="text-center">
+              <h1 className="text-4xl font-bold text-foreground mb-4">
+                Blog ClimGO - Conseils Chauffage Climatisation Gironde
+              </h1>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                Découvrez nos conseils, actualités et guides sur le chauffage, 
+                la climatisation et la maintenance de vos systèmes
+              </p>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Search */}
-      <Suspense fallback={<div className="bg-card border-b py-8 text-center">Chargement de la recherche...</div>}>
-        <BlogSearchWrapper articles={articles} />
-      </Suspense>
-    </div>
+        {/* Search */}
+        <Suspense fallback={<div className="bg-card border-b py-8 text-center">Chargement de la recherche...</div>}>
+          <BlogSearchWrapper articles={articles} />
+        </Suspense>
+      </div>
+    </AutoRefreshBlog>
   );
 }
