@@ -49,14 +49,9 @@ export default function BlogSearchWrapper({ articles }: BlogSearchWrapperProps) 
 
   return (
     <>
-      <div className="bg-card border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <BlogSearch onSearch={handleSearch} currentQuery={searchQuery} />
-        </div>
-      </div>
-
       {/* Affichage des articles filtrés */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="w-full px-2 sm:px-4 lg:px-6 py-20">
+        <div className="bg-background border border-border rounded-3xl p-16 sm:p-20 lg:p-24 xl:p-28 shadow-xl w-full max-w-none mx-auto">
         {filteredArticles.length === 0 ? (
           <div className="text-center py-16">
             <h2 className="text-2xl font-semibold text-foreground mb-4">
@@ -90,6 +85,7 @@ export default function BlogSearchWrapper({ articles }: BlogSearchWrapperProps) 
             </div>
           </>
         )}
+        </div>
       </div>
     </>
   );
