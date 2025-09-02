@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Menu, X, Phone, Mail, Flame, AirVent, Droplet, FileText, BookOpen, MapPin, Info, BadgeEuro, User } from 'lucide-react';
+import { Menu, X, Phone, Mail, Flame, AirVent, Droplet, FileText, BookOpen, MapPin, Info, BadgeEuro } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 import Image from 'next/image';
@@ -24,7 +24,7 @@ export default function MobileHeader() {
   return (
     <>
       {/* Header Mobile */}
-      <header className="lg:hidden sticky top-0 z-50 w-full border-b backdrop-blur">
+      <header className="lg:hidden sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/75">
         <div className="flex h-16 items-center justify-between px-4">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
@@ -41,16 +41,7 @@ export default function MobileHeader() {
                       {/* Actions Mobile */}
             <div className="flex items-center space-x-2">
               <UserMenu />
-              
-              {/* Lien profil */}
-              {user && (
-                <Button variant="ghost" size="sm" asChild>
-                  <Link href="/profile">
-                    <User className="h-4 w-4 mr-2" />
-                    Profil
-                  </Link>
-                </Button>
-              )}
+              <ModeToggle />
               
               <Button
               variant="ghost"
@@ -66,8 +57,8 @@ export default function MobileHeader() {
 
       {/* Menu Mobile Overlay */}
       {isMenuOpen && (
-        <div className="lg:hidden fixed inset-0 z-40 bg-black/80 backdrop-blur-sm" onClick={() => setIsMenuOpen(false)}>
-          <div className="fixed inset-0 top-16 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-2xl transform transition-transform duration-300 ease-in-out overflow-hidden">
+        <div className="lg:hidden fixed inset-0 z-40 bg-black/50 dark:bg-black/80 backdrop-blur-sm" onClick={() => setIsMenuOpen(false)}>
+          <div className="fixed inset-0 top-16 bg-white dark:bg-background border-r border-border shadow-2xl transform transition-transform duration-300 ease-in-out overflow-hidden">
             <div className="h-full overflow-y-auto p-6 space-y-6">
               {/* Navigation */}
               <nav className="space-y-4">
@@ -142,11 +133,6 @@ export default function MobileHeader() {
 
               {/* Actions */}
                               <div className="border-t pt-6 space-y-4">
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-muted-foreground">Thème</span>
-                  <ModeToggle />
-                </div>
-                
                 {/* Contact rapide */}
                 <div className="space-y-3">
                   <h4 className="text-sm font-medium">Contact rapide</h4>
