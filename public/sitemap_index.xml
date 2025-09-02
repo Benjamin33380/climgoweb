@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- Sitemap principal du site -->
+  <sitemap>
+    <loc>https://www.climgo.fr/sitemap.xml</loc>
+    <lastmod>2024-12-19T00:00:00.000Z</lastmod>
+  </sitemap>
+  
+  <!-- Sitemap du blog -->
+  <sitemap>
+    <loc>https://www.climgo.fr/blog/sitemap.xml</loc>
+    <lastmod>2024-12-19T00:00:00.000Z</lastmod>
+  </sitemap>
+  
+</sitemapindex> 

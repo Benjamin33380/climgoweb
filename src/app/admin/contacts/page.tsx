@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
 import { 
   Search, 
   Mail, 
@@ -15,7 +16,9 @@ import {
   Clock,
   Trash2,
   Eye,
-  MessageSquare
+  MessageSquare,
+  Reply,
+  Send
 } from 'lucide-react';
 
 interface Contact {
@@ -26,6 +29,9 @@ interface Contact {
   subject: string;
   message: string;
   status: 'PENDING' | 'PROCESSED' | 'CLOSED';
+  adminResponse?: string;
+  adminResponseDate?: string;
+  adminResponseBy?: string;
   createdAt: string;
   updatedAt: string;
 }
@@ -38,6 +44,10 @@ export default function AdminContactsPage() {
   const [filterStatus, setFilterStatus] = useState<'all' | 'PENDING' | 'PROCESSED' | 'CLOSED'>('all');
   const [selectedContact, setSelectedContact] = useState<Contact | null>(null);
   const [showModal, setShowModal] = useState(false);
+  const [showReplyModal, setShowReplyModal] = useState(false);
+  const [replyText, setReplyText] = useState('');
+  const [adminName, setAdminName] = useState('');
+  const [sendingReply, setSendingReply] = useState(false);
 
   useEffect(() => {
     loadContacts();
@@ -119,6 +129,42 @@ export default function AdminContactsPage() {
       }
     } catch (error) {
       console.error('Erreur lors de la suppression:', error);
+    }
+  };
+
+  const sendReply = async () => {
+    if (!selectedContact || !replyText.trim() || !adminName.trim()) {
+      alert('Veuillez remplir tous les champs requis');
+      return;
+    }
+
+    setSendingReply(true);
+    try {
+      const response = await fetch(`/api/admin/contacts/${selectedContact.id}/reply`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          response: replyText,
+          adminName: adminName
+        })
+      });
+
+      if (response.ok) {
+        alert('Réponse envoyée avec succès !');
+        setShowReplyModal(false);
+        setReplyText('');
+        await loadContacts();
+      } else {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Erreur lors de l\'envoi');
+      }
+    } catch (error) {
+      console.error('Erreur lors de l\'envoi de la réponse:', error);
+      alert('Erreur lors de l\'envoi de la réponse');
+    } finally {
+      setSendingReply(false);
     }
   };
 
@@ -289,7 +335,7 @@ export default function AdminContactsPage() {
                   </div>
                 </div>
 
-                <div className="flex gap-2">
+                <div className="flex gap-2 flex-wrap">
                   <Button
                     size="sm"
                     variant="outline"
@@ -304,6 +350,17 @@ export default function AdminContactsPage() {
                   
                   {contact.status === 'PENDING' && (
                     <>
+                      <Button
+                        size="sm"
+                        onClick={() => {
+                          setSelectedContact(contact);
+                          setShowReplyModal(true);
+                        }}
+                        className="bg-blue-600 hover:bg-blue-700 text-white"
+                      >
+                        <Reply className="w-4 h-4 mr-1" />
+                        Répondre
+                      </Button>
                       <Button
                         size="sm"
                         onClick={() => updateContactStatus(contact.id, 'PROCESSED')}
@@ -324,14 +381,29 @@ export default function AdminContactsPage() {
                   )}
                   
                   {contact.status === 'PROCESSED' && (
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      onClick={() => updateContactStatus(contact.id, 'CLOSED')}
-                    >
-                      <XCircle className="w-4 h-4 mr-1" />
-                      Fermer
-                    </Button>
+                    <>
+                      {!contact.adminResponse && (
+                        <Button
+                          size="sm"
+                          onClick={() => {
+                            setSelectedContact(contact);
+                            setShowReplyModal(true);
+                          }}
+                          className="bg-blue-600 hover:bg-blue-700 text-white"
+                        >
+                          <Reply className="w-4 h-4 mr-1" />
+                          Répondre
+                        </Button>
+                      )}
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        onClick={() => updateContactStatus(contact.id, 'CLOSED')}
+                      >
+                        <XCircle className="w-4 h-4 mr-1" />
+                        Fermer
+                      </Button>
+                    </>
                   )}
                   
                   <Button
@@ -343,6 +415,22 @@ export default function AdminContactsPage() {
                     Supprimer
                   </Button>
                 </div>
+
+                {/* Afficher la réponse admin si elle existe */}
+                {contact.adminResponse && (
+                  <div className="mt-4 p-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Reply className="w-4 h-4 text-blue-600" />
+                      <span className="text-sm font-medium text-blue-800 dark:text-blue-200">
+                        Réponse envoyée {contact.adminResponseBy && `par ${contact.adminResponseBy}`}
+                        {contact.adminResponseDate && ` le ${new Date(contact.adminResponseDate).toLocaleDateString('fr-FR')}`}
+                      </span>
+                    </div>
+                    <p className="text-sm whitespace-pre-wrap text-blue-900 dark:text-blue-100">
+                      {contact.adminResponse}
+                    </p>
+                  </div>
+                )}
               </div>
             ))
           )}
@@ -406,6 +494,106 @@ export default function AdminContactsPage() {
                 onClick={() => setShowModal(false)}
               >
                 Fermer
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Modal de réponse */}
+      {showReplyModal && selectedContact && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+          <div className="bg-background rounded-lg p-6 max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-xl font-bold flex items-center gap-2">
+                <Reply className="w-5 h-5" />
+                Répondre à {selectedContact.name}
+              </h2>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => {
+                  setShowReplyModal(false);
+                  setReplyText('');
+                }}
+              >
+                <XCircle className="w-4 h-4" />
+              </Button>
+            </div>
+            
+            <div className="space-y-4">
+              {/* Récapitulatif de la demande */}
+              <div className="p-4 bg-muted rounded border">
+                <h3 className="font-medium mb-2">Demande originale :</h3>
+                <p className="text-sm text-muted-foreground mb-1">
+                  <strong>Sujet :</strong> {selectedContact.subject}
+                </p>
+                <p className="text-sm text-muted-foreground mb-2">
+                  <strong>Email :</strong> {selectedContact.email}
+                </p>
+                <div className="bg-background p-3 rounded border">
+                  <p className="text-sm whitespace-pre-wrap">{selectedContact.message}</p>
+                </div>
+              </div>
+
+              {/* Nom de l'admin */}
+              <div>
+                <label className="text-sm font-medium mb-2 block">
+                  Votre nom (apparaîtra dans l'email) *
+                </label>
+                <Input
+                  value={adminName}
+                  onChange={(e) => setAdminName(e.target.value)}
+                  placeholder="Ex: Thomas de ClimGO"
+                  className="w-full"
+                />
+              </div>
+
+              {/* Réponse */}
+              <div>
+                <label className="text-sm font-medium mb-2 block">
+                  Votre réponse *
+                </label>
+                <Textarea
+                  value={replyText}
+                  onChange={(e) => setReplyText(e.target.value)}
+                  placeholder="Rédigez votre réponse personnalisée au client..."
+                  rows={8}
+                  className="w-full"
+                />
+                <p className="text-xs text-muted-foreground mt-1">
+                  Cette réponse sera envoyée par email au client et sauvegardée dans la base de données.
+                </p>
+              </div>
+            </div>
+            
+            <div className="flex justify-end gap-2 mt-6">
+              <Button
+                variant="outline"
+                onClick={() => {
+                  setShowReplyModal(false);
+                  setReplyText('');
+                }}
+                disabled={sendingReply}
+              >
+                Annuler
+              </Button>
+              <Button
+                onClick={sendReply}
+                disabled={sendingReply || !replyText.trim() || !adminName.trim()}
+                className="bg-blue-600 hover:bg-blue-700 text-white"
+              >
+                {sendingReply ? (
+                  <>
+                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                    Envoi en cours...
+                  </>
+                ) : (
+                  <>
+                    <Send className="w-4 h-4 mr-2" />
+                    Envoyer la réponse
+                  </>
+                )}
               </Button>
             </div>
           </div>

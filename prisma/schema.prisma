@@ -94,6 +94,12 @@ model Contact {
   subject   String
   message   String
   status    ContactStatus @default(PENDING)
+  
+  // Champs pour la réponse admin
+  adminResponse     String?   // Réponse de l'admin
+  adminResponseDate DateTime? // Date de la réponse
+  adminResponseBy   String?   // ID/nom de l'admin qui a répondu
+  
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   

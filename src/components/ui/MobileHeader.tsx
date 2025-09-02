@@ -8,7 +8,6 @@ import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import { UserMenu } from '@/components/auth/UserMenu';
 import { ModeToggle } from '@/components/ui/mode-toggle';
-import { useUser } from '@/components/providers/UserProvider';
 
 const services = [
   { title: "Chauffage", href: "/chauffage", icon: <Flame className="w-5 h-5" /> },
@@ -18,7 +17,6 @@ const services = [
 ];
 
 export default function MobileHeader() {
-  const { user } = useUser();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (

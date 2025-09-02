@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://climgo.fr'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.climgo.fr'
   
   return {
     rules: [
@@ -55,7 +55,7 @@ export default function robots(): MetadataRoute.Robots {
         ]
       }
     ],
-    sitemap: `${baseUrl}/sitemap.xml`,
+    sitemap: `${baseUrl}/sitemap_index.xml`,
     host: baseUrl
   }
 } 

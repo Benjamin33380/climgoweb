@@ -141,7 +141,7 @@ export default function ActionButtons({
           onClick={handleCommentClick}
           variant="outline"
           size="lg"
-          className="w-fit flex items-start gap-3 justify-start px-4 py-4 h-auto text-left"
+          className="w-full flex items-start gap-3 justify-start px-4 py-6 h-auto text-left truncate line-clamp-1"
         >
           <MessageSquare className="h-6 w-6 flex-shrink-0 mt-0.5" />
           <div className="flex-1 min-w-0">
@@ -160,7 +160,7 @@ export default function ActionButtons({
           variant={hasRated ? "secondary" : "outline"}
           size="lg"
           disabled={hasRated || isCheckingRating}
-          className={`w-fit flex items-start gap-3 justify-start px-4 py-4 h-auto text-left ${
+          className={`w-full flex items-start gap-3 justify-start px-4 py-6 h-auto text-left truncate line-clamp-1 ${
             hasRated ? 'bg-green-100 text-green-800 border-green-200' : ''
           }`}
         >

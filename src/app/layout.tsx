@@ -122,7 +122,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" suppressHydrationWarning>
+    <html lang="fr">
       <head>
         <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
         <PerformanceOptimizations />
@@ -388,7 +388,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased bg-black`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
             <UserProvider>
               <GoogleAnalytics />
@@ -399,7 +399,7 @@ export default function RootLayout({
                 className="min-h-screen bg-background text-foreground"
               >
                 {/* Header Desktop */}
-                <div className="hidden lg:block">
+                <div className="hidden lg:block bg-black">
                   <NewHeader />
                 </div>
                 {/* Header Mobile */}

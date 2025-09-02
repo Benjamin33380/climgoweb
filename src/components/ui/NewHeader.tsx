@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button"
 import { LogoWithFallback } from "@/components/ui/Logo3D"
 import { UserMenu } from "@/components/auth/UserMenu"
 import { useUser } from "@/components/providers/UserProvider"
-import UserPoints from "@/components/ui/UserPoints"
 import { useState, useEffect } from "react"
 import {
   NavigationMenu,
@@ -93,7 +92,7 @@ const entreprise: { title: string; href: string; description: string; icon: Reac
 export default function NewHeader() {
   const { user } = useUser();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [userPoints, setUserPoints] = useState<number | null>(null);
+  const [, setUserPoints] = useState<number | null>(null);
 
   // Récupérer les points de l'utilisateur depuis la base de données
   useEffect(() => {

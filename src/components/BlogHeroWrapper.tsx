@@ -22,7 +22,7 @@ interface BlogHeroWrapperProps {
   articles: Article[];
 }
 
-export default function BlogHeroWrapper({ articles }: BlogHeroWrapperProps) {
+export default function BlogHeroWrapper({ }: BlogHeroWrapperProps) {
   const [searchQuery, setSearchQuery] = useState('');
 
   const handleSearch = (query: string) => {

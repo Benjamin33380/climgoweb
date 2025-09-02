@@ -4,6 +4,9 @@ import { Suspense } from 'react';
 import { prisma } from '@/lib/prisma';
 import AutoRefreshBlog from '@/components/blog/AutoRefreshBlog';
 
+// Revalidation toutes les 60 secondes
+export const revalidate = 60;
+
 interface Article {
   id: string;
   title: string;

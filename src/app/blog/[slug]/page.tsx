@@ -17,6 +17,9 @@ import {
 } from 'lucide-react';
 import Image from 'next/image';
 
+// Revalidation toutes les 60 secondes
+export const revalidate = 60;
+
 interface ArticlePageProps {
   params: Promise<{
     slug: string;
@@ -75,18 +78,6 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
       images: article.imageUrl ? [article.imageUrl] : [],
     },
   };
-}
-
-// Générer les articles statiques au build
-export async function generateStaticParams() {
-  const articles = await prisma.article.findMany({
-    where: { published: true },
-    select: { slug: true }
-  });
-
-  return articles.map((article) => ({
-    slug: article.slug,
-  }));
 }
 
 export default async function ArticlePage({ params }: ArticlePageProps) {
@@ -218,16 +209,14 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
     <div className="min-h-screen bg-background">
       {/* Hero Section avec image */}
       {article.imageUrl && (
-        <div className="relative h-64 sm:h-96 w-full overflow-hidden bg-muted">
+        <div className="relative h-64 w-full md:h-96 rounded-xl">
           <Image
             src={article.imageUrl}
             alt={article.title}
             fill
-            sizes="100vw"
             className="object-cover"
             priority={true}
           />
-          <div className="absolute inset-0 bg-black/20" />
         </div>
       )}
 

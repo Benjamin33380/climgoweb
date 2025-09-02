@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
+import Image from "next/image";
 // Importations breadcrumb supprimées car non utilisées
 
 export default function HomePage() {
@@ -142,10 +143,11 @@ export default function HomePage() {
       <section className="hero-mobile-section relative h-[100vh] xs:h-[95vh] sm:h-[90vh] min-h-[500px] xs:min-h-[550px] sm:min-h-[600px] md:min-h-[640px] lg:min-h-[700px] xl:min-h-[750px] w-full overflow-hidden bg-transparent sm:bg-white sm:dark:bg-black text-black dark:text-white">
         {/* Zone image avec effet zoom - Responsive avec adaptation mobile */}
         <div className="absolute top-0 left-0 h-full w-full z-1 sm:hidden">
-          <img
+          <Image
             key={`mobile-${currentImageIndex}`}
             src={heroImages[currentImageIndex]}
             alt="ClimGO - Installation climatisation"
+            fill
             className="h-full w-full object-cover transition-opacity duration-1000"
           />
         </div>

@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import BlogSearch from './BlogSearch';
 import BlogCard from './BlogCard';
 
 interface Article {
@@ -38,9 +37,6 @@ export default function BlogSearchWrapper({ articles }: BlogSearchWrapperProps) 
     }
   }, [searchQuery, articles]);
 
-  const handleSearch = (query: string) => {
-    setSearchQuery(query);
-  };
 
   const handleClear = () => {
     setSearchQuery('');
