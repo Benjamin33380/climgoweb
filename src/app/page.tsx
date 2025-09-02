@@ -195,10 +195,16 @@ export default function HomePage() {
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold tracking-tight mb-2 xs:mb-3 sm:mb-4 md:mb-6 text-white sm:text-black dark:text-white break-words leading-tight" style={{textShadow: 'rgba(0, 0, 0, 0.9) 0px 3px 12px, rgba(0, 0, 0, 0.7) 0px 1px 4px'}}>
+            <h1 
+              className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold sm:font-light tracking-tight mb-2 xs:mb-3 sm:mb-4 md:mb-6 text-white sm:text-black dark:text-white break-words leading-tight"
+              style={{textShadow: window.innerWidth < 640 ? 'rgba(0, 0, 0, 0.9) 0px 3px 12px, rgba(0, 0, 0, 0.7) 0px 1px 4px' : 'none'}}
+            >
               ClimGO
             </h1>
-            <p className="text-xs xs:text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl text-white sm:text-black/90 dark:text-white mb-3 xs:mb-4 sm:mb-4 md:mb-6 lg:mb-8 leading-relaxed max-w-[260px] xs:max-w-[280px] sm:max-w-sm md:max-w-lg lg:max-w-xl xl:max-w-2xl whitespace-pre-line font-medium" style={{textShadow: 'rgba(0, 0, 0, 0.9) 0px 2px 10px, rgba(0, 0, 0, 0.6) 0px 1px 3px'}}>
+            <p 
+              className="text-xs xs:text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl text-white sm:text-black/90 dark:text-white mb-3 xs:mb-4 sm:mb-4 md:mb-6 lg:mb-8 leading-relaxed max-w-[260px] xs:max-w-[280px] sm:max-w-sm md:max-w-lg lg:max-w-xl xl:max-w-2xl whitespace-pre-line font-medium sm:font-normal"
+              style={{textShadow: window.innerWidth < 640 ? 'rgba(0, 0, 0, 0.9) 0px 2px 10px, rgba(0, 0, 0, 0.6) 0px 1px 3px' : 'none'}}
+            >
               Installateur de pompe à chaleur{'\n'}chauffage et climatisation
             </p>
 
