@@ -139,7 +139,7 @@ export default function HomePage() {
 
   return (
     <main className="px-0">
-      <section className="relative h-[100vh] xs:h-[95vh] sm:h-[90vh] min-h-[500px] xs:min-h-[550px] sm:min-h-[600px] md:min-h-[640px] lg:min-h-[700px] xl:min-h-[750px] w-full overflow-hidden bg-white dark:bg-black text-black dark:text-white">
+      <section className="hero-mobile-section relative h-[100vh] xs:h-[95vh] sm:h-[90vh] min-h-[500px] xs:min-h-[550px] sm:min-h-[600px] md:min-h-[640px] lg:min-h-[700px] xl:min-h-[750px] w-full overflow-hidden bg-transparent sm:bg-white sm:dark:bg-black text-black dark:text-white">
         {/* Zone image avec effet zoom - Responsive avec adaptation mobile */}
         <div className="absolute top-0 left-0 h-full w-full z-1 sm:hidden">
           <img
@@ -149,6 +149,8 @@ export default function HomePage() {
             className="h-full w-full object-cover transition-opacity duration-1000"
           />
         </div>
+
+
         
         <motion.div
           className="hidden sm:block absolute top-0 right-0 h-full w-2/3 z-1"
@@ -185,17 +187,18 @@ export default function HomePage() {
         />
 
         {/* Contenu côté gauche - Responsive */}
-        <div className="relative z-10 flex h-full items-center">
+        <div className="relative z-10 flex h-full items-center" style={{background: 'transparent'}}>
           <motion.div
             className="relative z-10 w-full xs:max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16"
+            style={{background: 'transparent'}}
             initial={{ x: -50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-light tracking-tight mb-2 xs:mb-3 sm:mb-4 md:mb-6 text-white sm:text-black dark:text-white break-words leading-tight">
+            <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold tracking-tight mb-2 xs:mb-3 sm:mb-4 md:mb-6 text-white sm:text-black dark:text-white break-words leading-tight" style={{textShadow: 'rgba(0, 0, 0, 0.9) 0px 3px 12px, rgba(0, 0, 0, 0.7) 0px 1px 4px'}}>
               ClimGO
             </h1>
-            <p className="text-xs xs:text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl text-white/90 sm:text-black/90 dark:text-white/90 mb-3 xs:mb-4 sm:mb-4 md:mb-6 lg:mb-8 leading-relaxed max-w-[260px] xs:max-w-[280px] sm:max-w-sm md:max-w-lg lg:max-w-xl xl:max-w-2xl whitespace-pre-line">
+            <p className="text-xs xs:text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl text-white sm:text-black/90 dark:text-white mb-3 xs:mb-4 sm:mb-4 md:mb-6 lg:mb-8 leading-relaxed max-w-[260px] xs:max-w-[280px] sm:max-w-sm md:max-w-lg lg:max-w-xl xl:max-w-2xl whitespace-pre-line font-medium" style={{textShadow: 'rgba(0, 0, 0, 0.9) 0px 2px 10px, rgba(0, 0, 0, 0.6) 0px 1px 3px'}}>
               Installateur de pompe à chaleur{'\n'}chauffage et climatisation
             </p>
 

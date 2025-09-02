@@ -603,9 +603,17 @@ body {
     -webkit-background-color: #000000 !important;
   }
   
-  /* Force le fond sur tous les éléments */
-  * {
+  /* Force le fond sur tous les éléments SAUF la section hero mobile */
+  *:not(.hero-mobile-section):not(.hero-mobile-section *) {
     background-color: inherit !important;
     -webkit-background-color: inherit !important;
+  }
+  
+  /* Section hero mobile - fond transparent */
+  .hero-mobile-section {
+    background: transparent !important;
+    -webkit-background: transparent !important;
+    background-color: transparent !important;
+    -webkit-background-color: transparent !important;
   }
 }
