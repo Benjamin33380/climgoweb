@@ -41,9 +41,10 @@ export async function POST(request: NextRequest) {
     if (result.token) {
       response.cookies.set('auth-token', result.token, {
         httpOnly: true,
-        secure: process.env.NODE_ENV === 'production',
-        sameSite: 'lax',
-        maxAge: 24 * 60 * 60 // 24 heures
+        secure: false, // Désactivé temporairement pour la production
+        sameSite: 'lax', // Plus permissif
+        maxAge: 24 * 60 * 60, // 24 heures
+        path: '/'
       });
     }
 

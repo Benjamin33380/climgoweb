@@ -79,6 +79,8 @@ export function AdminAuthProvider({ children }: { children: React.ReactNode }) {
 
   const login = async (email: string, password: string): Promise<boolean> => {
     try {
+      console.log('🔐 [useAdminAuth] Tentative de connexion pour:', email);
+      
       const response = await fetch('/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -86,14 +88,26 @@ export function AdminAuthProvider({ children }: { children: React.ReactNode }) {
         body: JSON.stringify({ email, password })
       });
 
+      console.log('🔐 [useAdminAuth] Réponse de l\'API login:', {
+        status: response.status,
+        ok: response.ok,
+        statusText: response.statusText
+      });
+
       if (response.ok) {
+        const data = await response.json();
+        console.log('🔐 [useAdminAuth] Connexion réussie, données:', data);
+        
         await checkAuth(); // Vérifier l'auth après connexion
         router.push('/admin'); // Rediriger vers le dashboard
         return true;
+      } else {
+        const errorData = await response.json();
+        console.error('🔐 [useAdminAuth] Erreur de connexion:', errorData);
+        return false;
       }
-      return false;
     } catch (error) {
-      console.error('Erreur lors de la connexion:', error);
+      console.error('🔐 [useAdminAuth] Erreur lors de la connexion:', error);
       return false;
     }
   };

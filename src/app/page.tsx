@@ -30,6 +30,8 @@ export default function HomePage() {
     return () => clearInterval(interval);
   }, [heroImages.length]);
 
+
+
   // Composant CitySearch
   const CitySearch = () => {
     const [searchQuery, setSearchQuery] = useState('');
@@ -52,7 +54,7 @@ export default function HomePage() {
       { name: 'Salles', url: '/villes/salles-chauffage-climatisation' },
       { name: 'Belin-Béliet', url: '/villes/belin-beliet-chauffage-climatisation' },
       { name: 'Sanguinet', url: '/villes/sanguinet-chauffage-climatisation' },
-              { name: 'Parentis-en-Born', url: '/villes/parentis-chauffage-climatisation' },
+      { name: 'Parentis-en-Born', url: '/villes/parentis-chauffage-climatisation' },
       { name: 'Biscarrosse', url: '/villes/biscarrosse-chauffage-climatisation' },
       { name: 'Mimizan', url: '/villes/mimizan-chauffage-climatisation' },
       { name: 'Canéjan', url: '/villes/canejan-chauffage-climatisation' },
@@ -139,26 +141,22 @@ export default function HomePage() {
     <main className="px-0">
       <section className="relative h-[100vh] xs:h-[95vh] sm:h-[90vh] min-h-[500px] xs:min-h-[550px] sm:min-h-[600px] md:min-h-[640px] lg:min-h-[700px] xl:min-h-[750px] w-full overflow-hidden bg-white dark:bg-black text-black dark:text-white">
         {/* Zone image avec effet zoom - Responsive avec adaptation mobile */}
+        <div className="absolute top-0 left-0 h-full w-full z-1 sm:hidden">
+          <img
+            key={`mobile-${currentImageIndex}`}
+            src={heroImages[currentImageIndex]}
+            alt="ClimGO - Installation climatisation"
+            className="h-full w-full object-cover transition-opacity duration-1000"
+          />
+        </div>
+        
         <motion.div
-          className="absolute top-0 right-0 h-full w-full sm:w-2/3"
+          className="hidden sm:block absolute top-0 right-0 h-full w-2/3 z-1"
           aria-hidden
           initial={{ opacity: 0, scale: 1.1 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
         >
-          {/* Version mobile - image plein écran */}
-          <div className="block sm:hidden relative h-full w-full overflow-hidden">
-            <motion.img
-              key={`mobile-${currentImageIndex}`}
-              src={heroImages[currentImageIndex]}
-              alt="ClimGO - Installation climatisation"
-              className="h-full w-full object-cover object-center"
-              initial={{ scale: 1 }}
-              animate={{ scale: 1.2 }}
-              transition={{ duration: 18, ease: "easeInOut" }}
-            />
-          </div>
-          
           {/* Version desktop - forme diagonale */}
           <div 
             className="hidden sm:block relative h-full w-full overflow-hidden"
@@ -186,13 +184,10 @@ export default function HomePage() {
           }}
         />
 
-        {/* Overlay sombre pour mobile */}
-        <div className="sm:hidden absolute inset-0 bg-black/40 dark:bg-black/60 z-5"></div>
-
         {/* Contenu côté gauche - Responsive */}
         <div className="relative z-10 flex h-full items-center">
           <motion.div
-            className="w-full xs:max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16"
+            className="relative z-10 w-full xs:max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16"
             initial={{ x: -50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -254,14 +249,16 @@ export default function HomePage() {
         
         {/* Container de scroll sur toute la largeur de la page */}
         <div className="relative w-full">
-          {/* Gradient de flou du haut */}
+          {/* Gradient de flou du haut - Masqué sur mobile */}
           <div 
-            className="absolute top-0 left-0 right-0 h-12 bg-gradient-to-b from-white dark:from-black to-transparent z-10 pointer-events-none"
+            className="hidden sm:block absolute top-0 left-0 right-0 h-12 bg-gradient-to-b from-white dark:from-black to-transparent z-10 pointer-events-none"
           />
+          
+
           
           {/* Zone de scroll sur toute la largeur de la page */}
           <div 
-            className="w-full h-[350px] xs:h-[380px] sm:h-[400px] md:h-[420px] px-4 xs:px-6 sm:px-6 md:px-8 lg:px-12 py-12 xs:py-16 sm:py-20 md:py-24 overflow-y-auto scrollbar-hide cursor-default"
+            className="w-full h-[280px] xs:h-[320px] sm:h-[400px] md:h-[420px] px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 py-6 xs:py-8 sm:py-20 md:py-24 overflow-y-auto scrollbar-hide cursor-default"
             style={{
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
@@ -337,10 +334,12 @@ export default function HomePage() {
             </div>
           </div>
           
-          {/* Gradient de flou du bas */}
-          <div 
-            className="absolute bottom-0 left-0 right-0 h-70 bg-gradient-to-t from-white dark:from-black to-transparent z-10 pointer-events-none"
-          />
+                  {/* Gradient de flou du bas - Masqué sur mobile */}
+        <div 
+          className="hidden sm:block absolute bottom-0 left-0 right-0 h-16 md:h-20 lg:h-24 bg-gradient-to-t from-white dark:from-black to-transparent z-10 pointer-events-none"
+        />
+        
+
         </div>
         
         <style jsx>{`
