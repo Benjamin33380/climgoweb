@@ -15,7 +15,7 @@ export default function HomePage() {
   const heroImages = [
     '/img/clim-caudéran.jpeg',
     '/img/uicauderan.jpeg',
-    '/img/sdb-pyla.jpeg'
+    '/img/sdb-pyla.jpeg',
   ];
   
   // État pour l'index de l'image actuelle
