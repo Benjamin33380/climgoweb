@@ -218,13 +218,14 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
     <div className="min-h-screen bg-background">
       {/* Hero Section avec image */}
       {article.imageUrl && (
-        <div className="relative h-96 w-full overflow-hidden">
+        <div className="relative h-64 sm:h-96 w-full overflow-hidden bg-muted">
           <Image
             src={article.imageUrl}
-            width={1200}
-            height={630}
             alt={article.title}
-            className="w-full h-full object-cover"
+            fill
+            sizes="100vw"
+            className="object-cover"
+            priority={true}
           />
           <div className="absolute inset-0 bg-black/20" />
         </div>
