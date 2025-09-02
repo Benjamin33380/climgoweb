@@ -348,12 +348,12 @@ export default function NewHeader() {
             Devis gratuit
           </Link>
 
-          {/* Affichage des points utilisateur */}
-          {user && userPoints !== null && (
+          {/* Affichage des points utilisateur - MASQUÉ */}
+          {/* {user && userPoints !== null && (
             <div className="flex items-center gap-2">
               <UserPoints points={userPoints} size="sm" showLabel={false} />
             </div>
-          )}
+          )} */}
 
           {/* Menu utilisateur */}
           <UserMenu />
