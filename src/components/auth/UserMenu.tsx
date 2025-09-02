@@ -41,13 +41,13 @@ export function UserMenu() {
   return (
     <div className="relative">
       <Button
-        variant="ghost"
+        variant="outline"
         onClick={() => setIsOpen(!isOpen)}
-        className="relative h-8 w-8 rounded-full p-0"
+        className="w-10 h-10 border-border bg-background text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
       >
-        <div className="h-8 w-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-medium">
+        <span className="text-sm font-medium">
           {getInitials()}
-        </div>
+        </span>
       </Button>
 
       {isOpen && (
