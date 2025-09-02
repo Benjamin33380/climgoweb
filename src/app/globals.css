@@ -617,3 +617,17 @@ body {
     -webkit-background-color: transparent !important;
   }
 }
+
+/* Text-shadow pour mobile uniquement */
+@media (max-width: 639px) {
+  .mobile-text-shadow {
+    text-shadow: rgba(0, 0, 0, 0.9) 0px 3px 12px, rgba(0, 0, 0, 0.7) 0px 1px 4px;
+  }
+}
+
+/* Pas de text-shadow sur desktop */
+@media (min-width: 640px) {
+  .mobile-text-shadow {
+    text-shadow: none;
+  }
+}
