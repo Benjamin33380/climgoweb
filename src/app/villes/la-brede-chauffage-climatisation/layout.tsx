@@ -124,9 +124,8 @@ export default function LaBredeLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" suppressHydrationWarning>
-      <head>
-        <PerformanceOptimizations />
+    <>
+      <PerformanceOptimizations />
         
         {/* Schéma JSON-LD principal - LocalBusiness pour La Brède */}
         <script
@@ -421,11 +420,8 @@ export default function LaBredeLayout({
             })
           }}
         />
-      </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}>
-        <GoogleAnalytics />
-        {children}
-      </body>
-    </html>
+      <GoogleAnalytics />
+      {children}
+    </>
   );
 }

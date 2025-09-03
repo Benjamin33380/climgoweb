@@ -7,7 +7,7 @@ import { useState } from "react";
 import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
 import GoogleReviews from '@/components/GoogleReviews';
-import FAQChat from '@/components/FAQChat';
+
 import CityLinksList from '@/components/CityLinksList';
 
 export default function LeTeich() {
@@ -335,25 +335,34 @@ export default function LeTeich() {
             </div>
             
             {/* Timeline verticale */}
+            {/* Timeline */}
             <div className="relative">
-              {/* Ligne de connexion */}
-              <div className="absolute left-1/2 transform -translate-x-px w-0.5 h-full bg-gray-300 dark:bg-gray-600" />
+              {/* Ligne centrale - cachée sur mobile, visible sur desktop */}
+              <div className="pointer-events-none absolute left-1/2 -translate-x-1/2 w-px h-full bg-gray-300 dark:bg-gray-700 hidden md:block" />
+              {/* Ligne verticale mobile - visible seulement sur mobile */}
+              <div className="pointer-events-none absolute left-8 top-0 w-px h-full bg-gray-300 dark:bg-gray-700 md:hidden" />
               
-              {/* Effet de lumière défilante */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-16 rounded-full z-5 light-mode:hidden" 
-                   style={{
-                     animation: 'lightMove 4s infinite linear',
-                     background: 'linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 20%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.8) 80%, rgba(255, 255, 255, 0) 100%)',
-                     boxShadow: '0 0 20px rgba(255, 255, 255, 0.6), 0 0 40px rgba(255, 255, 255, 0.3)'
-                   }} />
-              
-              {/* Effet de lumière défilante pour le mode clair */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-16 rounded-full z-5 dark:hidden" 
-                   style={{
-                     animation: 'lightMove 4s infinite linear',
-                     background: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 20%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.8) 80%, rgba(0, 0, 0, 0) 100%)',
-                     boxShadow: '0 0 20px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 0, 0, 0.3)'
-                   }} />
+              {/* Lumière desktop - SEULEMENT sur desktop */}
+              <div
+                className="pointer-events-none absolute left-1/2 -translate-x-1/2 w-[2px] h-20 rounded-full hidden md:block"
+                style={{
+                  animation: 'lightMove 4s infinite linear',
+                  background: 'var(--light-effect-bg)',
+                  boxShadow: 'var(--light-effect-shadow)'
+                }}
+                aria-hidden="true"
+              />
+
+              {/* Lumière mobile - SEULEMENT sur mobile */}
+              <div
+                className="pointer-events-none absolute left-8 w-[3px] h-16 rounded-full block md:hidden z-5"
+                style={{
+                  animation: 'lightMoveMobile 4s infinite linear',
+                  background: 'var(--light-effect-bg)',
+                  boxShadow: 'var(--light-effect-shadow)'
+                }}
+                aria-hidden="true"
+              />
               
               {/* Étape 1 */}
               <div className="relative flex items-center mb-16">
@@ -424,12 +433,9 @@ export default function LeTeich() {
             <div className="text-center mt-16">
               <Link
                 href="/contact"
-                className="inline-flex items-center px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-semibold rounded-full hover:bg-white dark:hover:bg-black transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center justify-center rounded-full px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-semibold hover:bg-white dark:hover:bg-black transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl border border-white"
               >
                 Demander un devis
-                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
               </Link>
             </div>
           </div>
@@ -547,12 +553,12 @@ export default function LeTeich() {
             </div>
             
             {/* Pourquoi choisir ClimGO au Teich - Version personnalisée */}
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6 lg:gap-8 max-w-6xl mx-auto mb-8 md:mb-12 lg:mb-16">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8 max-w-6xl mx-auto mb-8 md:mb-12 lg:mb-16">
               {/* Expertise Nature */}
               <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-black dark:hover:border-white  min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
                 <div className="text-center flex flex-col h-full">
-                  <div className="bg-black dark:bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-12 h-12 text-white dark:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="bg-white dark:bg-black rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-12 h-12 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                     </svg>
                   </div>
@@ -568,8 +574,8 @@ export default function LeTeich() {
               {/* Expertise Climate */}
               <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-black dark:hover:border-white min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
                 <div className="text-center flex flex-col h-full">
-                  <div className="bg-black dark:bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-12 h-12 text-white dark:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="bg-white dark:bg-black rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-12 h-12 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
                     </svg>
                   </div>
@@ -585,8 +591,8 @@ export default function LeTeich() {
               {/* Types de logements */}
               <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-black dark:hover:border-white min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
                 <div className="text-center flex flex-col h-full">
-                  <div className="bg-black dark:bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-12 h-12 text-white dark:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="bg-white dark:bg-black rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-12 h-12 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                     </svg>
                   </div>
@@ -602,8 +608,8 @@ export default function LeTeich() {
               {/* Proximité */}
               <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-black dark:hover:border-white min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
                 <div className="text-center flex flex-col h-full">
-                  <div className="bg-black dark:bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-12 h-12 text-white dark:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="bg-white dark:bg-black rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-12 h-12 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </div>
@@ -621,12 +627,9 @@ export default function LeTeich() {
             <div className="text-center mt-16">
               <Link
                 href="/contact"
-                className="inline-flex items-center px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-semibold rounded-full hover:bg-white dark:hover:bg-black transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center justify-center rounded-full px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-semibold hover:bg-white dark:hover:bg-black transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl border border-white"
               >
                 Demander un devis
-                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
               </Link>
             </div>
           </div>
@@ -647,7 +650,7 @@ export default function LeTeich() {
             </div>
           </SimpleWrapper>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
             {/* Carte 1 - Types de logements */}
             <SimpleWrapper>
               <motion.div 
@@ -672,7 +675,7 @@ export default function LeTeich() {
 
                 {/* Badge de service */}
                 <div className="mt-6 text-center">
-                  <span className="inline-block bg-black/20 dark:bg-white/20 text-black dark:text-white text-sm font-medium px-4 py-2 rounded-full">
+                  <span className="inline-block text-black dark:text-white text-sm font-medium px-4 py-2 rounded-full">
                     Tous types d'habitats
                   </span>
                 </div>
@@ -765,7 +768,7 @@ export default function LeTeich() {
 
                 {/* Badge de service */}
                 <div className="mt-6 text-center">
-                  <span className="inline-block bg-black/20 dark:bg-white/20 text-black dark:text-white text-sm font-medium px-4 py-2 rounded-full">
+                  <span className="inline-block text-black dark:text-white text-sm font-medium px-4 py-2 rounded-full">
                     Accompagnement complet
                   </span>
                 </div>
@@ -781,12 +784,9 @@ export default function LeTeich() {
               </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-semibold rounded-full hover:bg-white dark:hover:bg-black transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center justify-center rounded-full px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-semibold hover:bg-white dark:hover:bg-black transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl border border-white"
               >
                 Découvrir nos solutions
-                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
               </Link>
             </div>
           </SimpleWrapper>
@@ -798,10 +798,7 @@ export default function LeTeich() {
         placeId={process.env.NEXT_PUBLIC_GOOGLE_PLACE_ID || "ClimGO-default-place-id"} 
       />
 
-      {/* Section FAQ - Style Chat Moderne avec questions variées */}
-      <FAQChat
 
-      />
 
       {/* Section Liste des Villes - Juste au-dessus de la carte */}
       <CityLinksList />

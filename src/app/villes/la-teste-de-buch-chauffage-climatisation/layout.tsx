@@ -119,9 +119,8 @@ export default function LaTesteDeBuchLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" suppressHydrationWarning>
-      <head>
-        <PerformanceOptimizations />
+    <>
+      <PerformanceOptimizations />
         
         {/* Schéma JSON-LD principal - LocalBusiness pour La Teste-de-Buch */}
         <script
@@ -416,11 +415,8 @@ export default function LaTesteDeBuchLayout({
             })
           }}
         />
-      </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}>
-        <GoogleAnalytics />
-        {children}
-      </body>
-    </html>
+      <GoogleAnalytics />
+      {children}
+    </>
   );
 }

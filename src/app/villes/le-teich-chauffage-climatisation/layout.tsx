@@ -124,9 +124,8 @@ export default function LeTeichLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" suppressHydrationWarning>
-      <head>
-        <PerformanceOptimizations />
+    <>
+      <PerformanceOptimizations />
         
         {/* Schéma JSON-LD principal - LocalBusiness pour Le Teich */}
         <script
@@ -413,11 +412,8 @@ export default function LeTeichLayout({
             })
           }}
         />
-      </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}>
-        <GoogleAnalytics />
-        {children}
-      </body>
-    </html>
+      <GoogleAnalytics />
+      {children}
+    </>
   );
 }

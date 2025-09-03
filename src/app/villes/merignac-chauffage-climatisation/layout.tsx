@@ -124,9 +124,8 @@ export default function MerignacLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" suppressHydrationWarning>
-      <head>
-        <PerformanceOptimizations />
+    <>
+      <PerformanceOptimizations />
         
         {/* Schéma JSON-LD principal - LocalBusiness pour Mérignac */}
         <script
@@ -155,6 +154,19 @@ export default function MerignacLayout({
                 "postalCode": "33380",
                 "addressCountry": "FR"
               },
+              "priceRange": "$$",
+              "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "08:00",
+                "closes": "19:30"
+              },
+              "slogan": "Votre confort thermique, notre priorité.",
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5.0",
+                "reviewCount": "25"
+              },
               "contactPoint": {
                 "@type": "ContactPoint",
                 "telephone": "+33766460008",
@@ -163,6 +175,52 @@ export default function MerignacLayout({
               },
               "sameAs": [
                 "https://www.climgo.fr"
+              ],
+              "serviceArea": [
+                {
+                  "@type": "Place",
+                  "name": "Gironde"
+                },
+                {
+                  "@type": "AdministrativeArea",
+                  "name": "Bordeaux Métropole"
+                },
+                {
+                  "@type": "City",
+                  "name": "Mérignac"
+                },
+                {
+                  "@type": "City",
+                  "name": "Bordeaux"
+                },
+                {
+                  "@type": "City",
+                  "name": "Pessac"
+                },
+                {
+                  "@type": "City",
+                  "name": "Le Haillan"
+                },
+                {
+                  "@type": "City",
+                  "name": "Saint-Médard-en-Jalles"
+                },
+                {
+                  "@type": "City",
+                  "name": "Martignas-sur-Jalle"
+                },
+                {
+                  "@type": "City",
+                  "name": "Le Bouscat"
+                },
+                {
+                  "@type": "City",
+                  "name": "Eysines"
+                },
+                {
+                  "@type": "City",
+                  "name": "Blanquefort"
+                }
               ],
               "areaServed": [
                 {
@@ -379,53 +437,50 @@ export default function MerignacLayout({
               "mainEntity": [
                 {
                   "@type": "Question",
-                  "name": "Combien coûte l'installation d'une pompe à chaleur à Mérignac ?",
+                  "name": "Prix installation climatiseur réversible à Mérignac ?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "À Mérignac, l'installation d'une PAC coûte entre 12 000€ et 25 000€ selon le type (air/air, air/eau) et la surface. ClimGO propose des devis gratuits et vous accompagne pour obtenir MaPrimeRénov' (jusqu'à 5 000€ d'aides)."
+                    "text": "À Mérignac, l'installation d'un climatiseur réversible coûte entre 1 200€ et 3 500€ selon la puissance et le nombre de pièces. Les prix incluent la pose, la mise en service et la garantie. Un devis gratuit permet d'obtenir un tarif précis adapté à votre logement."
                   }
                 },
                 {
                   "@type": "Question",
-                  "name": "Quels sont vos délais d'intervention à Mérignac ?",
+                  "name": "Que faire si ma pompe à chaleur ne démarre pas à Mérignac ?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "À Mérignac, ClimGO s'engage sur des délais rapides : devis sous 24h, installation sous 15 jours et dépannage d'urgence sous 4h. Nos techniciens sont disponibles 7j/7 pour assurer votre confort."
+                    "text": "Si votre pompe à chaleur ne démarre pas, vérifiez l'alimentation électrique, le disjoncteur et le thermostat. Le problème peut venir d'un défaut de pression, d'un capteur défaillant ou d'un blocage. Un technicien peut diagnostiquer et réparer rapidement le problème."
                   }
                 },
                 {
                   "@type": "Question",
-                  "name": "Proposez-vous des devis gratuits à Mérignac ?",
+                  "name": "Meilleure marque de chauffe-eau pour Mérignac ?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Oui, ClimGO propose des devis gratuits et sans engagement à Mérignac. Nos experts se déplacent chez vous pour évaluer vos besoins et vous proposer la solution la plus adaptée à votre projet et à votre budget."
+                    "text": "Les marques Atlantic, Ariston et Thermor sont particulièrement adaptées à Mérignac. Elles offrent d'excellentes performances et une bonne résistance à l'eau calcaire. Le choix dépend de votre budget, de la capacité souhaitée et de vos besoins en eau chaude."
                   }
                 },
                 {
                   "@type": "Question",
-                  "name": "Pouvez-vous m'aider avec MaPrimeRénov' à Mérignac ?",
+                  "name": "Comment déboucher des toilettes à Mérignac ?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Absolument ! ClimGO vous accompagne dans vos démarches MaPrimeRénov' à Mérignac. Nous calculons les montants éligibles, montons votre dossier et vous aidons à obtenir jusqu'à 90% d'aides selon vos revenus."
+                    "text": "Pour déboucher des toilettes, utilisez d'abord une ventouse ou un furet. Évitez les produits chimiques agressifs. Si le problème persiste, un plombier peut intervenir rapidement avec du matériel professionnel pour déboucher efficacement vos canalisations."
                   }
                 },
                 {
                   "@type": "Question",
-                  "name": "Quelle est la différence entre PAC air/air et air/eau à Mérignac ?",
+                  "name": "Contrat de maintenance PAC à Mérignac : est-ce utile ?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "À Mérignac, la PAC air/air chauffe et refroidit l'air ambiant. La PAC air/eau chauffe l'eau pour radiateurs/plancher chauffant et produit l'eau chaude sanitaire. ClimGO vous conseille selon vos besoins et votre installation existante."
+                    "text": "Un contrat de maintenance pour votre pompe à chaleur à Mérignac est très utile. Il garantit un entretien régulier, prévient les pannes, maintient les performances et peut prolonger la durée de vie de votre équipement. C'est un investissement rentable à long terme."
                   }
                 }
               ]
             })
           }}
         />
-      </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}>
-        <GoogleAnalytics />
-        {children}
-      </body>
-    </html>
+      <GoogleAnalytics />
+      {children}
+    </>
   );
 }

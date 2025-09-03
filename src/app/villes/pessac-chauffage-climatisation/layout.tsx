@@ -124,9 +124,8 @@ export default function PessacLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" suppressHydrationWarning>
-      <head>
-        <PerformanceOptimizations />
+    <>
+      <PerformanceOptimizations />
         
         {/* Schéma JSON-LD principal - LocalBusiness pour Pessac */}
         <script
@@ -421,11 +420,8 @@ export default function PessacLayout({
             })
           }}
         />
-      </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}>
-        <GoogleAnalytics />
-        {children}
-      </body>
-    </html>
+      <GoogleAnalytics />
+      {children}
+    </>
   );
 }

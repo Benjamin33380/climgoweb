@@ -7,7 +7,7 @@ import GoogleAnalytics from "@/components/GoogleAnalytics";
 const SITE = "https://www.climgo.fr";
 const PATH = "/villes/arcachon-chauffage-climatisation";
 const PAGE_URL = `${SITE}${PATH}`;
-const OG_IMAGE = `${SITE}/images/og/arcachon-chauffage-climatisation.jpg`;
+const OG_IMAGE = `${SITE}/villes/arca.webp`;
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -112,17 +112,115 @@ export default function ArcachonLayout({
   // 1) Entreprise locale (LocalBusiness)
   const localBusiness = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    name: "ClimGO",
+    "@type": ["LocalBusiness"],
+    name: "ClimGO - Installation Climatisation en Gironde",
     url: PAGE_URL,
-    image: `${SITE}/img/climdame.png`,
+    image: `${SITE}/img/serp/clim.png`,
     telephone: "+33766460008",
     address: {
       "@type": "PostalAddress",
       streetAddress: "28 rue de Cantelaude",
       addressLocality: "Marcheprime",
+      addressRegion: "Nouvelle-Aquitaine",
       postalCode: "33380",
       addressCountry: "FR",
+    },
+    priceRange: "$$",
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "08:00",
+      closes: "19:30"
+    },
+    serviceArea: [
+      {
+        "@type": "Place",
+        name: "Gironde"
+      },
+      {
+        "@type": "AdministrativeArea",
+        name: "Bordeaux Métropole"
+      },
+      {
+        "@type": "AdministrativeArea",
+        name: "Bassin d'Arcachon"
+      },
+      {
+        "@type": "City",
+        name: "Arcachon"
+      },
+      {
+        "@type": "City",
+        name: "Marcheprime"
+      },
+      {
+        "@type": "City",
+        name: "Biganos"
+      },
+      {
+        "@type": "City",
+        name: "Mios"
+      },
+      {
+        "@type": "City",
+        name: "Bordeaux"
+      },
+      {
+        "@type": "City",
+        name: "Andernos-les-Bains"
+      }
+    ],
+    slogan: "Votre confort thermique, notre priorité.",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5.0",
+      reviewCount: "25"
+    },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Services ClimGO Arcachon",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Chauffage Arcachon",
+            description: "Installation et maintenance de systèmes de chauffage, PAC, planchers chauffants à Arcachon",
+            url: "https://www.climgo.fr/chauffage",
+            category: "Chauffage"
+          }
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Climatisation Arcachon",
+            description: "Installation et maintenance de systèmes de climatisation à Arcachon",
+            url: "https://www.climgo.fr/climatisation",
+            category: "Climatisation"
+          }
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Eau Chaude Sanitaire Arcachon",
+            description: "Installation et maintenance de systèmes d'eau chaude sanitaire à Arcachon",
+            url: "https://www.climgo.fr/eau-chaude-sanitaire",
+            category: "Eau Chaude Sanitaire"
+          }
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Maintenance Arcachon",
+            description: "Entretien et dépannage de vos équipements thermiques à Arcachon",
+            url: "https://www.climgo.fr/maintenance",
+            category: "Maintenance"
+          }
+        }
+      ]
     },
     areaServed: { "@type": "City", name: "Arcachon" },
     serviceType: "Chauffage et Climatisation",
@@ -167,27 +265,75 @@ export default function ArcachonLayout({
     ],
   };
 
+  // 4) FAQ - Questions spécifiques à Arcachon
+  const faq = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Combien coûte l'installation d'une climatisation réversible à Arcachon ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "À Arcachon, l'installation d'une climatisation réversible coûte entre 1 500€ et 4 500€ selon la puissance et le nombre de pièces. Les prix incluent la pose, la mise en service et la garantie. Un devis gratuit permet d'obtenir un tarif précis adapté à votre logement."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "Que faire si ma climatisation ne fait plus de froid à Arcachon ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Si votre climatisation ne produit plus de froid, vérifiez d'abord le filtre à air et le thermostat. Le problème peut venir d'un manque de gaz frigorigène, d'un dysfonctionnement du compresseur ou d'un blocage. Un technicien peut diagnostiquer et réparer rapidement le problème."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "Quelle est la meilleure marque de pompe à chaleur pour Arcachon ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Les marques Daikin, Mitsubishi Electric et Panasonic sont particulièrement adaptées au climat d'Arcachon. Elles offrent d'excellentes performances en climat océanique et une bonne résistance à l'humidité. Le choix dépend de votre budget et de vos besoins spécifiques."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "Comment entretenir sa climatisation à Arcachon ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "L'entretien annuel de votre climatisation à Arcachon est essentiel. Il comprend le nettoyage des filtres, la vérification du niveau de gaz, le contrôle des connexions électriques et le nettoyage de l'unité extérieure. Un contrat de maintenance garantit un fonctionnement optimal."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "Pompe à chaleur air/eau ou chauffe-eau thermodynamique à Arcachon ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "La pompe à chaleur air/eau chauffe votre logement et produit l'eau chaude sanitaire. Le chauffe-eau thermodynamique ne produit que l'eau chaude. Pour un projet complet, la PAC air/eau est plus économique. Pour remplacer uniquement un chauffe-eau, le thermodynamique est plus adapté."
+        }
+      }
+    ]
+  };
+
   return (
-    <html lang="fr" suppressHydrationWarning>
-      <head>
-        <PerformanceOptimizations />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(webPage) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
-        />
-      </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}>
-        <GoogleAnalytics />
-        {children}
-      </body>
-    </html>
+    <>
+      <PerformanceOptimizations />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPage) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faq) }}
+      />
+      <GoogleAnalytics />
+      {children}
+    </>
   );
 }

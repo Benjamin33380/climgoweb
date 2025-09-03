@@ -6,7 +6,7 @@ const cities = [
 
 const CityLinksList = () => {
   return (
-    <div className="py-6 sm:py-8">
+    <div className="py-6 sm:py-8 bg-white dark:bg-black">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex flex-wrap justify-center items-center gap-1 sm:gap-2">
           {cities.map((city, index) => (

@@ -7,7 +7,7 @@ import GoogleAnalytics from "@/components/GoogleAnalytics";
 const SITE = "https://www.climgo.fr";
 const PATH = "/villes/bordeaux-chauffage-climatisation";
 const PAGE_URL = `${SITE}${PATH}`;
-const OG_IMAGE = `${SITE}/images/og/bordeaux-chauffage-climatisation.jpg`;
+const OG_IMAGE = `${SITE}/villes/bordeaux.webp`;
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -108,17 +108,115 @@ export default function BordeauxLayout({
   // 1) Entreprise locale
   const localBusiness = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    name: "ClimGO",
+    "@type": ["LocalBusiness"],
+    name: "ClimGO - Installation Climatisation en Gironde",
     url: PAGE_URL,
-    image: `${SITE}/img/climdame.png`,
+    image: `${SITE}/img/serp/clim.png`,
     telephone: "+33766460008",
     address: {
       "@type": "PostalAddress",
       streetAddress: "28 rue de Cantelaude",
       addressLocality: "Marcheprime",
+      addressRegion: "Nouvelle-Aquitaine",
       postalCode: "33380",
       addressCountry: "FR",
+    },
+    priceRange: "$$",
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "08:00",
+      closes: "19:30"
+    },
+    serviceArea: [
+      {
+        "@type": "Place",
+        name: "Gironde"
+      },
+      {
+        "@type": "AdministrativeArea",
+        name: "Bordeaux Métropole"
+      },
+      {
+        "@type": "City",
+        name: "Bordeaux"
+      },
+      {
+        "@type": "City",
+        name: "Mérignac"
+      },
+      {
+        "@type": "City",
+        name: "Pessac"
+      },
+      {
+        "@type": "City",
+        name: "Talence"
+      },
+      {
+        "@type": "City",
+        name: "Le Bouscat"
+      },
+      {
+        "@type": "City",
+        name: "Eysines"
+      },
+      {
+        "@type": "City",
+        name: "Bruges"
+      }
+    ],
+    slogan: "Votre confort thermique, notre priorité.",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5.0",
+      reviewCount: "25"
+    },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Services ClimGO Bordeaux",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Chauffage Bordeaux",
+            description: "Installation et maintenance de systèmes de chauffage, PAC, planchers chauffants à Bordeaux",
+            url: "https://www.climgo.fr/chauffage",
+            category: "Chauffage"
+          }
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Climatisation Bordeaux",
+            description: "Installation et maintenance de systèmes de climatisation à Bordeaux",
+            url: "https://www.climgo.fr/climatisation",
+            category: "Climatisation"
+          }
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Eau Chaude Sanitaire Bordeaux",
+            description: "Installation et maintenance de systèmes d'eau chaude sanitaire à Bordeaux",
+            url: "https://www.climgo.fr/eau-chaude-sanitaire",
+            category: "Eau Chaude Sanitaire"
+          }
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Maintenance Bordeaux",
+            description: "Entretien et dépannage de vos équipements thermiques à Bordeaux",
+            url: "https://www.climgo.fr/maintenance",
+            category: "Maintenance"
+          }
+        }
+      ]
     },
     areaServed: { "@type": "City", name: "Bordeaux" },
     serviceType: "Chauffage et Climatisation",
@@ -163,27 +261,75 @@ export default function BordeauxLayout({
     ],
   };
 
+  // 4) FAQ - Questions spécifiques à Bordeaux
+  const faq = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Prix installation pompe à chaleur air/eau à Bordeaux ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "À Bordeaux, l'installation d'une pompe à chaleur air/eau coûte entre 8 000€ et 20 000€ selon la puissance et la surface. Avec MaPrimeRénov', vous pouvez bénéficier d'aides jusqu'à 5 000€. Un devis gratuit permet de calculer précisément le coût de votre projet."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "Que faire si ma chaudière est en panne à Bordeaux ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "En cas de panne de chaudière, vérifiez d'abord l'alimentation électrique et le gaz. Si le problème persiste, un technicien peut intervenir rapidement pour diagnostiquer et réparer. Pour les urgences, un service de dépannage 7j/7 est disponible à Bordeaux."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "Climatiseur monosplit ou multisplit pour un appartement à Bordeaux ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Pour un appartement à Bordeaux, le monosplit convient pour une seule pièce. Le multisplit permet de climatiser plusieurs pièces avec une seule unité extérieure. Le choix dépend du nombre de pièces à équiper et de votre budget."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "Comment réparer un chauffe-eau qui fuit à Bordeaux ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Une fuite de chauffe-eau peut venir du joint d'étanchéité, du groupe de sécurité ou de la cuve. Coupez l'alimentation électrique et l'eau, puis contactez un plombier. Une réparation rapide évite les dégâts des eaux et les surconsommations."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "Avantages et inconvénients d'une pompe à chaleur à Bordeaux ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Les avantages : économies d'énergie, aides financières, confort. Les inconvénients : investissement initial, bruit de l'unité extérieure, performance en cas de grand froid. À Bordeaux, le climat tempéré est idéal pour les pompes à chaleur."
+        }
+      }
+    ]
+  };
+
   return (
-    <html lang="fr" suppressHydrationWarning>
-      <head>
-        <PerformanceOptimizations />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(webPage) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
-        />
-      </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}>
-        <GoogleAnalytics />
-        {children}
-      </body>
-    </html>
+    <>
+      <PerformanceOptimizations />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPage) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faq) }}
+      />
+      <GoogleAnalytics />
+      {children}
+    </>
   );
 }

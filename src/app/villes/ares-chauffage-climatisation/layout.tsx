@@ -3,6 +3,11 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { PerformanceOptimizations } from '@/components/PerformanceOptimizations';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 
+const SITE = "https://www.climgo.fr";
+const PATH = "/villes/ares-chauffage-climatisation";
+const PAGE_URL = `${SITE}${PATH}`;
+const OG_IMAGE = `${SITE}/villes/ares.webp`;
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -66,7 +71,7 @@ export const metadata: Metadata = {
     siteName: "ClimGO",
     images: [
       {
-        url: "/img/climdame.png",
+        url: OG_IMAGE,
         width: 1200,
         height: 630,
         alt: "ClimGO Arès - Chauffage & Climatisation | Installation PAC, Entretien",
@@ -119,9 +124,8 @@ export default function AresLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" suppressHydrationWarning>
-      <head>
-        <PerformanceOptimizations />
+    <>
+      <PerformanceOptimizations />
         
         {/* Schéma JSON-LD principal - LocalBusiness pour Arès */}
         <script
@@ -416,11 +420,8 @@ export default function AresLayout({
             })
           }}
         />
-      </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}>
-        <GoogleAnalytics />
-        {children}
-      </body>
-    </html>
+      <GoogleAnalytics />
+      {children}
+    </>
   );
 }

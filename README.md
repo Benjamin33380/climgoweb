@@ -58,10 +58,10 @@ npm run dev
 ```
 
 ### URLs de Test
-- **Page d'accueil** : `http://localhost:3000/`
-- **Ville** : `http://localhost:3000/andernos-les-bains`
-- **Service** : `http://localhost:3000/andernos-les-bains/climatisation-reversible`
-- **Sitemap** : `http://localhost:3000/sitemap.xml`
+- **Page d'accueil** : `/`
+- **Ville** : `/andernos-les-bains`
+- **Service** : `/andernos-les-bains/climatisation-reversible`
+- **Sitemap** : `/sitemap.xml`
 
 ## 📊 Exemples de Contenu Dynamique
 

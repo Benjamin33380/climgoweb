@@ -1,6 +1,7 @@
 'use client';
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from 'framer-motion';
 import { Search, MapPin } from "lucide-react";
 import { useState } from "react";
@@ -134,14 +135,14 @@ export default function Bordeaux() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
-          {/* Version mobile - vidéo plein écran */}
+          {/* Version mobile - image plein écran */}
           <div className="block sm:hidden relative h-full w-full">
-            <video
+            <Image
+              src="/villes/bordeaux.webp"
+              alt="Bordeaux - Métropole"
+              fill
               className="h-full w-full object-cover"
-              autoPlay
-              muted
-              loop
-              playsInline
+              priority
             />
           </div>
           
@@ -152,12 +153,12 @@ export default function Bordeaux() {
               clipPath: 'polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%)'
             }}
           >
-            <video
+            <Image
+              src="/villes/bordeaux.webp"
+              alt="Bordeaux - Métropole"
+              fill
               className="h-full w-full object-cover"
-              autoPlay
-              muted
-              loop
-              playsInline
+              priority
             />
           </div>
         </motion.div>
@@ -340,86 +341,94 @@ export default function Bordeaux() {
               </p>
             </div>
             
-            {/* Timeline verticale */}
+            {/* Timeline */}
             <div className="relative">
-              {/* Ligne de connexion */}
-              <div className="absolute left-1/2 transform -translate-x-px w-0.5 h-full bg-gray-300 dark:bg-gray-600" />
+              {/* Ligne centrale - cachée sur mobile, visible sur desktop */}
+              <div className="pointer-events-none absolute left-1/2 -translate-x-1/2 w-px h-full bg-gray-300 dark:bg-gray-700 hidden md:block" />
+              {/* Ligne verticale mobile - visible seulement sur mobile */}
+              <div className="pointer-events-none absolute left-8 top-0 w-px h-full bg-gray-300 dark:bg-gray-700 md:hidden" />
               
-              {/* Effet de lumière défilante */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-16 rounded-full z-5 light-mode:hidden" 
-                   style={{
-                     animation: 'lightMove 4s infinite linear',
-                     background: 'linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 20%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.8) 80%, rgba(255, 255, 255, 0) 100%)',
-                     boxShadow: '0 0 20px rgba(255, 255, 255, 0.6), 0 0 40px rgba(255, 255, 255, 0.3)'
-                   }} />
+              {/* Lumière desktop - SEULEMENT sur desktop */}
+              <div
+                className="pointer-events-none absolute left-1/2 -translate-x-1/2 w-[2px] h-20 rounded-full hidden md:block"
+                style={{
+                  animation: 'lightMove 4s infinite linear',
+                  background: 'var(--light-effect-bg)',
+                  boxShadow: 'var(--light-effect-shadow)'
+                }}
+                aria-hidden="true"
+              />
+
+              {/* Lumière mobile - SEULEMENT sur mobile */}
+              <div
+                className="pointer-events-none absolute left-8 w-[3px] h-16 rounded-full block md:hidden z-5"
+                style={{
+                  animation: 'lightMoveMobile 4s infinite linear',
+                  background: 'var(--light-effect-bg)',
+                  boxShadow: 'var(--light-effect-shadow)'
+                }}
+                aria-hidden="true"
+              />
               
-              {/* Effet de lumière défilante pour le mode clair */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-16 rounded-full z-5 dark:hidden" 
-                   style={{
-                     animation: 'lightMove 4s infinite linear',
-                     background: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 20%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.8) 80%, rgba(0, 0, 0, 0) 100%)',
-                     boxShadow: '0 0 20px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 0, 0, 0.3)'
-                   }} />
-              
-              {/* Étape 1 */}
-              <div className="relative flex items-center mb-16">
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-white dark:bg-black rounded-full shadow-2xl flex items-center justify-center z-10">
-                  <svg className="w-8 h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              {/* Étape 1 - Responsive */}
+              <div className="relative flex flex-col md:flex-row items-center mb-8 md:mb-16">
+                <div className="w-12 h-12 md:w-16 md:h-16 bg-white dark:bg-black rounded-full shadow-2xl flex items-center justify-center z-10 mb-4 md:mb-0 md:absolute md:left-1/2 md:transform md:-translate-x-1/2">
+                  <svg className="w-6 h-6 md:w-8 md:h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   </svg>
                 </div>
                 
-                <div className="w-5/12 pr-8 text-right">
-                  <h3 className="text-2xl font-bold text-black dark:text-white mb-3">Toute la métropole bordelaise</h3>
-                  <p className="text-black dark:text-white leading-relaxed">
+                <div className="w-full md:w-5/12 md:pr-8 md:text-right text-center">
+                  <h3 className="text-xl md:text-2xl font-bold text-black dark:text-white mb-3">Toute la métropole bordelaise</h3>
+                  <p className="text-black dark:text-white leading-relaxed text-sm md:text-base">
                     Interventions dans tous les quartiers de Bordeaux, du centre historique aux quartiers modernes, en passant par les échoppes traditionnelles et les immeubles haussmanniens.
                   </p>
                 </div>
               </div>
               
-              {/* Étape 2 */}
-              <div className="relative flex items-center mb-16">
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-white dark:bg-black rounded-full shadow-2xl flex items-center justify-center z-10">
-                  <svg className="w-8 h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              {/* Étape 2 - Responsive */}
+              <div className="relative flex flex-col md:flex-row items-center mb-8 md:mb-16">
+                <div className="w-12 h-12 md:w-16 md:h-16 bg-white dark:bg-black rounded-full shadow-2xl flex items-center justify-center z-10 mb-4 md:mb-0 md:absolute md:left-1/2 md:transform md:-translate-x-1/2">
+                  <svg className="w-6 h-6 md:w-8 md:h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                   </svg>
                 </div>
                 
-                <div className="w-5/12 ml-auto pl-8">
-                  <h3 className="text-2xl font-bold text-black dark:text-white mb-3">Patrimoine & Modernité</h3>
-                  <p className="text-black dark:text-white leading-relaxed">
+                <div className="w-full md:w-5/12 md:ml-auto md:pl-8 text-center md:text-left">
+                  <h3 className="text-xl md:text-2xl font-bold text-black dark:text-white mb-3">Patrimoine & Modernité</h3>
+                  <p className="text-black dark:text-white leading-relaxed text-sm md:text-base">
                     Échoppes typiques, immeubles du centre historique, maisons de ville modernes : nous maîtrisons les contraintes thermiques de tous les types d'habitat à Bordeaux.
                   </p>
                 </div>
               </div>
               
-              {/* Étape 3 */}
-              <div className="relative flex items-center mb-16">
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-white dark:bg-black rounded-full shadow-2xl flex items-center justify-center z-10">
-                  <svg className="w-8 h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              {/* Étape 3 - Responsive */}
+              <div className="relative flex flex-col md:flex-row items-center mb-8 md:mb-16">
+                <div className="w-12 h-12 md:w-16 md:h-16 bg-white dark:bg-black rounded-full shadow-2xl flex items-center justify-center z-10 mb-4 md:mb-0 md:absolute md:left-1/2 md:transform md:-translate-x-1/2">
+                  <svg className="w-6 h-6 md:w-8 md:h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
                 
-                <div className="w-5/12 pr-8 text-right">
-                  <h3 className="text-2xl font-bold text-black dark:text-white mb-3">Service Urbain Adapté</h3>
-                  <p className="text-black dark:text-white leading-relaxed">
+                <div className="w-full md:w-5/12 md:pr-8 md:text-right text-center">
+                  <h3 className="text-xl md:text-2xl font-bold text-black dark:text-white mb-3">Service Urbain Adapté</h3>
+                  <p className="text-black dark:text-white leading-relaxed text-sm md:text-base">
                     Nous intervenons même dans les zones à accès restreint, en adaptant notre logistique pour garantir la qualité sans compromis. Service rapide et finitions propres.
                   </p>
                 </div>
               </div>
               
-              {/* Étape 4 */}
-              <div className="relative flex items-center">
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-white dark:bg-black rounded-full shadow-2xl flex items-center justify-center z-10">
-                  <svg className="w-8 h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              {/* Étape 4 - Responsive */}
+              <div className="relative flex flex-col md:flex-row items-center">
+                <div className="w-12 h-12 md:w-16 md:h-16 bg-white dark:bg-black rounded-full shadow-2xl flex items-center justify-center z-10 mb-4 md:mb-0 md:absolute md:left-1/2 md:transform md:-translate-x-1/2">
+                  <svg className="w-6 h-6 md:w-8 md:h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
                 
-                <div className="w-5/12 ml-auto pl-8">
-                  <h3 className="text-2xl font-bold text-black dark:text-white mb-3">Excellence & Rigueur</h3>
-                  <p className="text-black dark:text-white leading-relaxed">
+                <div className="w-full md:w-5/12 md:ml-auto md:pl-8 text-center md:text-left">
+                  <h3 className="text-xl md:text-2xl font-bold text-black dark:text-white mb-3">Excellence & Rigueur</h3>
+                  <p className="text-black dark:text-white leading-relaxed text-sm md:text-base">
                     Notre proximité et notre rigueur font la différence : un service rapide, des finitions propres, et un accompagnement administratif complet pour vos projets bordelais.
                   </p>
                 </div>
@@ -430,12 +439,9 @@ export default function Bordeaux() {
             <div className="text-center mt-16">
               <Link
                 href="/contact"
-                className="inline-flex items-center px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-semibold rounded-full hover:bg-white dark:hover:bg-black transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center justify-center rounded-full px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-semibold hover:bg-white dark:hover:bg-black transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl border border-white"
               >
                 Demander un devis
-                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
               </Link>
             </div>
           </div>
@@ -555,12 +561,12 @@ export default function Bordeaux() {
             </div>
             
             {/* Pourquoi choisir ClimGO à Bordeaux - Version personnalisée */}
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6 lg:gap-8 max-w-6xl mx-auto mb-8 md:mb-12 lg:mb-16">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8 max-w-6xl mx-auto mb-8 md:mb-12 lg:mb-16">
               {/* Expertise Locale */}
               <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-black dark:hover:border-white min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
                 <div className="text-center flex flex-col h-full">
-                  <div className="bg-black dark:bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-12 h-12 text-white dark:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="bg-white dark:bg-black rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-12 h-12 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     </svg>
                   </div>
@@ -576,8 +582,8 @@ export default function Bordeaux() {
               {/* Qualité Premium */}
               <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-black dark:hover:border-white min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
                 <div className="text-center flex flex-col h-full">
-                  <div className="bg-black dark:bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-12 h-12 text-white dark:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="bg-white dark:bg-black rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-12 h-12 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
@@ -593,8 +599,8 @@ export default function Bordeaux() {
               {/* Proximité */}
               <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-black dark:hover:border-white min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
                 <div className="text-center flex flex-col h-full">
-                  <div className="bg-black dark:bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-12 h-12 text-white dark:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="bg-white dark:bg-black rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-12 h-12 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </div>
@@ -610,8 +616,8 @@ export default function Bordeaux() {
               {/* Garantie Complète */}
               <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-black dark:hover:border-white min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
                 <div className="text-center flex flex-col h-full">
-                  <div className="bg-black dark:bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-12 h-12 text-white dark:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="bg-white dark:bg-black rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-12 h-12 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
@@ -629,12 +635,9 @@ export default function Bordeaux() {
             <div className="text-center mt-16">
               <Link
                 href="/contact"
-                className="inline-flex items-center px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-semibold rounded-full hover:bg-white dark:hover:bg-black transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center justify-center rounded-full px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-semibold hover:bg-white dark:hover:bg-black transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl border border-white"
               >
                 Demander un devis
-                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
               </Link>
             </div>
           </div>
@@ -655,7 +658,7 @@ export default function Bordeaux() {
             </div>
           </SimpleWrapper>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
             {/* Carte 1 - Types de logements */}
             <SimpleWrapper>
               <motion.div 
@@ -680,7 +683,7 @@ export default function Bordeaux() {
 
                 {/* Badge de service */}
                 <div className="mt-6 text-center">
-                  <span className="inline-block bg-black/20 dark:bg-white/20 text-black dark:text-white text-sm font-medium px-4 py-2 rounded-full">
+                  <span className="inline-block text-black dark:text-white text-sm font-medium px-4 py-2 rounded-full">
                     Tous types d'habitats
                   </span>
                 </div>
@@ -773,7 +776,7 @@ export default function Bordeaux() {
 
                 {/* Badge de service */}
                 <div className="mt-6 text-center">
-                  <span className="inline-block bg-black/20 dark:bg-white/20 text-black dark:text-white text-sm font-medium px-4 py-2 rounded-full">
+                  <span className="inline-block text-black dark:text-white text-sm font-medium px-4 py-2 rounded-full">
                     Accompagnement complet
                   </span>
                 </div>
@@ -789,12 +792,9 @@ export default function Bordeaux() {
               </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-semibold rounded-full hover:bg-white dark:hover:bg-black transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center justify-center rounded-full px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-semibold hover:bg-white dark:hover:bg-black transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl border border-white"
               >
                 Découvrir nos solutions
-                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
               </Link>
             </div>
           </SimpleWrapper>
@@ -815,7 +815,7 @@ export default function Bordeaux() {
           <SimpleWrapper>
             <div className="relative w-full">
               {/* Carte Google Maps en pleine largeur */}
-              <div className="relative w-full h-[600px] transform hover:scale-[1.02] transition-transform duration-700 ease-out">
+              <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] transform hover:scale-[1.02] transition-transform duration-700 ease-out">
                 <iframe
                   src={`https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_GOOGLE_API_KEY}&q=Bordeaux,France&zoom=12&center=44.8378,-0.5792`}
                   width="100%"
