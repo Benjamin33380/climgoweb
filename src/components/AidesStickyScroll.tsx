@@ -8,6 +8,10 @@ const content = [
     title: "Certificats d'économies d'énergie (CEE)",
     description:
       "Le CEE est une aide proposée par les fournisseurs d'énergie pour financer vos travaux de rénovation énergétique. Elle permet de réduire directement le montant de votre facture, sans avance de trésorerie. Propriétaires ou locataires, occupants ou bailleurs, tous peuvent en bénéficier. Il suffit que les travaux soient réalisés par une entreprise RGE comme ClimGO. Les CEE couvrent une large gamme de travaux : installation de pompes à chaleur, chauffe-eaux thermodynamiques, travaux d'isolation thermique, systèmes de chauffage performants.",
+    image: {
+      src: "/logoannexe/cee.webp",
+      alt: "Logo CEE"
+    },
     content: (
       <div className="h-full w-full bg-white dark:bg-black flex items-center justify-center p-8">
         <div className="text-center">
@@ -30,6 +34,10 @@ const content = [
     title: "TVA à taux réduit 5,5%",
     description:
       "Il s'agit d'un taux de TVA abaissé à 5,5 % au lieu de 20 %, applicable sur les travaux de rénovation énergétique. Il est directement appliqué sur la facture. Disponible si votre logement a plus de 2 ans, que vous êtes propriétaire, locataire ou occupant, et que les travaux sont réalisés par une entreprise certifiée comme ClimGO. Le taux réduit s'applique aux travaux visant à améliorer la performance énergétique : pompes à chaleur, chauffe-eaux thermodynamiques, travaux d'isolation, systèmes de régulation du chauffage.",
+    image: {
+      src: "/logoannexe/tva55.webp",
+      alt: "Logo TVA 5.5%"
+    },
     content: (
       <div className="h-full w-full bg-white dark:bg-black flex items-center justify-center p-8">
         <div className="text-center">
@@ -52,6 +60,10 @@ const content = [
     title: "MaPrimeRénov'",
     description:
       "C'est une aide directe de l'État pour financer vos travaux. Elle est versée après les travaux, sur votre compte, sans avance de frais. Tous les propriétaires peuvent en bénéficier selon leurs revenus. ClimGO vous aide à estimer ce à quoi vous avez droit et vous assiste dans toutes les démarches.",
+    image: {
+      src: "/logoannexe/mpr.webp",
+      alt: "Logo MaPrimeRénov'"
+    },
     content: (
       <div className="h-full w-full bg-white dark:bg-black flex items-center justify-center p-8">
         <div className="text-center">
@@ -74,6 +86,10 @@ const content = [
     title: "Éco-PTZ (Prêt à taux zéro)",
     description:
       "L'éco-PTZ est un prêt à 0 % d'intérêt pour financer vos travaux énergétiques. Il peut atteindre 50 000 €, remboursable sur 20 ans. Tous les propriétaires de logements de plus de 2 ans peuvent en bénéficier, qu'ils soient occupants ou bailleurs, sans condition de revenus. Les travaux éligibles incluent : isolation, chauffe-eaux, pompes à chaleur, ventilation. Attention : travaux réalisés par une entreprise RGE uniquement.",
+    image: {
+      src: "/logoannexe/ecopret0.webp",
+      alt: "Logo Éco-PTZ"
+    },
     content: (
       <div className="h-full w-full bg-white dark:bg-black flex items-center justify-center p-8">
         <div className="text-center">
@@ -96,6 +112,10 @@ const content = [
     title: "Aides locales ANIL",
     description:
       "En plus des aides de l'État, certaines collectivités (mairies, départements, régions) proposent des aides locales supplémentaires. L'ANIL (Agence Nationale pour l'Information sur le Logement) recense toutes les aides disponibles selon votre commune. Consultez www.anil.org pour voir les aides locales disponibles dans votre région. ClimGO peut également vous orienter et monter les dossiers pour cumuler toutes les aides possibles et maximiser vos économies.",
+    image: {
+      src: "/logoannexe/anil.webp",
+      alt: "Logo ANIL"
+    },
     content: (
       <div className="h-full w-full bg-white dark:bg-black flex items-center justify-center p-8">
         <div className="text-center">

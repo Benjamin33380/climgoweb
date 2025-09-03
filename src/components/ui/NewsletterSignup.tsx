@@ -74,7 +74,7 @@ export default function NewsletterSignup() {
           <Button
             type="submit"
             disabled={status === 'loading'}
-            className="w-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors text-sm py-2"
+            className="w-full bg-white dark:bg-black text-black dark:text-white border border-black dark:border-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors text-sm py-2 font-medium"
           >
             {status === 'loading' ? 'Inscription...' : 'S\'inscrire'}
           </Button>
