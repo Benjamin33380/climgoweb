@@ -3,6 +3,7 @@
 import { useUser } from '@/components/providers/UserProvider';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import Link from 'next/link';
 import { 
   Users, 
   FileText, 
@@ -104,7 +105,7 @@ export function AdminNav() {
             const Icon = link.icon;
             return (
               <Card key={link.href} className="hover:shadow-lg transition-shadow cursor-pointer">
-                <a href={link.href}>
+                <Link href={link.href}>
                   <CardHeader className="pb-3">
                     <div className="flex items-center space-x-3">
                       <div className={`p-2 rounded-lg bg-muted`}>
@@ -118,7 +119,7 @@ export function AdminNav() {
                       {link.description}
                     </CardDescription>
                   </CardContent>
-                </a>
+                </Link>
               </Card>
             );
           })}

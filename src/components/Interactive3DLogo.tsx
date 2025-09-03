@@ -2,6 +2,7 @@
 
 import { useState, useRef } from 'react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 interface Interactive3DLogoProps {
   className?: string
@@ -63,10 +64,11 @@ export function Interactive3DLogo({ className }: Interactive3DLogoProps) {
             transform: "translateZ(0px)",
           }}
         >
-          <img 
+          <Image 
             src="/favicon/logo.png" 
             alt="ClimGO Logo" 
-            className="w-full h-full object-contain filter drop-shadow-2xl"
+            fill
+            className="object-contain filter drop-shadow-2xl"
             style={{
               filter: "drop-shadow(0 10px 30px rgba(0,0,0,0.3))"
             }}

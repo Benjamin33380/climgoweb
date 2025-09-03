@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useUser } from '@/components/providers/UserProvider';
 import { Button } from '@/components/ui/button';
 import { User, Settings, LogOut, Shield } from 'lucide-react';
+import Link from 'next/link';
 
 export function UserMenu() {
   const { user, logout } = useUser();
@@ -12,9 +13,9 @@ export function UserMenu() {
   if (!user) {
     return (
       <Button variant="ghost" size="icon" asChild>
-        <a href="/auth" className="h-8 w-8 rounded-full p-0">
+        <Link href="/auth" className="h-8 w-8 rounded-full p-0">
           <User className="h-4 w-4" />
-        </a>
+        </Link>
       </Button>
     );
   }

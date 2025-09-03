@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function PrivacyPolicy() {
   return (
     <div className="min-h-screen bg-white dark:bg-black flex justify-center pt-24 pb-16">
@@ -149,9 +151,9 @@ export default function PrivacyPolicy() {
           </p>
           <ul className="list-disc ml-6 mb-8 text-gray-700 dark:text-gray-300">
             <li>
-              <a href="/mentions-legales" className="text-blue-600 dark:text-blue-400 hover:underline">
+              <Link href="/mentions-legales" className="text-blue-600 dark:text-blue-400 hover:underline">
                 Mentions légales
-              </a>
+              </Link>
             </li>
           </ul>
 

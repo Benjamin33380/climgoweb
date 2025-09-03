@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function MentionsLegales() {
   return (
     <div className="min-h-screen bg-white dark:bg-black flex justify-center pt-24 pb-16">
@@ -59,9 +61,9 @@ export default function MentionsLegales() {
         </h2>
         <p className="mb-6 text-gray-700 dark:text-gray-300 leading-relaxed">
           Pour consulter notre politique de traitement des données personnelles et cookies, merci de vous référer à notre page 
-          <a href="/politique-confidentialite" className="text-blue-600 dark:text-blue-400 hover:underline ml-1">
+          <Link href="/politique-confidentialite" className="text-blue-600 dark:text-blue-400 hover:underline ml-1">
             &quot;Politique de confidentialité&quot;
-          </a>.
+          </Link>.
         </p>
 
         <h2 className="text-2xl font-semibold mb-4 mt-8 text-gray-900 dark:text-white">
