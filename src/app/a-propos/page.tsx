@@ -83,285 +83,226 @@ export default function AProposPage() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-black">
-      {/* Header Journal */}
-      <div className="border-b-4 border-black dark:border-white py-6 bg-white dark:bg-black">
+      {/* Header Fluide */}
+      <div className="bg-white dark:bg-black py-16">
         <div className="container mx-auto px-4">
-          <div className="text-center border-b border-black dark:border-white pb-4 mb-4">
-            <div className="flex justify-between items-center mb-2">
-              <div className="text-xs font-bold tracking-wider text-orange-600">ÉDITION SPÉCIALE</div>
-              <div className="text-xs font-bold tracking-wider text-blue-600">MAI 2025</div>
+          <div className="text-center max-w-4xl mx-auto">
+            {/* Badge doux */}
+            <div className="inline-flex items-center px-4 py-2 bg-black/5 dark:bg-white/5 text-black dark:text-white rounded-full text-sm font-medium mb-8">
+              <span className="w-2 h-2 bg-black/40 dark:bg-white/40 rounded-full mr-2"></span>
+              À propos de ClimGO
             </div>
-            <div className="flex items-center justify-center gap-4 mb-2">
-              <div className="w-12 h-12 relative">
-                <Image 
-                  src="/favicon/logo.png" 
-                  alt="ClimGO Logo"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <h1 className="text-4xl md:text-6xl font-black tracking-tight text-black dark:text-white">
-                À PROPOS DE CLIMGO
-              </h1>
-              <div className="w-12 h-12 relative">
-                <Image 
-                  src="/favicon/logo.png" 
-                  alt="ClimGO Logo"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-            </div>
-            <div className="text-sm font-semibold tracking-widest text-black dark:text-white">
-              VOTRE EXPERT LOCAL EN CHAUFFAGE ET CLIMATISATION
-            </div>
-          </div>
-          <div className="text-center">
-            <p className="text-sm font-medium text-black dark:text-white max-w-4xl mx-auto leading-tight">
-              Depuis plus de 10 ans, <strong>ClimGO</strong> accompagne particuliers et professionnels en Gironde et dans le Nord des Landes. 
-              Notre expertise : installation, <Link href="/maintenance" className="text-green-600 dark:text-green-400 hover:underline font-bold hover:text-green-700 dark:hover:text-green-300">maintenance</Link> et dépannage de <Link href="/services" className="bg-gradient-to-r from-orange-500 to-blue-600 bg-clip-text text-transparent hover:underline font-bold">pompes à chaleur</Link>, <Link href="/climatisation" className="text-blue-600 dark:text-blue-400 hover:underline font-bold hover:text-blue-700 dark:hover:text-blue-300">climatisation</Link> et systèmes de <Link href="/chauffage" className="text-orange-600 dark:text-orange-400 hover:underline font-bold hover:text-orange-700 dark:hover:text-orange-300">chauffage</Link>.
+            
+            {/* Titre principal */}
+            <h1 className="text-4xl md:text-6xl font-light text-black dark:text-white mb-8 leading-tight">
+              Votre Expert en 
+              <span className="block font-normal">
+                Chauffage & Climatisation
+              </span>
+            </h1>
+            
+            {/* Description */}
+            <p className="text-xl text-black/70 dark:text-white/70 leading-relaxed mb-12 max-w-3xl mx-auto">
+              Depuis plus de 10 ans, <strong className="text-black dark:text-white">ClimGO</strong> accompagne particuliers et professionnels en Gironde et dans le Nord des Landes. 
+              Notre expertise : installation, <Link href="/maintenance" className="text-black dark:text-white font-medium hover:opacity-70 transition-opacity">maintenance</Link> et dépannage de <Link href="/services" className="text-black dark:text-white font-medium hover:opacity-70 transition-opacity">pompes à chaleur</Link>, <Link href="/climatisation" className="text-black dark:text-white font-medium hover:opacity-70 transition-opacity">climatisation</Link> et systèmes de <Link href="/chauffage" className="text-black dark:text-white font-medium hover:opacity-70 transition-opacity">chauffage</Link>.
             </p>
           </div>
         </div>
       </div>
 
-      {/* Contenu Principal - Style Journal */}
-      <div className="container mx-auto px-4 py-8">
-        
-        {/* Section des Statistiques - Style Encadré */}
-        <div className="border-2 border-black dark:border-white p-6 mb-8">
-          <h2 className="text-2xl font-black text-center mb-6 text-black dark:text-white tracking-tight">
-            <span className="text-orange-600">CLIMGO</span> EN <span className="text-blue-600">CHIFFRES</span>
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      {/* Section Stats Fluide */}
+      <section className="py-20 bg-black/[0.02] dark:bg-white/[0.02]">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-light text-black dark:text-white mb-4">
+              ClimGO en Chiffres
+            </h2>
+            <p className="text-black/60 dark:text-white/60 text-lg">Des résultats qui parlent d'eux-mêmes</p>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center border-r border-black dark:border-white last:border-r-0 pr-4 last:pr-0">
-                <div className="flex justify-center mb-2">
-                  <div className="text-black dark:text-white">
+              <div key={index} className="text-center group">
+                <div className="inline-flex items-center justify-center w-20 h-20 bg-black/5 dark:bg-white/5 rounded-full mb-6 group-hover:bg-black/10 dark:group-hover:bg-white/10 transition-all duration-300">
+                  <div className="text-black/60 dark:text-white/60 group-hover:text-black dark:group-hover:text-white transition-colors">
                     {stat.icon}
                   </div>
                 </div>
-                <div className="text-2xl font-black text-black dark:text-white">
+                <div className="text-4xl font-light text-black dark:text-white mb-3">
                   {stat.number}
                 </div>
-                <h3 className="text-xs font-bold text-black dark:text-white mb-1 uppercase tracking-wide">
+                <h3 className="text-sm font-medium text-black dark:text-white mb-2 uppercase tracking-wider">
                   {stat.label}
                 </h3>
-                <p className="text-xs text-black dark:text-white">
+                <p className="text-sm text-black/50 dark:text-white/50 leading-relaxed">
                   {stat.description}
                 </p>
               </div>
             ))}
           </div>
         </div>
+      </section>
 
-        {/* Articles en Colonnes */}
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
-          
-          {/* Colonne 1 - Notre Histoire */}
-          <div className="md:col-span-2">
-            <h2 className="text-2xl font-black mb-4 text-black dark:text-white border-b-2 border-orange-600 pb-2">
-              COMMENT TOUT A COMMENCÉ
-            </h2>
+      {/* Section Histoire Fluide */}
+      <section className="py-20 bg-white dark:bg-black">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             
-            {/* Emplacement Photo - Style Journal */}
-            <div className="border-2 border-black dark:border-white p-4 mb-4 bg-gradient-to-br from-orange-50 to-blue-50 dark:from-gray-800 dark:to-gray-700">
-              <div className="aspect-[4/3] bg-gray-200 dark:bg-gray-600 border border-dashed border-gray-400 dark:border-gray-500 flex items-center justify-center relative">
-                <div className="text-center text-gray-500 dark:text-gray-400">
-                  <Camera className="w-12 h-12 mx-auto mb-2" />
-                  <p className="text-sm font-bold">PHOTO À VENIR</p>
-                  <p className="text-xs">Benjamin et son camion ClimGO</p>
-                </div>
+            {/* Colonne Texte */}
+            <div className="space-y-8">
+              <div className="inline-flex items-center px-4 py-2 bg-black/5 dark:bg-white/5 text-black dark:text-white rounded-full text-sm font-medium">
+                <span className="w-2 h-2 bg-black/40 dark:bg-white/40 rounded-full mr-2"></span>
+                Notre Histoire
               </div>
-              <p className="text-xs font-bold text-black dark:text-white mt-2 text-center border-t border-black dark:border-white pt-2">
-                📸 <span className="text-orange-600">BENJAMIN CARDOSO</span>, fondateur de <span className="text-blue-600">ClimGO</span>.
-              </p>
+              
+              <h2 className="text-3xl md:text-4xl font-light text-black dark:text-white">
+                Comment tout a commencé
+              </h2>
+              
+              <div className="space-y-6 text-lg text-black/70 dark:text-white/70 leading-relaxed">
+                <p>
+                  <span className="text-black dark:text-white font-medium">ClimGO est née d'une passion</span> pour les technologies énergétiques et d'un constat simple : 
+                  les particuliers et professionnels méritent un service de qualité, transparent et accessible 
+                  pour leurs installations de <Link href="/chauffage" className="text-black dark:text-white font-medium hover:opacity-70 transition-opacity">chauffage</Link> et <Link href="/climatisation" className="text-black dark:text-white font-medium hover:opacity-70 transition-opacity">climatisation</Link>.
+                </p>
+                <p>
+                  Depuis nos débuts, nous avons fait le choix de la spécialisation et de l'excellence. 
+                  Plutôt que de disperser notre expertise, nous nous concentrons sur ce que nous savons 
+                  faire de mieux : les <Link href="/services" className="text-black dark:text-white font-medium hover:opacity-70 transition-opacity">pompes à chaleur</Link>, la <Link href="/climatisation" className="text-black dark:text-white font-medium hover:opacity-70 transition-opacity">climatisation</Link> et les systèmes de <Link href="/chauffage" className="text-black dark:text-white font-medium hover:opacity-70 transition-opacity">chauffage</Link> performants.
+                </p>
+                <p>
+                  <span className="text-black dark:text-white font-medium">Aujourd'hui, avec plus de 50 clients satisfaits</span> et une présence sur 48 communes, 
+                  ClimGO est devenu un acteur incontournable du secteur en Gironde et dans le Nord des Landes.
+                </p>
+              </div>
             </div>
             
-            <div className="text-sm text-black dark:text-white leading-relaxed space-y-3 text-justify">
-              <p>
-                <strong className="font-bold text-orange-600">ClimGO est née d'une passion</strong> pour les technologies énergétiques et d'un constat simple : 
-                les particuliers et professionnels méritent un service de qualité, transparent et accessible 
-                pour leurs installations de <Link href="/chauffage" className="text-orange-600 dark:text-orange-400 hover:underline font-bold hover:text-orange-700 dark:hover:text-orange-300">chauffage</Link> et <Link href="/climatisation" className="text-blue-600 dark:text-blue-400 hover:underline font-bold hover:text-blue-700 dark:hover:text-blue-300">climatisation</Link>.
-              </p>
-              <p>
-                Depuis nos débuts, nous avons fait le choix de la spécialisation et de l'excellence. 
-                Plutôt que de disperser notre expertise, nous nous concentrons sur ce que nous savons 
-                faire de mieux : les <Link href="/services" className="bg-gradient-to-r from-orange-500 to-blue-600 bg-clip-text text-transparent hover:underline font-bold">pompes à chaleur</Link>, la <Link href="/climatisation" className="text-blue-600 dark:text-blue-400 hover:underline font-bold hover:text-blue-700 dark:hover:text-blue-300">climatisation</Link> et les systèmes de <Link href="/chauffage" className="text-orange-600 dark:text-orange-400 hover:underline font-bold hover:text-orange-700 dark:hover:text-orange-300">chauffage</Link> performants.
-              </p>
-              <p>
-                <strong className="font-bold text-blue-600">Aujourd'hui, avec plus de 50 clients satisfaits</strong> et une présence sur 48 communes, 
-                ClimGO est devenu un acteur incontournable du secteur en Gironde et dans le Nord des Landes.
-              </p>
-            </div>
-          </div>
-
-          {/* Colonne 2 - Encadré Valeurs */}
-          <div className="border-2 border-black dark:border-white p-4 bg-white dark:bg-black">
-                      <h3 className="text-lg font-black mb-4 text-black dark:text-white text-center">
-            NOS <span className="text-orange-600">VALEURS</span>
-          </h3>
-            <div className="space-y-4">
-              {valeurs.map((valeur, index) => (
-                <div key={index} className="border-b border-black dark:border-white pb-3 last:border-b-0">
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className="text-black dark:text-white">
-                      {valeur.icon}
-                    </div>
-                    <h4 className="text-sm font-bold text-black dark:text-white uppercase tracking-wide">
-                      {valeur.title}
-                    </h4>
+            {/* Colonne Photo */}
+            <div className="relative">
+              <div className="aspect-[4/3] bg-black/[0.02] dark:bg-white/[0.02] rounded-2xl overflow-hidden relative">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center text-black/60 dark:text-white/60">
+                    <Camera className="w-16 h-16 mx-auto mb-4 opacity-40" />
+                    <p className="text-lg font-medium text-black dark:text-white">Photo à venir</p>
+                    <p className="text-sm">Benjamin et son camion ClimGO</p>
                   </div>
-                  <p className="text-xs text-black dark:text-white leading-tight">
-                    {valeur.description}
-                  </p>
                 </div>
-              ))}
+                
+                {/* Badge sur la photo */}
+                <div className="absolute bottom-6 left-6 right-6">
+                  <div className="bg-white/90 dark:bg-black/90 backdrop-blur-sm rounded-xl p-4">
+                    <p className="text-sm font-medium text-black dark:text-white">
+                      📸 Benjamin Cardoso, fondateur de ClimGO
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
+            
           </div>
         </div>
+      </section>
 
-        {/* Section Mission - Article Principal */}
-        <div className="mb-8">
-          <h2 className="text-2xl font-black mb-4 text-black dark:text-white border-b-2 border-blue-600 pb-2">
-            NOTRE <span className="text-blue-600">ENGAGEMENT</span> AU QUOTIDIEN
-          </h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="text-sm text-black dark:text-white leading-relaxed space-y-3 text-justify">
-              <p>
-                <strong className="font-bold">Notre mission est de démocratiser l'accès</strong> aux technologies énergétiques performantes 
-                et respectueuses de l'environnement. Nous croyons que chacun doit pouvoir bénéficier 
-                d'un confort thermique optimal tout en réduisant son impact écologique.
-              </p>
-              <p>
-                Cette vision guide chacune de nos interventions, de l'étude initiale à la maintenance préventive.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 gap-3">
-              <div className="flex items-start gap-2 pb-2 border-b border-black dark:border-white">
-                <CheckCircle className="w-4 h-4 text-black dark:text-white mt-0.5 flex-shrink-0" />
-                <div>
-                  <h4 className="text-xs font-bold text-black dark:text-white uppercase">Installation professionnelle</h4>
-                  <p className="text-xs text-black dark:text-white">Équipements haut de gamme selon les normes</p>
+      {/* Section Valeurs Fluide */}
+      <section className="py-20 bg-black/[0.02] dark:bg-white/[0.02]">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-light text-black dark:text-white mb-4">
+              Nos Valeurs
+            </h2>
+            <p className="text-black/60 dark:text-white/60 text-lg">Ce qui nous guide au quotidien</p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-12">
+            {valeurs.map((valeur, index) => (
+              <div key={index} className="text-center group">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-black/5 dark:bg-white/5 rounded-2xl mb-6 group-hover:bg-black/10 dark:group-hover:bg-white/10 transition-all duration-300">
+                  <div className="text-black/60 dark:text-white/60 group-hover:text-black dark:group-hover:text-white transition-colors">
+                    {valeur.icon}
+                  </div>
                 </div>
+                <h3 className="text-xl font-medium text-black dark:text-white mb-4">
+                  {valeur.title}
+                </h3>
+                <p className="text-black/70 dark:text-white/70 leading-relaxed">
+                  {valeur.description}
+                </p>
               </div>
-              <div className="flex items-start gap-2 pb-2 border-b border-black dark:border-white">
-                <CheckCircle className="w-4 h-4 text-black dark:text-white mt-0.5 flex-shrink-0" />
-                <div>
-                  <h4 className="text-xs font-bold text-black dark:text-white uppercase">Accompagnement complet</h4>
-                  <p className="text-xs text-black dark:text-white">De l'étude à la mise en service</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-2 pb-2 border-b border-black dark:border-white">
-                <CheckCircle className="w-4 h-4 text-black dark:text-white mt-0.5 flex-shrink-0" />
-                <div>
-                  <h4 className="text-xs font-bold text-black dark:text-white uppercase">Service après-vente</h4>
-                  <p className="text-xs text-black dark:text-white">Maintenance et dépannage d'urgence</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-2">
-                <CheckCircle className="w-4 h-4 text-black dark:text-white mt-0.5 flex-shrink-0" />
-                <div>
-                  <h4 className="text-xs font-bold text-black dark:text-white uppercase">Garantie tranquillité</h4>
-                  <p className="text-xs text-black dark:text-white">Intervention rapide garantie</p>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
+      </section>
 
-        {/* Certifications - Style colonnes journal */}
-        <div className="mb-8">
-          <h2 className="text-2xl font-black mb-4 text-black dark:text-white border-b-2 border-black dark:border-white pb-2">
-            NOS CERTIFICATIONS
-          </h2>
-          <div className="grid md:grid-cols-4 gap-4">
+      {/* Section Certifications Fluide */}
+      <section className="py-20 bg-white dark:bg-black">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-light text-black dark:text-white mb-4">
+              Nos Certifications
+            </h2>
+            <p className="text-black/60 dark:text-white/60 text-lg">Votre garantie qualité</p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {certifications.map((cert, index) => (
-              <div key={index} className="border border-black dark:border-white p-3 text-center">
-                <div className="flex justify-center mb-2">
-                  <div className="text-black dark:text-white">
+              <div key={index} className="text-center group">
+                <div className="inline-flex items-center justify-center w-20 h-20 bg-black/5 dark:bg-white/5 rounded-2xl mb-6 group-hover:bg-black/10 dark:group-hover:bg-white/10 transition-all duration-300">
+                  <div className="text-black/60 dark:text-white/60 group-hover:text-black dark:group-hover:text-white transition-colors">
                     {cert.icon}
                   </div>
                 </div>
-                <h3 className="text-xs font-bold text-black dark:text-white mb-2 uppercase tracking-wide">
+                <h3 className="text-lg font-medium text-black dark:text-white mb-4">
                   {cert.title}
                 </h3>
-                <p className="text-xs text-black dark:text-white leading-tight">
+                <p className="text-sm text-black/70 dark:text-white/70 leading-relaxed">
                   {cert.description}
                 </p>
               </div>
             ))}
           </div>
         </div>
+      </section>
 
-        {/* Section Équipe */}
-        <div className="mb-8 border-2 border-black dark:border-white p-6">
-          <h2 className="text-2xl font-black mb-4 text-black dark:text-white text-center">
-            NOTRE ÉQUIPE
-          </h2>
-          <div className="text-center">
-            <div className="flex justify-center mb-4">
-              <div className="w-16 h-16 bg-black dark:bg-white rounded-full flex items-center justify-center">
-                <Users className="w-8 h-8 text-white dark:text-black" />
-              </div>
-            </div>
-            <h3 className="text-lg font-bold text-black dark:text-white mb-2">
-              L'ÉQUIPE CLIMGO
-            </h3>
-            <p className="text-sm text-black dark:text-white mb-4 max-w-2xl mx-auto leading-relaxed">
-              <strong>Experts en chauffage et climatisation.</strong> Une équipe de professionnels passionnés, 
-              formés aux dernières technologies et certifiés RGE.
+      {/* CTA Final Fluide */}
+      <section className="py-24 bg-black/[0.02] dark:bg-white/[0.02]">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl md:text-5xl font-light text-black dark:text-white mb-8 leading-tight">
+              Prêt à découvrir l'excellence ClimGO ?
+            </h2>
+            <p className="text-xl text-black/70 dark:text-white/70 mb-12 leading-relaxed max-w-2xl mx-auto">
+              Rejoignez nos 50+ clients satisfaits et bénéficiez d'une expertise reconnue 
+              en Gironde et dans le Nord des Landes.
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-              {[
-                { name: "Pompes à chaleur", href: "/services", hoverColor: "group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-orange-500 group-hover:to-blue-600 group-hover:bg-clip-text", hoverBg: "hover:bg-gradient-to-r hover:from-orange-50 hover:to-blue-50 dark:hover:from-orange-950 dark:hover:to-blue-950" },
-                { name: "Climatisation", href: "/climatisation", hoverColor: "group-hover:text-blue-600 dark:group-hover:text-blue-400", hoverBg: "hover:bg-blue-50 dark:hover:bg-blue-950" },
-                { name: "Chauffage", href: "/chauffage", hoverColor: "group-hover:text-orange-600 dark:group-hover:text-orange-400", hoverBg: "hover:bg-orange-50 dark:hover:bg-orange-950" },
-                { name: "Maintenance", href: "/maintenance", hoverColor: "group-hover:text-green-600 dark:group-hover:text-green-400", hoverBg: "hover:bg-green-50 dark:hover:bg-green-950" }
-              ].map((specialite, idx) => (
-                <Link key={idx} href={specialite.href} className={`border border-black dark:border-white p-2 text-center ${specialite.hoverBg} transition-colors group`}>
-                  <span className={`text-xs font-bold text-black dark:text-white ${specialite.hoverColor} uppercase tracking-wide`}>
-                    {specialite.name}
-                  </span>
-                </Link>
-              ))}
+            
+            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+              <Link 
+                href="/contact" 
+                className="inline-flex items-center justify-center bg-black dark:bg-white text-white dark:text-black px-10 py-5 rounded-2xl font-medium text-lg hover:bg-black/90 dark:hover:bg-white/90 transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                <Phone className="w-5 h-5 mr-3" />
+                Demander un devis gratuit
+              </Link>
+              
+              <a 
+                href="tel:0766460008" 
+                className="inline-flex items-center justify-center bg-black/5 dark:bg-white/5 text-black dark:text-white px-10 py-5 rounded-2xl font-medium text-lg hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300"
+              >
+                <Phone className="w-5 h-5 mr-3" />
+                07 66 46 00 08
+              </a>
+            </div>
+            
+            <div className="flex justify-center items-center text-black/60 dark:text-white/60">
+              <MapPin className="w-4 h-4 mr-2" />
+              <Link href="/zones-interventions" className="hover:text-black dark:hover:text-white transition-colors">
+                Découvrir notre zone d'intervention
+              </Link>
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Footer Contact - Style Journal */}
-        <div className="border-t-4 border-black dark:border-white pt-6">
-          <h2 className="text-2xl font-black mb-6 text-black dark:text-white text-center">
-            PRÊT À FAIRE ÉQUIPE AVEC CLIMGO ?
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6 mb-6">
-            <a href="tel:0766460008" className="text-center border border-black dark:border-white p-4 hover:bg-orange-50 dark:hover:bg-gray-800 transition-colors group">
-              <Phone className="w-6 h-6 text-black dark:text-white mx-auto mb-2 group-hover:text-orange-600 dark:group-hover:text-orange-400" />
-              <h3 className="text-sm font-bold text-black dark:text-white mb-1 uppercase group-hover:text-orange-600 dark:group-hover:text-orange-400">Appelez-nous</h3>
-              <p className="text-sm text-black dark:text-white group-hover:text-orange-600 dark:group-hover:text-orange-400">07 66 46 00 08</p>
-            </a>
-            <a href="mailto:contact@climgo.fr" className="text-center border border-black dark:border-white p-4 hover:bg-blue-50 dark:hover:bg-gray-800 transition-colors group">
-              <Mail className="w-6 h-6 text-black dark:text-white mx-auto mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400" />
-              <h3 className="text-sm font-bold text-black dark:text-white mb-1 uppercase group-hover:text-blue-600 dark:group-hover:text-blue-400">Écrivez-nous</h3>
-              <p className="text-sm text-black dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400">contact@climgo.fr</p>
-            </a>
-            <Link href="/zones-interventions" className="text-center border border-black dark:border-white p-4 hover:bg-green-50 dark:hover:bg-gray-800 transition-colors group">
-              <MapPin className="w-6 h-6 text-black dark:text-white mx-auto mb-2 group-hover:text-green-600 dark:group-hover:text-green-400" />
-              <h3 className="text-sm font-bold text-black dark:text-white mb-1 uppercase group-hover:text-green-600 dark:group-hover:text-green-400">Notre zone</h3>
-              <p className="text-sm text-black dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400">Gironde & Nord Landes</p>
-            </Link>
-          </div>
-          
-          <div className="text-center">
-            <Link 
-              href="/contact" 
-              className="inline-flex items-center justify-center bg-white dark:bg-black text-black dark:text-white px-8 py-3 font-bold text-sm uppercase tracking-wide border-2 border-black dark:border-white hover:bg-orange-50 dark:hover:bg-gray-800 hover:text-orange-600 dark:hover:text-orange-400 transition-colors duration-300"
-            >
-              Demander un devis gratuit
-            </Link>
-          </div>
-        </div>
-      </div>
     </div>
-  );
+  )
 }

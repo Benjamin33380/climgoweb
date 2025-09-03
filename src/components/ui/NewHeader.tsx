@@ -116,7 +116,7 @@ export default function NewHeader() {
   const [isContactHovered, setIsContactHovered] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b bg-white dark:bg-black/40 backdrop-blur supports-[backdrop-filter]:bg-white dark:supports-[backdrop-filter]:bg-black/20">
       <div className="w-full flex h-16 items-center justify-between px-8 sm:px-12 lg:px-16">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
@@ -374,7 +374,7 @@ export default function NewHeader() {
 
       {/* Menu mobile déroulant */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden border-t bg-background/95 backdrop-blur max-h-[calc(100vh-80px)] overflow-y-auto">
+        <div className="lg:hidden border-t bg-white dark:bg-black/40 backdrop-blur max-h-[calc(100vh-80px)] overflow-y-auto">
           <div className="w-full px-8 py-4 space-y-4 pb-6">
             {/* Services */}
             <div className="space-y-2">
