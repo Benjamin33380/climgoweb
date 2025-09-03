@@ -138,7 +138,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "HVACBusiness",
+              "@type": "LocalBusiness",
               "name": "ClimGO",
               "legalName": "ClimGO",
               "url": "https://www.climgo.fr",
@@ -159,6 +159,13 @@ export default function RootLayout({
                 "postalCode": "33380",
                 "addressCountry": "FR"
               },
+            "priceRange": "$$",
+            "openingHoursSpecification": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              "opens": "08:00",
+              "closes": "19:30"
+            },
               "contactPoint": {
                 "@type": "ContactPoint",
                 "telephone": "+33766460008",
@@ -168,11 +175,81 @@ export default function RootLayout({
               "sameAs": [
                 "https://www.climgo.fr"
               ],
-              "areaServed": {
-                "@type": "Place",
-                "name": "Gironde, Bassin d'Arcachon, Marcheprime, Biganos, La Teste-de-Buch, Arcachon, Mios, Cestas, Pessac, Mérignac, Bordeaux, Andernos-les-Bains"
-              },
-              "foundingDate": "2024",
+              "areaServed": [
+                {
+                  "@type": "AdministrativeArea",
+                  "name": "Gironde"
+                },
+                {
+                  "@type": "AdministrativeArea",
+                  "name": "Bordeaux Métropole"
+                },
+                {
+                  "@type": "AdministrativeArea",
+                  "name": "Bassin d'Arcachon"
+                },
+                {
+                  "@type": "City",
+                  "name": "Marcheprime"
+                },
+                {
+                  "@type": "City",
+                  "name": "Biganos"
+                },
+                {
+                  "@type": "City",
+                  "name": "Mios"
+                },
+                {
+                  "@type": "City",
+                  "name": "Bordeaux"
+                },
+                {
+                  "@type": "City",
+                  "name": "Biscarrosse"
+                },
+                {
+                  "@type": "City",
+                  "name": "Andernos-les-Bains"
+                },
+                {
+                  "@type": "City",
+                  "name": "Pessac"
+                },
+                {
+                  "@type": "City",
+                  "name": "Gujan-Mestras"
+                },
+                {
+                  "@type": "City",
+                  "name": "La Teste-de-Buch"
+                },
+                {
+                  "@type": "City",
+                  "name": "Cestas"
+                },
+                {
+                  "@type": "City",
+                  "name": "Le Barp"
+                },
+                {
+                  "@type": "City",
+                  "name": "Audenge"
+                },
+                {
+                  "@type": "City",
+                  "name": "Lanton"
+                },
+                {
+                  "@type": "City",
+                  "name": "Lège-Cap-Ferret"
+                },
+                {
+                  "@type": "City",
+                  "name": "Pyla-sur-Mer"
+                }
+             ],
+              "foundingDate": "2025",
               "founder": {
                 "@type": "Person",
                 "name": "ClimGO Team"
@@ -353,7 +430,7 @@ export default function RootLayout({
                 },
                 {
                   "@type": "Question",
-                  "name": "Quels sont les délais d'intervention ClimGO en Gironde ?",
+                  "name": "Quels sont les délais d'intervention d'un chauffagiste en Gironde ?",
                   "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "ClimGO s'engage sur des délais rapides : devis sous 24h, installation sous 15 jours et dépannage d'urgence sous 4h. Nous couvrons toute la Gironde et le Bassin d'Arcachon."
@@ -377,10 +454,10 @@ export default function RootLayout({
                 },
                 {
                   "@type": "Question",
-                  "name": "ClimGO est-il certifié RGE en Gironde ?",
+                  "name": "Cout d'installation d'une pompe à chaleur en Gironde ?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Oui, ClimGO est certifié RGE (Reconnu Garant de l'Environnement). Cette certification vous permet de bénéficier des aides de l'État et garantit la qualité de nos installations de chauffage et climatisation."
+                    "text": "Le coût d'installation d'une PAC varie entre 8 000€ et 25 000€ selon le type (air/air, air/eau, géothermie) et la surface. ClimGO propose des devis gratuits et vous accompagne pour obtenir les aides MaPrimeRénov'."
                   }
                 }
               ]
