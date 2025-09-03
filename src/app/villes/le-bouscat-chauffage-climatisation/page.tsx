@@ -224,29 +224,24 @@ export default function LeBouscat() {
       </div>
       
       {/* Section Le Bouscat - Texte défilant au scroll */}
-      <section className="relative py-12 overflow-hidden">
+      <section className="relative py-8 sm:py-12 overflow-hidden">
         <div
           className="absolute inset-0 -z-10 w-full h-full bg-white dark:bg-black"
           aria-hidden="true"
         ></div>
         
         {/* Titre centré */}
-        <div className="relative z-10 container mx-auto px-4 mb-4">
-          <h2 className="text-2xl md:text-3xl font-medium text-gray-800 dark:text-black dark:text-white text-center">
+        <div className="relative z-10 container mx-auto px-4 mb-6 sm:mb-8">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-medium text-gray-800 dark:text-black dark:text-white text-center">
             Le Bouscat, commune résidentielle proche de Bordeaux
           </h2>
         </div>
         
         {/* Container de scroll sur toute la largeur de la page */}
         <div className="relative w-full">
-          {/* Gradient de flou du haut */}
-          <div 
-            className="absolute top-0 left-0 right-0 h-12 bg-gradient-to-b from-white dark:from-black to-transparent z-10 pointer-events-none"
-          />
-          
           {/* Zone de scroll sur toute la largeur de la page */}
           <div 
-            className="w-full h-[300px] px-4 py-16 overflow-y-auto scrollbar-hide cursor-default"
+            className="w-full h-[300px] sm:h-[350px] md:h-[300px] px-4 py-16 overflow-y-auto scrollbar-hide cursor-default"
             style={{
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
@@ -254,16 +249,16 @@ export default function LeBouscat() {
           >
             {/* Contenu centré dans la zone élargie */}
             <div className="max-w-4xl mx-auto">
-              <div className="space-y-6 text-center pt-8 pb-20">
-                <p className="text-lg text-gray-800 dark:text-white leading-normal">
+              <div className="space-y-4 sm:space-y-5 md:space-y-6 text-center pt-4 sm:pt-6 md:pt-8 pb-12 sm:pb-16 md:pb-20">
+                <p className="text-sm sm:text-base md:text-lg text-gray-800 dark:text-white leading-normal">
                   <strong className="text-black dark:text-white">Le Bouscat, avec son ambiance résidentielle et ses belles maisons</strong>, mérite des installations thermiques sur-mesure.
                 </p>
                 
-                <p className="text-base text-gray-800 dark:text-white leading-normal">
+                <p className="text-sm sm:text-base text-gray-800 dark:text-white leading-normal">
                   Le Bouscat <strong className="text-black dark:text-white">séduit par son équilibre entre urbanité et nature</strong>. Proche du centre de Bordeaux, la commune offre un cadre résidentiel recherché.
                 </p>
                 
-                <p className="text-base text-gray-800 dark:text-white leading-normal">
+                <p className="text-sm sm:text-base text-gray-800 dark:text-white leading-normal">
                   Entre <strong className="text-black dark:text-white">échoppes rénovées, maisons bourgeoises et résidences contemporaines</strong>. Elle attire autant les familles que les actifs bordelais.
                 </p>
                 
@@ -285,11 +280,6 @@ export default function LeBouscat() {
               </div>
             </div>
           </div>
-          
-          {/* Gradient de flou du bas */}
-          <div 
-            className="absolute bottom-0 left-0 right-0 h-70 bg-gradient-to-t from-white dark:from-black to-transparent z-10 pointer-events-none"
-          />
         </div>
         
         <style jsx>{`

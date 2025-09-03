@@ -124,39 +124,38 @@ export default function Biganos() {
 
   return (
     <main className="px-0">
-      <section className="relative h-[90vh] min-h-[500px] sm:min-h-[600px] md:min-h-[640px] w-full overflow-hidden bg-white dark:bg-black text-black dark:text-white">
-        {/* Zone vidéo - Responsive avec adaptation mobile */}
+      <section className="hero-mobile-section relative h-[100vh] xs:h-[95vh] sm:h-[90vh] min-h-[500px] xs:min-h-[550px] sm:min-h-[600px] md:min-h-[640px] lg:min-h-[700px] xl:min-h-[750px] w-full overflow-hidden bg-transparent sm:bg-white sm:dark:bg-black text-black dark:text-white">
+        {/* Zone image avec effet zoom - Responsive avec adaptation mobile */}
+        <div className="absolute top-0 left-0 h-full w-full z-1 sm:hidden">
+          <Image
+            src="/villes/biganos.webp"
+            alt="Biganos - Bassin d'Arcachon"
+            fill
+            className="h-full w-full object-cover transition-opacity duration-1000"
+            priority
+          />
+        </div>
+
         <motion.div
-          className="absolute top-0 right-0 h-full w-full sm:w-2/3"
+          className="hidden sm:block absolute top-0 right-0 h-full w-2/3 z-1"
           aria-hidden
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
+          initial={{ opacity: 0, scale: 1.1 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
         >
-          {/* Version mobile - vidéo plein écran */}
-          <div className="block sm:hidden relative h-full w-full">
-            <video
-              className="h-full w-full object-cover"
-              autoPlay
-              muted
-              loop
-              playsInline
-            />
-          </div>
-          
           {/* Version desktop - forme diagonale */}
           <div 
-            className="hidden sm:block relative h-full w-full"
+            className="hidden sm:block relative h-full w-full overflow-hidden"
             style={{
               clipPath: 'polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%)'
             }}
           >
-            <video
-              className="h-full w-full object-cover"
-              autoPlay
-              muted
-              loop
-              playsInline
+            <Image
+              src="/villes/biganos.webp"
+              alt="Biganos - Bassin d'Arcachon"
+              fill
+              className="h-full w-full object-cover object-center"
+              priority
             />
           </div>
         </motion.div>
@@ -169,21 +168,19 @@ export default function Biganos() {
           }}
         />
 
-        {/* Overlay sombre pour mobile */}
-        <div className="sm:hidden absolute inset-0 bg-black/40 dark:bg-black/60 z-5"></div>
-
         {/* Contenu côté gauche - Responsive */}
-        <div className="relative z-10 flex h-full items-center">
+        <div className="relative z-10 flex h-full items-center" style={{background: 'transparent'}}>
           <motion.div
-            className="w-full sm:max-w-xl md:max-w-2xl px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16"
+            className="relative z-10 w-full xs:max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16"
+            style={{background: 'transparent'}}
             initial={{ x: -50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-light tracking-tight mb-3 sm:mb-4 md:mb-6 text-black dark:text-white break-words leading-tight">
+            <h1 className="text-2xl xs:text-3xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold sm:font-light tracking-tight mb-2 xs:mb-3 sm:mb-4 md:mb-6 text-white sm:text-black dark:text-white break-words leading-tight mobile-text-shadow">
               ClimGO à Biganos
             </h1>
-            <p className="text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl text-black dark:text-white mb-3 sm:mb-4 md:mb-6 lg:mb-8 leading-relaxed max-w-[280px] sm:max-w-sm md:max-w-lg lg:max-w-none whitespace-pre-line">
+            <p className="text-xs xs:text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl text-white sm:text-black dark:text-white mb-3 xs:mb-4 sm:mb-4 md:mb-6 lg:mb-8 leading-relaxed max-w-[260px] xs:max-w-[280px] sm:max-w-sm md:max-w-lg lg:max-w-none whitespace-pre-line font-medium sm:font-normal mobile-text-shadow">
               Votre expert en chauffage et climatisation{'\n'}sur le Bassin d'Arcachon
             </p>
 
@@ -226,30 +223,25 @@ export default function Biganos() {
       <div className="bg-white dark:bg-black py-4">
       </div>
       
-      {/* Section Bassin d'Arcachon - Texte défilant au scroll */}
-      <section className="relative py-12 overflow-hidden">
+      {/* Section Biganos - Texte défilant au scroll */}
+      <section className="relative py-8 sm:py-12 overflow-hidden">
         <div
           className="absolute inset-0 -z-10 w-full h-full bg-white dark:bg-black"
           aria-hidden="true"
         ></div>
         
         {/* Titre centré */}
-        <div className="relative z-10 container mx-auto px-4 mb-4">
-          <h2 className="text-2xl md:text-3xl font-medium text-gray-800 dark:text-black dark:text-white text-center">
+        <div className="relative z-10 container mx-auto px-4 mb-6 sm:mb-8">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-medium text-gray-800 dark:text-black dark:text-white text-center">
             Chauffage Climatisation Biganos - ClimGO Bassin d&apos;Arcachon
           </h2>
         </div>
         
         {/* Container de scroll sur toute la largeur de la page */}
         <div className="relative w-full">
-          {/* Gradient de flou du haut */}
-          <div 
-            className="absolute top-0 left-0 right-0 h-12 bg-gradient-to-b from-white dark:from-black to-transparent z-10 pointer-events-none"
-          />
-          
           {/* Zone de scroll sur toute la largeur de la page */}
           <div 
-            className="w-full h-[300px] px-4 py-16 overflow-y-auto scrollbar-hide cursor-default"
+            className="w-full h-[300px] sm:h-[350px] md:h-[300px] px-4 py-16 overflow-y-auto scrollbar-hide cursor-default"
             style={{
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
@@ -257,16 +249,16 @@ export default function Biganos() {
           >
             {/* Contenu centré dans la zone élargie */}
             <div className="max-w-4xl mx-auto">
-              <div className="space-y-6 text-center pt-8 pb-20">
-                <p className="text-lg text-gray-800 dark:text-white leading-normal">
+              <div className="space-y-4 sm:space-y-5 md:space-y-6 text-center pt-4 sm:pt-6 md:pt-8 pb-12 sm:pb-16 md:pb-20">
+                <p className="text-sm sm:text-base md:text-lg text-gray-800 dark:text-white leading-normal">
                   Nichée au cœur du <strong className="text-black dark:text-white">Bassin d'Arcachon</strong>, <strong className="text-black dark:text-white">Biganos</strong> offre un cadre de vie exceptionnel entre nature et proximité urbaine. ClimGO s'adapte aux spécificités de cette commune dynamique pour vous offrir des solutions thermiques sur mesure.
                 </p>
                 
-                <p className="text-base text-gray-800 dark:text-white leading-normal">
+                <p className="text-sm sm:text-base text-gray-800 dark:text-white leading-normal">
                   Des <strong className="text-black dark:text-white">quartiers résidentiels</strong> aux zones d'activités, en passant par le centre-ville animé, nous accompagnons particuliers et professionnels dans leurs projets de <strong className="text-black dark:text-white">chauffage</strong> et de <strong className="text-black dark:text-white">climatisation</strong>.
                 </p>
                 
-                <p className="text-base text-gray-800 dark:text-white leading-normal">
+                <p className="text-sm sm:text-base text-gray-800 dark:text-white leading-normal">
                   Notre expertise locale nous permet de tenir compte des <strong className="text-black dark:text-white">contraintes climatiques</strong> spécifiques : l'humidité du bassin, les vents marins et les variations saisonnières qui influencent le choix optimal de vos équipements.
                 </p>
                 
@@ -292,11 +284,6 @@ export default function Biganos() {
               </div>
             </div>
           </div>
-          
-          {/* Gradient de flou du bas */}
-          <div 
-            className="absolute bottom-0 left-0 right-0 h-70 bg-gradient-to-t from-white dark:from-black to-transparent z-10 pointer-events-none"
-          />
         </div>
         
         <style jsx>{`

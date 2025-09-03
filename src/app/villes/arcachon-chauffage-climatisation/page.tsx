@@ -126,30 +126,29 @@ export default function Arcachon() {
   };
 
   return (
-    <main className="px-0">
-      <section className="relative h-[90vh] min-h-[500px] sm:min-h-[600px] md:min-h-[640px] w-full overflow-hidden bg-white dark:bg-black text-black dark:text-white">
-        {/* Zone vidéo - Responsive avec adaptation mobile */}
+    <main className="px-0 bg-transparent">
+      <section className="hero-mobile-section relative h-[100vh] xs:h-[95vh] sm:h-[90vh] min-h-[500px] xs:min-h-[550px] sm:min-h-[600px] md:min-h-[640px] lg:min-h-[700px] xl:min-h-[750px] w-full overflow-hidden bg-transparent sm:bg-white sm:dark:bg-black text-black dark:text-white">
+        {/* Zone image avec effet zoom - Responsive avec adaptation mobile */}
+        <div className="absolute top-0 left-0 h-full w-full z-1 sm:hidden">
+          <Image
+            src="/villes/arca.webp"
+            alt="Arcachon - Bassin d'Arcachon"
+            fill
+            className="h-full w-full object-cover transition-opacity duration-1000"
+            priority
+          />
+        </div>
+
         <motion.div
-          className="absolute top-0 right-0 h-full w-full sm:w-2/3"
+          className="hidden sm:block absolute top-0 right-0 h-full w-2/3 z-1"
           aria-hidden
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
+          initial={{ opacity: 0, scale: 1.1 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
         >
-          {/* Version mobile - image plein écran */}
-          <div className="block sm:hidden relative h-full w-full">
-            <Image
-              src="/villes/arca.webp"
-              alt="Arcachon - Bassin d'Arcachon"
-              fill
-              className="h-full w-full object-cover"
-              priority
-            />
-          </div>
-          
           {/* Version desktop - forme diagonale */}
           <div 
-            className="hidden sm:block relative h-full w-full"
+            className="hidden sm:block relative h-full w-full overflow-hidden"
             style={{
               clipPath: 'polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%)'
             }}
@@ -158,7 +157,7 @@ export default function Arcachon() {
               src="/villes/arca.webp"
               alt="Arcachon - Bassin d'Arcachon"
               fill
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover object-center"
               priority
             />
           </div>
@@ -172,20 +171,19 @@ export default function Arcachon() {
           }}
         />
 
-
-
         {/* Contenu côté gauche - Responsive */}
-        <div className="relative z-10 flex h-full items-center">
+        <div className="relative z-10 flex h-full items-center" style={{background: 'transparent'}}>
           <motion.div
-            className="w-full sm:max-w-xl md:max-w-2xl px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16"
+            className="relative z-10 w-full xs:max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16"
+            style={{background: 'transparent'}}
             initial={{ x: -50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-light tracking-tight mb-3 sm:mb-4 md:mb-6 text-white sm:text-black dark:text-white break-words leading-tight mobile-text-shadow">
+            <h1 className="text-2xl xs:text-3xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold sm:font-light tracking-tight mb-2 xs:mb-3 sm:mb-4 md:mb-6 text-white sm:text-black dark:text-white break-words leading-tight mobile-text-shadow">
               ClimGO à Arcachon
             </h1>
-            <p className="text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl text-white sm:text-black dark:text-white mb-3 sm:mb-4 md:mb-6 lg:mb-8 leading-relaxed max-w-[280px] sm:max-w-sm md:max-w-lg lg:max-w-none whitespace-pre-line mobile-text-shadow">
+            <p className="text-xs xs:text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl text-white sm:text-black dark:text-white mb-3 xs:mb-4 sm:mb-4 md:mb-6 lg:mb-8 leading-relaxed max-w-[260px] xs:max-w-[280px] sm:max-w-sm md:max-w-lg lg:max-w-none whitespace-pre-line font-medium sm:font-normal mobile-text-shadow">
               Votre expert en chauffage et climatisation{'\n'}sur le Bassin d'Arcachon
             </p>
 
@@ -194,22 +192,22 @@ export default function Arcachon() {
               <CitySearch />
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4">
+            <div className="flex flex-col xs:flex-row sm:flex-row gap-2 xs:gap-2 sm:gap-3 md:gap-4 lg:gap-5">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-full px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-2.5 md:py-3 lg:py-4 text-xs sm:text-sm md:text-base font-medium
+                className="inline-flex items-center justify-center rounded-full px-3 xs:px-4 sm:px-4 md:px-6 lg:px-8 xl:px-10 py-2 xs:py-2 sm:py-2.5 md:py-3 lg:py-4 text-xs xs:text-xs sm:text-sm md:text-base lg:text-lg font-medium
                            bg-white dark:bg-black text-black dark:text-white hover:bg-white/90 dark:hover:bg-black/90
                            border border-black/20 dark:border-white/20
-                           transition-all duration-300 transform hover:scale-105 shadow-lg"
+                           transition-all duration-300 transform hover:scale-105 shadow-lg min-w-[120px] xs:min-w-[130px] sm:min-w-[140px]"
               >
                 Devis gratuit
               </Link>
 
               <a
                 href="#services"
-                className="inline-flex items-center justify-center rounded-full px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-2.5 md:py-3 lg:py-4 text-xs sm:text-sm md:text-base font-medium
+                className="inline-flex items-center justify-center rounded-full px-3 xs:px-4 sm:px-4 md:px-6 lg:px-8 xl:px-10 py-2 xs:py-2 sm:py-2.5 md:py-3 lg:py-4 text-xs xs:text-xs sm:text-sm md:text-base lg:text-lg font-medium
                            border-2 border-white/50 sm:border-black/50 dark:border-white/30 text-white sm:text-black dark:text-white hover:bg-white/15 sm:hover:bg-black/15 dark:hover:bg-white/10 hover:border-white/70 sm:hover:border-black/70 dark:hover:border-white/50
-                           transition-all duration-300 backdrop-blur-sm"
+                           transition-all duration-300 backdrop-blur-sm min-w-[120px] xs:min-w-[130px] sm:min-w-[140px]"
               >
                 Découvrir
               </a>
@@ -219,7 +217,7 @@ export default function Arcachon() {
 
         {/* Indicateur de scroll */}
         <div className="pointer-events-none absolute bottom-6 left-1/2 z-10 -translate-x-1/2">
-          <div className="h-8 w-[1px] bg-white/50 dark:bg-white/50 animate-pulse" />
+          <div className="h-8 w-[1px] bg-white/50 sm:bg-black/50 dark:bg-white/50 animate-pulse" />
         </div>
       </section>
 
@@ -229,29 +227,24 @@ export default function Arcachon() {
       </div>
       
       {/* Section Bassin d'Arcachon - Texte défilant au scroll */}
-      <section className="relative py-12 overflow-hidden">
+      <section className="relative py-8 sm:py-12 overflow-hidden">
         <div
           className="absolute inset-0 -z-10 w-full h-full bg-white dark:bg-black"
           aria-hidden="true"
         ></div>
         
         {/* Titre centré */}
-        <div className="relative z-10 container mx-auto px-4 mb-4">
-          <h2 className="text-2xl md:text-3xl font-medium text-gray-800 dark:text-black dark:text-white text-center">
+        <div className="relative z-10 container mx-auto px-4 mb-6 sm:mb-8">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-medium text-gray-800 dark:text-black dark:text-white text-center leading-tight">
             Chauffage Climatisation Arcachon - ClimGO Bassin d&apos;Arcachon
           </h2>
         </div>
         
         {/* Container de scroll sur toute la largeur de la page */}
         <div className="relative w-full">
-          {/* Gradient de flou du haut */}
-          <div 
-            className="absolute top-0 left-0 right-0 h-12 bg-gradient-to-b from-white dark:from-black to-transparent z-10 pointer-events-none"
-          />
-          
           {/* Zone de scroll sur toute la largeur de la page - Responsive */}
           <div 
-            className="w-full h-[250px] md:h-[300px] px-4 py-8 md:py-16 overflow-y-auto scrollbar-hide cursor-default"
+            className="w-full h-[300px] sm:h-[350px] md:h-[300px] px-4 py-8 md:py-16 overflow-y-auto scrollbar-hide cursor-default"
             style={{
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
@@ -259,46 +252,41 @@ export default function Arcachon() {
           >
             {/* Contenu centré dans la zone élargie */}
             <div className="max-w-4xl mx-auto">
-              <div className="space-y-4 md:space-y-6 text-center pt-4 md:pt-8 pb-12 md:pb-20">
-                <p className="text-base md:text-lg text-gray-800 dark:text-white leading-normal">
+              <div className="space-y-4 sm:space-y-5 md:space-y-6 text-center pt-4 sm:pt-6 md:pt-8 pb-12 sm:pb-16 md:pb-20">
+                <p className="text-sm sm:text-base md:text-lg text-gray-800 dark:text-white leading-relaxed">
                   Ville emblématique du <strong className="text-black dark:text-white">Bassin d'Arcachon</strong>, Arcachon séduit par son architecture Belle Époque et ses quatre quartiers distincts : la Ville d'Été, la Ville d'Hiver, la Ville d'Automne et la Ville de Printemps. ClimGO s'adapte à chaque type d'habitat pour garantir votre confort thermique.
                 </p>
                 
-                <p className="text-sm md:text-base text-gray-800 dark:text-white leading-normal">
+                <p className="text-sm sm:text-base md:text-base text-gray-800 dark:text-white leading-relaxed">
                   Des <strong className="text-black dark:text-white">villas historiques</strong> de la Ville d'Hiver aux <strong className="text-black dark:text-white">appartements modernes</strong> du front de mer, nous accompagnons tous types de projets d'installation et de rénovation énergétique.
                 </p>
                 
-                <p className="text-sm md:text-base text-gray-800 dark:text-white leading-normal">
+                <p className="text-sm sm:text-base md:text-base text-gray-800 dark:text-white leading-relaxed">
                   Chaque intervention vise à optimiser la <strong className="text-black dark:text-white">performance énergétique</strong> tout en respectant l'intégration harmonieuse dans ce cadre architectural et naturel exceptionnel.
                 </p>
                 
-                <p className="text-sm md:text-base text-gray-800 dark:text-white leading-normal">
+                <p className="text-sm sm:text-base md:text-base text-gray-800 dark:text-white leading-relaxed">
                   Notre expertise locale nous permet de comprendre les <strong className="text-black dark:text-white">contraintes climatiques</strong> spécifiques : l'air marin, les vents côtiers et les variations saisonnières qui influencent le choix des équipements et leur installation.
                 </p>
                 
-                <p className="text-sm md:text-base text-gray-800 dark:text-white leading-normal">
+                <p className="text-sm sm:text-base md:text-base text-gray-800 dark:text-white leading-relaxed">
                   Nous privilégions les <strong className="text-black dark:text-white">solutions durables</strong> et respectueuses de l'environnement, en accord avec la sensibilité écologique des Arcachonnais et les réglementations patrimoniales de la ville.
                 </p>
                 
-                <p className="text-sm md:text-base text-gray-800 dark:text-white leading-normal">
+                <p className="text-sm sm:text-base md:text-base text-gray-800 dark:text-white leading-relaxed">
                   De la <strong className="text-black dark:text-white">pompe à chaleur</strong> à la <strong className="text-black dark:text-white">climatisation réversible</strong>, en passant par la <strong className="text-black dark:text-white">production d'eau chaude sanitaire</strong>, nos solutions s'adaptent à chaque quartier et à chaque budget.
                 </p>
                 
-                <p className="text-sm md:text-base text-gray-800 dark:text-white leading-normal">
+                <p className="text-sm sm:text-base md:text-base text-gray-800 dark:text-white leading-relaxed">
                   Notre équipe d'<strong className="text-black dark:text-white">experts certifiés</strong> intervient dans tous les quartiers d'Arcachon, des villas Belle Époque aux résidences contemporaines, en respectant les spécificités architecturales locales.
                 </p>
                 
-                <p className="text-sm md:text-base text-gray-800 dark:text-white leading-normal">
+                <p className="text-sm sm:text-base md:text-base text-gray-800 dark:text-white leading-relaxed">
                   Nous garantissons un <strong className="text-black dark:text-white">service personnalisé</strong> et un suivi rigoureux de chaque projet, de la première visite à la mise en service, en passant par l'installation et la maintenance préventive.
                 </p>
               </div>
             </div>
           </div>
-          
-          {/* Gradient de flou du bas */}
-          <div 
-            className="absolute bottom-0 left-0 right-0 h-70 bg-gradient-to-t from-white dark:from-black to-transparent z-10 pointer-events-none"
-          />
         </div>
         
         <style jsx>{`

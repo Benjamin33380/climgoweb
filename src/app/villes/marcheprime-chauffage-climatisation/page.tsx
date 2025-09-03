@@ -224,29 +224,24 @@ export default function Marcheprime() {
       </div>
       
       {/* Section Bassin d'Arcachon - Texte défilant au scroll */}
-      <section className="relative py-12 overflow-hidden">
+      <section className="relative py-8 sm:py-12 overflow-hidden">
         <div
           className="absolute inset-0 -z-10 w-full h-full bg-white dark:bg-black"
           aria-hidden="true"
         ></div>
         
         {/* Titre centré */}
-        <div className="relative z-10 container mx-auto px-4 mb-4">
-          <h2 className="text-2xl md:text-3xl font-medium text-gray-800 dark:text-black dark:text-white text-center">
+        <div className="relative z-10 container mx-auto px-4 mb-6 sm:mb-8">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-medium text-gray-800 dark:text-black dark:text-white text-center">
             Marcheprime, équilibre entre nature et accessibilité
           </h2>
         </div>
         
         {/* Container de scroll sur toute la largeur de la page */}
         <div className="relative w-full">
-          {/* Gradient de flou du haut */}
-          <div 
-            className="absolute top-0 left-0 right-0 h-12 bg-gradient-to-b from-white dark:from-black to-transparent z-10 pointer-events-none"
-          />
-          
           {/* Zone de scroll sur toute la largeur de la page */}
           <div 
-            className="w-full h-[300px] px-4 py-16 overflow-y-auto scrollbar-hide cursor-default"
+            className="w-full h-[300px] sm:h-[350px] md:h-[300px] px-4 py-16 overflow-y-auto scrollbar-hide cursor-default"
             style={{
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
@@ -254,16 +249,16 @@ export default function Marcheprime() {
           >
             {/* Contenu centré dans la zone élargie */}
             <div className="max-w-4xl mx-auto">
-              <div className="space-y-6 text-center pt-8 pb-20">
-                <p className="text-lg text-gray-800 dark:text-white leading-normal">
+              <div className="space-y-4 sm:space-y-5 md:space-y-6 text-center pt-4 sm:pt-6 md:pt-8 pb-12 sm:pb-16 md:pb-20">
+                <p className="text-sm sm:text-base md:text-lg text-gray-800 dark:text-white leading-normal">
                   Entre <strong className="text-black dark:text-white">pins et pistes cyclables</strong>, Marcheprime attire par sa douceur de vivre et sa situation idéale entre Bordeaux et le Bassin. Sa croissance maîtrisée en fait un territoire dynamique.
                 </p>
                 
-                <p className="text-base text-gray-800 dark:text-white leading-normal">
+                <p className="text-sm sm:text-base text-gray-800 dark:text-white leading-normal">
                   Que vous soyez installé à <strong className="text-black dark:text-white">Croix d'Hins</strong>, au Bourg ou dans les hameaux environnants comme <strong className="text-black dark:text-white">Biard</strong>, ClimGO adapte ses solutions à la typologie locale.
                 </p>
                 
-                <p className="text-base text-gray-800 dark:text-white leading-normal">
+                <p className="text-sm sm:text-base text-gray-800 dark:text-white leading-normal">
                   Avec une parfaite connaissance du secteur, nous intégrons les <strong className="text-black dark:text-white">particularités thermiques</strong> de chaque zone pour concevoir des installations durables et performantes.
                 </p>
                 
@@ -285,11 +280,6 @@ export default function Marcheprime() {
               </div>
             </div>
           </div>
-          
-          {/* Gradient de flou du bas */}
-          <div 
-            className="absolute bottom-0 left-0 right-0 h-70 bg-gradient-to-t from-white dark:from-black to-transparent z-10 pointer-events-none"
-          />
         </div>
         
         <style jsx>{`

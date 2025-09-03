@@ -224,29 +224,24 @@ export default function Cenon() {
       </div>
       
       {/* Section Cenon - Texte défilant au scroll */}
-      <section className="relative py-12 overflow-hidden">
+      <section className="relative py-8 sm:py-12 overflow-hidden">
         <div
           className="absolute inset-0 -z-10 w-full h-full bg-white dark:bg-black"
           aria-hidden="true"
         ></div>
         
         {/* Titre centré */}
-        <div className="relative z-10 container mx-auto px-4 mb-4">
-          <h2 className="text-2xl md:text-3xl font-medium text-gray-800 dark:text-black dark:text-white text-center">
+        <div className="relative z-10 container mx-auto px-4 mb-6 sm:mb-8">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-medium text-gray-800 dark:text-black dark:text-white text-center">
             Cenon, entre nature et dynamisme urbain
           </h2>
         </div>
         
         {/* Container de scroll sur toute la largeur de la page */}
         <div className="relative w-full">
-          {/* Gradient de flou du haut */}
-          <div 
-            className="absolute top-0 left-0 right-0 h-12 bg-gradient-to-b from-white dark:from-black to-transparent z-10 pointer-events-none"
-          />
-          
           {/* Zone de scroll sur toute la largeur de la page */}
           <div 
-            className="w-full h-[300px] px-4 py-16 overflow-y-auto scrollbar-hide cursor-default"
+            className="w-full h-[300px] sm:h-[350px] md:h-[300px] px-4 py-16 overflow-y-auto scrollbar-hide cursor-default"
             style={{
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
@@ -254,16 +249,16 @@ export default function Cenon() {
           >
             {/* Contenu centré dans la zone élargie */}
             <div className="max-w-4xl mx-auto">
-              <div className="space-y-6 text-center pt-8 pb-20">
-                <p className="text-lg text-gray-800 dark:text-white leading-normal">
+              <div className="space-y-4 sm:space-y-5 md:space-y-6 text-center pt-4 sm:pt-6 md:pt-8 pb-12 sm:pb-16 md:pb-20">
+                <p className="text-sm sm:text-base md:text-lg text-gray-800 dark:text-white leading-normal">
                   Située sur la <strong className="text-black dark:text-white">rive droite de la Garonne</strong>, Cenon offre un cadre de vie agréable et en pleine évolution, idéal pour des installations énergétiques modernes.
                 </p>
                 
-                <p className="text-base text-gray-800 dark:text-white leading-normal">
+                <p className="text-sm sm:text-base text-gray-800 dark:text-white leading-normal">
                   ClimGO vous accompagne à Cenon pour tous vos besoins en <strong className="text-black dark:text-white">chauffage, climatisation ou production d'eau chaude</strong>.
                 </p>
                 
-                <p className="text-base text-gray-800 dark:text-white leading-normal">
+                <p className="text-sm sm:text-base text-gray-800 dark:text-white leading-normal">
                   Avec ses <strong className="text-black dark:text-white">25 000 habitants</strong>, Cenon est une commune dynamique de la métropole bordelaise, connue pour ses projets urbains modernes.
                 </p>
                 
@@ -285,11 +280,6 @@ export default function Cenon() {
               </div>
             </div>
           </div>
-          
-          {/* Gradient de flou du bas */}
-          <div 
-            className="absolute bottom-0 left-0 right-0 h-70 bg-gradient-to-t from-white dark:from-black to-transparent z-10 pointer-events-none"
-          />
         </div>
         
         <style jsx>{`
@@ -334,34 +324,26 @@ export default function Cenon() {
               </p>
             </div>
             
-            {/* Timeline */}
+            {/* Timeline verticale */}
             <div className="relative">
-              {/* Ligne centrale - cachée sur mobile, visible sur desktop */}
-              <div className="pointer-events-none absolute left-1/2 -translate-x-1/2 w-px h-full bg-gray-300 dark:bg-gray-700 hidden md:block" />
-              {/* Ligne verticale mobile - visible seulement sur mobile */}
-              <div className="pointer-events-none absolute left-8 top-0 w-px h-full bg-gray-300 dark:bg-gray-700 md:hidden" />
+              {/* Ligne de connexion */}
+              <div className="absolute left-1/2 transform -translate-x-px w-0.5 h-full bg-gray-300 dark:bg-gray-600" />
               
-              {/* Lumière desktop - SEULEMENT sur desktop */}
-              <div
-                className="pointer-events-none absolute left-1/2 -translate-x-1/2 w-[2px] h-20 rounded-full hidden md:block"
-                style={{
-                  animation: 'lightMove 4s infinite linear',
-                  background: 'var(--light-effect-bg)',
-                  boxShadow: 'var(--light-effect-shadow)'
-                }}
-                aria-hidden="true"
-              />
-
-              {/* Lumière mobile - SEULEMENT sur mobile */}
-              <div
-                className="pointer-events-none absolute left-8 w-[3px] h-16 rounded-full block md:hidden z-5"
-                style={{
-                  animation: 'lightMoveMobile 4s infinite linear',
-                  background: 'var(--light-effect-bg)',
-                  boxShadow: 'var(--light-effect-shadow)'
-                }}
-                aria-hidden="true"
-              />
+              {/* Effet de lumière défilante */}
+              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-16 rounded-full z-5 light-mode:hidden" 
+                   style={{
+                     animation: 'lightMove 4s infinite linear',
+                     background: 'linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 20%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.8) 80%, rgba(255, 255, 255, 0) 100%)',
+                     boxShadow: '0 0 20px rgba(255, 255, 255, 0.6), 0 0 40px rgba(255, 255, 255, 0.3)'
+                   }} />
+              
+              {/* Effet de lumière défilante pour le mode clair */}
+              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-16 rounded-full z-5 dark:hidden" 
+                   style={{
+                     animation: 'lightMove 4s infinite linear',
+                     background: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 20%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.8) 80%, rgba(0, 0, 0, 0) 100%)',
+                     boxShadow: '0 0 20px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 0, 0, 0.3)'
+                   }} />
               
               {/* Étape 1 */}
               <div className="relative flex items-center mb-16">
@@ -553,7 +535,7 @@ export default function Cenon() {
             </div>
             
             {/* Pourquoi choisir ClimGO à Cenon - Version personnalisée */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8 max-w-6xl mx-auto mb-8 md:mb-12 lg:mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6 lg:gap-8 max-w-6xl mx-auto mb-8 md:mb-12 lg:mb-16">
               {/* Proximité et Conseil */}
               <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-black dark:hover:border-white min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
                 <div className="text-center flex flex-col h-full">
@@ -651,7 +633,7 @@ export default function Cenon() {
             </div>
           </SimpleWrapper>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {/* Carte 1 - Types de logements */}
             <SimpleWrapper>
               <motion.div 
