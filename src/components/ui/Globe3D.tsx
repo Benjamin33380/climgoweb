@@ -1,6 +1,6 @@
 'use client';
 
-import React, { Suspense, useMemo } from 'react';
+import React, { Suspense, useMemo, useState, useEffect, useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { BufferGeometry, BufferAttribute } from 'three';
@@ -77,31 +77,80 @@ function GlobeModel() {
 }
 
 export function Globe3D({ className = "w-8 h-8" }: Globe3DProps) {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isInView, setIsInView] = useState(false);
+  const globeRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsInView(true);
+            observer.disconnect();
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (globeRef.current) {
+      observer.observe(globeRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (isInView && !isLoaded) {
+      // Délai de 500ms pour éviter de charger immédiatement
+      const timer = setTimeout(() => {
+        setIsLoaded(true);
+      }, 500);
+
+      return () => clearTimeout(timer);
+    }
+  }, [isInView, isLoaded]);
+
   return (
-    <div className={className} style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%)' }}>
-      <Canvas 
-        camera={{ position: [0, 0, 5], fov: 75 }}
-        gl={{ 
-          antialias: true, 
-          alpha: true,
-          toneMapping: 0,
-          toneMappingExposure: 1.0
-        }}
-        style={{ background: 'transparent' }}
-      >
-        <ambientLight intensity={0.3} />
-        <directionalLight position={[5, 5, 5]} intensity={0.5} />
-        
-        <Suspense fallback={null}>
-          <GlobeModel />
-          <OrbitControls 
-            enableZoom={false} 
-            enablePan={false}
-            autoRotate={true}
-            autoRotateSpeed={1.5}
-          />
-        </Suspense>
-      </Canvas>
+    <div 
+      ref={globeRef}
+      className={className} 
+      style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%)' }}
+    >
+      {isLoaded ? (
+        <Canvas 
+          camera={{ position: [0, 0, 5], fov: 75 }}
+          gl={{ 
+            antialias: false, // Désactiver l'antialiasing pour les performances
+            alpha: true,
+            toneMapping: 0,
+            toneMappingExposure: 1.0,
+            powerPreference: "high-performance"
+          }}
+          style={{ background: 'transparent' }}
+          performance={{ min: 0.5 }} // Limiter les FPS pour économiser les ressources
+        >
+          <ambientLight intensity={0.3} />
+          <directionalLight position={[5, 5, 5]} intensity={0.5} />
+          
+          <Suspense fallback={null}>
+            <GlobeModel />
+            <OrbitControls 
+              enableZoom={false} 
+              enablePan={false}
+              autoRotate={true}
+              autoRotateSpeed={1.2} // Réduire la vitesse de rotation
+              enableDamping={true}
+              dampingFactor={0.05}
+            />
+          </Suspense>
+        </Canvas>
+      ) : (
+        <div className="w-full h-full flex items-center justify-center">
+          <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-gray-600"></div>
+        </div>
+      )}
     </div>
   );
 }

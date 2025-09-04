@@ -9,11 +9,29 @@ export default function GoogleAnalytics() {
   useEffect(() => {
     if (!GA_MEASUREMENT_ID || typeof window === 'undefined') return;
 
-    // Initialiser Google Analytics
-    const script = document.createElement('script');
-    script.async = true;
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
-    document.head.appendChild(script);
+    // Lazy loading de Google Analytics après le chargement de la page
+    const loadGA = () => {
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+      document.head.appendChild(script);
+    };
+
+    // Charger GA après 2 secondes ou quand l'utilisateur interagit
+    const timer = setTimeout(loadGA, 2000);
+    
+    const handleUserInteraction = () => {
+      clearTimeout(timer);
+      loadGA();
+      // Supprimer les listeners après le premier chargement
+      document.removeEventListener('click', handleUserInteraction);
+      document.removeEventListener('scroll', handleUserInteraction);
+      document.removeEventListener('keydown', handleUserInteraction);
+    };
+
+    document.addEventListener('click', handleUserInteraction);
+    document.addEventListener('scroll', handleUserInteraction);
+    document.addEventListener('keydown', handleUserInteraction);
 
     // Configuration gtag
     window.dataLayer = window.dataLayer || [];
@@ -26,13 +44,14 @@ export default function GoogleAnalytics() {
       page_location: window.location.href,
     });
 
-    // Nettoyer le script au démontage
+    // Nettoyer au démontage
     return () => {
-      if (script.parentNode) {
-        script.parentNode.removeChild(script);
-      }
+      clearTimeout(timer);
+      document.removeEventListener('click', handleUserInteraction);
+      document.removeEventListener('scroll', handleUserInteraction);
+      document.removeEventListener('keydown', handleUserInteraction);
     };
-  }, []);
+  }, [GA_MEASUREMENT_ID]);
 
   if (!GA_MEASUREMENT_ID) {
     return null;
