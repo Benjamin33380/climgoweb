@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { PerformanceOptimizations } from '@/components/PerformanceOptimizations';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 
 const geistSans = Geist({
@@ -120,9 +119,7 @@ export default function AndernosLesBainsLayout({
 }>) {
   return (
     <>
-      <PerformanceOptimizations />
-        
-        {/* Schéma JSON-LD principal - LocalBusiness pour Andernos-les-Bains */}
+      {/* Schéma JSON-LD principal - LocalBusiness pour Andernos-les-Bains */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

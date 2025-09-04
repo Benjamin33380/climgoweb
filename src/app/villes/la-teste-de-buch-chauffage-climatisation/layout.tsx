@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { PerformanceOptimizations } from '@/components/PerformanceOptimizations';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 
 const geistSans = Geist({
@@ -120,9 +119,7 @@ export default function LaTesteDeBuchLayout({
 }>) {
   return (
     <>
-      <PerformanceOptimizations />
-        
-        {/* Schéma JSON-LD principal - LocalBusiness pour La Teste-de-Buch */}
+      {/* Schéma JSON-LD principal - LocalBusiness pour La Teste-de-Buch */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

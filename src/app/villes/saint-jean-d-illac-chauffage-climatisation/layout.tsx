@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { PerformanceOptimizations } from '@/components/PerformanceOptimizations';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 
 const geistSans = Geist({
@@ -125,9 +124,7 @@ export default function SaintJeanDIlacLayout({
 }>) {
   return (
     <>
-      <PerformanceOptimizations />
-        
-        {/* Schéma JSON-LD principal - LocalBusiness pour Saint-Jean-d'Illac */}
+      {/* Schéma JSON-LD principal - LocalBusiness pour Saint-Jean-d'Illac */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

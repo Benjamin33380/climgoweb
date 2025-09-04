@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { PerformanceOptimizations } from '@/components/PerformanceOptimizations';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 
 const geistSans = Geist({
@@ -125,9 +124,7 @@ export default function MartignasSurJalleLayout({
 }>) {
   return (
     <>
-      <PerformanceOptimizations />
-        
-        {/* Schéma JSON-LD principal - LocalBusiness pour Martignas-sur-Jalle */}
+      {/* Schéma JSON-LD principal - LocalBusiness pour Martignas-sur-Jalle */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

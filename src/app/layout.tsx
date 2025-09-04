@@ -8,7 +8,6 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { UserProvider } from "@/components/providers/UserProvider";
 import { GlobalScrollShadow } from '@/components/ui/GlobalScrollShadow';
 import { scrollShadowConfig } from '@/config/scrollShadow';
-import { PerformanceOptimizations } from '@/components/PerformanceOptimizations';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 
 const geistSans = Geist({
@@ -125,8 +124,6 @@ export default function RootLayout({
     <html lang="fr">
       <head>
         <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
-        <PerformanceOptimizations />
-        
         {/* Meta tags pour Safari status bar */}
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />

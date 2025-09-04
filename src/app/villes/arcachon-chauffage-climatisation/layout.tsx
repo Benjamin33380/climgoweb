@@ -1,7 +1,6 @@
 // app/villes/arcachon-chauffage-climatisation/layout.tsx
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { PerformanceOptimizations } from "@/components/PerformanceOptimizations";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const SITE = "https://www.climgo.fr";
@@ -315,7 +314,6 @@ export default function ArcachonLayout({
 
   return (
     <>
-      <PerformanceOptimizations />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness) }}
