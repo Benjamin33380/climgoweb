@@ -42,6 +42,11 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
       if (response.ok) {
         const userData = await response.json();
         setUser(userData.user);
+      } else if (response.status === 401) {
+        // Utilisateur non connecté - pas d'erreur à logger
+        setUser(null);
+      } else {
+        console.error('❌ [UserProvider] Erreur lors de la vérification de l\'authentification:', response.status);
       }
     } catch (error) {
       console.error('❌ [UserProvider] Erreur lors de la vérification de l\'authentification:', error);

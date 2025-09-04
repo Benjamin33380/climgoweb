@@ -102,9 +102,9 @@ export default function FAQChat({
                         </span>
                       </div>
                       <div className="min-w-0 flex-1">
-                        <h4 className="text-sm font-semibold text-gray-900 dark:text-white truncate">
+                        <div className="text-sm font-semibold text-gray-900 dark:text-white truncate">
                           {profile.firstName} {profile.name}
-                        </h4>
+                        </div>
                         <p className="text-xs text-gray-500 dark:text-gray-400">Client</p>
                       </div>
                       <div className="ml-auto">

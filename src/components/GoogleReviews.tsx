@@ -169,9 +169,9 @@ export default function GoogleReviews({ placeId }: GoogleReviewsProps) {
                       {review.author_name.charAt(0).toUpperCase()}
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-semibold text-gray-900 dark:text-white text-xs sm:text-sm">
+                      <div className="font-semibold text-gray-900 dark:text-white text-xs sm:text-sm">
                         {review.author_name}
-                      </h4>
+                      </div>
                       <div className="flex items-center gap-1 mt-1">
                         {renderStars(review.rating)}
                       </div>

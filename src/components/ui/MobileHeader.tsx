@@ -46,6 +46,9 @@ export default function MobileHeader() {
               size="icon"
               className="h-10 w-10 text-gray-700 dark:text-gray-300"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label={isMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+              aria-expanded={isMenuOpen}
+              aria-haspopup="menu"
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
@@ -56,7 +59,7 @@ export default function MobileHeader() {
       {/* Menu Mobile Overlay */}
       {isMenuOpen && (
         <div className="lg:hidden fixed inset-0 z-40 bg-black/50 dark:bg-black/80 backdrop-blur-sm" onClick={() => setIsMenuOpen(false)}>
-          <div className="fixed inset-0 top-16 bg-white dark:bg-background border-r border-border shadow-2xl transform transition-transform duration-300 ease-in-out overflow-hidden">
+          <div className="fixed inset-0 top-16 bg-white dark:bg-background border-r border-border shadow-2xl transform transition-transform duration-300 ease-in-out overflow-hidden" role="menu" aria-label="Menu de navigation mobile">
             <div className="h-full overflow-y-auto p-6 space-y-6">
               {/* Navigation */}
               <nav className="space-y-4">

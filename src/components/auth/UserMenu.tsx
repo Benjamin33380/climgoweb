@@ -13,8 +13,9 @@ export function UserMenu() {
   if (!user) {
     return (
       <Button variant="ghost" size="icon" asChild>
-        <Link href="/auth" className="h-8 w-8 rounded-full p-0">
+        <Link href="/auth" className="h-8 w-8 rounded-full p-0" aria-label="Se connecter">
           <User className="h-4 w-4" />
+          <span className="sr-only">Se connecter</span>
         </Link>
       </Button>
     );
@@ -45,6 +46,9 @@ export function UserMenu() {
         variant="outline"
         onClick={() => setIsOpen(!isOpen)}
         className="w-10 h-10 border-border bg-background text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
+        aria-label={`Menu utilisateur de ${getDisplayName()}`}
+        aria-expanded={isOpen}
+        aria-haspopup="menu"
       >
         <span className="text-sm font-medium">
           {getInitials()}
@@ -52,7 +56,7 @@ export function UserMenu() {
       </Button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-56 bg-background border border-border rounded-lg shadow-lg z-50">
+        <div className="absolute right-0 mt-2 w-56 bg-background border border-border rounded-lg shadow-lg z-50" role="menu" aria-label="Menu utilisateur">
           <div className="p-4 border-b border-border">
             <div className="flex flex-col space-y-1">
               <p className="text-sm font-medium leading-none">{getDisplayName()}</p>

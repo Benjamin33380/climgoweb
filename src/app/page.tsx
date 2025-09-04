@@ -149,6 +149,9 @@ export default function HomePage() {
             alt="ClimGO - Installation climatisation"
             fill
             className="h-full w-full object-cover transition-opacity duration-1000"
+            priority={currentImageIndex === 0}
+            quality={85}
+            sizes="100vw"
           />
         </div>
 
@@ -176,6 +179,8 @@ export default function HomePage() {
               initial={{ scale: 1 }}
               animate={{ scale: 1.2 }}
               transition={{ duration: 18, ease: "easeInOut" }}
+              loading={currentImageIndex === 0 ? "eager" : "lazy"}
+              decoding="async"
             />
           </div>
         </motion.div>
@@ -524,7 +529,7 @@ export default function HomePage() {
                     Financement sur mesure
                   </h3>
                   <p className="text-sm xs:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
-                    Aides mobilisées, paiements facilités, solutions adaptées à votre situation. <strong>Vous ne vous occupez de rien.</strong>
+                    Aides mobilisées, paiements facilités, solutions adaptées à votre situation. <strong className="text-gray-900 dark:text-white">Vous ne vous occupez de rien.</strong>
                   </p>
                 </div>
                 {/* Contenu desktop */}
@@ -533,7 +538,7 @@ export default function HomePage() {
                     Financement sur mesure
                   </h3>
                   <p className="text-base lg:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-                    Aides mobilisées, paiements facilités, solutions adaptées à votre situation. <strong>Vous ne vous occupez de rien.</strong>
+                    Aides mobilisées, paiements facilités, solutions adaptées à votre situation. <strong className="text-gray-900 dark:text-white">Vous ne vous occupez de rien.</strong>
                   </p>
                 </div>
               </div>
@@ -544,8 +549,9 @@ export default function HomePage() {
               <Link
                 href="/contact"
                 className="inline-flex items-center px-6 xs:px-7 py-3 rounded-full text-sm xs:text-base font-semibold
-                           bg-white text-gray-900 ring-1 ring-black/10 shadow-md hover:shadow-lg
-                           dark:bg-gray-100 dark:text-gray-900 transition-transform hover:-translate-y-0.5"
+                           bg-white text-gray-900 border-2 border-gray-900 hover:bg-gray-900 hover:text-white
+                           dark:bg-transparent dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-gray-900
+                           transition-all duration-300 shadow-md hover:shadow-lg"
                 aria-label="Obtenez votre devis gratuit"
               >
                 Obtenez votre devis gratuit
