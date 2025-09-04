@@ -33,10 +33,10 @@ export default function LazyGoogleMaps({ backgroundColor = "bg-white dark:bg-bla
 
   useEffect(() => {
     if (isInView && !isLoaded) {
-      // Délai de 3 secondes pour éviter de charger immédiatement
+      // Délai de 5 secondes pour éviter de charger immédiatement
       const timer = setTimeout(() => {
         setIsLoaded(true);
-      }, 3000);
+      }, 5000);
 
       return () => clearTimeout(timer);
     }

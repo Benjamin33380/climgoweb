@@ -1,6 +1,14 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
+  // Configuration pour les navigateurs modernes
+  swcMinify: true,
+  
+  // Configuration SWC pour éviter les polyfills inutiles
+  experimental: {
+    optimizePackageImports: ['lucide-react', '@radix-ui/react-icons', 'framer-motion'],
+  },
+  
   // Configuration des images
   images: {
     formats: ['image/webp', 'image/avif'],
@@ -38,14 +46,21 @@ const nextConfig: NextConfig = {
     removeConsole: process.env.NODE_ENV === 'production',
   },
 
-  // Optimisations expérimentales
-  experimental: {
-    optimizePackageImports: ['lucide-react', '@radix-ui/react-icons', 'framer-motion'],
-  },
 
   // Configuration webpack pour optimiser les chunks
   webpack: (config, { isServer }) => {
     if (!isServer) {
+      // Configuration pour les navigateurs modernes
+      config.target = ['web', 'es2022'];
+      
+      // Éviter les polyfills inutiles
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+        net: false,
+        tls: false,
+      };
+      
       config.optimization.splitChunks = {
                   chunks: 'all',
           minSize: 20000,
@@ -68,7 +83,8 @@ const nextConfig: NextConfig = {
             chunks: 'all',
             enforce: true,
             reuseExistingChunk: true,
-            maxSize: 100000,
+            maxSize: 80000,
+            minSize: 50000,
           },
           // Chunk pour Framer Motion
           framer: {
@@ -86,6 +102,8 @@ const nextConfig: NextConfig = {
             minChunks: 2,
             enforce: true,
             reuseExistingChunk: true,
+            maxSize: 50000,
+            minSize: 20000,
           },
           // Chunk par défaut
           default: {
