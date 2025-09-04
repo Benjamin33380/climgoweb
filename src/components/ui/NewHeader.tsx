@@ -2,10 +2,11 @@
 import * as React from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Phone, Wrench, Droplet, Settings, FileText, Menu, Mail, MessageSquare, AirVent, Building, BadgeEuro } from "lucide-react"
+import { Phone, Wrench, Droplet, Settings, FileText, Menu, Mail, MessageSquare, AirVent, Building, BadgeEuro, Waves, MapPin, TreePine, Home } from "lucide-react"
 import { ModeToggle } from "@/components/ui/mode-toggle"
 import { Button } from "@/components/ui/button"
 import { LogoWithFallback } from "@/components/ui/Logo3D"
+import { Globe3D } from "@/components/ui/Globe3D"
 import { UserMenu } from "@/components/auth/UserMenu"
 import { useUser } from "@/components/providers/UserProvider"
 import { useState, useEffect } from "react"
@@ -51,26 +52,30 @@ const services: { title: string; href: string; description: string; icon: React.
   },
 ]
 
-const zones: { title: string; href: string; description: string }[] = [
+const zones: { title: string; href: string; description: string; icon: React.ReactNode }[] = [
   {
     title: "Bassin d'Arcachon",
     href: "/zones-interventions",
     description: "Arcachon, La Teste-de-Buch, Gujan-Mestras, Le Teich, Andernos...",
+    icon: <Waves className="w-4 h-4" />,
   },
   {
     title: "Bordeaux Métropole",
     href: "/zones-interventions", 
     description: "Bordeaux, Mérignac, Pessac, Talence, Bègles, Bruges...",
+    icon: <MapPin className="w-4 h-4" />,
   },
   {
     title: "Pays des Graves",
     href: "/zones-interventions",
     description: "Gradignan, Cestas, Léognan, Martillac, La Brède...",
+    icon: <TreePine className="w-4 h-4" />,
   },
   {
-    title: "Nord Landes",
+    title: "Médoc & Nord Landes",
     href: "/zones-interventions",
-    description: "Mimizan, Biscarrosse, Parentis-en-Born, Sanguinet...",
+    description: "Lacanau, Mimizan, Biscarrosse, Parentis-en-Born...",
+    icon: <Home className="w-4 h-4" />,
   },
 ]
 
@@ -176,39 +181,63 @@ export default function NewHeader() {
               <NavigationMenuItem>
                 <NavigationMenuTrigger>Zones d'intervention</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="w-[400px] p-6">
-                    <div className="mb-4">
+                  <div className="w-[500px] p-6">
+                    <div className="mb-6">
                       <h3 className="text-lg font-semibold mb-2">+50 communes desservies</h3>
                       <p className="text-sm text-muted-foreground">Gironde et Nord des Landes</p>
                     </div>
-                    <ul className="grid gap-3">
-                      {zones.map((zone) => (
-                        <li key={zone.title}>
-                          <NavigationMenuLink asChild>
-                            <Link 
-                              href={zone.href}
-                              className="block select-none space-y-2 rounded-lg p-4 leading-none no-underline outline-none transition-all hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                            >
-                              <div className="text-sm font-medium leading-none mb-2">
-                                {zone.title}
-                              </div>
-                              <p className="text-xs leading-snug text-muted-foreground">
-                                {zone.description}
-                              </p>
-                            </Link>
-                          </NavigationMenuLink>
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="mt-4 pt-4 border-t">
+                    
+                    {/* Card principale avec globe 3D */}
+                    <div className="mb-6">
                       <NavigationMenuLink asChild>
                         <Link 
                           href="/zones-interventions"
-                          className="flex items-center justify-center w-full p-3 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
+                          className="block select-none space-y-3 rounded-xl p-5 leading-none no-underline outline-none transition-all hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground border border-border/50 hover:border-border"
                         >
-                          Voir toutes les communes →
+                          <div className="flex items-center gap-4">
+                            <div className="flex items-center justify-center w-16 h-16 rounded-xl bg-primary/10">
+                              <Globe3D className="w-12 h-12" />
+                            </div>
+                            <div className="flex-1">
+                              <div className="text-base font-semibold leading-none mb-1">
+                                Carte interactive
+                              </div>
+                              <p className="text-sm leading-snug text-muted-foreground">
+                                Explorez toutes nos zones d'intervention
+                              </p>
+                            </div>
+                            <div className="text-primary">
+                              →
+                            </div>
+                          </div>
                         </Link>
                       </NavigationMenuLink>
+                    </div>
+
+                    {/* Zones principales - style services */}
+                    <div className="grid grid-cols-2 gap-3">
+                      {zones.map((zone) => (
+                        <NavigationMenuLink key={zone.title} asChild>
+                          <Link 
+                            href={zone.href}
+                            className="block select-none space-y-2 rounded-lg p-4 leading-none no-underline outline-none transition-all hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground border border-transparent hover:border-border/50"
+                          >
+                            <div className="flex items-center gap-3">
+                              <div className="flex items-center justify-center w-8 h-8 rounded-md bg-muted">
+                                {zone.icon}
+                              </div>
+                              <div className="flex-1">
+                                <div className="text-sm font-medium leading-none mb-1">
+                                  {zone.title}
+                                </div>
+                                <p className="text-xs leading-snug text-muted-foreground">
+                                  {zone.description}
+                                </p>
+                              </div>
+                            </div>
+                          </Link>
+                        </NavigationMenuLink>
+                      ))}
                     </div>
                   </div>
                 </NavigationMenuContent>
