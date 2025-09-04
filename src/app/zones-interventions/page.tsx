@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { ChevronRight, ArrowRight, Phone, MapPin, Clock, Star, Building2, Mountain, TreePine, Waves, Home, Users } from 'lucide-react';
 import { Globe } from '@/components/ui/globe';
-import LocationMap from '@/components/LocationMap';
+import LazyGoogleMaps from '@/components/LazyGoogleMaps';
 
 // Types
 interface City {
@@ -305,7 +305,7 @@ export default function ZonesInterventions() {
           </div>
           
           <div className="max-w-6xl mx-auto">
-            <LocationMap 
+            <LazyGoogleMaps 
               backgroundColor="bg-white dark:bg-black"
             />
           </div>

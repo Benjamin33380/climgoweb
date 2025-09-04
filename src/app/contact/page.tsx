@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Phone, Mail, MapPin, Clock, Star, User, MessageSquare, Building, Wrench, Droplet, Settings, FileText, Home, AirVent } from 'lucide-react';
 import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
-import LocationMap from '@/components/LocationMap';
+import LazyGoogleMaps from '@/components/LazyGoogleMaps';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -472,7 +472,7 @@ export default function ContactPage() {
       </section>
 
       {/* Location Map Section */}
-              <LocationMap backgroundColor="bg-white dark:bg-black" />
+              <LazyGoogleMaps backgroundColor="bg-white dark:bg-black" />
 
       <style jsx global>{`
         @keyframes float {

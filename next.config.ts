@@ -62,6 +62,8 @@ const nextConfig: NextConfig = {
             name: 'three',
             priority: 15,
             chunks: 'all',
+            enforce: true,
+            reuseExistingChunk: true,
           },
           // Chunk pour Framer Motion
           framer: {
@@ -77,6 +79,8 @@ const nextConfig: NextConfig = {
             priority: 5,
             chunks: 'all',
             minChunks: 2,
+            enforce: true,
+            reuseExistingChunk: true,
           },
           // Chunk par défaut
           default: {

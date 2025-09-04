@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Droplets, Flame, Snowflake, Settings } from 'lucide-react';
 import Link from 'next/link';
 import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
-import LocationMap from '@/components/LocationMap';
+import LazyGoogleMaps from '@/components/LazyGoogleMaps';
 
 // Définir le type pour les sections
 type SectionType = 'clim' | 'chauffage' | 'eau-chaude' | 'maintenance' | null;
@@ -563,7 +563,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Location Map Section */}
-      <LocationMap backgroundColor="bg-white dark:bg-black" />
+      <LazyGoogleMaps backgroundColor="bg-white dark:bg-black" />
 
     </div>
   );

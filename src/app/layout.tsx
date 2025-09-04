@@ -9,6 +9,7 @@ import { UserProvider } from "@/components/providers/UserProvider";
 import { GlobalScrollShadow } from '@/components/ui/GlobalScrollShadow';
 import { scrollShadowConfig } from '@/config/scrollShadow';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
+import PassiveEventListeners from '@/components/PassiveEventListeners';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -466,6 +467,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
             <UserProvider>
               <GoogleAnalytics />
+              <PassiveEventListeners />
               <GlobalScrollShadow
                 size={scrollShadowConfig.size}
                 shadowColor={scrollShadowConfig.shadowColor}

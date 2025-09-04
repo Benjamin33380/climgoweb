@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Wrench, DraftingCompass, ShieldCheck, BadgeEuro } from 'lucide-react';
 import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
-import LocationMap from '@/components/LocationMap';
+import LazyGoogleMaps from '@/components/LazyGoogleMaps';
 
 export default function ClimatisationPage() {
   const solutionsRef = useRef<HTMLDivElement>(null);
@@ -360,7 +360,7 @@ export default function ClimatisationPage() {
       </section>
 
       {/* Location Map Section */}
-              <LocationMap backgroundColor="bg-white dark:bg-black" />
+              <LazyGoogleMaps backgroundColor="bg-white dark:bg-black" />
 
       <style jsx global>{`
         @keyframes float {
