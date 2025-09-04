@@ -1,6 +1,12 @@
 'use client'
 
-import { Logo3D } from '@/components/Logo3D'
+import dynamic from 'next/dynamic'
+
+// Import dynamique du Logo3D pour optimiser le chargement
+const Logo3D = dynamic(() => import('@/components/Logo3D').then(mod => ({ default: mod.Logo3D })), {
+  ssr: false,
+  loading: () => <div className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 bg-gray-200 animate-pulse rounded-lg" />
+})
 
 interface SplineHeroProps {
   title: string

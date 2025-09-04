@@ -5,8 +5,18 @@ import Image from "next/image"
 import { Phone, Wrench, Droplet, Settings, FileText, Menu, Mail, MessageSquare, AirVent, Building, BadgeEuro, Waves, MapPin, TreePine, Home } from "lucide-react"
 import { ModeToggle } from "@/components/ui/mode-toggle"
 import { Button } from "@/components/ui/button"
-import { LogoWithFallback } from "@/components/ui/Logo3D"
-import { Globe3D } from "@/components/ui/Globe3D"
+import dynamic from 'next/dynamic'
+
+// Import dynamique des composants 3D pour optimiser le chargement
+const LogoWithFallback = dynamic(() => import("@/components/ui/Logo3D").then(mod => ({ default: mod.LogoWithFallback })), {
+  ssr: false,
+  loading: () => <div className="w-8 h-8 bg-gray-200 animate-pulse rounded" />
+})
+
+const Globe3D = dynamic(() => import("@/components/ui/Globe3D").then(mod => ({ default: mod.Globe3D })), {
+  ssr: false,
+  loading: () => <div className="w-12 h-12 bg-gray-200 animate-pulse rounded" />
+})
 import { UserMenu } from "@/components/auth/UserMenu"
 import { useUser } from "@/components/providers/UserProvider"
 import { useState, useEffect } from "react"

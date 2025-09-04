@@ -9,6 +9,11 @@ const nextConfig: NextConfig = {
     optimizePackageImports: ['lucide-react', '@radix-ui/react-icons', 'framer-motion'],
   },
   
+  // Configuration pour les navigateurs modernes (réduit les polyfills)
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+  
   // Configuration des images
   images: {
     formats: ['image/webp', 'image/avif'],
@@ -41,10 +46,6 @@ const nextConfig: NextConfig = {
   // Extensions de pages
   pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
 
-  // Compilateur
-  compiler: {
-    removeConsole: process.env.NODE_ENV === 'production',
-  },
 
 
   // Configuration webpack pour optimiser les chunks

@@ -37,19 +37,25 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
 
   const checkAuth = async () => {
     try {
-      const response = await fetch('/api/auth/me');
+      const response = await fetch('/api/auth/me', {
+        credentials: 'include' // S'assurer que les cookies sont inclus
+      });
       
       if (response.ok) {
         const userData = await response.json();
         setUser(userData.user);
       } else if (response.status === 401) {
-        // Utilisateur non connecté - pas d'erreur à logger
+        // Utilisateur non connecté - comportement normal
         setUser(null);
       } else {
         console.error('❌ [UserProvider] Erreur lors de la vérification de l\'authentification:', response.status);
       }
     } catch (error) {
-      console.error('❌ [UserProvider] Erreur lors de la vérification de l\'authentification:', error);
+      // Seulement logger les vraies erreurs réseau
+      if (error instanceof TypeError && error.message.includes('fetch')) {
+        console.error('❌ [UserProvider] Erreur réseau:', error);
+      }
+      setUser(null);
     } finally {
       setLoading(false);
     }
