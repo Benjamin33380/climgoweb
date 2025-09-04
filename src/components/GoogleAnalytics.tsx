@@ -17,8 +17,8 @@ export default function GoogleAnalytics() {
       document.head.appendChild(script);
     };
 
-    // Charger GA après 5 secondes ou quand l'utilisateur interagit
-    const timer = setTimeout(loadGA, 5000);
+    // Charger GA après 8 secondes ou quand l'utilisateur interagit
+    const timer = setTimeout(loadGA, 8000);
     
     const handleUserInteraction = () => {
       clearTimeout(timer);

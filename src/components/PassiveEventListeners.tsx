@@ -9,14 +9,22 @@ export default function PassiveEventListeners() {
       element.addEventListener(event, handler, { passive: true });
     };
 
-    // Optimiser le scroll
+    // Optimiser le scroll avec throttling
+    let scrollTimeout: NodeJS.Timeout;
     const handleScroll = () => {
-      // Gestion passive du scroll
+      if (scrollTimeout) clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        // Gestion passive du scroll
+      }, 16); // ~60fps
     };
 
-    // Optimiser le touch
+    // Optimiser le touch avec throttling
+    let touchTimeout: NodeJS.Timeout;
     const handleTouch = () => {
-      // Gestion passive du touch
+      if (touchTimeout) clearTimeout(touchTimeout);
+      touchTimeout = setTimeout(() => {
+        // Gestion passive du touch
+      }, 16); // ~60fps
     };
 
     // Ajouter les listeners passifs
