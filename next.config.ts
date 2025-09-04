@@ -2,7 +2,7 @@ import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   // Configuration pour les navigateurs modernes
-  swcMinify: true,
+  // swcMinify: true, // Déprécié dans Next.js 15
   
   // Configuration SWC pour éviter les polyfills inutiles
   experimental: {
@@ -14,9 +14,9 @@ const nextConfig: NextConfig = {
     removeConsole: process.env.NODE_ENV === 'production',
   },
   
-  // Configuration des images
+  // Configuration des images optimisée
   images: {
-    formats: ['image/webp', 'image/avif'],
+    formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 31536000,
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",

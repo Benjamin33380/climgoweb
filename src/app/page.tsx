@@ -12,7 +12,7 @@ import Image from "next/image";
 
 export default function HomePage() {
 
-  // Images hero avec rotation
+  // Images hero avec rotation - optimisées
   const heroImages = [
     '/img/clim-caudéran.jpeg',
     '/img/uicauderan.jpeg',

@@ -10,6 +10,7 @@ import { GlobalScrollShadow } from '@/components/ui/GlobalScrollShadow';
 import { scrollShadowConfig } from '@/config/scrollShadow';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import PassiveEventListeners from '@/components/PassiveEventListeners';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -468,6 +469,7 @@ export default function RootLayout({
             <UserProvider>
               <GoogleAnalytics />
               <PassiveEventListeners />
+              <SpeedInsights />
               <GlobalScrollShadow
                 size={scrollShadowConfig.size}
                 shadowColor={scrollShadowConfig.shadowColor}
