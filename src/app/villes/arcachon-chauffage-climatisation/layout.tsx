@@ -131,9 +131,9 @@ export default function ArcachonLayout({
       opens: "08:00",
       closes: "19:30"
     },
-    serviceArea: [
+    areaServed: [
       {
-        "@type": "Place",
+        "@type": "AdministrativeArea",
         name: "Gironde"
       },
       {
@@ -169,7 +169,6 @@ export default function ArcachonLayout({
         name: "Andernos-les-Bains"
       }
     ],
-    slogan: "Votre confort thermique, notre priorité.",
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "5.0",
@@ -221,8 +220,6 @@ export default function ArcachonLayout({
         }
       ]
     },
-    areaServed: { "@type": "City", name: "Arcachon" },
-    serviceType: "Chauffage et Climatisation",
     description: "Installation, entretien et dépannage de systèmes de chauffage et climatisation à Arcachon"
   };
 

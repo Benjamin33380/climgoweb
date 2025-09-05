@@ -127,14 +127,12 @@ export default function Biganos() {
     <main className="px-0">
       <section className="hero-mobile-section relative h-[100vh] xs:h-[95vh] sm:h-[90vh] min-h-[500px] xs:min-h-[550px] sm:min-h-[600px] md:min-h-[640px] lg:min-h-[700px] xl:min-h-[750px] w-full overflow-hidden bg-transparent sm:bg-white sm:dark:bg-black text-black dark:text-white">
         {/* Zone image avec effet zoom - Responsive avec adaptation mobile */}
-        <div className="absolute top-0 left-0 h-full w-full z-1 sm:hidden">
-          <Image
-            src="/villes/biganos.webp"
-            alt="Biganos - Bassin d'Arcachon"
-            fill
-            className="h-full w-full object-cover transition-opacity duration-1000"
-            priority
-          />
+        <div className="absolute top-0 left-0 h-full w-full z-1 sm:hidden bg-gray-100 dark:bg-gray-800">
+          <div className="flex items-center justify-center h-full">
+            <p className="text-gray-500 dark:text-gray-400 text-center px-4">
+              Biganos - Bassin d'Arcachon
+            </p>
+          </div>
         </div>
 
         <motion.div
@@ -151,13 +149,11 @@ export default function Biganos() {
               clipPath: 'polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%)'
             }}
           >
-            <Image
-              src="/villes/biganos.webp"
-              alt="Biganos - Bassin d'Arcachon"
-              fill
-              className="h-full w-full object-cover object-center"
-              priority
-            />
+            <div className="flex items-center justify-center h-full">
+              <p className="text-gray-500 dark:text-gray-400 text-center px-4">
+                Biganos - Bassin d'Arcachon
+              </p>
+            </div>
           </div>
         </motion.div>
 
