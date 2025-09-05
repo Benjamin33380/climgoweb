@@ -127,9 +127,9 @@ export default function BordeauxLayout({
       opens: "08:00",
       closes: "19:30"
     },
-    serviceArea: [
+    areaServed: [
       {
-        "@type": "Place",
+        "@type": "AdministrativeArea",
         name: "Gironde"
       },
       {
@@ -165,7 +165,6 @@ export default function BordeauxLayout({
         name: "Bruges"
       }
     ],
-    slogan: "Votre confort thermique, notre priorité.",
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "5.0",
@@ -217,8 +216,6 @@ export default function BordeauxLayout({
         }
       ]
     },
-    areaServed: { "@type": "City", name: "Bordeaux" },
-    serviceType: "Chauffage et Climatisation",
     description: "Installation, entretien et dépannage de systèmes de chauffage et climatisation à Bordeaux"
   };
 

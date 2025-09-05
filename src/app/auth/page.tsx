@@ -111,6 +111,7 @@ export default function AuthPage() {
     <div className="min-h-screen flex items-center justify-center bg-background p-4">
       <Card className="w-full max-w-md">
         <CardHeader className="text-center">
+          <h1 className="text-3xl font-bold text-foreground mb-2">Connexion ClimGO</h1>
           <CardTitle className="text-2xl font-bold">ClimGO</CardTitle>
           <p className="text-muted-foreground">
             Connectez-vous ou créez votre compte

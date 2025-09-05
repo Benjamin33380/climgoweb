@@ -47,7 +47,15 @@ export function CitySchema(cityData: CityConfig) {
                   "url": `https://www.climgo.fr/${service.toLowerCase().replace(/\s+/g, '-')}`,
                   "provider": {
                     "@type": "HVACBusiness",
-                    "name": "ClimGO"
+                    "name": "ClimGO",
+                    "address": {
+                      "@type": "PostalAddress",
+                      "streetAddress": "28 rue de Cantelaude",
+                      "addressLocality": "Marcheprime",
+                      "addressRegion": "Nouvelle-Aquitaine",
+                      "postalCode": "33380",
+                      "addressCountry": "FR"
+                    }
                   }
                 }
               }))
@@ -77,16 +85,11 @@ export function CitySchema(cityData: CityConfig) {
             ]
           },
           "potentialAction": {
-            "@type": "ContactAction",
+            "@type": "SearchAction",
             "name": `Demander un devis à ${cityData.name}`,
             "target": {
               "@type": "EntryPoint",
-              "urlTemplate": "https://www.climgo.fr/contact",
-              "inLanguage": "fr-FR"
-            },
-            "result": {
-              "@type": "Quote",
-              "name": `Devis chauffage climatisation ${cityData.name}`
+              "urlTemplate": "https://www.climgo.fr/contact"
             }
           }
         })

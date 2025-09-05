@@ -248,7 +248,7 @@ export default function RootLayout({
                   "name": "Pyla-sur-Mer"
                 }
              ],
-              "foundingDate": "2025",
+              "foundingDate": "2014",
               "founder": {
                 "@type": "Person",
                 "name": "ClimGO Team"
