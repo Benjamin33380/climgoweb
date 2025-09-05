@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Chauffe-eau Gironde | Installation & Maintenance",
+  title: "Eau chaude sanitaire ClimGO | Installation & Maintenance Gironde",
   description: "Installation et maintenance de chauffe-eau en Gironde. ClimGO, expert en eau chaude sanitaire. Devis gratuit, intervention rapide.",
   keywords: [
     "chauffe-eau Gironde",
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     "devis gratuit",
   ],
   openGraph: {
-    title: "Chauffe-eau Gironde | Installation & Maintenance",
+    title: "Eau chaude sanitaire ClimGO | Installation & Maintenance Gironde",
     description: "Installation et maintenance de chauffe-eau en Gironde. ClimGO, expert en eau chaude sanitaire. Devis gratuit, intervention rapide.",
     url: "https://www.climgo.fr/eau-chaude-sanitaire",
     siteName: "ClimGO",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@climgo_fr",
     creator: "@climgo_fr",
-    title: "Chauffe-eau Gironde | Installation & Maintenance",
+    title: "Eau chaude sanitaire ClimGO | Installation & Maintenance Gironde",
     description: "Installation et maintenance de chauffe-eau en Gironde. ClimGO, expert en eau chaude sanitaire. Devis gratuit, intervention rapide.",
     images: ["/img/serp/ecs.webp"],
   },

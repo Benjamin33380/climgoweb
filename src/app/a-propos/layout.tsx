@@ -1,12 +1,12 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'À propos de ClimGO | Expert Chauffage Climatisation',
+  title: 'À propos de ClimGO | Expert Chauffage Climatisation Gironde',
   description: 'Découvrez ClimGO, votre expert en chauffage et climatisation en Gironde depuis plus de 10 ans. Artisan RGE certifié.',
   keywords: 'ClimGO, expert chauffage climatisation, artisan RGE Gironde, entreprise chauffage, ClimGO histoire, ClimGO équipe',
   
   openGraph: {
-    title: 'À propos de ClimGO | Expert Chauffage Climatisation',
+    title: 'À propos de ClimGO | Expert Chauffage Climatisation Gironde',
     description: 'Découvrez ClimGO, votre expert en chauffage et climatisation en Gironde depuis plus de 10 ans. Artisan RGE certifié.',
     url: 'https://www.climgo.fr/a-propos',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'À propos de ClimGO | Expert Chauffage Climatisation',
+    title: 'À propos de ClimGO | Expert Chauffage Climatisation Gironde',
     description: 'Découvrez ClimGO, votre expert en chauffage et climatisation en Gironde depuis plus de 10 ans.',
     images: ['https://www.climgo.fr/images/og/a-propos-climgo.jpg'],
   },
