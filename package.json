@@ -9,7 +9,8 @@
     "lint": "next lint",
     "create-admin": "node scripts/createAdminMongo.js",
     "check-admin": "node scripts/checkAdminMongo.js",
-    "optimize": "node scripts/optimize-project.js"
+    "optimize": "node scripts/optimize-project.js",
+    "optimize-performance": "node scripts/optimize-performance.js"
   },
   "dependencies": {
     "@heroui/react": "^2.8.2",

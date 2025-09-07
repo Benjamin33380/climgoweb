@@ -28,6 +28,9 @@ const nextConfig: NextConfig = {
         hostname: '**',
       },
     ],
+    // Optimisation supplémentaire
+    unoptimized: false,
+    loader: 'default',
   },
 
   // Compression

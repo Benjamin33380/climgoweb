@@ -6,8 +6,9 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import MarkdownRenderer from '@/components/ui/MarkdownRenderer';
 import ActionButtons from './ActionButtons';
-import InternalLinking from './InternalLinking';
+import InternalLinkingOptimized from '@/components/blog/InternalLinkingOptimized';
 import CommentSection from './CommentSection';
+import { getCachedArticles, getCachedComments, getCachedRatings } from '@/lib/blog-cache';
 import { 
   Calendar, 
   User, 
@@ -16,9 +17,13 @@ import {
   Eye 
 } from 'lucide-react';
 import Image from 'next/image';
+import { Suspense } from 'react';
 
-// Revalidation toutes les 60 secondes
-export const revalidate = 60;
+// Optimisation : Revalidation plus longue pour les articles (1 heure)
+export const revalidate = 3600;
+
+// Optimisation : Cache statique pour les articles
+export const dynamic = 'force-static';
 
 interface ArticlePageProps {
   params: Promise<{
@@ -81,8 +86,11 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
 }
 
 export default async function ArticlePage({ params }: ArticlePageProps) {
+  const slug = (await params).slug;
+  
+  // Optimisation : Récupérer d'abord l'article pour avoir son ID
   const article = await prisma.article.findUnique({
-    where: { slug: (await params).slug, published: true },
+    where: { slug, published: true },
     include: {
       author: {
         select: {
@@ -104,97 +112,12 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
     notFound();
   }
 
-  // Récupérer tous les articles publiés pour le maillage interne
-  const dbAllArticles = await prisma.article.findMany({
-    where: { published: true },
-    select: {
-      id: true,
-      title: true,
-      slug: true,
-      excerpt: true,
-      imageUrl: true,
-      createdAt: true
-    },
-    orderBy: {
-      createdAt: 'desc'
-    }
-  });
-
-  // Transformer les articles pour le maillage interne
-  const allArticles = dbAllArticles.map(article => ({
-    id: article.id,
-    title: article.title,
-    slug: article.slug,
-    excerpt: article.excerpt,
-    imageUrl: article.imageUrl,
-    createdAt: article.createdAt?.toISOString() || new Date().toISOString()
-  }));
-
-  // Récupérer les commentaires approuvés
-  const dbComments = await prisma.comment.findMany({
-    where: {
-      articleId: article.id,
-      isApproved: true
-    },
-    include: {
-      author: {
-        select: {
-          id: true,
-          firstName: true,
-          lastName: true,
-          email: true
-        }
-      }
-    },
-    orderBy: {
-      createdAt: 'desc'
-    }
-  });
-
-  // Récupérer les ratings
-  const dbRatings = await prisma.rating.findMany({
-    where: {
-      articleId: article.id
-    },
-    include: {
-      author: {
-        select: {
-          id: true,
-          firstName: true,
-          lastName: true
-        }
-      }
-    },
-    orderBy: {
-      createdAt: 'desc'
-    }
-  });
-
-  // Transformer les commentaires pour correspondre à l'interface
-  const comments = dbComments.map(comment => ({
-    id: comment.id,
-    content: comment.content,
-    author: {
-      id: comment.author.id,
-      firstName: comment.author.firstName,
-      lastName: comment.author.lastName,
-      email: comment.author.email
-    },
-    isApproved: comment.isApproved,
-    createdAt: comment.createdAt.toISOString()
-  }));
-
-  // Transformer les ratings pour correspondre à l'interface
-  const ratings = dbRatings.map(rating => ({
-    id: rating.id,
-    value: rating.value,
-    author: {
-      id: rating.author.id,
-      firstName: rating.author.firstName,
-      lastName: rating.author.lastName
-    },
-    createdAt: rating.createdAt.toISOString()
-  }));
+  // Optimisation : Utilisation du cache pour les requêtes parallèles
+  const [allArticles, comments, ratings] = await Promise.all([
+    getCachedArticles(),
+    getCachedComments(article.id),
+    getCachedRatings(article.id)
+  ]);
 
   // Parser le contenu Markdown
   // Calculer le temps de lecture (environ 200 mots par minute)
@@ -207,15 +130,19 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Hero Section avec image */}
+      {/* Hero Section avec image optimisée */}
       {article.imageUrl && (
-        <div className="relative h-64 w-full md:h-96 rounded-xl">
+        <div className="relative h-64 w-full md:h-96 rounded-xl overflow-hidden">
           <Image
             src={article.imageUrl}
             alt={article.title}
             fill
             className="object-cover"
             priority={true}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+            quality={85}
+            placeholder="blur"
+            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
           />
         </div>
       )}
@@ -303,25 +230,34 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             </div>
           </div>
 
-          {/* Sidebar droite - Maillage interne */}
+          {/* Sidebar droite - Maillage interne optimisé */}
           <div className="lg:col-span-3 order-3">
-            <InternalLinking
+            <InternalLinkingOptimized
               currentArticleId={article.id}
-              articles={allArticles}
+              initialArticles={allArticles}
             />
           </div>
         </div>
       </div>
 
-      {/* Section des commentaires et ratings en bas */}
+      {/* Section des commentaires et ratings en bas - Chargement lazy */}
       <div className="bg-card border-t">
         <div className="container mx-auto px-4 py-12">
-          <CommentSection
-            articleSlug={article.slug}
-            articleId={article.id}
-            initialComments={comments}
-            initialRatings={ratings}
-          />
+          <Suspense fallback={
+            <div className="text-center py-8">
+              <div className="animate-pulse">
+                <div className="h-8 bg-muted rounded w-1/3 mx-auto mb-4"></div>
+                <div className="h-4 bg-muted rounded w-1/2 mx-auto"></div>
+              </div>
+            </div>
+          }>
+            <CommentSection
+              articleSlug={article.slug}
+              articleId={article.id}
+              initialComments={comments}
+              initialRatings={ratings}
+            />
+          </Suspense>
         </div>
       </div>
     </div>
