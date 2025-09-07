@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import GoogleAnalytics from '@/components/GoogleAnalytics';
+import { getCityCoordinates, generateGeoJsonLd, generateServiceAreaJsonLd } from "@/config/geo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -117,6 +118,9 @@ export default function BiganosLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Coordonnées de la mairie de Biganos
+  const biganosCoords = getCityCoordinates('biganos');
+  
   return (
     <>
       {/* Schéma JSON-LD principal - LocalBusiness pour Biganos */}
@@ -146,6 +150,8 @@ export default function BiganosLayout({
                 "postalCode": "33380",
                 "addressCountry": "FR"
               },
+              // Données géographiques de la mairie de Biganos
+              "geo": biganosCoords ? generateGeoJsonLd(biganosCoords, "Mairie de Biganos") : undefined,
               "contactPoint": {
                 "@type": "ContactPoint",
                 "telephone": "+33766460008",
@@ -158,31 +164,38 @@ export default function BiganosLayout({
               "areaServed": [
                 {
                   "@type": "Place",
-                  "name": "Biganos"
+                  "name": "Biganos",
+                  "geo": biganosCoords ? generateGeoJsonLd(biganosCoords, "Mairie de Biganos") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Arcachon"
+                  "name": "Arcachon",
+                  "geo": getCityCoordinates('arcachon') ? generateGeoJsonLd(getCityCoordinates('arcachon')!, "Mairie d'Arcachon") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "La Teste-de-Buch"
+                  "name": "La Teste-de-Buch",
+                  "geo": getCityCoordinates('la-teste-de-buch') ? generateGeoJsonLd(getCityCoordinates('la-teste-de-buch')!, "Mairie de La Teste-de-Buch") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Le Teich"
+                  "name": "Le Teich",
+                  "geo": getCityCoordinates('le-teich') ? generateGeoJsonLd(getCityCoordinates('le-teich')!, "Mairie du Teich") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Gujan-Mestras"
+                  "name": "Gujan-Mestras",
+                  "geo": getCityCoordinates('gujan-mestras') ? generateGeoJsonLd(getCityCoordinates('gujan-mestras')!, "Mairie de Gujan-Mestras") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Audenge"
+                  "name": "Audenge",
+                  "geo": getCityCoordinates('audenge') ? generateGeoJsonLd(getCityCoordinates('audenge')!, "Mairie d'Audenge") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Lanton"
+                  "name": "Lanton",
+                  "geo": getCityCoordinates('lanton') ? generateGeoJsonLd(getCityCoordinates('lanton')!, "Mairie de Lanton") : undefined
                 },
                 {
                   "@type": "Place",

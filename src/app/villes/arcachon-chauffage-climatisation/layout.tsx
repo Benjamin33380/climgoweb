@@ -2,6 +2,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import { getCityCoordinates, generateGeoJsonLd, generateServiceAreaJsonLd } from "@/config/geo";
 
 const SITE = "https://www.climgo.fr";
 const PATH = "/villes/arcachon-chauffage-climatisation";
@@ -108,6 +109,9 @@ export const metadata: Metadata = {
 export default function ArcachonLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  // Coordonnées de la mairie d'Arcachon
+  const arcachonCoords = getCityCoordinates('arcachon');
+  
   // 1) Entreprise locale (LocalBusiness)
   const localBusiness = {
     "@context": "https://schema.org",
@@ -124,6 +128,10 @@ export default function ArcachonLayout({
       postalCode: "33380",
       addressCountry: "FR",
     },
+    // Données géographiques de la mairie d'Arcachon
+    "geo": arcachonCoords ? generateGeoJsonLd(arcachonCoords, "Mairie d'Arcachon") : undefined,
+    // Zone de service avec géolocalisation (rayon de 25km autour d'Arcachon)
+    "serviceArea": arcachonCoords ? generateServiceAreaJsonLd(arcachonCoords, "25000") : undefined,
     priceRange: "$$",
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
@@ -145,28 +153,34 @@ export default function ArcachonLayout({
         name: "Bassin d'Arcachon"
       },
       {
-        "@type": "City",
-        name: "Arcachon"
+        "@type": "Place",
+        name: "Arcachon",
+        "geo": arcachonCoords ? generateGeoJsonLd(arcachonCoords, "Mairie d'Arcachon") : undefined
       },
       {
-        "@type": "City",
-        name: "Marcheprime"
+        "@type": "Place",
+        name: "Marcheprime",
+        "geo": getCityCoordinates('marcheprime') ? generateGeoJsonLd(getCityCoordinates('marcheprime')!, "Mairie de Marcheprime") : undefined
       },
       {
-        "@type": "City",
-        name: "Biganos"
+        "@type": "Place",
+        name: "Biganos",
+        "geo": getCityCoordinates('biganos') ? generateGeoJsonLd(getCityCoordinates('biganos')!, "Mairie de Biganos") : undefined
       },
       {
-        "@type": "City",
-        name: "Mios"
+        "@type": "Place",
+        name: "Mios",
+        "geo": getCityCoordinates('mios') ? generateGeoJsonLd(getCityCoordinates('mios')!, "Mairie de Mios") : undefined
       },
       {
-        "@type": "City",
-        name: "Bordeaux"
+        "@type": "Place",
+        name: "Bordeaux",
+        "geo": getCityCoordinates('bordeaux') ? generateGeoJsonLd(getCityCoordinates('bordeaux')!, "Mairie de Bordeaux") : undefined
       },
       {
-        "@type": "City",
-        name: "Andernos-les-Bains"
+        "@type": "Place",
+        name: "Andernos-les-Bains",
+        "geo": getCityCoordinates('andernos-les-bains') ? generateGeoJsonLd(getCityCoordinates('andernos-les-bains')!, "Mairie d'Andernos-les-Bains") : undefined
       }
     ],
     aggregateRating: {

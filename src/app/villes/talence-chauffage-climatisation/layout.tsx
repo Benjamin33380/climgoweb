@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import GoogleAnalytics from '@/components/GoogleAnalytics';
+import { getCityCoordinates, generateGeoJsonLd, generateServiceAreaJsonLd } from "@/config/geo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -122,6 +123,9 @@ export default function TalenceLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Coordonnées de la mairie de Talence
+  const talenceCoords = getCityCoordinates('talence');
+  
   return (
     <>
       {/* Schéma JSON-LD principal - LocalBusiness pour Talence */}
@@ -151,6 +155,8 @@ export default function TalenceLayout({
                 "postalCode": "33380",
                 "addressCountry": "FR"
               },
+              // Données géographiques de la mairie de Talence
+              "geo": talenceCoords ? generateGeoJsonLd(talenceCoords, "Mairie de Talence") : undefined,
               "contactPoint": {
                 "@type": "ContactPoint",
                 "telephone": "+33766460008",
@@ -163,31 +169,38 @@ export default function TalenceLayout({
               "areaServed": [
                 {
                   "@type": "Place",
-                  "name": "Talence"
+                  "name": "Talence",
+                  "geo": talenceCoords ? generateGeoJsonLd(talenceCoords, "Mairie de Talence") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Bordeaux"
+                  "name": "Bordeaux",
+                  "geo": getCityCoordinates('bordeaux') ? generateGeoJsonLd(getCityCoordinates('bordeaux')!, "Mairie de Bordeaux") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Pessac"
+                  "name": "Pessac",
+                  "geo": getCityCoordinates('pessac') ? generateGeoJsonLd(getCityCoordinates('pessac')!, "Mairie de Pessac") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Gradignan"
+                  "name": "Gradignan",
+                  "geo": getCityCoordinates('gradignan') ? generateGeoJsonLd(getCityCoordinates('gradignan')!, "Mairie de Gradignan") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Villenave-d'Ornon"
+                  "name": "Villenave-d'Ornon",
+                  "geo": getCityCoordinates('villenave-d-ornon') ? generateGeoJsonLd(getCityCoordinates('villenave-d-ornon')!, "Mairie de Villenave-d'Ornon") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Bègles"
+                  "name": "Bègles",
+                  "geo": getCityCoordinates('begles') ? generateGeoJsonLd(getCityCoordinates('begles')!, "Mairie de Bègles") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Canéjan"
+                  "name": "Canéjan",
+                  "geo": getCityCoordinates('canejan') ? generateGeoJsonLd(getCityCoordinates('canejan')!, "Mairie de Canéjan") : undefined
                 },
                 {
                   "@type": "Place",

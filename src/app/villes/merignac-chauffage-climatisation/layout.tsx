@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import GoogleAnalytics from '@/components/GoogleAnalytics';
+import { getCityCoordinates, generateGeoJsonLd, generateServiceAreaJsonLd } from "@/config/geo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -122,6 +123,9 @@ export default function MerignacLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Coordonnées de la mairie de Mérignac
+  const merignacCoords = getCityCoordinates('merignac');
+  
   return (
     <>
       {/* Schéma JSON-LD principal - LocalBusiness pour Mérignac */}
@@ -151,6 +155,8 @@ export default function MerignacLayout({
                 "postalCode": "33380",
                 "addressCountry": "FR"
               },
+              // Données géographiques de la mairie de Mérignac
+              "geo": merignacCoords ? generateGeoJsonLd(merignacCoords, "Mairie de Mérignac") : undefined,
               "priceRange": "$$",
               "openingHoursSpecification": {
                 "@type": "OpeningHoursSpecification",
@@ -183,40 +189,49 @@ export default function MerignacLayout({
                   "name": "Bordeaux Métropole"
                 },
                 {
-                  "@type": "City",
-                  "name": "Mérignac"
+                  "@type": "Place",
+                  "name": "Mérignac",
+                  "geo": merignacCoords ? generateGeoJsonLd(merignacCoords, "Mairie de Mérignac") : undefined
                 },
                 {
-                  "@type": "City",
-                  "name": "Bordeaux"
+                  "@type": "Place",
+                  "name": "Bordeaux",
+                  "geo": getCityCoordinates('bordeaux') ? generateGeoJsonLd(getCityCoordinates('bordeaux')!, "Mairie de Bordeaux") : undefined
                 },
                 {
-                  "@type": "City",
-                  "name": "Pessac"
+                  "@type": "Place",
+                  "name": "Pessac",
+                  "geo": getCityCoordinates('pessac') ? generateGeoJsonLd(getCityCoordinates('pessac')!, "Mairie de Pessac") : undefined
                 },
                 {
-                  "@type": "City",
-                  "name": "Le Haillan"
+                  "@type": "Place",
+                  "name": "Le Haillan",
+                  "geo": getCityCoordinates('le-haillan') ? generateGeoJsonLd(getCityCoordinates('le-haillan')!, "Mairie du Haillan") : undefined
                 },
                 {
-                  "@type": "City",
-                  "name": "Saint-Médard-en-Jalles"
+                  "@type": "Place",
+                  "name": "Saint-Médard-en-Jalles",
+                  "geo": getCityCoordinates('saint-medard-en-jalles') ? generateGeoJsonLd(getCityCoordinates('saint-medard-en-jalles')!, "Mairie de Saint-Médard-en-Jalles") : undefined
                 },
                 {
-                  "@type": "City",
-                  "name": "Martignas-sur-Jalle"
+                  "@type": "Place",
+                  "name": "Martignas-sur-Jalle",
+                  "geo": getCityCoordinates('martignas-sur-jalle') ? generateGeoJsonLd(getCityCoordinates('martignas-sur-jalle')!, "Mairie de Martignas-sur-Jalle") : undefined
                 },
                 {
-                  "@type": "City",
-                  "name": "Le Bouscat"
+                  "@type": "Place",
+                  "name": "Le Bouscat",
+                  "geo": getCityCoordinates('le-bouscat') ? generateGeoJsonLd(getCityCoordinates('le-bouscat')!, "Mairie du Bouscat") : undefined
                 },
                 {
-                  "@type": "City",
-                  "name": "Eysines"
+                  "@type": "Place",
+                  "name": "Eysines",
+                  "geo": getCityCoordinates('eysines') ? generateGeoJsonLd(getCityCoordinates('eysines')!, "Mairie d'Eysines") : undefined
                 },
                 {
-                  "@type": "City",
-                  "name": "Blanquefort"
+                  "@type": "Place",
+                  "name": "Blanquefort",
+                  "geo": getCityCoordinates('blanquefort') ? generateGeoJsonLd(getCityCoordinates('blanquefort')!, "Mairie de Blanquefort") : undefined
                 }
               ],
               "areaServed": [

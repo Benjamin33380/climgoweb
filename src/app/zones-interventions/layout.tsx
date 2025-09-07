@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { HEADQUARTERS_COORDINATES, generateGeoJsonLd, generateServiceAreaJsonLd } from '@/config/geo';
 
 export const metadata: Metadata = {
   title: 'Zones d\'Intervention ClimGO | Chauffage Climatisation Gironde',
@@ -91,6 +92,10 @@ export default function ZonesInterventionsLayout({
                 "postalCode": "33380",
                 "addressCountry": "FR"
               },
+              // Données géographiques du siège
+              "geo": generateGeoJsonLd(HEADQUARTERS_COORDINATES, "ClimGO Marcheprime"),
+              // Zone de service avec géolocalisation (rayon de 50km)
+              "serviceArea": generateServiceAreaJsonLd(HEADQUARTERS_COORDINATES, "50000"),
               "areaServed": [
                 {
                   "@type": "Place",

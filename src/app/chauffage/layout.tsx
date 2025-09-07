@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { HEADQUARTERS_COORDINATES, generateGeoJsonLd, generateServiceAreaJsonLd } from '@/config/geo';
 
 export const metadata: Metadata = {
   title: 'Chauffage Gironde | Installation PAC, Plancher Chauffant',
@@ -89,11 +90,16 @@ export default function ChauffageLayout({
                 "addressRegion": "Nouvelle-Aquitaine",
                 "postalCode": "33380",
                 "addressCountry": "FR"
-              }
+              },
+              // Données géographiques du siège
+              "geo": generateGeoJsonLd(HEADQUARTERS_COORDINATES, "ClimGO Marcheprime"),
+              // Zone de service avec géolocalisation (rayon de 50km)
+              "serviceArea": generateServiceAreaJsonLd(HEADQUARTERS_COORDINATES, "50000")
             },
             "areaServed": {
               "@type": "Place",
-              "name": "Gironde, Bordeaux Métropole, Bassin d'Arcachon, Marcheprime, Biganos, Mios, Arcachon, Bordeaux, Andernos-les-Bains"
+              "name": "Gironde, Bordeaux Métropole, Bassin d'Arcachon, Marcheprime, Biganos, Mios, Arcachon, Bordeaux, Andernos-les-Bains",
+              "geo": generateGeoJsonLd(HEADQUARTERS_COORDINATES, "Zone d'intervention ClimGO")
             },
             "serviceType": "Installation et maintenance de systèmes de chauffage",
             "url": "https://www.climgo.fr/chauffage",

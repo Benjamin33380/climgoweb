@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import GoogleAnalytics from '@/components/GoogleAnalytics';
+import { getCityCoordinates, generateGeoJsonLd, generateServiceAreaJsonLd } from "@/config/geo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -117,6 +118,9 @@ export default function ParentisLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Coordonnées de la mairie de Parentis-en-Born
+  const parentisCoords = getCityCoordinates('parentis-en-born');
+  
   return (
     <>
       {/* Schéma JSON-LD principal - LocalBusiness pour Parentis-en-Born */}
@@ -146,6 +150,8 @@ export default function ParentisLayout({
                 "postalCode": "33380",
                 "addressCountry": "FR"
               },
+              // Données géographiques de la mairie de Parentis-en-Born
+              "geo": parentisCoords ? generateGeoJsonLd(parentisCoords, "Mairie de Parentis-en-Born") : undefined,
               "contactPoint": {
                 "@type": "ContactPoint",
                 "telephone": "+33766460008",
@@ -158,31 +164,38 @@ export default function ParentisLayout({
               "areaServed": [
                 {
                   "@type": "Place",
-                  "name": "Parentis-en-Born"
+                  "name": "Parentis-en-Born",
+                  "geo": parentisCoords ? generateGeoJsonLd(parentisCoords, "Mairie de Parentis-en-Born") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Biscarrosse"
+                  "name": "Biscarrosse",
+                  "geo": getCityCoordinates('biscarrosse') ? generateGeoJsonLd(getCityCoordinates('biscarrosse')!, "Mairie de Biscarrosse") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Mimizan"
+                  "name": "Mimizan",
+                  "geo": getCityCoordinates('mimizan') ? generateGeoJsonLd(getCityCoordinates('mimizan')!, "Mairie de Mimizan") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Arcachon"
+                  "name": "Arcachon",
+                  "geo": getCityCoordinates('arcachon') ? generateGeoJsonLd(getCityCoordinates('arcachon')!, "Mairie d'Arcachon") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "La Teste-de-Buch"
+                  "name": "La Teste-de-Buch",
+                  "geo": getCityCoordinates('la-teste-de-buch') ? generateGeoJsonLd(getCityCoordinates('la-teste-de-buch')!, "Mairie de La Teste-de-Buch") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Le Teich"
+                  "name": "Le Teich",
+                  "geo": getCityCoordinates('le-teich') ? generateGeoJsonLd(getCityCoordinates('le-teich')!, "Mairie du Teich") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Gujan-Mestras"
+                  "name": "Gujan-Mestras",
+                  "geo": getCityCoordinates('gujan-mestras') ? generateGeoJsonLd(getCityCoordinates('gujan-mestras')!, "Mairie de Gujan-Mestras") : undefined
                 },
                 {
                   "@type": "Place",

@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import GoogleAnalytics from '@/components/GoogleAnalytics';
+import { getCityCoordinates, generateGeoJsonLd, generateServiceAreaJsonLd } from "@/config/geo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -122,6 +123,9 @@ export default function BeglesLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Coordonnées de la mairie de Bègles
+  const beglesCoords = getCityCoordinates('begles');
+  
   return (
     <>
       {/* Schéma JSON-LD principal - LocalBusiness pour Bègles */}
@@ -151,6 +155,8 @@ export default function BeglesLayout({
                 "postalCode": "33380",
                 "addressCountry": "FR"
               },
+              // Données géographiques de la mairie de Bègles
+              "geo": beglesCoords ? generateGeoJsonLd(beglesCoords, "Mairie de Bègles") : undefined,
               "contactPoint": {
                 "@type": "ContactPoint",
                 "telephone": "+33766460008",
@@ -163,31 +169,38 @@ export default function BeglesLayout({
               "areaServed": [
                 {
                   "@type": "Place",
-                  "name": "Bègles"
+                  "name": "Bègles",
+                  "geo": beglesCoords ? generateGeoJsonLd(beglesCoords, "Mairie de Bègles") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Bordeaux"
+                  "name": "Bordeaux",
+                  "geo": getCityCoordinates('bordeaux') ? generateGeoJsonLd(getCityCoordinates('bordeaux')!, "Mairie de Bordeaux") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Talence"
+                  "name": "Talence",
+                  "geo": getCityCoordinates('talence') ? generateGeoJsonLd(getCityCoordinates('talence')!, "Mairie de Talence") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Villenave-d'Ornon"
+                  "name": "Villenave-d'Ornon",
+                  "geo": getCityCoordinates('villenave-d-ornon') ? generateGeoJsonLd(getCityCoordinates('villenave-d-ornon')!, "Mairie de Villenave-d'Ornon") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Cenon"
+                  "name": "Cenon",
+                  "geo": getCityCoordinates('cenon') ? generateGeoJsonLd(getCityCoordinates('cenon')!, "Mairie de Cenon") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Floirac"
+                  "name": "Floirac",
+                  "geo": getCityCoordinates('floirac') ? generateGeoJsonLd(getCityCoordinates('floirac')!, "Mairie de Floirac") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Bouliac"
+                  "name": "Bouliac",
+                  "geo": getCityCoordinates('bouliac') ? generateGeoJsonLd(getCityCoordinates('bouliac')!, "Mairie de Bouliac") : undefined
                 },
                 {
                   "@type": "Place",

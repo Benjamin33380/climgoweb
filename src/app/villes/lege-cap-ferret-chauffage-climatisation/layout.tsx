@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import GoogleAnalytics from '@/components/GoogleAnalytics';
+import { getCityCoordinates, generateGeoJsonLd, generateServiceAreaJsonLd } from "@/config/geo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -122,6 +123,9 @@ export default function LegeCapFerretLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Coordonnées de la mairie de Lège-Cap-Ferret
+  const legeCapFerretCoords = getCityCoordinates('lege-cap-ferret');
+  
   return (
     <>
       {/* Schéma JSON-LD principal - LocalBusiness pour Lège-Cap-Ferret */}
@@ -151,6 +155,8 @@ export default function LegeCapFerretLayout({
                 "postalCode": "33380",
                 "addressCountry": "FR"
               },
+              // Données géographiques de la mairie de Lège-Cap-Ferret
+              "geo": legeCapFerretCoords ? generateGeoJsonLd(legeCapFerretCoords, "Mairie de Lège-Cap-Ferret") : undefined,
               "contactPoint": {
                 "@type": "ContactPoint",
                 "telephone": "+33766460008",
@@ -163,31 +169,38 @@ export default function LegeCapFerretLayout({
               "areaServed": [
                 {
                   "@type": "Place",
-                  "name": "Lège-Cap-Ferret"
+                  "name": "Lège-Cap-Ferret",
+                  "geo": legeCapFerretCoords ? generateGeoJsonLd(legeCapFerretCoords, "Mairie de Lège-Cap-Ferret") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Arcachon"
+                  "name": "Arcachon",
+                  "geo": getCityCoordinates('arcachon') ? generateGeoJsonLd(getCityCoordinates('arcachon')!, "Mairie d'Arcachon") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Andernos-les-Bains"
+                  "name": "Andernos-les-Bains",
+                  "geo": getCityCoordinates('andernos-les-bains') ? generateGeoJsonLd(getCityCoordinates('andernos-les-bains')!, "Mairie d'Andernos-les-Bains") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Lanton"
+                  "name": "Lanton",
+                  "geo": getCityCoordinates('lanton') ? generateGeoJsonLd(getCityCoordinates('lanton')!, "Mairie de Lanton") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Audenge"
+                  "name": "Audenge",
+                  "geo": getCityCoordinates('audenge') ? generateGeoJsonLd(getCityCoordinates('audenge')!, "Mairie d'Audenge") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Lège"
+                  "name": "Lège",
+                  "geo": getCityCoordinates('lege') ? generateGeoJsonLd(getCityCoordinates('lege')!, "Mairie de Lège") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Pyla-sur-Mer"
+                  "name": "Pyla-sur-Mer",
+                  "geo": getCityCoordinates('pyla-sur-mer') ? generateGeoJsonLd(getCityCoordinates('pyla-sur-mer')!, "Mairie de Pyla-sur-Mer") : undefined
                 },
                 {
                   "@type": "Place",

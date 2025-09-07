@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import GoogleAnalytics from '@/components/GoogleAnalytics';
+import { getCityCoordinates, generateGeoJsonLd, generateServiceAreaJsonLd } from "@/config/geo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -122,6 +123,9 @@ export default function SaintLoubesLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Coordonnées de la mairie de Saint-Loubès
+  const saintLoubesCoords = getCityCoordinates('saint-loubes');
+  
   return (
     <>
       {/* Schéma JSON-LD principal - LocalBusiness pour Saint-Loubès */}
@@ -151,6 +155,8 @@ export default function SaintLoubesLayout({
                 "postalCode": "33380",
                 "addressCountry": "FR"
               },
+              // Données géographiques de la mairie de Saint-Loubès
+              "geo": saintLoubesCoords ? generateGeoJsonLd(saintLoubesCoords, "Mairie de Saint-Loubès") : undefined,
               "contactPoint": {
                 "@type": "ContactPoint",
                 "telephone": "+33766460008",
@@ -163,31 +169,38 @@ export default function SaintLoubesLayout({
               "areaServed": [
                 {
                   "@type": "Place",
-                  "name": "Saint-Loubès"
+                  "name": "Saint-Loubès",
+                  "geo": saintLoubesCoords ? generateGeoJsonLd(saintLoubesCoords, "Mairie de Saint-Loubès") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Bordeaux"
+                  "name": "Bordeaux",
+                  "geo": getCityCoordinates('bordeaux') ? generateGeoJsonLd(getCityCoordinates('bordeaux')!, "Mairie de Bordeaux") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Cenon"
+                  "name": "Cenon",
+                  "geo": getCityCoordinates('cenon') ? generateGeoJsonLd(getCityCoordinates('cenon')!, "Mairie de Cenon") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Floirac"
+                  "name": "Floirac",
+                  "geo": getCityCoordinates('floirac') ? generateGeoJsonLd(getCityCoordinates('floirac')!, "Mairie de Floirac") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Lormont"
+                  "name": "Lormont",
+                  "geo": getCityCoordinates('lormont') ? generateGeoJsonLd(getCityCoordinates('lormont')!, "Mairie de Lormont") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Carbon-Blanc"
+                  "name": "Carbon-Blanc",
+                  "geo": getCityCoordinates('carbon-blanc') ? generateGeoJsonLd(getCityCoordinates('carbon-blanc')!, "Mairie de Carbon-Blanc") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Ambarès-et-Lagrave"
+                  "name": "Ambarès-et-Lagrave",
+                  "geo": getCityCoordinates('ambares-et-lagrave') ? generateGeoJsonLd(getCityCoordinates('ambares-et-lagrave')!, "Mairie d'Ambarès-et-Lagrave") : undefined
                 },
                 {
                   "@type": "Place",

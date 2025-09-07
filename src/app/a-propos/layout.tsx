@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { HEADQUARTERS_COORDINATES, generateGeoJsonLd, generateServiceAreaJsonLd } from '@/config/geo';
 
 export const metadata: Metadata = {
   title: 'À propos de ClimGO | Expert Chauffage Climatisation Gironde',
@@ -92,9 +93,14 @@ export default function AProposLayout({
                 "postalCode": "33380",
                 "addressCountry": "FR"
               },
+              // Données géographiques du siège
+              "geo": generateGeoJsonLd(HEADQUARTERS_COORDINATES, "ClimGO Marcheprime"),
+              // Zone de service avec géolocalisation (rayon de 50km)
+              "serviceArea": generateServiceAreaJsonLd(HEADQUARTERS_COORDINATES, "50000"),
               "areaServed": {
                 "@type": "Place",
-                "name": "Gironde, Bordeaux Métropole, Bassin d'Arcachon, Marcheprime, Biganos, Mios, Arcachon, Bordeaux, Andernos-les-Bains"
+                "name": "Gironde, Bordeaux Métropole, Bassin d'Arcachon, Marcheprime, Biganos, Mios, Arcachon, Bordeaux, Andernos-les-Bains",
+                "geo": generateGeoJsonLd(HEADQUARTERS_COORDINATES, "Zone d'intervention ClimGO")
               },
               "foundingDate": "2014",
               "description": "Expert en chauffage et climatisation en Gironde, artisan RGE certifié"

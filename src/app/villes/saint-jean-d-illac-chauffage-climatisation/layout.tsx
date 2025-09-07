@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import GoogleAnalytics from '@/components/GoogleAnalytics';
+import { getCityCoordinates, generateGeoJsonLd, generateServiceAreaJsonLd } from "@/config/geo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -122,6 +123,9 @@ export default function SaintJeanDIlacLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Coordonnées de la mairie de Saint-Jean-d'Illac
+  const saintJeanDIlacCoords = getCityCoordinates('saint-jean-d-illac');
+  
   return (
     <>
       {/* Schéma JSON-LD principal - LocalBusiness pour Saint-Jean-d'Illac */}
@@ -151,6 +155,8 @@ export default function SaintJeanDIlacLayout({
                 "postalCode": "33380",
                 "addressCountry": "FR"
               },
+              // Données géographiques de la mairie de Saint-Jean-d'Illac
+              "geo": saintJeanDIlacCoords ? generateGeoJsonLd(saintJeanDIlacCoords, "Mairie de Saint-Jean-d'Illac") : undefined,
               "contactPoint": {
                 "@type": "ContactPoint",
                 "telephone": "+33766460008",
@@ -163,31 +169,38 @@ export default function SaintJeanDIlacLayout({
               "areaServed": [
                 {
                   "@type": "Place",
-                  "name": "Saint-Jean-d'Illac"
+                  "name": "Saint-Jean-d'Illac",
+                  "geo": saintJeanDIlacCoords ? generateGeoJsonLd(saintJeanDIlacCoords, "Mairie de Saint-Jean-d'Illac") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Mérignac"
+                  "name": "Mérignac",
+                  "geo": getCityCoordinates('merignac') ? generateGeoJsonLd(getCityCoordinates('merignac')!, "Mairie de Mérignac") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Bordeaux"
+                  "name": "Bordeaux",
+                  "geo": getCityCoordinates('bordeaux') ? generateGeoJsonLd(getCityCoordinates('bordeaux')!, "Mairie de Bordeaux") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Le Haillan"
+                  "name": "Le Haillan",
+                  "geo": getCityCoordinates('le-haillan') ? generateGeoJsonLd(getCityCoordinates('le-haillan')!, "Mairie du Haillan") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Eysines"
+                  "name": "Eysines",
+                  "geo": getCityCoordinates('eysines') ? generateGeoJsonLd(getCityCoordinates('eysines')!, "Mairie d'Eysines") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Gradignan"
+                  "name": "Gradignan",
+                  "geo": getCityCoordinates('gradignan') ? generateGeoJsonLd(getCityCoordinates('gradignan')!, "Mairie de Gradignan") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Canéjan"
+                  "name": "Canéjan",
+                  "geo": getCityCoordinates('canejan') ? generateGeoJsonLd(getCityCoordinates('canejan')!, "Mairie de Canéjan") : undefined
                 },
                 {
                   "@type": "Place",

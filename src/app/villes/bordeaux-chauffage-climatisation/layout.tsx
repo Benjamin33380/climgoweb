@@ -2,6 +2,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import { getCityCoordinates, generateGeoJsonLd, generateServiceAreaJsonLd } from "@/config/geo";
 
 const SITE = "https://www.climgo.fr";
 const PATH = "/villes/bordeaux-chauffage-climatisation";
@@ -104,6 +105,9 @@ export const metadata: Metadata = {
 export default function BordeauxLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  // Coordonnées de la mairie de Bordeaux
+  const bordeauxCoords = getCityCoordinates('bordeaux');
+  
   // 1) Entreprise locale
   const localBusiness = {
     "@context": "https://schema.org",
@@ -120,6 +124,10 @@ export default function BordeauxLayout({
       postalCode: "33380",
       addressCountry: "FR",
     },
+    // Données géographiques de la mairie de Bordeaux
+    "geo": bordeauxCoords ? generateGeoJsonLd(bordeauxCoords, "Mairie de Bordeaux") : undefined,
+    // Zone de service avec géolocalisation (rayon de 25km autour de Bordeaux)
+    "serviceArea": bordeauxCoords ? generateServiceAreaJsonLd(bordeauxCoords, "25000") : undefined,
     priceRange: "$$",
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
@@ -137,32 +145,39 @@ export default function BordeauxLayout({
         name: "Bordeaux Métropole"
       },
       {
-        "@type": "City",
-        name: "Bordeaux"
+        "@type": "Place",
+        name: "Bordeaux",
+        "geo": bordeauxCoords ? generateGeoJsonLd(bordeauxCoords, "Mairie de Bordeaux") : undefined
       },
       {
-        "@type": "City",
-        name: "Mérignac"
+        "@type": "Place",
+        name: "Mérignac",
+        "geo": getCityCoordinates('merignac') ? generateGeoJsonLd(getCityCoordinates('merignac')!, "Mairie de Mérignac") : undefined
       },
       {
-        "@type": "City",
-        name: "Pessac"
+        "@type": "Place",
+        name: "Pessac",
+        "geo": getCityCoordinates('pessac') ? generateGeoJsonLd(getCityCoordinates('pessac')!, "Mairie de Pessac") : undefined
       },
       {
-        "@type": "City",
-        name: "Talence"
+        "@type": "Place",
+        name: "Talence",
+        "geo": getCityCoordinates('talence') ? generateGeoJsonLd(getCityCoordinates('talence')!, "Mairie de Talence") : undefined
       },
       {
-        "@type": "City",
-        name: "Le Bouscat"
+        "@type": "Place",
+        name: "Le Bouscat",
+        "geo": getCityCoordinates('le-bouscat') ? generateGeoJsonLd(getCityCoordinates('le-bouscat')!, "Mairie du Bouscat") : undefined
       },
       {
-        "@type": "City",
-        name: "Eysines"
+        "@type": "Place",
+        name: "Eysines",
+        "geo": getCityCoordinates('eysines') ? generateGeoJsonLd(getCityCoordinates('eysines')!, "Mairie d'Eysines") : undefined
       },
       {
-        "@type": "City",
-        name: "Bruges"
+        "@type": "Place",
+        name: "Bruges",
+        "geo": getCityCoordinates('bruges') ? generateGeoJsonLd(getCityCoordinates('bruges')!, "Mairie de Bruges") : undefined
       }
     ],
     aggregateRating: {

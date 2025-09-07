@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import GoogleAnalytics from '@/components/GoogleAnalytics';
+import { getCityCoordinates, generateGeoJsonLd, generateServiceAreaJsonLd } from "@/config/geo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -117,6 +118,9 @@ export default function CadaujacLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Coordonnées de la mairie de Cadaujac
+  const cadaujacCoords = getCityCoordinates('cadaujac');
+  
   return (
     <>
       {/* Schéma JSON-LD principal - LocalBusiness pour Cadaujac */}
@@ -146,6 +150,8 @@ export default function CadaujacLayout({
                 "postalCode": "33380",
                 "addressCountry": "FR"
               },
+              // Données géographiques de la mairie de Cadaujac
+              "geo": cadaujacCoords ? generateGeoJsonLd(cadaujacCoords, "Mairie de Cadaujac") : undefined,
               "contactPoint": {
                 "@type": "ContactPoint",
                 "telephone": "+33766460008",
@@ -158,31 +164,38 @@ export default function CadaujacLayout({
               "areaServed": [
                 {
                   "@type": "Place",
-                  "name": "Cadaujac"
+                  "name": "Cadaujac",
+                  "geo": cadaujacCoords ? generateGeoJsonLd(cadaujacCoords, "Mairie de Cadaujac") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Bordeaux"
+                  "name": "Bordeaux",
+                  "geo": getCityCoordinates('bordeaux') ? generateGeoJsonLd(getCityCoordinates('bordeaux')!, "Mairie de Bordeaux") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Villenave-d'Ornon"
+                  "name": "Villenave-d'Ornon",
+                  "geo": getCityCoordinates('villenave-d-ornon') ? generateGeoJsonLd(getCityCoordinates('villenave-d-ornon')!, "Mairie de Villenave-d'Ornon") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Gradignan"
+                  "name": "Gradignan",
+                  "geo": getCityCoordinates('gradignan') ? generateGeoJsonLd(getCityCoordinates('gradignan')!, "Mairie de Gradignan") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Canéjan"
+                  "name": "Canéjan",
+                  "geo": getCityCoordinates('canejan') ? generateGeoJsonLd(getCityCoordinates('canejan')!, "Mairie de Canéjan") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Cestas"
+                  "name": "Cestas",
+                  "geo": getCityCoordinates('cestas') ? generateGeoJsonLd(getCityCoordinates('cestas')!, "Mairie de Cestas") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Le Barp"
+                  "name": "Le Barp",
+                  "geo": getCityCoordinates('le-barp') ? generateGeoJsonLd(getCityCoordinates('le-barp')!, "Mairie du Barp") : undefined
                 },
                 {
                   "@type": "Place",

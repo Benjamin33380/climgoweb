@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import GoogleAnalytics from '@/components/GoogleAnalytics';
+import { getCityCoordinates, generateGeoJsonLd, generateServiceAreaJsonLd } from "@/config/geo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -122,6 +123,9 @@ export default function SaintMedardEnJallesLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Coordonnées de la mairie de Saint-Médard-en-Jalles
+  const saintMedardEnJallesCoords = getCityCoordinates('saint-medard-en-jalles');
+  
   return (
     <>
       {/* Schéma JSON-LD principal - LocalBusiness pour Saint-Médard-en-Jalles */}
@@ -151,6 +155,8 @@ export default function SaintMedardEnJallesLayout({
                 "postalCode": "33380",
                 "addressCountry": "FR"
               },
+              // Données géographiques de la mairie de Saint-Médard-en-Jalles
+              "geo": saintMedardEnJallesCoords ? generateGeoJsonLd(saintMedardEnJallesCoords, "Mairie de Saint-Médard-en-Jalles") : undefined,
               "contactPoint": {
                 "@type": "ContactPoint",
                 "telephone": "+33766460008",
@@ -163,31 +169,38 @@ export default function SaintMedardEnJallesLayout({
               "areaServed": [
                 {
                   "@type": "Place",
-                  "name": "Saint-Médard-en-Jalles"
+                  "name": "Saint-Médard-en-Jalles",
+                  "geo": saintMedardEnJallesCoords ? generateGeoJsonLd(saintMedardEnJallesCoords, "Mairie de Saint-Médard-en-Jalles") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Bordeaux"
+                  "name": "Bordeaux",
+                  "geo": getCityCoordinates('bordeaux') ? generateGeoJsonLd(getCityCoordinates('bordeaux')!, "Mairie de Bordeaux") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Mérignac"
+                  "name": "Mérignac",
+                  "geo": getCityCoordinates('merignac') ? generateGeoJsonLd(getCityCoordinates('merignac')!, "Mairie de Mérignac") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Le Haillan"
+                  "name": "Le Haillan",
+                  "geo": getCityCoordinates('le-haillan') ? generateGeoJsonLd(getCityCoordinates('le-haillan')!, "Mairie du Haillan") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Eysines"
+                  "name": "Eysines",
+                  "geo": getCityCoordinates('eysines') ? generateGeoJsonLd(getCityCoordinates('eysines')!, "Mairie d'Eysines") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Blanquefort"
+                  "name": "Blanquefort",
+                  "geo": getCityCoordinates('blanquefort') ? generateGeoJsonLd(getCityCoordinates('blanquefort')!, "Mairie de Blanquefort") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Le Taillan-Médoc"
+                  "name": "Le Taillan-Médoc",
+                  "geo": getCityCoordinates('le-taillan-medoc') ? generateGeoJsonLd(getCityCoordinates('le-taillan-medoc')!, "Mairie du Taillan-Médoc") : undefined
                 },
                 {
                   "@type": "Place",

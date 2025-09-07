@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import GoogleAnalytics from '@/components/GoogleAnalytics';
+import { getCityCoordinates, generateGeoJsonLd, generateServiceAreaJsonLd, HEADQUARTERS_COORDINATES } from '@/config/geo';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -117,6 +118,9 @@ export default function AudengeLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Coordonnées d'Audenge
+  const audengeCoords = getCityCoordinates('audenge');
+  
   return (
     <>
       {/* Schéma JSON-LD principal - LocalBusiness pour Audenge */}
@@ -146,6 +150,10 @@ export default function AudengeLayout({
                 "postalCode": "33380",
                 "addressCountry": "FR"
               },
+              // Données géographiques de la mairie d'Audenge
+              "geo": audengeCoords ? generateGeoJsonLd(audengeCoords, "Mairie d'Audenge") : undefined,
+              // Zone de service avec géolocalisation (rayon de 25km autour d'Audenge)
+              "serviceArea": audengeCoords ? generateServiceAreaJsonLd(audengeCoords, "25000") : undefined,
               "contactPoint": {
                 "@type": "ContactPoint",
                 "telephone": "+33766460008",
@@ -158,43 +166,53 @@ export default function AudengeLayout({
               "areaServed": [
                 {
                   "@type": "Place",
-                  "name": "Audenge"
+                  "name": "Audenge",
+                  "geo": audengeCoords ? generateGeoJsonLd(audengeCoords, "Mairie d'Audenge") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Arcachon"
+                  "name": "Arcachon",
+                  "geo": getCityCoordinates('arcachon') ? generateGeoJsonLd(getCityCoordinates('arcachon')!, "Mairie d'Arcachon") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "La Teste-de-Buch"
+                  "name": "La Teste-de-Buch",
+                  "geo": getCityCoordinates('la-teste-de-buch') ? generateGeoJsonLd(getCityCoordinates('la-teste-de-buch')!, "Mairie de La Teste-de-Buch") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Le Teich"
+                  "name": "Le Teich",
+                  "geo": getCityCoordinates('le-teich') ? generateGeoJsonLd(getCityCoordinates('le-teich')!, "Mairie du Teich") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Gujan-Mestras"
+                  "name": "Gujan-Mestras",
+                  "geo": getCityCoordinates('gujan-mestras') ? generateGeoJsonLd(getCityCoordinates('gujan-mestras')!, "Mairie de Gujan-Mestras") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Biganos"
+                  "name": "Biganos",
+                  "geo": getCityCoordinates('biganos') ? generateGeoJsonLd(getCityCoordinates('biganos')!, "Mairie de Biganos") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Lanton"
+                  "name": "Lanton",
+                  "geo": getCityCoordinates('lanton') ? generateGeoJsonLd(getCityCoordinates('lanton')!, "Mairie de Lanton") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Andernos-les-Bains"
+                  "name": "Andernos-les-Bains",
+                  "geo": getCityCoordinates('andernos-les-bains') ? generateGeoJsonLd(getCityCoordinates('andernos-les-bains')!, "Mairie d'Andernos-les-Bains") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Lège-Cap-Ferret"
+                  "name": "Lège-Cap-Ferret",
+                  "geo": getCityCoordinates('lege-cap-ferret') ? generateGeoJsonLd(getCityCoordinates('lege-cap-ferret')!, "Mairie de Lège-Cap-Ferret") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Pyla-sur-Mer"
+                  "name": "Pyla-sur-Mer",
+                  "geo": getCityCoordinates('pyla-sur-mer') ? generateGeoJsonLd(getCityCoordinates('pyla-sur-mer')!, "Mairie de Pyla-sur-Mer") : undefined
                 }
               ],
               "foundingDate": "2025",

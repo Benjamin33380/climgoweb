@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { HEADQUARTERS_COORDINATES, generateGeoJsonLd, generateServiceAreaJsonLd } from '@/config/geo';
 
 export const metadata: Metadata = {
   title: "Eau chaude sanitaire | Installation & Maintenance Gironde",
@@ -94,11 +95,16 @@ export default function EauChaudeSanitaireLayout({
                 "addressRegion": "Nouvelle-Aquitaine",
                 "postalCode": "33380",
                 "addressCountry": "FR"
-              }
+              },
+              // Données géographiques du siège
+              "geo": generateGeoJsonLd(HEADQUARTERS_COORDINATES, "ClimGO Marcheprime"),
+              // Zone de service avec géolocalisation (rayon de 50km)
+              "serviceArea": generateServiceAreaJsonLd(HEADQUARTERS_COORDINATES, "50000")
             },
             "areaServed": {
               "@type": "Place",
-              "name": "Gironde, Bordeaux Métropole, Bassin d'Arcachon, Marcheprime, Mios, Biganos, Arcachon, Bordeaux, Andernos-les-Bains"
+              "name": "Gironde, Bordeaux Métropole, Bassin d'Arcachon, Marcheprime, Mios, Biganos, Arcachon, Bordeaux, Andernos-les-Bains",
+              "geo": generateGeoJsonLd(HEADQUARTERS_COORDINATES, "Zone d'intervention ClimGO")
             },
             "serviceType": "Installation et maintenance de systèmes d'eau chaude sanitaire",
             "url": "https://www.climgo.fr/eau-chaude-sanitaire",

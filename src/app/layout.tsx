@@ -11,6 +11,7 @@ import { scrollShadowConfig } from '@/config/scrollShadow';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import PassiveEventListeners from '@/components/PassiveEventListeners';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { HEADQUARTERS_COORDINATES, generateGeoJsonLd, generateServiceAreaJsonLd } from "@/config/geo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -158,6 +159,9 @@ export default function RootLayout({
                 "postalCode": "33380",
                 "addressCountry": "FR"
               },
+              // Données géographiques du siège social ClimGO
+              "geo": generateGeoJsonLd(HEADQUARTERS_COORDINATES, "Siège social ClimGO"),
+              "serviceArea": generateServiceAreaJsonLd(HEADQUARTERS_COORDINATES, "50000"),
             "priceRange": "$$",
             "openingHoursSpecification": {
               "@type": "OpeningHoursSpecification",

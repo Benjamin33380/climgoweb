@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import GoogleAnalytics from '@/components/GoogleAnalytics';
+import { getCityCoordinates, generateGeoJsonLd, generateServiceAreaJsonLd } from "@/config/geo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -122,6 +123,9 @@ export default function CestasLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Coordonnées de la mairie de Cestas
+  const cestasCoords = getCityCoordinates('cestas');
+  
   return (
     <>
       {/* Schéma JSON-LD principal - LocalBusiness pour Cestas */}
@@ -151,6 +155,8 @@ export default function CestasLayout({
                 "postalCode": "33380",
                 "addressCountry": "FR"
               },
+              // Données géographiques de la mairie de Cestas
+              "geo": cestasCoords ? generateGeoJsonLd(cestasCoords, "Mairie de Cestas") : undefined,
               "contactPoint": {
                 "@type": "ContactPoint",
                 "telephone": "+33766460008",
@@ -163,31 +169,38 @@ export default function CestasLayout({
               "areaServed": [
                 {
                   "@type": "Place",
-                  "name": "Cestas"
+                  "name": "Cestas",
+                  "geo": cestasCoords ? generateGeoJsonLd(cestasCoords, "Mairie de Cestas") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Bordeaux"
+                  "name": "Bordeaux",
+                  "geo": getCityCoordinates('bordeaux') ? generateGeoJsonLd(getCityCoordinates('bordeaux')!, "Mairie de Bordeaux") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Pessac"
+                  "name": "Pessac",
+                  "geo": getCityCoordinates('pessac') ? generateGeoJsonLd(getCityCoordinates('pessac')!, "Mairie de Pessac") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Gradignan"
+                  "name": "Gradignan",
+                  "geo": getCityCoordinates('gradignan') ? generateGeoJsonLd(getCityCoordinates('gradignan')!, "Mairie de Gradignan") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Canéjan"
+                  "name": "Canéjan",
+                  "geo": getCityCoordinates('canejan') ? generateGeoJsonLd(getCityCoordinates('canejan')!, "Mairie de Canéjan") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Le Barp"
+                  "name": "Le Barp",
+                  "geo": getCityCoordinates('le-barp') ? generateGeoJsonLd(getCityCoordinates('le-barp')!, "Mairie du Barp") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "La Brède"
+                  "name": "La Brède",
+                  "geo": getCityCoordinates('la-brede') ? generateGeoJsonLd(getCityCoordinates('la-brede')!, "Mairie de La Brède") : undefined
                 },
                 {
                   "@type": "Place",

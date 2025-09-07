@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import GoogleAnalytics from '@/components/GoogleAnalytics';
+import { getCityCoordinates, generateGeoJsonLd, generateServiceAreaJsonLd } from "@/config/geo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -122,6 +123,9 @@ export default function EysinesLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Coordonnées de la mairie d'Eysines
+  const eysinesCoords = getCityCoordinates('eysines');
+  
   return (
     <>
       {/* Schéma JSON-LD principal - LocalBusiness pour Eysines */}
@@ -151,6 +155,8 @@ export default function EysinesLayout({
                 "postalCode": "33380",
                 "addressCountry": "FR"
               },
+              // Données géographiques de la mairie d'Eysines
+              "geo": eysinesCoords ? generateGeoJsonLd(eysinesCoords, "Mairie d'Eysines") : undefined,
               "contactPoint": {
                 "@type": "ContactPoint",
                 "telephone": "+33766460008",
@@ -163,31 +169,38 @@ export default function EysinesLayout({
               "areaServed": [
                 {
                   "@type": "Place",
-                  "name": "Eysines"
+                  "name": "Eysines",
+                  "geo": eysinesCoords ? generateGeoJsonLd(eysinesCoords, "Mairie d'Eysines") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Bordeaux"
+                  "name": "Bordeaux",
+                  "geo": getCityCoordinates('bordeaux') ? generateGeoJsonLd(getCityCoordinates('bordeaux')!, "Mairie de Bordeaux") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Mérignac"
+                  "name": "Mérignac",
+                  "geo": getCityCoordinates('merignac') ? generateGeoJsonLd(getCityCoordinates('merignac')!, "Mairie de Mérignac") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Le Bouscat"
+                  "name": "Le Bouscat",
+                  "geo": getCityCoordinates('le-bouscat') ? generateGeoJsonLd(getCityCoordinates('le-bouscat')!, "Mairie du Bouscat") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Le Haillan"
+                  "name": "Le Haillan",
+                  "geo": getCityCoordinates('le-haillan') ? generateGeoJsonLd(getCityCoordinates('le-haillan')!, "Mairie du Haillan") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Blanquefort"
+                  "name": "Blanquefort",
+                  "geo": getCityCoordinates('blanquefort') ? generateGeoJsonLd(getCityCoordinates('blanquefort')!, "Mairie de Blanquefort") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Le Taillan-Médoc"
+                  "name": "Le Taillan-Médoc",
+                  "geo": getCityCoordinates('le-taillan-medoc') ? generateGeoJsonLd(getCityCoordinates('le-taillan-medoc')!, "Mairie du Taillan-Médoc") : undefined
                 },
                 {
                   "@type": "Place",

@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import GoogleAnalytics from '@/components/GoogleAnalytics';
+import { getCityCoordinates, generateGeoJsonLd, generateServiceAreaJsonLd } from "@/config/geo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -117,6 +118,9 @@ export default function BelinBelietLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Coordonnées de la mairie de Belin-Béliet
+  const belinBelietCoords = getCityCoordinates('belin-beliet');
+  
   return (
     <>
       {/* Schéma JSON-LD principal - LocalBusiness pour Belin-Beliet */}
@@ -146,6 +150,8 @@ export default function BelinBelietLayout({
                 "postalCode": "33380",
                 "addressCountry": "FR"
               },
+              // Données géographiques de la mairie de Belin-Béliet
+              "geo": belinBelietCoords ? generateGeoJsonLd(belinBelietCoords, "Mairie de Belin-Béliet") : undefined,
               "contactPoint": {
                 "@type": "ContactPoint",
                 "telephone": "+33766460008",
@@ -158,31 +164,38 @@ export default function BelinBelietLayout({
               "areaServed": [
                 {
                   "@type": "Place",
-                  "name": "Belin-Beliet"
+                  "name": "Belin-Beliet",
+                  "geo": belinBelietCoords ? generateGeoJsonLd(belinBelietCoords, "Mairie de Belin-Béliet") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Arcachon"
+                  "name": "Arcachon",
+                  "geo": getCityCoordinates('arcachon') ? generateGeoJsonLd(getCityCoordinates('arcachon')!, "Mairie d'Arcachon") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "La Teste-de-Buch"
+                  "name": "La Teste-de-Buch",
+                  "geo": getCityCoordinates('la-teste-de-buch') ? generateGeoJsonLd(getCityCoordinates('la-teste-de-buch')!, "Mairie de La Teste-de-Buch") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Le Teich"
+                  "name": "Le Teich",
+                  "geo": getCityCoordinates('le-teich') ? generateGeoJsonLd(getCityCoordinates('le-teich')!, "Mairie du Teich") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Gujan-Mestras"
+                  "name": "Gujan-Mestras",
+                  "geo": getCityCoordinates('gujan-mestras') ? generateGeoJsonLd(getCityCoordinates('gujan-mestras')!, "Mairie de Gujan-Mestras") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Biganos"
+                  "name": "Biganos",
+                  "geo": getCityCoordinates('biganos') ? generateGeoJsonLd(getCityCoordinates('biganos')!, "Mairie de Biganos") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Audenge"
+                  "name": "Audenge",
+                  "geo": getCityCoordinates('audenge') ? generateGeoJsonLd(getCityCoordinates('audenge')!, "Mairie d'Audenge") : undefined
                 },
                 {
                   "@type": "Place",

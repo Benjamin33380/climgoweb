@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import GoogleAnalytics from '@/components/GoogleAnalytics';
+import { getCityCoordinates, generateGeoJsonLd, generateServiceAreaJsonLd } from "@/config/geo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -117,6 +118,9 @@ export default function BrugesLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Coordonnées de la mairie de Bruges
+  const brugesCoords = getCityCoordinates('bruges');
+  
   return (
     <>
       {/* Schéma JSON-LD principal - LocalBusiness pour Bruges */}
@@ -146,6 +150,8 @@ export default function BrugesLayout({
                 "postalCode": "33380",
                 "addressCountry": "FR"
               },
+              // Données géographiques de la mairie de Bruges
+              "geo": brugesCoords ? generateGeoJsonLd(brugesCoords, "Mairie de Bruges") : undefined,
               "contactPoint": {
                 "@type": "ContactPoint",
                 "telephone": "+33766460008",
@@ -158,31 +164,38 @@ export default function BrugesLayout({
               "areaServed": [
                 {
                   "@type": "Place",
-                  "name": "Bruges"
+                  "name": "Bruges",
+                  "geo": brugesCoords ? generateGeoJsonLd(brugesCoords, "Mairie de Bruges") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Bordeaux"
+                  "name": "Bordeaux",
+                  "geo": getCityCoordinates('bordeaux') ? generateGeoJsonLd(getCityCoordinates('bordeaux')!, "Mairie de Bordeaux") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Mérignac"
+                  "name": "Mérignac",
+                  "geo": getCityCoordinates('merignac') ? generateGeoJsonLd(getCityCoordinates('merignac')!, "Mairie de Mérignac") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Le Haillan"
+                  "name": "Le Haillan",
+                  "geo": getCityCoordinates('le-haillan') ? generateGeoJsonLd(getCityCoordinates('le-haillan')!, "Mairie du Haillan") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Saint-Aubin-de-Médoc"
+                  "name": "Saint-Aubin-de-Médoc",
+                  "geo": getCityCoordinates('saint-aubin-de-medoc') ? generateGeoJsonLd(getCityCoordinates('saint-aubin-de-medoc')!, "Mairie de Saint-Aubin-de-Médoc") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Eysines"
+                  "name": "Eysines",
+                  "geo": getCityCoordinates('eysines') ? generateGeoJsonLd(getCityCoordinates('eysines')!, "Mairie d'Eysines") : undefined
                 },
                 {
                   "@type": "Place",
-                  "name": "Le Taillan-Médoc"
+                  "name": "Le Taillan-Médoc",
+                  "geo": getCityCoordinates('le-taillan-medoc') ? generateGeoJsonLd(getCityCoordinates('le-taillan-medoc')!, "Mairie du Taillan-Médoc") : undefined
                 },
                 {
                   "@type": "Place",
