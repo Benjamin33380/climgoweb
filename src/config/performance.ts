@@ -59,7 +59,7 @@ export function checkPerformanceMetrics() {
     lcp: performance.getEntriesByName('largest-contentful-paint')[0]?.startTime || 0,
     
     // First Input Delay
-    fid: performance.getEntriesByType('first-input')[0]?.processingStart || 0,
+    fid: (performance.getEntriesByType('first-input')[0] as any)?.processingStart || 0,
     
     // Cumulative Layout Shift
     cls: performance.getEntriesByType('layout-shift')

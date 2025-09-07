@@ -15,8 +15,8 @@ interface Comment {
   content: string;
   author: {
     id: string;
-    firstName: string;
-    lastName: string;
+    firstName: string | null;
+    lastName: string | null;
     email: string;
   };
   isApproved: boolean;
@@ -28,8 +28,8 @@ interface Rating {
   value: number;
   author: {
     id: string;
-    firstName: string;
-    lastName: string;
+    firstName: string | null;
+    lastName: string | null;
   };
   createdAt: string;
 }
