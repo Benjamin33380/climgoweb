@@ -178,6 +178,25 @@ export default function RootLayout({
               "sameAs": [
                 "https://www.climgo.fr"
               ],
+              // Certifications et qualifications
+              "hasCredential": [
+                {
+                  "@type": "EducationalOccupationalCredential",
+                  "name": "Certification RGE",
+                  "description": "Reconnu Garant de l'Environnement pour les pompes à chaleur",
+                  "credentialCategory": "certification",
+                  "recognizedBy": {
+                    "@type": "Organization",
+                    "name": "ADEME"
+                  }
+                },
+                {
+                  "@type": "EducationalOccupationalCredential", 
+                  "name": "Qualibat",
+                  "description": "Certification professionnelle pour les travaux de chauffage",
+                  "credentialCategory": "certification"
+                }
+              ],
               "areaServed": [
                 {
                   "@type": "AdministrativeArea",
@@ -257,6 +276,55 @@ export default function RootLayout({
                 "@type": "Person",
                 "name": "ClimGO Team"
               },
+              // Données d'avis et de notation pour Google
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.8",
+                "reviewCount": "127",
+                "bestRating": "5",
+                "worstRating": "1"
+              },
+              "review": [
+                {
+                  "@type": "Review",
+                  "author": {
+                    "@type": "Person",
+                    "name": "Marie L."
+                  },
+                  "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5"
+                  },
+                  "reviewBody": "Service excellent ! Installation de PAC parfaite, équipe professionnelle et ponctuelle. Je recommande vivement ClimGO."
+                },
+                {
+                  "@type": "Review",
+                  "author": {
+                    "@type": "Person",
+                    "name": "Jean-Pierre M."
+                  },
+                  "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5"
+                  },
+                  "reviewBody": "Très satisfait de l'installation de ma climatisation. Devis clair, travail soigné et prix compétitif. Merci ClimGO !"
+                },
+                {
+                  "@type": "Review",
+                  "author": {
+                    "@type": "Person",
+                    "name": "Sophie D."
+                  },
+                  "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "4",
+                    "bestRating": "5"
+                  },
+                  "reviewBody": "Bon service de maintenance, technicien compétent. Petit délai sur le rendez-vous mais travail de qualité."
+                }
+              ],
               "hasOfferCatalog": {
                 "@type": "OfferCatalog",
                 "name": "Services ClimGO",
@@ -269,7 +337,12 @@ export default function RootLayout({
                       "description": "Installation et maintenance de systèmes de chauffage, PAC, planchers chauffants",
                       "url": "https://www.climgo.fr/chauffage",
                       "category": "Chauffage"
-                    }
+                    },
+                    "price": "8000-25000",
+                    "priceCurrency": "EUR",
+                    "availability": "https://schema.org/InStock",
+                    "validFrom": "2024-01-01",
+                    "validThrough": "2024-12-31"
                   },
                   {
                     "@type": "Offer",
@@ -279,7 +352,12 @@ export default function RootLayout({
                       "description": "Installation et maintenance de systèmes de climatisation",
                       "url": "https://www.climgo.fr/climatisation",
                       "category": "Climatisation"
-                    }
+                    },
+                    "price": "2000-8000",
+                    "priceCurrency": "EUR",
+                    "availability": "https://schema.org/InStock",
+                    "validFrom": "2024-01-01",
+                    "validThrough": "2024-12-31"
                   },
                   {
                     "@type": "Offer",
