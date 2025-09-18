@@ -39,11 +39,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.climgo.fr'),
   title: {
-    default: "ClimGO | Pompes à chaleur, Climatisation et Chauffe-eau",
+    default: "Chauffagiste Gironde - Pompe à Chaleur, Chauffe-eau Thermodynamique | ClimGO",
     template: "%s | ClimGO"
   },
-  description: "Installation de pompe à chaleur, remplacement de chaudière, chauffage, climatisation, chauffe-eau. Artisan RGE.",
-  keywords: ["chauffage Gironde", "climatisation Gironde", "pompe à chaleur", "entretien clim", "installateur chauffage", "artisan RGE", "Bordeaux", "Bassin d'Arcachon", "PAC air-eau", "PAC air-air", "plancher chauffant", "radiateurs", "maintenance", "dépannage"],
+  description: "Chauffagiste expert Gironde ⚡ Installation pompe à chaleur, chauffe-eau thermodynamique, climatisation. Artisan RGE certifié. Devis gratuit 07.66.46.00.08",
+  keywords: ["chauffagiste gironde", "climaticien gironde", "plombier chauffagiste", "chauffagiste bordeaux", "climaticien bordeaux", "chauffagiste bassin arcachon", "climaticien bassin arcachon", "chauffage gironde", "climatisation gironde", "pompe à chaleur", "chauffe-eau thermodynamique", "thermodynamique", "PAC air-eau", "PAC air-air", "plancher chauffant", "radiateurs", "entretien chauffage", "dépannage chauffage", "installateur chauffage", "installateur climatisation", "artisan RGE", "MaPrimeRénov", "devis gratuit chauffage", "devis gratuit climatisation"],
   authors: [{ name: "ClimGO", url: "https://www.climgo.fr" }],
   creator: "ClimGO",
   publisher: "ClimGO",
@@ -67,8 +67,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     url: "https://www.climgo.fr",
-    title: "ClimGO | Chauffagiste Climaticien RGE Gironde",
-    description: "Installation de pompe à chaleur, remplacement de chaudière, chauffage, climatisation, chauffe-eau. Artisan RGE.",
+    title: "Chauffagiste Gironde - Pompe à Chaleur, Chauffe-eau Thermodynamique | ClimGO",
+    description: "Chauffagiste expert Gironde ⚡ Installation pompe à chaleur, chauffe-eau thermodynamique, climatisation. Artisan RGE certifié. Devis gratuit 07.66.46.00.08",
     siteName: "ClimGO",
     images: [
       {
@@ -91,8 +91,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ClimGO | Chauffagiste Climaticien RGE Gironde",
-    description: "Installation de pompe à chaleur, remplacement de chaudière, chauffage, climatisation, chauffe-eau. Artisan RGE.",
+    title: "Chauffagiste Gironde - Pompe à Chaleur, Chauffe-eau Thermodynamique | ClimGO",
+    description: "Chauffagiste expert Gironde ⚡ Installation pompe à chaleur, chauffe-eau thermodynamique, climatisation. Artisan RGE certifié. Devis gratuit 07.66.46.00.08",
     images: ["/img/climdame.png"],
   },
   alternates: {
@@ -135,8 +135,8 @@ export default function RootLayout({
         
         {/* Meta tags pour Safari status bar */}
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
-        <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)" />
+        <meta name="theme-color" content="#f9fafb" media="(prefers-color-scheme: light)" />
         
         {/* Schéma JSON-LD principal */}
         <script

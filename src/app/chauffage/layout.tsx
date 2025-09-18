@@ -2,13 +2,13 @@ import { Metadata } from 'next';
 import { HEADQUARTERS_COORDINATES, generateGeoJsonLd, generateServiceAreaJsonLd } from '@/config/geo';
 
 export const metadata: Metadata = {
-  title: 'Chauffage - Installation, dépannage, maintenance',
-  description: 'ClimGO votre expert local Girondin - Chauffage - Devis gratuit, aides financières, suivi dossier. Artisan RGE. 07.66.46.00.08',
-  keywords: 'chauffage gironde, installation pompe à chaleur, plancher chauffant, radiateurs, artisan RGE, MaPrimeRénov, prime CEE, devis gratuit chauffage',
+  title: 'Chauffagiste Gironde - Installation Pompe à Chaleur, Chauffe-eau Thermodynamique',
+  description: 'Chauffagiste expert Gironde ⚡ Installation pompe à chaleur, chauffe-eau thermodynamique, plancher chauffant. Artisan RGE certifié. Devis gratuit 07.66.46.00.08',
+  keywords: 'chauffagiste gironde, chauffage gironde, installation pompe à chaleur, chauffe-eau thermodynamique, pompe à chaleur air-eau, pompe à chaleur air-air, plancher chauffant, radiateurs, chauffagiste bordeaux, chauffagiste bassin arcachon, artisan RGE, thermodynamique, PAC air eau, PAC air air, MaPrimeRénov, prime CEE, devis gratuit chauffage, entretien chauffage, dépannage chauffage',
   
   openGraph: {
-    title: 'Chauffage - Installation, dépannage, maintenance',
-    description: 'ClimGO votre expert local Girondin - Chauffage - Devis gratuit, aides financières, suivi dossier. Artisan RGE. 07.66.46.00.08',
+    title: 'Chauffagiste Gironde - Installation Pompe à Chaleur, Chauffe-eau Thermodynamique',
+    description: 'Chauffagiste expert Gironde ⚡ Installation pompe à chaleur, chauffe-eau thermodynamique, plancher chauffant. Artisan RGE certifié. Devis gratuit 07.66.46.00.08',
     url: 'https://www.climgo.fr/chauffage',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage - Installation, dépannage, maintenance',
-    description: 'ClimGO votre expert local Girondin - Chauffage - Devis gratuit, aides financières, suivi dossier. Artisan RGE. 07.66.46.00.08',
+    title: 'Chauffagiste Gironde - Installation Pompe à Chaleur, Chauffe-eau Thermodynamique',
+    description: 'Chauffagiste expert Gironde ⚡ Installation pompe à chaleur, chauffe-eau thermodynamique, plancher chauffant. Artisan RGE certifié. Devis gratuit 07.66.46.00.08',
     images: ['/img/serp/chauff.jpg'],
   },
   

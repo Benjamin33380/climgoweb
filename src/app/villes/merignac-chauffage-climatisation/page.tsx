@@ -7,7 +7,7 @@ import { Search, MapPin } from "lucide-react";
 import { useState } from "react";
 import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
-import GoogleReviews from '@/components/GoogleReviews';
+import TestimonialsSection from '@/components/TestimonialsSection';
 
 import CityLinksList from '@/components/CityLinksList';
 
@@ -94,7 +94,7 @@ export default function Merignac() {
         
         {/* Résultats de recherche */}
         {showSearchResults && (
-          <div className="absolute top-full left-0 right-0 mt-2 bg-white/95 dark:bg-black/95 backdrop-blur-md rounded-xl shadow-2xl border border-black/20 dark:border-white/30 max-h-60 overflow-y-auto z-50">
+          <div className="absolute top-full left-0 right-0 mt-2 bg-white/95 dark:bg-background/95 backdrop-blur-md rounded-xl shadow-2xl border border-black/20 dark:border-white/30 max-h-60 overflow-y-auto z-50">
             {filteredCities.length > 0 ? (
               filteredCities.slice(0, 8).map((city, index) => (
                 <Link
@@ -104,7 +104,7 @@ export default function Merignac() {
                     setSearchQuery('');
                     setShowSearchResults(false);
                   }}
-                  className="block w-full text-left px-4 py-3 hover:bg-white dark:hover:bg-black text-black dark:text-white hover:text-black dark:hover:text-white transition-colors flex items-center gap-2"
+                  className="block w-full text-left px-4 py-3 hover:bg-white dark:hover:bg-background text-black dark:text-white hover:text-black dark:hover:text-white transition-colors flex items-center gap-2"
                 >
                   <MapPin className="w-4 h-4 text-gray-500 dark:text-white" />
                   {city.name}
@@ -123,7 +123,7 @@ export default function Merignac() {
 
   return (
     <main className="px-0">
-      <section className="hero-mobile-section relative h-[100vh] xs:h-[95vh] sm:h-[90vh] min-h-[500px] xs:min-h-[550px] sm:min-h-[600px] md:min-h-[640px] lg:min-h-[700px] xl:min-h-[750px] w-full overflow-hidden bg-transparent sm:bg-white sm:dark:bg-black text-black dark:text-white">
+      <section className="hero-mobile-section relative h-[100vh] xs:h-[95vh] sm:h-[90vh] min-h-[500px] xs:min-h-[550px] sm:min-h-[600px] md:min-h-[640px] lg:min-h-[700px] xl:min-h-[750px] w-full overflow-hidden bg-transparent sm:bg-white sm:dark:bg-background text-black dark:text-white">
         {/* Zone image avec effet zoom - Responsive avec adaptation mobile */}
         <div className="absolute top-0 left-0 h-full w-full z-1 sm:hidden bg-gray-100 dark:bg-gray-800">
           <div className="flex items-center justify-center h-full">
@@ -188,7 +188,7 @@ export default function Merignac() {
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-full px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-2.5 md:py-3 lg:py-4 text-xs sm:text-sm md:text-base font-medium
-                           bg-gray-50 dark:bg-background text-black dark:text-white hover:bg-white/90 dark:hover:bg-black/90
+                           bg-gray-50 dark:bg-background text-black dark:text-white hover:bg-white/90 dark:hover:bg-background/90
                            border border-black/20 dark:border-white/20
                            transition-all duration-300 transform hover:scale-105 shadow-lg"
               >
@@ -429,7 +429,7 @@ export default function Merignac() {
             <div className="text-center mt-16">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-full px-8 py-4 bg-gray-50 dark:bg-background text-black dark:text-white font-semibold hover:bg-white dark:hover:bg-black transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl border border-white"
+                className="inline-flex items-center justify-center rounded-full px-8 py-4 bg-gray-50 dark:bg-background text-black dark:text-white font-semibold hover:bg-white dark:hover:bg-background transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl border border-white"
               >
                 Demander un devis
               </Link>
@@ -444,10 +444,10 @@ export default function Merignac() {
           <div className="max-w-7xl mx-auto">
             <div className="relative max-w-full overflow-hidden">
               {/* Ombre gauche - Desktop seulement */}
-              <div className="hidden md:block absolute left-0 top-0 bottom-0 w-90 bg-gradient-to-r from-white via-white/80 to-transparent dark:from-black dark:via-black/80 z-10 pointer-events-none" />
+              <div className="hidden md:block absolute left-0 top-0 bottom-0 w-90 bg-gradient-to-r from-white via-white/80 to-transparent dark:from-background dark:via-background/80 z-10 pointer-events-none" />
               
               {/* Ombre droite - Desktop seulement */}
-              <div className="hidden md:block absolute right-0 top-0 bottom-0 w-90 bg-gradient-to-l from-white via-white/80 to-transparent dark:from-black dark:via-black/80 z-10 pointer-events-none" />
+              <div className="hidden md:block absolute right-0 top-0 bottom-0 w-90 bg-gradient-to-l from-white via-white/80 to-transparent dark:from-background dark:via-background/80 z-10 pointer-events-none" />
                 
                 <div className="overflow-x-auto">
                 <div className="flex space-x-8 min-w-max px-4" style={{ marginLeft: 'calc(50% - 144px)', marginRight: 'calc(50% - 144px)' }}>
@@ -473,15 +473,15 @@ export default function Merignac() {
                     </h3>
                     <div className="space-y-3 text-black dark:text-white leading-relaxed">
                       <div className="flex items-start space-x-3">
-                        <div className="w-2 h-2 bg-black dark:bg-white rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-foreground dark:bg-white rounded-full mt-2 flex-shrink-0"></div>
                         <p><strong>Avenue du Truc :</strong> remplacement chaudière fioul par PAC air/eau éco-performante.</p>
                       </div>
                       <div className="flex items-start space-x-3">
-                        <div className="w-2 h-2 bg-black dark:bg-white rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-foreground dark:bg-white rounded-full mt-2 flex-shrink-0"></div>
                         <p><strong>Rue Paul Cézanne :</strong> système gainable appartement rénové avec combles aménagés.</p>
                       </div>
                       <div className="flex items-start space-x-3">
-                        <div className="w-2 h-2 bg-black dark:bg-white rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-foreground dark:bg-white rounded-full mt-2 flex-shrink-0"></div>
                         <p><strong>Boulevard Marcel Dassault :</strong> entretien climatiseurs muraux bureaux professionnels.</p>
                       </div>
                     </div>
@@ -517,7 +517,7 @@ export default function Merignac() {
                       <div className="mt-4">
                         <a
                           href="/contact"
-                          className="inline-flex items-center justify-center px-6 py-3 bg-gray-50 dark:bg-background text-black dark:text-white font-semibold rounded-lg hover:bg-white dark:hover:bg-black border border-white"
+                          className="inline-flex items-center justify-center px-6 py-3 bg-gray-50 dark:bg-background text-black dark:text-white font-semibold rounded-lg hover:bg-white dark:hover:bg-background border border-white"
                         >
                           Contactez-nous
                         </a>
@@ -620,7 +620,7 @@ export default function Merignac() {
             <div className="text-center mt-16">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-full px-8 py-4 bg-gray-50 dark:bg-background text-black dark:text-white font-semibold hover:bg-white dark:hover:bg-black transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl border border-white"
+                className="inline-flex items-center justify-center rounded-full px-8 py-4 bg-gray-50 dark:bg-background text-black dark:text-white font-semibold hover:bg-white dark:hover:bg-background transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl border border-white"
               >
                 Demander un devis
               </Link>
@@ -777,7 +777,7 @@ export default function Merignac() {
               </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-full px-8 py-4 bg-gray-50 dark:bg-background text-black dark:text-white font-semibold hover:bg-white dark:hover:bg-black transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl border border-white"
+                className="inline-flex items-center justify-center rounded-full px-8 py-4 bg-gray-50 dark:bg-background text-black dark:text-white font-semibold hover:bg-white dark:hover:bg-background transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl border border-white"
               >
                 Découvrir nos solutions
               </Link>
@@ -786,10 +786,8 @@ export default function Merignac() {
         </div>
       </section>
 
-      {/* Section Google Reviews */}
-      <GoogleReviews 
-        placeId={process.env.NEXT_PUBLIC_GOOGLE_PLACE_ID || "ClimGO-default-place-id"} 
-      />
+      {/* Section Témoignages Clients */}
+      <TestimonialsSection />
 
 
 

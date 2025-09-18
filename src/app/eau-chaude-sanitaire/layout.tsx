@@ -2,16 +2,9 @@ import { Metadata } from 'next';
 import { HEADQUARTERS_COORDINATES, generateGeoJsonLd, generateServiceAreaJsonLd } from '@/config/geo';
 
 export const metadata: Metadata = {
-  title: "Chauffe-eau - Installation, dépannage, maintenance",
-  description: "ClimGO votre expert local Girondin - Chauffe-eau - Devis gratuit, aides financières, suivi dossier. Artisan RGE. 07.66.46.00.08",
-  keywords: [
-    "chauffe-eau Gironde",
-    "eau chaude sanitaire",
-    "installation chauffe-eau",
-    "maintenance chauffe-eau",
-    "artisan RGE Gironde",
-    "devis gratuit",
-  ],
+  title: "Chauffe-eau Thermodynamique Gironde - Installation & Dépannage",
+  description: "Spécialiste chauffe-eau thermodynamique Gironde ⚡ Installation, dépannage, maintenance. Économies jusqu'à 70%. Artisan RGE. Devis gratuit 07.66.46.00.08",
+  keywords: "plombier chauffagiste, plombier gironde, plombier bordeaux, plombier bassin arcachon, chauffe-eau thermodynamique, chauffe-eau thermodynamique gironde, installation chauffe-eau thermodynamique, chauffe-eau bordeaux, chauffe-eau bassin arcachon, eau chaude sanitaire, cumulus thermodynamique, ballon thermodynamique, dépannage chauffe-eau, maintenance chauffe-eau, artisan RGE gironde, MaPrimeRénov chauffe-eau, devis gratuit chauffe-eau, chauffe-eau économique, thermodynamique air eau, installation plomberie",
   openGraph: {
     title: "Eau chaude sanitaire | Installation & Maintenance Gironde",
     description: "Installation et maintenance de chauffe-eau en Gironde. ClimGO, expert en eau chaude sanitaire. Devis gratuit, intervention rapide.",

@@ -7,7 +7,7 @@ import { Search, MapPin } from "lucide-react";
 import { useState } from "react";
 import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
-import GoogleReviews from '@/components/GoogleReviews';
+import TestimonialsSection from '@/components/TestimonialsSection';
 import FAQChat from '@/components/FAQChat';
 import CityLinksList from '@/components/CityLinksList';
 
@@ -94,7 +94,7 @@ export default function Sanguinet() {
         
         {/* Résultats de recherche */}
         {showSearchResults && (
-          <div className="absolute top-full left-0 right-0 mt-2 bg-white/95 dark:bg-black/95 backdrop-blur-md rounded-xl shadow-2xl border border-black/20 dark:border-white/30 max-h-60 overflow-y-auto z-50">
+          <div className="absolute top-full left-0 right-0 mt-2 bg-white/95 dark:bg-background/95 backdrop-blur-md rounded-xl shadow-2xl border border-black/20 dark:border-white/30 max-h-60 overflow-y-auto z-50">
             {filteredCities.length > 0 ? (
               filteredCities.slice(0, 8).map((city, index) => (
                 <Link
@@ -104,7 +104,7 @@ export default function Sanguinet() {
                     setSearchQuery('');
                     setShowSearchResults(false);
                   }}
-                  className="block w-full text-left px-4 py-3 hover:bg-white dark:hover:bg-black text-black dark:text-white hover:text-black dark:hover:text-white transition-colors flex items-center gap-2"
+                  className="block w-full text-left px-4 py-3 hover:bg-white dark:hover:bg-background text-black dark:text-white hover:text-black dark:hover:text-white transition-colors flex items-center gap-2"
                 >
                   <MapPin className="w-4 h-4 text-gray-500 dark:text-white" />
                   {city.name}
@@ -123,7 +123,7 @@ export default function Sanguinet() {
 
   return (
     <main className="px-0">
-      <section className="hero-mobile-section relative h-[100vh] xs:h-[95vh] sm:h-[90vh] min-h-[500px] xs:min-h-[550px] sm:min-h-[600px] md:min-h-[640px] lg:min-h-[700px] xl:min-h-[750px] w-full overflow-hidden bg-transparent sm:bg-white sm:dark:bg-black text-black dark:text-white">
+      <section className="hero-mobile-section relative h-[100vh] xs:h-[95vh] sm:h-[90vh] min-h-[500px] xs:min-h-[550px] sm:min-h-[600px] md:min-h-[640px] lg:min-h-[700px] xl:min-h-[750px] w-full overflow-hidden bg-transparent sm:bg-white sm:dark:bg-background text-black dark:text-white">
         {/* Zone image avec effet zoom - Responsive avec adaptation mobile */}
         <div className="absolute top-0 left-0 h-full w-full z-1 sm:hidden">
           <Image
@@ -192,7 +192,7 @@ export default function Sanguinet() {
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-full px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-2.5 md:py-3 lg:py-4 text-xs sm:text-sm md:text-base font-medium
-                           bg-gray-50 dark:bg-background text-black dark:text-white hover:bg-white/90 dark:hover:bg-black/90
+                           bg-gray-50 dark:bg-background text-black dark:text-white hover:bg-white/90 dark:hover:bg-background/90
                            border border-black/20 dark:border-white/20
                            transition-all duration-300 transform hover:scale-105 shadow-lg"
               >
@@ -421,7 +421,7 @@ export default function Sanguinet() {
             <div className="text-center mt-16">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-full px-8 py-4 bg-gray-50 dark:bg-background text-black dark:text-white font-semibold hover:bg-white dark:hover:bg-black transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl border border-white"
+                className="inline-flex items-center justify-center rounded-full px-8 py-4 bg-gray-50 dark:bg-background text-black dark:text-white font-semibold hover:bg-white dark:hover:bg-background transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl border border-white"
               >
                 Demander un devis
               </Link>
@@ -436,10 +436,10 @@ export default function Sanguinet() {
           <div className="max-w-7xl mx-auto">
             <div className="relative max-w-full overflow-hidden">
               {/* Ombre gauche - Desktop seulement */}
-              <div className="hidden md:block absolute left-0 top-0 bottom-0 w-90 bg-gradient-to-r from-white via-white/80 to-transparent dark:from-black dark:via-black/80 z-10 pointer-events-none" />
+              <div className="hidden md:block absolute left-0 top-0 bottom-0 w-90 bg-gradient-to-r from-white via-white/80 to-transparent dark:from-background dark:via-background/80 z-10 pointer-events-none" />
               
               {/* Ombre droite - Desktop seulement */}
-              <div className="hidden md:block absolute right-0 top-0 bottom-0 w-90 bg-gradient-to-l from-white via-white/80 to-transparent dark:from-black dark:via-black/80 z-10 pointer-events-none" />
+              <div className="hidden md:block absolute right-0 top-0 bottom-0 w-90 bg-gradient-to-l from-white via-white/80 to-transparent dark:from-background dark:via-background/80 z-10 pointer-events-none" />
                 
                 <div className="overflow-x-auto">
                 <div className="flex space-x-8 min-w-max px-4" style={{ marginLeft: 'calc(50% - 144px)', marginRight: 'calc(50% - 144px)' }}>
@@ -465,15 +465,15 @@ export default function Sanguinet() {
                     </h3>
                     <div className="space-y-3 text-black dark:text-white leading-relaxed">
                       <div className="flex items-start space-x-3">
-                        <div className="w-2 h-2 bg-black dark:bg-white rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-foreground dark:bg-white rounded-full mt-2 flex-shrink-0"></div>
                         <p><strong>Rue des Arbousiers :</strong> split mural Mitsubishi dans maison bois de 100 m².</p>
                       </div>
                       <div className="flex items-start space-x-3">
-                        <div className="w-2 h-2 bg-black dark:bg-white rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-foreground dark:bg-white rounded-full mt-2 flex-shrink-0"></div>
                         <p><strong>Avenue des Grands Lacs :</strong> chauffe-eau thermodynamique compact.</p>
                       </div>
                       <div className="flex items-start space-x-3">
-                        <div className="w-2 h-2 bg-black dark:bg-white rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-foreground dark:bg-white rounded-full mt-2 flex-shrink-0"></div>
                         <p><strong>Chemin de Canteloup :</strong> PAC air/eau avec plancher chauffant résidence neuve.</p>
                       </div>
                     </div>
@@ -509,7 +509,7 @@ export default function Sanguinet() {
                       <div className="mt-4">
                         <a
                           href="/contact"
-                          className="inline-flex items-center px-6 py-3 bg-gray-50 dark:bg-background text-black dark:text-white font-semibold rounded-lg hover:bg-white dark:hover:bg-black"
+                          className="inline-flex items-center px-6 py-3 bg-gray-50 dark:bg-background text-black dark:text-white font-semibold rounded-lg hover:bg-white dark:hover:bg-background"
                         >
                           Contactez-nous
                           <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -545,7 +545,7 @@ export default function Sanguinet() {
               {/* Expertise Lacustre */}
               <div className="group bg-gray-50 dark:bg-background backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-black dark:hover:border-white min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
                 <div className="text-center flex flex-col h-full">
-                  <div className="bg-black dark:bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <div className="bg-foreground dark:bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                     <svg className="w-12 h-12 text-white dark:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
                     </svg>
@@ -562,7 +562,7 @@ export default function Sanguinet() {
               {/* Habitats */}
               <div className="group bg-gray-50 dark:bg-background backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-black dark:hover:border-white min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
                 <div className="text-center flex flex-col h-full">
-                  <div className="bg-black dark:bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <div className="bg-foreground dark:bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                     <svg className="w-12 h-12 text-white dark:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                     </svg>
@@ -579,7 +579,7 @@ export default function Sanguinet() {
               {/* Certifications */}
               <div className="group bg-gray-50 dark:bg-background backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-black dark:hover:border-white min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
                 <div className="text-center flex flex-col h-full">
-                  <div className="bg-black dark:bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <div className="bg-foreground dark:bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                     <svg className="w-12 h-12 text-white dark:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.563.563 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
                     </svg>
@@ -596,7 +596,7 @@ export default function Sanguinet() {
               {/* Réactivité */}
               <div className="group bg-gray-50 dark:bg-background backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-black dark:hover:border-white min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
                 <div className="text-center flex flex-col h-full">
-                  <div className="bg-black dark:bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <div className="bg-foreground dark:bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                     <svg className="w-12 h-12 text-white dark:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
@@ -615,7 +615,7 @@ export default function Sanguinet() {
             <div className="text-center mt-16">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-full px-8 py-4 bg-gray-50 dark:bg-background text-black dark:text-white font-semibold hover:bg-white dark:hover:bg-black transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl border border-white"
+                className="inline-flex items-center justify-center rounded-full px-8 py-4 bg-gray-50 dark:bg-background text-black dark:text-white font-semibold hover:bg-white dark:hover:bg-background transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl border border-white"
               >
                 Demander un devis
               </Link>
@@ -772,7 +772,7 @@ export default function Sanguinet() {
               </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-full px-8 py-4 bg-gray-50 dark:bg-background text-black dark:text-white font-semibold hover:bg-white dark:hover:bg-black transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl border border-white"
+                className="inline-flex items-center justify-center rounded-full px-8 py-4 bg-gray-50 dark:bg-background text-black dark:text-white font-semibold hover:bg-white dark:hover:bg-background transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl border border-white"
               >
                 Découvrir nos solutions
               </Link>
@@ -781,10 +781,8 @@ export default function Sanguinet() {
         </div>
       </section>
 
-      {/* Section Google Reviews */}
-      <GoogleReviews 
-        placeId={process.env.NEXT_PUBLIC_GOOGLE_PLACE_ID || "ClimGO-default-place-id"} 
-      />
+      {/* Section Témoignages Clients */}
+      <TestimonialsSection />
 
       {/* Section FAQ - Style Chat Moderne avec questions variées */}
       <FAQChat

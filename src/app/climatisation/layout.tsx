@@ -2,13 +2,13 @@ import { Metadata } from 'next';
 import { HEADQUARTERS_COORDINATES, generateGeoJsonLd, generateServiceAreaJsonLd } from '@/config/geo';
 
 export const metadata: Metadata = {
-  title: 'Climatisation - Installation, dépannage, maintenance',
-  description: 'ClimGO votre expert local Girondin - Climatisation - Devis gratuit, aides financières, suivi dossier. Artisan RGE. 07.66.46.00.08',
-  keywords: 'climatisation Gironde, installation climatiseur, PAC air air, climatiseur réversible, entretien climatisation, dépannage clim, ClimGO',
+  title: 'Climaticien Gironde - Installation Climatisation & PAC Air-Air',
+  description: 'Climaticien expert Gironde ⚡ Installation climatisation, PAC air-air, dépannage clim. Artisan RGE certifié. Devis gratuit 07.66.46.00.08',
+  keywords: 'climaticien gironde, climaticien bordeaux, climaticien bassin arcachon, climatisation gironde, installation climatiseur, PAC air-air, climatiseur réversible, entretien climatisation, dépannage clim, installateur climatisation, artisan climaticien, devis gratuit climatisation, maintenance climatisation, ClimGO',
   
   openGraph: {
-    title: 'Climatisation - Installation, dépannage, maintenance',
-    description: 'ClimGO votre expert local Girondin - Climatisation - Devis gratuit, aides financières, suivi dossier. Artisan RGE. 07.66.46.00.08',
+    title: 'Climaticien Gironde - Installation Climatisation & PAC Air-Air',
+    description: 'Climaticien expert Gironde ⚡ Installation climatisation, PAC air-air, dépannage clim. Artisan RGE certifié. Devis gratuit 07.66.46.00.08',
     url: 'https://www.climgo.fr/climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Climatisation - Installation, dépannage, maintenance',
-    description: 'ClimGO votre expert local Girondin - Climatisation - Devis gratuit, aides financières, suivi dossier. Artisan RGE. 07.66.46.00.08',
+    title: 'Climaticien Gironde - Installation Climatisation & PAC Air-Air',
+    description: 'Climaticien expert Gironde ⚡ Installation climatisation, PAC air-air, dépannage clim. Artisan RGE certifié. Devis gratuit 07.66.46.00.08',
     images: ['/img/serp/clim.png'],
   },
   
