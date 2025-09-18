@@ -109,10 +109,19 @@ html {
 body {
   margin: 0;
   padding: 0;
+  /* Amélioration du rendu des polices */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1;
+  font-kerning: auto;
 }
 
 * {
   box-sizing: border-box;
+  /* Amélioration du rendu sur tous les éléments */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
 }
 
 /* Gradient radial personnalisé */
@@ -295,19 +304,19 @@ body {
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
+  --background: oklch(0.09 0.015 240);
   --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
+  --card: oklch(0.12 0.015 240);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
   --primary: oklch(0.985 0 0);
   --primary-foreground: oklch(0.145 0 0);
-  --secondary: oklch(0.269 0 0);
+  --secondary: oklch(0.15 0.015 240);
   --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
+  --muted: oklch(0.15 0.015 240);
   --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
+  --accent: oklch(0.15 0.015 240);
   --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 10%);
@@ -569,8 +578,8 @@ body {
   
   /* Mode sombre */
   .dark html, .dark body {
-    background-color: #000000 !important;
-    -webkit-background-color: #000000 !important;
+    background-color: #0f172a !important;
+    -webkit-background-color: #0f172a !important;
   }
 }
 
@@ -607,17 +616,17 @@ body {
   
   /* Mode sombre */
   .dark html {
-    background: #000000 !important;
-    -webkit-background: #000000 !important;
-    background-color: #000000 !important;
-    -webkit-background-color: #000000 !important;
+    background: #0a0a0a !important;
+    -webkit-background: #0a0a0a !important;
+    background-color: #0f172a !important;
+    -webkit-background-color: #0f172a !important;
   }
   
   .dark body {
-    background: #000000 !important;
-    -webkit-background: #000000 !important;
-    background-color: #000000 !important;
-    -webkit-background-color: #000000 !important;
+    background: #0a0a0a !important;
+    -webkit-background: #0a0a0a !important;
+    background-color: #0f172a !important;
+    -webkit-background-color: #0f172a !important;
     -webkit-tap-highlight-color: transparent !important;
   }
   
@@ -634,8 +643,8 @@ body {
   }
   
   .dark .bg-background {
-    background-color: #000000 !important;
-    -webkit-background-color: #000000 !important;
+    background-color: #0f172a !important;
+    -webkit-background-color: #0f172a !important;
   }
   
   /* Force le fond sur le main et les sections */
@@ -653,8 +662,8 @@ body {
   }
   
   .dark html, .dark body {
-    background-color: #000000 !important;
-    -webkit-background-color: #000000 !important;
+    background-color: #0f172a !important;
+    -webkit-background-color: #0f172a !important;
   }
   
   /* Force le fond sur tous les éléments SAUF la section hero mobile */
@@ -683,5 +692,35 @@ body {
 @media (min-width: 640px) {
   .mobile-text-shadow {
     text-shadow: none;
+  }
+}
+
+/* Optimisations anti-pixellisation pour écrans haute résolution */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  
+  /* Amélioration pour les écrans Retina */
+  .dark {
+    background-color: #0f172a;
+    color: #f8fafc;
+  }
+}
+
+/* Optimisations spécifiques pour les écrans OLED */
+@media (dynamic-range: high) {
+  .dark {
+    --background: oklch(0.1 0.015 240);
+  }
+}
+
+/* Amélioration du contraste pour réduire la pixellisation */
+@supports (color: oklch(0% 0 0)) {
+  .dark {
+    --background: oklch(0.09 0.015 240);
+    --foreground: oklch(0.98 0.005 240);
   }
 }

@@ -82,9 +82,9 @@ export default function AProposPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-black">
+    <div className="min-h-screen bg-gray-50 dark:bg-background">
       {/* Header Fluide */}
-      <div className="bg-white dark:bg-black py-16">
+      <div className="bg-gray-50 dark:bg-background py-16">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-4xl mx-auto">
             {/* Badge doux */}
@@ -144,7 +144,7 @@ export default function AProposPage() {
       </section>
 
       {/* Section Histoire Fluide */}
-      <section className="py-20 bg-white dark:bg-black">
+      <section className="py-20 bg-gray-50 dark:bg-background">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             
@@ -234,7 +234,7 @@ export default function AProposPage() {
       </section>
 
       {/* Section Certifications Fluide */}
-      <section className="py-20 bg-white dark:bg-black">
+      <section className="py-20 bg-gray-50 dark:bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-light text-black dark:text-white mb-4">

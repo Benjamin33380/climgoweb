@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function PrivacyPolicy() {
   return (
-    <div className="min-h-screen bg-white dark:bg-black flex justify-center pt-24 pb-16">
+    <div className="min-h-screen bg-gray-50 dark:bg-background flex justify-center pt-24 pb-16">
       <div className="max-w-4xl text-black dark:text-white p-4 md:p-8">
         <h1 className="text-3xl md:text-4xl font-medium mb-4 text-gray-900 dark:text-white">
           Politique de Confidentialité

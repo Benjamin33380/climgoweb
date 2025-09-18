@@ -439,7 +439,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased bg-black`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased bg-background`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
             <UserProvider>
               <GoogleAnalytics />
@@ -452,7 +452,7 @@ export default function RootLayout({
                 className="min-h-screen bg-background text-foreground"
               >
                 {/* Header Desktop */}
-                <div className="hidden lg:block bg-black">
+                <div className="hidden lg:block bg-background">
                   <NewHeader />
                 </div>
                 {/* Header Mobile */}

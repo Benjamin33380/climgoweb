@@ -23,11 +23,11 @@ export default function ServicesPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-black text-[#03144A] dark:text-white">
+    <div className="min-h-screen bg-gray-50 dark:bg-background text-[#03144A] dark:text-white">
       
       {/* Hero Section with Floating Particles */}
-      <section className="relative min-h-screen pt-24 md:pt-0 flex items-center justify-center overflow-hidden bg-white dark:bg-black">
-        <div className="absolute inset-0 bg-white dark:bg-black" />
+      <section className="relative min-h-screen pt-24 md:pt-0 flex items-center justify-center overflow-hidden bg-gray-50 dark:bg-background">
+        <div className="absolute inset-0 bg-gray-50 dark:bg-background" />
         
         {/* Floating Particles - Réduits en opacité pour mode light */}
         {/* Red particles */}
@@ -62,7 +62,7 @@ export default function ServicesPage() {
         </div>
 
         <div className="relative z-10 text-center max-w-5xl mx-auto px-6">
-          <div className="inline-flex items-center px-6 py-3 rounded-full border border-[#03144A] dark:border-white/20 text-sm tracking-widest uppercase mb-8 text-[#03144A] dark:text-white bg-white dark:bg-black backdrop-blur-sm">
+          <div className="inline-flex items-center px-6 py-3 rounded-full border border-[#03144A] dark:border-white/20 text-sm tracking-widest uppercase mb-8 text-[#03144A] dark:text-white bg-gray-50 dark:bg-background backdrop-blur-sm">
             <div className="w-2 h-2 bg-[#FF8C00] rounded-full mr-3 animate-pulse" />
             Notre savoir-faire
           </div>
@@ -126,7 +126,7 @@ export default function ServicesPage() {
       </div>
 
       {/* Expertise Section */}
-      <section className="relative bg-white dark:bg-black text-[#0a0f2c] py-32 overflow-hidden">
+      <section className="relative bg-gray-50 dark:bg-background text-[#0a0f2c] py-32 overflow-hidden">
         {/* Particules décoratives pour cette section */}
         <div className="absolute w-1 h-1 bg-[#FF8C00] rounded-full top-20 left-20 opacity-60 animate-pulse" />
         <div className="absolute w-2 h-2 bg-[#2563EB] rounded-full bottom-20 right-20 opacity-60 animate-bounce" />
@@ -165,7 +165,7 @@ export default function ServicesPage() {
       <section
         ref={servicesRef}
         id="services"
-        className="pt-20 pb-32 relative bg-white dark:bg-black text-[#0a0f2c] overflow-hidden scroll-mt-28"
+        className="pt-20 pb-32 relative bg-gray-50 dark:bg-background text-[#0a0f2c] overflow-hidden scroll-mt-28"
       >
         {/* Effet de particules pour cette section */}
         <div className="absolute w-2 h-2 bg-[#FF8C00] rounded-full top-32 left-16 opacity-40 animate-bounce" />
@@ -504,7 +504,7 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative bg-white dark:bg-black text-[#03144A] dark:text-white py-32 overflow-hidden">
+      <section className="relative bg-gray-50 dark:bg-background text-[#03144A] dark:text-white py-32 overflow-hidden">
         {/* Particules pour CTA */}
         <div className="absolute w-3 h-3 bg-[#FF8C00] rounded-full top-20 left-20 opacity-60 animate-bounce" />
         <div className="absolute w-2 h-2 bg-[#2563EB] rounded-full bottom-20 right-20 opacity-60 animate-pulse" />
@@ -563,7 +563,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Location Map Section */}
-      <LazyGoogleMaps backgroundColor="bg-white dark:bg-black" />
+      <LazyGoogleMaps backgroundColor="bg-gray-50 dark:bg-background" />
 
     </div>
   );

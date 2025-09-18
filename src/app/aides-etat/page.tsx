@@ -34,7 +34,7 @@ export default function AidesEtatPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-black">
+    <div className="min-h-screen bg-gray-50 dark:bg-background">
       {/* Hero Section avec Spline */}
       <SplineHero
         title="Aides & Subventions"
@@ -44,7 +44,7 @@ export default function AidesEtatPage() {
       />
 
       {/* Section Introduction */}
-      <section className="py-8 xs:py-12 sm:py-16 md:py-20 lg:py-24 bg-white dark:bg-black">
+      <section className="py-8 xs:py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-50 dark:bg-background">
         <div className="container mx-auto px-4 xs:px-5 sm:px-6 text-center">
           <h2 className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-black dark:text-white mb-3 xs:mb-4 sm:mb-6">
             Quelles aides & subventions pour vos travaux en 2025 ?
@@ -54,14 +54,14 @@ export default function AidesEtatPage() {
       </section>
 
       {/* Section Aides avec Sticky Scroll */}
-      <section className="bg-white dark:bg-black">
+      <section className="bg-gray-50 dark:bg-background">
         <AidesStickyScroll />
       </section>
 
 
 
       {/* Section Comment ça se passe avec ClimGO */}
-      <section className="py-8 xs:py-12 sm:py-16 md:py-20 lg:py-24 bg-white dark:bg-black relative overflow-hidden">
+      <section className="py-8 xs:py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-50 dark:bg-background relative overflow-hidden">
         <div className="container mx-auto px-4 xs:px-5 sm:px-6 relative">
           <div className="text-center mb-8 xs:mb-10 sm:mb-12 md:mb-14 lg:mb-16">
             <h2 className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-black dark:text-white mb-3 xs:mb-4 sm:mb-6">
@@ -75,7 +75,7 @@ export default function AidesEtatPage() {
               {steps.map((step, index) => (
                 <div key={index} className="text-center group">
                   <div className="relative mb-4 xs:mb-5 sm:mb-6">
-                    <div className="w-14 h-14 xs:w-16 xs:h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 bg-white dark:bg-black border border-black dark:border-white rounded-full flex items-center justify-center mx-auto shadow-md group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-14 h-14 xs:w-16 xs:h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 bg-gray-50 dark:bg-background border border-black dark:border-white rounded-full flex items-center justify-center mx-auto shadow-md group-hover:scale-110 transition-transform duration-300">
                       <div className="text-black dark:text-white text-xs xs:text-sm sm:text-base md:text-lg">
                         {step.icon}
                       </div>
@@ -95,7 +95,7 @@ export default function AidesEtatPage() {
       </section>
 
       {/* Section CTA Final */}
-      <section className="py-8 xs:py-12 sm:py-16 md:py-20 lg:py-24 bg-white dark:bg-black">
+      <section className="py-8 xs:py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-50 dark:bg-background">
         <div className="container mx-auto px-4 xs:px-5 sm:px-6 text-center">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-black dark:text-white mb-3 xs:mb-4 sm:mb-6">

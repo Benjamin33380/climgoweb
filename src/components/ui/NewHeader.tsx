@@ -131,7 +131,7 @@ export default function NewHeader() {
   const [isContactHovered, setIsContactHovered] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white dark:bg-black/40 backdrop-blur supports-[backdrop-filter]:bg-white dark:supports-[backdrop-filter]:bg-black/20">
+    <header className="sticky top-0 z-50 w-full border-b bg-gray-50 dark:bg-background/40 backdrop-blur supports-[backdrop-filter]:bg-gray-50 dark:supports-[backdrop-filter]:bg-background/20">
       <div className="w-full flex h-16 items-center justify-between px-8 sm:px-12 lg:px-16">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
@@ -156,7 +156,7 @@ export default function NewHeader() {
                     <li className="row-span-3">
                       <NavigationMenuLink asChild>
                         <a
-                          className="flex h-full w-full select-none flex-col justify-center rounded-md bg-gradient-to-b from-muted/50 to-muted p-5 no-underline outline-none focus:shadow-md group"
+                          className="flex h-full w-full select-none flex-col justify-center rounded-md bg-white dark:bg-background p-5 no-underline outline-none focus:shadow-md group"
                           href="/services"
                           onMouseEnter={() => setIsServicesHovered(true)}
                           onMouseLeave={() => setIsServicesHovered(false)}
@@ -202,7 +202,7 @@ export default function NewHeader() {
                       <NavigationMenuLink asChild>
                         <Link 
                           href="/zones-interventions"
-                          className="block select-none space-y-3 rounded-xl p-5 leading-none no-underline outline-none transition-all hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground border border-border/50 hover:border-border"
+                          className="block select-none space-y-3 rounded-xl p-5 leading-none no-underline outline-none transition-all hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                         >
                           <div className="flex items-center gap-4">
                             <div className="flex items-center justify-center w-16 h-16 rounded-xl bg-primary/10">
@@ -230,7 +230,7 @@ export default function NewHeader() {
                         <NavigationMenuLink key={zone.title} asChild>
                           <Link 
                             href={zone.href}
-                            className="block select-none space-y-2 rounded-lg p-4 leading-none no-underline outline-none transition-all hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground border border-transparent hover:border-border/50"
+                            className="block select-none space-y-2 rounded-lg p-4 leading-none no-underline outline-none transition-all hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                           >
                             <div className="flex items-center gap-3">
                               <div className="flex items-center justify-center w-8 h-8 rounded-md bg-muted">
@@ -278,7 +278,7 @@ export default function NewHeader() {
                     <li className="row-span-3">
                       <NavigationMenuLink asChild>
                         <Link
-                          className="flex h-full w-full select-none flex-col justify-center rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md group"
+                          className="flex h-full w-full select-none flex-col justify-center rounded-md bg-white dark:bg-background p-6 no-underline outline-none focus:shadow-md group"
                           href="/blog"
                         >
                           <div className="flex justify-center items-center mb-4">
@@ -317,7 +317,7 @@ export default function NewHeader() {
                     <li className="row-span-3">
                       <NavigationMenuLink asChild>
                         <Link
-                          className="flex h-full w-full select-none flex-col justify-center rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md group"
+                          className="flex h-full w-full select-none flex-col justify-center rounded-md bg-white dark:bg-background p-6 no-underline outline-none focus:shadow-md group"
                           href="/contact"
                           onMouseEnter={() => setIsContactHovered(true)}
                           onMouseLeave={() => setIsContactHovered(false)}
@@ -413,7 +413,7 @@ export default function NewHeader() {
 
       {/* Menu mobile déroulant */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden border-t bg-white dark:bg-black/40 backdrop-blur max-h-[calc(100vh-80px)] overflow-y-auto">
+        <div className="lg:hidden border-t bg-gray-50 dark:bg-background/40 backdrop-blur max-h-[calc(100vh-80px)] overflow-y-auto">
           <div className="w-full px-8 py-4 space-y-4 pb-6">
             {/* Services */}
             <div className="space-y-2">

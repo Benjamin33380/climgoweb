@@ -142,11 +142,11 @@ export default function ClimatisationPage() {
   }, [currentIndex]);
 
   return (
-    <div className="min-h-screen bg-white dark:bg-black text-[#03144A] dark:text-white">
+    <div className="min-h-screen bg-gray-50 dark:bg-background text-[#03144A] dark:text-white">
       
       {/* Hero Section */}
-      <section className="relative min-h-screen pt-24 md:pt-0 flex items-center justify-center overflow-hidden bg-white dark:bg-black">
-        <div className="absolute inset-0 bg-white dark:bg-black" />
+      <section className="relative min-h-screen pt-24 md:pt-0 flex items-center justify-center overflow-hidden bg-gray-50 dark:bg-background">
+        <div className="absolute inset-0 bg-gray-50 dark:bg-background" />
         
         {/* Background effects */}
         {/* Blue particles */}
@@ -166,11 +166,11 @@ export default function ClimatisationPage() {
 
         <div className="absolute inset-0 opacity-5 dark:opacity-20">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#2563EB] rounded-full filter blur-3xl animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-white dark:bg-black rounded-full filter blur-3xl animate-pulse" style={{animationDelay: '2s'}} />
+          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-gray-50 dark:bg-background rounded-full filter blur-3xl animate-pulse" style={{animationDelay: '2s'}} />
         </div>
 
         <div className="relative z-10 text-center max-w-5xl mx-auto px-6">
-          <div className="inline-flex items-center px-6 py-3 rounded-full border border-[#03144A] dark:border-white/20 text-sm tracking-widest uppercase mb-8 text-[#03144A] dark:text-white bg-white dark:bg-black backdrop-blur-sm">
+          <div className="inline-flex items-center px-6 py-3 rounded-full border border-[#03144A] dark:border-white/20 text-sm tracking-widest uppercase mb-8 text-[#03144A] dark:text-white bg-gray-50 dark:bg-background backdrop-blur-sm">
             <div className="w-2 h-2 bg-[#2563EB] rounded-full mr-3 animate-pulse" />
             Nos solutions climatisation
           </div>
@@ -196,7 +196,7 @@ export default function ClimatisationPage() {
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <button
               onClick={() => solutionsRef.current?.scrollIntoView({ behavior: 'smooth' })}
-              className="group relative px-10 py-4 bg-white dark:bg-black text-[#03144A] dark:text-white rounded-full font-medium transition-all duration-300 hover:scale-105 overflow-hidden border border-[#03144A] dark:border-white/30"
+              className="group relative px-10 py-4 bg-gray-50 dark:bg-background text-[#03144A] dark:text-white rounded-full font-medium transition-all duration-300 hover:scale-105 overflow-hidden border border-[#03144A] dark:border-white/30"
             >
               <span className="relative z-10">Découvrir nos solutions</span>
               <div className="absolute inset-0 bg-gradient-to-r from-[#03144A] to-[#2563EB] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -230,7 +230,7 @@ export default function ClimatisationPage() {
           {/* Solutions en Colonne - Cartes Grandes */}
           <div className="space-y-12">
             {solutions.map((solution, index) => (
-              <div key={index} className="bg-white dark:bg-black rounded-3xl border border-[#03144A] dark:border-white/20 overflow-hidden backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+              <div key={index} className="bg-gray-50 dark:bg-background rounded-3xl border border-[#03144A] dark:border-white/20 overflow-hidden backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
                   {/* Content Side */}
                   <div className="p-12 lg:p-16">
@@ -270,7 +270,7 @@ export default function ClimatisationPage() {
                   </div>
 
                   {/* Image Side */}
-                  <div className="relative bg-white dark:bg-black flex items-center justify-center p-12">
+                  <div className="relative bg-gray-50 dark:bg-background flex items-center justify-center p-12">
                     <div className="relative w-80 h-80">
                       <Image
                         src={solution.image}
@@ -289,7 +289,7 @@ export default function ClimatisationPage() {
 
       {/* Advantages Section */}
       <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-white dark:bg-black" />
+        <div className="absolute inset-0 bg-gray-50 dark:bg-background" />
         
         <div className="relative z-10 max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
@@ -305,7 +305,7 @@ export default function ClimatisationPage() {
             {advantages.map((advantage, index) => (
               <div
                 key={index}
-                className="group text-center p-8 rounded-2xl bg-white dark:bg-black border border-[#03144A] dark:border-white/20 hover:border-white/50 dark:hover:border-black/50 transition-all duration-300"
+                className="group text-center p-8 rounded-2xl bg-gray-50 dark:bg-background border border-[#03144A] dark:border-white/20 hover:border-white/50 dark:hover:border-black/50 transition-all duration-300"
               >
                 <div className="text-5xl mb-6 transform group-hover:scale-110 transition-transform duration-300">
                   {advantage.icon}
@@ -325,7 +325,7 @@ export default function ClimatisationPage() {
       {/* CTA Section - Optimisé Mobile */}
       <section className="py-12 md:py-24 relative">
         <div className="max-w-4xl mx-auto text-center px-4 md:px-6">
-          <div className="bg-white dark:bg-black rounded-2xl md:rounded-3xl p-8 md:p-16 border border-[#03144A] dark:border-white/20 backdrop-blur-sm shadow-xl">
+          <div className="bg-gray-50 dark:bg-background rounded-2xl md:rounded-3xl p-8 md:p-16 border border-[#03144A] dark:border-white/20 backdrop-blur-sm shadow-xl">
             <h2 className="text-2xl md:text-4xl lg:text-5xl font-light mb-6 md:mb-8 leading-tight">
               Prêt à optimiser votre
               <br className="hidden sm:block" />
@@ -360,7 +360,7 @@ export default function ClimatisationPage() {
       </section>
 
       {/* Location Map Section */}
-              <LazyGoogleMaps backgroundColor="bg-white dark:bg-black" />
+              <LazyGoogleMaps backgroundColor="bg-gray-50 dark:bg-background" />
 
       <style jsx global>{`
         @keyframes float {

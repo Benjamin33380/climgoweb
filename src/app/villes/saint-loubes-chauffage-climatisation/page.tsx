@@ -122,7 +122,7 @@ export default function SaintLoubes() {
 
   return (
     <main className="px-0">
-      <section className="relative h-[90vh] min-h-[500px] sm:min-h-[600px] md:min-h-[640px] w-full overflow-hidden bg-white dark:bg-black text-black dark:text-white">
+      <section className="relative h-[90vh] min-h-[500px] sm:min-h-[600px] md:min-h-[640px] w-full overflow-hidden bg-gray-50 dark:bg-background text-black dark:text-white">
         {/* Zone vidéo - Responsive avec adaptation mobile */}
         <motion.div
           className="absolute top-0 right-0 h-full w-full sm:w-2/3"
@@ -161,7 +161,7 @@ export default function SaintLoubes() {
 
         {/* Forme diagonale sur le premier tiers - Cachée sur mobile */}
         <div 
-          className="hidden sm:block absolute top-0 left-0 h-full w-2/5 bg-white dark:bg-black z-5"
+          className="hidden sm:block absolute top-0 left-0 h-full w-2/5 bg-gray-50 dark:bg-background z-5"
           style={{
             clipPath: 'polygon(0% 0%, 85% 0%, 100% 100%, 0% 100%)'
           }}
@@ -194,7 +194,7 @@ export default function SaintLoubes() {
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-full px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-2.5 md:py-3 lg:py-4 text-xs sm:text-sm md:text-base font-medium
-                           bg-white dark:bg-black text-black dark:text-white hover:bg-white/90 dark:hover:bg-black/90
+                           bg-gray-50 dark:bg-background text-black dark:text-white hover:bg-white/90 dark:hover:bg-black/90
                            border border-black/20 dark:border-white/20
                            transition-all duration-300 transform hover:scale-105 shadow-lg"
               >
@@ -220,13 +220,13 @@ export default function SaintLoubes() {
       </section>
 
       
-      <div className="bg-white dark:bg-black py-4">
+      <div className="bg-gray-50 dark:bg-background py-4">
       </div>
       
       {/* Section Saint-Loubès - Texte défilant au scroll */}
       <section className="relative py-8 sm:py-12 overflow-hidden">
         <div
-          className="absolute inset-0 -z-10 w-full h-full bg-white dark:bg-black"
+          className="absolute inset-0 -z-10 w-full h-full bg-gray-50 dark:bg-background"
           aria-hidden="true"
         ></div>
         
@@ -306,7 +306,7 @@ export default function SaintLoubes() {
       <Services />
 
       {/* Section Nos interventions - Timeline verticale élégante */}
-      <section className="relative py-24 overflow-hidden bg-white dark:bg-black">
+      <section className="relative py-24 overflow-hidden bg-gray-50 dark:bg-background">
         
         <SimpleWrapper>
           <div className="relative z-10 max-w-6xl mx-auto px-4">
@@ -352,7 +352,7 @@ export default function SaintLoubes() {
               
               {/* Étape 1 */}
               <div className="relative flex items-center mb-16">
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-white dark:bg-black rounded-full shadow-2xl flex items-center justify-center z-10">
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gray-50 dark:bg-background rounded-full shadow-2xl flex items-center justify-center z-10">
                   <svg className="w-8 h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -369,7 +369,7 @@ export default function SaintLoubes() {
               
               {/* Étape 2 */}
               <div className="relative flex items-center mb-16">
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-white dark:bg-black rounded-full shadow-2xl flex items-center justify-center z-10">
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gray-50 dark:bg-background rounded-full shadow-2xl flex items-center justify-center z-10">
                   <svg className="w-8 h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                   </svg>
@@ -385,7 +385,7 @@ export default function SaintLoubes() {
               
               {/* Étape 3 */}
               <div className="relative flex items-center mb-16">
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-white dark:bg-black rounded-full shadow-2xl flex items-center justify-center z-10">
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gray-50 dark:bg-background rounded-full shadow-2xl flex items-center justify-center z-10">
                   <svg className="w-8 h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2-2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                   </svg>
@@ -401,7 +401,7 @@ export default function SaintLoubes() {
               
               {/* Étape 4 */}
               <div className="relative flex items-center">
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-white dark:bg-black rounded-full shadow-2xl flex items-center justify-center z-10">
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gray-50 dark:bg-background rounded-full shadow-2xl flex items-center justify-center z-10">
                   <svg className="w-8 h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
@@ -420,7 +420,7 @@ export default function SaintLoubes() {
             <div className="text-center mt-16">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-full px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-semibold hover:bg-white dark:hover:bg-black transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl border border-white"
+                className="inline-flex items-center justify-center rounded-full px-8 py-4 bg-gray-50 dark:bg-background text-black dark:text-white font-semibold hover:bg-white dark:hover:bg-black transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl border border-white"
               >
                 Demander un devis
               </Link>
@@ -430,7 +430,7 @@ export default function SaintLoubes() {
       </section>
 
       {/* Section 4 blocs horizontaux avec ScrollShadow HeroUI */}
-      <section className="py-20 bg-white dark:bg-black">
+      <section className="py-20 bg-gray-50 dark:bg-background">
         <SimpleWrapper>
           <div className="max-w-7xl mx-auto">
             <div className="relative max-w-full overflow-hidden">
@@ -443,7 +443,7 @@ export default function SaintLoubes() {
                 <div className="overflow-x-auto">
                 <div className="flex space-x-8 min-w-max px-4" style={{ marginLeft: 'calc(50% - 144px)', marginRight: 'calc(50% - 144px)' }}>
                   {/* Bloc 1 */}
-                  <div className="w-72 flex-shrink-0 bg-white dark:bg-black rounded-2xl md:shadow-lg p-6 border border-gray-100 dark:border-gray-700">
+                  <div className="w-72 flex-shrink-0 bg-gray-50 dark:bg-background rounded-2xl md:shadow-lg p-6 border border-gray-100 dark:border-gray-700">
                     <h3 className="text-2xl font-bold text-black dark:text-white mb-4">
                       Une commune en pleine expansion
                     </h3>
@@ -458,7 +458,7 @@ export default function SaintLoubes() {
                   </div>
                   
                   {/* Bloc 2 */}
-                  <div className="w-72 flex-shrink-0 bg-white dark:bg-black rounded-2xl md:shadow-lg p-6 border border-gray-100 dark:border-gray-700">
+                  <div className="w-72 flex-shrink-0 bg-gray-50 dark:bg-background rounded-2xl md:shadow-lg p-6 border border-gray-100 dark:border-gray-700">
                     <h3 className="text-2xl font-bold text-black dark:text-white mb-4">
                       Exemples d'interventions à Saint-Loubès
                     </h3>
@@ -479,7 +479,7 @@ export default function SaintLoubes() {
                   </div>
                   
                   {/* Bloc 3 */}
-                  <div className="w-72 flex-shrink-0 bg-white dark:bg-black rounded-2xl md:shadow-lg p-6 border border-gray-100 dark:border-gray-700">
+                  <div className="w-72 flex-shrink-0 bg-gray-50 dark:bg-background rounded-2xl md:shadow-lg p-6 border border-gray-100 dark:border-gray-700">
                     <h3 className="text-2xl font-bold text-black dark:text-white mb-4">
                       Adaptation au climat de la rive droite
                     </h3>
@@ -494,7 +494,7 @@ export default function SaintLoubes() {
                   </div>
                   
                   {/* Bloc 4 */}
-                  <div className="w-72 flex-shrink-0 bg-white dark:bg-black rounded-2xl md:shadow-lg p-6 border border-gray-100 dark:border-gray-700">
+                  <div className="w-72 flex-shrink-0 bg-gray-50 dark:bg-background rounded-2xl md:shadow-lg p-6 border border-gray-100 dark:border-gray-700">
                     <h3 className="text-2xl font-bold text-black dark:text-white mb-4">
                       Votre projet à Saint-Loubès
                     </h3>
@@ -508,7 +508,7 @@ export default function SaintLoubes() {
                       <div className="mt-4">
                         <a
                           href="/contact"
-                          className="inline-flex items-center px-6 py-3 bg-white dark:bg-black text-black dark:text-white font-semibold rounded-lg hover:bg-white dark:hover:bg-black"
+                          className="inline-flex items-center px-6 py-3 bg-gray-50 dark:bg-background text-black dark:text-white font-semibold rounded-lg hover:bg-white dark:hover:bg-black"
                         >
                           Contactez-nous
                           <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -526,7 +526,7 @@ export default function SaintLoubes() {
       </section>
 
       {/* Section Pourquoi choisir ClimGO - Timeline horizontale élégante */}
-      <section className="relative py-24 overflow-hidden bg-white dark:bg-black" id="why-choose-section">
+      <section className="relative py-24 overflow-hidden bg-gray-50 dark:bg-background" id="why-choose-section">
         <SimpleWrapper>
           <div className="relative z-10 max-w-6xl mx-auto px-4">
             {/* Titre avec animation */}
@@ -542,9 +542,9 @@ export default function SaintLoubes() {
             {/* Pourquoi choisir ClimGO à Saint-Loubès - Version personnalisée */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8 max-w-6xl mx-auto mb-8 md:mb-12 lg:mb-16">
               {/* Expertise Locale */}
-              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-black dark:hover:border-white min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
+              <div className="group bg-gray-50 dark:bg-background backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-black dark:hover:border-white min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
                 <div className="text-center flex flex-col h-full">
-                  <div className="bg-white dark:bg-black rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <div className="bg-gray-50 dark:bg-background rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                     <svg className="w-12 h-12 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -560,9 +560,9 @@ export default function SaintLoubes() {
               </div>
 
               {/* Solutions Performantes */}
-              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-black dark:hover:border-white  min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
+              <div className="group bg-gray-50 dark:bg-background backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-black dark:hover:border-white  min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
                 <div className="text-center flex flex-col h-full">
-                  <div className="bg-white dark:bg-black rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <div className="bg-gray-50 dark:bg-background rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                     <svg className="w-12 h-12 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                     </svg>
@@ -577,9 +577,9 @@ export default function SaintLoubes() {
               </div>
 
               {/* Réactivité Optimale */}
-              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-black dark:hover:border-white min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
+              <div className="group bg-gray-50 dark:bg-background backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-black dark:hover:border-white min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
                 <div className="text-center flex flex-col h-full">
-                  <div className="bg-white dark:bg-black rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <div className="bg-gray-50 dark:bg-background rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                     <svg className="w-12 h-12 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
@@ -594,9 +594,9 @@ export default function SaintLoubes() {
               </div>
 
               {/* Logements Variés */}
-              <div className="group bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-black dark:hover:border-white min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
+              <div className="group bg-gray-50 dark:bg-background backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-black dark:hover:border-white min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex flex-col">
                 <div className="text-center flex flex-col h-full">
-                  <div className="bg-white dark:bg-black rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <div className="bg-gray-50 dark:bg-background rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                     <svg className="w-12 h-12 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                     </svg>
@@ -615,7 +615,7 @@ export default function SaintLoubes() {
             <div className="text-center mt-16">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-full px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-semibold hover:bg-white dark:hover:bg-black transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl border border-white"
+                className="inline-flex items-center justify-center rounded-full px-8 py-4 bg-gray-50 dark:bg-background text-black dark:text-white font-semibold hover:bg-white dark:hover:bg-black transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl border border-white"
               >
                 Demander un devis
               </Link>
@@ -625,7 +625,7 @@ export default function SaintLoubes() {
       </section>
 
       {/* Section Services - Design Moderne avec les 4 cartes */}
-      <section className="relative py-20 overflow-hidden bg-white dark:bg-black z-10">
+      <section className="relative py-20 overflow-hidden bg-gray-50 dark:bg-background z-10">
         {}<div className="relative z-10 max-w-7xl mx-auto px-4">
           <SimpleWrapper>
             <div className="text-center mb-16">
@@ -642,13 +642,13 @@ export default function SaintLoubes() {
             {/* Carte 1 - Types de logements */}
             <SimpleWrapper>
               <motion.div 
-                className="group relative bg-white dark:bg-black rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-gray-200 dark:border-gray-600 min-h-[300px] md:min-h-[380px] lg:min-h-[400px] flex flex-col"
+                className="group relative bg-gray-50 dark:bg-background rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-gray-200 dark:border-gray-600 min-h-[300px] md:min-h-[380px] lg:min-h-[400px] flex flex-col"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 {/* Icône avec effet de brillance */}
                 <div className="relative mb-6">
-                  <div className="w-16 h-16 bg-white dark:bg-black rounded-2xl flex items-center justify-center mx-auto group-hover:bg-white dark:group-hover:bg-black transition-all duration-300 border-2 border-black dark:border-white">
+                  <div className="w-16 h-16 bg-gray-50 dark:bg-background rounded-2xl flex items-center justify-center mx-auto group-hover:bg-white dark:group-hover:bg-black transition-all duration-300 border-2 border-black dark:border-white">
                     <svg className="w-8 h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                     </svg>
@@ -673,13 +673,13 @@ export default function SaintLoubes() {
             {/* Carte 2 - Processus d'installation */}
             <SimpleWrapper>
               <motion.div 
-                className="group relative bg-white dark:bg-black rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-gray-200 dark:border-gray-600 min-h-[300px] md:min-h-[380px] lg:min-h-[400px] flex flex-col"
+                className="group relative bg-gray-50 dark:bg-background rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-gray-200 dark:border-gray-600 min-h-[300px] md:min-h-[380px] lg:min-h-[400px] flex flex-col"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 {/* Icône avec effet de brillance */}
                 <div className="relative mb-6">
-                  <div className="w-16 h-16 bg-white dark:bg-black rounded-2xl flex items-center justify-center mx-auto group-hover:bg-white dark:group-hover:bg-black transition-all duration-300 border-2 border-black dark:border-white">
+                  <div className="w-16 h-16 bg-gray-50 dark:bg-background rounded-2xl flex items-center justify-center mx-auto group-hover:bg-white dark:group-hover:bg-black transition-all duration-300 border-2 border-black dark:border-white">
                     <svg className="w-8 h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.563.563 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
                     </svg>
@@ -694,7 +694,7 @@ export default function SaintLoubes() {
 
                 {/* Badge de service */}
                 <div className="mt-6 text-center">
-                  <span className="inline-block bg-white dark:bg-black text-black dark:text-white text-sm font-medium px-4 py-2 rounded-full">
+                  <span className="inline-block bg-gray-50 dark:bg-background text-black dark:text-white text-sm font-medium px-4 py-2 rounded-full">
                     Devis gratuit
                   </span>
                 </div>
@@ -704,13 +704,13 @@ export default function SaintLoubes() {
             {/* Carte 3 - Entretien & maintenance */}
             <SimpleWrapper>
               <motion.div 
-                className="group relative bg-white dark:bg-black rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-gray-200 dark:border-gray-600 min-h-[300px] md:min-h-[380px] lg:min-h-[400px] flex flex-col"
+                className="group relative bg-gray-50 dark:bg-background rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-gray-200 dark:border-gray-600 min-h-[300px] md:min-h-[380px] lg:min-h-[400px] flex flex-col"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 {/* Icône avec effet de brillance */}
                 <div className="relative mb-6">
-                  <div className="w-16 h-16 bg-white dark:bg-black rounded-2xl flex items-center justify-center mx-auto group-hover:bg-white dark:group-hover:bg-black transition-all duration-300 border-2 border-black dark:border-white">
+                  <div className="w-16 h-16 bg-gray-50 dark:bg-background rounded-2xl flex items-center justify-center mx-auto group-hover:bg-white dark:group-hover:bg-black transition-all duration-300 border-2 border-black dark:border-white">
                     <svg className="w-8 h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437 1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008Z" />
                     </svg>
@@ -725,7 +725,7 @@ export default function SaintLoubes() {
 
                 {/* Badge de service */}
                 <div className="mt-6 text-center">
-                  <span className="inline-block bg-white dark:bg-black text-black dark:text-white text-sm font-medium px-4 py-2 rounded-full">
+                  <span className="inline-block bg-gray-50 dark:bg-background text-black dark:text-white text-sm font-medium px-4 py-2 rounded-full">
                     Suivi personnalisé
                   </span>
                 </div>
@@ -735,13 +735,13 @@ export default function SaintLoubes() {
             {/* Carte 4 - Aides financières */}
             <SimpleWrapper>
               <motion.div 
-                className="group relative bg-white dark:bg-black rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-gray-200 dark:border-gray-600 min-h-[300px] md:min-h-[380px] lg:min-h-[400px] flex flex-col"
+                className="group relative bg-gray-50 dark:bg-background rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500 border-2 border-gray-200 dark:border-gray-600 min-h-[300px] md:min-h-[380px] lg:min-h-[400px] flex flex-col"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 {/* Icône avec effet de brillance */}
                 <div className="relative mb-6">
-                  <div className="w-16 h-16 bg-white dark:bg-black rounded-2xl flex items-center justify-center mx-auto group-hover:bg-white dark:group-hover:bg-black transition-all duration-300 border-2 border-black dark:border-white">
+                  <div className="w-16 h-16 bg-gray-50 dark:bg-background rounded-2xl flex items-center justify-center mx-auto group-hover:bg-white dark:group-hover:bg-black transition-all duration-300 border-2 border-black dark:border-white">
                     <svg className="w-8 h-8 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0 0 12 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52 2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 0 1-2.031.352 5.988 5.988 0 0 1-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971Zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0 2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 0 1-2.031.352 5.989 5.989 0 0 1-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971Z" />
                     </svg>
@@ -772,7 +772,7 @@ export default function SaintLoubes() {
               </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-full px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-semibold hover:bg-white dark:hover:bg-black transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl border border-white"
+                className="inline-flex items-center justify-center rounded-full px-8 py-4 bg-gray-50 dark:bg-background text-black dark:text-white font-semibold hover:bg-white dark:hover:bg-black transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl border border-white"
               >
                 Découvrir nos solutions
               </Link>
@@ -796,7 +796,7 @@ export default function SaintLoubes() {
       
 
       {/* Section Carte en pleine largeur */}
-      <section className="relative w-full overflow-hidden bg-white dark:bg-black">
+      <section className="relative w-full overflow-hidden bg-gray-50 dark:bg-background">
         <div className="relative z-10 w-full px-4">
           <SimpleWrapper>
             <div className="relative w-full">

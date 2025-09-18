@@ -89,11 +89,11 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-black text-[#03144A] dark:text-white">
+    <div className="min-h-screen bg-gray-50 dark:bg-background text-[#03144A] dark:text-white">
       
       {/* Hero Section */}
       <section className="relative min-h-screen pt-24 md:pt-0 flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-white dark:bg-black" />
+        <div className="absolute inset-0 bg-gray-50 dark:bg-background" />
         
         {/* Background effects */}
         <div className="absolute w-2 h-2 bg-[#03144a] dark:bg-white rounded-full top-10 left-10" style={{ animation: 'float 4s ease-in-out infinite' }} />
@@ -107,11 +107,11 @@ export default function ContactPage() {
 
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#F97316] rounded-full filter blur-3xl animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-white dark:bg-black rounded-full filter blur-3xl animate-pulse" style={{animationDelay: '2s'}} />
+          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-gray-50 dark:bg-background rounded-full filter blur-3xl animate-pulse" style={{animationDelay: '2s'}} />
         </div>
 
         <div className="relative z-10 text-center max-w-5xl mx-auto px-6">
-          <div className="inline-flex items-center px-6 py-3 rounded-full border border-[#03144A] dark:border-white/20 text-sm tracking-widest uppercase mb-8 text-[#03144A] dark:text-white bg-white dark:bg-black backdrop-blur-sm">
+          <div className="inline-flex items-center px-6 py-3 rounded-full border border-[#03144A] dark:border-white/20 text-sm tracking-widest uppercase mb-8 text-[#03144A] dark:text-white bg-gray-50 dark:bg-background backdrop-blur-sm">
             <div className="w-2 h-2 bg-[#F97316] rounded-full mr-3 animate-pulse" />
             Parlons de votre projet
           </div>
@@ -137,15 +137,15 @@ export default function ContactPage() {
           {/* Stats rapides */}
           <SimpleWrapper>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto mb-12">
-              <div className="text-center bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-600/30">
+              <div className="text-center bg-gray-50 dark:bg-background backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-600/30">
                 <div className="text-3xl font-bold text-[#03144a] dark:text-white mb-2">48h</div>
                 <div className="text-gray-600 dark:text-gray-300 text-sm">Délai de réponse moyen</div>
               </div>
-              <div className="text-center bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-600/30">
+              <div className="text-center bg-gray-50 dark:bg-background backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-600/30">
                 <div className="text-3xl font-bold text-[#03144a] dark:text-white mb-2">100%</div>
                 <div className="text-gray-600 dark:text-gray-300 text-sm">Devis gratuits</div>
               </div>
-              <div className="text-center bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-600/30">
+              <div className="text-center bg-gray-50 dark:bg-background backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-600/30">
                 <div className="text-3xl font-bold text-[#03144a] dark:text-white mb-2">10+</div>
                 <div className="text-gray-600 dark:text-gray-300 text-sm">Années d'expérience</div>
               </div>
@@ -162,7 +162,7 @@ export default function ContactPage() {
             {/* Colonne gauche - Formulaire */}
             <div className="order-2 lg:order-1">
               <SimpleWrapper>
-                <div className="bg-white dark:bg-black backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-600/30">
+                <div className="bg-gray-50 dark:bg-background backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-600/30">
                   <div className="mb-8">
                     <h2 className="text-3xl md:text-4xl font-light mb-4 text-[#03144A] dark:text-white">
                       Démarrons votre projet
@@ -418,7 +418,7 @@ export default function ContactPage() {
 
               {/* Note Google */}
               <SimpleWrapper>
-                <div className="bg-white dark:bg-black backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-gray-200 dark:border-gray-600/30">
+                <div className="bg-gray-50 dark:bg-background backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-gray-200 dark:border-gray-600/30">
                   <h3 className="text-xl font-medium text-[#03144A] dark:text-white mb-6 flex items-center">
                     <div className="w-1 h-6 bg-gradient-to-b from-[#F97316] to-[#03144A] rounded-full mr-3"></div>
                     Nos clients nous font confiance
@@ -440,7 +440,7 @@ export default function ContactPage() {
 
               {/* Services */}
               <SimpleWrapper>
-                <div className="bg-white dark:bg-black backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-gray-200 dark:border-gray-600/30">
+                <div className="bg-gray-50 dark:bg-background backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-gray-200 dark:border-gray-600/30">
                   <h3 className="text-xl font-medium text-[#03144A] dark:text-white mb-6 flex items-center">
                     <div className="w-1 h-6 bg-gradient-to-b from-[#03144A] to-[#F97316] rounded-full mr-3"></div>
                     Nos domaines d'expertise
@@ -472,7 +472,7 @@ export default function ContactPage() {
       </section>
 
       {/* Location Map Section */}
-              <LazyGoogleMaps backgroundColor="bg-white dark:bg-black" />
+              <LazyGoogleMaps backgroundColor="bg-gray-50 dark:bg-background" />
 
       <style jsx global>{`
         @keyframes float {

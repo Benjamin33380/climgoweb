@@ -23,7 +23,7 @@ interface Zone {
 
 // Simple Zone Card - showing ALL cities
 const SimpleZoneCard = ({ zone }: { zone: Zone }) => (
-  <div className="bg-white dark:bg-black rounded-xl xs:rounded-2xl p-4 xs:p-5 sm:p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-black/20 dark:border-white/20 hover:border-black/40 dark:hover:border-white/40">
+  <div className="bg-gray-50 dark:bg-background rounded-xl xs:rounded-2xl p-4 xs:p-5 sm:p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-black/20 dark:border-white/20 hover:border-black/40 dark:hover:border-white/40">
     <div className="flex items-center justify-between mb-3 xs:mb-4 sm:mb-4 md:mb-6">
       <div className="flex items-center justify-center">
         <zone.icon className="w-5 h-5 xs:w-6 xs:h-6 sm:w-6 sm:h-6 md:w-8 md:h-8 text-black dark:text-white" />
@@ -168,9 +168,9 @@ export default function ZonesInterventions() {
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white relative">
+    <div className="min-h-screen bg-gray-50 dark:bg-background text-black dark:text-white relative">
       {/* Hero Section with Globe Background */}
-      <section className="relative min-h-screen bg-white dark:bg-black overflow-hidden">
+      <section className="relative min-h-screen bg-gray-50 dark:bg-background overflow-hidden">
 
         
         {/* Overlay for better text readability */}
@@ -239,7 +239,7 @@ export default function ZonesInterventions() {
       </section>
 
       {/* Zones Section */}
-      <section className="relative py-12 xs:py-14 sm:py-16 md:py-20 lg:py-24 bg-white dark:bg-black">
+      <section className="relative py-12 xs:py-14 sm:py-16 md:py-20 lg:py-24 bg-gray-50 dark:bg-background">
         <div className="container mx-auto px-4 xs:px-5 sm:px-6">
           <div className="text-center mb-8 xs:mb-10 sm:mb-12 md:mb-16">
             <h2 className="text-2xl xs:text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-black dark:text-white mb-2 xs:mb-3 sm:mb-3 md:mb-4">
@@ -259,7 +259,7 @@ export default function ZonesInterventions() {
       </section>
 
       {/* CTA Section - Simple like homepage */}
-      <section className="relative py-12 xs:py-14 sm:py-16 md:py-20 bg-white dark:bg-black">
+      <section className="relative py-12 xs:py-14 sm:py-16 md:py-20 bg-gray-50 dark:bg-background">
         <div className="container mx-auto px-4 xs:px-5 sm:px-6 text-center">
           <div className="flex items-center justify-center mx-auto mb-3 xs:mb-4 sm:mb-4 md:mb-6">
             <Phone className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 text-black dark:text-white" />
@@ -293,7 +293,7 @@ export default function ZonesInterventions() {
       </section>
 
       {/* Google Maps Section */}
-      <section className="relative py-12 xs:py-14 sm:py-16 md:py-20 bg-white dark:bg-black">
+      <section className="relative py-12 xs:py-14 sm:py-16 md:py-20 bg-gray-50 dark:bg-background">
         <div className="container mx-auto px-4 xs:px-5 sm:px-6">
           <div className="text-center mb-8 xs:mb-10 sm:mb-12 md:mb-16">
             <h2 className="text-2xl xs:text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-black dark:text-white mb-2 xs:mb-3 sm:mb-3 md:mb-4">
@@ -306,7 +306,7 @@ export default function ZonesInterventions() {
           
           <div className="max-w-6xl mx-auto">
             <LazyGoogleMaps 
-              backgroundColor="bg-white dark:bg-black"
+              backgroundColor="bg-gray-50 dark:bg-background"
             />
           </div>
         </div>
