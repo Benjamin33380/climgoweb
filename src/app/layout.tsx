@@ -39,10 +39,10 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.climgo.fr'),
   title: {
-    default: "Climatisation & Pompe à Chaleur RGE en Gironde | ClimGO",
+    default: "ClimGO | Pompes à chaleur, Climatisation et Chauffe-eau",
     template: "%s | ClimGO"
   },
-  description: "Spécialiste RGE de l'installation et de l'entretien de climatisation et pompe à chaleur en Gironde et Nord des Landes. Profitez des aides de l'État pour vos travaux.",
+  description: "Installation de pompe à chaleur, remplacement de chaudière, chauffage, climatisation, chauffe-eau. Artisan RGE.",
   keywords: ["chauffage Gironde", "climatisation Gironde", "pompe à chaleur", "entretien clim", "installateur chauffage", "artisan RGE", "Bordeaux", "Bassin d'Arcachon", "PAC air-eau", "PAC air-air", "plancher chauffant", "radiateurs", "maintenance", "dépannage"],
   authors: [{ name: "ClimGO", url: "https://www.climgo.fr" }],
   creator: "ClimGO",
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     url: "https://www.climgo.fr",
     title: "ClimGO | Chauffagiste Climaticien RGE Gironde",
-    description: "Spécialiste RGE de l'installation et de l'entretien de climatisation et pompe à chaleur en Gironde et Nord des Landes. Profitez des aides de l'État pour vos travaux.",
+    description: "Installation de pompe à chaleur, remplacement de chaudière, chauffage, climatisation, chauffe-eau. Artisan RGE.",
     siteName: "ClimGO",
     images: [
       {
@@ -92,7 +92,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "ClimGO | Chauffagiste Climaticien RGE Gironde",
-    description: "Spécialiste RGE de l'installation et de l'entretien de climatisation et pompe à chaleur en Gironde et Nord des Landes. Profitez des aides de l'État pour vos travaux.",
+    description: "Installation de pompe à chaleur, remplacement de chaudière, chauffage, climatisation, chauffe-eau. Artisan RGE.",
     images: ["/img/climdame.png"],
   },
   alternates: {
