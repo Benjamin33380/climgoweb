@@ -261,10 +261,6 @@ export default function HomePage() {
         
         {/* Container de scroll sur toute la largeur de la page */}
         <div className="relative w-full">
-          {/* Gradient de flou du haut - Masqué sur mobile */}
-          <div 
-            className="hidden sm:block absolute top-0 left-0 right-0 h-12 bg-gradient-to-b from-gray-50 dark:from-background to-transparent z-10 pointer-events-none"
-          />
           
 
           
@@ -346,10 +342,6 @@ export default function HomePage() {
             </div>
           </div>
           
-                  {/* Gradient de flou du bas - Masqué sur mobile */}
-        <div 
-          className="hidden sm:block absolute bottom-0 left-0 right-0 h-16 md:h-20 lg:h-24 bg-gradient-to-t from-gray-50 dark:from-background to-transparent z-10 pointer-events-none"
-        />
         
 
         </div>
