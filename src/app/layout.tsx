@@ -127,6 +127,12 @@ export default function RootLayout({
     <html lang="fr">
       <head>
         <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+        
+        {/* Preload des images critiques du hero */}
+        <link rel="preload" href="/img/clim-caudéran.jpeg" as="image" type="image/jpeg" />
+        <link rel="preload" href="/img/uicauderan.jpeg" as="image" type="image/jpeg" />
+        <link rel="preload" href="/img/sdb-pyla.jpeg" as="image" type="image/jpeg" />
+        
         {/* Meta tags pour Safari status bar */}
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
@@ -445,12 +451,7 @@ export default function RootLayout({
               <GoogleAnalytics />
               <PassiveEventListeners />
               <SpeedInsights />
-              <GlobalScrollShadow
-                size={scrollShadowConfig.size}
-                shadowColor={scrollShadowConfig.shadowColor}
-                blurIntensity={scrollShadowConfig.blurIntensity}
-                className="min-h-screen bg-background text-foreground"
-              >
+              <div className="min-h-screen bg-background text-foreground">
                 {/* Header Desktop */}
                 <div className="hidden lg:block bg-background">
                   <NewHeader />
@@ -460,7 +461,7 @@ export default function RootLayout({
                 
                 <main className="flex-1">{children}</main>
                 <Footer />
-              </GlobalScrollShadow>
+              </div>
             </UserProvider>
         </ThemeProvider>
       </body>
