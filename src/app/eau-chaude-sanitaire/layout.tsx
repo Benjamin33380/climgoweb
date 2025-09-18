@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import { HEADQUARTERS_COORDINATES, generateGeoJsonLd, generateServiceAreaJsonLd } from '@/config/geo';
 
 export const metadata: Metadata = {
-  title: "Eau chaude sanitaire | Installation & Maintenance Gironde",
-  description: "Installation et maintenance de chauffe-eau en Gironde. ClimGO, expert en eau chaude sanitaire. Devis gratuit, intervention rapide.",
+  title: "Chauffe-eau - Installation, dépannage, maintenance",
+  description: "ClimGO votre expert local Girondin - Chauffe-eau - Devis gratuit, aides financières, suivi dossier. Artisan RGE. 07.66.46.00.08",
   keywords: [
     "chauffe-eau Gironde",
     "eau chaude sanitaire",
@@ -83,29 +83,8 @@ export default function EauChaudeSanitaireLayout({
             "@type": "Service",
             "name": "Eau Chaude Sanitaire Gironde - Installation & Maintenance",
             "description": "Installation et maintenance de chauffe-eau en Gironde. ClimGO, expert en eau chaude sanitaire. Devis gratuit, intervention rapide.",
-            "provider": {
-              "@type": "HVACBusiness",
-              "name": "ClimGO",
-              "url": "https://www.climgo.fr",
-              "telephone": "+33766460008",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "28 rue de Cantelaude",
-                "addressLocality": "Marcheprime",
-                "addressRegion": "Nouvelle-Aquitaine",
-                "postalCode": "33380",
-                "addressCountry": "FR"
-              },
-              // Données géographiques du siège
-              "geo": generateGeoJsonLd(HEADQUARTERS_COORDINATES, "ClimGO Marcheprime"),
-              // Zone de service avec géolocalisation (rayon de 50km)
-              "serviceArea": generateServiceAreaJsonLd(HEADQUARTERS_COORDINATES, "50000")
-            },
-            "areaServed": {
-              "@type": "Place",
-              "name": "Gironde, Bordeaux Métropole, Bassin d'Arcachon, Marcheprime, Mios, Biganos, Arcachon, Bordeaux, Andernos-les-Bains",
-              "geo": generateGeoJsonLd(HEADQUARTERS_COORDINATES, "Zone d'intervention ClimGO")
-            },
+            "provider": {"@id": "https://www.climgo.fr/#organization"},
+            "areaServed": {"@type": "State", "name": "Gironde"},
             "serviceType": "Installation et maintenance de systèmes d'eau chaude sanitaire",
             "url": "https://www.climgo.fr/eau-chaude-sanitaire",
             "offers": {

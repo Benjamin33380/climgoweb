@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import { HEADQUARTERS_COORDINATES, generateGeoJsonLd, generateServiceAreaJsonLd } from '@/config/geo';
 
 export const metadata: Metadata = {
-  title: 'À propos de ClimGO | Expert Chauffage Climatisation Gironde',
-  description: 'Découvrez ClimGO, votre expert en chauffage et climatisation en Gironde depuis plus de 10 ans. Artisan RGE certifié.',
+  title: 'À propos ClimGO | Benjamin Cardoso RGE',
+  description: 'Benjamin Cardoso, fondateur ClimGO. Chauffagiste climaticien RGE Gironde depuis 2025. Expertise PAC, passion du métier.',
   keywords: 'ClimGO, expert chauffage climatisation, artisan RGE Gironde, entreprise chauffage, ClimGO histoire, ClimGO équipe',
   
   openGraph: {

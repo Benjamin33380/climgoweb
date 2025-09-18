@@ -39,10 +39,10 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.climgo.fr'),
   title: {
-    default: "ClimGO - Spécialiste Chauffage & Climatisation en Gironde",
+    default: "Climatisation & Pompe à Chaleur RGE en Gironde | ClimGO",
     template: "%s | ClimGO"
   },
-  description: "Expert chauffage climatisation Gironde. Installation PAC, entretien, dépannage. Artisan RGE. Devis gratuit. 07.66.46.00.08",
+  description: "Spécialiste RGE de l'installation et de l'entretien de climatisation et pompe à chaleur en Gironde et Nord des Landes. Profitez des aides de l'État pour vos travaux.",
   keywords: ["chauffage Gironde", "climatisation Gironde", "pompe à chaleur", "entretien clim", "installateur chauffage", "artisan RGE", "Bordeaux", "Bassin d'Arcachon", "PAC air-eau", "PAC air-air", "plancher chauffant", "radiateurs", "maintenance", "dépannage"],
   authors: [{ name: "ClimGO", url: "https://www.climgo.fr" }],
   creator: "ClimGO",
@@ -67,8 +67,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     url: "https://www.climgo.fr",
-    title: "ClimGO - Spécialiste Chauffage & Climatisation en Gironde",
-    description: "Expert chauffage climatisation Gironde. Installation PAC, entretien, dépannage. Artisan RGE. Devis gratuit. 07.66.46.00.08",
+    title: "ClimGO | Chauffagiste Climaticien RGE Gironde",
+    description: "Spécialiste RGE de l'installation et de l'entretien de climatisation et pompe à chaleur en Gironde et Nord des Landes. Profitez des aides de l'État pour vos travaux.",
     siteName: "ClimGO",
     images: [
       {
@@ -91,8 +91,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ClimGO - Spécialiste Chauffage & Climatisation en Gironde",
-    description: "Expert chauffage climatisation Gironde. Installation PAC, entretien, dépannage. Artisan RGE. Devis gratuit. 07.66.46.00.08",
+    title: "ClimGO | Chauffagiste Climaticien RGE Gironde",
+    description: "Spécialiste RGE de l'installation et de l'entretien de climatisation et pompe à chaleur en Gironde et Nord des Landes. Profitez des aides de l'État pour vos travaux.",
     images: ["/img/climdame.png"],
   },
   alternates: {
@@ -159,9 +159,11 @@ export default function RootLayout({
                 "postalCode": "33380",
                 "addressCountry": "FR"
               },
-              // Données géographiques du siège social ClimGO
-              "geo": generateGeoJsonLd(HEADQUARTERS_COORDINATES, "Siège social ClimGO"),
-              "serviceArea": generateServiceAreaJsonLd(HEADQUARTERS_COORDINATES, "50000"),
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 44.6969,
+                "longitude": -0.8533
+              },
             "priceRange": "$$",
             "openingHoursSpecification": {
               "@type": "OpeningHoursSpecification",
@@ -176,7 +178,9 @@ export default function RootLayout({
                 "availableLanguage": "French"
               },
               "sameAs": [
-                "https://www.climgo.fr"
+                "https://www.facebook.com/profile.php?id=61579576031066",
+                "https://www.linkedin.com/company/climgo",
+                "https://www.instagram.com/climgo_climatisation_chauffage/"
               ],
               // Certifications et qualifications
               "hasCredential": [
@@ -187,100 +191,34 @@ export default function RootLayout({
                   "credentialCategory": "certification",
                   "recognizedBy": {
                     "@type": "Organization",
-                    "name": "ADEME"
+                    "name": "Qualit'EnR"
                   }
                 },
-                {
-                  "@type": "EducationalOccupationalCredential", 
-                  "name": "Qualibat",
-                  "description": "Certification professionnelle pour les travaux de chauffage",
-                  "credentialCategory": "certification"
-                }
               ],
               "areaServed": [
                 {
-                  "@type": "AdministrativeArea",
+                  "@type": "State",
                   "name": "Gironde"
-                },
-                {
-                  "@type": "AdministrativeArea",
-                  "name": "Bordeaux Métropole"
-                },
-                {
-                  "@type": "AdministrativeArea",
-                  "name": "Bassin d'Arcachon"
-                },
-                {
-                  "@type": "City",
-                  "name": "Marcheprime"
-                },
-                {
-                  "@type": "City",
-                  "name": "Biganos"
-                },
-                {
-                  "@type": "City",
-                  "name": "Mios"
                 },
                 {
                   "@type": "City",
                   "name": "Bordeaux"
                 },
                 {
-                  "@type": "City",
-                  "name": "Biscarrosse"
-                },
-                {
-                  "@type": "City",
-                  "name": "Andernos-les-Bains"
-                },
-                {
-                  "@type": "City",
-                  "name": "Pessac"
-                },
-                {
-                  "@type": "City",
-                  "name": "Gujan-Mestras"
-                },
-                {
-                  "@type": "City",
-                  "name": "La Teste-de-Buch"
-                },
-                {
-                  "@type": "City",
-                  "name": "Cestas"
-                },
-                {
-                  "@type": "City",
-                  "name": "Le Barp"
-                },
-                {
-                  "@type": "City",
-                  "name": "Audenge"
-                },
-                {
-                  "@type": "City",
-                  "name": "Lanton"
-                },
-                {
-                  "@type": "City",
-                  "name": "Lège-Cap-Ferret"
-                },
-                {
-                  "@type": "City",
-                  "name": "Pyla-sur-Mer"
+                  "@type": "Place",
+                  "name": "Bassin d'Arcachon"
                 }
              ],
-              "foundingDate": "2014",
+              "foundingDate": "2025-05-13",
               "founder": {
                 "@type": "Person",
-                "name": "ClimGO Team"
+                "name": "Benjamin CARDOSO"
               },
-              // Données d'avis et de notation pour Google
+              // Données d'avis et de notation pour Google (vrais avis GMB)
               "aggregateRating": {
                 "@type": "AggregateRating",
-                "ratingValue": "4.8",
-                "reviewCount": "127",
+                "ratingValue": "5",
+                "reviewCount": "23",
                 "bestRating": "5",
                 "worstRating": "1"
               },
@@ -289,125 +227,90 @@ export default function RootLayout({
                   "@type": "Review",
                   "author": {
                     "@type": "Person",
-                    "name": "Marie L."
+                    "name": "Lilou AUVRAY"
                   },
                   "reviewRating": {
                     "@type": "Rating",
                     "ratingValue": "5",
                     "bestRating": "5"
                   },
-                  "reviewBody": "Service excellent ! Installation de PAC parfaite, équipe professionnelle et ponctuelle. Je recommande vivement ClimGO."
+                  "reviewBody": "Travail soigné et rapide, le résultat est impeccable. Je recommande !",
+                  "datePublished": "2024-07"
                 },
                 {
                   "@type": "Review",
                   "author": {
                     "@type": "Person",
-                    "name": "Jean-Pierre M."
+                    "name": "Jérome Bernard"
                   },
                   "reviewRating": {
                     "@type": "Rating",
                     "ratingValue": "5",
                     "bestRating": "5"
                   },
-                  "reviewBody": "Très satisfait de l'installation de ma climatisation. Devis clair, travail soigné et prix compétitif. Merci ClimGO !"
+                  "reviewBody": "Jeune entrepreneur avec des qualités d'écoutes, de conseils et un professionnalisme à la hauteur de mes attentes.",
+                  "datePublished": "2024-06"
                 },
                 {
                   "@type": "Review",
                   "author": {
                     "@type": "Person",
-                    "name": "Sophie D."
+                    "name": "Celine Raison"
                   },
                   "reviewRating": {
                     "@type": "Rating",
-                    "ratingValue": "4",
+                    "ratingValue": "5",
                     "bestRating": "5"
                   },
-                  "reviewBody": "Bon service de maintenance, technicien compétent. Petit délai sur le rendez-vous mais travail de qualité."
+                  "reviewBody": "Je vous recommande Mr Cardoso, jeune entrepreneur sérieux, travail soigné, avec de l'expérience.",
+                  "datePublished": "2024-07"
+                },
+                {
+                  "@type": "Review",
+                  "author": {
+                    "@type": "Person",
+                    "name": "Couvidoux Charly"
+                  },
+                  "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5"
+                  },
+                  "reviewBody": "Pose de climatisation sur la commune de Biganos, sérieux professionnel et de qualité.",
+                  "datePublished": "2024-07"
+                },
+                {
+                  "@type": "Review",
+                  "author": {
+                    "@type": "Person",
+                    "name": "Yoan Demondion"
+                  },
+                  "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5"
+                  },
+                  "reviewBody": "Très satisfait de l'intervention pour mon système gainable. Le travail été propre, soigné et réalisé avec beaucoup de professionnalisme.",
+                  "datePublished": "2024-07"
+                },
+                {
+                  "@type": "Review",
+                  "author": {
+                    "@type": "Person",
+                    "name": "Thomas Barbotin"
+                  },
+                  "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5"
+                  },
+                  "reviewBody": "Rapide, précis, efficace !",
+                  "datePublished": "2024-08"
                 }
               ],
-              "hasOfferCatalog": {
-                "@type": "OfferCatalog",
-                "name": "Services ClimGO",
-                "itemListElement": [
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Chauffage",
-                      "description": "Installation et maintenance de systèmes de chauffage, PAC, planchers chauffants",
-                      "url": "https://www.climgo.fr/chauffage",
-                      "category": "Chauffage"
-                    },
-                    "price": "8000-25000",
-                    "priceCurrency": "EUR",
-                    "availability": "https://schema.org/InStock",
-                    "validFrom": "2024-01-01",
-                    "validThrough": "2024-12-31"
-                  },
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Climatisation",
-                      "description": "Installation et maintenance de systèmes de climatisation",
-                      "url": "https://www.climgo.fr/climatisation",
-                      "category": "Climatisation"
-                    },
-                    "price": "2000-8000",
-                    "priceCurrency": "EUR",
-                    "availability": "https://schema.org/InStock",
-                    "validFrom": "2024-01-01",
-                    "validThrough": "2024-12-31"
-                  },
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Eau Chaude Sanitaire",
-                      "description": "Installation et maintenance de systèmes d'eau chaude sanitaire",
-                      "url": "https://www.climgo.fr/eau-chaude-sanitaire",
-                      "category": "Eau Chaude Sanitaire"
-                    }
-                  },
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Maintenance",
-                      "description": "Entretien et dépannage de vos équipements thermiques",
-                      "url": "https://www.climgo.fr/maintenance",
-                      "category": "Maintenance"
-                    }
-                  }
-                ]
-              }
             })
           }}
         />
-
-        {/* JSON-LD pour le site web */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              "name": "ClimGO",
-              "url": "https://www.climgo.fr",
-              "description": "ClimGO, expert chauffage et climatisation en Gironde. Installation PAC, entretien et dépannage. Artisan RGE. Devis gratuit.",
-              "potentialAction": {
-                "@type": "SearchAction",
-                "target": "https://www.climgo.fr/search?q={search_term_string}",
-                "query-input": "required name=search_term_string"
-              },
-              "publisher": {
-                "@type": "Organization",
-                "name": "ClimGO"
-              }
-            })
-          }}
-        />
-
         {/* JSON-LD pour les liens de navigation */}
         <script
           type="application/ld+json"
@@ -423,9 +326,9 @@ export default function RootLayout({
                   "position": 1,
                   "item": {
                     "@type": "WebPage",
-                    "name": "Chauffage",
-                    "url": "https://www.climgo.fr/chauffage",
-                    "description": "Installation et maintenance de systèmes de chauffage, PAC, planchers chauffants"
+                    "name": "Nos services",
+                    "url": "https://www.climgo.fr/services",
+                    "description": "Découvrez tous nos services : chauffage, climatisation, chauffe-eau"
                   }
                 },
                 {
@@ -443,9 +346,9 @@ export default function RootLayout({
                   "position": 3,
                   "item": {
                     "@type": "WebPage",
-                    "name": "Eau Chaude Sanitaire",
-                    "url": "https://www.climgo.fr/eau-chaude-sanitaire",
-                    "description": "Installation et maintenance de systèmes d'eau chaude sanitaire"
+                    "name": "Chauffage",
+                    "url": "https://www.climgo.fr/chauffage",
+                    "description": "Installation et maintenance de systèmes de chauffage, PAC, planchers chauffants"
                   }
                 },
                 {
@@ -453,9 +356,9 @@ export default function RootLayout({
                   "position": 4,
                   "item": {
                     "@type": "WebPage",
-                    "name": "Maintenance",
-                    "url": "https://www.climgo.fr/maintenance",
-                    "description": "Entretien et dépannage de vos équipements thermiques"
+                    "name": "Eau chaude sanitaire",
+                    "url": "https://www.climgo.fr/eau-chaude-sanitaire",
+                    "description": "Installation et maintenance de chauffe-eau thermodynamiques et électriques"
                   }
                 },
                 {
@@ -463,9 +366,9 @@ export default function RootLayout({
                   "position": 5,
                   "item": {
                     "@type": "WebPage",
-                    "name": "Zones d'interventions",
-                    "url": "https://www.climgo.fr/zones-interventions",
-                    "description": "Découvrez nos zones d'intervention en Gironde et Bassin d'Arcachon"
+                    "name": "Contact",
+                    "url": "https://www.climgo.fr/contact",
+                    "description": "Contactez-nous pour un devis gratuit et personnalisé"
                   }
                 },
                 {
@@ -473,19 +376,9 @@ export default function RootLayout({
                   "position": 6,
                   "item": {
                     "@type": "WebPage",
-                    "name": "Aides & Subventions",
-                    "url": "https://www.climgo.fr/aides-etat",
-                    "description": "Découvrez les aides de l'État pour vos travaux de rénovation énergétique"
-                  }
-                },
-                {
-                  "@type": "ListItem",
-                  "position": 7,
-                  "item": {
-                    "@type": "WebPage",
-                    "name": "Contact",
-                    "url": "https://www.climgo.fr/contact",
-                    "description": "Contactez-nous pour un devis gratuit"
+                    "name": "Zones d'interventions",
+                    "url": "https://www.climgo.fr/zones-interventions",
+                    "description": "Découvrez nos zones d'intervention en Gironde et Bassin d'Arcachon"
                   }
                 }
               ]

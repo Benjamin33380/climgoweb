@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import { HEADQUARTERS_COORDINATES, generateGeoJsonLd, generateServiceAreaJsonLd } from '@/config/geo';
 
 export const metadata: Metadata = {
-  title: "Contact ClimGO | Devis Gratuit Chauffage Climatisation",
-  description: "Contactez ClimGO pour un devis gratuit en chauffage et climatisation en Gironde. Intervention rapide, artisan RGE certifié.",
+  title: "Contactez votre expert local RGE",
+  description: "Contactez ClimGO Gironde - Devis gratuit, étude personnalisée, aides financières. Artisan RGE proche de vous. 07.66.46.00.08",
   keywords: [
     "devis chauffage Gironde",
     "devis climatisation Gironde",
@@ -13,8 +13,8 @@ export const metadata: Metadata = {
     "intervention rapide",
   ],
   openGraph: {
-    title: "Contact ClimGO | Devis Gratuit Chauffage Climatisation",
-    description: "Contactez ClimGO pour un devis gratuit en chauffage et climatisation en Gironde. Intervention rapide, artisan RGE certifié.",
+    title: "Contactez votre expert local RGE",
+    description: "Contactez ClimGO Gironde - Devis gratuit, étude personnalisée, aides financières. Artisan RGE proche de vous. 07.66.46.00.08",
     url: "https://www.climgo.fr/contact",
     siteName: "ClimGO",
     locale: "fr_FR",
@@ -32,8 +32,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@climgo_fr",
     creator: "@climgo_fr",
-    title: "Contact ClimGO | Devis Gratuit Chauffage Climatisation",
-    description: "Contactez ClimGO pour un devis gratuit en chauffage et climatisation en Gironde. Intervention rapide, artisan RGE certifié.",
+    title: "Contactez votre expert local RGE",
+    description: "Contactez ClimGO Gironde - Devis gratuit, étude personnalisée, aides financières. Artisan RGE proche de vous. 07.66.46.00.08",
     images: ["/img/climdame.png"],
   },
   alternates: {
@@ -84,29 +84,7 @@ export default function ContactLayout({
             "name": "Contact ClimGO - Devis Gratuit",
             "description": "Contactez ClimGO pour un devis gratuit en chauffage et climatisation en Gironde. Intervention rapide, artisan RGE certifié.",
             "url": "https://www.climgo.fr/contact",
-            "mainEntity": {
-              "@type": "HVACBusiness",
-              "name": "ClimGO",
-              "telephone": "+33766460008",
-              "email": "contact@climgo.fr",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "28 rue de Cantelaude",
-                "addressLocality": "Marcheprime",
-                "addressRegion": "Nouvelle-Aquitaine",
-                "postalCode": "33380",
-                "addressCountry": "FR"
-              },
-              // Données géographiques du siège
-              "geo": generateGeoJsonLd(HEADQUARTERS_COORDINATES, "ClimGO Marcheprime"),
-              // Zone de service avec géolocalisation (rayon de 50km)
-              "serviceArea": generateServiceAreaJsonLd(HEADQUARTERS_COORDINATES, "50000"),
-              "areaServed": {
-                "@type": "Place",
-                "name": "Gironde, Bordeaux Métropole, Bassin d'Arcachon, Marcheprime, Biganos, Mios, Arcachon, Bordeaux, Andernos-les-Bains",
-                "geo": generateGeoJsonLd(HEADQUARTERS_COORDINATES, "Zone d'intervention ClimGO")
-              }
-            },
+            "mainEntity": {"@id": "https://www.climgo.fr/#organization"},
             "offers": {
               "@type": "Offer",
               "description": "Devis gratuit sous 24h - Intervention rapide"

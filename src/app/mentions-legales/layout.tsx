@@ -2,12 +2,12 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Mentions Légales | ClimGO',
-  description: 'Mentions légales ClimGO. Informations légales, hébergement, propriété intellectuelle. ClimGO SASU - Expert chauffage climatisation Gironde.',
+  description: 'Mentions légales ClimGO SASU. Benjamin Cardoso, chauffagiste RGE Gironde. Informations légales, RGPD, hébergement.',
   keywords: 'mentions légales ClimGO, ClimGO SASU, hébergement Vercel, propriété intellectuelle ClimGO, droit applicable ClimGO',
   
   openGraph: {
     title: 'Mentions Légales | ClimGO',
-    description: 'Mentions légales ClimGO. Informations légales, hébergement, propriété intellectuelle. ClimGO SASU - Expert chauffage climatisation Gironde.',
+    description: 'Mentions légales ClimGO SASU. Benjamin Cardoso, chauffagiste RGE Gironde. Informations légales, RGPD, hébergement.',
     url: 'https://www.climgo.fr/mentions-legales',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',

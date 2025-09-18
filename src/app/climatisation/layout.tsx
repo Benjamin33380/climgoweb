@@ -2,13 +2,13 @@ import { Metadata } from 'next';
 import { HEADQUARTERS_COORDINATES, generateGeoJsonLd, generateServiceAreaJsonLd } from '@/config/geo';
 
 export const metadata: Metadata = {
-  title: 'Climatisation Gironde | Installation Climatiseur PAC Air/Air',
-  description: 'Climatisation Gironde. Installation climatiseur, PAC air/air, réversible. Entretien, dépannage. Expert RGE certifié.',
+  title: 'Climatisation - Installation, dépannage, maintenance',
+  description: 'ClimGO votre expert local Girondin - Climatisation - Devis gratuit, aides financières, suivi dossier. Artisan RGE. 07.66.46.00.08',
   keywords: 'climatisation Gironde, installation climatiseur, PAC air air, climatiseur réversible, entretien climatisation, dépannage clim, ClimGO',
   
   openGraph: {
-    title: 'Climatisation Gironde | Installation Climatiseur PAC Air/Air',
-    description: 'Climatisation Gironde. Installation climatiseur, PAC air/air, réversible. Entretien, dépannage. Expert RGE certifié.',
+    title: 'Climatisation - Installation, dépannage, maintenance',
+    description: 'ClimGO votre expert local Girondin - Climatisation - Devis gratuit, aides financières, suivi dossier. Artisan RGE. 07.66.46.00.08',
     url: 'https://www.climgo.fr/climatisation',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Climatisation Gironde | Installation Climatiseur PAC Air/Air',
-    description: 'Climatisation Gironde. Installation climatiseur, PAC air/air, réversible. Entretien, dépannage. Expert RGE certifié.',
+    title: 'Climatisation - Installation, dépannage, maintenance',
+    description: 'ClimGO votre expert local Girondin - Climatisation - Devis gratuit, aides financières, suivi dossier. Artisan RGE. 07.66.46.00.08',
     images: ['/img/serp/clim.png'],
   },
   
@@ -78,29 +78,8 @@ export default function ClimatisationLayout({
             "@type": "Service",
             "name": "Climatisation Gironde - Installation PAC Air/Air",
             "description": "Climatisation Gironde. Installation climatiseur, PAC air/air, réversible. Entretien, dépannage. Expert RGE certifié ClimGO.",
-            "provider": {
-              "@type": "HVACBusiness",
-              "name": "ClimGO",
-              "url": "https://www.climgo.fr",
-              "telephone": "+33766460008",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "28 rue de Cantelaude",
-                "addressLocality": "Marcheprime",
-                "addressRegion": "Nouvelle-Aquitaine",
-                "postalCode": "33380",
-                "addressCountry": "FR"
-              },
-              // Données géographiques du siège
-              "geo": generateGeoJsonLd(HEADQUARTERS_COORDINATES, "ClimGO Marcheprime"),
-              // Zone de service avec géolocalisation (rayon de 50km)
-              "serviceArea": generateServiceAreaJsonLd(HEADQUARTERS_COORDINATES, "50000")
-            },
-            "areaServed": {
-              "@type": "Place",
-              "name": "Gironde, Bordeaux Métropole, Bassin d'Arcachon, Marcheprime, Biganos, Mios, Arcachon, Bordeaux, Andernos-les-Bains",
-              "geo": generateGeoJsonLd(HEADQUARTERS_COORDINATES, "Zone d'intervention ClimGO")
-            },
+            "provider": {"@id": "https://www.climgo.fr/#organization"},
+            "areaServed": {"@type": "State", "name": "Gironde"},
             "serviceType": "Installation et maintenance de systèmes de climatisation",
             "url": "https://www.climgo.fr/climatisation",
             "offers": {

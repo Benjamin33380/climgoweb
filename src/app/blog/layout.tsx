@@ -8,8 +8,8 @@ const OG_IMAGE = `${SITE}/images/og/blog-climgo.jpg`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
-  title: 'Blog ClimGO | Conseils Chauffage Climatisation Gironde',
-  description: 'Blog ClimGO : conseils experts en chauffage et climatisation. Actualités, guides techniques et conseils RGE pour la Gironde.',
+  title: 'Blog ClimGO | Conseils chauffage & climatisation',
+  description: 'Blog ClimGO : conseils d\'expert chauffagiste RGE. Guides PAC, climatisation, économies d\'énergie. Actualités Gironde.',
   keywords: 'blog ClimGO, conseils chauffage, conseils climatisation, actualités ClimGO, expert RGE Gironde',
   alternates: {
     canonical: PATH,

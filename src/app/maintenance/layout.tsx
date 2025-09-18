@@ -2,12 +2,12 @@ import { Metadata } from 'next';
 import { HEADQUARTERS_COORDINATES, generateGeoJsonLd, generateServiceAreaJsonLd } from '@/config/geo';
 
 export const metadata: Metadata = {
-  title: 'Entretien Chauffage Climatisation Gironde | ClimGO',
-  description: 'Entretien chauffage climatisation Gironde. Maintenance PAC, chaudière, climatiseur. Contrat entretien annuel. Intervention rapide.',
+  title: 'Maintenance, dépannage - votre suivi d\'expert',
+  description: 'ClimGO votre expert local Girondin - Maintenance - Devis gratuit, aides financières, suivi dossier. Artisan RGE. 07.66.46.00.08',
   keywords: 'maintenance chauffage, entretien climatisation, contrat maintenance, révision annuelle, nettoyage installation, contrôle étanchéité, remplacement filtres, vérification sécurité, optimisation performance, diagnostic panne, réparation urgente, dépannage 24h, pièces détachées, garantie constructeur, expertise technique, prévention pannes, amélioration rendement, mise aux normes',
   
   openGraph: {
-    title: 'Entretien Chauffage Climatisation Gironde | ClimGO',
+    title: 'Maintenance, dépannage - votre suivi d\'expert',
     description: 'Entretien chauffage climatisation Gironde. Maintenance PAC, chaudière, climatiseur. Contrat entretien annuel. Intervention rapide.',
     url: 'https://www.climgo.fr/maintenance',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Entretien Chauffage Climatisation Gironde | ClimGO',
+    title: 'Maintenance, dépannage - votre suivi d\'expert',
     description: 'Entretien chauffage climatisation Gironde. Maintenance PAC, chaudière, climatiseur. Contrat entretien annuel. Intervention rapide.',
     images: ['/img/serp/sav.jpeg'],
   },
@@ -87,29 +87,8 @@ export default function MaintenanceLayout({
             "@type": "Service",
             "name": "Entretien Chauffage Climatisation Gironde",
             "description": "Entretien chauffage climatisation Gironde. Maintenance PAC, chaudière, climatiseur. Contrat entretien annuel. Intervention rapide. Expert RGE certifié ClimGO.",
-            "provider": {
-              "@type": "HVACBusiness",
-              "name": "ClimGO",
-              "url": "https://www.climgo.fr",
-              "telephone": "+33766460008",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "28 rue de Cantelaude",
-                "addressLocality": "Marcheprime",
-                "addressRegion": "Nouvelle-Aquitaine",
-                "postalCode": "33380",
-                "addressCountry": "FR"
-              },
-              // Données géographiques du siège
-              "geo": generateGeoJsonLd(HEADQUARTERS_COORDINATES, "ClimGO Marcheprime"),
-              // Zone de service avec géolocalisation (rayon de 50km)
-              "serviceArea": generateServiceAreaJsonLd(HEADQUARTERS_COORDINATES, "50000")
-            },
-            "areaServed": {
-              "@type": "Place",
-              "name": "Gironde, Bordeaux Métropole, Bassin d'Arcachon, Marcheprime, Biganos, Mios, Arcachon, Bordeaux, Andernos-les-Bains",
-              "geo": generateGeoJsonLd(HEADQUARTERS_COORDINATES, "Zone d'intervention ClimGO")
-            },
+            "provider": {"@id": "https://www.climgo.fr/#organization"},
+            "areaServed": {"@type": "State", "name": "Gironde"},
             "serviceType": "Entretien et dépannage de systèmes thermiques",
             "url": "https://www.climgo.fr/maintenance",
             "offers": {

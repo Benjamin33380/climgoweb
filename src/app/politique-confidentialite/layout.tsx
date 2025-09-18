@@ -2,12 +2,12 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Politique de Confidentialité | ClimGO',
-  description: 'Politique de confidentialité ClimGO. Protection des données personnelles, cookies, RGPD. ClimGO respecte votre vie privée.',
+  description: 'Politique confidentialité ClimGO. Protection données personnelles, cookies, RGPD. Respect vie privée clients.',
   keywords: 'politique confidentialité ClimGO, protection données personnelles, cookies ClimGO, RGPD ClimGO, vie privée ClimGO',
   
   openGraph: {
     title: 'Politique de Confidentialité | ClimGO',
-    description: 'Politique de confidentialité ClimGO. Protection des données personnelles, cookies, RGPD. ClimGO respecte votre vie privée.',
+    description: 'Politique confidentialité ClimGO. Protection données personnelles, cookies, RGPD. Respect vie privée clients.',
     url: 'https://www.climgo.fr/politique-confidentialite',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',

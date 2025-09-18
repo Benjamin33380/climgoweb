@@ -3,7 +3,7 @@ import { HEADQUARTERS_COORDINATES, generateGeoJsonLd, generateServiceAreaJsonLd 
 
 export const metadata: Metadata = {
   title: 'Aides Chauffage Climatisation 2025 | ClimGO',
-  description: 'Découvrez toutes les aides de l\'État 2025 pour vos travaux chauffage climatisation. ClimGO vous accompagne dans vos démarches.',
+  description: 'Aides 2025 ClimGO : MaPrimeRénov\', CEE, TVA 5.5%. Accompagnement dossier gratuit. Économisez jusqu\'à 90%. Gironde.',
   
   keywords: 'aides état 2025, MaPrimeRénov, CEE, prime CEE, TVA 5.5%, éco-PTZ, subventions chauffage, aides climatisation, pompe à chaleur aide, aide rénovation énergétique, financement travaux, ClimGO RGE, entreprise RGE gironde, aides locales, ANIL, prime chauffage, subvention PAC, aide installation climatisation, crédit impôt, financement pompe chaleur, aide thermodynamique',
   

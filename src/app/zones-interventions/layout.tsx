@@ -2,13 +2,13 @@ import { Metadata } from 'next';
 import { HEADQUARTERS_COORDINATES, generateGeoJsonLd, generateServiceAreaJsonLd } from '@/config/geo';
 
 export const metadata: Metadata = {
-  title: 'Zones d\'Intervention ClimGO | Chauffage Climatisation Gironde',
-  description: 'Zones d\'intervention ClimGO en Gironde. Bordeaux, Arcachon, Mérignac, Pessac et plus de 40 villes. Chauffage climatisation.',
+  title: 'Nos villes d\'intervention | Chauffage et climatisation',
+  description: 'Découvrez toutes nos villes d\'intervention ClimGO en Gironde : Bordeaux, Arcachon, Marcheprime, Pessac. Chauffagiste RGE.',
   keywords: 'zones intervention ClimGO, Gironde, Bordeaux, Arcachon, Mérignac, Pessac, chauffage climatisation, ClimGO',
 
   openGraph: {
-    title: 'Zones d\'Intervention ClimGO | Chauffage Climatisation Gironde',
-    description: 'Zones d\'intervention ClimGO en Gironde. Bordeaux, Arcachon, Mérignac, Pessac et plus de 40 villes.',
+    title: 'Nos villes d\'intervention | Chauffage et climatisation',
+    description: 'Découvrez toutes nos villes d\'intervention ClimGO en Gironde : Bordeaux, Arcachon, Marcheprime, Pessac. Chauffagiste RGE.',
     url: 'https://www.climgo.fr/zones-interventions',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Zones d\'Intervention ClimGO | Chauffage Climatisation Gironde',
-    description: 'Zones d\'intervention ClimGO en Gironde. Bordeaux, Arcachon, Mérignac, Pessac et plus de 40 villes.',
+    title: 'Nos villes d\'intervention | Chauffage et climatisation',
+    description: 'Découvrez toutes nos villes d\'intervention ClimGO en Gironde : Bordeaux, Arcachon, Marcheprime, Pessac. Chauffagiste RGE.',
     images: ['https://www.climgo.fr/images/og/zones-interventions-climgo.jpg'],
   },
 
@@ -79,24 +79,8 @@ export default function ZonesInterventionsLayout({
             "name": "Zones d'Intervention ClimGO",
             "description": "Zones d'intervention ClimGO en Gironde. Bordeaux, Arcachon, Mérignac, Pessac et plus de 40 villes. Chauffage climatisation.",
             "url": "https://www.climgo.fr/zones-interventions",
-            "mainEntity": {
-              "@type": "HVACBusiness",
-              "name": "ClimGO",
-              "url": "https://www.climgo.fr",
-              "telephone": "+33766460008",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "28 rue de Cantelaude",
-                "addressLocality": "Marcheprime",
-                "addressRegion": "Nouvelle-Aquitaine",
-                "postalCode": "33380",
-                "addressCountry": "FR"
-              },
-              // Données géographiques du siège
-              "geo": generateGeoJsonLd(HEADQUARTERS_COORDINATES, "ClimGO Marcheprime"),
-              // Zone de service avec géolocalisation (rayon de 50km)
-              "serviceArea": generateServiceAreaJsonLd(HEADQUARTERS_COORDINATES, "50000"),
-              "areaServed": [
+            "mainEntity": {"@id": "https://www.climgo.fr/#organization"},
+            "about": [
                 {
                   "@type": "Place",
                   "name": "Bordeaux"
@@ -118,7 +102,6 @@ export default function ZonesInterventionsLayout({
                   "name": "Gironde"
                 }
               ]
-            }
           })
         }}
       />

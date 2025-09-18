@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import { HEADQUARTERS_COORDINATES, generateGeoJsonLd, generateServiceAreaJsonLd } from '@/config/geo';
 
 export const metadata: Metadata = {
-  title: "Services ClimGO | Chauffage Climatisation PAC Gironde",
-  description: "Services ClimGO : installation, maintenance et dépannage de chauffage, climatisation et pompes à chaleur en Gironde. Artisan RGE certifié.",
+  title: "Nos services - Spécialistes pompes à chaleur",
+  description: "ClimGO votre expert local Girondin - Chauffage, climatisation, chauffe-eau - Devis gratuit, aides financières. Artisan RGE. 07.66.46.00.08",
   keywords: [
     "services chauffage Gironde",
     "services climatisation Gironde",
@@ -13,8 +13,8 @@ export const metadata: Metadata = {
     "artisan RGE Gironde",
   ],
   openGraph: {
-    title: "Services ClimGO | Chauffage Climatisation PAC Gironde",
-    description: "Services ClimGO : installation, maintenance et dépannage de chauffage, climatisation et pompes à chaleur en Gironde. Artisan RGE certifié.",
+    title: "Nos services - Spécialistes pompes à chaleur",
+    description: "ClimGO votre expert local Girondin - Chauffage, climatisation, chauffe-eau - Devis gratuit, aides financières. Artisan RGE. 07.66.46.00.08",
     url: "https://www.climgo.fr/services",
     siteName: "ClimGO",
     locale: "fr_FR",
@@ -32,8 +32,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@climgo_fr",
     creator: "@climgo_fr",
-    title: "Services ClimGO | Chauffage Climatisation PAC Gironde",
-    description: "Services ClimGO : installation, maintenance et dépannage de chauffage, climatisation et pompes à chaleur en Gironde. Artisan RGE certifié.",
+    title: "Nos services - Spécialistes pompes à chaleur",
+    description: "ClimGO votre expert local Girondin - Chauffage, climatisation, chauffe-eau - Devis gratuit, aides financières. Artisan RGE. 07.66.46.00.08",
     images: ["/img/climdame.png"],
   },
   alternates: {
@@ -83,29 +83,8 @@ export default function ServicesLayout({
             "@type": "Service",
             "name": "Services ClimGO - Chauffage Climatisation PAC",
             "description": "Services ClimGO : installation, maintenance et dépannage de chauffage, climatisation et pompes à chaleur en Gironde. Artisan RGE certifié.",
-            "provider": {
-              "@type": "HVACBusiness",
-              "name": "ClimGO",
-              "url": "https://www.climgo.fr",
-              "telephone": "+33766460008",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "28 rue de Cantelaude",
-                "addressLocality": "Marcheprime",
-                "addressRegion": "Nouvelle-Aquitaine",
-                "postalCode": "33380",
-                "addressCountry": "FR"
-              },
-              // Données géographiques du siège
-              "geo": generateGeoJsonLd(HEADQUARTERS_COORDINATES, "ClimGO Marcheprime"),
-              // Zone de service avec géolocalisation (rayon de 50km)
-              "serviceArea": generateServiceAreaJsonLd(HEADQUARTERS_COORDINATES, "50000")
-            },
-            "areaServed": {
-              "@type": "Place",
-              "name": "Gironde, Bordeaux Métropole, Bassin d'Arcachon, Marcheprime, Biganos, Mios, Arcachon, Bordeaux, Andernos-les-Bains",
-              "geo": generateGeoJsonLd(HEADQUARTERS_COORDINATES, "Zone d'intervention ClimGO")
-            },
+            "provider": {"@id": "https://www.climgo.fr/#organization"},
+            "areaServed": {"@type": "State", "name": "Gironde"},
             "serviceType": "Installation, maintenance et dépannage de systèmes thermiques",
             "url": "https://www.climgo.fr/services",
             "offers": {

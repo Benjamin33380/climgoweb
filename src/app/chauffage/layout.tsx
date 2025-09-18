@@ -2,13 +2,13 @@ import { Metadata } from 'next';
 import { HEADQUARTERS_COORDINATES, generateGeoJsonLd, generateServiceAreaJsonLd } from '@/config/geo';
 
 export const metadata: Metadata = {
-  title: 'Chauffage Gironde | Installation PAC, Plancher Chauffant',
-  description: 'Expert chauffage Gironde. Installation PAC air/eau, plancher chauffant, radiateurs nouvelle génération. Artisan RGE certifié. Devis gratuit.',
+  title: 'Chauffage - Installation, dépannage, maintenance',
+  description: 'ClimGO votre expert local Girondin - Chauffage - Devis gratuit, aides financières, suivi dossier. Artisan RGE. 07.66.46.00.08',
   keywords: 'chauffage gironde, installation pompe à chaleur, plancher chauffant, radiateurs, artisan RGE, MaPrimeRénov, prime CEE, devis gratuit chauffage',
   
   openGraph: {
-    title: 'Chauffage Gironde | Installation PAC, Plancher Chauffant',
-    description: 'Expert chauffage Gironde. Installation PAC air/eau, plancher chauffant, radiateurs nouvelle génération. Artisan RGE certifié. Devis gratuit.',
+    title: 'Chauffage - Installation, dépannage, maintenance',
+    description: 'ClimGO votre expert local Girondin - Chauffage - Devis gratuit, aides financières, suivi dossier. Artisan RGE. 07.66.46.00.08',
     url: 'https://www.climgo.fr/chauffage',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffage Gironde | Installation PAC, Plancher Chauffant',
-    description: 'Expert chauffage Gironde. Installation PAC air/eau, plancher chauffant, radiateurs nouvelle génération. Artisan RGE certifié.',
+    title: 'Chauffage - Installation, dépannage, maintenance',
+    description: 'ClimGO votre expert local Girondin - Chauffage - Devis gratuit, aides financières, suivi dossier. Artisan RGE. 07.66.46.00.08',
     images: ['/img/serp/chauff.jpg'],
   },
   
@@ -78,29 +78,8 @@ export default function ChauffageLayout({
             "@type": "Service",
             "name": "Chauffage Gironde - Installation PAC, Plancher Chauffant",
             "description": "Expert chauffage Gironde. Installation pompe à chaleur, plancher chauffant, radiateurs. Artisan RGE certifié. 07.66.46.00.08",
-            "provider": {
-              "@type": "HVACBusiness",
-              "name": "ClimGO",
-              "url": "https://www.climgo.fr",
-              "telephone": "+33766460008",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "28 rue de Cantelaude",
-                "addressLocality": "Marcheprime",
-                "addressRegion": "Nouvelle-Aquitaine",
-                "postalCode": "33380",
-                "addressCountry": "FR"
-              },
-              // Données géographiques du siège
-              "geo": generateGeoJsonLd(HEADQUARTERS_COORDINATES, "ClimGO Marcheprime"),
-              // Zone de service avec géolocalisation (rayon de 50km)
-              "serviceArea": generateServiceAreaJsonLd(HEADQUARTERS_COORDINATES, "50000")
-            },
-            "areaServed": {
-              "@type": "Place",
-              "name": "Gironde, Bordeaux Métropole, Bassin d'Arcachon, Marcheprime, Biganos, Mios, Arcachon, Bordeaux, Andernos-les-Bains",
-              "geo": generateGeoJsonLd(HEADQUARTERS_COORDINATES, "Zone d'intervention ClimGO")
-            },
+            "provider": {"@id": "https://www.climgo.fr/#organization"},
+            "areaServed": {"@type": "State", "name": "Gironde"},
             "serviceType": "Installation et maintenance de systèmes de chauffage",
             "url": "https://www.climgo.fr/chauffage",
             "offers": {
