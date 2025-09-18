@@ -239,10 +239,6 @@ export default function HomePage() {
           </motion.div>
         </div>
 
-        {/* Indicateur de scroll */}
-        <div className="pointer-events-none absolute bottom-6 left-1/2 z-10 -translate-x-1/2">
-          <div className="h-8 w-[1px] bg-white/50 sm:bg-black/50 dark:bg-white/50 animate-pulse" />
-        </div>
       </section>
 
       {/* Section Bassin d'Arcachon - Texte défilant au scroll */}
@@ -394,27 +390,6 @@ export default function HomePage() {
               {/* Ligne verticale mobile - visible seulement sur mobile */}
               <div className="pointer-events-none absolute left-8 top-0 w-px h-full bg-gray-300 dark:bg-gray-700 md:hidden" />
               
-              {/* Lumière desktop - SEULEMENT sur desktop */}
-              <div
-                className="pointer-events-none absolute left-1/2 -translate-x-1/2 w-[2px] h-20 rounded-full hidden md:block"
-                style={{
-                  animation: 'lightMove 4s infinite linear',
-                  background: 'var(--light-effect-bg)',
-                  boxShadow: 'var(--light-effect-shadow)'
-                }}
-                aria-hidden="true"
-              />
-
-              {/* Lumière mobile - SEULEMENT sur mobile */}
-              <div
-                className="pointer-events-none absolute left-8 w-[3px] h-16 rounded-full block md:hidden z-5"
-                style={{
-                  animation: 'lightMoveMobile 4s infinite linear',
-                  background: 'var(--light-effect-bg)',
-                  boxShadow: 'var(--light-effect-shadow)'
-                }}
-                aria-hidden="true"
-              />
 
               {/* Étape 1 */}
               <div className="relative flex items-center mb-12 xs:mb-16">
