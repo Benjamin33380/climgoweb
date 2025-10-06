@@ -252,7 +252,10 @@ export default function HomePage() {
                 alt="RGE QualiPAC"
                 width={80}
                 height={80}
-                className="w-16 h-16 xs:w-20 xs:h-20 sm:w-24 sm:h-24 md:w-28 md:h-28"
+                className="w-16 h-16 xs:w-20 xs:h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 object-contain"
+                quality={100}
+                priority
+                unoptimized
               />
               <span className="text-xs xs:text-sm sm:text-base md:text-lg text-white sm:text-black/80 dark:text-white/80 font-medium mobile-text-shadow">
                 Artisan certifié<br />RGE QualiPAC
