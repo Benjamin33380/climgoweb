@@ -37,7 +37,7 @@ export default function HomePage() {
     const [searchQuery, setSearchQuery] = useState('');
     const [showSearchResults, setShowSearchResults] = useState(false);
 
-    const cities = [
+        const cities = [
       { name: 'Arcachon', url: '/villes/arcachon-chauffage-climatisation' },
       { name: 'La Teste-de-Buch', url: '/villes/la-teste-de-buch-chauffage-climatisation' },
       { name: 'Gujan-Mestras', url: '/villes/gujan-mestras-chauffage-climatisation' },
@@ -204,19 +204,21 @@ export default function HomePage() {
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold sm:font-light tracking-tight mb-2 xs:mb-3 sm:mb-4 md:mb-6 text-white sm:text-black dark:text-white break-words leading-tight mobile-text-shadow">
+            <h1 className="mb-3 xs:mb-4 sm:mb-4 md:mb-6 lg:mb-8">
+              <span className="block text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold sm:font-light tracking-tight mb-2 xs:mb-3 sm:mb-4 md:mb-6 text-white sm:text-black dark:text-white break-words leading-tight mobile-text-shadow">
               ClimGO
+              </span>
+              <span className="block text-xs xs:text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl text-white sm:text-black/90 dark:text-white leading-relaxed max-w-[260px] xs:max-w-[280px] sm:max-w-sm md:max-w-lg lg:max-w-xl xl:max-w-2xl whitespace-pre-line font-medium sm:font-normal mobile-text-shadow">
+                Spécialiste des systèmes de pompe à chaleur,{'\n'}chauffage et climatisation en Gironde
+              </span>
             </h1>
-            <p className="text-xs xs:text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl text-white sm:text-black/90 dark:text-white mb-3 xs:mb-4 sm:mb-4 md:mb-6 lg:mb-8 leading-relaxed max-w-[260px] xs:max-w-[280px] sm:max-w-sm md:max-w-lg lg:max-w-xl xl:max-w-2xl whitespace-pre-line font-medium sm:font-normal mobile-text-shadow">
-              Installateur de pompe à chaleur{'\n'}chauffage et climatisation
-            </p>
 
             {/* Composant de recherche de villes */}
             <div className="mb-3 sm:mb-4 md:mb-6 lg:mb-8">
               <CitySearch />
             </div>
 
-            <div className="flex flex-col xs:flex-row sm:flex-row gap-2 xs:gap-2 sm:gap-3 md:gap-4 lg:gap-5">
+            <div className="flex flex-col xs:flex-row sm:flex-row gap-2 xs:gap-2 sm:gap-3 md:gap-4 lg:gap-5 mb-4 xs:mb-5 sm:mb-6">
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-full px-3 xs:px-4 sm:px-4 md:px-6 lg:px-8 xl:px-10 py-2 xs:py-2 sm:py-2.5 md:py-3 lg:py-4 text-xs xs:text-xs sm:text-sm md:text-base lg:text-lg font-medium
@@ -236,12 +238,32 @@ export default function HomePage() {
                 Découvrir
               </a>
             </div>
+
+            {/* Logo RGE */}
+            <a 
+              href="https://www.qualit-enr.org/entreprises/climgo/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 xs:gap-3 hover:opacity-80 transition-opacity cursor-pointer"
+              aria-label="Voir notre certification RGE QualiPAC sur Qualit'EnR"
+            >
+              <Image
+                src="/logoannexe/rge.png"
+                alt="RGE QualiPAC"
+                width={80}
+                height={80}
+                className="w-16 h-16 xs:w-20 xs:h-20 sm:w-24 sm:h-24 md:w-28 md:h-28"
+              />
+              <span className="text-xs xs:text-sm sm:text-base md:text-lg text-white sm:text-black/80 dark:text-white/80 font-medium mobile-text-shadow">
+                Artisan certifié<br />RGE QualiPAC
+              </span>
+            </a>
           </motion.div>
         </div>
 
       </section>
 
-      {/* Section Bassin d'Arcachon - Texte défilant au scroll */}
+      {/* Section Bassin d'Arcachon - Texte fixe */}
       <section className="relative py-12 xs:py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32 overflow-hidden bg-gray-50 dark:bg-background">
         <div
           className="absolute inset-0 -z-10 w-full h-full bg-gray-50 dark:bg-background"
@@ -250,120 +272,86 @@ export default function HomePage() {
         
         {/* Titre centré */}
         <div className="relative z-10 container mx-auto px-4 xs:px-6 sm:px-6 md:px-8 lg:px-12 mb-6 xs:mb-8 sm:mb-8 md:mb-12">
-          <h2 className="text-xl xs:text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-gray-900 dark:text-white text-center">
-            Le confort, tout simplement.
+          <h2 className="text-xl xs:text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-gray-900 dark:text-white text-center max-w-5xl mx-auto leading-relaxed">
+            <span className="block mb-2 xs:mb-3 sm:mb-4">
+              Installation, entretien et dépannage
+            </span>
+            <span className="block text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl font-normal text-gray-700 dark:text-gray-300 mb-2 xs:mb-3 sm:mb-4">
+              Pompes à chaleur · Chaudières · Climatisations · Chauffe-eau · Sanitaires
+            </span>
+            <span className="block text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-semibold bg-gradient-to-r from-orange-500 to-blue-600 bg-clip-text text-transparent">
+              Artisan RGE QualiPAC en Gironde
+            </span>
           </h2>
         </div>
         
-        {/* Container de scroll sur toute la largeur de la page */}
-        <div className="relative w-full">
-          
-
-          
-          {/* Zone de scroll sur toute la largeur de la page */}
-          <div 
-            className="w-full h-[280px] xs:h-[320px] sm:h-[400px] md:h-[420px] px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 py-6 xs:py-8 sm:py-20 md:py-24 overflow-y-auto scrollbar-hide cursor-default"
-            style={{
-              scrollbarWidth: 'none',
-              msOverflowStyle: 'none',
-            }}
-          >
-                        {/* Contenu centré dans la zone élargie */}
+        {/* Container fixe */}
+        <div className="relative w-full px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12">
+          {/* Contenu centré */}
             <div className="max-w-3xl xs:max-w-4xl sm:max-w-4xl mx-auto">
               <div className="space-y-6 xs:space-y-8 sm:space-y-8 text-center pt-4 xs:pt-6 sm:pt-8 pb-12 xs:pb-16 sm:pb-20">
                 
-                {/* Introduction avec plus de taille */}
+                {/* Introduction */}
                 <div className="space-y-4">
                   <p className="text-base xs:text-lg sm:text-xl md:text-xl text-gray-800 dark:text-gray-200 leading-relaxed px-2 font-medium">
-                    Imaginez rentrer chez vous en plein été, ouvrir la porte… et sentir une vague de fraîcheur vous envelopper. Ou, en plein hiver, poser vos mains sur un radiateur tiède pendant que dehors la pluie tombe sans relâche.
-                  </p>
-
-                  <p className="text-sm xs:text-base sm:text-lg md:text-lg text-gray-800 dark:text-gray-200 leading-relaxed px-2">
-                    C'est ça, l'effet <strong>ClimGO</strong> : des installations pensées pour que votre maison devienne un cocon où il fait bon vivre, été comme hiver.
+                    <strong>ClimGO</strong>, entreprise <strong>RGE QualiPAC certifiée</strong>, est spécialisée dans l'installation, l'entretien et le dépannage de vos équipements thermiques et sanitaires sur <strong>Bordeaux</strong>, <strong>Arcachon</strong> et l'ensemble de la <strong>Gironde</strong>.
                   </p>
                 </div>
 
-                {/* Chapitre 1 avec ligne gradient */}
+                {/* Services principaux */}
                 <div className="my-8 xs:my-10 sm:my-12">
                   <div className="flex items-center justify-center mb-4">
-                    <div className="h-px bg-gradient-to-r from-transparent via-orange-500 to-transparent w-24"></div>
-                    <h3 className="text-lg xs:text-xl sm:text-2xl md:text-2xl font-semibold text-gray-900 dark:text-white mx-6 bg-gradient-to-r from-orange-500 to-blue-600 bg-clip-text text-transparent">
-                      Ce qu'on vous apporte
+                    <div className="h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-600 to-transparent w-24"></div>
+                    <h3 className="text-lg xs:text-xl sm:text-2xl md:text-2xl font-semibold text-gray-900 dark:text-white mx-6">
+                      Nos services
                     </h3>
-                    <div className="h-px bg-gradient-to-r from-transparent via-orange-500 to-transparent w-24"></div>
+                    <div className="h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-600 to-transparent w-24"></div>
                   </div>
                   <p className="text-sm xs:text-base sm:text-lg md:text-lg text-gray-800 dark:text-gray-200 leading-relaxed px-2">
-                    Plus qu'un service technique, on installe du <strong>confort durable</strong>, de la <strong>tranquillité</strong> et de <strong>vraies économies</strong>. Chaque intervention est calibrée pour que vous oubliiez vos appareils… sauf quand vous profitez de leurs bienfaits.
+                    Nous installons et entretenons vos <strong>pompes à chaleur air/eau et air/air</strong>, vos <strong>climatisations réversibles</strong>, vos <strong>chauffe-eau thermodynamiques</strong>, ainsi que tous vos <strong>équipements sanitaires</strong>. Chaque projet est étudié avec précision pour allier <strong>performance</strong>, <strong>confort</strong> et <strong>économies d'énergie</strong>.
                   </p>
                 </div>
 
-                {/* Chapitre 2 avec ligne gradient */}
+                {/* Aides financières */}
                 <div className="my-8 xs:my-10 sm:my-12">
                   <div className="flex items-center justify-center mb-4">
-                    <div className="h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent w-24"></div>
-                    <h3 className="text-lg xs:text-xl sm:text-2xl md:text-2xl font-semibold text-gray-900 dark:text-white mx-6 bg-gradient-to-r from-blue-600 to-orange-500 bg-clip-text text-transparent">
-                      Avant / Après
+                    <div className="h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-600 to-transparent w-24"></div>
+                    <h3 className="text-lg xs:text-xl sm:text-2xl md:text-2xl font-semibold text-gray-900 dark:text-white mx-6">
+                      Aides financières de l'État
                     </h3>
-                    <div className="h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent w-24"></div>
+                    <div className="h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-600 to-transparent w-24"></div>
                   </div>
                   <p className="text-sm xs:text-base sm:text-lg md:text-lg text-gray-800 dark:text-gray-200 leading-relaxed px-2">
-                    Avant ClimGO : factures qui grimpent, appareils bruyants, confort inégal. Après ClimGO : une maison silencieuse, agréable, avec des économies visibles dès les premiers mois.
+                    En tant qu'<strong>artisan RGE QualiPAC</strong>, nos travaux ouvrent droit aux <strong>aides financières de l'État</strong> : <strong>MaPrimeRénov'</strong>, <strong>Certificats d'Économie d'Énergie (CEE)</strong>, <strong>TVA réduite</strong> et <strong>Éco-PTZ</strong>. Nous vous accompagnons dans toutes les démarches administratives et proposons, lorsque c'est possible, la <strong>déduction directe des aides sur la facture</strong> pour une gestion simplifiée.
                   </p>
                 </div>
 
-                {/* Chapitre 3 avec ligne gradient */}
+                {/* Engagement */}
                 <div className="my-8 xs:my-10 sm:my-12">
                   <div className="flex items-center justify-center mb-4">
-                    <div className="h-px bg-gradient-to-r from-transparent via-orange-600 to-transparent w-24"></div>
-                    <h3 className="text-lg xs:text-xl sm:text-2xl md:text-2xl font-semibold text-gray-900 dark:text-white mx-6 bg-gradient-to-r from-orange-600 to-blue-700 bg-clip-text text-transparent">
-                      Notre promesse
+                    <div className="h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-600 to-transparent w-24"></div>
+                    <h3 className="text-lg xs:text-xl sm:text-2xl md:text-2xl font-semibold text-gray-900 dark:text-white mx-6">
+                      Notre engagement
                     </h3>
-                    <div className="h-px bg-gradient-to-r from-transparent via-orange-600 to-transparent w-24"></div>
+                    <div className="h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-600 to-transparent w-24"></div>
                   </div>
                   <p className="text-sm xs:text-base sm:text-lg md:text-lg text-gray-800 dark:text-gray-200 leading-relaxed px-2">
-                    Intervenir vite, travailler propre, respecter vos délais et vous laisser avec un confort qui dure. Ni blabla, ni déco : juste du concret, garanti et certifié.
+                    Notre engagement repose sur trois piliers : le <strong>conseil</strong>, la <strong>réactivité</strong> et la <strong>qualité d'intervention</strong>. Chaque installation est réalisée avec soin, dans le respect des normes et des délais.
                   </p>
                 </div>
 
-                {/* Conclusion avec plus d'impact */}
-                <div className="mt-10 xs:mt-12 sm:mt-14 space-y-3">
+                {/* Conclusion */}
+                <div className="mt-10 xs:mt-12 sm:mt-14 space-y-4">
                   <p className="text-base xs:text-lg sm:text-xl md:text-xl text-gray-800 dark:text-gray-200 leading-relaxed font-semibold px-2">
-                    Avec <strong className="bg-gradient-to-r from-orange-500 to-blue-600 bg-clip-text text-transparent">ClimGO</strong>, vous investissez dans plus qu'un équipement : vous investissez dans votre quotidien.
+                    <strong>Pompes à chaleur, climatisation, chauffe-eau, sanitaires, maintenance et dépannage</strong>  ClimGO met son savoir-faire au service de votre confort, toute l'année.
                   </p>
-                  <p className="text-sm xs:text-base sm:text-lg md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed px-2 italic">
-                    Et si on commençait à transformer le vôtre ?
+                  <p className="text-sm xs:text-base sm:text-lg md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed px-2 italic font-medium">
+                    ClimGO – L'art du confort, le goût du détail.
                   </p>
                 </div>
               </div>
             </div>
           </div>
-          
-        
-
-        </div>
-        
-        <style jsx>{`
-          .scrollbar-hide::-webkit-scrollbar {
-            display: none;
-          }
-          
-          @keyframes lightMove {
-            0% {
-              top: -10%;
-              opacity: 0;
-            }
-            5% {
-              opacity: 1;
-            }
-            95% {
-              opacity: 1;
-            }
-            100% {
-              top: 110%;
-              opacity: 0;
-            }
-          }
-        `}        </style>
       </section>
 
       {/* Section Services */}

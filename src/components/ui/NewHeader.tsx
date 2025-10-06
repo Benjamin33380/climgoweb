@@ -7,15 +7,10 @@ import { ModeToggle } from "@/components/ui/mode-toggle"
 import { Button } from "@/components/ui/button"
 import dynamic from 'next/dynamic'
 
-// Import dynamique des composants 3D pour optimiser le chargement
+// Import dynamique du logo 3D pour optimiser le chargement
 const LogoWithFallback = dynamic(() => import("@/components/ui/Logo3D").then(mod => ({ default: mod.LogoWithFallback })), {
   ssr: false,
-  loading: () => <div className="w-8 h-8 bg-gray-200 animate-pulse rounded" />
-})
-
-const Globe3D = dynamic(() => import("@/components/ui/Globe3D").then(mod => ({ default: mod.Globe3D })), {
-  ssr: false,
-  loading: () => <div className="w-12 h-12 bg-gray-200 animate-pulse rounded" />
+  loading: () => null
 })
 import { UserMenu } from "@/components/auth/UserMenu"
 import { useUser } from "@/components/providers/UserProvider"
@@ -189,68 +184,11 @@ export default function NewHeader() {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Zones d'intervention</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <div className="w-[500px] p-6">
-                    <div className="mb-6">
-                      <h3 className="text-lg font-semibold mb-2">+50 communes desservies</h3>
-                      <p className="text-sm text-muted-foreground">Gironde et Nord des Landes</p>
-                    </div>
-                    
-                    {/* Card principale avec globe 3D */}
-                    <div className="mb-6">
-                      <NavigationMenuLink asChild>
-                        <Link 
-                          href="/zones-interventions"
-                          className="block select-none space-y-3 rounded-xl p-5 leading-none no-underline outline-none transition-all hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                        >
-                          <div className="flex items-center gap-4">
-                            <div className="flex items-center justify-center w-16 h-16 rounded-xl bg-primary/10">
-                              <Globe3D className="w-12 h-12" />
-                            </div>
-                            <div className="flex-1">
-                              <div className="text-base font-semibold leading-none mb-1">
-                                Carte interactive
-                              </div>
-                              <p className="text-sm leading-snug text-muted-foreground">
-                                Explorez toutes nos zones d'intervention
-                              </p>
-                            </div>
-                            <div className="text-primary">
-                              →
-                            </div>
-                          </div>
-                        </Link>
-                      </NavigationMenuLink>
-                    </div>
-
-                    {/* Zones principales - style services */}
-                    <div className="grid grid-cols-2 gap-3">
-                      {zones.map((zone) => (
-                        <NavigationMenuLink key={zone.title} asChild>
-                          <Link 
-                            href={zone.href}
-                            className="block select-none space-y-2 rounded-lg p-4 leading-none no-underline outline-none transition-all hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          >
-                            <div className="flex items-center gap-3">
-                              <div className="flex items-center justify-center w-8 h-8 rounded-md bg-muted">
-                                {zone.icon}
-                              </div>
-                              <div className="flex-1">
-                                <div className="text-sm font-medium leading-none mb-1">
-                                  {zone.title}
-                                </div>
-                                <p className="text-xs leading-snug text-muted-foreground">
-                                  {zone.description}
-                                </p>
-                              </div>
-                            </div>
-                          </Link>
-                        </NavigationMenuLink>
-                      ))}
-                    </div>
-                  </div>
-                </NavigationMenuContent>
+                <NavigationMenuLink asChild>
+                  <Link href="/zones-interventions" className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
+                    Zones d'intervention
+                  </Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
@@ -272,42 +210,11 @@ export default function NewHeader() {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Blog</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid lg:w-[600px] gap-3 p-6">
-                    <li className="row-span-3">
-                      <NavigationMenuLink asChild>
-                        <Link
-                          className="flex h-full w-full select-none flex-col justify-center rounded-md bg-white dark:bg-background p-6 no-underline outline-none focus:shadow-md group"
-                          href="/blog"
-                        >
-                          <div className="flex justify-center items-center mb-4">
-                          <LogoWithFallback
-                              glbUrl="/favicon/logo.glb"
-                              isHovered={isContactHovered}
-                              className="w-16 h-16 transition-all duration-300"
-                            />
-                          </div>
-                          <div className="text-center">
-                            <div className="mb-2 text-lg font-medium">
-                              Blog ClimGO
-                            </div>
-                            <p className="text-sm leading-tight text-muted-foreground">
-                              Conseils d'experts en chauffage et climatisation
-                            </p>
-                          </div>
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <ListItem
-                      href="/blog"
-                      title="Tous les articles"
-                      icon={<FileText className="w-4 h-4" />}
-                    >
-                      Découvrez nos conseils d'experts en chauffage et climatisation
-                    </ListItem>
-                  </ul>
-                </NavigationMenuContent>
+                <NavigationMenuLink asChild>
+                  <Link href="/blog" className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
+                    Blog
+                  </Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
