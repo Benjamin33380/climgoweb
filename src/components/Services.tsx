@@ -1,6 +1,9 @@
+'use client';
+
 import { Snowflake, Flame, Droplets, Wrench } from 'lucide-react';
 import Link from 'next/link';
 import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
+import { motion } from 'framer-motion';
 
 export default function Services() {
   return (
@@ -8,20 +11,32 @@ export default function Services() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Titre de section */}
         <SimpleWrapper>
-          <div className="text-center mb-12 sm:mb-16">
+          <motion.div 
+            className="text-center mb-12 sm:mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-gray-900 dark:text-white mb-4 px-4">
               Notre expertise
             </h2>
             <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto px-4">
               Expertise technique et solutions sur-mesure pour votre confort thermique
             </p>
-          </div>
+          </motion.div>
         </SimpleWrapper>
 
         {/* Cards harmonisées - Responsive optimisé */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto px-4 sm:px-6">
           {/* Climatisation */}
           <SimpleWrapper>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: 0, ease: "easeOut" }}
+            >
             <Link href="/climatisation" className="group block bg-white dark:bg-card backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 sm:hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#2563EB]/50 dark:hover:border-[#60A5FA] h-64 sm:h-72 lg:h-80 flex flex-col">
             <div className="text-center flex flex-col h-full">
               {/* Icône service avec pastille uniforme */}
@@ -39,10 +54,17 @@ export default function Services() {
               </p>
             </div>
             </Link>
+            </motion.div>
           </SimpleWrapper>
 
           {/* Chauffage */}
           <SimpleWrapper>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
+            >
             <Link href="/chauffage" className="group block bg-white dark:bg-card backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 sm:hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#FF8C00]/50 dark:hover:border-[#FFA500] h-64 sm:h-72 lg:h-80 flex flex-col">
             <div className="text-center flex flex-col h-full">
               {/* Icône service avec pastille uniforme */}
@@ -59,10 +81,17 @@ export default function Services() {
               </p>
             </div>
             </Link>
+            </motion.div>
           </SimpleWrapper>
 
           {/* Eau Chaude Sanitaire */}
           <SimpleWrapper>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+            >
             <Link href="/eau-chaude-sanitaire" className="group block bg-white dark:bg-card backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 sm:hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#FF6B6B]/50 dark:hover:border-[#FF6B6B] h-64 sm:h-72 lg:h-80 flex flex-col">
             <div className="text-center flex flex-col h-full">
               {/* Icône service avec pastille uniforme */}
@@ -79,10 +108,17 @@ export default function Services() {
               </p>
             </div>
             </Link>
+            </motion.div>
           </SimpleWrapper>
 
           {/* Maintenance */}
           <SimpleWrapper>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
+            >
             <Link href="/maintenance" className="group block bg-white dark:bg-card backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 sm:hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#10B981]/50 dark:hover:border-[#34D399] h-64 sm:h-72 lg:h-80 flex flex-col">
             <div className="text-center flex flex-col h-full">
               {/* Icône service avec pastille uniforme */}
@@ -100,6 +136,7 @@ export default function Services() {
               </p>
             </div>
             </Link>
+            </motion.div>
           </SimpleWrapper>
         </div>
       </div>
