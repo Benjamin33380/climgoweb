@@ -100,14 +100,6 @@ export default function ChauffageLayout({
             "mainEntity": [
               {
                 "@type": "Question",
-                "name": "Quel est le prix d'installation d'une pompe à chaleur air/eau ?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "L'installation d'une PAC air/eau coûte entre 12 000€ et 25 000€ selon la puissance et la complexité. ClimGO vous propose un devis gratuit et vous accompagne pour obtenir MaPrimeRénov' (jusqu'à 90% d'aides)."
-                }
-              },
-              {
-                "@type": "Question",
                 "name": "Combien de temps dure l'installation d'un plancher chauffant ?",
                 "acceptedAnswer": {
                   "@type": "Answer",

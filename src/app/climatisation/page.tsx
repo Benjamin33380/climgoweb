@@ -24,7 +24,6 @@ export default function ClimatisationPage() {
         "Filtres anti-allergènes"
       ],
       description: "La solution idéale pour climatiser vos pièces principales. Discrète, efficace et facile à installer, elle s'intègre parfaitement à votre décoration.",
-      price: "À partir de 1 200€",
       gradient: "from-[#03144A] to-[#2563EB]"
     },
     {
@@ -40,7 +39,6 @@ export default function ClimatisationPage() {
         "Maintenance simplifiée"
       ],
       description: "La climatisation invisible par excellence. Parfaite pour les espaces commerciaux et les résidences de standing, elle offre un confort optimal sans impact visuel.",
-      price: "À partir de 2 500€",
       gradient: "from-[#03144A] to-[#2563EB]"
     },
     {
@@ -56,7 +54,6 @@ export default function ClimatisationPage() {
         "Contrôle professionnel"
       ],
       description: "Spécialement conçue pour les espaces commerciaux et professionnels. Puissance et efficacité réunies pour climatiser efficacement de grandes surfaces.",
-      price: "À partir de 3 800€",
       gradient: "from-[#03144A] to-[#2563EB]"
     },
     {
@@ -72,7 +69,6 @@ export default function ClimatisationPage() {
         "Contrôle intuitif"
       ],
       description: "La solution flexible par excellence. Installation simple, déplacement possible et performance optimale pour climatiser efficacement vos espaces.",
-      price: "À partir de 950€",
       gradient: "from-[#03144A] to-[#2563EB]"
     }
   ];

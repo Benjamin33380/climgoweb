@@ -65,7 +65,6 @@ export default function MaintenancePage() {
         "Rapport détaillé d'intervention"
       ],
       description: "Maintenez votre climatisation en parfait état avec nos contrats d'entretien personnalisés. Performance optimale et longévité garanties.",
-      price: "À partir de 80€",
       gradient: "from-[#03144A] to-[#10B981]"
     },
     {
@@ -81,7 +80,6 @@ export default function MaintenancePage() {
         "Mise à jour des réglages"
       ],
       description: "Nos techniciens qualifiés assurent l'entretien de votre système de chauffage pour votre sécurité et votre confort optimal.",
-      price: "À partir de 100€",
       gradient: "from-[#03144A] to-[#10B981]"
     },
     {
@@ -97,7 +95,6 @@ export default function MaintenancePage() {
         "Test des systèmes de sécurité"
       ],
       description: "Préservez votre production d'eau chaude sanitaire avec un entretien régulier adapté à votre installation.",
-      price: "À partir de 120€",
       gradient: "from-[#03144A] to-[#10B981]"
     },
     {
@@ -113,7 +110,6 @@ export default function MaintenancePage() {
         "Maintenance préventive complète"
       ],
       description: "Entretien obligatoire pour les PAC, nos experts certifiés garantissent performance énergétique et conformité réglementaire.",
-      price: "À partir de 150€",
       gradient: "from-[#03144A] to-[#10B981]"
     }
   ];
@@ -136,7 +132,7 @@ export default function MaintenancePage() {
     },
     {
       icon: <BadgeEuro className="inline w-6 h-6 text-[#10B981]" />,
-      title: "Tarifs transparents",
+      title: "Transparence totale",
       desc: "Devis gratuit et sans surprise"
     }
   ];

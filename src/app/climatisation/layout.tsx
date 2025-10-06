@@ -100,14 +100,6 @@ export default function ClimatisationLayout({
             "mainEntity": [
               {
                 "@type": "Question",
-                "name": "Quel est le prix d'installation d'un climatiseur réversible ?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "L'installation d'un climatiseur réversible coûte entre 1 500€ et 4 000€ selon la puissance et le nombre de pièces. ClimGO propose des devis gratuits et vous accompagne pour optimiser votre confort été comme hiver."
-                }
-              },
-              {
-                "@type": "Question",
                 "name": "Combien de pièces peut climatiser une PAC air/air ?",
                 "acceptedAnswer": {
                   "@type": "Answer",

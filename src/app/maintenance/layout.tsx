@@ -43,7 +43,6 @@ export const metadata: Metadata = {
     'DC.description': 'Entretien chauffage climatisation Gironde. Maintenance PAC, chaudière, climatiseur.',
     'DC.type': 'Service',
     'category': 'Maintenance',
-    'priceRange': '120-300€',
     'google-site-verification': 'Ljs9Q3ve_Z_ldbzUTagcBPPmmQ_LTJER2pD3j7Woj1g'
   },
   
@@ -107,14 +106,6 @@ export default function MaintenanceLayout({
             "@context": "https://schema.org",
             "@type": "FAQPage",
             "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "Quel est le prix d'un contrat de maintenance annuel ?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Un contrat de maintenance annuel coûte entre 120€ et 300€ selon l'équipement et la fréquence. ClimGO propose des formules adaptées à vos besoins avec intervention rapide et pièces détachées garanties."
-                }
-              },
               {
                 "@type": "Question",
                 "name": "À quelle fréquence faut-il entretenir sa PAC ou chaudière ?",

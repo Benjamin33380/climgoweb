@@ -98,14 +98,6 @@ export default function EauChaudeSanitaireLayout({
             "mainEntity": [
               {
                 "@type": "Question",
-                "name": "Quel est le prix d'installation d'un chauffe-eau thermodynamique ?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "L'installation d'un chauffe-eau thermodynamique coûte entre 2 500€ et 4 500€ selon la capacité et la complexité. ClimGO vous accompagne pour obtenir MaPrimeRénov' et réduire votre facture de 30 à 70%."
-                }
-              },
-              {
-                "@type": "Question",
                 "name": "Combien de temps dure l'installation d'un chauffe-eau ?",
                 "acceptedAnswer": {
                   "@type": "Answer",

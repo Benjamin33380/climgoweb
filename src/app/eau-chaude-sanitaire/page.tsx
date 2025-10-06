@@ -24,7 +24,6 @@ export default function EauChaudeSanitairePage() {
         "Technologie écologique avancée"
       ],
       description: "Ce système capte les calories de l'air ambiant pour chauffer l'eau de votre ballon. Une eau chaude sanitaire économique et écoresponsable.",
-      price: "À partir de 2 490€",
       gradient: "from-[#03144A] to-[#FF6B6B]"
     },
     {
@@ -40,7 +39,6 @@ export default function EauChaudeSanitairePage() {
         "Maintenance simplifiée"
       ],
       description: "Le chauffe-eau électrique classique assure une production d'eau chaude constante pour toute la maison. Discret, facile à installer et adapté aux petits budgets.",
-      price: "À partir de 390€",
       gradient: "from-[#03144A] to-[#FF6B6B]"
     },
     {
@@ -56,7 +54,6 @@ export default function EauChaudeSanitairePage() {
         "Design discret et moderne"
       ],
       description: "Un maximum de confort dans un minimum d'espace pour votre eau chaude sanitaire. Parfait pour les petits logements ou les espaces optimisés.",
-      price: "À partir de 490€",
       gradient: "from-[#03144A] to-[#FF6B6B]"
     }
   ];
