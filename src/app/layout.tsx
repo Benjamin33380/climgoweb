@@ -39,11 +39,28 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.climgo.fr'),
   title: {
-    default: "ClimGO - Spécialiste des systèmes de pompe à chaleur,chauffage et climatisation en Gironde",
+    default: "ClimGO - Chauffagiste et Climatisation Bordeaux, Arcachon, Marcheprime | Pompe à Chaleur RGE",
     template: "%s | ClimGO"
   },
   description: "Installation, entretien et dépannage de pompes à chaleur, chaudières, climatisations, chauffe-eau et sanitaires. Artisan RGE QualiPAC en Gironde.",
-  keywords: ["chauffagiste gironde", "climaticien gironde", "plombier chauffagiste", "chauffagiste bordeaux", "climaticien bordeaux", "chauffagiste bassin arcachon", "climaticien bassin arcachon", "chauffage gironde", "climatisation gironde", "pompe à chaleur", "chauffe-eau thermodynamique", "thermodynamique", "PAC air-eau", "PAC air-air", "plancher chauffant", "radiateurs", "entretien chauffage", "dépannage chauffage", "installateur chauffage", "installateur climatisation", "artisan RGE", "MaPrimeRénov", "devis gratuit chauffage", "devis gratuit climatisation"],
+  keywords: [
+    // Villes principales
+    "chauffagiste bordeaux", "climatisation bordeaux", "pompe à chaleur bordeaux", "clim bordeaux", "climatiseur bordeaux",
+    "chauffagiste arcachon", "climatisation arcachon", "pompe à chaleur arcachon", "clim arcachon", "climatiseur arcachon",
+    "chauffagiste marcheprime", "climatisation marcheprime", "pompe à chaleur marcheprime", "clim marcheprime",
+    // Services principaux
+    "chauffagiste gironde", "climaticien gironde", "installateur climatisation", "installateur chauffage",
+    "pompe à chaleur air eau", "pompe à chaleur air air", "PAC air-eau", "PAC air-air",
+    "chauffe-eau thermodynamique", "chauffe eau thermodynamique gironde", "ballon thermodynamique",
+    "climatisation réversible", "climatisation murale", "climatisation gainable", "clim réversible",
+    "remplacement chaudière", "chaudière gaz", "chaudière fuel", "chauffage central",
+    // Certifications et aides
+    "artisan RGE bordeaux", "artisan RGE arcachon", "RGE QualiPAC", "installateur RGE",
+    "MaPrimeRénov", "CEE certificats économie énergie", "aide pompe à chaleur", "prime chauffage",
+    // Services
+    "entretien chauffage", "dépannage chauffage", "maintenance climatisation", "dépannage climatisation",
+    "installation pompe à chaleur", "devis gratuit chauffage", "devis gratuit climatisation"
+  ],
   authors: [{ name: "ClimGO", url: "https://www.climgo.fr" }],
   creator: "ClimGO",
   publisher: "ClimGO",
@@ -67,7 +84,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     url: "https://www.climgo.fr",
-    title: "ClimGO - Installation, entretien et dépannage - Artisan RGE QualiPAC Gironde",
+    title: "ClimGO - Chauffagiste et Climatisation Bordeaux, Arcachon, Marcheprime | Pompe à Chaleur RGE",
     description: "Installation, entretien et dépannage de pompes à chaleur, chaudières, climatisations, chauffe-eau et sanitaires. Artisan RGE QualiPAC en Gironde.",
     siteName: "ClimGO",
     images: [
@@ -91,7 +108,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ClimGO - Installation, entretien et dépannage - Artisan RGE QualiPAC Gironde",
+    title: "ClimGO - Chauffagiste et Climatisation Bordeaux, Arcachon, Marcheprime | Pompe à Chaleur RGE",
     description: "Installation, entretien et dépannage de pompes à chaleur, chaudières, climatisations, chauffe-eau et sanitaires. Artisan RGE QualiPAC en Gironde.",
     images: ["/img/climdame.png"],
   },
