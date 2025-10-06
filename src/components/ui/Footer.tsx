@@ -62,7 +62,7 @@ export default function Footer() {
                   <span className="font-semibold text-xs sm:text-sm">5/5</span>
                 </div>
                 <div className="text-center sm:text-left">
-                  <div className="text-muted-foreground text-xs">(22 avis Google)</div>
+                  <div className="text-muted-foreground text-xs">(31 avis Google)</div>
                 </div>
               </div>
 

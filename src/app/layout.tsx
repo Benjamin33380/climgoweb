@@ -39,7 +39,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.climgo.fr'),
   title: {
-    default: "ClimGO - Chauffagiste et Climatisation Bordeaux, Arcachon, Marcheprime | Pompe à Chaleur RGE",
+    default: "ClimGO - Spécialiste des systèmes de pompe à chaleur,chauffage et climatisation en Gironde",
     template: "%s | ClimGO"
   },
   description: "Installation, entretien et dépannage de pompes à chaleur, chaudières, climatisations, chauffe-eau et sanitaires. Artisan RGE QualiPAC en Gironde.",
@@ -84,7 +84,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     url: "https://www.climgo.fr",
-    title: "ClimGO - Chauffagiste et Climatisation Bordeaux, Arcachon, Marcheprime | Pompe à Chaleur RGE",
+    title: "ClimGO - Installation, entretien et dépannage - Artisan RGE QualiPAC Gironde",
     description: "Installation, entretien et dépannage de pompes à chaleur, chaudières, climatisations, chauffe-eau et sanitaires. Artisan RGE QualiPAC en Gironde.",
     siteName: "ClimGO",
     images: [
@@ -108,7 +108,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ClimGO - Chauffagiste et Climatisation Bordeaux, Arcachon, Marcheprime | Pompe à Chaleur RGE",
+    title: "ClimGO - Installation, entretien et dépannage - Artisan RGE QualiPAC Gironde",
     description: "Installation, entretien et dépannage de pompes à chaleur, chaudières, climatisations, chauffe-eau et sanitaires. Artisan RGE QualiPAC en Gironde.",
     images: ["/img/climdame.png"],
   },
