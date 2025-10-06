@@ -249,10 +249,7 @@ export default function MaintenancePage() {
                         </div>
                       ))}
                     </div>
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-0">
-                      <div className="text-2xl font-light text-[#03144A] dark:text-white whitespace-nowrap">
-                        {solution.price}
-                      </div>
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-center gap-4 sm:gap-0">
                       <Link
                         href="/contact"
                         className="group px-8 py-3 bg-gradient-to-r from-[#03144A] to-[#10B981] rounded-full text-white font-medium transition-all duration-300 hover:scale-105 text-center"
