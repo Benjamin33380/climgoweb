@@ -47,7 +47,7 @@ export default function ChauffagePage() {
       id: 'plancher-chauffant',
       title: "Plancher chauffant",
       subtitle: "Confort Invisible",
-      image: "/machine/extraplat.webp",
+      image: "/machine/nourriceplancher.png",
       badge: "Luxe & Discrétion",
       features: [
         "Chaleur homogène optimale",
