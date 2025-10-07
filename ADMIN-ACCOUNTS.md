@@ -2,7 +2,7 @@
 
 ## 📊 Vue d'ensemble
 
-Vous avez actuellement **3 comptes administrateurs** actifs dans votre base de données.
+Vous avez actuellement **2 comptes administrateurs** actifs dans votre base de données.
 
 ---
 
@@ -17,24 +17,14 @@ Vous avez actuellement **3 comptes administrateurs** actifs dans votre base de d
 
 ---
 
-### 2. 📧 **Compte Contact**
+### 2. 🎯 **Compte Principal** (PRODUCTION)
 - **Email:** `contact@climgo.fr`
-- **Mot de passe:** `admin123`
+- **Mot de passe:** `benclimgo0699`
 - **Créé le:** 06/10/2025
-- **Statut:** ✅ Actif
-- **Usage:** Compte créé aujourd'hui pour tests
-- **Recommandation:** ⚠️ Peut être supprimé (mot de passe trop simple)
-
----
-
-### 3. 🎯 **Compte Production** (PRINCIPAL)
-- **Email:** `admin@climgo.fr`
-- **Mot de passe:** `ClimGO2025!Prod`
-- **Créé le:** 07/10/2025
+- **Mis à jour le:** 07/10/2025
 - **Statut:** ✅ Actif
 - **Usage:** 🌟 **COMPTE OFFICIEL POUR LA PRODUCTION**
-- **Recommandation:** ✅ À utiliser en production
-- **Sécurité:** Mot de passe fort, email professionnel
+- **Recommandation:** ✅ À utiliser en production et en local
 
 ---
 
@@ -44,10 +34,10 @@ Vous avez actuellement **3 comptes administrateurs** actifs dans votre base de d
 - **Production:** https://www.climgo.fr/admin/login
 - **Local:** http://localhost:3000/admin/login
 
-### Identifiants recommandés pour la production :
+### Identifiants pour la production :
 ```
-📧 Email: admin@climgo.fr
-🔐 Mot de passe: ClimGO2025!Prod
+📧 Email: contact@climgo.fr
+🔐 Mot de passe: benclimgo0699
 ```
 
 ---
@@ -57,13 +47,11 @@ Vous avez actuellement **3 comptes administrateurs** actifs dans votre base de d
 ### Actions à faire maintenant :
 
 1. ✅ **Tester le compte production**
-   - Connectez-vous avec `admin@climgo.fr`
+   - Connectez-vous avec `contact@climgo.fr`
    - Vérifiez que tout fonctionne
-   - Changez le mot de passe depuis l'interface admin
 
 2. 🗑️ **Nettoyer les comptes inutiles**
    - Supprimez `contact@oxelya.com` si plus utilisé
-   - Supprimez `contact@climgo.fr` (mot de passe trop simple)
 
 3. 📝 **Sauvegarder les identifiants**
    - Notez les identifiants dans un gestionnaire de mots de passe
@@ -121,8 +109,8 @@ deleteAdmin();
 ## 📅 Historique
 
 - **30/08/2025** : Création compte Oxelya
-- **06/10/2025** : Création compte contact@climgo.fr (test)
-- **07/10/2025** : Création compte admin@climgo.fr (production) ✨
+- **06/10/2025** : Création compte contact@climgo.fr
+- **07/10/2025** : Mise à jour des identifiants (production) ✨
 
 ---
 

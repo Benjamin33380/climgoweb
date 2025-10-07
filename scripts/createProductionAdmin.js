@@ -14,8 +14,8 @@ async function createProductionAdmin() {
 
     // Configuration du compte admin production
     const ADMIN_CONFIG = {
-      email: 'admin@climgo.fr',
-      password: 'ClimGO2025!Prod',  // Mot de passe sécurisé pour production
+      email: 'contact@climgo.fr',
+      password: 'benclimgo0699',
       firstName: 'Admin',
       lastName: 'ClimGO',
       role: 'ADMIN'
