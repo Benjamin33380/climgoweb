@@ -41,11 +41,14 @@ export async function POST(request: NextRequest) {
     if (result.token) {
       response.cookies.set('auth-token', result.token, {
         httpOnly: true,
-        secure: false, // Désactivé temporairement pour la production
-        sameSite: 'lax', // Plus permissif
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: 'lax',
         maxAge: 24 * 60 * 60, // 24 heures
-        path: '/'
+        path: '/',
+        domain: undefined // Pas de domain en localhost
       });
+      
+      console.log('🔐 [API Login] Cookie défini avec succès');
     }
 
     return response;
