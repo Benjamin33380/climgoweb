@@ -46,16 +46,7 @@ export function Logo3D({
         <hemisphereLight args={["#ffffff", "#606060", 0.5]} />
         <spotLight position={[0, 10, 0]} intensity={0.6} color="#ffffff" />
         
-        <Suspense fallback={
-          <mesh>
-            <sphereGeometry args={[1.5, 16, 16]} />
-            <meshStandardMaterial 
-              color="#FF6600" 
-              emissive="#FF3300"
-              emissiveIntensity={0.2}
-            />
-          </mesh>
-        }>
+        <Suspense fallback={null}>
           <LogoModel url={glbUrl} isHovered={isHovered} />
           <OrbitControls 
             enableZoom={false} 
@@ -93,16 +84,7 @@ export function LogoWithFallback({
         <hemisphereLight args={["#ffffff", "#606060", 0.5]} />
         <spotLight position={[0, 10, 0]} intensity={0.6} color="#ffffff" />
         
-        <Suspense fallback={
-          <mesh>
-            <sphereGeometry args={[1.5, 16, 16]} />
-            <meshStandardMaterial 
-              color="#FF6600" 
-              emissive="#FF3300"
-              emissiveIntensity={0.2}
-            />
-          </mesh>
-        }>
+        <Suspense fallback={null}>
           <LogoModel url={glbUrl} isHovered={isHovered} />
           <OrbitControls 
             enableZoom={false} 
