@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from 'framer-motion';
-import { Search, MapPin, Euro } from "lucide-react";
+import { Euro } from "lucide-react";
 import { useState, useEffect } from "react";
 import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import Services from '@/components/Services';
@@ -29,113 +29,6 @@ export default function HomePage() {
     
     return () => clearInterval(interval);
   }, [heroImages.length]);
-
-
-
-  // Composant CitySearch
-  const CitySearch = () => {
-    const [searchQuery, setSearchQuery] = useState('');
-    const [showSearchResults, setShowSearchResults] = useState(false);
-
-        const cities = [
-      { name: 'Arcachon', url: '/villes/arcachon-chauffage-climatisation' },
-      { name: 'La Teste-de-Buch', url: '/villes/la-teste-de-buch-chauffage-climatisation' },
-      { name: 'Gujan-Mestras', url: '/villes/gujan-mestras-chauffage-climatisation' },
-      { name: 'Le Teich', url: '/villes/le-teich-chauffage-climatisation' },
-      { name: 'Biganos', url: '/villes/biganos-chauffage-climatisation' },
-      { name: 'Audenge', url: '/villes/audenge-chauffage-climatisation' },
-      { name: 'Lanton', url: '/villes/lanton-chauffage-climatisation' },
-      { name: 'Andernos-les-Bains', url: '/villes/andernos-les-bains-chauffage-climatisation' },
-      { name: 'Arès', url: '/villes/ares-chauffage-climatisation' },
-      { name: 'Lège Cap Ferret', url: '/villes/lege-cap-ferret-chauffage-climatisation' },
-      { name: 'Marcheprime', url: '/villes/marcheprime-chauffage-climatisation' },
-      { name: 'Le Barp', url: '/villes/le-barp-chauffage-climatisation' },
-      { name: 'Mios', url: '/villes/mios-chauffage-climatisation' },
-      { name: 'Salles', url: '/villes/salles-chauffage-climatisation' },
-      { name: 'Belin-Béliet', url: '/villes/belin-beliet-chauffage-climatisation' },
-      { name: 'Sanguinet', url: '/villes/sanguinet-chauffage-climatisation' },
-      { name: 'Parentis-en-Born', url: '/villes/parentis-chauffage-climatisation' },
-      { name: 'Biscarrosse', url: '/villes/biscarrosse-chauffage-climatisation' },
-      { name: 'Mimizan', url: '/villes/mimizan-chauffage-climatisation' },
-      { name: 'Canéjan', url: '/villes/canejan-chauffage-climatisation' },
-      { name: 'Gradignan', url: '/villes/gradignan-chauffage-climatisation' },
-      { name: 'Saucats', url: '/villes/saucats-chauffage-climatisation' },
-      { name: 'Saint-Selve', url: '/villes/saint-selve-chauffage-climatisation' },
-      { name: 'Martillac', url: '/villes/martillac-chauffage-climatisation' },
-      { name: 'Léognan', url: '/villes/leognan-chauffage-climatisation' },
-      { name: 'La Brède', url: '/villes/la-brede-chauffage-climatisation' },
-      { name: 'Cadaujac', url: '/villes/cadaujac-chauffage-climatisation' },
-      { name: 'Cestas', url: '/villes/cestas-chauffage-climatisation' },
-      { name: 'Bordeaux', url: '/villes/bordeaux-chauffage-climatisation' },
-      { name: 'Le Haillan', url: '/villes/le-haillan-chauffage-climatisation' },
-      { name: 'Le Bouscat', url: '/villes/le-bouscat-chauffage-climatisation' },
-      { name: 'Bruges', url: '/villes/bruges-chauffage-climatisation' },
-      { name: 'Eysines', url: '/villes/eysines-chauffage-climatisation' },
-      { name: 'Bouliac', url: '/villes/bouliac-chauffage-climatisation' },
-      { name: 'Mérignac', url: '/villes/merignac-chauffage-climatisation' },
-      { name: 'Pessac', url: '/villes/pessac-chauffage-climatisation' },
-      { name: 'Talence', url: '/villes/talence-chauffage-climatisation' },
-      { name: "Villenave-d'Ornon", url: '/villes/villenave-d-ornon-chauffage-climatisation' },
-      { name: 'Bègles', url: '/villes/begles-chauffage-climatisation' },
-      { name: 'Lacanau', url: '/villes/lacanau-chauffage-climatisation' },
-      { name: 'Saint-Loubès', url: '/villes/saint-loubes-chauffage-climatisation' },
-      { name: "Saint-Jean-d'Illac", url: '/villes/saint-jean-d-illac-chauffage-climatisation' },
-      { name: "Saint-Médard-en-Jalles", url: '/villes/saint-medard-en-jalles-chauffage-climatisation' },
-      { name: "Saint-Aubin-de-Médoc", url: '/villes/saint-aubin-de-medoc-chauffage-climatisation' },
-      { name: 'Martignas-sur-Jalle', url: '/villes/martignas-sur-jalle-chauffage-climatisation' }
-    ];
-
-    // Filtrer les villes basé sur la recherche
-    const filteredCities = cities.filter(city =>
-      city.name.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-
-    return (
-      <div className="max-w-[220px] xs:max-w-[240px] sm:max-w-xs md:max-w-sm lg:max-w-md relative">
-        <div className="relative">
-          <Search className="absolute left-2 sm:left-3 top-1/2 transform -translate-y-1/2 text-white sm:text-muted-foreground dark:text-muted-foreground w-3 sm:w-4 h-3 sm:h-4" />
-          <input
-            type="text"
-            placeholder="Rechercher votre ville..."
-            value={searchQuery}
-            onChange={(e) => {
-              setSearchQuery(e.target.value);
-              setShowSearchResults(e.target.value.length > 0);
-            }}
-            onFocus={() => setShowSearchResults(searchQuery.length > 0)}
-            className="w-full bg-white/30 sm:bg-background/90 dark:bg-background/10 backdrop-blur-md border border-white/50 sm:border-border dark:border-border rounded-lg px-5 xs:px-6 sm:px-8 py-1.5 xs:py-2 sm:py-2 text-white sm:text-foreground dark:text-white placeholder-white/70 sm:placeholder-muted-foreground dark:placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent text-xs xs:text-xs sm:text-sm"
-          />
-          <MapPin className="absolute right-2 sm:right-3 top-1/2 transform -translate-y-1/2 text-white sm:text-muted-foreground dark:text-muted-foreground w-3 sm:w-4 h-3 sm:h-4" />
-        </div>
-        
-        {/* Résultats de recherche */}
-        {showSearchResults && (
-          <div className="absolute top-full left-0 right-0 mt-2 bg-background/95 backdrop-blur-md rounded-xl shadow-2xl border border-border max-h-60 overflow-y-auto z-50">
-            {filteredCities.length > 0 ? (
-              filteredCities.slice(0, 8).map((city, index) => (
-                <Link
-                  key={index}
-                  href={city.url}
-                  onClick={() => {
-                    setSearchQuery('');
-                    setShowSearchResults(false);
-                  }}
-                  className="block w-full text-left px-4 py-3 hover:bg-muted/50 text-foreground hover:text-primary transition-colors flex items-center gap-2"
-                >
-                  <MapPin className="w-4 h-4 text-muted-foreground" />
-                  {city.name}
-                </Link>
-              ))
-            ) : (
-              <div className="px-4 py-3 text-muted-foreground">
-                Aucune ville trouvée
-              </div>
-            )}
-          </div>
-        )}
-      </div>
-    );
-  };
 
   return (
     <main className="px-0">
@@ -212,11 +105,6 @@ export default function HomePage() {
                 Spécialiste des systèmes de pompe à chaleur,{'\n'}chauffage et climatisation en Gironde
               </span>
             </h1>
-
-            {/* Composant de recherche de villes */}
-            <div className="mb-3 sm:mb-4 md:mb-6 lg:mb-8">
-              <CitySearch />
-            </div>
 
             <div className="flex flex-col xs:flex-row sm:flex-row gap-2 xs:gap-2 sm:gap-3 md:gap-4 lg:gap-5 mb-4 xs:mb-5 sm:mb-6">
               <Link
