@@ -71,7 +71,7 @@ export async function GET(request: NextRequest) {
     // Récupérer les articles avec pagination
     console.log('🔍 Tentative de récupération des articles...');
     
-    // Utiliser Prisma standard au lieu de MongoDB natif
+    // Récupérer d'abord les articles sans la relation author
     const articles = await prisma.article.findMany({
       where,
       orderBy: orderBy,
@@ -88,14 +88,6 @@ export async function GET(request: NextRequest) {
         authorId: true,
         createdAt: true,
         updatedAt: true,
-        author: {
-          select: {
-            id: true,
-            email: true,
-            firstName: true,
-            lastName: true
-          }
-        },
         _count: {
           select: {
             comments: true
@@ -104,10 +96,26 @@ export async function GET(request: NextRequest) {
       }
     });
 
-    // Traiter les articles pour gérer les auteurs manquants
+    // Récupérer les auteurs séparément et les joindre manuellement
+    const authorIds = [...new Set(articles.map(a => a.authorId))];
+    const authors = await prisma.user.findMany({
+      where: {
+        id: { in: authorIds }
+      },
+      select: {
+        id: true,
+        email: true,
+        firstName: true,
+        lastName: true
+      }
+    });
+
+    // Créer un map des auteurs pour un accès rapide
+    const authorMap = new Map(authors.map(author => [author.id, author]));
+
+    // Traiter les articles pour ajouter les informations d'auteur
     const processedArticles = articles.map(article => {
-      // Si l'auteur est null, créer un objet auteur par défaut
-      const author = article.author || {
+      const author = authorMap.get(article.authorId) || {
         id: article.authorId,
         email: 'Auteur inconnu',
         firstName: 'Auteur',
