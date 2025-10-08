@@ -41,6 +41,19 @@ export default function AidesEtatPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-background">
+      {/* Fil d'Ariane */}
+      <div className="bg-gray-50 dark:bg-background pt-16 pb-1 px-4 xs:px-6">
+        <nav className="max-w-7xl mx-auto">
+          <ol className="list-reset flex items-center space-x-2 text-xs xs:text-sm text-gray-900 dark:text-white">
+            <li>
+              <Link href="/" className="hover:underline opacity-70 hover:opacity-100 transition-opacity">Accueil</Link>
+              <span className="mx-1.5 opacity-50">/</span>
+            </li>
+            <li className="font-medium">Aides & Subventions</li>
+          </ol>
+        </nav>
+      </div>
+
       {/* Hero Section personnalisé avec logos */}
       <section className="relative min-h-[70vh] sm:min-h-[80vh] bg-gray-50 dark:bg-background overflow-hidden">
         <div className="relative container mx-auto px-4 xs:px-5 sm:px-6 py-8 xs:py-12 sm:py-16 md:py-20 lg:py-24">
