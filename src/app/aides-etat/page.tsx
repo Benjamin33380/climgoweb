@@ -2,6 +2,7 @@
 
 import { FileText, Calculator, Settings, Award } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { AidesStickyScroll } from '@/components/AidesStickyScroll';
 import { SplineHero } from '@/components/SplineHero';
 
@@ -41,6 +42,37 @@ export default function AidesEtatPage() {
         description="Plusieurs dispositifs existent pour alléger le coût de vos travaux de chauffage, climatisation ou rénovation énergétique. Chez ClimGO, nous vous aidons à chaque étape pour bénéficier sereinement des aides de l'État."
         badge="Financement & Subventions"
       />
+
+      {/* Section Logos Certifications */}
+      <section className="py-8 bg-gray-50 dark:bg-background border-b border-gray-200 dark:border-gray-800">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-center gap-8 md:gap-12 lg:gap-16">
+            {/* Logo République Française */}
+            <div className="flex items-center">
+              <Image
+                src="/logoannexe/rf.svg.png"
+                alt="République Française"
+                width={120}
+                height={120}
+                className="w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 object-contain"
+                priority
+              />
+            </div>
+
+            {/* Logo RGE */}
+            <div className="flex items-center">
+              <Image
+                src="/logoannexe/rge.png"
+                alt="RGE QualiPAC - Reconnu Garant de l'Environnement"
+                width={120}
+                height={120}
+                className="w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 object-contain"
+                priority
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Section Introduction */}
       <section className="py-8 xs:py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-50 dark:bg-background">
