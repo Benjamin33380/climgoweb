@@ -3,7 +3,6 @@
 import { FileText, Calculator, Settings, Award } from 'lucide-react';
 import Link from 'next/link';
 import { AidesStickyScroll } from '@/components/AidesStickyScroll';
-import CityLinksList from '@/components/CityLinksList';
 import { SplineHero } from '@/components/SplineHero';
 
 // Clé unique pour éviter le cache
@@ -110,14 +109,6 @@ export default function AidesEtatPage() {
             <Link href="/contact" className="inline-flex items-center justify-center rounded-full px-4 xs:px-5 sm:px-6 md:px-8 lg:px-10 py-2 xs:py-2.5 sm:py-3 md:py-3.5 lg:py-4 text-xs xs:text-sm sm:text-base md:text-lg font-medium bg-transparent border border-white text-white hover:bg-white hover:text-black transition-colors duration-300 mb-8 xs:mb-12 sm:mb-16 md:mb-20">
                 Demander mon devis
             </Link>
-            
-            {/* Liste des villes */}
-            <div className="pt-8 xs:pt-12 sm:pt-16 md:pt-20">
-              <h3 className="text-base xs:text-lg sm:text-xl md:text-2xl font-medium text-white mb-4 xs:mb-6 sm:mb-8">
-                Nos zones d&apos;intervention
-              </h3>
-              <CityLinksList />
-            </div>
           </div>
         </div>
       </section>
