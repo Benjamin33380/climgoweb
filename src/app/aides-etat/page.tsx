@@ -1,15 +1,15 @@
 'use client';
 
-import { FileText, Calculator, Settings, Award } from 'lucide-react';
+import { Search, Euro, FolderCheck, CheckCircle } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
-import { AidesStickyScroll } from '@/components/AidesStickyScroll';
+import { AidesCards } from '@/components/AidesCards';
 
-// Import dynamique du Logo3D pour optimiser le chargement
+// Import dynamique du Logo3D avec cache optimisé
 const Logo3D = dynamic(() => import('@/components/Logo3D').then(mod => ({ default: mod.Logo3D })), {
   ssr: false,
-  loading: () => <div className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 bg-gray-200 animate-pulse rounded-lg" />
+  loading: () => <div className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80" />
 })
 
 // Clé unique pour éviter le cache
@@ -18,51 +18,43 @@ export default function AidesEtatPage() {
 
   const steps = [
     {
-      icon: <FileText className="w-6 h-6" />,
+      icon: <Search className="w-6 h-6" />,
       title: "Analyse de votre projet",
-      description: "On évalue vos besoins, votre logement et votre éligibilité aux aides."
+      description: "On évalue vos besoins, votre logement et votre <strong>éligibilité aux aides</strong>."
     },
     {
-      icon: <Calculator className="w-6 h-6" />,
+      icon: <Euro className="w-6 h-6" />,
       title: "Devis & estimation des aides",
-      description: "Vous recevez un devis clair avec les aides estimées, sans mauvaise surprise."
+      description: "Vous recevez un <strong>devis clair</strong> avec les <strong>aides estimées</strong>, sans mauvaise surprise."
     },
     {
-      icon: <Settings className="w-6 h-6" />,
+      icon: <FolderCheck className="w-6 h-6" />,
       title: "Constitution du dossier",
-      description: "On gère toute la paperasse : dossier, justificatifs, formulaires… vous soufflez."
+      description: "On gère toute la paperasse : dossier, justificatifs, formulaires… <strong>vous soufflez</strong>."
     },
     {
-      icon: <Award className="w-6 h-6" />,
+      icon: <CheckCircle className="w-6 h-6" />,
       title: "Installation & aides appliquées",
-      description: "On installe, les aides sont directement déduites ou versées."
+      description: "On installe, les aides sont <strong>directement déduites ou versées</strong>."
     }
   ];
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-background">
       {/* Hero Section personnalisé avec logos */}
-      <section className="relative min-h-[70vh] sm:min-h-[80vh] bg-white dark:bg-background overflow-hidden">
+      <section className="relative min-h-[70vh] sm:min-h-[80vh] bg-gray-50 dark:bg-background overflow-hidden">
         <div className="relative container mx-auto px-4 xs:px-5 sm:px-6 py-8 xs:py-12 sm:py-16 md:py-20 lg:py-24">
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center min-h-[50vh] sm:min-h-[60vh]">
             {/* Contenu texte */}
             <div className="w-full max-w-2xl mx-auto lg:mx-0 text-center lg:text-left order-2 lg:order-1">
-              <div className="mb-6 xs:mb-7 sm:mb-8">
-                <span className="inline-block px-3 xs:px-4 py-1.5 xs:py-2 bg-black/10 dark:bg-white/10 border border-black dark:border-white rounded-full text-xs xs:text-sm font-medium text-black dark:text-white">
-                  Financement & Subventions
-                </span>
-              </div>
-              
-              <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold lg:font-light tracking-tight mb-2 xs:mb-3 sm:mb-4 md:mb-6 text-black dark:text-white break-words leading-tight">
+              <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold lg:font-light tracking-tight mb-3 xs:mb-4 sm:mb-4 md:mb-6 lg:mb-8 text-black dark:text-white break-words leading-tight">
                 Aides & Subventions 2025
               </h1>
               
-              <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl text-black dark:text-white mb-3 xs:mb-4 sm:mb-4 md:mb-6 lg:mb-8 leading-relaxed font-medium lg:font-normal">
-                Simplifiez vos démarches avec ClimGO
-              </h2>
-              
               <p className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed text-black dark:text-white max-w-full lg:max-w-4xl mx-auto lg:mx-0 px-0 sm:px-2 lg:px-0 mb-6 xs:mb-8 sm:mb-10">
-                Plusieurs dispositifs existent pour alléger le coût de vos travaux de chauffage, climatisation ou rénovation énergétique. Chez ClimGO, nous vous aidons à chaque étape pour bénéficier sereinement des aides de l'État.
+                En 2025, plusieurs dispositifs permettent de réduire considérablement le coût d'une <strong>pompe à chaleur air/eau</strong>, d'un système de <strong>climatisation air/air</strong>, ou du remplacement d'une ancienne chaudière par une solution de <strong>chauffage plus écologique</strong>. Chez ClimGO, nous vous accompagnons dans la constitution de votre dossier pour bénéficier sereinement des aides de l'État : <strong>MaPrimeRénov'</strong>, <strong>Certificats d'Économie d'Énergie (CEE)</strong>, <strong>TVA à taux réduit</strong>, <strong>Éco-PTZ</strong>, ainsi que les <strong>aides locales</strong> applicables.
+                <br /><br />
+                Ces subventions concernent aussi bien les projets de chauffage, de <strong>climatisation réversible</strong>, que l'installation d'un <strong>chauffe-eau thermodynamique</strong>, afin d'alléger votre investissement tout en améliorant le confort et la <strong>performance énergétique</strong> de votre logement.
               </p>
 
               {/* Logos RF et RGE intégrés dans le hero */}
@@ -104,67 +96,181 @@ export default function AidesEtatPage() {
           <h2 className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-black dark:text-white mb-3 xs:mb-4 sm:mb-6">
             Quelles aides & subventions pour vos travaux en 2025 ?
           </h2>
-          <div className="w-16 xs:w-20 sm:w-24 h-1 bg-black dark:bg-white mx-auto"></div>
+          <div className="w-16 xs:w-20 sm:w-24 h-1 bg-black dark:bg-white mx-auto mb-6 xs:mb-8 sm:mb-10"></div>
+          
+          <p className="text-sm xs:text-base sm:text-lg md:text-xl leading-relaxed text-gray-700 dark:text-gray-300 max-w-4xl mx-auto">
+            Ces aides sont <strong>cumulables entre elles</strong> pour maximiser votre financement. Chez <strong>ClimGO, entreprise RGE QualiPAC</strong>, nous vous accompagnons dans toutes vos démarches administratives (constitution des dossiers, demande de subventions, obtention des primes CEE, suivi jusqu'au versement final). Un projet ? Nous vous proposons un <strong>bilan énergétique gratuit</strong> et un <strong>devis personnalisé</strong> incluant les aides déduites.
+          </p>
         </div>
       </section>
 
-      {/* Section Aides avec Sticky Scroll */}
-      <section className="bg-gray-50 dark:bg-background">
-        <AidesStickyScroll />
-      </section>
+      {/* Section Aides avec Cards */}
+      <AidesCards />
 
 
 
-      {/* Section Comment ça se passe avec ClimGO */}
-      <section className="py-8 xs:py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-50 dark:bg-background relative overflow-hidden">
-        <div className="container mx-auto px-4 xs:px-5 sm:px-6 relative">
-          <div className="text-center mb-8 xs:mb-10 sm:mb-12 md:mb-14 lg:mb-16">
-            <h2 className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-black dark:text-white mb-3 xs:mb-4 sm:mb-6">
+      {/* Section Comment ça se passe avec ClimGO - Timeline */}
+      <section className="py-12 xs:py-16 sm:py-20 md:py-24 bg-gray-50 dark:bg-background relative overflow-hidden">
+        <div className="container mx-auto px-4 xs:px-5 sm:px-6 max-w-6xl">
+          {/* En-tête */}
+          <div className="text-center mb-12 xs:mb-16 sm:mb-20">
+            <h2 className="text-xl xs:text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-gray-900 dark:text-white mb-4 xs:mb-6">
               Comment ça se passe avec ClimGO ?
             </h2>
-            <div className="w-16 xs:w-20 sm:w-24 h-1 bg-black dark:bg-white mx-auto"></div>
+            <p className="text-sm xs:text-base sm:text-lg md:text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed px-2">
+              De l'audit à l'installation, on s'occupe de tout pour que vous profitiez sereinement de vos aides.
+            </p>
           </div>
-          
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 xs:gap-7 sm:gap-8">
-              {steps.map((step, index) => (
-                <div key={index} className="text-center group">
-                  <div className="relative mb-4 xs:mb-5 sm:mb-6">
-                    <div className="w-14 h-14 xs:w-16 xs:h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 bg-gray-50 dark:bg-background border border-black dark:border-white rounded-full flex items-center justify-center mx-auto shadow-md group-hover:scale-110 transition-transform duration-300">
-                      <div className="text-black dark:text-white text-xs xs:text-sm sm:text-base md:text-lg">
-                        {step.icon}
-                      </div>
-                    </div>
-                  </div>
-                  <h3 className="text-base xs:text-lg sm:text-xl md:text-2xl font-semibold text-black dark:text-white mb-2 xs:mb-3 sm:mb-4">
-                    {step.title}
-                  </h3>
-                  <p className="text-xs xs:text-sm sm:text-base md:text-lg text-black dark:text-white leading-relaxed px-1 xs:px-2">
-                    {step.description}
-                  </p>
-                </div>
-              ))}
+
+          {/* Timeline */}
+          <div className="relative">
+            {/* Ligne centrale - cachée sur mobile, visible sur desktop */}
+            <div className="pointer-events-none absolute left-1/2 -translate-x-1/2 w-px h-full bg-gray-300 dark:bg-gray-700 hidden md:block" />
+            {/* Ligne verticale mobile - visible seulement sur mobile */}
+            <div className="pointer-events-none absolute left-8 top-0 w-px h-full bg-gray-300 dark:bg-gray-700 md:hidden" />
+
+            {/* Étape 1 */}
+            <div className="relative flex items-center mb-12 xs:mb-16">
+              {/* Pastille */}
+              <div className="absolute left-8 md:left-1/2 -translate-x-1/2 w-12 h-12 xs:w-14 xs:h-14 md:w-16 md:h-16 rounded-full shadow-lg bg-gray-50 dark:bg-background flex items-center justify-center z-10 border-2 border-gray-300 dark:border-gray-700">
+                {steps[0].icon}
+              </div>
+              {/* Contenu mobile */}
+              <div className="ml-20 md:hidden w-full">
+                <h3 className="text-lg xs:text-xl font-bold text-gray-900 dark:text-white mb-2">
+                  {steps[0].title}
+                </h3>
+                <p 
+                  className="text-sm xs:text-base text-gray-600 dark:text-gray-300 leading-relaxed"
+                  dangerouslySetInnerHTML={{ __html: steps[0].description }}
+                />
+              </div>
+              {/* Contenu desktop */}
+              <div className="hidden md:block w-5/12 pr-8 text-right">
+                <h3 className="text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                  {steps[0].title}
+                </h3>
+                <p 
+                  className="text-base lg:text-lg text-gray-600 dark:text-gray-300 leading-relaxed"
+                  dangerouslySetInnerHTML={{ __html: steps[0].description }}
+                />
+              </div>
+              <div className="hidden md:block w-5/12" />
+            </div>
+
+            {/* Étape 2 */}
+            <div className="relative flex items-center mb-12 xs:mb-16">
+              <div className="hidden md:block w-5/12" />
+              <div className="absolute left-8 md:left-1/2 -translate-x-1/2 w-12 h-12 xs:w-14 xs:h-14 md:w-16 md:h-16 rounded-full shadow-lg bg-gray-50 dark:bg-background flex items-center justify-center z-10 border-2 border-gray-300 dark:border-gray-700">
+                {steps[1].icon}
+              </div>
+              {/* Contenu mobile */}
+              <div className="ml-20 md:hidden w-full">
+                <h3 className="text-lg xs:text-xl font-bold text-gray-900 dark:text-white mb-2">
+                  {steps[1].title}
+                </h3>
+                <p 
+                  className="text-sm xs:text-base text-gray-600 dark:text-gray-300 leading-relaxed"
+                  dangerouslySetInnerHTML={{ __html: steps[1].description }}
+                />
+              </div>
+              {/* Contenu desktop */}
+              <div className="hidden md:block w-5/12 ml-auto pl-8">
+                <h3 className="text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                  {steps[1].title}
+                </h3>
+                <p 
+                  className="text-base lg:text-lg text-gray-600 dark:text-gray-300 leading-relaxed"
+                  dangerouslySetInnerHTML={{ __html: steps[1].description }}
+                />
+              </div>
+            </div>
+
+            {/* Étape 3 */}
+            <div className="relative flex items-center mb-12 xs:mb-16">
+              <div className="absolute left-8 md:left-1/2 -translate-x-1/2 w-12 h-12 xs:w-14 xs:h-14 md:w-16 md:h-16 rounded-full shadow-lg bg-gray-50 dark:bg-background flex items-center justify-center z-10 border-2 border-gray-300 dark:border-gray-700">
+                {steps[2].icon}
+              </div>
+              {/* Contenu mobile */}
+              <div className="ml-20 md:hidden w-full">
+                <h3 className="text-lg xs:text-xl font-bold text-gray-900 dark:text-white mb-2">
+                  {steps[2].title}
+                </h3>
+                <p 
+                  className="text-sm xs:text-base text-gray-600 dark:text-gray-300 leading-relaxed"
+                  dangerouslySetInnerHTML={{ __html: steps[2].description }}
+                />
+              </div>
+              {/* Contenu desktop */}
+              <div className="hidden md:block w-5/12 pr-8 text-right">
+                <h3 className="text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                  {steps[2].title}
+                </h3>
+                <p 
+                  className="text-base lg:text-lg text-gray-600 dark:text-gray-300 leading-relaxed"
+                  dangerouslySetInnerHTML={{ __html: steps[2].description }}
+                />
+              </div>
+              <div className="hidden md:block w-5/12" />
+            </div>
+
+            {/* Étape 4 */}
+            <div className="relative flex items-center">
+              <div className="hidden md:block w-5/12" />
+              <div className="absolute left-8 md:left-1/2 -translate-x-1/2 w-12 h-12 xs:w-14 xs:h-14 md:w-16 md:h-16 rounded-full shadow-lg bg-gray-50 dark:bg-background flex items-center justify-center z-10 border-2 border-gray-300 dark:border-gray-700">
+                {steps[3].icon}
+              </div>
+              {/* Contenu mobile */}
+              <div className="ml-20 md:hidden w-full">
+                <h3 className="text-lg xs:text-xl font-bold text-gray-900 dark:text-white mb-2">
+                  {steps[3].title}
+                </h3>
+                <p 
+                  className="text-sm xs:text-base text-gray-600 dark:text-gray-300 leading-relaxed"
+                  dangerouslySetInnerHTML={{ __html: steps[3].description }}
+                />
+              </div>
+              {/* Contenu desktop */}
+              <div className="hidden md:block w-5/12 ml-auto pl-8">
+                <h3 className="text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                  {steps[3].title}
+                </h3>
+                <p 
+                  className="text-base lg:text-lg text-gray-600 dark:text-gray-300 leading-relaxed"
+                  dangerouslySetInnerHTML={{ __html: steps[3].description }}
+                />
+              </div>
             </div>
           </div>
+
         </div>
       </section>
 
       {/* Section CTA Final */}
-      <section className="py-8 xs:py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-50 dark:bg-background">
+      <section className="py-12 xs:py-16 sm:py-20 md:py-24 bg-gray-50 dark:bg-background">
         <div className="container mx-auto px-4 xs:px-5 sm:px-6 text-center">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-black dark:text-white mb-3 xs:mb-4 sm:mb-6">
-              Profitez des aides avec ClimGO
+          <div className="max-w-4xl mx-auto space-y-6 xs:space-y-8">
+            <h2 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-medium text-gray-900 dark:text-white">
+              Profitez des aides 2025 avec ClimGO
             </h2>
-            <p className="text-sm xs:text-base sm:text-lg md:text-xl text-black dark:text-white leading-relaxed px-1 xs:px-2 font-medium mb-3 xs:mb-4 sm:mb-6">
-              Bénéficiez d&apos;un accompagnement complet pour optimiser vos aides, sans stress ni paperasse.
+            
+            <p className="text-base xs:text-lg sm:text-xl text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto">
+              Jusqu'à <strong>80% de vos travaux financés</strong>. <strong>ClimGO</strong> s'occupe de toutes vos démarches administratives pour que vous bénéficiez sereinement de <strong>MaPrimeRénov'</strong>, <strong>CEE</strong>, <strong>TVA réduite</strong> et <strong>Éco-PTZ</strong>.
             </p>
-            <p className="text-xs xs:text-sm sm:text-base md:text-lg text-black dark:text-white leading-relaxed px-1 xs:px-2 mb-6 xs:mb-8 sm:mb-10 md:mb-12">
-              ClimGO s&apos;occupe de tout, vous profitez des économies.
-            </p>
-            <Link href="/contact" className="inline-flex items-center justify-center rounded-full px-4 xs:px-5 sm:px-6 md:px-8 lg:px-10 py-2 xs:py-2.5 sm:py-3 md:py-3.5 lg:py-4 text-xs xs:text-sm sm:text-base md:text-lg font-medium bg-transparent border border-white text-white hover:bg-white hover:text-black transition-colors duration-300 mb-8 xs:mb-12 sm:mb-16 md:mb-20">
-                Demander mon devis
+            
+            <Link
+              href="/contact"
+              className="inline-flex items-center px-6 xs:px-7 py-3 rounded-full text-sm xs:text-base font-semibold
+                         bg-white text-gray-900 border-2 border-gray-900 hover:bg-gray-900 hover:text-white
+                         dark:bg-transparent dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-gray-900
+                         transition-all duration-300 shadow-md hover:shadow-lg"
+            >
+              Obtenez votre devis gratuit
             </Link>
+
+            <p className="text-sm text-gray-600 dark:text-gray-400 pt-4">
+              ClimGO – L'art du confort, le goût du détail.
+            </p>
           </div>
         </div>
       </section>

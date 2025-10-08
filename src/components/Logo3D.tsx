@@ -2,17 +2,24 @@
 
 import { Canvas } from '@react-three/fiber'
 import { useGLTF, OrbitControls, Environment } from '@react-three/drei'
-import { Suspense, useRef, useState } from 'react'
+import { Suspense, useRef, useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import * as THREE from 'three'
 
+// Préchargement global du modèle au chargement du module
+useGLTF.preload('/favicon/logo.glb')
+
 function LogoModel() {
-  const { scene } = useGLTF('/favicon/logo.glb')
+  // Utiliser le cache de useGLTF
+  const { scene } = useGLTF('/favicon/logo.glb', true)
   const meshRef = useRef<THREE.Group>(null!)
+  
+  // Cloner la scène pour éviter les conflits si utilisé plusieurs fois
+  const clonedScene = scene.clone(true)
   
   return (
     <primitive 
-      object={scene} 
+      object={clonedScene} 
       ref={meshRef}
       scale={0.7}
       position={[0, -0.1, 0]}
@@ -82,6 +89,3 @@ export function Logo3D({ className }: Logo3DProps) {
     </motion.div>
   )
 }
-
-// Préchargement du modèle
-useGLTF.preload('/favicon/logo.glb')
