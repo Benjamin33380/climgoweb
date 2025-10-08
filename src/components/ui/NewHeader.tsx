@@ -2,7 +2,7 @@
 import * as React from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Phone, Wrench, Droplet, Settings, FileText, Menu, Mail, MessageSquare, AirVent, Building, BadgeEuro } from "lucide-react"
+import { Phone, Flame, Droplet, Settings, FileText, Menu, Mail, MessageSquare, AirVent, Building, BadgeEuro } from "lucide-react"
 import { ModeToggle } from "@/components/ui/mode-toggle"
 import { Button } from "@/components/ui/button"
 import dynamic from 'next/dynamic'
@@ -28,7 +28,7 @@ const services: { title: string; href: string; description: string; icon: React.
   {
     title: "Chauffage",
     href: "/chauffage",
-    icon: <Wrench className="w-4 h-4" />,
+    icon: <Flame className="w-4 h-4" />,
     description: "Installation et maintenance de systèmes de chauffage performants et économiques.",
   },
   {
