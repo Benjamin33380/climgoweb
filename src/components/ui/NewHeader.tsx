@@ -2,7 +2,7 @@
 import * as React from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Phone, Wrench, Droplet, Settings, FileText, Menu, Mail, MessageSquare, AirVent, Building, BadgeEuro, Waves, MapPin, TreePine, Home } from "lucide-react"
+import { Phone, Wrench, Droplet, Settings, FileText, Menu, Mail, MessageSquare, AirVent, Building, BadgeEuro } from "lucide-react"
 import { ModeToggle } from "@/components/ui/mode-toggle"
 import { Button } from "@/components/ui/button"
 import dynamic from 'next/dynamic'
@@ -54,33 +54,6 @@ const services: { title: string; href: string; description: string; icon: React.
     href: "/maintenance",
     icon: <FileText className="w-4 h-4" />,
     description: "Entretien professionnel de vos équipements pour garantir leur longévité.",
-  },
-]
-
-const zones: { title: string; href: string; description: string; icon: React.ReactNode }[] = [
-  {
-    title: "Bassin d'Arcachon",
-    href: "/zones-interventions",
-    description: "Arcachon, La Teste-de-Buch, Gujan-Mestras, Le Teich, Andernos...",
-    icon: <Waves className="w-4 h-4" />,
-  },
-  {
-    title: "Bordeaux Métropole",
-    href: "/zones-interventions", 
-    description: "Bordeaux, Mérignac, Pessac, Talence, Bègles, Bruges...",
-    icon: <MapPin className="w-4 h-4" />,
-  },
-  {
-    title: "Pays des Graves",
-    href: "/zones-interventions",
-    description: "Gradignan, Cestas, Léognan, Martillac, La Brède...",
-    icon: <TreePine className="w-4 h-4" />,
-  },
-  {
-    title: "Médoc & Nord Landes",
-    href: "/zones-interventions",
-    description: "Lacanau, Mimizan, Biscarrosse, Parentis-en-Born...",
-    icon: <Home className="w-4 h-4" />,
   },
 ]
 
@@ -181,14 +154,6 @@ export default function NewHeader() {
                     ))}
                   </ul>
                 </NavigationMenuContent>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuLink asChild>
-                  <Link href="/zones-interventions" className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
-                    Zones d'intervention
-                  </Link>
-                </NavigationMenuLink>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
@@ -339,34 +304,6 @@ export default function NewHeader() {
                   </div>
                 </Link>
               ))}
-            </div>
-            
-            {/* Zones d'intervention */}
-            <div className="space-y-2 pt-4 border-t">
-              <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">+50 communes desservies</h3>
-              <p className="text-xs text-muted-foreground mb-3">Gironde et Nord des Landes</p>
-              {zones.map((zone) => (
-                <Link
-                  key={zone.title}
-                  href={zone.href}
-                  className="block p-3 rounded-lg hover:bg-accent transition-colors min-h-[48px]"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  <div className="mb-1">
-                    <span className="font-medium text-base">
-                      {zone.title}
-                    </span>
-                  </div>
-                  <p className="text-xs text-muted-foreground line-clamp-1">{zone.description}</p>
-                </Link>
-              ))}
-              <Link
-                href="/zones-interventions"
-                className="block p-3 rounded-md hover:bg-accent transition-colors text-center text-primary font-medium text-sm"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Voir toutes les communes →
-              </Link>
             </div>
 
             {/* Notre entreprise */}

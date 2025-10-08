@@ -235,15 +235,6 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/zones-interventions" className="flex items-center justify-center md:justify-start space-x-3 text-sm hover:text-primary transition-colors">
-                    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
-                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                      <circle cx="12" cy="10" r="3" />
-                    </svg>
-                    <span>Zones d'intervention</span>
-                  </Link>
-                </li>
-                <li>
                   <Link href="/aides-etat" className="flex items-center justify-center md:justify-start space-x-3 text-sm hover:text-primary transition-colors">
                     <BadgeEuro className="w-4 h-4" />
                     <span>Aides & Subventions</span>

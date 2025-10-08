@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Menu, X, Phone, Mail, Flame, AirVent, Droplet, FileText, BookOpen, MapPin, Info, BadgeEuro } from 'lucide-react';
+import { Menu, X, Phone, Mail, Flame, AirVent, Droplet, FileText, BookOpen, Info, BadgeEuro } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 import Image from 'next/image';
@@ -75,21 +75,11 @@ export default function MobileHeader() {
                       {service.icon}
                     </div>
                     <span>{service.title}</span>
-                  </Link>
-                ))}
+                </Link>
+              ))}
                 
-                <div className="border-t pt-4 mt-4">
-                  <Link
-                    href="/zones-interventions"
-                    className="flex items-center py-3 px-4 hover:bg-accent hover:text-accent-foreground rounded-lg transition-colors space-x-3"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    <div className="flex-shrink-0">
-                      <MapPin className="w-5 h-5" />
-                    </div>
-                    <span>Zones d'intervention</span>
-                  </Link>
-                  <Link
+              <div className="border-t pt-4 mt-4">
+                <Link
                     href="/aides-etat"
                     className="flex items-center py-3 px-4 hover:bg-accent hover:text-accent-foreground rounded-lg transition-colors space-x-3"
                     onClick={() => setIsMenuOpen(false)}
