@@ -94,6 +94,10 @@ export default function EauChaudeSanitairePage() {
               <Link href="/" className="hover:underline text-[#03144a] dark:text-white opacity-70 hover:opacity-100 transition-opacity">Accueil</Link>
               <span className="mx-2 opacity-50">/</span>
             </li>
+            <li>
+              <Link href="/services" className="hover:underline text-[#03144a] dark:text-white opacity-70 hover:opacity-100 transition-opacity">Services</Link>
+              <span className="mx-2 opacity-50">/</span>
+            </li>
             <li className="text-[#03144A] dark:text-white font-medium">Eau chaude sanitaire</li>
           </ol>
         </nav>
