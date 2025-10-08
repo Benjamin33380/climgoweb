@@ -57,9 +57,9 @@ const content = [
     ),
   },
   {
-    title: "MaPrimeRénov'",
+    title: "MaPrimeRénov' - Rénovation d'ampleur",
     description:
-      "C'est une aide directe de l'État pour financer vos travaux. Elle est versée après les travaux, sur votre compte, sans avance de frais. Tous les propriétaires peuvent en bénéficier selon leurs revenus. ClimGO vous aide à estimer ce à quoi vous avez droit et vous assiste dans toutes les démarches.",
+      "MaPrimeRénov' est l'aide de l'État qui finance vos travaux de rénovation énergétique ambitieuse. Accessible à tous les propriétaires (occupants, bailleurs, usufruitiers), elle permet de financer de 45% à 80% du montant des travaux selon vos revenus, avec un plafond de 40 000€ à 70 000€ HT. Pour en bénéficier, vos travaux doivent permettre un gain d'au moins 2 classes énergétiques (ex: de F à D) et inclure deux gestes d'isolation. ClimGO, entreprise RGE, vous accompagne dans toutes vos démarches et vous aide à monter votre dossier.",
     image: {
       src: "/logoannexe/mpr.webp",
       alt: "Logo MaPrimeRénov'"
@@ -77,15 +77,15 @@ const content = [
             />
           </div>
           <h3 className="text-xl font-semibold text-black dark:text-white mb-2">MaPrimeRénov'</h3>
-                   <p className="text-sm text-black dark:text-white">Aide directe de l'État</p>
+                   <p className="text-sm text-black dark:text-white">De 45% à 80% de prise en charge selon vos revenus</p>
         </div>
       </div>
     ),
   },
   {
-    title: "Éco-PTZ (Prêt à taux zéro)",
+    title: "Éco-PTZ MaPrimeRénov' (Prêt à taux zéro)",
     description:
-      "L'éco-PTZ est un prêt à 0 % d'intérêt pour financer vos travaux énergétiques. Il peut atteindre 50 000 €, remboursable sur 20 ans. Tous les propriétaires de logements de plus de 2 ans peuvent en bénéficier, qu'ils soient occupants ou bailleurs, sans condition de revenus. Les travaux éligibles incluent : isolation, chauffe-eaux, pompes à chaleur, ventilation. Attention : travaux réalisés par une entreprise RGE uniquement.",
+      "L'éco-PTZ MaPrimeRénov' permet de financer le reste à charge de vos travaux de rénovation énergétique. Jusqu'à 50 000€ à taux zéro, remboursable sur 20 ans maximum. Tous les propriétaires (occupants ou bailleurs) peuvent en bénéficier, sans condition de revenus. Pour faire la demande, la notification d'octroi de MaPrimeRénov' par l'Anah se substitue à la remise des devis à la banque. La banque décidera ensuite d'accorder ce prêt en fonction de votre capacité de remboursement. ClimGO vous guide dans vos démarches bancaires.",
     image: {
       src: "/logoannexe/ecopret0.webp",
       alt: "Logo Éco-PTZ"
@@ -103,7 +103,7 @@ const content = [
             />
           </div>
           <h3 className="text-xl font-semibold text-black dark:text-white mb-2">Éco-PTZ</h3>
-                   <p className="text-sm text-black dark:text-white">Prêt à taux zéro jusqu'à 50 000€</p>
+                   <p className="text-sm text-black dark:text-white">Jusqu'à 50 000€ à 0% sur 20 ans</p>
         </div>
       </div>
     ),

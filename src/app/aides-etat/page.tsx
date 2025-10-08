@@ -3,8 +3,14 @@
 import { FileText, Calculator, Settings, Award } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import { AidesStickyScroll } from '@/components/AidesStickyScroll';
-import { SplineHero } from '@/components/SplineHero';
+
+// Import dynamique du Logo3D pour optimiser le chargement
+const Logo3D = dynamic(() => import('@/components/Logo3D').then(mod => ({ default: mod.Logo3D })), {
+  ssr: false,
+  loading: () => <div className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 bg-gray-200 animate-pulse rounded-lg" />
+})
 
 // Clé unique pour éviter le cache
 
@@ -35,40 +41,58 @@ export default function AidesEtatPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-background">
-      {/* Hero Section avec Spline */}
-      <SplineHero
-        title="Aides & Subventions"
-        subtitle="Simplifiez vos démarches avec ClimGO"
-        description="Plusieurs dispositifs existent pour alléger le coût de vos travaux de chauffage, climatisation ou rénovation énergétique. Chez ClimGO, nous vous aidons à chaque étape pour bénéficier sereinement des aides de l'État."
-        badge="Financement & Subventions"
-      />
+      {/* Hero Section personnalisé avec logos */}
+      <section className="relative min-h-[70vh] sm:min-h-[80vh] bg-white dark:bg-background overflow-hidden">
+        <div className="relative container mx-auto px-4 xs:px-5 sm:px-6 py-8 xs:py-12 sm:py-16 md:py-20 lg:py-24">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center min-h-[50vh] sm:min-h-[60vh]">
+            {/* Contenu texte */}
+            <div className="w-full max-w-2xl mx-auto lg:mx-0 text-center lg:text-left order-2 lg:order-1">
+              <div className="mb-6 xs:mb-7 sm:mb-8">
+                <span className="inline-block px-3 xs:px-4 py-1.5 xs:py-2 bg-black/10 dark:bg-white/10 border border-black dark:border-white rounded-full text-xs xs:text-sm font-medium text-black dark:text-white">
+                  Financement & Subventions
+                </span>
+              </div>
+              
+              <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold lg:font-light tracking-tight mb-2 xs:mb-3 sm:mb-4 md:mb-6 text-black dark:text-white break-words leading-tight">
+                Aides & Subventions
+              </h1>
+              
+              <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl text-black dark:text-white mb-3 xs:mb-4 sm:mb-4 md:mb-6 lg:mb-8 leading-relaxed font-medium lg:font-normal">
+                Simplifiez vos démarches avec ClimGO
+              </h2>
+              
+              <p className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed text-black dark:text-white max-w-full lg:max-w-4xl mx-auto lg:mx-0 px-0 sm:px-2 lg:px-0 mb-6 xs:mb-8 sm:mb-10">
+                Plusieurs dispositifs existent pour alléger le coût de vos travaux de chauffage, climatisation ou rénovation énergétique. Chez ClimGO, nous vous aidons à chaque étape pour bénéficier sereinement des aides de l'État.
+              </p>
 
-      {/* Section Logos Certifications */}
-      <section className="py-8 bg-gray-50 dark:bg-background border-b border-gray-200 dark:border-gray-800">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-center gap-8 md:gap-12 lg:gap-16">
-            {/* Logo République Française */}
-            <div className="flex items-center">
-              <Image
-                src="/logoannexe/rf.svg.png"
-                alt="République Française"
-                width={120}
-                height={120}
-                className="w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 object-contain"
-                priority
-              />
+              {/* Logos RF et RGE intégrés dans le hero */}
+              <div className="flex items-end justify-center lg:justify-start gap-6 md:gap-8 mt-8">
+                <div className="flex items-center justify-center">
+                  <Image
+                    src="/logoannexe/rf.svg.png"
+                    alt="République Française"
+                    width={100}
+                    height={100}
+                    className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 object-contain"
+                    priority
+                  />
+                </div>
+                <div className="flex items-center justify-center">
+                  <Image
+                    src="/logoannexe/rge.png"
+                    alt="RGE QualiPAC - Reconnu Garant de l'Environnement"
+                    width={100}
+                    height={100}
+                    className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 object-contain"
+                    priority
+                  />
+                </div>
+              </div>
             </div>
-
-            {/* Logo RGE */}
-            <div className="flex items-center">
-              <Image
-                src="/logoannexe/rge.png"
-                alt="RGE QualiPAC - Reconnu Garant de l'Environnement"
-                width={120}
-                height={120}
-                className="w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 object-contain"
-                priority
-              />
+            
+            {/* Logo 3D GLB */}
+            <div className="relative flex items-center justify-center w-full order-1 lg:order-2">
+              <Logo3D className="transform-gpu w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80" />
             </div>
           </div>
         </div>

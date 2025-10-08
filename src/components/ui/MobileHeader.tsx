@@ -80,15 +80,15 @@ export default function MobileHeader() {
                 
               <div className="border-t pt-4 mt-4">
                 <Link
-                    href="/aides-etat"
-                    className="flex items-center py-3 px-4 hover:bg-accent hover:text-accent-foreground rounded-lg transition-colors space-x-3"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    <div className="flex-shrink-0">
-                      <BadgeEuro className="w-5 h-5" />
-                    </div>
-                    <span>Aides et Subventions</span>
-                  </Link>
+                  href="/aides-etat"
+                  className="flex items-center py-3 px-4 hover:bg-accent hover:text-accent-foreground rounded-lg transition-colors space-x-3"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <div className="flex-shrink-0">
+                    <BadgeEuro className="w-5 h-5" />
+                  </div>
+                  <span>Aides & Subventions</span>
+                </Link>
                   <Link
                     href="/blog"
                     className="flex items-center py-3 px-4 hover:bg-accent hover:text-accent-foreground rounded-lg transition-colors space-x-3"

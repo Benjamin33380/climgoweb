@@ -64,12 +64,6 @@ const entreprise: { title: string; href: string; description: string; icon: Reac
     description: "Découvrez ClimGO : notre histoire, nos valeurs et notre expertise.",
     icon: <Building className="w-4 h-4" />,
   },
-  {
-    title: "Aides & Subventions",
-    href: "/aides-etat",
-    description: "MaPrimeRénov', CEE, TVA 5,5% : toutes les aides pour vos travaux 2025.",
-    icon: <BadgeEuro className="w-4 h-4" />,
-  },
 ]
 
 export default function NewHeader() {
@@ -154,6 +148,14 @@ export default function NewHeader() {
                     ))}
                   </ul>
                 </NavigationMenuContent>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild>
+                  <Link href="/aides-etat" className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
+                    Aides & Subventions
+                  </Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
