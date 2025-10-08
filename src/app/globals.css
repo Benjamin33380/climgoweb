@@ -570,15 +570,15 @@ body {
   
   /* Mode sombre */
   .dark html {
-    background: #0a0a0a !important;
-    -webkit-background: #0a0a0a !important;
+    background: #0f172a !important;
+    -webkit-background: #0f172a !important;
     background-color: #0f172a !important;
     -webkit-background-color: #0f172a !important;
   }
   
   .dark body {
-    background: #0a0a0a !important;
-    -webkit-background: #0a0a0a !important;
+    background: #0f172a !important;
+    -webkit-background: #0f172a !important;
     background-color: #0f172a !important;
     -webkit-background-color: #0f172a !important;
     -webkit-tap-highlight-color: transparent !important;
