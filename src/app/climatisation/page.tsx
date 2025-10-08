@@ -15,7 +15,7 @@ export default function ClimatisationPage() {
       id: 'climatisation-murale',
       title: "Climatisation murale",
       subtitle: "Confort & Discrétion",
-      image: "/machine/murale.webp",
+      image: "/img/climspacex.png",
       badge: "Installation rapide",
       features: [
         "Design ultra-moderne",
@@ -45,7 +45,7 @@ export default function ClimatisationPage() {
       id: 'climatisation-cassette',
       title: "Climatisation cassette",
       subtitle: "Performance Commerciale",
-      image: "/machine/cassette.webp",
+      image: "/img/cassettespacex.png",
       badge: "Idéal commerce & bureaux",
       features: [
         "Puissance adaptée aux grands espaces",
@@ -60,7 +60,7 @@ export default function ClimatisationPage() {
       id: 'climatisation-console',
       title: "Climatisation console",
       subtitle: "Flexibilité & Mobilité",
-      image: "/machine/console.webp",
+      image: "/img/consolespacex.png",
       badge: "Installation au sol",
       features: [
         "Installation sans travaux",
@@ -243,54 +243,102 @@ export default function ClimatisationPage() {
           {/* Solutions en Colonne - Cartes Grandes */}
           <div className="space-y-12">
             {solutions.map((solution, index) => (
-              <div key={index} className="bg-gray-50 dark:bg-background rounded-3xl border border-[#03144A] dark:border-white/20 overflow-hidden backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-                  {/* Content Side */}
-                  <div className="p-12 lg:p-16">
-                    <div className="mb-8">
-                      <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-[#03144A]/10 to-[#2563EB]/10 border border-[#2563EB] text-[#2563EB] text-sm font-medium mb-6">
-                        {solution.badge}
-                      </div>
-                      <h3 className="text-3xl md:text-4xl font-light mb-4 text-[#03144A] dark:text-white">
-                        {solution.title}
-                      </h3>
-                      <p className="text-xl text-[#2563EB] mb-6 font-light">
-                        {solution.subtitle}
-                      </p>
-                    </div>
-                    <p className="text-[#03144A] dark:text-white text-lg leading-relaxed mb-8">
-                      {solution.description}
-                    </p>
-                    <div className="space-y-4 mb-8">
-                      {solution.features.map((feature, i) => (
-                        <div key={i} className="flex items-center space-x-3">
-                          <div className="w-2 h-2 bg-[#2563EB] rounded-full flex-shrink-0" />
-                          <span className="text-[#03144A] dark:text-white">{feature}</span>
+              <div key={index} className="bg-gray-50 dark:bg-background rounded-3xl border border-gray-50 dark:border-background overflow-hidden backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                {index === 0 || index === 2 || index === 3 ? (
+                  // Cards climatisation avec image en fond complet
+                  <div 
+                    className="relative bg-center bg-no-repeat min-h-[600px] flex items-center"
+                    style={{ 
+                      backgroundImage: `url(${solution.image})`,
+                      backgroundPosition: index === 2 ? 'center 30%' : 'center center',
+                      backgroundSize: 'cover'
+                    }}
+                  >
+                    {/* Overlay adaptatif selon le thème */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/40 to-transparent dark:from-black/70 dark:via-black/40 dark:to-transparent" />
+                    <div className="relative z-10 p-12 lg:p-16 max-w-xl">
+                      <div className="mb-8">
+                        <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-[#03144A]/10 to-[#2563EB]/10 border border-[#2563EB] text-[#2563EB] text-sm font-medium mb-6">
+                          {solution.badge}
                         </div>
-                      ))}
-                    </div>
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-center gap-4 sm:gap-0">
-                      <Link
-                        href="/contact"
-                        className="group px-8 py-3 bg-gradient-to-r from-[#03144A] to-[#2563EB] rounded-full text-white font-medium transition-all duration-300 hover:scale-105 text-center"
-                      >
-                        Devis gratuit
-                      </Link>
+                        <h3 className="text-3xl md:text-4xl font-light mb-4 text-[#03144A] dark:text-white">
+                          {solution.title}
+                        </h3>
+                        <p className="text-xl text-[#2563EB] dark:text-[#60A5FA] mb-6 font-light">
+                          {solution.subtitle}
+                        </p>
+                      </div>
+                      <p className="text-[#03144A] dark:text-white text-lg leading-relaxed mb-8">
+                        {solution.description}
+                      </p>
+                      <div className="space-y-4 mb-8">
+                        {solution.features.map((feature, i) => (
+                          <div key={i} className="flex items-center space-x-3">
+                            <div className="w-2 h-2 bg-[#2563EB] dark:bg-[#60A5FA] rounded-full flex-shrink-0" />
+                            <span className="text-[#03144A] dark:text-white">{feature}</span>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-start gap-4 sm:gap-0">
+                        <Link
+                          href="/contact"
+                          className="group px-8 py-3 bg-gradient-to-r from-[#03144A] to-[#2563EB] rounded-full text-white font-medium transition-all duration-300 hover:scale-105 text-center"
+                        >
+                          Devis gratuit
+                        </Link>
+                      </div>
                     </div>
                   </div>
+                ) : (
+                  // Autres cards avec le layout original
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                    {/* Content Side */}
+                    <div className="p-12 lg:p-16">
+                      <div className="mb-8">
+                        <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-[#03144A]/10 to-[#2563EB]/10 border border-[#2563EB] text-[#2563EB] text-sm font-medium mb-6">
+                          {solution.badge}
+                        </div>
+                        <h3 className="text-3xl md:text-4xl font-light mb-4 text-[#03144A] dark:text-white">
+                          {solution.title}
+                        </h3>
+                        <p className="text-xl text-[#2563EB] mb-6 font-light">
+                          {solution.subtitle}
+                        </p>
+                      </div>
+                      <p className="text-[#03144A] dark:text-white text-lg leading-relaxed mb-8">
+                        {solution.description}
+                      </p>
+                      <div className="space-y-4 mb-8">
+                        {solution.features.map((feature, i) => (
+                          <div key={i} className="flex items-center space-x-3">
+                            <div className="w-2 h-2 bg-[#2563EB] rounded-full flex-shrink-0" />
+                            <span className="text-[#03144A] dark:text-white">{feature}</span>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-center gap-4 sm:gap-0">
+                        <Link
+                          href="/contact"
+                          className="group px-8 py-3 bg-gradient-to-r from-[#03144A] to-[#2563EB] rounded-full text-white font-medium transition-all duration-300 hover:scale-105 text-center"
+                        >
+                          Devis gratuit
+                        </Link>
+                      </div>
+                    </div>
 
-                  {/* Image Side */}
-                  <div className="relative bg-gray-50 dark:bg-background flex items-center justify-center p-12">
-                    <div className="relative w-80 h-80">
-                      <Image
-                        src={solution.image}
-                        alt={solution.title}
-                        fill
-                        className="object-contain filter drop-shadow-2xl"
-                      />
+                    {/* Image Side */}
+                    <div className="relative bg-gray-50 dark:bg-background flex items-center justify-center p-12">
+                      <div className="relative w-80 h-80">
+                        <Image
+                          src={solution.image}
+                          alt={solution.title}
+                          fill
+                          className="object-contain filter drop-shadow-2xl"
+                        />
+                      </div>
                     </div>
                   </div>
-                </div>
+                )}
               </div>
             ))}
           </div>
