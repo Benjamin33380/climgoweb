@@ -1,4 +1,3 @@
-import { getAllCities } from '@/config/cities'
 import { MetadataRoute } from 'next'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -10,7 +9,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '', // homepage
     'contact',
     'services',
-    'zones-interventions',
     'aides-etat',
     'a-propos',
     'blog',
@@ -26,22 +24,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: page === '' ? 1 : 0.9
   }))
 
-  // Pages services (hardcodées car pas d'export dans cities.ts)
+  // Pages services
   const services = ['chauffage', 'climatisation', 'maintenance', 'eau-chaude-sanitaire']
   const serviceUrls = services.map(service => ({
     url: `${baseUrl}/${service}`,
     lastModified: currentDate,
     changeFrequency: 'weekly' as const,
     priority: 0.9
-  }))
-
-  // Pages villes - Utilisation de getAllCities() pour obtenir toutes les villes
-  const cities = getAllCities()
-  const cityUrls = cities.map(city => ({
-    url: `${baseUrl}/villes/${city.slug}`,
-    lastModified: currentDate,
-    changeFrequency: 'weekly' as const,
-    priority: 0.8
   }))
 
   // Articles du blog - Récupération depuis MongoDB
@@ -53,7 +42,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return [
     ...staticUrls,
     ...serviceUrls,
-    ...cityUrls,
     ...blogUrls
   ]
 }

@@ -16,8 +16,6 @@ export default function robots(): MetadataRoute.Robots {
           '/services',
           '/a-propos',
           '/contact',
-          '/villes/*',
-          '/zones-interventions',
           '/aides-etat',
           '/mentions-legales',
           '/politique-confidentialite'
@@ -26,8 +24,7 @@ export default function robots(): MetadataRoute.Robots {
           '/admin/*',
           '/api/*',
           '/auth/*',
-          '/profile/*',
-      
+          '/profile/*'
         ]
       },
       {
@@ -41,8 +38,6 @@ export default function robots(): MetadataRoute.Robots {
           '/services',
           '/a-propos',
           '/contact',
-          '/villes/*',
-          '/zones-interventions',
           '/aides-etat'
         ],
         disallow: [
@@ -50,8 +45,7 @@ export default function robots(): MetadataRoute.Robots {
           '/api/*',
           '/auth/*',
           '/dashboard/*',
-          '/profile/*',
-
+          '/profile/*'
         ]
       }
     ],
