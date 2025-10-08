@@ -101,8 +101,21 @@ export default function ChauffagePage() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-background text-[#03144A] dark:text-white">
       
+      {/* Breadcrumb */}
+      <div className="bg-gray-50 dark:bg-background pt-24 pb-4 px-6">
+        <nav className="max-w-7xl mx-auto text-sm text-[#03144A] dark:text-white">
+          <ol className="list-reset flex items-center space-x-2">
+            <li>
+              <Link href="/" className="hover:underline text-[#03144a] dark:text-white opacity-70 hover:opacity-100 transition-opacity">Accueil</Link>
+              <span className="mx-2 opacity-50">/</span>
+            </li>
+            <li className="text-[#03144A] dark:text-white font-medium">Chauffage</li>
+          </ol>
+        </nav>
+      </div>
+
       {/* Hero Section */}
-      <section className="relative min-h-screen pt-24 md:pt-0 flex items-center justify-center overflow-hidden bg-gray-50 dark:bg-background">
+      <section className="relative min-h-screen pt-8 md:pt-0 flex items-center justify-center overflow-hidden bg-gray-50 dark:bg-background">
         <div className="absolute inset-0 bg-gray-50 dark:bg-background" />
         
         {/* Background effects */}
