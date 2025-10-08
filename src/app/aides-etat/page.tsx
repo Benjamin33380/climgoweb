@@ -54,7 +54,7 @@ export default function AidesEtatPage() {
               </div>
               
               <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold lg:font-light tracking-tight mb-2 xs:mb-3 sm:mb-4 md:mb-6 text-black dark:text-white break-words leading-tight">
-                Aides & Subventions
+                Aides & Subventions 2025
               </h1>
               
               <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl text-black dark:text-white mb-3 xs:mb-4 sm:mb-4 md:mb-6 lg:mb-8 leading-relaxed font-medium lg:font-normal">
