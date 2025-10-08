@@ -30,7 +30,7 @@ export default function ClimatisationPage() {
       id: 'climatisation-gainable',
       title: "Climatisation gainable",
       subtitle: "Invisible & Performante",
-      image: "/machine/gainable.webp",
+      image: "/img/gainablespacex.png",
       badge: "Installation discrète",
       features: [
         "Intégration dans les faux-plafonds",
@@ -244,13 +244,13 @@ export default function ClimatisationPage() {
           <div className="space-y-12">
             {solutions.map((solution, index) => (
               <div key={index} className="bg-gray-50 dark:bg-background rounded-3xl border border-gray-50 dark:border-background overflow-hidden backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                {index === 0 || index === 2 || index === 3 ? (
+                {index === 0 || index === 1 || index === 2 || index === 3 ? (
                   // Cards climatisation avec image en fond complet
                   <div 
                     className="relative bg-center bg-no-repeat min-h-[600px] flex items-center"
                     style={{ 
                       backgroundImage: `url(${solution.image})`,
-                      backgroundPosition: index === 2 ? 'center 30%' : 'center center',
+                      backgroundPosition: index === 2 ? 'center 30%' : index === 1 ? 'center 40%' : 'center center',
                       backgroundSize: 'cover'
                     }}
                   >
