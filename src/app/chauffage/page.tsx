@@ -15,7 +15,7 @@ export default function ChauffagePage() {
       id: 'pac-air-eau',
       title: "Pompe à chaleur air/eau",
       subtitle: "Performance & Économies",
-      image: "/machine/pacaireau.png",
+      image: "/img/uipacspacex.png",
       badge: "Jusqu'à -70% sur votre facture",
       features: [
         "Coefficient de performance exceptionnel",
@@ -45,7 +45,7 @@ export default function ChauffagePage() {
       id: 'plancher-chauffant',
       title: "Plancher chauffant",
       subtitle: "Confort Invisible",
-      image: "/machine/nourriceplancher.png",
+      image: "/img/plancherchauf.png",
       badge: "Luxe & Discrétion",
       features: [
         "Chaleur homogène optimale",
@@ -206,8 +206,8 @@ export default function ChauffagePage() {
           <div className="space-y-12">
             {solutions.map((solution, index) => (
               <div key={index} className="bg-gray-50 dark:bg-background rounded-3xl border border-gray-50 dark:border-background overflow-hidden backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                {index === 1 || index === 3 ? (
-                  // Cards avec image en fond complet (PAC air/air et radiateurs)
+                {index === 0 || index === 1 || index === 2 || index === 3 ? (
+                  // Toutes les cards avec image en fond complet
                   <div 
                     className="relative bg-center bg-no-repeat min-h-[600px] flex items-center"
                     style={{ 

@@ -15,7 +15,7 @@ export default function EauChaudeSanitairePage() {
       id: 'chauffe-eau-thermodynamique',
       title: "Chauffe-eau Thermodynamique",
       subtitle: "Économique & Écoresponsable",
-      image: "/machine/thermo.webp",
+      image: "/img/thermoecs.png",
       badge: "Jusqu'à -70% sur votre facture",
       features: [
         "Jusqu'à 70% d'économie d'énergie",
@@ -27,25 +27,10 @@ export default function EauChaudeSanitairePage() {
       gradient: "from-[#03144A] to-[#FF6B6B]"
     },
     {
-      id: 'chauffe-eau-electrique',
-      title: "Chauffe-eau électrique",
-      subtitle: "Simple & Fiable",
-      image: "/machine/cumulus.webp",
-      badge: "Installation rapide",
-      features: [
-        "Eau chaude disponible à toute heure",
-        "Installation rapide et sans contraintes",
-        "Solution économique à l'achat",
-        "Maintenance simplifiée"
-      ],
-      description: "Le chauffe-eau électrique classique assure une production d'eau chaude constante pour toute la maison. Discret, facile à installer et adapté aux petits budgets.",
-      gradient: "from-[#03144A] to-[#FF6B6B]"
-    },
-    {
       id: 'chauffe-eau-extra-plat',
       title: "Chauffe-eau extra plat",
       subtitle: "Confort & Gain de Place",
-      image: "/machine/extraplat.webp",
+      image: "/img/extraplatchauf.png",
       badge: "Format compact",
       features: [
         "Format compact, idéal petits espaces",
@@ -54,6 +39,21 @@ export default function EauChaudeSanitairePage() {
         "Design discret et moderne"
       ],
       description: "Un maximum de confort dans un minimum d'espace pour votre eau chaude sanitaire. Parfait pour les petits logements ou les espaces optimisés.",
+      gradient: "from-[#03144A] to-[#FF6B6B]"
+    },
+    {
+      id: 'chauffe-eau-electrique',
+      title: "Chauffe-eau électrique",
+      subtitle: "Simple & Fiable",
+      image: "/img/ballonecs.png",
+      badge: "Installation rapide",
+      features: [
+        "Eau chaude disponible à toute heure",
+        "Installation rapide et sans contraintes",
+        "Solution économique à l'achat",
+        "Maintenance simplifiée"
+      ],
+      description: "Le chauffe-eau électrique classique assure une production d'eau chaude constante pour toute la maison. Discret, facile à installer et adapté aux petits budgets.",
       gradient: "from-[#03144A] to-[#FF6B6B]"
     }
   ];
@@ -190,54 +190,102 @@ export default function EauChaudeSanitairePage() {
           {/* Solutions en Colonne - Cartes Grandes */}
           <div className="space-y-12">
             {solutions.map((solution, index) => (
-              <div key={index} className="bg-gray-50 dark:bg-background rounded-3xl border border-[#03144A] dark:border-white/20 overflow-hidden backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-                  {/* Content Side */}
-                  <div className="p-12 lg:p-16">
-                    <div className="mb-8">
-                      <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-[#03144A]/10 to-[#FF6B6B]/10 border border-[#FF6B6B] text-[#FF6B6B] text-sm font-medium mb-6">
-                        {solution.badge}
-                      </div>
-                      <h3 className="text-3xl md:text-4xl font-light mb-4 text-[#03144A] dark:text-white">
-                        {solution.title}
-                      </h3>
-                      <p className="text-xl text-[#FF6B6B] mb-6 font-light">
-                        {solution.subtitle}
-                      </p>
-                    </div>
-                    <p className="text-[#03144A] dark:text-white text-lg leading-relaxed mb-8">
-                      {solution.description}
-                    </p>
-                    <div className="space-y-4 mb-8">
-                      {solution.features.map((feature, i) => (
-                        <div key={i} className="flex items-center space-x-3">
-                          <div className="w-2 h-2 bg-[#FF6B6B] rounded-full flex-shrink-0" />
-                          <span className="text-[#03144A] dark:text-white">{feature}</span>
+              <div key={index} className="bg-gray-50 dark:bg-background rounded-3xl border border-gray-50 dark:border-background overflow-hidden backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                {index === 0 || index === 1 || index === 2 ? (
+                  // Toutes les cards avec image en fond complet
+                  <div 
+                    className="relative bg-center bg-no-repeat min-h-[600px] flex items-center"
+                    style={{ 
+                      backgroundImage: `url(${solution.image})`,
+                      backgroundPosition: 'center center',
+                      backgroundSize: 'cover'
+                    }}
+                  >
+                    {/* Overlay adaptatif selon le thème */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/40 to-transparent dark:from-black/70 dark:via-black/40 dark:to-transparent" />
+                    <div className="relative z-10 p-12 lg:p-16 max-w-xl">
+                      <div className="mb-8">
+                        <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-[#03144A]/10 to-[#FF6B6B]/10 border border-[#FF6B6B] text-[#FF6B6B] text-sm font-medium mb-6">
+                          {solution.badge}
                         </div>
-                      ))}
-                    </div>
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-center gap-4 sm:gap-0">
-                      <Link
-                        href="/contact"
-                        className="group px-8 py-3 bg-gradient-to-r from-[#03144A] to-[#FF6B6B] rounded-full text-white font-medium transition-all duration-300 hover:scale-105 text-center"
-                      >
-                        Devis gratuit
-                      </Link>
+                        <h3 className="text-3xl md:text-4xl font-light mb-4 text-[#03144A] dark:text-white">
+                          {solution.title}
+                        </h3>
+                        <p className="text-xl text-[#FF6B6B] dark:text-[#FF8A8A] mb-6 font-light">
+                          {solution.subtitle}
+                        </p>
+                      </div>
+                      <p className="text-[#03144A] dark:text-white text-lg leading-relaxed mb-8">
+                        {solution.description}
+                      </p>
+                      <div className="space-y-4 mb-8">
+                        {solution.features.map((feature, i) => (
+                          <div key={i} className="flex items-center space-x-3">
+                            <div className="w-2 h-2 bg-[#FF6B6B] dark:bg-[#FF8A8A] rounded-full flex-shrink-0" />
+                            <span className="text-[#03144A] dark:text-white">{feature}</span>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-start gap-4 sm:gap-0">
+                        <Link
+                          href="/contact"
+                          className="group px-8 py-3 bg-gradient-to-r from-[#03144A] to-[#FF6B6B] rounded-full text-white font-medium transition-all duration-300 hover:scale-105 text-center"
+                        >
+                          Devis gratuit
+                        </Link>
+                      </div>
                     </div>
                   </div>
+                ) : (
+                  // Autres cards avec le layout original
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                    {/* Content Side */}
+                    <div className="p-12 lg:p-16">
+                      <div className="mb-8">
+                        <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-[#03144A]/10 to-[#FF6B6B]/10 border border-[#FF6B6B] text-[#FF6B6B] text-sm font-medium mb-6">
+                          {solution.badge}
+                        </div>
+                        <h3 className="text-3xl md:text-4xl font-light mb-4 text-[#03144A] dark:text-white">
+                          {solution.title}
+                        </h3>
+                        <p className="text-xl text-[#FF6B6B] mb-6 font-light">
+                          {solution.subtitle}
+                        </p>
+                      </div>
+                      <p className="text-[#03144A] dark:text-white text-lg leading-relaxed mb-8">
+                        {solution.description}
+                      </p>
+                      <div className="space-y-4 mb-8">
+                        {solution.features.map((feature, i) => (
+                          <div key={i} className="flex items-center space-x-3">
+                            <div className="w-2 h-2 bg-[#FF6B6B] rounded-full flex-shrink-0" />
+                            <span className="text-[#03144A] dark:text-white">{feature}</span>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-center gap-4 sm:gap-0">
+                        <Link
+                          href="/contact"
+                          className="group px-8 py-3 bg-gradient-to-r from-[#03144A] to-[#FF6B6B] rounded-full text-white font-medium transition-all duration-300 hover:scale-105 text-center"
+                        >
+                          Devis gratuit
+                        </Link>
+                      </div>
+                    </div>
 
-                  {/* Image Side */}
-                  <div className="relative bg-gray-50 dark:bg-background flex items-center justify-center p-12">
-                    <div className="relative w-80 h-80">
-                      <Image
-                        src={solution.image}
-                        alt={solution.title}
-                        fill
-                        className="object-contain filter drop-shadow-2xl"
-                      />
+                    {/* Image Side */}
+                    <div className="relative bg-gray-50 dark:bg-background flex items-center justify-center p-12">
+                      <div className="relative w-80 h-80">
+                        <Image
+                          src={solution.image}
+                          alt={solution.title}
+                          fill
+                          className="object-contain filter drop-shadow-2xl"
+                        />
+                      </div>
                     </div>
                   </div>
-                </div>
+                )}
               </div>
             ))}
           </div>
