@@ -140,22 +140,6 @@ export default function ClimatisationPage() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-background text-[#03144A] dark:text-white">
       
-      {/* Breadcrumb */}
-      <div className="bg-gray-50 dark:bg-background pt-24 pb-4 px-6">
-        <nav className="max-w-7xl mx-auto text-sm text-[#03144A] dark:text-white">
-          <ol className="list-reset flex items-center space-x-2">
-            <li>
-              <Link href="/" className="hover:underline text-[#03144a] dark:text-white opacity-70 hover:opacity-100 transition-opacity">Accueil</Link>
-              <span className="mx-2 opacity-50">/</span>
-            </li>
-            <li>
-              <Link href="/services" className="hover:underline text-[#03144a] dark:text-white opacity-70 hover:opacity-100 transition-opacity">Services</Link>
-              <span className="mx-2 opacity-50">/</span>
-            </li>
-            <li className="text-[#03144A] dark:text-white font-medium">Climatisation</li>
-          </ol>
-        </nav>
-      </div>
 
       {/* Hero Section */}
       <section className="relative min-h-screen pt-8 md:pt-0 flex items-center justify-center overflow-hidden bg-gray-50 dark:bg-background">
@@ -183,10 +167,6 @@ export default function ClimatisationPage() {
         </div>
 
         <div className="relative z-10 text-center max-w-5xl mx-auto px-6">
-          <div className="inline-flex items-center px-6 py-3 rounded-full border border-[#03144A] dark:border-white/20 text-sm tracking-widest uppercase mb-8 text-[#03144A] dark:text-white bg-gray-50 dark:bg-background backdrop-blur-sm">
-            <div className="w-2 h-2 bg-[#2563EB] rounded-full mr-3 animate-pulse" />
-            Nos solutions climatisation
-          </div>
           
           <SimpleWrapper>
             <h1 className="text-6xl md:text-7xl lg:text-8xl font-extralight tracking-wide mb-8">
@@ -215,9 +195,13 @@ export default function ClimatisationPage() {
               <div className="absolute inset-0 bg-gradient-to-r from-[#03144A] to-[#2563EB] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </button>
             
-            <button className="group px-10 py-4 border border-[#03144A] dark:border-white rounded-full font-medium transition-all duration-300 hover:border-[#2563EB] hover:bg-[#03144A]/5 text-[#03144A] dark:text-white">
-              Demander un devis
-            </button>
+            <Link
+              href="/contact"
+              className="group relative px-10 py-4 border border-[#03144A] dark:border-white rounded-full font-medium transition-all duration-300 hover:scale-105 text-[#03144A] dark:text-white overflow-hidden"
+            >
+              <span className="relative z-10">Demander un devis</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#2563EB] to-[#03144A] opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full" />
+            </Link>
           </div>
         </div>
       </section>
