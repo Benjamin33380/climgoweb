@@ -202,27 +202,27 @@ export default function EauChaudeSanitairePage() {
                     }}
                   >
                     {/* Overlay adaptatif selon le thème */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/40 to-transparent dark:from-black/70 dark:via-black/40 dark:to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/85 via-white/50 to-transparent dark:from-black/70 dark:via-black/40 dark:to-transparent" />
                     <div className="relative z-10 p-12 lg:p-16 max-w-xl">
                       <div className="mb-8">
-                        <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-[#03144A]/10 to-[#FF6B6B]/10 border border-[#FF6B6B] text-[#FF6B6B] text-sm font-medium mb-6">
+                        <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-[#03144A]/20 to-[#FF4757]/20 border border-[#FF4757] text-[#FF4757] text-sm font-medium mb-6 backdrop-blur-sm shadow-lg">
                           {solution.badge}
                         </div>
                         <h3 className="text-3xl md:text-4xl font-light mb-4 text-[#03144A] dark:text-white">
                           {solution.title}
                         </h3>
-                        <p className="text-xl text-[#FF6B6B] dark:text-[#FF8A8A] mb-6 font-light">
+                        <p className="text-xl text-[#FF4757] dark:text-[#FF8A8A] mb-6 font-light drop-shadow-sm">
                           {solution.subtitle}
                         </p>
                       </div>
-                      <p className="text-[#03144A] dark:text-white text-lg leading-relaxed mb-8">
+                      <p className="text-[#03144A] dark:text-white text-lg leading-relaxed mb-8 drop-shadow-sm">
                         {solution.description}
                       </p>
                       <div className="space-y-4 mb-8">
                         {solution.features.map((feature, i) => (
                           <div key={i} className="flex items-center space-x-3">
-                            <div className="w-2 h-2 bg-[#FF6B6B] dark:bg-[#FF8A8A] rounded-full flex-shrink-0" />
-                            <span className="text-[#03144A] dark:text-white">{feature}</span>
+                            <div className="w-2 h-2 bg-[#FF4757] dark:bg-[#FF8A8A] rounded-full flex-shrink-0" />
+                            <span className="text-[#03144A] dark:text-white drop-shadow-sm">{feature}</span>
                           </div>
                         ))}
                       </div>
@@ -242,7 +242,7 @@ export default function EauChaudeSanitairePage() {
                     {/* Content Side */}
                     <div className="p-12 lg:p-16">
                       <div className="mb-8">
-                        <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-[#03144A]/10 to-[#FF6B6B]/10 border border-[#FF6B6B] text-[#FF6B6B] text-sm font-medium mb-6">
+                        <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-[#03144A]/20 to-[#FF4757]/20 border border-[#FF4757] text-[#FF4757] text-sm font-medium mb-6 backdrop-blur-sm shadow-lg">
                           {solution.badge}
                         </div>
                         <h3 className="text-3xl md:text-4xl font-light mb-4 text-[#03144A] dark:text-white">

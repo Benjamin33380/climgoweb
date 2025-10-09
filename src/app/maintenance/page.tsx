@@ -252,27 +252,27 @@ export default function MaintenancePage() {
                     }}
                   >
                     {/* Overlay adaptatif selon le thème */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/40 to-transparent dark:from-black/70 dark:via-black/40 dark:to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/85 via-white/50 to-transparent dark:from-black/70 dark:via-black/40 dark:to-transparent" />
                     <div className="relative z-10 p-12 lg:p-16 max-w-xl">
                       <div className="mb-8">
-                        <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-[#03144A]/10 to-[#10B981]/10 border border-[#10B981] text-[#10B981] text-sm font-medium mb-6">
+                        <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-[#03144A]/20 to-[#00D084]/20 border border-[#00D084] text-[#00D084] text-sm font-medium mb-6 backdrop-blur-sm shadow-lg">
                           {solution.badge}
                         </div>
                         <h3 className="text-3xl md:text-4xl font-light mb-4 text-[#03144A] dark:text-white">
                           {solution.title}
                         </h3>
-                        <p className="text-xl text-[#10B981] dark:text-[#34D399] mb-6 font-light">
+                        <p className="text-xl text-[#00D084] dark:text-[#34D399] mb-6 font-light drop-shadow-sm">
                           {solution.subtitle}
                         </p>
                       </div>
-                      <p className="text-[#03144A] dark:text-white text-lg leading-relaxed mb-8">
+                      <p className="text-[#03144A] dark:text-white text-lg leading-relaxed mb-8 drop-shadow-sm">
                         {solution.description}
                       </p>
                       <div className="space-y-4 mb-8">
                         {solution.features.map((feature, i) => (
                           <div key={i} className="flex items-center space-x-3">
-                            <div className="w-2 h-2 bg-[#10B981] dark:bg-[#34D399] rounded-full flex-shrink-0" />
-                            <span className="text-[#03144A] dark:text-white">{feature}</span>
+                            <div className="w-2 h-2 bg-[#00D084] dark:bg-[#34D399] rounded-full flex-shrink-0" />
+                            <span className="text-[#03144A] dark:text-white drop-shadow-sm">{feature}</span>
                           </div>
                         ))}
                       </div>
@@ -292,7 +292,7 @@ export default function MaintenancePage() {
                     {/* Content Side */}
                     <div className="p-12 lg:p-16">
                       <div className="mb-8">
-                        <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-[#03144A]/10 to-[#10B981]/10 border border-[#10B981] text-[#10B981] text-sm font-medium mb-6">
+                        <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-[#03144A]/20 to-[#00D084]/20 border border-[#00D084] text-[#00D084] text-sm font-medium mb-6 backdrop-blur-sm shadow-lg">
                           {solution.badge}
                         </div>
                         <h3 className="text-3xl md:text-4xl font-light mb-4 text-[#03144A] dark:text-white">

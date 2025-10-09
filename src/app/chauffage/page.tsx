@@ -217,27 +217,27 @@ export default function ChauffagePage() {
                     }}
                   >
                     {/* Overlay adaptatif selon le thème */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/40 to-transparent dark:from-black/70 dark:via-black/40 dark:to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/85 via-white/50 to-transparent dark:from-black/70 dark:via-black/40 dark:to-transparent" />
                     <div className="relative z-10 p-12 lg:p-16 max-w-xl">
                       <div className="mb-8">
-                        <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-[#03144A]/10 to-[#FF8C00]/10 border border-[#FF8C00] text-[#FF8C00] text-sm font-medium mb-6">
+                        <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-[#03144A]/20 to-[#FF6B35]/20 border border-[#FF6B35] text-[#FF6B35] text-sm font-medium mb-6 backdrop-blur-sm shadow-lg">
                           {solution.badge}
                         </div>
                         <h3 className="text-3xl md:text-4xl font-light mb-4 text-[#03144A] dark:text-white">
                           {solution.title}
                         </h3>
-                        <p className="text-xl text-[#FF8C00] dark:text-[#FFA500] mb-6 font-light">
+                        <p className="text-xl text-[#FF6B35] dark:text-[#FFA500] mb-6 font-light drop-shadow-sm">
                           {solution.subtitle}
                         </p>
                       </div>
-                      <p className="text-[#03144A] dark:text-white text-lg leading-relaxed mb-8">
+                      <p className="text-[#03144A] dark:text-white text-lg leading-relaxed mb-8 drop-shadow-sm">
                         {solution.description}
                       </p>
                       <div className="space-y-4 mb-8">
                         {solution.features.map((feature, i) => (
                           <div key={i} className="flex items-center space-x-3">
-                            <div className="w-2 h-2 bg-[#FF8C00] dark:bg-[#FFA500] rounded-full flex-shrink-0" />
-                            <span className="text-[#03144A] dark:text-white">{feature}</span>
+                            <div className="w-2 h-2 bg-[#FF6B35] dark:bg-[#FFA500] rounded-full flex-shrink-0" />
+                            <span className="text-[#03144A] dark:text-white drop-shadow-sm">{feature}</span>
                           </div>
                         ))}
                       </div>
@@ -257,7 +257,7 @@ export default function ChauffagePage() {
                     {/* Content Side */}
                     <div className="p-12 lg:p-16">
                       <div className="mb-8">
-                        <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-[#03144A]/10 to-[#FF8C00]/10 border border-[#FF8C00] text-[#FF8C00] text-sm font-medium mb-6">
+                        <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-[#03144A]/20 to-[#FF6B35]/20 border border-[#FF6B35] text-[#FF6B35] text-sm font-medium mb-6 backdrop-blur-sm shadow-lg">
                           {solution.badge}
                         </div>
                         <h3 className="text-3xl md:text-4xl font-light mb-4 text-[#03144A] dark:text-white">
