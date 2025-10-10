@@ -174,7 +174,12 @@ export default function ClimatisationPage() {
         <div className="relative container mx-auto px-4 xs:px-5 sm:px-6 py-6 xs:py-8 sm:py-12 md:py-16 lg:py-20">
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 items-center min-h-[40vh] sm:min-h-[50vh]">
             {/* Contenu texte - Animation depuis la gauche */}
-            <div className="w-full max-w-2xl mx-auto lg:mx-0 text-center lg:text-left order-2 lg:order-1 animate-slide-in-left">
+            <div 
+              className="w-full max-w-2xl mx-auto lg:mx-0 text-center lg:text-left order-2 lg:order-1"
+              style={{ 
+                animation: 'slide-in-left 0.8s ease-out both'
+              }}
+            >
               <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl font-bold lg:font-light tracking-tight mb-2 xs:mb-3 sm:mb-3 md:mb-4 lg:mb-6 text-[#03144A] dark:text-white break-words leading-tight">
                 <span className="bg-gradient-to-r from-[#2563EB] via-[#03144A] to-[#2563EB] dark:from-[#60A5FA] dark:via-white dark:to-[#60A5FA] bg-clip-text text-transparent">
                   Climatisation
@@ -217,13 +222,13 @@ export default function ClimatisationPage() {
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start">
                 <button
                   onClick={() => solutionsRef.current?.scrollIntoView({ behavior: 'smooth' })}
-                  className="px-8 sm:px-10 py-3 sm:py-4 bg-gray-50 dark:bg-background border border-black text-black hover:bg-gray-100 dark:hover:bg-gray-800 text-sm sm:text-base font-semibold rounded-full transition-colors duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                  className="px-8 sm:px-10 py-3 sm:py-4 bg-gray-50 dark:bg-gray-800 border border-black dark:border-white text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 text-sm sm:text-base font-semibold rounded-full transition-colors duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
                 >
                   Découvrir nos solutions
                 </button>
                 
                 <Link href="/contact">
-                  <button className="px-8 sm:px-10 py-3 sm:py-4 bg-gray-50 dark:bg-background border border-black text-black hover:bg-gray-100 dark:hover:bg-gray-800 text-sm sm:text-base font-semibold rounded-full transition-colors duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
+                  <button className="px-8 sm:px-10 py-3 sm:py-4 bg-gray-50 dark:bg-gray-800 border border-black dark:border-white text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 text-sm sm:text-base font-semibold rounded-full transition-colors duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
                     Demander un devis
                   </button>
                 </Link>
@@ -231,13 +236,16 @@ export default function ClimatisationPage() {
             </div>
             
             {/* Cartes des 4 solutions dans le hero - Animation depuis la droite */}
-            <div className="w-full max-w-2xl mx-auto lg:mx-0 order-1 lg:order-2 animate-slide-in-right">
+            <div className="w-full max-w-2xl mx-auto lg:mx-0 order-1 lg:order-2">
               <div className="grid grid-cols-1 gap-6">
                 {solutions.slice(0, 4).map((solution, index) => (
                   <Link 
                     key={index} 
                     href="/contact" 
                     className="block group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-white hover:-translate-y-2 h-[160px] cursor-pointer"
+                    style={{ 
+                      animation: `slide-in-right 0.8s ease-out ${index * 0.2}s both`
+                    }}
                   >
                     {/* Image en fond */}
                     <div 
@@ -271,202 +279,6 @@ export default function ClimatisationPage() {
          </div>
        </div>
      </section>
-
-
-      {/* Solutions Section */}
-      <section 
-        ref={solutionsRef} 
-        className="py-24 relative"
-      >
-        <div className="max-w-7xl mx-auto px-6">
-          
-          {/* Section Header */}
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-extralight mb-6 tracking-wide">
-              Nos <span className="text-[#03144a] dark:text-white">Technologies</span>
-            </h2>
-            <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-[#03144a] dark:via-white to-transparent mx-auto mb-8" />
-            <p className="text-xl text-[#03144A] dark:text-white max-w-3xl mx-auto">
-              Chaque solution est pensée pour maximiser votre confort tout en optimisant vos économies d'énergie
-            </p>
-          </div>
-
-          {/* Solutions en Colonne - Cartes Grandes */}
-          <div className="space-y-12">
-            {solutions.map((solution, index) => (
-              <div key={index} className="bg-gray-50 dark:bg-background rounded-3xl border border-gray-50 dark:border-background overflow-hidden backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                {index === 0 || index === 1 || index === 2 || index === 3 ? (
-                  // Cards climatisation avec image en fond complet
-                  <div 
-                    className="relative bg-center bg-no-repeat min-h-[600px] flex items-center"
-                    style={{ 
-                      backgroundImage: `url(${solution.image})`,
-                      backgroundPosition: index === 2 ? 'center 30%' : index === 1 ? 'center 40%' : 'center center',
-                      backgroundSize: 'cover'
-                    }}
-                  >
-                    {/* Overlay adaptatif selon le thème */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/40 to-transparent dark:from-black/70 dark:via-black/40 dark:to-transparent" />
-                    <div className="relative z-10 p-12 lg:p-16 max-w-xl">
-                      <div className="mb-8">
-                        <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-[#03144A]/10 to-[#2563EB]/10 border border-[#2563EB] text-[#2563EB] text-sm font-medium mb-6">
-                          {solution.badge}
-                        </div>
-                        <h3 className="text-3xl md:text-4xl font-light mb-4 text-[#03144A] dark:text-white">
-                          {solution.title}
-                        </h3>
-                        <p className="text-xl text-[#2563EB] dark:text-[#60A5FA] mb-6 font-light">
-                          {solution.subtitle}
-                        </p>
-                      </div>
-                      <p className="text-[#03144A] dark:text-white text-lg leading-relaxed mb-8">
-                        {solution.description}
-                      </p>
-                      <div className="space-y-4 mb-8">
-                        {solution.features.map((feature, i) => (
-                          <div key={i} className="flex items-center space-x-3">
-                            <div className="w-2 h-2 bg-[#2563EB] dark:bg-[#60A5FA] rounded-full flex-shrink-0" />
-                            <span className="text-[#03144A] dark:text-white">{feature}</span>
-                          </div>
-                        ))}
-                      </div>
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-start gap-4 sm:gap-0">
-                        <Link
-                          href="/contact"
-                          className="group px-8 py-3 bg-gradient-to-r from-[#03144A] to-[#2563EB] rounded-full text-white font-medium transition-all duration-300 hover:scale-105 text-center"
-                        >
-                          Devis gratuit
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                ) : (
-                  // Autres cards avec le layout original
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-                    {/* Content Side */}
-                    <div className="p-12 lg:p-16">
-                      <div className="mb-8">
-                        <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-[#03144A]/10 to-[#2563EB]/10 border border-[#2563EB] text-[#2563EB] text-sm font-medium mb-6">
-                          {solution.badge}
-                        </div>
-                        <h3 className="text-3xl md:text-4xl font-light mb-4 text-[#03144A] dark:text-white">
-                          {solution.title}
-                        </h3>
-                        <p className="text-xl text-[#2563EB] mb-6 font-light">
-                          {solution.subtitle}
-                        </p>
-                      </div>
-                      <p className="text-[#03144A] dark:text-white text-lg leading-relaxed mb-8">
-                        {solution.description}
-                      </p>
-                      <div className="space-y-4 mb-8">
-                        {solution.features.map((feature, i) => (
-                          <div key={i} className="flex items-center space-x-3">
-                            <div className="w-2 h-2 bg-[#2563EB] rounded-full flex-shrink-0" />
-                            <span className="text-[#03144A] dark:text-white">{feature}</span>
-                          </div>
-                        ))}
-                      </div>
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-center gap-4 sm:gap-0">
-                        <Link
-                          href="/contact"
-                          className="group px-8 py-3 bg-gradient-to-r from-[#03144A] to-[#2563EB] rounded-full text-white font-medium transition-all duration-300 hover:scale-105 text-center"
-                        >
-                          Devis gratuit
-                        </Link>
-                      </div>
-                    </div>
-
-                    {/* Image Side */}
-                    <div className="relative bg-gray-50 dark:bg-background flex items-center justify-center p-12">
-                      <div className="relative w-80 h-80">
-                        <Image
-                          src={solution.image}
-                          alt={solution.title}
-                          fill
-                          className="object-contain filter drop-shadow-2xl"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Advantages Section */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gray-50 dark:bg-background" />
-        
-        <div className="relative z-10 max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-extralight mb-8">
-              Pourquoi nous <span className="text-[#03144A] dark:text-white">choisir</span> ?
-            </h2>
-            <p className="text-xl text-[#03144A] dark:text-white max-w-2xl mx-auto">
-              L'alliance du savoir-faire technique et de l'excellence service
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {advantages.map((advantage, index) => (
-              <div
-                key={index}
-                className="group text-center p-8 rounded-2xl bg-gray-50 dark:bg-background border border-[#03144A] dark:border-white/20 hover:border-white/50 dark:hover:border-black/50 transition-all duration-300"
-              >
-                <div className="text-5xl mb-6 transform group-hover:scale-110 transition-transform duration-300">
-                  {advantage.icon}
-                </div>
-                <h3 className="text-xl font-medium mb-4 text-[#03144A] dark:text-white group-hover:text-[#2563EB] transition-colors">
-                  {advantage.title}
-                </h3>
-                <p className="text-[#03144A] dark:text-white/80 group-hover:text-[#2563EB] transition-colors">
-                  {advantage.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section - Optimisé Mobile */}
-      <section className="py-12 md:py-24 relative">
-        <div className="max-w-4xl mx-auto text-center px-4 md:px-6">
-          <div className="bg-gray-50 dark:bg-background rounded-2xl md:rounded-3xl p-8 md:p-16 border border-[#03144A] dark:border-white/20 backdrop-blur-sm shadow-xl">
-            <h2 className="text-2xl md:text-4xl lg:text-5xl font-light mb-6 md:mb-8 leading-tight">
-              Prêt à optimiser votre
-              <br className="hidden sm:block" />
-              <span className="text-[#2563EB]">confort climatique</span> ?
-            </h2>
-            
-            <p className="text-base md:text-xl text-[#03144A] dark:text-white mb-8 md:mb-12 leading-relaxed">
-              Nos experts vous accompagnent dans le choix de la solution parfaite pour votre habitat
-            </p>
-            
-            <Link
-              href="/contact"
-              className="inline-block px-8 md:px-10 py-3 md:py-4 bg-gradient-to-r from-[#03144A] to-[#2563EB] rounded-full text-white font-medium transition-all duration-300 hover:scale-105 text-sm md:text-base"
-            >
-              Demander un devis gratuit
-            </Link>
-          </div>
-        </div>
-        <nav className="max-w-7xl mx-auto px-4 text-sm text-gray-600 dark:text-gray-300 mt-12 mb-24" aria-label="Fil d'Ariane">
-          <ol className="list-reset flex items-center space-x-2">
-            <li>
-              <Link href="/" className="hover:underline text-[#2563EB] dark:text-[#60A5FA]">Accueil</Link>
-              <span className="mx-2 dark:text-gray-400">/</span>
-            </li>
-            <li>
-              <Link href="/services" className="hover:underline text-[#2563EB] dark:text-[#60A5FA]">Nos services</Link>
-              <span className="mx-2 dark:text-gray-400">/</span>
-            </li>
-            <li className="text-gray-500 dark:text-gray-400">Climatisation</li>
-          </ol>
-        </nav>
-      </section>
 
       {/* Location Map Section */}
               <LazyGoogleMaps backgroundColor="bg-gray-50 dark:bg-background" />

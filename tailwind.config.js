@@ -177,7 +177,7 @@ module.exports = {
         'float-2': 'float-2 5s ease-in-out infinite',
         'float-3': 'float-3 3s ease-in-out infinite',
         'slide-in-left': 'slide-in-left 0.8s ease-out',
-        'slide-in-right': 'slide-in-right 0.8s ease-out',
+        'slide-in-right': 'slide-in-right 0.8s ease-out forwards',
       },
     },
   },
