@@ -5,7 +5,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Wrench, DraftingCompass, ShieldCheck, BadgeEuro } from 'lucide-react';
 import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
-import { LiquidButton } from '@/components/ui/liquid-glass-button';
 import LazyGoogleMaps from '@/components/LazyGoogleMaps';
 
 export default function ClimatisationPage() {
