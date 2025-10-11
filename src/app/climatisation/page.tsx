@@ -175,7 +175,7 @@ export default function ClimatisationPage() {
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 items-center min-h-[40vh] sm:min-h-[50vh]">
             {/* Contenu texte - Animation depuis la gauche */}
             <div 
-              className="w-full max-w-2xl mx-auto lg:mx-0 text-center lg:text-left order-2 lg:order-1"
+              className="w-full max-w-2xl mx-auto lg:mx-0 text-center lg:text-left order-1 lg:order-1"
               style={{ 
                 animation: 'slide-in-left 0.8s ease-out both'
               }}
@@ -236,38 +236,45 @@ export default function ClimatisationPage() {
             </div>
             
             {/* Cartes des 4 solutions dans le hero - Animation depuis la droite */}
-            <div className="w-full max-w-2xl mx-auto lg:mx-0 order-1 lg:order-2">
+            <div className="w-full max-w-2xl mx-auto lg:mx-0 order-2 lg:order-2">
               <div className="grid grid-cols-1 gap-6">
                 {solutions.slice(0, 4).map((solution, index) => (
                   <Link 
                     key={index} 
                     href="/contact" 
-                    className="block group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-white hover:-translate-y-2 h-[160px] cursor-pointer"
+                    className="block group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-white hover:-translate-y-2 h-[200px] sm:h-[180px] lg:h-[160px] cursor-pointer"
                     style={{ 
                       animation: `slide-in-right 0.8s ease-out ${index * 0.2}s both`
                     }}
                   >
-                    {/* Image en fond */}
+                    {/* Version MOBILE - Image simple */}
+                    <img
+                      src={solution.image}
+                      alt={solution.title}
+                      className="lg:hidden absolute inset-0 w-full h-full object-cover"
+                    />
+                    
+                    {/* Version DESKTOP */}
                     <div 
-                      className="absolute inset-0 bg-no-repeat bg-cover transition-transform duration-300 group-hover:scale-105"
+                      className="hidden lg:block absolute inset-0 bg-no-repeat bg-cover transition-transform duration-300 group-hover:scale-105"
                       style={{ 
                         backgroundImage: `url(${solution.image})`,
                         backgroundPosition: 
-                          index === 0 ? '20% 5%' :   // Climatisation murale - LA MACHINE à droite, en haut
-                          index === 1 ? '90% 10%' :   // Climatisation gainable - LA GRILLE à droite
-                          index === 2 ? '10% 15%' :   // Climatisation cassette - LA CASSETTE au centre
-                          index === 3 ? '85% 80%' :   // Climatisation console - LA CONSOLE en bas à droite
-                          'right center'
+                          index === 0 ? '20% 5%'   // Climatisation cassette - LA MACHINE à droite, en haut
+                          : index === 1 ? '90% 10%'  // Climatisation gainable - LA GRILLE à droite
+                          : index === 2 ? '10% 15%'  // Climatisation murale - LA CASSETTE au centre
+                          : index === 3 ? '85% 80%'  // Climatisation console - LA CONSOLE en bas à droite
+                          : 'right center'
                       }}
                     >
-                      {/* Overlay pour contraste */}
+                      {/* Overlay pour contraste - desktop uniquement */}
                       <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-white/30 to-transparent dark:from-black/60 dark:via-black/35 dark:to-transparent group-hover:from-white/50 group-hover:via-white/25 group-hover:to-transparent dark:group-hover:from-black/50 dark:group-hover:via-black/30 dark:group-hover:to-transparent transition-all duration-300" />
                     </div>
                     
-                    {/* Bannière avec le titre - apparaît au survol */}
-                    <div className="absolute bottom-0 left-0 z-10 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                      <div className="bg-white/60 dark:bg-black/60 backdrop-blur-md text-black dark:text-white px-6 py-3 rounded-tr-2xl border border-white/30 dark:border-white/10">
-                        <h4 className="text-lg sm:text-xl font-light tracking-wide">
+                    {/* Bannière avec le titre - toujours visible sur mobile, au survol sur desktop */}
+                    <div className="absolute bottom-0 left-0 z-20 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-300 transform translate-y-0 lg:translate-y-2 lg:group-hover:translate-y-0">
+                      <div className="bg-white/90 dark:bg-black/90 lg:bg-white/60 lg:dark:bg-black/60 backdrop-blur-md text-black dark:text-white px-4 py-2 lg:px-6 lg:py-3 rounded-tr-2xl border border-white/30 dark:border-white/10">
+                        <h4 className="text-sm sm:text-base lg:text-lg xl:text-xl font-light tracking-wide">
                           {solution.title}
                         </h4>
                       </div>
