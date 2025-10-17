@@ -1,19 +1,24 @@
 'use client';
 
-import { useRef } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
-import { Wrench, DraftingCompass, ShieldCheck, BadgeEuro } from 'lucide-react';
-import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import LazyGoogleMaps from '@/components/LazyGoogleMaps';
 
 export default function ChauffagePage() {
-  const solutionsRef = useRef<HTMLDivElement>(null);
 
   const solutions = [
     {
+      id: 'chauffage-solution',
+      title: "Chauffage seul",
+      subtitle: "Solution complète",
+      image: "/outro/chauffageseul.png",
+      badge: "Installation professionnelle",
+      features: [],
+      description: "",
+      gradient: "from-[black] to-[#FF8C00]"
+    },
+    {
       id: 'pac-air-eau',
-      title: "Pompe à chaleur air/eau",
+      title: "Chauffage avec production d'eau chaude sanitaire",
       subtitle: "Performance & Économies",
       image: "/img/uipacspacex.png",
       badge: "Jusqu'à -70% sur votre facture",
@@ -25,368 +30,231 @@ export default function ChauffagePage() {
       ],
       description: "Technologie de pointe qui transforme l'énergie gratuite de l'air en chaleur pour votre habitation. Solution idéale pour remplacer votre ancienne chaudière.",
       gradient: "from-[black] to-[#FF8C00]"
-    },
-    {
-      id: 'pac-air-air',
-      title: "Pompe à chaleur air/air",
-      subtitle: "Réversible 4 Saisons",
-      image: "/img/testaachauf.png",
-      badge: "Chauffage + Climatisation",
-      features: [
-        "Système réversible intégral",
-        "Installation rapide et propre",
-        "Contrôle zone par zone",
-        "Design ultra-moderne"
-      ],
-      description: "Un seul équipement pour votre confort toute l'année. Chauffage l'hiver, climatisation l'été, avec une efficacité énergétique remarquable.",
-      gradient: "from-[black] to-[#FF8C00]"
-    },
-    {
-      id: 'plancher-chauffant',
-      title: "Plancher chauffant",
-      subtitle: "Confort Invisible",
-      image: "/img/plancherchauf.png",
-      badge: "Luxe & Discrétion",
-      features: [
-        "Chaleur homogène optimale",
-        "Libération totale des murs",
-        "Silence absolu garanti",
-        "Température pièce par pièce"
-      ],
-      description: "Le summum du confort thermique. Invisible mais omniprésent, il transforme votre sol en source de bien-être permanent.",
-      gradient: "from-[black] to-[#FF8C00]"
-    },
-    {
-      id: 'radiateurs',
-      title: "Radiateurs nouvelle génération",
-      subtitle: "Design & Performance",
-      image: "/img/radspacex.png",
-      badge: "Montée en température rapide",
-      features: [
-        "Inertie intelligente avancée",
-        "Formats décoratifs variés",
-        "Compatibilité PAC optimale",
-        "Installation sans gros œuvre"
-      ],
-      description: "L'évolution des radiateurs traditionnels. Design contemporain, performance énergétique et facilité d'installation réunis.",
-      gradient: "from-[black] to-[#FF8C00]"
     }
   ];
-
-  const advantages = [
-    {
-      icon: <Wrench className="inline w-6 h-6 text-[#FF8C00]" />,
-      title: "Expertise technique",
-      desc: "10 ans d'expérience dans le thermique"
-    },
-    {
-      icon: <DraftingCompass className="inline w-6 h-6 text-[#FF8C00]" />,
-      title: "Installation sur mesure",
-      desc: "Prestation certifiée"
-    },
-    {
-      icon: <ShieldCheck className="inline w-6 h-6 text-[#FF8C00]" />,
-      title: "Garantie",
-      desc: "SAV réactif et pièces d'origine"
-    },
-    {
-      icon: <BadgeEuro className="inline w-6 h-6 text-[#FF8C00]" />,
-      title: "Financement",
-      desc: "Solutions adaptées à votre budget"
-    }
-  ];
-
-
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-background text-[black] dark:text-white">
       
-      {/* Breadcrumb */}
-      <div className="bg-gray-50 dark:bg-background pt-24 pb-4 px-6">
-        <nav className="max-w-7xl mx-auto text-sm text-[black] dark:text-white">
-          <ol className="list-reset flex items-center space-x-2">
-            <li>
-              <Link href="/" className="hover:underline text-[black] dark:text-white opacity-70 hover:opacity-100 transition-opacity">Accueil</Link>
-              <span className="mx-2 opacity-50">/</span>
-            </li>
-            <li>
-              <Link href="/services" className="hover:underline text-[black] dark:text-white opacity-70 hover:opacity-100 transition-opacity">Services</Link>
-              <span className="mx-2 opacity-50">/</span>
-            </li>
-            <li className="text-[black] dark:text-white font-medium">Chauffage</li>
-          </ol>
-        </nav>
+      {/* Breadcrumb Navigation */}
+      <div className="bg-gray-50 dark:bg-background">
+        <div className="container mx-auto px-4 xs:px-5 sm:px-6 py-3">
+          <nav className="flex items-center space-x-2 text-sm">
+            <Link 
+              href="/" 
+              className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-200"
+            >
+              Accueil
+            </Link>
+            <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+            <Link 
+              href="/services" 
+              className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-200"
+            >
+              Nos services
+            </Link>
+            <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+            <span className="text-black dark:text-white font-medium">
+              Chauffage
+            </span>
+          </nav>
+        </div>
       </div>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen pt-8 md:pt-0 flex items-center justify-center overflow-hidden bg-gray-50 dark:bg-background">
-        <div className="absolute inset-0 bg-gray-50 dark:bg-background" />
-        
-        {/* Background effects */}
-        {/* Blue particles */}
-        <div className="absolute w-2 h-2 bg-[black] dark:bg-white rounded-full top-10 left-10" style={{ animation: 'float 4s ease-in-out infinite' }} />
-        <div className="absolute w-2 h-2 bg-[black] dark:bg-white rounded-full top-1/3 left-1/2" style={{ animation: 'float 4s ease-in-out infinite' }} />
-        <div className="absolute w-2 h-2 bg-[black] dark:bg-white rounded-full bottom-1/3 right-20" style={{ animation: 'float 4s ease-in-out infinite' }} />
-
-        {/* Accent particles */}
-        <div className="absolute w-2 h-2 bg-[#FF8C00] rounded-full top-20 right-10" style={{ animation: 'float 4s ease-in-out infinite' }} />
-        <div className="absolute w-2 h-2 bg-[#FF8C00] rounded-full bottom-10 left-1/3" style={{ animation: 'float 4s ease-in-out infinite' }} />
-        <div className="absolute w-2 h-2 bg-[#FF8C00] rounded-full top-1/2 right-1/4" style={{ animation: 'float 4s ease-in-out infinite' }} />
-
-        {/* New animated particles */}
-        <div className="absolute w-2 h-2 bg-[black] dark:bg-white rounded-full top-[15%] left-[20%]" style={{ animation: 'float 6s ease-in-out infinite' }} />
-        <div className="absolute w-2 h-2 bg-[#FF8C00] rounded-full bottom-[20%] right-[15%]" style={{ animation: 'float 5s ease-in-out infinite' }} />
-        <div className="absolute w-2 h-2 bg-[black] dark:bg-white rounded-full top-[60%] left-[45%]" style={{ animation: 'float 7s ease-in-out infinite' }} />
-
-        <div className="absolute inset-0 opacity-5 dark:opacity-20">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#FF8C00] rounded-full filter blur-3xl animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-gray-50 dark:bg-background rounded-full filter blur-3xl animate-pulse" style={{animationDelay: '2s'}} />
-        </div>
-
-        <div className="relative z-10 text-center max-w-5xl mx-auto px-6">
-          <div className="inline-flex items-center px-6 py-3 rounded-full border border-[black] dark:border-white/20 text-sm tracking-widest uppercase mb-8 text-[black] dark:text-white bg-gray-50 dark:bg-background backdrop-blur-sm">
-            <div className="w-2 h-2 bg-[#FF8C00] rounded-full mr-3 animate-pulse" />
-            Nos solutions thermiques
-          </div>
-          
-          <SimpleWrapper>
-            <h1 className="text-6xl md:text-7xl lg:text-8xl font-extralight tracking-wide mb-8">
-              <span className="bg-gradient-to-r from-[#FF8C00] via-[black] to-[#FF8C00] dark:from-[#FFA500] dark:via-white dark:to-[#FFA500] bg-clip-text text-transparent">
-                Chauffage
-              </span>
-              <br />
-              <span className="bg-gradient-to-r from-[black] via-[#FF8C00] to-[black] dark:from-white dark:via-[#FFA500] dark:to-white bg-clip-text text-transparent">
-                ClimGO
-              </span>
-            </h1>
-          </SimpleWrapper>
-          
-          <SimpleWrapper>
-            <p className="text-xl md:text-2xl text-[black] dark:text-white mb-12 max-w-3xl mx-auto leading-relaxed font-light">
-              Découvrez nos solutions thermiques d'exception. Performance, économies et confort réunis dans des technologies de pointe.
-            </p>
-          </SimpleWrapper>
-          
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <button
-              onClick={() => solutionsRef.current?.scrollIntoView({ behavior: 'smooth' })}
-              className="group relative px-10 py-4 bg-gray-50 dark:bg-background text-[black] dark:text-white rounded-full font-medium transition-all duration-300 hover:scale-105 overflow-hidden border border-[black] dark:border-white/30"
+      <section className="relative min-h-[60vh] sm:min-h-[70vh] bg-gray-50 dark:bg-background overflow-hidden">
+        <div className="relative container mx-auto px-4 xs:px-5 sm:px-6 py-6 xs:py-8 sm:py-12 md:py-16 lg:py-20">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 items-center min-h-[40vh] sm:min-h-[50vh]">
+            {/* Contenu texte - Animation depuis la gauche */}
+            <div 
+              className="w-full max-w-2xl mx-auto lg:mx-0 text-center lg:text-left order-1 lg:order-1"
+              style={{ 
+                animation: 'slide-in-left 0.8s ease-out both'
+              }}
             >
-              <span className="relative z-10">Découvrir nos solutions</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-[black] to-[#FF8C00] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </button>
-            
-            <button className="group px-10 py-4 border border-[black] dark:border-white rounded-full font-medium transition-all duration-300 hover:border-[#FF8C00] hover:bg-[black]/5 text-[black] dark:text-white">
-              Demander un devis
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* Solutions Section */}
-      <section 
-        ref={solutionsRef} 
-        className="py-24 relative"
-
-      >
-        <div className="max-w-7xl mx-auto px-6">
-          
-          {/* Section Header */}
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-extralight mb-6 tracking-wide">
-              Nos <span className="text-[black] dark:text-white">Technologies</span>
-            </h2>
-            <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-[black] dark:via-white to-transparent mx-auto mb-8" />
-            <p className="text-xl text-[black] dark:text-white max-w-3xl mx-auto">
-              Chaque solution est pensée pour maximiser votre confort tout en optimisant vos économies d'énergie
-            </p>
-          </div>
-
-                    {/* Solutions en Colonne - Cartes Grandes */}
-          <div className="space-y-12">
-            {solutions.map((solution, index) => (
-              <div key={index} className="bg-gray-50 dark:bg-background rounded-3xl border border-gray-50 dark:border-background overflow-hidden backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                {index === 0 || index === 1 || index === 2 || index === 3 ? (
-                  // Toutes les cards avec image en fond complet
-                  <div 
-                    className="relative bg-center bg-no-repeat min-h-[600px] flex items-center"
-                    style={{ 
-                      backgroundImage: `url(${solution.image})`,
-                      backgroundPosition: 'center center',
-                      backgroundSize: 'cover'
-                    }}
-                  >
-                    {/* Overlay adaptatif selon le thème */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-white/85 via-white/50 to-transparent dark:from-black/70 dark:via-black/40 dark:to-transparent" />
-                    <div className="relative z-10 p-12 lg:p-16 max-w-xl">
-                      <div className="mb-8">
-                        <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-[black]/20 to-[#FF6B35]/20 border border-[#FF6B35] text-[#FF6B35] text-sm font-medium mb-6 backdrop-blur-sm shadow-lg">
-                          {solution.badge}
-                        </div>
-                        <h3 className="text-3xl md:text-4xl font-light mb-4 text-[black] dark:text-white">
-                          {solution.title}
-                        </h3>
-                        <p className="text-xl text-[#FF6B35] dark:text-[#FFA500] mb-6 font-light drop-shadow-sm">
-                          {solution.subtitle}
-                        </p>
-                      </div>
-                      <p className="text-[black] dark:text-white text-lg leading-relaxed mb-8 drop-shadow-sm">
-                        {solution.description}
-                      </p>
-                      <div className="space-y-4 mb-8">
-                        {solution.features.map((feature, i) => (
-                          <div key={i} className="flex items-center space-x-3">
-                            <div className="w-2 h-2 bg-[#FF6B35] dark:bg-[#FFA500] rounded-full flex-shrink-0" />
-                            <span className="text-[black] dark:text-white drop-shadow-sm">{feature}</span>
-                          </div>
-                        ))}
-                      </div>
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-start gap-4 sm:gap-0">
-                        <Link
-                          href="/contact"
-                          className="group px-8 py-3 bg-gradient-to-r from-[black] to-[#FF8C00] rounded-full text-white font-medium transition-all duration-300 hover:scale-105 text-center"
-                        >
-                          Devis gratuit
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                ) : (
-                  // Autres cards avec le layout original
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-                    {/* Content Side */}
-                    <div className="p-12 lg:p-16">
-                      <div className="mb-8">
-                        <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-[black]/20 to-[#FF6B35]/20 border border-[#FF6B35] text-[#FF6B35] text-sm font-medium mb-6 backdrop-blur-sm shadow-lg">
-                          {solution.badge}
-                        </div>
-                        <h3 className="text-3xl md:text-4xl font-light mb-4 text-[black] dark:text-white">
-                          {solution.title}
-                        </h3>
-                        <p className="text-xl text-[#FF8C00] mb-6 font-light">
-                          {solution.subtitle}
-                        </p>
-                      </div>
-                      <p className="text-[black] dark:text-white text-lg leading-relaxed mb-8">
-                        {solution.description}
-                      </p>
-                      <div className="space-y-4 mb-8">
-                        {solution.features.map((feature, i) => (
-                          <div key={i} className="flex items-center space-x-3">
-                            <div className="w-2 h-2 bg-[#FF8C00] rounded-full flex-shrink-0" />
-                            <span className="text-[black] dark:text-white">{feature}</span>
-                          </div>
-                        ))}
-                      </div>
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-center gap-4 sm:gap-0">
-                        <Link
-                          href="/contact"
-                          className="group px-8 py-3 bg-gradient-to-r from-[black] to-[#FF8C00] rounded-full text-white font-medium transition-all duration-300 hover:scale-105 text-center"
-                        >
-                          Devis gratuit
-                        </Link>
-                      </div>
-                    </div>
-
-                    {/* Image Side */}
-                    <div className="relative bg-gray-50 dark:bg-background flex items-center justify-center p-12">
-                      <div className="relative w-80 h-80">
-                        <Image
-                          src={solution.image}
-                          alt={solution.title}
-                          fill
-                          className="object-contain filter drop-shadow-2xl"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Advantages Section */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gray-50 dark:bg-background" />
-        
-        <div className="relative z-10 max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-extralight mb-8">
-              Pourquoi nous <span className="text-[black] dark:text-white">choisir</span> ?
-            </h2>
-            <p className="text-xl text-[black] dark:text-white max-w-2xl mx-auto">
-              L'alliance du savoir-faire technique et de l'excellence service
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {advantages.map((advantage, index) => (
-              <div
-                key={index}
-                className="group text-center p-8 rounded-2xl bg-gray-50 dark:bg-background border border-[black] dark:border-white/20 hover:border-white/50 dark:hover:border-black/50 transition-all duration-300"
-              >
-                <div className="text-5xl mb-6 transform group-hover:scale-110 transition-transform duration-300">
-                  {advantage.icon}
-                </div>
-                <h3 className="text-xl font-medium mb-4 text-[black] dark:text-white group-hover:text-[#FF8C00] transition-colors">
-                  {advantage.title}
-                </h3>
-                <p className="text-[black] dark:text-white/80 group-hover:text-[#FF8C00] transition-colors">
-                  {advantage.desc}
+              <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl font-bold lg:font-light tracking-tight mb-2 xs:mb-3 sm:mb-3 md:mb-4 lg:mb-6 text-[#03144A] dark:text-white break-words leading-tight">
+                <span className="bg-gradient-to-r from-[#FF8C00] via-[#03144A] to-[#FF8C00] dark:from-[#FFA500] dark:via-white dark:to-[#FFA500] bg-clip-text text-transparent">
+                  Pompe à Chaleur
+                </span>
+                <br />
+                <span className="bg-gradient-to-r from-[#03144A] via-[#FF8C00] to-[#03144A] dark:from-white dark:via-[#FFA500] dark:to-white bg-clip-text text-transparent">
+                  Air-Eau
+                </span>
+              </h1>
+              
+              <div className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-xl leading-relaxed text-gray-700 dark:text-gray-100 max-w-full lg:max-w-4xl mx-auto lg:mx-0 px-0 sm:px-2 lg:px-0 mb-4 xs:mb-6 sm:mb-6">
+                <p className="mb-3 font-light">
+                  Votre artisan chauffagiste <strong className="text-black dark:text-white font-semibold">RGE ClimGO</strong> vous propose<br />
+                  une large gamme de <strong className="text-black dark:text-white font-semibold">pompes à chaleur air-eau</strong>,<br />
+                  adaptées à vos besoins et à votre budget.
+                </p>
+                <p className="mb-3 font-light">
+                  Nous vous accompagnons dans toutes les étapes :<br />
+                  <strong className="text-black dark:text-white font-semibold">conseil</strong>, <strong className="text-black dark:text-white font-semibold">sélection du matériel</strong>, <strong className="text-black dark:text-white font-semibold">installation</strong> et <strong className="text-black dark:text-white font-semibold">entretien</strong>.
+                </p>
+                <p className="mb-3 font-light">
+                  ClimGO vous aide à bénéficier des <strong className="text-black dark:text-white font-semibold">aides d'État</strong><br />
+                  (MaPrimeRénov', CEE, TVA réduite) en déduisant directement<br />
+                  les montants sur votre facture.
+                </p>
+                <p className="mb-3 font-light">
+                  Les pompes à chaleur air-eau sont des systèmes<br />
+                  <strong className="text-black dark:text-white font-semibold">écologiques</strong> et <strong className="text-black dark:text-white font-semibold">économiques</strong> qui utilisent l'énergie gratuite<br />
+                  de l'air extérieur pour chauffer votre logement.
+                </p>
+                <p className="mb-3 font-light">
+                  Elles s'adaptent parfaitement aux habitations équipées<br />
+                  d'un <strong className="text-black dark:text-white font-semibold">plancher chauffant</strong> ou de <strong className="text-black dark:text-white font-semibold">radiateurs</strong>,<br />
+                  et conviennent en remplacement d'une chaudière.
+                </p>
+                <p className="mb-4 font-light">
+                  Contactez-nous pour plus d'informations ou pour<br />
+                  demander un <strong className="text-black dark:text-white font-semibold">devis gratuit</strong>.
                 </p>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* CTA Section - Optimisé Mobile */}
-      <section className="py-12 md:py-24 relative">
-        <div className="max-w-4xl mx-auto text-center px-4 md:px-6">
-          <div className="bg-gray-50 dark:bg-background rounded-2xl md:rounded-3xl p-8 md:p-16 border border-[black] dark:border-white/20 backdrop-blur-sm shadow-xl">
-            <h2 className="text-2xl md:text-4xl lg:text-5xl font-light mb-6 md:mb-8 leading-tight">
-              Prêt à optimiser votre
-              <br className="hidden sm:block" />
-              <span className="text-[#FF8C00]">confort thermique</span> ?
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start">
+                <a href="#solutions">
+                  <button className="px-8 sm:px-10 py-3 sm:py-4 bg-gray-50 dark:bg-gray-800 border border-black dark:border-white text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 text-sm sm:text-base font-semibold rounded-full transition-colors duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
+                    Découvrir nos solutions
+                  </button>
+                </a>
+                
+                <Link href="/contact">
+                  <button className="px-8 sm:px-10 py-3 sm:py-4 bg-gray-50 dark:bg-gray-800 border border-black dark:border-white text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 text-sm sm:text-base font-semibold rounded-full transition-colors duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
+                    Demander un devis
+                  </button>
+                </Link>
+              </div>
+            </div>
+            
+            {/* Cartes dans le hero - Animation depuis la droite */}
+            <div id="solutions" className="w-full max-w-2xl mx-auto lg:mx-0 order-2 lg:order-2">
+              <div className="grid grid-cols-1 gap-6">
+                {solutions.slice(0, 2).map((solution, index) => (
+                  <Link 
+                    key={index} 
+                    href="/contact" 
+                    className="block group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-white hover:-translate-y-2 h-[300px] sm:h-[320px] lg:h-[350px] cursor-pointer"
+                    style={{ 
+                      animation: `slide-in-right 0.8s ease-out ${index * 0.2}s both`
+                    }}
+                  >
+                    {/* Image en fond pour toutes les résolutions */}
+                    <div 
+                      className="absolute inset-0 bg-no-repeat bg-center bg-contain lg:bg-cover"
+                      style={{ 
+                        backgroundImage: `url(${solution.image})`,
+                        backgroundColor: '#f3f4f6'
+                      }}
+                    >
+                      {/* Overlay léger pour contraste sur desktop uniquement */}
+                      <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-white/40 via-white/20 to-transparent dark:from-black/40 dark:via-black/20 dark:to-transparent" />
+                    </div>
+                    
+                    {/* Bannière avec le titre - toujours visible sur mobile, au survol sur desktop */}
+                    <div className="absolute bottom-0 left-0 z-20 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-300 transform translate-y-0 lg:translate-y-2 lg:group-hover:translate-y-0">
+                      <div className="bg-white/90 dark:bg-black/90 lg:bg-white/60 lg:dark:bg-black/60 backdrop-blur-md text-black dark:text-white px-4 py-2 lg:px-6 lg:py-3 rounded-tr-2xl border border-white/30 dark:border-white/10">
+                        <h4 className="text-sm sm:text-base lg:text-lg xl:text-xl font-light tracking-wide">
+                          {solution.title}
+                        </h4>
+                      </div>
+                    </div>
+                 </Link>
+               ))}
+             </div>
+           </div>
+         </div>
+       </div>
+     </section>
+
+      {/* Section Information PAC Air-Eau */}
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-50 dark:bg-background">
+        <div className="container mx-auto px-4 xs:px-5 sm:px-6 max-w-4xl">
+          
+          {/* Bloc 1 */}
+          <div className="mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-black dark:text-white mb-4 sm:mb-6">
+              Qu'est-ce qu'une pompe à chaleur air-eau ?
             </h2>
-            
-            <p className="text-base md:text-xl text-[black] dark:text-white mb-8 md:mb-12 leading-relaxed">
-              Nos experts vous accompagnent dans le choix de la solution parfaite pour votre habitat
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed font-light">
+              La <strong className="text-black dark:text-white font-semibold">pompe à chaleur air-eau</strong> est un système de chauffage performant qui capte les calories présentes dans l'air extérieur pour les transformer en chaleur, utilisée ensuite pour chauffer l'eau de votre logement.
             </p>
-            
-            <Link
-              href="/contact"
-              className="inline-block px-8 md:px-10 py-3 md:py-4 bg-gradient-to-r from-[black] to-[#FF8C00] rounded-full text-white font-medium transition-all duration-300 hover:scale-105 text-sm md:text-base"
-            >
-              Demander un devis gratuit
-            </Link>
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mt-4 font-light">
+              Cette eau alimente votre chauffage central (radiateurs, plancher chauffant) et peut également servir à produire l'eau chaude sanitaire.
+            </p>
           </div>
+
+          {/* Séparateur */}
+          <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-[#FF8C00] to-transparent mx-auto mb-12 sm:mb-16" />
+
+          {/* Bloc 2 */}
+          <div className="mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-black dark:text-white mb-4 sm:mb-6">
+              Efficacité énergétique et économies
+            </h2>
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed font-light">
+              L'un des grands atouts de la pompe à chaleur air-eau est son <strong className="text-black dark:text-white font-semibold">rendement exceptionnel</strong>.
+            </p>
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mt-4 font-light">
+              En exploitant une énergie gratuite et naturelle, elle produit plus d'énergie qu'elle n'en consomme, ce qui se traduit par des <strong className="text-black dark:text-white font-semibold">économies importantes</strong> sur vos factures de chauffage.
+            </p>
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mt-4 font-light">
+              C'est une solution durable, efficace et particulièrement intéressante sur le long terme.
+            </p>
+          </div>
+
+          {/* Séparateur */}
+          <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-[#FF8C00] to-transparent mx-auto mb-12 sm:mb-16" />
+
+          {/* Bloc 3 */}
+          <div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-black dark:text-white mb-4 sm:mb-6">
+              Respect de l'environnement
+            </h2>
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed font-light">
+              Puisant son énergie dans l'air, une <strong className="text-black dark:text-white font-semibold">ressource renouvelable et inépuisable</strong>, la pompe à chaleur air-eau contribue à réduire votre empreinte carbone.
+            </p>
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mt-4 font-light">
+              Elle représente une <strong className="text-black dark:text-white font-semibold">alternative écologique</strong> aux systèmes de chauffage classiques, tout en assurant un confort thermique optimal tout au long de l'année.
+            </p>
+          </div>
+
         </div>
-        <nav className="max-w-7xl mx-auto px-4 text-sm text-gray-600 dark:text-gray-300 mt-12 mb-24" aria-label="Fil d'Ariane">
-          <ol className="list-reset flex items-center space-x-2">
-            <li>
-              <Link href="/" className="hover:underline text-[#FF8C00] dark:text-[#FFA500]">Accueil</Link>
-              <span className="mx-2 dark:text-gray-400">/</span>
-            </li>
-            <li>
-              <Link href="/services" className="hover:underline text-[#FF8C00] dark:text-[#FFA500]">Nos services</Link>
-              <span className="mx-2 dark:text-gray-400">/</span>
-            </li>
-            <li className="text-gray-500 dark:text-gray-400">Chauffage</li>
-          </ol>
-        </nav>
       </section>
 
       {/* Location Map Section */}
-              <LazyGoogleMaps backgroundColor="bg-gray-50 dark:bg-background" />
+      <LazyGoogleMaps backgroundColor="bg-gray-50 dark:bg-background" />
 
       <style jsx global>{`
         @keyframes float {
           0% { transform: translateY(0px) translateX(0px); }
           50% { transform: translateY(-10px) translateX(5px); }
           100% { transform: translateY(0px) translateX(0px); }
+        }
+        @keyframes slide-in-left {
+          from {
+            opacity: 0;
+            transform: translateX(-50px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+        @keyframes slide-in-right {
+          from {
+            opacity: 0;
+            transform: translateX(50px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
         }
       `}</style>
     </div>

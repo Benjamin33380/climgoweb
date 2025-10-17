@@ -190,31 +190,31 @@ export default function ClimatisationPage() {
                 </span>
               </h1>
               
-              <div className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-xl leading-relaxed text-gray-900 dark:text-gray-100 max-w-full lg:max-w-4xl mx-auto lg:mx-0 px-0 sm:px-2 lg:px-0 mb-4 xs:mb-6 sm:mb-6">
-                <p className="mb-3">
-                  Votre artisan <strong className="text-gray-900 dark:text-white font-semibold">ClimGO</strong> <strong className="text-gray-900 dark:text-white font-semibold">installe</strong>, <strong className="text-gray-900 dark:text-white font-semibold">entretient</strong> et <strong className="text-gray-900 dark:text-white font-semibold">dépanne</strong><br />
-                  vos systèmes de <strong className="text-gray-900 dark:text-white font-semibold">climatisation réversible</strong> (pompes à chaleur air/air)<br />
-                  partout en <strong className="text-gray-900 dark:text-white font-semibold">Gironde</strong>.
+              <div className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-xl leading-relaxed text-gray-700 dark:text-gray-100 max-w-full lg:max-w-4xl mx-auto lg:mx-0 px-0 sm:px-2 lg:px-0 mb-4 xs:mb-6 sm:mb-6">
+                <p className="mb-3 font-light">
+                  Votre artisan <strong className="text-black dark:text-white font-semibold">ClimGO</strong> <strong className="text-black dark:text-white font-semibold">installe</strong>, <strong className="text-black dark:text-white font-semibold">entretient</strong> et <strong className="text-black dark:text-white font-semibold">dépanne</strong><br />
+                  vos systèmes de <strong className="text-black dark:text-white font-semibold">climatisation réversible</strong> (pompes à chaleur air/air)<br />
+                  partout en <strong className="text-black dark:text-white font-semibold">Gironde</strong>.
                 </p>
-                <p className="mb-3">
-                  <strong className="text-gray-900 dark:text-white font-semibold">Murale</strong>, <strong className="text-gray-900 dark:text-white font-semibold">gainable</strong>, <strong className="text-gray-900 dark:text-white font-semibold">console</strong> ou <strong className="text-gray-900 dark:text-white font-semibold">cassette</strong> —<br />
-                  nous proposons des solutions <strong className="text-gray-900 dark:text-white font-semibold">sur mesure</strong>, <strong className="text-gray-900 dark:text-white font-semibold">performantes</strong><br />
+                <p className="mb-3 font-light">
+                  <strong className="text-black dark:text-white font-semibold">Murale</strong>, <strong className="text-black dark:text-white font-semibold">gainable</strong>, <strong className="text-black dark:text-white font-semibold">console</strong> ou <strong className="text-black dark:text-white font-semibold">cassette</strong> —<br />
+                  nous proposons des solutions <strong className="text-black dark:text-white font-semibold">sur mesure</strong>, <strong className="text-black dark:text-white font-semibold">performantes</strong><br />
                   et adaptées à votre budget.
                 </p>
-                <p className="mb-3">
-                  Que vous souhaitiez <strong className="text-gray-900 dark:text-white font-semibold">rafraîchir</strong> votre logement en été<br />
-                  ou le <strong className="text-gray-900 dark:text-white font-semibold">chauffer</strong> en hiver, nos équipements garantissent<br />
-                  <strong className="text-gray-900 dark:text-white font-semibold">confort</strong>, <strong className="text-gray-900 dark:text-white font-semibold">performance</strong> et <strong className="text-gray-900 dark:text-white font-semibold">économies d'énergie</strong><br />
+                <p className="mb-3 font-light">
+                  Que vous souhaitiez <strong className="text-black dark:text-white font-semibold">rafraîchir</strong> votre logement en été<br />
+                  ou le <strong className="text-black dark:text-white font-semibold">chauffer</strong> en hiver, nos équipements garantissent<br />
+                  <strong className="text-black dark:text-white font-semibold">confort</strong>, <strong className="text-black dark:text-white font-semibold">performance</strong> et <strong className="text-black dark:text-white font-semibold">économies d'énergie</strong><br />
                   au quotidien.
                 </p>
-                <p className="mb-3">
+                <p className="mb-3 font-light">
                   Nous vous accompagnons à chaque étape :<br />
-                  <strong className="text-gray-900 dark:text-white font-semibold">conseil</strong>, <strong className="text-gray-900 dark:text-white font-semibold">sélection du matériel</strong>, <strong className="text-gray-900 dark:text-white font-semibold">installation</strong><br />
-                  et <strong className="text-gray-900 dark:text-white font-semibold">maintenance</strong>.
+                  <strong className="text-black dark:text-white font-semibold">conseil</strong>, <strong className="text-black dark:text-white font-semibold">sélection du matériel</strong>, <strong className="text-black dark:text-white font-semibold">installation</strong><br />
+                  et <strong className="text-black dark:text-white font-semibold">maintenance</strong>.
                 </p>
-                <p className="mb-4">
+                <p className="mb-4 font-light">
                   Contactez-nous dès aujourd'hui pour obtenir<br />
-                  un <strong className="text-gray-900 dark:text-white font-semibold">devis gratuit</strong> et découvrir la solution<br />
+                  un <strong className="text-black dark:text-white font-semibold">devis gratuit</strong> et découvrir la solution<br />
                   la plus adaptée à votre habitat.
                 </p>
               </div>
@@ -286,6 +286,88 @@ export default function ClimatisationPage() {
          </div>
        </div>
      </section>
+
+      {/* Section Information Climatisation */}
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-50 dark:bg-background">
+        <div className="container mx-auto px-4 xs:px-5 sm:px-6 max-w-4xl">
+          
+          {/* Bloc 1 */}
+          <div className="mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-black dark:text-white mb-4 sm:mb-6">
+              Évaluation et conseil technique
+            </h2>
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed font-light">
+              Chez <strong className="text-black dark:text-white font-semibold">ClimGO</strong>, chaque projet débute par une <strong className="text-black dark:text-white font-semibold">visite technique personnalisée</strong>.
+            </p>
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mt-4 font-light">
+              Cette étape nous permet de comprendre précisément vos besoins en matière de chauffage et de climatisation.
+            </p>
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mt-4 font-light">
+              Nos experts en pompes à chaleur air/air vous accompagnent dans le choix du système le plus adapté à votre logement, à votre confort et à votre budget.
+            </p>
+          </div>
+
+          {/* Séparateur */}
+          <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-[#2563EB] to-transparent mx-auto mb-12 sm:mb-16" />
+
+          {/* Bloc 2 */}
+          <div className="mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-black dark:text-white mb-4 sm:mb-6">
+              Installation de votre système
+            </h2>
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed font-light">
+              L'installation de votre pompe à chaleur est assurée par nos <strong className="text-black dark:text-white font-semibold">techniciens certifiés et expérimentés</strong>.
+            </p>
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mt-4 font-light">
+              Nous réalisons des interventions soignées et conformes aux normes en vigueur, garantissant la <strong className="text-black dark:text-white font-semibold">performance et la durabilité</strong> de votre équipement.
+            </p>
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mt-4 font-light">
+              Nos équipes veillent à intervenir de manière efficace et organisée, afin de limiter toute gêne dans votre quotidien.
+            </p>
+          </div>
+
+          {/* Séparateur */}
+          <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-[#2563EB] to-transparent mx-auto mb-12 sm:mb-16" />
+
+          {/* Bloc 3 */}
+          <div className="mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-black dark:text-white mb-4 sm:mb-6">
+              Maintenance préventive
+            </h2>
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed font-light">
+              Pour conserver un <strong className="text-black dark:text-white font-semibold">rendement optimal</strong> et prolonger la durée de vie de votre installation, un entretien régulier est essentiel.
+            </p>
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mt-4 font-light">
+              ClimGO propose des <strong className="text-black dark:text-white font-semibold">contrats de maintenance complets</strong>, comprenant :
+            </p>
+            <ul className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mt-4 ml-6 space-y-2 font-light">
+              <li>• une visite annuelle de contrôle,</li>
+              <li>• le nettoyage des équipements,</li>
+              <li>• et la vérification des performances avec préconisation de remplacement si nécessaire.</li>
+            </ul>
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mt-4 font-light">
+              Nous veillons à ce que votre système fonctionne toujours dans les meilleures conditions.
+            </p>
+          </div>
+
+          {/* Séparateur */}
+          <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-[#2563EB] to-transparent mx-auto mb-12 sm:mb-16" />
+
+          {/* Bloc 4 */}
+          <div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-black dark:text-white mb-4 sm:mb-6">
+              Dépannage rapide et efficace
+            </h2>
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed font-light">
+              En cas de panne ou de dysfonctionnement, nos <strong className="text-black dark:text-white font-semibold">techniciens spécialisés interviennent rapidement</strong> pour rétablir le bon fonctionnement de votre installation.
+            </p>
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mt-4 font-light">
+              Qu'il s'agisse d'un incident mineur ou d'une défaillance plus complexe, nous disposons des compétences nécessaires pour diagnostiquer et réparer tout type de pompe à chaleur, quelle que soit la marque.
+            </p>
+          </div>
+
+        </div>
+      </section>
 
       {/* Location Map Section */}
               <LazyGoogleMaps backgroundColor="bg-gray-50 dark:bg-background" />
