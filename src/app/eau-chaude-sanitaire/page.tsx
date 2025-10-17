@@ -108,27 +108,27 @@ export default function EauChaudeSanitairePage() {
               
               <div className="text-base xs:text-lg sm:text-xl md:text-xl lg:text-xl leading-relaxed text-gray-700 dark:text-gray-100 max-w-full lg:max-w-4xl mx-auto lg:mx-0 px-0 sm:px-2 lg:px-0 mb-6 xs:mb-7 sm:mb-8">
                 <p className="mb-3 font-light">
-                  Le <strong className="text-black dark:text-white font-semibold">chauffe-eau</strong> est un élément essentiel<br />
-                  pour assurer votre <strong className="text-black dark:text-white font-semibold">confort</strong> au quotidien.
+                  Le <strong className="text-black dark:text-white font-medium">chauffe-eau</strong> est un élément essentiel<br />
+                  pour assurer votre <strong className="text-black dark:text-white font-medium">confort</strong> au quotidien.
                 </p>
                 <p className="mb-3 font-light">
-                  Chez <strong className="text-black dark:text-white font-semibold">ClimGO</strong>, nous proposons plusieurs solutions<br />
-                  selon vos besoins : le <strong className="text-black dark:text-white font-semibold">cumulus électrique</strong>,<br />
-                  le <strong className="text-black dark:text-white font-semibold">chauffe-eau thermodynamique</strong> et le modèle <strong className="text-black dark:text-white font-semibold">extra-plat</strong>.
+                  Chez <strong className="text-black dark:text-white font-medium">ClimGO</strong>, nous proposons plusieurs solutions<br />
+                  selon vos besoins : le <strong className="text-black dark:text-white font-medium">cumulus électrique</strong>,<br />
+                  le <strong className="text-black dark:text-white font-medium">chauffe-eau thermodynamique</strong> et le modèle <strong className="text-black dark:text-white font-medium">extra-plat</strong>.
                 </p>
                 <p className="mb-3 font-light">
-                  <strong className="text-black dark:text-white font-semibold">Fiables</strong> et <strong className="text-black dark:text-white font-semibold">performants</strong>, nos équipements assurent<br />
-                  une production d'eau chaude <strong className="text-black dark:text-white font-semibold">constante</strong> et <strong className="text-black dark:text-white font-semibold">économique</strong>,<br />
+                  <strong className="text-black dark:text-white font-medium">Fiables</strong> et <strong className="text-black dark:text-white font-medium">performants</strong>, nos équipements assurent<br />
+                  une production d'eau chaude <strong className="text-black dark:text-white font-medium">constante</strong> et <strong className="text-black dark:text-white font-medium">économique</strong>,<br />
                   tout en s'intégrant harmonieusement à votre intérieur.
                 </p>
                 <p className="mb-3 font-light">
                   Grâce à nos installations soignées et à notre expertise<br />
-                  <strong className="text-black dark:text-white font-semibold">certifiée RGE</strong>, vous profitez d'un confort durable<br />
-                  et de réelles <strong className="text-black dark:text-white font-semibold">économies d'énergie</strong>.
+                  <strong className="text-black dark:text-white font-medium">certifiée RGE</strong>, vous profitez d'un confort durable<br />
+                  et de réelles <strong className="text-black dark:text-white font-medium">économies d'énergie</strong>.
                 </p>
                 <p className="mb-4 font-light">
                   Contactez-nous pour plus d'informations ou pour<br />
-                  demander un <strong className="text-black dark:text-white font-semibold">devis gratuit</strong>.
+                  demander un <strong className="text-black dark:text-white font-medium">devis gratuit</strong>.
                 </p>
               </div>
 
@@ -197,10 +197,10 @@ export default function EauChaudeSanitairePage() {
               Qu'est-ce qu'un ballon thermodynamique ?
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed font-light">
-              Le <strong className="text-black dark:text-white font-semibold">ballon thermodynamique</strong> associe les performances d'une pompe à chaleur et d'un ballon d'eau chaude sanitaire.
+              Le <strong className="text-black dark:text-white font-medium">ballon thermodynamique</strong> associe les performances d'une pompe à chaleur et d'un ballon d'eau chaude sanitaire.
             </p>
             <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mt-4 font-light">
-              Ce système capte les <strong className="text-black dark:text-white font-semibold">calories naturellement présentes dans l'air ambiant</strong> pour chauffer l'eau, offrant ainsi une solution bien plus économe qu'un chauffe-eau électrique classique.
+              Ce système capte les <strong className="text-black dark:text-white font-medium">calories naturellement présentes dans l'air ambiant</strong> pour chauffer l'eau, offrant ainsi une solution bien plus économe qu'un chauffe-eau électrique classique.
             </p>
           </div>
 
@@ -213,13 +213,13 @@ export default function EauChaudeSanitairePage() {
               Efficacité énergétique et économies
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed font-light">
-              Grâce à son <strong className="text-black dark:text-white font-semibold">haut rendement énergétique</strong>, le ballon thermodynamique utilise une énergie renouvelable et gratuite : l'air.
+              Grâce à son <strong className="text-black dark:text-white font-medium">haut rendement énergétique</strong>, le ballon thermodynamique utilise une énergie renouvelable et gratuite : l'air.
             </p>
             <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mt-4 font-light">
               Il permet de réduire considérablement la consommation électrique tout en assurant la même quantité d'eau chaude.
             </p>
             <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mt-4 font-light">
-              Résultat : <strong className="text-black dark:text-white font-semibold">jusqu'à 70 % d'économies</strong> sur vos factures par rapport à un système traditionnel, tout en limitant votre impact environnemental.
+              Résultat : <strong className="text-black dark:text-white font-medium">jusqu'à 70 % d'économies</strong> sur vos factures par rapport à un système traditionnel, tout en limitant votre impact environnemental.
             </p>
           </div>
 
@@ -232,10 +232,10 @@ export default function EauChaudeSanitairePage() {
               Confort et fiabilité
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed font-light">
-              Le ballon thermodynamique garantit une <strong className="text-black dark:text-white font-semibold">production d'eau chaude constante et homogène</strong>, même en cas de forte demande.
+              Le ballon thermodynamique garantit une <strong className="text-black dark:text-white font-medium">production d'eau chaude constante et homogène</strong>, même en cas de forte demande.
             </p>
             <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mt-4 font-light">
-              Sa conception robuste et son fonctionnement automatisé en font un <strong className="text-black dark:text-white font-semibold">équipement fiable et durable</strong>, nécessitant peu d'entretien au quotidien.
+              Sa conception robuste et son fonctionnement automatisé en font un <strong className="text-black dark:text-white font-medium">équipement fiable et durable</strong>, nécessitant peu d'entretien au quotidien.
             </p>
             <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mt-4 font-light">
               C'est la solution idéale pour concilier confort, performance et économies d'énergie.

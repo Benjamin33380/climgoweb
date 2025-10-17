@@ -88,32 +88,32 @@ export default function ChauffagePage() {
               
               <div className="text-base xs:text-lg sm:text-xl md:text-xl lg:text-xl leading-relaxed text-gray-700 dark:text-gray-100 max-w-full lg:max-w-4xl mx-auto lg:mx-0 px-0 sm:px-2 lg:px-0 mb-6 xs:mb-7 sm:mb-8">
                 <p className="mb-3 font-light">
-                  Votre artisan chauffagiste <strong className="text-black dark:text-white font-semibold">RGE ClimGO</strong> vous propose<br />
-                  une large gamme de <strong className="text-black dark:text-white font-semibold">pompes à chaleur air-eau</strong>,<br />
+                  Votre artisan chauffagiste <strong className="text-black dark:text-white font-medium">RGE ClimGO</strong> vous propose<br />
+                  une large gamme de <strong className="text-black dark:text-white font-medium">pompes à chaleur air-eau</strong>,<br />
                   adaptées à vos besoins et à votre budget.
                 </p>
                 <p className="mb-3 font-light">
                   Nous vous accompagnons dans toutes les étapes :<br />
-                  <strong className="text-black dark:text-white font-semibold">conseil</strong>, <strong className="text-black dark:text-white font-semibold">sélection du matériel</strong>, <strong className="text-black dark:text-white font-semibold">installation</strong> et <strong className="text-black dark:text-white font-semibold">entretien</strong>.
+                  <strong className="text-black dark:text-white font-medium">conseil</strong>, <strong className="text-black dark:text-white font-medium">sélection du matériel</strong>, <strong className="text-black dark:text-white font-medium">installation</strong> et <strong className="text-black dark:text-white font-medium">entretien</strong>.
                 </p>
                 <p className="mb-3 font-light">
-                  ClimGO vous aide à bénéficier des <strong className="text-black dark:text-white font-semibold">aides d'État</strong><br />
+                  ClimGO vous aide à bénéficier des <strong className="text-black dark:text-white font-medium">aides d'État</strong><br />
                   (MaPrimeRénov', CEE, TVA réduite) en déduisant directement<br />
                   les montants sur votre facture.
                 </p>
                 <p className="mb-3 font-light">
                   Les pompes à chaleur air-eau sont des systèmes<br />
-                  <strong className="text-black dark:text-white font-semibold">écologiques</strong> et <strong className="text-black dark:text-white font-semibold">économiques</strong> qui utilisent l'énergie gratuite<br />
+                  <strong className="text-black dark:text-white font-medium">écologiques</strong> et <strong className="text-black dark:text-white font-medium">économiques</strong> qui utilisent l'énergie gratuite<br />
                   de l'air extérieur pour chauffer votre logement.
                 </p>
                 <p className="mb-3 font-light">
                   Elles s'adaptent parfaitement aux habitations équipées<br />
-                  d'un <strong className="text-black dark:text-white font-semibold">plancher chauffant</strong> ou de <strong className="text-black dark:text-white font-semibold">radiateurs</strong>,<br />
+                  d'un <strong className="text-black dark:text-white font-medium">plancher chauffant</strong> ou de <strong className="text-black dark:text-white font-medium">radiateurs</strong>,<br />
                   et conviennent en remplacement d'une chaudière.
                 </p>
                 <p className="mb-4 font-light">
                   Contactez-nous pour plus d'informations ou pour<br />
-                  demander un <strong className="text-black dark:text-white font-semibold">devis gratuit</strong>.
+                  demander un <strong className="text-black dark:text-white font-medium">devis gratuit</strong>.
                 </p>
               </div>
 
@@ -182,7 +182,7 @@ export default function ChauffagePage() {
               Qu'est-ce qu'une pompe à chaleur air-eau ?
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed font-light">
-              La <strong className="text-black dark:text-white font-semibold">pompe à chaleur air-eau</strong> est un système de chauffage performant qui capte les calories présentes dans l'air extérieur pour les transformer en chaleur, utilisée ensuite pour chauffer l'eau de votre logement.
+              La <strong className="text-black dark:text-white font-medium">pompe à chaleur air-eau</strong> est un système de chauffage performant qui capte les calories présentes dans l'air extérieur pour les transformer en chaleur, utilisée ensuite pour chauffer l'eau de votre logement.
             </p>
             <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mt-4 font-light">
               Cette eau alimente votre chauffage central (radiateurs, plancher chauffant) et peut également servir à produire l'eau chaude sanitaire.
@@ -198,10 +198,10 @@ export default function ChauffagePage() {
               Efficacité énergétique et économies
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed font-light">
-              L'un des grands atouts de la pompe à chaleur air-eau est son <strong className="text-black dark:text-white font-semibold">rendement exceptionnel</strong>.
+              L'un des grands atouts de la pompe à chaleur air-eau est son <strong className="text-black dark:text-white font-medium">rendement exceptionnel</strong>.
             </p>
             <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mt-4 font-light">
-              En exploitant une énergie gratuite et naturelle, elle produit plus d'énergie qu'elle n'en consomme, ce qui se traduit par des <strong className="text-black dark:text-white font-semibold">économies importantes</strong> sur vos factures de chauffage.
+              En exploitant une énergie gratuite et naturelle, elle produit plus d'énergie qu'elle n'en consomme, ce qui se traduit par des <strong className="text-black dark:text-white font-medium">économies importantes</strong> sur vos factures de chauffage.
             </p>
             <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mt-4 font-light">
               C'est une solution durable, efficace et particulièrement intéressante sur le long terme.
@@ -217,10 +217,10 @@ export default function ChauffagePage() {
               Respect de l'environnement
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed font-light">
-              Puisant son énergie dans l'air, une <strong className="text-black dark:text-white font-semibold">ressource renouvelable et inépuisable</strong>, la pompe à chaleur air-eau contribue à réduire votre empreinte carbone.
+              Puisant son énergie dans l'air, une <strong className="text-black dark:text-white font-medium">ressource renouvelable et inépuisable</strong>, la pompe à chaleur air-eau contribue à réduire votre empreinte carbone.
             </p>
             <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mt-4 font-light">
-              Elle représente une <strong className="text-black dark:text-white font-semibold">alternative écologique</strong> aux systèmes de chauffage classiques, tout en assurant un confort thermique optimal tout au long de l'année.
+              Elle représente une <strong className="text-black dark:text-white font-medium">alternative écologique</strong> aux systèmes de chauffage classiques, tout en assurant un confort thermique optimal tout au long de l'année.
             </p>
           </div>
 
