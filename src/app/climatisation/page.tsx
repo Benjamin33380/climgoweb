@@ -177,7 +177,7 @@ export default function ClimatisationPage() {
             <div 
               className="w-full max-w-2xl mx-auto lg:mx-0 text-center lg:text-left order-1 lg:order-1"
               style={{ 
-                animation: 'slide-in-left 0.8s ease-out both'
+                animation: 'slide-in-left 1.2s ease-out both'
               }}
             >
               <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl font-bold lg:font-light tracking-tight mb-2 xs:mb-3 sm:mb-3 md:mb-4 lg:mb-6 text-[#03144A] dark:text-white break-words leading-tight">
@@ -244,7 +244,7 @@ export default function ClimatisationPage() {
                     href="/contact" 
                     className="block group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-white hover:-translate-y-2 h-[200px] sm:h-[180px] lg:h-[160px] cursor-pointer"
                     style={{ 
-                      animation: `slide-in-right 0.8s ease-out ${index * 0.2}s both`
+                      animation: `slide-in-right 1.2s ease-out ${index * 0.2}s both`
                     }}
                   >
                     {/* Version MOBILE - Image simple */}
@@ -377,6 +377,26 @@ export default function ClimatisationPage() {
           0% { transform: translateY(0px) translateX(0px); }
           50% { transform: translateY(-10px) translateX(5px); }
           100% { transform: translateY(0px) translateX(0px); }
+        }
+        @keyframes slide-in-left {
+          from {
+            opacity: 0;
+            transform: translateX(-50px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+        @keyframes slide-in-right {
+          from {
+            opacity: 0;
+            transform: translateX(50px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
         }
       `}</style>
     </div>

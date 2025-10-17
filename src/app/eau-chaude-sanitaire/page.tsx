@@ -93,7 +93,7 @@ export default function EauChaudeSanitairePage() {
             <div 
               className="w-full max-w-2xl mx-auto lg:mx-0 text-center lg:text-left order-1 lg:order-1"
               style={{ 
-                animation: 'slide-in-left 0.8s ease-out both'
+                animation: 'slide-in-left 1.2s ease-out both'
               }}
             >
               <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl font-bold lg:font-light tracking-tight mb-2 xs:mb-3 sm:mb-3 md:mb-4 lg:mb-6 text-[#03144A] dark:text-white break-words leading-tight">
@@ -156,7 +156,7 @@ export default function EauChaudeSanitairePage() {
                     href="/contact" 
                     className="block group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-white hover:-translate-y-2 h-[400px] sm:h-[450px] lg:h-[500px] cursor-pointer"
                     style={{ 
-                      animation: `slide-in-right 0.8s ease-out ${index * 0.2}s both`
+                      animation: `slide-in-right 1.2s ease-out ${index * 0.2}s both`
                     }}
                   >
                     {/* Image en fond pour toutes les résolutions */}
