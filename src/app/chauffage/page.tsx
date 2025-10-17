@@ -71,7 +71,7 @@ export default function ChauffagePage() {
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 items-center min-h-[40vh] sm:min-h-[50vh]">
             {/* Contenu texte - Animation depuis la gauche */}
             <div 
-              className="w-full max-w-2xl mx-auto lg:mx-0 text-center lg:text-left order-1 lg:order-1"
+              className="w-full max-w-2xl mx-auto lg:mx-0 text-left order-1 lg:order-1"
               style={{ 
                 animation: 'slide-in-left 1.2s ease-out both'
               }}
@@ -117,7 +117,7 @@ export default function ChauffagePage() {
                 </p>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start">
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-start">
                 <a href="#solutions">
                   <button className="px-10 sm:px-12 py-4 sm:py-4 bg-gray-50 dark:bg-gray-800 border border-black dark:border-white text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 text-base sm:text-lg font-semibold rounded-full transition-colors duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
                     Découvrir nos solutions
