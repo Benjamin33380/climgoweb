@@ -96,7 +96,7 @@ export default function EauChaudeSanitairePage() {
                 animation: 'slide-in-left 1.2s ease-out both'
               }}
             >
-              <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl font-bold lg:font-light tracking-tight mb-2 xs:mb-3 sm:mb-3 md:mb-4 lg:mb-6 text-[#03144A] dark:text-white break-words leading-tight">
+              <h1 className="text-3xl xs:text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl font-bold lg:font-light tracking-tight mb-4 xs:mb-5 sm:mb-5 md:mb-6 lg:mb-8 text-[#03144A] dark:text-white break-words leading-tight">
                 <span className="bg-gradient-to-r from-[#FF6B6B] via-[#03144A] to-[#FF6B6B] dark:from-[#FF8A8A] dark:via-white dark:to-[#FF8A8A] bg-clip-text text-transparent">
                   Chauffe-eau
                 </span>
@@ -106,7 +106,7 @@ export default function EauChaudeSanitairePage() {
                 </span>
               </h1>
               
-              <div className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-xl leading-relaxed text-gray-700 dark:text-gray-100 max-w-full lg:max-w-4xl mx-auto lg:mx-0 px-0 sm:px-2 lg:px-0 mb-4 xs:mb-6 sm:mb-6">
+              <div className="text-base xs:text-lg sm:text-xl md:text-xl lg:text-xl leading-relaxed text-gray-700 dark:text-gray-100 max-w-full lg:max-w-4xl mx-auto lg:mx-0 px-0 sm:px-2 lg:px-0 mb-6 xs:mb-7 sm:mb-8">
                 <p className="mb-3 font-light">
                   Le <strong className="text-black dark:text-white font-semibold">chauffe-eau</strong> est un élément essentiel<br />
                   pour assurer votre <strong className="text-black dark:text-white font-semibold">confort</strong> au quotidien.
@@ -134,13 +134,13 @@ export default function EauChaudeSanitairePage() {
 
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start">
                 <a href="#solutions">
-                  <button className="px-8 sm:px-10 py-3 sm:py-4 bg-gray-50 dark:bg-gray-800 border border-black dark:border-white text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 text-sm sm:text-base font-semibold rounded-full transition-colors duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
+                  <button className="px-10 sm:px-12 py-4 sm:py-4 bg-gray-50 dark:bg-gray-800 border border-black dark:border-white text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 text-base sm:text-lg font-semibold rounded-full transition-colors duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
                     Découvrir nos solutions
                   </button>
                 </a>
                 
                 <Link href="/contact">
-                  <button className="px-8 sm:px-10 py-3 sm:py-4 bg-gray-50 dark:bg-gray-800 border border-black dark:border-white text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 text-sm sm:text-base font-semibold rounded-full transition-colors duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
+                  <button className="px-10 sm:px-12 py-4 sm:py-4 bg-gray-50 dark:bg-gray-800 border border-black dark:border-white text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 text-base sm:text-lg font-semibold rounded-full transition-colors duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
                     Demander un devis
                   </button>
                 </Link>
