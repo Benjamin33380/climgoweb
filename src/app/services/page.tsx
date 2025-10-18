@@ -5,6 +5,23 @@ import Link from 'next/link';
 import LazyGoogleMaps from '@/components/LazyGoogleMaps';
 
 export default function PompeAChaleurPage() {
+  const solutions = [
+    {
+      id: 'climatisation-murale',
+      title: "Climatisation murale",
+      image: "/outro/cardclim.png",
+    },
+    {
+      id: 'chauffage-ecs',
+      title: "Chauffage avec production d'eau chaude sanitaire",
+      image: "/img/uipacspacex.png",
+    },
+    {
+      id: 'thermodynamique',
+      title: "Thermodynamique",
+      image: "/img/ballonecs.png",
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-white dark:bg-[#0f172a]">
@@ -57,24 +74,54 @@ export default function PompeAChaleurPage() {
                 </p>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-start">
-                <Link href="/climatisation">
-                  <button className="px-10 sm:px-12 py-4 sm:py-4 bg-gray-50 dark:bg-gray-800 border border-black dark:border-white text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 text-base sm:text-lg font-semibold rounded-full transition-colors duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
-                    Climatisation
-                  </button>
-                </Link>
-                
-                <Link href="/chauffage">
-                  <button className="px-10 sm:px-12 py-4 sm:py-4 bg-gray-50 dark:bg-gray-800 border border-black dark:border-white text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 text-base sm:text-lg font-semibold rounded-full transition-colors duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
-                    Chauffage
-                  </button>
-                </Link>
+              {/* Cartes des solutions */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                {solutions.map((solution, index) => (
+                  <Link 
+                    key={index} 
+                    href="/contact" 
+                    className="block group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-white hover:-translate-y-2 h-[250px] sm:h-[280px] lg:h-[300px] cursor-pointer"
+                    style={{ 
+                      animation: `slide-in-right 1.2s ease-out ${index * 0.2}s both`
+                    }}
+                  >
+                    {/* Version MOBILE - Image simple */}
+                    <img
+                      src={solution.image}
+                      alt={solution.title}
+                      className="lg:hidden absolute inset-0 w-full h-full object-cover"
+                    />
+                    
+                    {/* Version DESKTOP */}
+                    <div 
+                      className="hidden lg:block absolute inset-0 bg-no-repeat bg-cover transition-transform duration-300 group-hover:scale-105"
+                      style={{ 
+                        backgroundImage: `url(${solution.image})`,
+                        backgroundPosition: 'center center'
+                      }}
+                    >
+                      {/* Overlay pour contraste - desktop uniquement */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-white/40 via-white/20 to-transparent dark:from-black/40 dark:via-black/20 dark:to-transparent group-hover:from-white/30 group-hover:via-white/15 group-hover:to-transparent dark:group-hover:from-black/30 dark:group-hover:via-black/15 dark:group-hover:to-transparent transition-all duration-300" />
+                    </div>
+                    
+                    {/* Bannière avec le titre - toujours visible sur mobile, au survol sur desktop */}
+                    <div className="absolute bottom-0 left-0 z-20 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-300 transform translate-y-0 lg:translate-y-2 lg:group-hover:translate-y-0">
+                      <div className="bg-white/90 dark:bg-black/90 lg:bg-white/60 lg:dark:bg-black/60 backdrop-blur-md text-black dark:text-white px-4 py-2 lg:px-6 lg:py-3 rounded-tr-2xl border border-white/30 dark:border-white/10">
+                        <h4 className="text-sm sm:text-base lg:text-lg xl:text-xl font-light tracking-wide">
+                          {solution.title}
+                        </h4>
+                      </div>
+                    </div>
+                 </Link>
+               ))}
+             </div>
 
-                <Link href="/eau-chaude-sanitaire">
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-start">
+                <Link href="/contact">
                   <button className="px-10 sm:px-12 py-4 sm:py-4 bg-gray-50 dark:bg-gray-800 border border-black dark:border-white text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 text-base sm:text-lg font-semibold rounded-full transition-colors duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
-                    Eau Chaude Sanitaire
+                    Demander un devis
                   </button>
-                    </Link>
+                </Link>
               </div>
             </div>
           </div>
@@ -94,6 +141,16 @@ export default function PompeAChaleurPage() {
           from {
             opacity: 0;
             transform: translateX(-50px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+        @keyframes slide-in-right {
+          from {
+            opacity: 0;
+            transform: translateX(50px);
           }
           to {
             opacity: 1;
