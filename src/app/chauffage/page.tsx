@@ -205,19 +205,19 @@ export default function ChauffagePage() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-start">
-                <button
-                  onClick={() => solutionsRef.current?.scrollIntoView({ behavior: 'smooth' })}
+            <button
+              onClick={() => solutionsRef.current?.scrollIntoView({ behavior: 'smooth' })}
                   className="px-10 sm:px-12 py-4 sm:py-4 bg-gray-50 dark:bg-gray-800 border border-black dark:border-white text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 text-base sm:text-lg font-semibold rounded-full transition-colors duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
-                >
+            >
                   Découvrir nos solutions
-                </button>
-                
+            </button>
+            
                 <button
                   onClick={() => contactRef.current?.scrollIntoView({ behavior: 'smooth' })}
                   className="px-10 sm:px-12 py-4 sm:py-4 bg-gray-50 dark:bg-gray-800 border border-black dark:border-white text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 text-base sm:text-lg font-semibold rounded-full transition-colors duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
                 >
-                  Demander un devis
-                </button>
+              Demander un devis
+            </button>
           </div>
         </div>
             

@@ -168,7 +168,7 @@ export default function EauChaudeSanitairePage() {
             <span className="text-black dark:text-white font-medium">
               Eau chaude sanitaire
             </span>
-          </nav>
+        </nav>
         </div>
       </div>
 
@@ -186,12 +186,12 @@ export default function EauChaudeSanitairePage() {
               <h1 className="text-3xl xs:text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl font-bold lg:font-light tracking-tight mb-4 xs:mb-5 sm:mb-5 md:mb-6 lg:mb-8 text-[#03144A] dark:text-white break-words leading-tight">
                 <span className="bg-gradient-to-r from-[#FF6B6B] via-[#03144A] to-[#FF6B6B] dark:from-[#FF8A8A] dark:via-white dark:to-[#FF8A8A] bg-clip-text text-transparent">
                   Eau chaude sanitaire
-                </span>
-                <br />
+              </span>
+              <br />
                 <span className="bg-gradient-to-r from-[#03144A] via-[#FF6B6B] to-[#03144A] dark:from-white dark:via-[#FF8A8A] dark:to-white bg-clip-text text-transparent">
                   Ballon thermodynamique
-                </span>
-              </h1>
+              </span>
+            </h1>
               
               <div className="text-base xs:text-lg sm:text-xl md:text-xl lg:text-xl leading-relaxed text-gray-700 dark:text-gray-100 max-w-full lg:max-w-4xl mx-auto lg:mx-0 px-0 sm:px-2 lg:px-0 mb-6 xs:mb-7 sm:mb-8">
                 <p className="mb-4 font-light">
@@ -214,21 +214,21 @@ export default function EauChaudeSanitairePage() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-start">
-                <button
-                  onClick={() => solutionsRef.current?.scrollIntoView({ behavior: 'smooth' })}
+            <button
+              onClick={() => solutionsRef.current?.scrollIntoView({ behavior: 'smooth' })}
                   className="px-10 sm:px-12 py-4 sm:py-4 bg-gray-50 dark:bg-gray-800 border border-black dark:border-white text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 text-base sm:text-lg font-semibold rounded-full transition-colors duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
-                >
+            >
                   Découvrir nos solutions
-                </button>
-                
+            </button>
+            
                 <button
                   onClick={() => contactRef.current?.scrollIntoView({ behavior: 'smooth' })}
                   className="px-10 sm:px-12 py-4 sm:py-4 bg-gray-50 dark:bg-gray-800 border border-black dark:border-white text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 text-base sm:text-lg font-semibold rounded-full transition-colors duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
                 >
-                  Demander un devis
-                </button>
-              </div>
-            </div>
+              Demander un devis
+            </button>
+          </div>
+        </div>
             
             {/* Carte du thermodynamique dans le hero - Animation depuis la droite */}
             <div ref={solutionsRef} className="w-full max-w-2xl mx-auto lg:mx-0 order-2 lg:order-2">
@@ -265,9 +265,9 @@ export default function EauChaudeSanitairePage() {
                  </Link>
                ))}
              </div>
-           </div>
-         </div>
-       </div>
+                      </div>
+                    </div>
+                  </div>
      </section>
 
       {/* Section Information Ballon Thermodynamique */}
@@ -304,7 +304,7 @@ export default function EauChaudeSanitairePage() {
             <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mt-4 font-light">
               Résultat : <strong className="text-black dark:text-white font-medium">jusqu'à 70 % d'économies</strong> sur vos factures par rapport à un système traditionnel, tout en limitant votre impact environnemental.
             </p>
-          </div>
+              </div>
 
           {/* Séparateur */}
           <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-[#FF6B6B] to-transparent mx-auto mb-12 sm:mb-16" />
@@ -651,7 +651,7 @@ export default function EauChaudeSanitairePage() {
       </section>
 
       {/* Location Map Section */}
-      <LazyGoogleMaps backgroundColor="bg-gray-50 dark:bg-background" />
+              <LazyGoogleMaps backgroundColor="bg-gray-50 dark:bg-background" />
 
       <style jsx global>{`
         @keyframes float {
