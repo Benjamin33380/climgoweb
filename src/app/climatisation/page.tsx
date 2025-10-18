@@ -473,19 +473,26 @@ export default function ClimatisationPage() {
               En tant qu'entreprise <strong className="text-black dark:text-white font-medium">certifiée RGE</strong>, ClimGO vous permet également de bénéficier des <strong className="text-black dark:text-white font-medium">aides de l'État</strong>, sous réserve d'éligibilité.
             </p>
             
-            {/* Logos RGE et République Française */}
-            <div className="flex items-center justify-center gap-6 sm:gap-8 mt-8">
+            {/* Logos RGE, République Française et CEE */}
+            <div className="flex items-center justify-center gap-4 sm:gap-6 mt-8">
               <Image
                 src="/logoannexe/rge.png"
                 alt="Certifié RGE"
-                width={120}
+                width={100}
                 height={80}
                 className="h-16 sm:h-20 w-auto object-contain"
               />
               <Image
                 src="/logoannexe/rf.svg.png"
                 alt="République Française"
-                width={120}
+                width={100}
+                height={80}
+                className="h-16 sm:h-20 w-auto object-contain"
+              />
+              <Image
+                src="/logoannexe/cee.webp"
+                alt="Certificats d'Économie d'Énergie"
+                width={100}
                 height={80}
                 className="h-16 sm:h-20 w-auto object-contain"
               />
