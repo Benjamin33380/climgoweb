@@ -2,6 +2,7 @@
 
 import { useState, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Phone, Mail, MapPin, Clock, User, MessageSquare, Building, Home } from 'lucide-react';
 import LazyGoogleMaps from '@/components/LazyGoogleMaps';
 
@@ -349,9 +350,27 @@ export default function EauChaudeSanitairePage() {
               Chaque projet fait l'objet d'une <strong className="text-black dark:text-white font-medium">étude personnalisée</strong> et de conseils précis, afin de vous proposer la solution la plus performante pour votre confort.
             </p>
             
-            <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed font-light">
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed font-light mb-8">
               En tant qu'entreprise <strong className="text-black dark:text-white font-medium">certifiée RGE</strong>, ClimGO vous permet également de bénéficier des <strong className="text-black dark:text-white font-medium">aides de l'État</strong>, sous réserve d'éligibilité.
             </p>
+            
+            {/* Logos RGE et République Française */}
+            <div className="flex items-center justify-center gap-6 sm:gap-8 mt-8">
+              <Image
+                src="/logoannexe/rge.png"
+                alt="Certifié RGE"
+                width={120}
+                height={80}
+                className="h-16 sm:h-20 w-auto object-contain"
+              />
+              <Image
+                src="/logoannexe/rf.svg.png"
+                alt="République Française"
+                width={120}
+                height={80}
+                className="h-16 sm:h-20 w-auto object-contain"
+              />
+            </div>
           </div>
         </div>
       </section>
