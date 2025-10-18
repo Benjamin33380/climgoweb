@@ -8,7 +8,7 @@ import { motion } from 'framer-motion';
 export default function Services() {
   return (
     <section id="services" className="relative py-12 sm:py-16 md:py-20 bg-gray-50 dark:bg-background overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1800px]">
         {/* Grid principal - 3 colonnes sur la même ligne */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {/* Card 1: Climatisation */}
