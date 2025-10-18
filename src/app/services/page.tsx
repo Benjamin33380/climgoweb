@@ -1,11 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Link from 'next/link';
 import { Phone, Mail, MapPin, Clock, User, MessageSquare, Building, Home } from 'lucide-react';
 import LazyGoogleMaps from '@/components/LazyGoogleMaps';
 
 export default function PompeAChaleurPage() {
+  const solutionsRef = useRef<HTMLDivElement>(null);
 
   // États pour le formulaire de contact
   const [formData, setFormData] = useState({
@@ -159,11 +160,18 @@ export default function PompeAChaleurPage() {
                   </div>
                   
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-start">
+                <button
+                  onClick={() => solutionsRef.current?.scrollIntoView({ behavior: 'smooth' })}
+                  className="px-10 sm:px-12 py-4 sm:py-4 bg-gray-50 dark:bg-gray-800 border border-black dark:border-white text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 text-base sm:text-lg font-semibold rounded-full transition-colors duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                >
+                  Découvrir nos solutions
+                </button>
+                
                 <Link href="/contact">
                   <button className="px-10 sm:px-12 py-4 sm:py-4 bg-gray-50 dark:bg-gray-800 border border-black dark:border-white text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 text-base sm:text-lg font-semibold rounded-full transition-colors duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
                     Demander un devis
                   </button>
-                    </Link>
+                </Link>
               </div>
                   </div>
                   
@@ -215,7 +223,7 @@ export default function PompeAChaleurPage() {
       </section>
 
       {/* Section Information Pompe à Chaleur */}
-      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-50 dark:bg-background">
+      <section ref={solutionsRef} className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-50 dark:bg-background">
         <div className="container mx-auto px-4 xs:px-5 sm:px-6 max-w-4xl">
           
           {/* Bloc 1 */}
