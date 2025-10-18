@@ -130,6 +130,92 @@ export default function PompeAChaleurPage() {
         </div>
       </section>
 
+      {/* Section Information Pompe à Chaleur */}
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-50 dark:bg-background">
+        <div className="container mx-auto px-4 xs:px-5 sm:px-6 max-w-4xl">
+          
+          {/* Bloc 1 */}
+          <div className="mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-black dark:text-white mb-4 sm:mb-6">
+              Consultation et conseil personnalisé
+            </h2>
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed font-light">
+              Chez <strong className="text-black dark:text-white font-medium">ClimGO</strong>, chaque projet débute par une <strong className="text-black dark:text-white font-medium">visite technique approfondie</strong> afin d'analyser vos besoins réels en matière de chauffage et de climatisation.
+            </p>
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mt-4 font-light">
+              Nos techniciens experts étudient les particularités de votre logement ou de votre piscine pour vous orienter vers la <strong className="text-black dark:text-white font-medium">pompe à chaleur la plus adaptée</strong> à votre confort et à votre consommation.
+            </p>
+          </div>
+
+          {/* Séparateur */}
+          <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-[#FF8C00] to-transparent mx-auto mb-12 sm:mb-16" />
+
+          {/* Bloc 2 */}
+          <div className="mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-black dark:text-white mb-4 sm:mb-6">
+              Installation de pompe à chaleur
+            </h2>
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed font-light">
+              Nous assurons la pose complète de <strong className="text-black dark:text-white font-medium">pompes à chaleur air/eau, air/air et pour piscine</strong>.
+            </p>
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mt-4 font-light">
+              Nos installateurs qualifiés et <strong className="text-black dark:text-white font-medium">certifiés RGE</strong> réalisent des installations soignées, conformes aux normes en vigueur et adaptées à chaque configuration.
+            </p>
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mt-4 font-light">
+              Notre priorité : <strong className="text-black dark:text-white font-medium">efficacité, propreté et discrétion</strong>, afin que les travaux s'intègrent naturellement dans votre quotidien.
+            </p>
+          </div>
+
+          {/* Séparateur */}
+          <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-[#2563EB] to-transparent mx-auto mb-12 sm:mb-16" />
+
+          {/* Bloc 3 */}
+          <div className="mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-black dark:text-white mb-4 sm:mb-6">
+              Entretien de pompe à chaleur
+            </h2>
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed font-light">
+              Pour garantir la durée de vie et la performance de votre installation, un <strong className="text-black dark:text-white font-medium">entretien régulier</strong> est indispensable.
+            </p>
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mt-4 font-light">
+              ClimGO propose des <strong className="text-black dark:text-white font-medium">contrats d'entretien personnalisés</strong> comprenant :
+            </p>
+            <ul className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mt-4 ml-6 space-y-2 font-light">
+              <li>• une visite annuelle de contrôle,</li>
+              <li>• le nettoyage complet des équipements,</li>
+              <li>• et le remplacement préventif des pièces si nécessaire.</li>
+            </ul>
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mt-4 font-light">
+              Nos interventions assurent un fonctionnement <strong className="text-black dark:text-white font-medium">silencieux, économique et durable</strong> de votre pompe à chaleur.
+            </p>
+          </div>
+
+          {/* Séparateur */}
+          <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-[#FF8C00] to-transparent mx-auto mb-12 sm:mb-16" />
+
+          {/* Bloc 4 */}
+          <div className="mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-black dark:text-white mb-4 sm:mb-6">
+              Dépannage rapide et fiable
+            </h2>
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed font-light">
+              En cas de panne ou de dysfonctionnement, notre équipe de dépannage <strong className="text-black dark:text-white font-medium">intervient dans les plus brefs délais</strong>.
+            </p>
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mt-4 font-light">
+              Formés à tous les types et toutes les marques de pompes à chaleur, nos techniciens diagnostiquent rapidement l'origine du problème et assurent une <strong className="text-black dark:text-white font-medium">remise en service efficace et durable</strong>.
+            </p>
+          </div>
+
+          {/* Message final */}
+          <div className="text-center">
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-700 dark:text-gray-300 leading-relaxed font-light">
+              Avec <strong className="text-black dark:text-white font-medium">ClimGO</strong>, vous bénéficiez d'un service complet, du conseil à la maintenance, pour un <strong className="text-black dark:text-white font-medium">confort maîtrisé toute l'année</strong>.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
       {/* Location Map Section */}
       <LazyGoogleMaps backgroundColor="bg-gray-50 dark:bg-background" />
 
