@@ -150,16 +150,28 @@ export default function PompeAChaleurPage() {
               </h1>
               
               <div className="text-base xs:text-lg sm:text-xl md:text-xl lg:text-xl leading-relaxed text-gray-700 dark:text-gray-100 max-w-full lg:max-w-4xl mx-auto lg:mx-0 px-0 sm:px-2 lg:px-0 mb-6 xs:mb-7 sm:mb-8">
-                <p className="mb-3 font-light">
-                  Chez <strong className="text-black dark:text-white font-medium">ClimGO</strong>, nous sommes spécialisés dans les solutions de <strong className="text-black dark:text-white font-medium">pompes à chaleur</strong>, offrant un large éventail de services pour répondre à tous vos besoins en matière de <strong className="text-black dark:text-white font-medium">chauffage</strong> et de <strong className="text-black dark:text-white font-medium">climatisation</strong>.
-                </p>
-                <p className="mb-3 font-light">
-                  De la <strong className="text-black dark:text-white font-medium">consultation initiale</strong> à l'<strong className="text-black dark:text-white font-medium">installation</strong>, en passant par l'<strong className="text-black dark:text-white font-medium">entretien</strong> et le <strong className="text-black dark:text-white font-medium">dépannage</strong>, notre équipe d'experts dédiée est là pour vous conseiller.
-                </p>
                 <p className="mb-4 font-light">
-                  Contactez-nous pour plus d'informations ou pour demander un <strong className="text-black dark:text-white font-medium">devis gratuit</strong>.
-                    </p>
-                  </div>
+                  Chez <strong className="text-black dark:text-white font-medium">ClimGO</strong>, nous sommes spécialisés dans toutes les solutions de <strong className="text-black dark:text-white font-medium">pompes à chaleur</strong>, destinées à améliorer votre <strong className="text-black dark:text-white font-medium">confort thermique</strong> tout en réduisant vos consommations d'énergie.
+                </p>
+                
+                <p className="mb-3 font-light">
+                  Nous intervenons sur différents types d'installations :
+                </p>
+                <ul className="mb-4 font-light space-y-2 ml-6">
+                  <li><strong className="text-black dark:text-white font-medium">Pompes à chaleur air/air</strong>, pour chauffer et climatiser votre logement,</li>
+                  <li><strong className="text-black dark:text-white font-medium">Pompes à chaleur air/eau</strong>, pour alimenter vos radiateurs ou plancher chauffant,</li>
+                  <li><strong className="text-black dark:text-white font-medium">Pompes à chaleur pour piscine</strong>, pour prolonger votre saison de baignade,</li>
+                  <li>et <strong className="text-black dark:text-white font-medium">chauffe-eaux thermodynamiques</strong>, dédiés à la production d'eau chaude sanitaire.</li>
+                </ul>
+                
+                <p className="mb-4 font-light">
+                  De la <strong className="text-black dark:text-white font-medium">consultation initiale</strong> à la <strong className="text-black dark:text-white font-medium">mise en service</strong>, en passant par l'<strong className="text-black dark:text-white font-medium">entretien régulier</strong> et le <strong className="text-black dark:text-white font-medium">dépannage</strong>, notre équipe certifiée <strong className="text-black dark:text-white font-medium">RGE</strong> vous accompagne à chaque étape de votre projet avec des conseils adaptés et un savoir-faire reconnu.
+                </p>
+                
+                <p className="mb-4 font-light">
+                  Contactez-nous dès maintenant pour obtenir une <strong className="text-black dark:text-white font-medium">étude personnalisée</strong> ou un <strong className="text-black dark:text-white font-medium">devis gratuit</strong>.
+                </p>
+              </div>
                   
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-start">
                 <button
