@@ -194,28 +194,22 @@ export default function EauChaudeSanitairePage() {
               </h1>
               
               <div className="text-base xs:text-lg sm:text-xl md:text-xl lg:text-xl leading-relaxed text-gray-700 dark:text-gray-100 max-w-full lg:max-w-4xl mx-auto lg:mx-0 px-0 sm:px-2 lg:px-0 mb-6 xs:mb-7 sm:mb-8">
-                <p className="mb-3 font-light">
-                  Le <strong className="text-black dark:text-white font-medium">chauffe-eau</strong> est un élément essentiel<br />
-                  pour assurer votre <strong className="text-black dark:text-white font-medium">confort</strong> au quotidien.
-                </p>
-                <p className="mb-3 font-light">
-                  Chez <strong className="text-black dark:text-white font-medium">ClimGO</strong>, nous proposons plusieurs solutions<br />
-                  selon vos besoins : le <strong className="text-black dark:text-white font-medium">cumulus électrique</strong>,<br />
-                  le <strong className="text-black dark:text-white font-medium">chauffe-eau thermodynamique</strong> et le modèle <strong className="text-black dark:text-white font-medium">extra-plat</strong>.
-                </p>
-                <p className="mb-3 font-light">
-                  <strong className="text-black dark:text-white font-medium">Fiables</strong> et <strong className="text-black dark:text-white font-medium">performants</strong>, nos équipements assurent<br />
-                  une production d'eau chaude <strong className="text-black dark:text-white font-medium">constante</strong> et <strong className="text-black dark:text-white font-medium">économique</strong>,<br />
-                  tout en s'intégrant harmonieusement à votre intérieur.
-                </p>
-                <p className="mb-3 font-light">
-                  Grâce à nos installations soignées et à notre expertise<br />
-                  <strong className="text-black dark:text-white font-medium">certifiée RGE</strong>, vous profitez d'un confort durable<br />
-                  et de réelles <strong className="text-black dark:text-white font-medium">économies d'énergie</strong>.
-                </p>
                 <p className="mb-4 font-light">
-                  Contactez-nous pour plus d'informations ou pour<br />
-                  demander un <strong className="text-black dark:text-white font-medium">devis gratuit</strong>.
+                  Le <strong className="text-black dark:text-white font-medium">ballon thermodynamique</strong> est aujourd'hui l'une des solutions les plus efficaces pour produire votre <strong className="text-black dark:text-white font-medium">eau chaude sanitaire</strong> tout en réduisant vos consommations d'énergie.
+                  Son principe est simple : il capte les <strong className="text-black dark:text-white font-medium">calories présentes dans l'air ambiant</strong> pour chauffer l'eau du ballon, ce qui permet de réaliser jusqu'à <strong className="text-black dark:text-white font-medium">70 % d'économies</strong> par rapport à un chauffe-eau électrique classique.
+                </p>
+                
+                <p className="mb-4 font-light">
+                  Idéal en <strong className="text-black dark:text-white font-medium">rénovation</strong> comme en <strong className="text-black dark:text-white font-medium">construction neuve</strong>, il s'adapte facilement à tous types de logements.
+                  <strong className="text-black dark:text-white font-medium">Silencieux</strong>, <strong className="text-black dark:text-white font-medium">fiable</strong> et <strong className="text-black dark:text-white font-medium">écologique</strong>, le ballon thermodynamique vous garantit un confort constant tout au long de l'année, tout en limitant votre impact environnemental.
+                </p>
+                
+                <p className="mb-4 font-light">
+                  Grâce au savoir-faire <strong className="text-black dark:text-white font-medium">ClimGO</strong> et à notre <strong className="text-black dark:text-white font-medium">certification RGE</strong>, vous bénéficiez d'une installation professionnelle, durable et éligible aux <strong className="text-black dark:text-white font-medium">aides financières de l'État</strong>.
+                </p>
+                
+                <p className="mb-4 font-light">
+                  Contactez-nous dès maintenant pour obtenir un <strong className="text-black dark:text-white font-medium">devis gratuit</strong> et découvrir la solution la plus adaptée à votre foyer.
                 </p>
               </div>
 
