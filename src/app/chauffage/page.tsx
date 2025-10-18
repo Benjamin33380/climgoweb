@@ -152,8 +152,8 @@ export default function ChauffagePage() {
                         backgroundColor: '#f3f4f6'
                       }}
                     >
-                      {/* Overlay léger pour contraste */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-white/40 via-white/20 to-transparent dark:from-black/40 dark:via-black/20 dark:to-transparent lg:from-white/40 lg:via-white/20 lg:to-transparent dark:lg:from-black/40 dark:lg:via-black/20 dark:lg:to-transparent" />
+                      {/* Overlay léger pour contraste - plus subtil sur mobile */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-white/10 to-transparent dark:from-black/20 dark:via-black/10 dark:to-transparent lg:from-white/40 lg:via-white/20 lg:to-transparent dark:lg:from-black/40 dark:lg:via-black/20 dark:lg:to-transparent" />
                     </div>
                     
                     {/* Bannière avec le titre - toujours visible sur mobile, au survol sur desktop */}
