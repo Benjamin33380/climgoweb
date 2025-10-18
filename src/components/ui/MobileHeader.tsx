@@ -77,8 +77,20 @@ export default function MobileHeader() {
                     <span>{service.title}</span>
                 </Link>
               ))}
+              </nav>
                 
-              <div className="border-t pt-4 mt-4">
+              <nav className="space-y-4 border-t pt-4">
+                <h3 className="text-lg font-semibold mb-4">Notre entreprise</h3>
+                <Link
+                  href="/a-propos"
+                  className="flex items-center py-3 px-4 hover:bg-accent hover:text-accent-foreground rounded-lg transition-colors space-x-3"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <div className="flex-shrink-0">
+                    <Info className="w-5 h-5" />
+                  </div>
+                  <span>À Propos</span>
+                </Link>
                 <Link
                   href="/aides-etat"
                   className="flex items-center py-3 px-4 hover:bg-accent hover:text-accent-foreground rounded-lg transition-colors space-x-3"
@@ -89,37 +101,29 @@ export default function MobileHeader() {
                   </div>
                   <span>Aides & Subventions</span>
                 </Link>
-                  <Link
-                    href="/blog"
-                    className="flex items-center py-3 px-4 hover:bg-accent hover:text-accent-foreground rounded-lg transition-colors space-x-3"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    <div className="flex-shrink-0">
-                      <BookOpen className="w-5 h-5" />
-                    </div>
-                    <span>Blog</span>
-                  </Link>
-                  <Link
-                    href="/contact"
-                    className="flex items-center py-3 px-4 hover:bg-accent hover:text-accent-foreground rounded-lg transition-colors space-x-3"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    <div className="flex-shrink-0">
-                      <Mail className="w-5 h-5" />
-                    </div>
-                    <span>Contact</span>
-                  </Link>
-                  <Link
-                    href="/a-propos"
-                    className="flex items-center py-3 px-4 hover:bg-accent hover:text-accent-foreground rounded-lg transition-colors space-x-3"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    <div className="flex-shrink-0">
-                      <Info className="w-5 h-5" />
-                    </div>
-                    <span>À Propos</span>
-                  </Link>
-                </div>
+              </nav>
+                
+              <nav className="space-y-4 border-t pt-4">
+                <Link
+                  href="/blog"
+                  className="flex items-center py-3 px-4 hover:bg-accent hover:text-accent-foreground rounded-lg transition-colors space-x-3"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <div className="flex-shrink-0">
+                    <BookOpen className="w-5 h-5" />
+                  </div>
+                  <span>Blog</span>
+                </Link>
+                <Link
+                  href="/contact"
+                  className="flex items-center py-3 px-4 hover:bg-accent hover:text-accent-foreground rounded-lg transition-colors space-x-3"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <div className="flex-shrink-0">
+                    <Mail className="w-5 h-5" />
+                  </div>
+                  <span>Contact</span>
+                </Link>
               </nav>
 
               {/* Actions */}
