@@ -247,33 +247,16 @@ export default function ClimatisationPage() {
                       animation: `slide-in-right 1.2s ease-out ${index * 0.2}s both`
                     }}
                   >
-                    {/* Version MOBILE - Image simple */}
+                    {/* Image simple pour toutes les résolutions */}
                     <img
                       src={solution.image}
                       alt={solution.title}
-                      className="lg:hidden absolute inset-0 w-full h-full object-cover"
+                      className="absolute inset-0 w-full h-full object-cover"
                     />
                     
-                    {/* Version DESKTOP */}
-                    <div 
-                      className="hidden lg:block absolute inset-0 bg-no-repeat bg-cover transition-transform duration-300 group-hover:scale-105"
-                      style={{ 
-                        backgroundImage: `url(${solution.image})`,
-                        backgroundPosition: 
-                          index === 0 ? '20% 5%'   // Climatisation cassette - LA MACHINE à droite, en haut
-                          : index === 1 ? '90% 10%'  // Climatisation gainable - LA GRILLE à droite
-                          : index === 2 ? '10% 15%'  // Climatisation murale - LA CASSETTE au centre
-                          : index === 3 ? '85% 80%'  // Climatisation console - LA CONSOLE en bas à droite
-                          : 'right center'
-                      }}
-                    >
-                      {/* Overlay pour contraste - desktop uniquement */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-white/30 to-transparent dark:from-black/60 dark:via-black/35 dark:to-transparent group-hover:from-white/50 group-hover:via-white/25 group-hover:to-transparent dark:group-hover:from-black/50 dark:group-hover:via-black/30 dark:group-hover:to-transparent transition-all duration-300" />
-                    </div>
-                    
-                    {/* Bannière avec le titre - toujours visible sur mobile, au survol sur desktop */}
-                    <div className="absolute bottom-0 left-0 z-20 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-300 transform translate-y-0 lg:translate-y-2 lg:group-hover:translate-y-0">
-                      <div className="bg-white/90 dark:bg-black/90 lg:bg-white/60 lg:dark:bg-black/60 backdrop-blur-md text-black dark:text-white px-4 py-2 lg:px-6 lg:py-3 rounded-tr-2xl border border-white/30 dark:border-white/10">
+                    {/* Bannière avec le titre - toujours visible sur mobile/tablette, au survol sur grand desktop */}
+                    <div className="absolute bottom-0 left-0 z-20 opacity-100 xl:opacity-0 xl:group-hover:opacity-100 transition-all duration-300 transform translate-y-0 xl:translate-y-2 xl:group-hover:translate-y-0">
+                      <div className="bg-white/90 dark:bg-black/90 xl:bg-white/60 xl:dark:bg-black/60 backdrop-blur-md text-black dark:text-white px-4 py-2 lg:px-6 lg:py-3 rounded-tr-2xl border border-white/30 dark:border-white/10">
                         <h4 className="text-sm sm:text-base lg:text-lg xl:text-xl font-light tracking-wide">
                           {solution.title}
                         </h4>
