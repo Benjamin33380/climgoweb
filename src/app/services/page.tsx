@@ -90,7 +90,7 @@ export default function PompeAChaleurPage() {
                   <Link 
                     key={index} 
                     href="/contact" 
-                    className="block group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-white hover:-translate-y-2 h-[200px] sm:h-[180px] lg:h-[160px] cursor-pointer"
+                    className="block group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-white hover:-translate-y-2 h-[300px] sm:h-[320px] lg:h-[280px] cursor-pointer"
                     style={{ 
                       animation: `slide-in-right 1.2s ease-out ${index * 0.2}s both`
                     }}
