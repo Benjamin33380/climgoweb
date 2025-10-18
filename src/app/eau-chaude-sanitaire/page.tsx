@@ -1,9 +1,93 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
+import { Phone, Mail, MapPin, Clock, User, MessageSquare, Building, Home } from 'lucide-react';
 import LazyGoogleMaps from '@/components/LazyGoogleMaps';
 
 export default function EauChaudeSanitairePage() {
+
+  // États pour le formulaire de contact
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    address: '',
+    postalCode: '',
+    service: '',
+    message: ''
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: 'success' | 'error' | null;
+    message: string;
+  }>({ type: null, message: '' });
+
+  const services = [
+    'Pompe à chaleur air/eau',
+    'Pompe à chaleur air/air',
+    'Climatisation',
+    'Chauffe-eau thermodynamique',
+    'Plancher chauffant',
+    'Maintenance',
+    'Autre'
+  ];
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: '' });
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus({
+          type: 'success',
+          message: data.message || 'Votre demande a été envoyée avec succès !'
+        });
+        
+        // Réinitialiser le formulaire
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          address: '',
+          postalCode: '',
+          service: '',
+          message: ''
+        });
+      } else {
+        setSubmitStatus({
+          type: 'error',
+          message: data.error || 'Erreur lors de l\'envoi. Veuillez réessayer.'
+        });
+      }
+    } catch (_error) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Erreur de connexion. Vérifiez votre connexion internet et réessayez.'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
 
   const solutions = [
     {
