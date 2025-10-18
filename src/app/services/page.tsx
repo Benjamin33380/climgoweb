@@ -300,6 +300,33 @@ export default function PompeAChaleurPage() {
         </div>
       </section>
 
+      {/* Section Pourquoi ClimGO */}
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-50 dark:bg-background">
+        <div className="container mx-auto px-4 xs:px-5 sm:px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-black dark:text-white mb-8 sm:mb-12">
+              Pourquoi choisir ClimGO pour votre projet de pompe à chaleur ?
+            </h2>
+            
+            <div className="space-y-6 text-gray-700 dark:text-gray-300 leading-relaxed font-light">
+              <p className="text-base sm:text-lg">
+                Chez <strong className="text-black dark:text-white font-medium">ClimGO</strong>, chaque client bénéficie d'un accompagnement personnalisé et d'un service irréprochable à chaque étape de son projet.
+                Notre priorité : vous offrir un <strong className="text-black dark:text-white font-medium">confort thermique optimal</strong> tout en réduisant durablement votre consommation d'énergie.
+              </p>
+              
+              <p className="text-base sm:text-lg">
+                Entreprise <strong className="text-black dark:text-white font-medium">certifiée RGE</strong>, ClimGO est un gage de sérieux et de qualité, vous assurant des travaux réalisés dans le respect des normes et des performances attendues.
+                Cette qualification vous permet également de profiter des <strong className="text-black dark:text-white font-medium">aides de l'État</strong>, sous réserve d'éligibilité, pour faciliter le financement de votre installation.
+              </p>
+              
+              <p className="text-base sm:text-lg">
+                Contactez-nous dès aujourd'hui pour étudier ensemble la solution la plus adaptée à votre logement.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Section Contact */}
       <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-50 dark:bg-background">
         <div className="container mx-auto px-4 xs:px-5 sm:px-6">
