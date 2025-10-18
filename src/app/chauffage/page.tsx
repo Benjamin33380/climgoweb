@@ -144,17 +144,15 @@ export default function ChauffagePage() {
                       animation: `slide-in-right 1.2s ease-out ${index * 0.2}s both`
                     }}
                   >
-                    {/* Image en fond pour toutes les résolutions */}
-                    <div 
-                      className="absolute inset-0 bg-no-repeat bg-center bg-cover"
-                      style={{ 
-                        backgroundImage: `url(${solution.image})`,
-                        backgroundColor: '#f3f4f6'
-                      }}
-                    >
-                      {/* Overlay léger pour contraste - plus subtil sur mobile */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-white/10 to-transparent dark:from-black/20 dark:via-black/10 dark:to-transparent lg:from-white/40 lg:via-white/20 lg:to-transparent dark:lg:from-black/40 dark:lg:via-black/20 dark:lg:to-transparent" />
-                    </div>
+                    {/* Image simple pour toutes les résolutions */}
+                    <img
+                      src={solution.image}
+                      alt={solution.title}
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                    
+                    {/* Overlay pour contraste - léger sur mobile, plus marqué sur desktop */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-white/10 to-transparent dark:from-black/20 dark:via-black/10 dark:to-transparent lg:from-white/40 lg:via-white/20 lg:to-transparent dark:lg:from-black/40 dark:lg:via-black/20 dark:lg:to-transparent transition-all duration-300" />
                     
                     {/* Bannière avec le titre - toujours visible sur mobile, au survol sur desktop */}
                     <div className="absolute bottom-0 left-0 z-20 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-300 transform translate-y-0 lg:translate-y-2 lg:group-hover:translate-y-0">
