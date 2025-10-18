@@ -111,7 +111,7 @@ export default function PompeAChaleurPage() {
                       }}
                     >
                       {/* Overlay pour contraste - desktop uniquement */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-white/30 to-transparent dark:from-black/60 dark:via-black/35 dark:to-transparent group-hover:from-white/50 group-hover:via-white/25 group-hover:to-transparent dark:group-hover:from-black/50 dark:group-hover:via-black/30 dark:group-hover:to-transparent transition-all duration-300" />
+                      <div className="absolute inset-0 bg-gradient-to-r from-white/40 via-white/20 to-transparent dark:from-black/30 dark:via-black/15 dark:to-transparent group-hover:from-white/30 group-hover:via-white/15 group-hover:to-transparent dark:group-hover:from-black/20 dark:group-hover:via-black/10 dark:group-hover:to-transparent transition-all duration-300" />
                   </div>
                   
                     {/* Bannière avec le titre - toujours visible sur mobile, au survol sur desktop */}
