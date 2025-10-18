@@ -49,7 +49,16 @@ const nextConfig: NextConfig = {
   // Extensions de pages
   pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
 
-
+  // Redirections
+  async redirects() {
+    return [
+      {
+        source: '/services',
+        destination: '/pompe-a-chaleur',
+        permanent: true,
+      },
+    ];
+  },
 
   // Configuration webpack pour optimiser les chunks
   webpack: (config, { isServer }) => {

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Nos services - Spécialistes pompes à chaleur",
     description: "ClimGO votre expert local Girondin - Chauffage, climatisation, chauffe-eau - Devis gratuit, aides financières. Artisan RGE. 07.66.46.00.08",
-    url: "https://www.climgo.fr/services",
+    url: "https://www.climgo.fr/pompe-a-chaleur",
     siteName: "ClimGO",
     locale: "fr_FR",
     type: "website",
@@ -37,10 +37,10 @@ export const metadata: Metadata = {
     images: ["/img/climdame.png"],
   },
   alternates: {
-    canonical: "https://www.climgo.fr/services",
+    canonical: "https://www.climgo.fr/pompe-a-chaleur",
     languages: {
-      'x-default': 'https://www.climgo.fr/services',
-      'fr-FR': 'https://www.climgo.fr/services',
+      'x-default': 'https://www.climgo.fr/pompe-a-chaleur',
+      'fr-FR': 'https://www.climgo.fr/pompe-a-chaleur',
     },
   },
   robots: {

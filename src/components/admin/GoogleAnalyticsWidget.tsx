@@ -66,7 +66,7 @@ export default function GoogleAnalyticsWidget({ period }: GoogleAnalyticsWidgetP
         topPages: [
           { path: '/', title: 'Accueil', views: Math.floor(Math.random() * 200) + 100 },
           { path: '/blog', title: 'Blog', views: Math.floor(Math.random() * 150) + 80 },
-          { path: '/services', title: 'Services', views: Math.floor(Math.random() * 100) + 50 }
+          { path: '/pompe-a-chaleur', title: 'Pompe à chaleur', views: Math.floor(Math.random() * 100) + 50 }
         ],
         deviceBreakdown: [
           { device: 'Desktop', count: Math.floor(Math.random() * 300) + 200, percentage: 45 },

@@ -45,7 +45,7 @@ const services: { title: string; href: string; description: string; icon: React.
   },
   {
     title: "Pompe à chaleur",
-    href: "/services",
+    href: "/pompe-a-chaleur",
     icon: <Settings className="w-4 h-4" />,
     description: "Pompes à chaleur air-air et air-eau pour chauffage et eau chaude sanitaire.",
   },
@@ -125,7 +125,7 @@ export default function NewHeader() {
                       <NavigationMenuLink asChild>
                         <a
                           className="flex h-full w-full select-none flex-col justify-center rounded-md bg-white dark:bg-background p-5 no-underline outline-none focus:shadow-md group"
-                          href="/services"
+                          href="/pompe-a-chaleur"
                           onMouseEnter={() => setIsServicesHovered(true)}
                           onMouseLeave={() => setIsServicesHovered(false)}
                         >

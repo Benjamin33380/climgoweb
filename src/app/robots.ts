@@ -13,7 +13,7 @@ export default function robots(): MetadataRoute.Robots {
           '/chauffage',
           '/climatisation',
           '/eau-chaude-sanitaire',
-          '/services',
+          '/pompe-a-chaleur',
           '/a-propos',
           '/contact',
           '/aides-etat',
@@ -35,7 +35,7 @@ export default function robots(): MetadataRoute.Robots {
           '/chauffage',
           '/climatisation',
           '/eau-chaude-sanitaire',
-          '/services',
+          '/pompe-a-chaleur',
           '/a-propos',
           '/contact',
           '/aides-etat'

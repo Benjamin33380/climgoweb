@@ -696,7 +696,7 @@ export default function HomePage() {
                   
                   <div className="flex justify-between items-center text-xs text-gray-500 dark:text-gray-400 border-t border-gray-100 dark:border-gray-700 pt-2 sm:pt-3">
                     <span className="font-medium">Il y a 2 mois</span>
-                    <a href="/services" className="text-blue-600 dark:text-blue-400 font-medium hover:text-blue-500 dark:hover:text-blue-300 hover:underline transition-colors">Installation</a>
+                    <a href="/pompe-a-chaleur" className="text-blue-600 dark:text-blue-400 font-medium hover:text-blue-500 dark:hover:text-blue-300 hover:underline transition-colors">Installation</a>
                   </div>
                 </div>
               </div>
@@ -766,7 +766,7 @@ export default function HomePage() {
                   
                   <div className="flex justify-between items-center text-xs text-gray-500 dark:text-gray-400 border-t border-gray-100 dark:border-gray-700 pt-2 sm:pt-3">
                     <span className="font-medium">Il y a 2 mois</span>
-                    <a href="/services" className="text-blue-600 dark:text-blue-400 font-medium hover:text-blue-500 dark:hover:text-blue-300 hover:underline transition-colors">Service</a>
+                    <a href="/pompe-a-chaleur" className="text-blue-600 dark:text-blue-400 font-medium hover:text-blue-500 dark:hover:text-blue-300 hover:underline transition-colors">Service</a>
                   </div>
                 </div>
               </div>
@@ -1088,7 +1088,7 @@ export default function HomePage() {
                   
                   <div className="flex justify-between items-center text-xs text-gray-500 dark:text-gray-400 border-t border-gray-100 dark:border-gray-700 pt-2 sm:pt-3">
                     <span className="font-medium">Il y a 2 mois</span>
-                    <a href="/services" className="text-blue-600 dark:text-blue-400 font-medium hover:text-blue-500 dark:hover:text-blue-300 hover:underline transition-colors">Installation</a>
+                    <a href="/pompe-a-chaleur" className="text-blue-600 dark:text-blue-400 font-medium hover:text-blue-500 dark:hover:text-blue-300 hover:underline transition-colors">Installation</a>
                   </div>
                 </div>
               </div>

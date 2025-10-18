@@ -349,9 +349,9 @@ export default function RootLayout({
                   "position": 1,
                   "item": {
                     "@type": "WebPage",
-                    "name": "Nos services",
-                    "url": "https://www.climgo.fr/services",
-                    "description": "Découvrez tous nos services : chauffage, climatisation, chauffe-eau"
+                    "name": "Pompe à chaleur",
+                    "url": "https://www.climgo.fr/pompe-a-chaleur",
+                    "description": "Découvrez nos solutions de pompes à chaleur : air/air, air/eau, piscine et chauffe-eau thermodynamiques"
                   }
                 },
                 {

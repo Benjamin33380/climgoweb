@@ -450,7 +450,7 @@ export default function ContactPage() {
                       { icon: <Flame className="w-6 h-6" />, title: "Chauffage", desc: "Installation et maintenance de systèmes performants", hoverColor: "group-hover:text-[#FF8C00]", link: "/chauffage" },
                       { icon: <AirVent className="w-6 h-6" />, title: "Climatisation", desc: "Solutions de climatisation adaptées", hoverColor: "group-hover:text-[#2563EB]", link: "/climatisation" },
                       { icon: <Droplet className="w-6 h-6" />, title: "Eau chaude sanitaire", desc: "Systèmes d'eau chaude efficaces", hoverColor: "group-hover:text-[#0EA5E9]", link: "/eau-chaude-sanitaire" },
-                      { icon: <Settings className="w-6 h-6" />, title: "Pompe à chaleur", desc: "Pompes à chaleur air-air et air-eau", hoverColor: "group-hover:text-[#8B5CF6]", link: "/services" },
+                      { icon: <Settings className="w-6 h-6" />, title: "Pompe à chaleur", desc: "Pompes à chaleur air-air et air-eau", hoverColor: "group-hover:text-[#8B5CF6]", link: "/pompe-a-chaleur" },
                       { icon: <FileText className="w-6 h-6" />, title: "Maintenance", desc: "Entretien professionnel de vos équipements", hoverColor: "group-hover:text-[#10B981]", link: "/maintenance" }
                     ].map((service, index) => (
                       <Link key={index} href={service.link} className="text-center p-4 rounded-2xl bg-gray-50 dark:bg-black/20 hover:bg-[#03144a]/5 dark:hover:bg-white/5 transition-colors group cursor-pointer">
