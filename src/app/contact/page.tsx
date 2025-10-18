@@ -352,8 +352,8 @@ export default function ContactPage() {
               
               {/* Contact direct */}
               <SimpleWrapper>
-                <div className="bg-gradient-to-br from-[#03144A] to-[#F97316] rounded-3xl p-8 text-white shadow-xl">
-                  <h3 className="text-2xl font-light mb-6 flex items-center">
+                <div className="bg-gradient-to-br from-[#03144A] to-[#F97316] rounded-3xl p-8 text-white shadow-xl !bg-opacity-100">
+                  <h3 className="text-2xl font-light mb-6 flex items-center text-white">
                     <div className="w-1 h-6 bg-white rounded-full mr-3"></div>
                     Besoin d'une réponse immédiate ?
                   </h3>
@@ -361,11 +361,11 @@ export default function ContactPage() {
                   <div className="space-y-6">
                     <div className="flex items-center space-x-4">
                       <div className="bg-white/20 rounded-full p-3 backdrop-blur-sm">
-                        <Phone className="w-6 h-6" />
+                        <Phone className="w-6 h-6 text-white" />
                       </div>
                       <div>
-                        <p className="text-white/80 text-sm">Appelez directement</p>
-                        <Link href="tel:0766460008" className="text-xl font-semibold hover:text-gray-200 transition-colors">
+                        <p className="text-white/90 text-sm">Appelez directement</p>
+                        <Link href="tel:0766460008" className="text-xl font-semibold text-white hover:text-gray-200 transition-colors">
                           07 66 46 00 08
                         </Link>
                       </div>
@@ -373,33 +373,33 @@ export default function ContactPage() {
 
                     <div className="flex items-center space-x-4">
                       <div className="bg-white/20 rounded-full p-3 backdrop-blur-sm">
-                        <Mail className="w-6 h-6" />
+                        <Mail className="w-6 h-6 text-white" />
                       </div>
                       <div>
-                        <p className="text-white/80 text-sm">Email professionnel</p>
-                        <Link href="mailto:contact@climgo.fr" className="text-xl font-semibold hover:text-gray-200 transition-colors">
+                        <p className="text-white/90 text-sm">Email professionnel</p>
+                        <Link href="mailto:contact@climgo.fr" className="text-xl font-semibold text-white hover:text-gray-200 transition-colors">
                           contact@climgo.fr
                         </Link>
                       </div>
                     </div>
 
-                                    <div className="flex items-center space-x-4">
-                  <div className="bg-white/20 rounded-full p-3 backdrop-blur-sm">
-                    <MapPin className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <p className="text-white/80 text-sm">Notre localisation</p>
-                    <span className="text-lg font-medium">28 rue de Cantelaude, 33380 Marcheprime</span>
-                  </div>
-                </div>
+                    <div className="flex items-center space-x-4">
+                      <div className="bg-white/20 rounded-full p-3 backdrop-blur-sm">
+                        <MapPin className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <p className="text-white/90 text-sm">Notre localisation</p>
+                        <span className="text-lg font-medium text-white">28 rue de Cantelaude, 33380 Marcheprime</span>
+                      </div>
+                    </div>
 
                     <div className="flex items-center space-x-4">
                       <div className="bg-white/20 rounded-full p-3 backdrop-blur-sm">
-                        <Clock className="w-6 h-6" />
+                        <Clock className="w-6 h-6 text-white" />
                       </div>
                       <div>
-                        <p className="text-white/80 text-sm">Horaires d'ouverture</p>
-                        <span className="text-lg font-medium">Lun-Ven: 8h-18h</span>
+                        <p className="text-white/90 text-sm">Horaires d'ouverture</p>
+                        <span className="text-lg font-medium text-white">Lun-Ven: 8h-18h</span>
                       </div>
                     </div>
                   </div>
