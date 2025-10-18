@@ -360,6 +360,16 @@ export default function ChauffagePage() {
                 className="h-16 sm:h-20 w-auto object-contain"
               />
             </div>
+            
+            {/* Bouton Découvrir les aides d'État */}
+            <div className="flex justify-center mt-8">
+              <Link
+                href="/aides-etat"
+                className="inline-flex items-center justify-center px-10 sm:px-12 py-4 sm:py-4 bg-gradient-to-r from-[#03144A] to-[#F97316] text-white text-base sm:text-lg font-medium rounded-full hover:opacity-90 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1"
+              >
+                Découvrir les aides d'État
+              </Link>
+            </div>
           </div>
         </div>
       </section>
