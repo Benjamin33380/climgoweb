@@ -1,11 +1,13 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Link from 'next/link';
 import { Phone, Mail, MapPin, Clock, User, MessageSquare, Building, Home } from 'lucide-react';
 import LazyGoogleMaps from '@/components/LazyGoogleMaps';
 
 export default function EauChaudeSanitairePage() {
+  const solutionsRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
 
   // États pour le formulaire de contact
   const [formData, setFormData] = useState({
@@ -217,22 +219,24 @@ export default function EauChaudeSanitairePage() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-start">
-                <a href="#solutions">
-                  <button className="px-10 sm:px-12 py-4 sm:py-4 bg-gray-50 dark:bg-gray-800 border border-black dark:border-white text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 text-base sm:text-lg font-semibold rounded-full transition-colors duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
-                    Découvrir nos solutions
-                  </button>
-                </a>
+                <button
+                  onClick={() => solutionsRef.current?.scrollIntoView({ behavior: 'smooth' })}
+                  className="px-10 sm:px-12 py-4 sm:py-4 bg-gray-50 dark:bg-gray-800 border border-black dark:border-white text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 text-base sm:text-lg font-semibold rounded-full transition-colors duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                >
+                  Découvrir nos solutions
+                </button>
                 
-                <Link href="/contact">
-                  <button className="px-10 sm:px-12 py-4 sm:py-4 bg-gray-50 dark:bg-gray-800 border border-black dark:border-white text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 text-base sm:text-lg font-semibold rounded-full transition-colors duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
-                    Demander un devis
-                  </button>
-                </Link>
+                <button
+                  onClick={() => contactRef.current?.scrollIntoView({ behavior: 'smooth' })}
+                  className="px-10 sm:px-12 py-4 sm:py-4 bg-gray-50 dark:bg-gray-800 border border-black dark:border-white text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 text-base sm:text-lg font-semibold rounded-full transition-colors duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                >
+                  Demander un devis
+                </button>
               </div>
             </div>
             
             {/* Carte du thermodynamique dans le hero - Animation depuis la droite */}
-            <div id="solutions" className="w-full max-w-2xl mx-auto lg:mx-0 order-2 lg:order-2">
+            <div ref={solutionsRef} className="w-full max-w-2xl mx-auto lg:mx-0 order-2 lg:order-2">
               <div className="grid grid-cols-1 gap-6">
                 {solutions.slice(0, 1).map((solution, index) => (
                   <Link 
@@ -432,7 +436,7 @@ export default function EauChaudeSanitairePage() {
       </section>
 
       {/* Section Contact */}
-      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-50 dark:bg-background">
+      <section ref={contactRef} className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-50 dark:bg-background">
         <div className="container mx-auto px-4 xs:px-5 sm:px-6">
           <div className="grid grid-cols-1 gap-8 max-w-7xl mx-auto">
             

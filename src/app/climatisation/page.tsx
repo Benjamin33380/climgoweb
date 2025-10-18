@@ -9,6 +9,7 @@ import LazyGoogleMaps from '@/components/LazyGoogleMaps';
 
 export default function ClimatisationPage() {
   const solutionsRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
 
   // États pour le formulaire de contact
   const [formData, setFormData] = useState({
@@ -309,11 +310,12 @@ export default function ClimatisationPage() {
                   Découvrir nos solutions
                 </button>
                 
-                <Link href="/contact">
-                  <button className="px-10 sm:px-12 py-4 sm:py-4 bg-gray-50 dark:bg-gray-800 border border-black dark:border-white text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 text-base sm:text-lg font-semibold rounded-full transition-colors duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
-                    Demander un devis
-                  </button>
-                </Link>
+                <button
+                  onClick={() => contactRef.current?.scrollIntoView({ behavior: 'smooth' })}
+                  className="px-10 sm:px-12 py-4 sm:py-4 bg-gray-50 dark:bg-gray-800 border border-black dark:border-white text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 text-base sm:text-lg font-semibold rounded-full transition-colors duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                >
+                  Demander un devis
+                </button>
               </div>
             </div>
             
@@ -554,7 +556,7 @@ export default function ClimatisationPage() {
       </section>
 
       {/* Section Contact */}
-      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-50 dark:bg-background">
+      <section ref={contactRef} className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-50 dark:bg-background">
         <div className="container mx-auto px-4 xs:px-5 sm:px-6">
           <div className="grid grid-cols-1 gap-8 max-w-7xl mx-auto">
             
