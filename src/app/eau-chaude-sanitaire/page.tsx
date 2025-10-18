@@ -245,6 +245,108 @@ export default function EauChaudeSanitairePage() {
         </div>
       </section>
 
+      {/* Section Professionnels & Particuliers */}
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-50 dark:bg-background">
+        <div className="container mx-auto px-4 xs:px-5 sm:px-6 max-w-4xl">
+          <div className="text-center">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-black dark:text-white mb-6 sm:mb-8">
+              Professionnels & Particuliers
+            </h2>
+            
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-6 font-light">
+              Que vous soyez particulier ou professionnel, <strong className="text-black dark:text-white font-medium">ClimGO</strong> vous garantit des interventions <strong className="text-black dark:text-white font-medium">rapides, soignées et adaptées</strong> à vos besoins.
+            </p>
+            
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-6 font-light">
+              Chaque projet fait l'objet d'une <strong className="text-black dark:text-white font-medium">étude personnalisée</strong> et de conseils précis, afin de vous proposer la solution la plus performante pour votre confort.
+            </p>
+            
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed font-light">
+              En tant qu'entreprise <strong className="text-black dark:text-white font-medium">certifiée RGE</strong>, ClimGO vous permet également de bénéficier des <strong className="text-black dark:text-white font-medium">aides de l'État</strong>, sous réserve d'éligibilité.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Section Découvrir nos autres services */}
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-50 dark:bg-background">
+        <div className="container mx-auto px-4 xs:px-5 sm:px-6 max-w-6xl">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-black dark:text-white mb-8 sm:mb-12 text-center">
+            Découvrir nos autres services
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+            {/* Climatisation */}
+            <Link 
+              href="/climatisation"
+              className="group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400 hover:-translate-y-2 h-[300px] sm:h-[320px]"
+            >
+              {/* Version MOBILE - Image simple */}
+              <img
+                src="/outro/cardclim.png"
+                alt="Climatisation"
+                className="lg:hidden absolute inset-0 w-full h-full object-cover"
+              />
+
+              {/* Version DESKTOP */}
+              <div
+                className="hidden lg:block absolute inset-0 bg-no-repeat bg-cover transition-transform duration-300 group-hover:scale-105"
+                style={{
+                  backgroundImage: 'url(/outro/cardclim.png)',
+                  backgroundPosition: 'center center'
+                }}
+              >
+                {/* Overlay pour contraste - desktop uniquement */}
+                <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-white/30 to-transparent dark:from-black/60 dark:via-black/35 dark:to-transparent group-hover:from-white/50 group-hover:via-white/25 group-hover:to-transparent dark:group-hover:from-black/50 dark:group-hover:via-black/30 dark:group-hover:to-transparent transition-all duration-300" />
+              </div>
+
+              {/* Bannière avec le titre - toujours visible sur mobile, au survol sur desktop */}
+              <div className="absolute bottom-0 left-0 z-20 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-300 transform translate-y-0 lg:translate-y-2 lg:group-hover:translate-y-0">
+                <div className="bg-white/90 dark:bg-black/90 lg:bg-white/60 lg:dark:bg-black/60 backdrop-blur-md text-black dark:text-white px-4 py-2 lg:px-6 lg:py-3 rounded-tr-2xl border border-white/30 dark:border-white/10">
+                  <h4 className="text-sm sm:text-base lg:text-lg xl:text-xl font-light tracking-wide">
+                    Climatisation
+                  </h4>
+                </div>
+              </div>
+            </Link>
+
+            {/* Chauffage */}
+            <Link 
+              href="/chauffage"
+              className="group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-orange-500 dark:hover:border-orange-400 hover:-translate-y-2 h-[300px] sm:h-[320px]"
+            >
+              {/* Version MOBILE - Image simple */}
+              <img
+                src="/img/uipacspacex.png"
+                alt="Chauffage"
+                className="lg:hidden absolute inset-0 w-full h-full object-cover"
+              />
+
+              {/* Version DESKTOP */}
+              <div
+                className="hidden lg:block absolute inset-0 bg-no-repeat bg-cover transition-transform duration-300 group-hover:scale-105"
+                style={{
+                  backgroundImage: 'url(/img/uipacspacex.png)',
+                  backgroundPosition: 'center center'
+                }}
+              >
+                {/* Overlay pour contraste - desktop uniquement */}
+                <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-white/30 to-transparent dark:from-black/60 dark:via-black/35 dark:to-transparent group-hover:from-white/50 group-hover:via-white/25 group-hover:to-transparent dark:group-hover:from-black/50 dark:group-hover:via-black/30 dark:group-hover:to-transparent transition-all duration-300" />
+              </div>
+
+              {/* Bannière avec le titre - toujours visible sur mobile, au survol sur desktop */}
+              <div className="absolute bottom-0 left-0 z-20 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-300 transform translate-y-0 lg:translate-y-2 lg:group-hover:translate-y-0">
+                <div className="bg-white/90 dark:bg-black/90 lg:bg-white/60 lg:dark:bg-black/60 backdrop-blur-md text-black dark:text-white px-4 py-2 lg:px-6 lg:py-3 rounded-tr-2xl border border-white/30 dark:border-white/10">
+                  <h4 className="text-sm sm:text-base lg:text-lg xl:text-xl font-light tracking-wide">
+                    Chauffage
+                  </h4>
+                </div>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Location Map Section */}
       <LazyGoogleMaps backgroundColor="bg-gray-50 dark:bg-background" />
 
