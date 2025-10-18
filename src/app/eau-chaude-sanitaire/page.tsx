@@ -185,11 +185,11 @@ export default function EauChaudeSanitairePage() {
             >
               <h1 className="text-3xl xs:text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl font-bold lg:font-light tracking-tight mb-4 xs:mb-5 sm:mb-5 md:mb-6 lg:mb-8 text-[#03144A] dark:text-white break-words leading-tight">
                 <span className="bg-gradient-to-r from-[#FF6B6B] via-[#03144A] to-[#FF6B6B] dark:from-[#FF8A8A] dark:via-white dark:to-[#FF8A8A] bg-clip-text text-transparent">
-                  Chauffe-eau
+                  Eau chaude sanitaire
                 </span>
                 <br />
                 <span className="bg-gradient-to-r from-[#03144A] via-[#FF6B6B] to-[#03144A] dark:from-white dark:via-[#FF8A8A] dark:to-white bg-clip-text text-transparent">
-                  Eau Chaude Sanitaire
+                  Ballon Thermodynamique
                 </span>
               </h1>
               
