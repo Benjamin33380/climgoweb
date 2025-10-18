@@ -149,10 +149,11 @@ export default function ChauffagePage() {
                       src={solution.image}
                       alt={solution.title}
                       className="absolute inset-0 w-full h-full object-cover"
+                      onError={(e) => {
+                        console.error('Image failed to load:', solution.image);
+                        e.currentTarget.style.backgroundColor = '#f3f4f6';
+                      }}
                     />
-                    
-                    {/* Overlay pour contraste - léger sur mobile, plus marqué sur desktop */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-white/10 to-transparent dark:from-black/20 dark:via-black/10 dark:to-transparent lg:from-white/40 lg:via-white/20 lg:to-transparent dark:lg:from-black/40 dark:lg:via-black/20 dark:lg:to-transparent transition-all duration-300" />
                     
                     {/* Bannière avec le titre - toujours visible sur mobile/tablette, au survol sur grand desktop */}
                     <div className="absolute bottom-0 left-0 z-20 opacity-100 xl:opacity-0 xl:group-hover:opacity-100 transition-all duration-300 transform translate-y-0 xl:translate-y-2 xl:group-hover:translate-y-0">
