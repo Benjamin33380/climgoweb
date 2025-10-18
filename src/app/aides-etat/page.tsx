@@ -1,10 +1,12 @@
 'use client';
 
+import { useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { AidesCards } from '@/components/AidesCards';
 import LazyGoogleMaps from '@/components/LazyGoogleMaps';
+import { Phone, Mail, MapPin, Clock, User, MessageSquare, Building, Home } from 'lucide-react';
 
 // Import dynamique du Logo3D avec cache optimisé
 const Logo3D = dynamic(() => import('@/components/Logo3D').then(mod => ({ default: mod.Logo3D })), {
@@ -15,6 +17,91 @@ const Logo3D = dynamic(() => import('@/components/Logo3D').then(mod => ({ defaul
 // Clé unique pour éviter le cache
 
 export default function AidesEtatPage() {
+  const contactRef = useRef<HTMLDivElement>(null);
+
+  // États pour le formulaire de contact
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    address: '',
+    postalCode: '',
+    service: '',
+    message: ''
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: 'success' | 'error' | null;
+    message: string;
+  }>({ type: null, message: '' });
+
+  const services = [
+    'Pompe à chaleur air/eau',
+    'Pompe à chaleur air/air',
+    'Climatisation',
+    'Chauffe-eau thermodynamique',
+    'Plancher chauffant',
+    'Maintenance',
+    'Aides & Subventions',
+    'Autre'
+  ];
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: '' });
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus({
+          type: 'success',
+          message: data.message || 'Votre demande a été envoyée avec succès !'
+        });
+        
+        // Réinitialiser le formulaire
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          address: '',
+          postalCode: '',
+          service: '',
+          message: ''
+        });
+      } else {
+        setSubmitStatus({
+          type: 'error',
+          message: data.error || 'Erreur lors de l\'envoi. Veuillez réessayer.'
+        });
+      }
+    } catch (_error) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Erreur de connexion. Vérifiez votre connexion internet et réessayez.'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-background">
       {/* Breadcrumb Navigation */}
@@ -104,137 +191,190 @@ export default function AidesEtatPage() {
       <AidesCards />
 
       {/* Section Contact */}
-      <section className="py-12 xs:py-16 sm:py-20 md:py-24 bg-gray-50 dark:bg-background">
+      <section ref={contactRef} className="py-12 xs:py-16 sm:py-20 md:py-24 bg-gray-50 dark:bg-background">
         <div className="container mx-auto px-4 xs:px-5 sm:px-6 max-w-6xl">
           <div className="grid grid-cols-1 gap-8 lg:gap-12">
             {/* Formulaire de contact */}
             <div className="bg-white dark:bg-gray-800 rounded-3xl p-6 sm:p-8 shadow-xl border border-gray-100 dark:border-gray-700 order-1">
-              <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900 dark:text-white mb-6">
-                Demandez votre devis gratuit
-              </h2>
-              <form className="space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                      Nom complet *
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                      placeholder="Votre nom complet"
-                    />
+              <div className="text-center mb-8">
+                <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900 dark:text-white mb-4">
+                  Démarrons votre projet
+                </h2>
+                <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                  Remplissez ce formulaire et recevez une réponse personnalisée sous 48h. Nos experts analysent votre demande pour vous proposer la meilleure solution.
+                </p>
+
+                {submitStatus.type && (
+                  <div className={`mb-6 p-4 rounded-xl ${
+                    submitStatus.type === 'success' 
+                      ? 'bg-green-50 dark:bg-green-900/20 text-green-800 dark:text-green-200' 
+                      : 'bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-200'
+                  }`}>
+                    {submitStatus.message}
                   </div>
+                )}
+
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-medium text-black dark:text-white mb-2">
+                        Nom complet *
+                      </label>
+                      <div className="relative">
+                        <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                        <input
+                          type="text"
+                          id="name"
+                          name="name"
+                          required
+                          value={formData.name}
+                          onChange={handleChange}
+                          className="w-full pl-12 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-white/50 dark:bg-black/50 text-black dark:text-white placeholder-gray-500 focus:ring-2 focus:ring-[#F97316] focus:border-transparent transition-all duration-300"
+                          placeholder="Votre nom et prénom"
+                        />
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="phone" className="block text-sm font-medium text-black dark:text-white mb-2">
+                        Téléphone *
+                      </label>
+                      <div className="relative">
+                        <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                        <input
+                          type="tel"
+                          id="phone"
+                          name="phone"
+                          required
+                          value={formData.phone}
+                          onChange={handleChange}
+                          className="w-full pl-12 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-white/50 dark:bg-black/50 text-black dark:text-white placeholder-gray-500 focus:ring-2 focus:ring-[#F97316] focus:border-transparent transition-all duration-300"
+                          placeholder="06 12 34 56 78"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-black dark:text-white mb-2">
                       Email *
                     </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                      placeholder="votre@email.com"
-                    />
+                    <div className="relative">
+                      <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        value={formData.email}
+                        onChange={handleChange}
+                        className="w-full pl-12 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-white/50 dark:bg-black/50 text-black dark:text-white placeholder-gray-500 focus:ring-2 focus:ring-[#F97316] focus:border-transparent transition-all duration-300"
+                        placeholder="votre@email.com"
+                      />
+                    </div>
                   </div>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                      Téléphone
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                      placeholder="06 12 34 56 78"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="service" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                      Type de projet
-                    </label>
-                    <select
-                      id="service"
-                      name="service"
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                    >
-                      <option value="">Sélectionnez un service</option>
-                      <option value="pompe-chaleur-air-eau">Pompe à chaleur air/eau</option>
-                      <option value="pompe-chaleur-air-air">Pompe à chaleur air/air</option>
-                      <option value="climatisation">Climatisation</option>
-                      <option value="ballon-thermodynamique">Ballon thermodynamique</option>
-                      <option value="aides-subventions">Aides & Subventions</option>
-                      <option value="autre">Autre</option>
-                    </select>
-                  </div>
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={4}
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                    placeholder="Décrivez votre projet et vos besoins..."
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  className="w-full px-6 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors duration-300 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-                >
-                  Envoyer ma demande
-                </button>
-                <p className="text-sm text-gray-600 dark:text-gray-400 text-center">
-                  * Champs obligatoires. Nous vous recontacterons sous 24h.
-                </p>
-              </form>
-            </div>
 
-            {/* Informations de contact */}
-            <div className="bg-gradient-to-br from-[#03144A] to-[#F97316] rounded-3xl p-6 sm:p-8 text-white order-2">
-              <h2 className="text-2xl sm:text-3xl font-semibold mb-6">
-                Nos coordonnées
-              </h2>
-              <div className="space-y-6">
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">Adresse</h3>
-                  <p className="text-white/90">
-                    123 Avenue de la Climatisation<br />
-                    33000 Bordeaux, France
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">Horaires d'ouverture</h3>
-                  <p className="text-white/90">
-                    Lun - Ven : 8h00 - 18h00<br />
-                    Sam : 9h00 - 17h00<br />
-                    Dim : Fermé
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">Contact</h3>
-                  <p className="text-white/90">
-                    📞 05 56 12 34 56<br />
-                    ✉️ contact@climgo.fr
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">Certifications</h3>
-                  <p className="text-white/90">
-                    ✅ RGE QualiPAC<br />
-                    ✅ Entreprise certifiée<br />
-                    ✅ Garantie décennale
-                  </p>
-                </div>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="address" className="block text-sm font-medium text-black dark:text-white mb-2">
+                        Adresse
+                      </label>
+                      <div className="relative">
+                        <Home className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                        <input
+                          type="text"
+                          id="address"
+                          name="address"
+                          value={formData.address}
+                          onChange={handleChange}
+                          className="w-full pl-12 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-white/50 dark:bg-black/50 text-black dark:text-white placeholder-gray-500 focus:ring-2 focus:ring-[#F97316] focus:border-transparent transition-all duration-300"
+                          placeholder="Votre adresse"
+                        />
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="postalCode" className="block text-sm font-medium text-black dark:text-white mb-2">
+                        Code postal
+                      </label>
+                      <div className="relative">
+                        <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                        <input
+                          type="text"
+                          id="postalCode"
+                          name="postalCode"
+                          value={formData.postalCode}
+                          onChange={handleChange}
+                          className="w-full pl-12 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-white/50 dark:bg-black/50 text-black dark:text-white placeholder-gray-500 focus:ring-2 focus:ring-[#F97316] focus:border-transparent transition-all duration-300"
+                          placeholder="33000"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label htmlFor="service" className="block text-sm font-medium text-black dark:text-white mb-2">
+                      Service souhaité *
+                    </label>
+                    <div className="relative">
+                      <Building className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                      <select
+                        id="service"
+                        name="service"
+                        required
+                        value={formData.service}
+                        onChange={handleChange}
+                        className="w-full pl-12 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-white/50 dark:bg-black/50 text-black dark:text-white focus:ring-2 focus:ring-[#F97316] focus:border-transparent transition-all duration-300"
+                      >
+                        <option value="">Sélectionnez un service</option>
+                        {services.map((service) => (
+                          <option key={service} value={service}>{service}</option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium text-black dark:text-white mb-2">
+                      Votre message *
+                    </label>
+                    <div className="relative">
+                      <MessageSquare className="absolute left-3 top-4 text-gray-400 w-5 h-5" />
+                      <textarea
+                        id="message"
+                        name="message"
+                        required
+                        rows={4}
+                        value={formData.message}
+                        onChange={handleChange}
+                        className="w-full pl-12 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-white/50 dark:bg-black/50 text-black dark:text-white placeholder-gray-500 focus:ring-2 focus:ring-[#F97316] focus:border-transparent transition-all duration-300 resize-none"
+                        placeholder="Décrivez votre projet et vos besoins..."
+                      />
+                    </div>
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className={`w-full px-8 py-4 rounded-xl font-medium transition-all duration-300 shadow-lg hover:shadow-xl ${
+                      isSubmitting
+                        ? 'bg-gray-400 dark:bg-gray-600 cursor-not-allowed'
+                        : 'bg-gradient-to-r from-[#03144A] to-[#F97316] text-white hover:scale-105'
+                    }`}
+                  >
+                    {isSubmitting ? (
+                      <div className="flex items-center justify-center space-x-2">
+                        <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                        <span>Envoi en cours...</span>
+                      </div>
+                    ) : (
+                      'Envoyer ma demande'
+                    )}
+                  </button>
+                </form>
               </div>
             </div>
+
           </div>
         </div>
       </section>
