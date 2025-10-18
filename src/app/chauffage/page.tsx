@@ -234,6 +234,29 @@ export default function ChauffagePage() {
         </div>
       </section>
 
+      {/* Section Professionnels & Particuliers */}
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-white dark:bg-[#0f172a]">
+        <div className="container mx-auto px-4 xs:px-5 sm:px-6 max-w-4xl">
+          <div className="text-center">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-black dark:text-white mb-6 sm:mb-8">
+              Professionnels & Particuliers
+            </h2>
+            
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-6 font-light">
+              Que vous soyez particulier ou professionnel, <strong className="text-black dark:text-white font-medium">ClimGO</strong> vous garantit des interventions <strong className="text-black dark:text-white font-medium">rapides, soignées et adaptées</strong> à vos besoins.
+            </p>
+            
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-6 font-light">
+              Chaque projet fait l'objet d'une <strong className="text-black dark:text-white font-medium">étude personnalisée</strong> et de conseils précis, afin de vous proposer la solution la plus performante pour votre confort.
+            </p>
+            
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed font-light">
+              En tant qu'entreprise <strong className="text-black dark:text-white font-medium">certifiée RGE</strong>, ClimGO vous permet également de bénéficier des <strong className="text-black dark:text-white font-medium">aides de l'État</strong>, sous réserve d'éligibilité.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Location Map Section */}
       <LazyGoogleMaps backgroundColor="bg-gray-50 dark:bg-background" />
 
