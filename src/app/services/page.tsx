@@ -48,10 +48,10 @@ export default function PompeAChaleurPage() {
       {/* Hero Section */}
       <section className="relative min-h-[60vh] sm:min-h-[70vh] bg-gray-50 dark:bg-background overflow-hidden">
         <div className="relative container mx-auto px-4 xs:px-5 sm:px-6 py-6 xs:py-8 sm:py-12 md:py-16 lg:py-20">
-          <div className="flex flex-col lg:grid lg:grid-cols-1 gap-6 sm:gap-8 lg:gap-10 items-center justify-center min-h-[40vh] sm:min-h-[50vh]">
-            {/* Contenu texte centré */}
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 items-center min-h-[40vh] sm:min-h-[50vh]">
+            {/* Contenu texte - Animation depuis la gauche */}
             <div 
-              className="w-full max-w-4xl mx-auto text-left"
+              className="w-full max-w-2xl mx-auto lg:mx-0 text-left order-1 lg:order-1"
               style={{ 
                 animation: 'slide-in-left 1.2s ease-out both'
               }}
@@ -62,7 +62,7 @@ export default function PompeAChaleurPage() {
                 </span>
               </h1>
               
-              <div className="text-base xs:text-lg sm:text-xl md:text-xl lg:text-xl leading-relaxed text-gray-700 dark:text-gray-100 max-w-full mx-auto px-0 sm:px-2 lg:px-0 mb-6 xs:mb-7 sm:mb-8">
+              <div className="text-base xs:text-lg sm:text-xl md:text-xl lg:text-xl leading-relaxed text-gray-700 dark:text-gray-100 max-w-full lg:max-w-4xl mx-auto lg:mx-0 px-0 sm:px-2 lg:px-0 mb-6 xs:mb-7 sm:mb-8">
                 <p className="mb-3 font-light">
                   Chez <strong className="text-black dark:text-white font-medium">ClimGO</strong>, nous sommes spécialisés dans les solutions de <strong className="text-black dark:text-white font-medium">pompes à chaleur</strong>, offrant un large éventail de services pour répondre à tous vos besoins en matière de <strong className="text-black dark:text-white font-medium">chauffage</strong> et de <strong className="text-black dark:text-white font-medium">climatisation</strong>.
                 </p>
@@ -71,16 +71,26 @@ export default function PompeAChaleurPage() {
                 </p>
                 <p className="mb-4 font-light">
                   Contactez-nous pour plus d'informations ou pour demander un <strong className="text-black dark:text-white font-medium">devis gratuit</strong>.
-                </p>
+                    </p>
+                  </div>
+                  
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-start">
+                <Link href="/contact">
+                  <button className="px-10 sm:px-12 py-4 sm:py-4 bg-gray-50 dark:bg-gray-800 border border-black dark:border-white text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 text-base sm:text-lg font-semibold rounded-full transition-colors duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
+                    Demander un devis
+                  </button>
+                    </Link>
               </div>
-
-              {/* Cartes des solutions */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                  </div>
+                  
+            {/* Cartes des solutions - Animation depuis la droite */}
+            <div className="w-full max-w-2xl mx-auto lg:mx-0 order-2 lg:order-2">
+              <div className="grid grid-cols-1 gap-6">
                 {solutions.map((solution, index) => (
                   <Link 
                     key={index} 
                     href="/contact" 
-                    className="block group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-white hover:-translate-y-2 h-[250px] sm:h-[280px] lg:h-[300px] cursor-pointer"
+                    className="block group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-white hover:-translate-y-2 h-[200px] sm:h-[180px] lg:h-[160px] cursor-pointer"
                     style={{ 
                       animation: `slide-in-right 1.2s ease-out ${index * 0.2}s both`
                     }}
@@ -101,30 +111,22 @@ export default function PompeAChaleurPage() {
                       }}
                     >
                       {/* Overlay pour contraste - desktop uniquement */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-white/40 via-white/20 to-transparent dark:from-black/40 dark:via-black/20 dark:to-transparent group-hover:from-white/30 group-hover:via-white/15 group-hover:to-transparent dark:group-hover:from-black/30 dark:group-hover:via-black/15 dark:group-hover:to-transparent transition-all duration-300" />
-                    </div>
-                    
+                      <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-white/30 to-transparent dark:from-black/60 dark:via-black/35 dark:to-transparent group-hover:from-white/50 group-hover:via-white/25 group-hover:to-transparent dark:group-hover:from-black/50 dark:group-hover:via-black/30 dark:group-hover:to-transparent transition-all duration-300" />
+                  </div>
+                  
                     {/* Bannière avec le titre - toujours visible sur mobile, au survol sur desktop */}
                     <div className="absolute bottom-0 left-0 z-20 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-300 transform translate-y-0 lg:translate-y-2 lg:group-hover:translate-y-0">
                       <div className="bg-white/90 dark:bg-black/90 lg:bg-white/60 lg:dark:bg-black/60 backdrop-blur-md text-black dark:text-white px-4 py-2 lg:px-6 lg:py-3 rounded-tr-2xl border border-white/30 dark:border-white/10">
                         <h4 className="text-sm sm:text-base lg:text-lg xl:text-xl font-light tracking-wide">
                           {solution.title}
                         </h4>
-                      </div>
                     </div>
-                 </Link>
+                    </div>
+                    </Link>
                ))}
-             </div>
-
-              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-start">
-                <Link href="/contact">
-                  <button className="px-10 sm:px-12 py-4 sm:py-4 bg-gray-50 dark:bg-gray-800 border border-black dark:border-white text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 text-base sm:text-lg font-semibold rounded-full transition-colors duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
-                    Demander un devis
-                  </button>
-                </Link>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
         </div>
       </section>
 
