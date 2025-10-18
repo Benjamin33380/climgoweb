@@ -19,7 +19,7 @@ export default function PompeAChaleurPage() {
     {
       id: 'thermodynamique',
       title: "Thermodynamique",
-      image: "/img/ballonecs.png",
+      image: "/img/thermoecs.png",
     }
   ];
 
