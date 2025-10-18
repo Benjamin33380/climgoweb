@@ -159,16 +159,21 @@ export default function EauChaudeSanitairePage() {
                       animation: `slide-in-right 1.2s ease-out ${index * 0.2}s both`
                     }}
                   >
-                    {/* Image simple pour toutes les résolutions */}
-                    <img
-                      src={solution.image}
-                      alt={solution.title}
-                      className="absolute inset-0 w-full h-full object-cover"
-                    />
+                    {/* Image en fond pour toutes les résolutions */}
+                    <div 
+                      className="absolute inset-0 bg-no-repeat bg-center bg-contain lg:bg-cover"
+                      style={{ 
+                        backgroundImage: `url(${solution.image})`,
+                        backgroundColor: '#f3f4f6'
+                      }}
+                    >
+                      {/* Overlay léger pour contraste sur desktop uniquement */}
+                      <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-white/40 via-white/20 to-transparent dark:from-black/40 dark:via-black/20 dark:to-transparent" />
+                    </div>
                     
-                    {/* Bannière avec le titre - toujours visible sur mobile/tablette, au survol sur grand desktop */}
-                    <div className="absolute bottom-0 left-0 z-20 opacity-100 xl:opacity-0 xl:group-hover:opacity-100 transition-all duration-300 transform translate-y-0 xl:translate-y-2 xl:group-hover:translate-y-0">
-                      <div className="bg-white/90 dark:bg-black/90 xl:bg-white/60 xl:dark:bg-black/60 backdrop-blur-md text-black dark:text-white px-4 py-2 lg:px-6 lg:py-3 rounded-tr-2xl border border-white/30 dark:border-white/10">
+                    {/* Bannière avec le titre - toujours visible sur mobile, au survol sur desktop */}
+                    <div className="absolute bottom-0 left-0 z-20 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-300 transform translate-y-0 lg:translate-y-2 lg:group-hover:translate-y-0">
+                      <div className="bg-white/90 dark:bg-black/90 lg:bg-white/60 lg:dark:bg-black/60 backdrop-blur-md text-black dark:text-white px-4 py-2 lg:px-6 lg:py-3 rounded-tr-2xl border border-white/30 dark:border-white/10">
                         <h4 className="text-sm sm:text-base lg:text-lg xl:text-xl font-light tracking-wide">
                           {solution.title}
                         </h4>
