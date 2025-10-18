@@ -1,10 +1,94 @@
 'use client';
 
-import React from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
+import { Phone, Mail, MapPin, Clock, User, MessageSquare, Building, Home } from 'lucide-react';
 import LazyGoogleMaps from '@/components/LazyGoogleMaps';
 
 export default function PompeAChaleurPage() {
+
+  // États pour le formulaire de contact
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    address: '',
+    postalCode: '',
+    service: '',
+    message: ''
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: 'success' | 'error' | null;
+    message: string;
+  }>({ type: null, message: '' });
+
+  const services = [
+    'Pompe à chaleur air/eau',
+    'Pompe à chaleur air/air',
+    'Climatisation',
+    'Chauffe-eau thermodynamique',
+    'Plancher chauffant',
+    'Maintenance',
+    'Autre'
+  ];
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: '' });
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus({
+          type: 'success',
+          message: data.message || 'Votre demande a été envoyée avec succès !'
+        });
+        
+        // Réinitialiser le formulaire
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          address: '',
+          postalCode: '',
+          service: '',
+          message: ''
+        });
+      } else {
+        setSubmitStatus({
+          type: 'error',
+          message: data.error || 'Erreur lors de l\'envoi. Veuillez réessayer.'
+        });
+      }
+    } catch (_error) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Erreur de connexion. Vérifiez votre connexion internet et réessayez.'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
   const solutions = [
     {
       id: 'climatisation-murale',
@@ -219,103 +303,188 @@ export default function PompeAChaleurPage() {
       {/* Section Contact */}
       <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-50 dark:bg-background">
         <div className="container mx-auto px-4 xs:px-5 sm:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 gap-8 max-w-7xl mx-auto">
             
-            {/* Carte de contact */}
-            <div>
-              <div className="bg-gradient-to-br from-[#03144A] to-[#F97316] rounded-3xl p-8 text-white shadow-xl !bg-opacity-100 h-full">
-                <h3 className="text-2xl font-light mb-6 flex items-center text-white">
-                  <div className="w-1 h-6 bg-white rounded-full mr-3"></div>
-                  Besoin d'une réponse immédiate ?
-                </h3>
-                
-                <div className="space-y-6">
-                  <div className="flex items-center space-x-4">
-                    <div className="bg-white/20 rounded-full p-3 backdrop-blur-sm">
-                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <p className="text-white/90 text-sm">Appelez directement</p>
-                      <Link href="tel:0766460008" className="text-xl font-semibold text-white hover:text-gray-200 transition-colors">
-                        07 66 46 00 08
-                      </Link>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center space-x-4">
-                    <div className="bg-white/20 rounded-full p-3 backdrop-blur-sm">
-                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <p className="text-white/90 text-sm">Email professionnel</p>
-                      <Link href="mailto:contact@climgo.fr" className="text-xl font-semibold text-white hover:text-gray-200 transition-colors">
-                        contact@climgo.fr
-                      </Link>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center space-x-4">
-                    <div className="bg-white/20 rounded-full p-3 backdrop-blur-sm">
-                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <p className="text-white/90 text-sm">Notre localisation</p>
-                      <span className="text-lg font-medium text-white">28 rue de Cantelaude, 33380 Marcheprime</span>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center space-x-4">
-                    <div className="bg-white/20 rounded-full p-3 backdrop-blur-sm">
-                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <p className="text-white/90 text-sm">Horaires d'ouverture</p>
-                      <span className="text-lg font-medium text-white">Lun-Ven: 8h-18h</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-8 pt-6 border-t border-white/20">
-                  <Link
-                    href="tel:0766460008"
-                    className="w-full bg-white text-[#03144a] px-6 py-4 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-300 flex items-center justify-center space-x-3 group"
-                  >
-                    <svg className="w-5 h-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                    <span>Appel d'urgence</span>
-                  </Link>
-                </div>
-              </div>
-            </div>
-
             {/* Carte formulaire de contact */}
             <div>
-              <div className="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-700 h-full flex flex-col">
+              <div className="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-700">
                 <h3 className="text-2xl sm:text-3xl font-light text-black dark:text-white mb-4">
                   Démarrons votre projet
                 </h3>
                 <div className="w-24 h-1 bg-gradient-to-r from-[#F97316] to-[#03144A] mb-6"></div>
                 
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-8 flex-1">
-                  Remplissez notre formulaire de contact et recevez une réponse personnalisée sous 48h. Nos experts analysent votre demande pour vous proposer la meilleure solution adaptée à vos besoins.
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm mb-6">
+                  Remplissez ce formulaire et recevez une réponse personnalisée sous 48h. Nos experts analysent votre demande pour vous proposer la meilleure solution.
                 </p>
 
-                <Link 
-                  href="/contact"
-                  className="w-full px-8 py-4 rounded-xl font-semibold bg-gradient-to-r from-[#03144A] to-[#F97316] text-white hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl text-center"
-                >
-                  Demander un devis gratuit
-                </Link>
+                {submitStatus.type && (
+                  <div className={`mb-6 p-4 rounded-xl ${
+                    submitStatus.type === 'success' 
+                      ? 'bg-green-50 dark:bg-green-900/20 text-green-800 dark:text-green-200' 
+                      : 'bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-200'
+                  }`}>
+                    {submitStatus.message}
+                  </div>
+                )}
+
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-medium text-black dark:text-white mb-2">
+                        Nom complet *
+                      </label>
+                      <div className="relative">
+                        <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                        <input
+                          type="text"
+                          id="name"
+                          name="name"
+                          required
+                          value={formData.name}
+                          onChange={handleChange}
+                          className="w-full pl-12 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-white/50 dark:bg-black/50 text-black dark:text-white placeholder-gray-500 focus:ring-2 focus:ring-[#F97316] focus:border-transparent transition-all duration-300"
+                          placeholder="Votre nom et prénom"
+                        />
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="phone" className="block text-sm font-medium text-black dark:text-white mb-2">
+                        Téléphone *
+                      </label>
+                      <div className="relative">
+                        <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                        <input
+                          type="tel"
+                          id="phone"
+                          name="phone"
+                          required
+                          value={formData.phone}
+                          onChange={handleChange}
+                          className="w-full pl-12 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-white/50 dark:bg-black/50 text-black dark:text-white placeholder-gray-500 focus:ring-2 focus:ring-[#F97316] focus:border-transparent transition-all duration-300"
+                          placeholder="06 12 34 56 78"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-black dark:text-white mb-2">
+                      Email *
+                    </label>
+                    <div className="relative">
+                      <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        value={formData.email}
+                        onChange={handleChange}
+                        className="w-full pl-12 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-white/50 dark:bg-black/50 text-black dark:text-white placeholder-gray-500 focus:ring-2 focus:ring-[#F97316] focus:border-transparent transition-all duration-300"
+                        placeholder="votre@email.com"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="address" className="block text-sm font-medium text-black dark:text-white mb-2">
+                        Adresse
+                      </label>
+                      <div className="relative">
+                        <Home className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                        <input
+                          type="text"
+                          id="address"
+                          name="address"
+                          value={formData.address}
+                          onChange={handleChange}
+                          className="w-full pl-12 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-white/50 dark:bg-black/50 text-black dark:text-white placeholder-gray-500 focus:ring-2 focus:ring-[#F97316] focus:border-transparent transition-all duration-300"
+                          placeholder="Votre adresse"
+                        />
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="postalCode" className="block text-sm font-medium text-black dark:text-white mb-2">
+                        Code postal
+                      </label>
+                      <div className="relative">
+                        <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                        <input
+                          type="text"
+                          id="postalCode"
+                          name="postalCode"
+                          value={formData.postalCode}
+                          onChange={handleChange}
+                          className="w-full pl-12 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-white/50 dark:bg-black/50 text-black dark:text-white placeholder-gray-500 focus:ring-2 focus:ring-[#F97316] focus:border-transparent transition-all duration-300"
+                          placeholder="33000"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label htmlFor="service" className="block text-sm font-medium text-black dark:text-white mb-2">
+                      Service souhaité *
+                    </label>
+                    <div className="relative">
+                      <Building className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                      <select
+                        id="service"
+                        name="service"
+                        required
+                        value={formData.service}
+                        onChange={handleChange}
+                        className="w-full pl-12 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-white/50 dark:bg-black/50 text-black dark:text-white focus:ring-2 focus:ring-[#F97316] focus:border-transparent transition-all duration-300"
+                      >
+                        <option value="">Sélectionnez un service</option>
+                        {services.map((service) => (
+                          <option key={service} value={service}>{service}</option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium text-black dark:text-white mb-2">
+                      Votre message *
+                    </label>
+                    <div className="relative">
+                      <MessageSquare className="absolute left-3 top-4 text-gray-400 w-5 h-5" />
+                      <textarea
+                        id="message"
+                        name="message"
+                        required
+                        rows={4}
+                        value={formData.message}
+                        onChange={handleChange}
+                        className="w-full pl-12 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-white/50 dark:bg-black/50 text-black dark:text-white placeholder-gray-500 focus:ring-2 focus:ring-[#F97316] focus:border-transparent transition-all duration-300 resize-none"
+                        placeholder="Décrivez votre projet et vos besoins..."
+                      />
+                    </div>
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className={`w-full px-8 py-4 rounded-xl font-medium transition-all duration-300 shadow-lg hover:shadow-xl ${
+                      isSubmitting
+                        ? 'bg-gray-400 dark:bg-gray-600 cursor-not-allowed'
+                        : 'bg-gradient-to-r from-[#03144A] to-[#F97316] text-white hover:scale-105'
+                    }`}
+                  >
+                    {isSubmitting ? (
+                      <div className="flex items-center justify-center space-x-2">
+                        <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                        <span>Envoi en cours...</span>
+                      </div>
+                    ) : (
+                      'Envoyer ma demande'
+                    )}
+                  </button>
+                </form>
               </div>
             </div>
 

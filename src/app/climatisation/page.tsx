@@ -558,63 +558,8 @@ export default function ClimatisationPage() {
         <div className="container mx-auto px-4 xs:px-5 sm:px-6">
           <div className="grid grid-cols-1 gap-8 max-w-7xl mx-auto">
             
-            {/* Carte de contact */}
-            <div className="order-2">
-              <div style={{
-                background: 'linear-gradient(to bottom right, #03144A, #F97316)',
-                borderRadius: '24px',
-                padding: '32px',
-                color: 'white'
-              }}>
-                <h3 style={{ fontSize: '24px', fontWeight: '300', marginBottom: '32px', color: 'white' }}>
-                  Besoin d'une réponse immédiate ?
-                </h3>
-                
-                <div style={{ background: 'rgba(255,255,255,0.1)', borderRadius: '12px', padding: '16px', marginBottom: '16px' }}>
-                  <p style={{ fontSize: '14px', marginBottom: '8px', color: 'white' }}>Appelez directement</p>
-                  <Link href="tel:0766460008" style={{ fontSize: '20px', fontWeight: '600', color: 'white', display: 'block' }}>
-                    07 66 46 00 08
-                  </Link>
-                </div>
-
-                <div style={{ background: 'rgba(255,255,255,0.1)', borderRadius: '12px', padding: '16px', marginBottom: '16px' }}>
-                  <p style={{ fontSize: '14px', marginBottom: '8px', color: 'white' }}>Email professionnel</p>
-                  <Link href="mailto:contact@climgo.fr" style={{ fontSize: '20px', fontWeight: '600', color: 'white', display: 'block' }}>
-                    contact@climgo.fr
-                  </Link>
-                </div>
-
-                <div style={{ background: 'rgba(255,255,255,0.1)', borderRadius: '12px', padding: '16px', marginBottom: '16px' }}>
-                  <p style={{ fontSize: '14px', marginBottom: '8px', color: 'white' }}>Notre localisation</p>
-                  <p style={{ fontSize: '16px', fontWeight: '500', color: 'white' }}>28 rue de Cantelaude, 33380 Marcheprime</p>
-                </div>
-
-                <div style={{ background: 'rgba(255,255,255,0.1)', borderRadius: '12px', padding: '16px', marginBottom: '24px' }}>
-                  <p style={{ fontSize: '14px', marginBottom: '8px', color: 'white' }}>Horaires d'ouverture</p>
-                  <p style={{ fontSize: '16px', fontWeight: '500', color: 'white' }}>Lun-Ven: 8h-18h</p>
-                </div>
-
-                <div style={{ borderTop: '1px solid rgba(255,255,255,0.2)', paddingTop: '24px', marginTop: '32px' }}>
-                  <Link
-                    href="tel:0766460008"
-                    style={{
-                      display: 'block',
-                      textAlign: 'center',
-                      padding: '16px 24px',
-                      borderRadius: '12px',
-                      fontWeight: '600',
-                      backgroundColor: 'white',
-                      color: '#03144a'
-                    }}
-                  >
-                    Appel d'urgence
-                  </Link>
-                </div>
-              </div>
-            </div>
-
             {/* Carte formulaire de contact */}
-            <div className="order-1">
+            <div>
               <div className="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-700">
                 <h3 className="text-2xl sm:text-3xl font-light text-black dark:text-white mb-4">
                   Démarrons votre projet
