@@ -22,7 +22,7 @@ export default function Services() {
             >
               <Link href="/climatisation" className="group block relative overflow-hidden rounded-2xl sm:rounded-3xl h-64 sm:h-80 lg:h-96 shadow-xl hover:shadow-2xl transition-all duration-300">
                 <Image
-                  src="/img/climdame.png"
+                  src="/outro/cardclim.png"
                   alt="Climatisation"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
