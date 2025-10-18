@@ -26,8 +26,9 @@ export default function Services() {
                   alt="Climatisation"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  quality={100}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-white uppercase tracking-wider drop-shadow-2xl text-center px-4" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
                     Climatisation
@@ -51,8 +52,9 @@ export default function Services() {
                   alt="Pompes à chaleur"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  quality={100}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-white uppercase tracking-wider drop-shadow-2xl text-center px-4" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
                     Pompes à chaleur
@@ -113,8 +115,9 @@ export default function Services() {
                   alt="Autres services"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  quality={100}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-white uppercase tracking-wider drop-shadow-2xl text-center px-4" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
                     Autres services
