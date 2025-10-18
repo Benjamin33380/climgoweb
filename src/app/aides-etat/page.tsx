@@ -41,17 +41,24 @@ export default function AidesEtatPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-background">
-      {/* Fil d'Ariane */}
-      <div className="bg-gray-50 dark:bg-background pt-16 pb-1 px-4 xs:px-6">
-        <nav className="max-w-7xl mx-auto">
-          <ol className="list-reset flex items-center space-x-2 text-xs xs:text-sm text-gray-900 dark:text-white">
-            <li>
-              <Link href="/" className="hover:underline opacity-70 hover:opacity-100 transition-opacity">Accueil</Link>
-              <span className="mx-1.5 opacity-50">/</span>
-            </li>
-            <li className="font-medium">Aides & Subventions</li>
-          </ol>
-        </nav>
+      {/* Breadcrumb Navigation */}
+      <div className="bg-gray-50 dark:bg-background">
+        <div className="container mx-auto px-4 xs:px-5 sm:px-6 py-3">
+          <nav className="flex items-center space-x-2 text-sm">
+            <Link 
+              href="/" 
+              className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-200"
+            >
+              Accueil
+            </Link>
+            <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+            <span className="text-black dark:text-white font-medium">
+              Aides & Subventions
+            </span>
+          </nav>
+        </div>
       </div>
 
       {/* Hero Section personnalisé avec logos */}
