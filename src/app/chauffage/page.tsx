@@ -268,40 +268,68 @@ export default function ChauffagePage() {
             {/* Climatisation */}
             <Link 
               href="/climatisation"
-              className="group relative bg-gray-50 dark:bg-gray-800/50 rounded-3xl p-8 sm:p-10 hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400 hover:-translate-y-2"
+              className="group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400 hover:-translate-y-2 h-[300px] sm:h-[320px]"
             >
-              <div className="flex flex-col items-center text-center">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 mb-6 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                  </svg>
+              {/* Version MOBILE - Image simple */}
+              <img
+                src="/outro/cardclim.png"
+                alt="Climatisation"
+                className="lg:hidden absolute inset-0 w-full h-full object-cover"
+              />
+
+              {/* Version DESKTOP */}
+              <div
+                className="hidden lg:block absolute inset-0 bg-no-repeat bg-cover transition-transform duration-300 group-hover:scale-105"
+                style={{
+                  backgroundImage: 'url(/outro/cardclim.png)',
+                  backgroundPosition: 'center center'
+                }}
+              >
+                {/* Overlay pour contraste - desktop uniquement */}
+                <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-white/30 to-transparent dark:from-black/60 dark:via-black/35 dark:to-transparent group-hover:from-white/50 group-hover:via-white/25 group-hover:to-transparent dark:group-hover:from-black/50 dark:group-hover:via-black/30 dark:group-hover:to-transparent transition-all duration-300" />
+              </div>
+
+              {/* Bannière avec le titre - toujours visible sur mobile, au survol sur desktop */}
+              <div className="absolute bottom-0 left-0 z-20 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-300 transform translate-y-0 lg:translate-y-2 lg:group-hover:translate-y-0">
+                <div className="bg-white/90 dark:bg-black/90 lg:bg-white/60 lg:dark:bg-black/60 backdrop-blur-md text-black dark:text-white px-4 py-2 lg:px-6 lg:py-3 rounded-tr-2xl border border-white/30 dark:border-white/10">
+                  <h4 className="text-sm sm:text-base lg:text-lg xl:text-xl font-light tracking-wide">
+                    Climatisation
+                  </h4>
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-light text-black dark:text-white mb-4">
-                  Climatisation
-                </h3>
-                <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 font-light leading-relaxed">
-                  Installation et entretien de systèmes de climatisation pour votre confort toute l'année.
-                </p>
               </div>
             </Link>
 
             {/* Eau chaude sanitaire */}
             <Link 
               href="/eau-chaude-sanitaire"
-              className="group relative bg-gray-50 dark:bg-gray-800/50 rounded-3xl p-8 sm:p-10 hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700 hover:border-red-500 dark:hover:border-red-400 hover:-translate-y-2"
+              className="group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-red-500 dark:hover:border-red-400 hover:-translate-y-2 h-[300px] sm:h-[320px]"
             >
-              <div className="flex flex-col items-center text-center">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 mb-6 bg-gradient-to-br from-red-500 to-pink-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                  </svg>
+              {/* Version MOBILE - Image simple */}
+              <img
+                src="/img/thermoecs.png"
+                alt="Eau chaude sanitaire"
+                className="lg:hidden absolute inset-0 w-full h-full object-cover"
+              />
+
+              {/* Version DESKTOP */}
+              <div
+                className="hidden lg:block absolute inset-0 bg-no-repeat bg-cover transition-transform duration-300 group-hover:scale-105"
+                style={{
+                  backgroundImage: 'url(/img/thermoecs.png)',
+                  backgroundPosition: 'center center'
+                }}
+              >
+                {/* Overlay pour contraste - desktop uniquement */}
+                <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-white/30 to-transparent dark:from-black/60 dark:via-black/35 dark:to-transparent group-hover:from-white/50 group-hover:via-white/25 group-hover:to-transparent dark:group-hover:from-black/50 dark:group-hover:via-black/30 dark:group-hover:to-transparent transition-all duration-300" />
+              </div>
+
+              {/* Bannière avec le titre - toujours visible sur mobile, au survol sur desktop */}
+              <div className="absolute bottom-0 left-0 z-20 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-300 transform translate-y-0 lg:translate-y-2 lg:group-hover:translate-y-0">
+                <div className="bg-white/90 dark:bg-black/90 lg:bg-white/60 lg:dark:bg-black/60 backdrop-blur-md text-black dark:text-white px-4 py-2 lg:px-6 lg:py-3 rounded-tr-2xl border border-white/30 dark:border-white/10">
+                  <h4 className="text-sm sm:text-base lg:text-lg xl:text-xl font-light tracking-wide">
+                    Eau chaude sanitaire
+                  </h4>
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-light text-black dark:text-white mb-4">
-                  Eau chaude sanitaire
-                </h3>
-                <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 font-light leading-relaxed">
-                  Solutions de chauffe-eau thermodynamique pour une eau chaude économique et écologique.
-                </p>
               </div>
             </Link>
           </div>
