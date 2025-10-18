@@ -120,33 +120,7 @@ export default function NewHeader() {
               <NavigationMenuItem>
                 <NavigationMenuTrigger>Nos Services</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[480px] lg:grid-cols-[.7fr_1fr]">
-                    <li className="row-span-3">
-                      <NavigationMenuLink asChild>
-                        <a
-                          className="flex h-full w-full select-none flex-col justify-center rounded-md bg-white dark:bg-background p-5 no-underline outline-none focus:shadow-md group"
-                          href="/pompe-a-chaleur"
-                          onMouseEnter={() => setIsServicesHovered(true)}
-                          onMouseLeave={() => setIsServicesHovered(false)}
-                        >
-                          <div className="flex justify-center items-center mb-4 flex-grow">
-                            <LogoWithFallback
-                              glbUrl="/favicon/logo.glb"
-                              isHovered={isServicesHovered}
-                              className="w-20 h-20 transition-all duration-300"
-                            />
-                          </div>
-                          <div className="text-center">
-                            <div className="mb-2 text-lg font-medium">
-                              ClimGO Services
-                            </div>
-                            <p className="text-sm leading-tight text-muted-foreground">
-                              Votre expert en chauffage, climatisation et pompe à chaleur en Gironde.
-                            </p>
-                          </div>
-                        </a>
-                      </NavigationMenuLink>
-                    </li>
+                  <ul className="grid gap-3 p-4 w-[600px] lg:w-[800px] grid-cols-2">
                     {services.map((service) => (
                       <ListItem key={service.title} href={service.href} title={service.title} icon={service.icon}>
                         {service.description}
