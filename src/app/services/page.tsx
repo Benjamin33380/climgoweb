@@ -216,6 +216,113 @@ export default function PompeAChaleurPage() {
         </div>
       </section>
 
+      {/* Section Contact */}
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-50 dark:bg-background">
+        <div className="container mx-auto px-4 xs:px-5 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 max-w-7xl mx-auto">
+            
+            {/* Carte de contact */}
+            <div>
+              <div className="bg-gradient-to-br from-[#03144A] to-[#F97316] rounded-3xl p-8 text-white shadow-xl !bg-opacity-100 h-full">
+                <h3 className="text-2xl font-light mb-6 flex items-center text-white">
+                  <div className="w-1 h-6 bg-white rounded-full mr-3"></div>
+                  Besoin d'une réponse immédiate ?
+                </h3>
+                
+                <div className="space-y-6">
+                  <div className="flex items-center space-x-4">
+                    <div className="bg-white/20 rounded-full p-3 backdrop-blur-sm">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="text-white/90 text-sm">Appelez directement</p>
+                      <Link href="tel:0766460008" className="text-xl font-semibold text-white hover:text-gray-200 transition-colors">
+                        07 66 46 00 08
+                      </Link>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center space-x-4">
+                    <div className="bg-white/20 rounded-full p-3 backdrop-blur-sm">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="text-white/90 text-sm">Email professionnel</p>
+                      <Link href="mailto:contact@climgo.fr" className="text-xl font-semibold text-white hover:text-gray-200 transition-colors">
+                        contact@climgo.fr
+                      </Link>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center space-x-4">
+                    <div className="bg-white/20 rounded-full p-3 backdrop-blur-sm">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="text-white/90 text-sm">Notre localisation</p>
+                      <span className="text-lg font-medium text-white">28 rue de Cantelaude, 33380 Marcheprime</span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center space-x-4">
+                    <div className="bg-white/20 rounded-full p-3 backdrop-blur-sm">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="text-white/90 text-sm">Horaires d'ouverture</p>
+                      <span className="text-lg font-medium text-white">Lun-Ven: 8h-18h</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-8 pt-6 border-t border-white/20">
+                  <Link
+                    href="tel:0766460008"
+                    className="w-full bg-white text-[#03144a] px-6 py-4 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-300 flex items-center justify-center space-x-3 group"
+                  >
+                    <svg className="w-5 h-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                    <span>Appel d'urgence</span>
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Carte formulaire de contact */}
+            <div>
+              <div className="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-700 h-full flex flex-col">
+                <h3 className="text-2xl sm:text-3xl font-light text-black dark:text-white mb-4">
+                  Démarrons votre projet
+                </h3>
+                <div className="w-24 h-1 bg-gradient-to-r from-[#F97316] to-[#03144A] mb-6"></div>
+                
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-8 flex-1">
+                  Remplissez notre formulaire de contact et recevez une réponse personnalisée sous 48h. Nos experts analysent votre demande pour vous proposer la meilleure solution adaptée à vos besoins.
+                </p>
+
+                <Link 
+                  href="/contact"
+                  className="w-full px-8 py-4 rounded-xl font-semibold bg-gradient-to-r from-[#03144A] to-[#F97316] text-white hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl text-center"
+                >
+                  Demander un devis gratuit
+                </Link>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* Location Map Section */}
       <LazyGoogleMaps backgroundColor="bg-gray-50 dark:bg-background" />
 
