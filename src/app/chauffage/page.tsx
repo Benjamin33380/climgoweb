@@ -258,7 +258,7 @@ export default function ChauffagePage() {
       </section>
 
       {/* Section Découvrir nos autres services */}
-      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-white dark:bg-[#0f172a]">
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-50 dark:bg-background">
         <div className="container mx-auto px-4 xs:px-5 sm:px-6 max-w-6xl">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-black dark:text-white mb-8 sm:mb-12 text-center">
             Découvrir nos autres services
