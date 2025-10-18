@@ -564,37 +564,37 @@ export default function ClimatisationPage() {
                 background: 'linear-gradient(to bottom right, #03144A, #F97316)',
                 borderRadius: '24px',
                 padding: '32px',
-                color: 'black'
+                color: 'white'
               }}>
-                <h3 style={{ fontSize: '24px', fontWeight: '300', marginBottom: '32px', color: 'black' }}>
+                <h3 style={{ fontSize: '24px', fontWeight: '300', marginBottom: '32px', color: 'white' }}>
                   Besoin d'une réponse immédiate ?
                 </h3>
                 
                 <div style={{ marginBottom: '24px' }}>
-                  <p style={{ fontSize: '14px', marginBottom: '8px', color: 'black' }}>Appelez directement</p>
-                  <Link href="tel:0766460008" style={{ fontSize: '20px', fontWeight: '600', color: 'black', display: 'block' }}>
+                  <p style={{ fontSize: '14px', marginBottom: '8px', color: 'white' }}>Appelez directement</p>
+                  <Link href="tel:0766460008" style={{ fontSize: '20px', fontWeight: '600', color: 'white', display: 'block' }}>
                     07 66 46 00 08
                   </Link>
                 </div>
 
                 <div style={{ marginBottom: '24px' }}>
-                  <p style={{ fontSize: '14px', marginBottom: '8px', color: 'black' }}>Email professionnel</p>
-                  <Link href="mailto:contact@climgo.fr" style={{ fontSize: '20px', fontWeight: '600', color: 'black', display: 'block' }}>
+                  <p style={{ fontSize: '14px', marginBottom: '8px', color: 'white' }}>Email professionnel</p>
+                  <Link href="mailto:contact@climgo.fr" style={{ fontSize: '20px', fontWeight: '600', color: 'white', display: 'block' }}>
                     contact@climgo.fr
                   </Link>
                 </div>
 
                 <div style={{ marginBottom: '24px' }}>
-                  <p style={{ fontSize: '14px', marginBottom: '8px', color: 'black' }}>Notre localisation</p>
-                  <p style={{ fontSize: '16px', fontWeight: '500', color: 'black' }}>28 rue de Cantelaude, 33380 Marcheprime</p>
+                  <p style={{ fontSize: '14px', marginBottom: '8px', color: 'white' }}>Notre localisation</p>
+                  <p style={{ fontSize: '16px', fontWeight: '500', color: 'white' }}>28 rue de Cantelaude, 33380 Marcheprime</p>
                 </div>
 
                 <div style={{ marginBottom: '32px' }}>
-                  <p style={{ fontSize: '14px', marginBottom: '8px', color: 'black' }}>Horaires d'ouverture</p>
-                  <p style={{ fontSize: '16px', fontWeight: '500', color: 'black' }}>Lun-Ven: 8h-18h</p>
+                  <p style={{ fontSize: '14px', marginBottom: '8px', color: 'white' }}>Horaires d'ouverture</p>
+                  <p style={{ fontSize: '16px', fontWeight: '500', color: 'white' }}>Lun-Ven: 8h-18h</p>
                 </div>
 
-                <div style={{ borderTop: '1px solid rgba(0,0,0,0.2)', paddingTop: '24px', marginTop: '32px' }}>
+                <div style={{ borderTop: '1px solid rgba(255,255,255,0.2)', paddingTop: '24px', marginTop: '32px' }}>
                   <Link
                     href="tel:0766460008"
                     style={{
