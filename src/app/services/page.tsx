@@ -8,12 +8,12 @@ export default function PompeAChaleurPage() {
   const solutions = [
     {
       id: 'climatisation-murale',
-      title: "Climatisation murale",
+      title: "Pompe à chaleur air/air",
       image: "/outro/cardclim.png",
     },
     {
       id: 'chauffage-ecs',
-      title: "Chauffage avec production d'eau chaude sanitaire",
+      title: "Pompe à chaleur air/eau",
       image: "/img/uipacspacex.png",
     },
     {
