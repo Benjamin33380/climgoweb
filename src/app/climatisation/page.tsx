@@ -560,7 +560,13 @@ export default function ClimatisationPage() {
             
             {/* Carte de contact */}
             <div className="order-2">
-              <div className="bg-gradient-to-br from-[#03144A] to-[#F97316] rounded-3xl p-6 sm:p-8 text-white shadow-xl min-h-[600px]">
+              <div 
+                className="rounded-3xl p-6 sm:p-8 text-white shadow-xl min-h-[600px]"
+                style={{
+                  background: 'linear-gradient(to bottom right, #03144A, #F97316)',
+                  color: 'white'
+                }}
+              >
                 <h3 className="text-2xl font-light mb-6 flex items-center text-white">
                   <div className="w-1 h-6 bg-white rounded-full mr-3"></div>
                   Besoin d'une réponse immédiate ?
