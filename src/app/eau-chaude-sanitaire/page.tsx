@@ -161,7 +161,7 @@ export default function EauChaudeSanitairePage() {
                   >
                     {/* Image en fond pour toutes les résolutions */}
                     <div 
-                      className="absolute inset-0 bg-no-repeat bg-center bg-contain lg:bg-cover"
+                      className="absolute inset-0 bg-no-repeat bg-center bg-cover"
                       style={{ 
                         backgroundImage: `url(${solution.image})`,
                         backgroundColor: '#f3f4f6'
