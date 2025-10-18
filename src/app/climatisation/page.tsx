@@ -560,48 +560,52 @@ export default function ClimatisationPage() {
             
             {/* Carte de contact */}
             <div className="order-2">
-              <div 
-                className="rounded-3xl p-6 sm:p-8 shadow-xl"
-                style={{
-                  background: 'linear-gradient(to bottom right, #03144A, #F97316)',
-                  color: 'white'
-                }}
-              >
-                <h3 style={{ color: 'white' }} className="text-2xl font-light mb-8">
+              <div style={{
+                background: 'linear-gradient(to bottom right, #03144A, #F97316)',
+                borderRadius: '24px',
+                padding: '32px',
+                color: 'white'
+              }}>
+                <h3 style={{ fontSize: '24px', fontWeight: '300', marginBottom: '32px', color: 'white' }}>
                   Besoin d'une réponse immédiate ?
                 </h3>
                 
-                <div className="space-y-6">
-                  <div style={{ background: 'transparent' }}>
-                    <p style={{ color: 'white', background: 'transparent' }} className="text-sm mb-2">Appelez directement</p>
-                    <Link href="tel:0766460008" style={{ color: 'white', background: 'transparent' }} className="text-xl font-semibold block">
-                      07 66 46 00 08
-                    </Link>
-                  </div>
-
-                  <div style={{ background: 'transparent' }}>
-                    <p style={{ color: 'white', background: 'transparent' }} className="text-sm mb-2">Email professionnel</p>
-                    <Link href="mailto:contact@climgo.fr" style={{ color: 'white', background: 'transparent' }} className="text-xl font-semibold block">
-                      contact@climgo.fr
-                    </Link>
-                  </div>
-
-                  <div style={{ background: 'transparent' }}>
-                    <p style={{ color: 'white', background: 'transparent' }} className="text-sm mb-2">Notre localisation</p>
-                    <p style={{ color: 'white', background: 'transparent' }} className="text-base font-medium">28 rue de Cantelaude, 33380 Marcheprime</p>
-                  </div>
-
-                  <div style={{ background: 'transparent' }}>
-                    <p style={{ color: 'white', background: 'transparent' }} className="text-sm mb-2">Horaires d'ouverture</p>
-                    <p style={{ color: 'white', background: 'transparent' }} className="text-base font-medium">Lun-Ven: 8h-18h</p>
-                  </div>
+                <div style={{ marginBottom: '24px' }}>
+                  <p style={{ fontSize: '14px', marginBottom: '8px', color: 'white' }}>Appelez directement</p>
+                  <Link href="tel:0766460008" style={{ fontSize: '20px', fontWeight: '600', color: 'white', display: 'block' }}>
+                    07 66 46 00 08
+                  </Link>
                 </div>
 
-                <div className="mt-8 pt-6" style={{ borderTop: '1px solid rgba(255,255,255,0.2)', background: 'transparent' }}>
+                <div style={{ marginBottom: '24px' }}>
+                  <p style={{ fontSize: '14px', marginBottom: '8px', color: 'white' }}>Email professionnel</p>
+                  <Link href="mailto:contact@climgo.fr" style={{ fontSize: '20px', fontWeight: '600', color: 'white', display: 'block' }}>
+                    contact@climgo.fr
+                  </Link>
+                </div>
+
+                <div style={{ marginBottom: '24px' }}>
+                  <p style={{ fontSize: '14px', marginBottom: '8px', color: 'white' }}>Notre localisation</p>
+                  <p style={{ fontSize: '16px', fontWeight: '500', color: 'white' }}>28 rue de Cantelaude, 33380 Marcheprime</p>
+                </div>
+
+                <div style={{ marginBottom: '32px' }}>
+                  <p style={{ fontSize: '14px', marginBottom: '8px', color: 'white' }}>Horaires d'ouverture</p>
+                  <p style={{ fontSize: '16px', fontWeight: '500', color: 'white' }}>Lun-Ven: 8h-18h</p>
+                </div>
+
+                <div style={{ borderTop: '1px solid rgba(255,255,255,0.2)', paddingTop: '24px', marginTop: '32px' }}>
                   <Link
                     href="tel:0766460008"
-                    className="block text-center px-6 py-4 rounded-xl font-semibold"
-                    style={{ backgroundColor: 'white', color: '#03144a' }}
+                    style={{
+                      display: 'block',
+                      textAlign: 'center',
+                      padding: '16px 24px',
+                      borderRadius: '12px',
+                      fontWeight: '600',
+                      backgroundColor: 'white',
+                      color: '#03144a'
+                    }}
                   >
                     Appel d'urgence
                   </Link>
