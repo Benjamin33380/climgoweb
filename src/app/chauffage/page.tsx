@@ -146,14 +146,14 @@ export default function ChauffagePage() {
                   >
                     {/* Image en fond pour toutes les résolutions */}
                     <div 
-                      className="absolute inset-0 bg-no-repeat bg-center bg-contain lg:bg-cover"
+                      className="absolute inset-0 bg-no-repeat bg-center bg-cover"
                       style={{ 
                         backgroundImage: `url(${solution.image})`,
                         backgroundColor: '#f3f4f6'
                       }}
                     >
-                      {/* Overlay léger pour contraste sur desktop uniquement */}
-                      <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-white/40 via-white/20 to-transparent dark:from-black/40 dark:via-black/20 dark:to-transparent" />
+                      {/* Overlay léger pour contraste */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-white/40 via-white/20 to-transparent dark:from-black/40 dark:via-black/20 dark:to-transparent lg:from-white/40 lg:via-white/20 lg:to-transparent dark:lg:from-black/40 dark:lg:via-black/20 dark:lg:to-transparent" />
                     </div>
                     
                     {/* Bannière avec le titre - toujours visible sur mobile, au survol sur desktop */}
