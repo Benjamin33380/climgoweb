@@ -63,7 +63,7 @@ export default function Services() {
             </motion.div>
           </SimpleWrapper>
 
-          {/* Card 3: Autres services */}
+          {/* Card 3: Thermodynamique */}
           <SimpleWrapper>
             <motion.div
               initial={{ opacity: 0, y: 40 }}
@@ -74,7 +74,7 @@ export default function Services() {
               <Link href="/contact" className="group block relative overflow-hidden rounded-2xl sm:rounded-3xl h-64 sm:h-80 lg:h-96 shadow-xl hover:shadow-2xl transition-all duration-300">
                 <Image
                   src="/img/thermoecs.png"
-                  alt="Autres services"
+                  alt="Thermodynamique"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                   quality={100}
@@ -82,7 +82,7 @@ export default function Services() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-white uppercase tracking-wide drop-shadow-2xl text-center px-4" style={{ textShadow: '3px 3px 10px rgba(0,0,0,0.9)' }}>
-                    Autres services
+                    Thermodynamique
                   </h2>
                 </div>
               </Link>
