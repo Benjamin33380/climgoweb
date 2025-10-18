@@ -2,6 +2,7 @@
 
 import { useState, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Phone, Mail, MapPin, Clock, User, MessageSquare, Building, Home } from 'lucide-react';
 import LazyGoogleMaps from '@/components/LazyGoogleMaps';
 
@@ -332,6 +333,34 @@ export default function PompeAChaleurPage() {
               <p className="text-base sm:text-lg">
                 Contactez-nous dès aujourd'hui pour étudier ensemble la solution la plus adaptée à votre logement.
               </p>
+              
+              {/* Logos RGE et République Française */}
+              <div className="flex items-center justify-center gap-6 sm:gap-8 mt-8 pt-8">
+                <Image
+                  src="/logoannexe/rge.png"
+                  alt="Certifié RGE"
+                  width={120}
+                  height={80}
+                  className="h-16 sm:h-20 w-auto object-contain"
+                />
+                <Image
+                  src="/logoannexe/rf.svg.png"
+                  alt="République Française"
+                  width={120}
+                  height={80}
+                  className="h-16 sm:h-20 w-auto object-contain"
+                />
+              </div>
+              
+              {/* Bouton Découvrir les aides d'État */}
+              <div className="flex justify-center mt-8">
+                <Link
+                  href="/aides-etat"
+                  className="inline-flex items-center justify-center px-10 sm:px-12 py-4 sm:py-4 bg-gray-50 dark:bg-gray-800 border border-black dark:border-white text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 text-base sm:text-lg font-semibold rounded-full transition-colors duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                >
+                  Découvrir les aides d'État
+                </Link>
+              </div>
             </div>
           </div>
         </div>
