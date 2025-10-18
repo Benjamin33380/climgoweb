@@ -1,141 +1,126 @@
 'use client';
 
-import { Snowflake, Flame, Droplets, Wrench } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { SimpleWrapper } from '@/components/ui/SimpleWrapper';
 import { motion } from 'framer-motion';
+import { Wrench } from 'lucide-react';
 
 export default function Services() {
   return (
     <section id="services" className="relative py-12 sm:py-16 md:py-20 bg-gray-50 dark:bg-background overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Titre de section */}
-        <SimpleWrapper>
-          <motion.div 
-            className="text-center mb-12 sm:mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-          >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-gray-900 dark:text-white mb-4 px-4">
-              Notre expertise
-            </h2>
-            <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto px-4">
-              Expertise technique et solutions sur-mesure pour votre confort thermique
-            </p>
-          </motion.div>
-        </SimpleWrapper>
-
-        {/* Cards harmonisées - Responsive optimisé */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto px-4 sm:px-6">
-          {/* Climatisation */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        {/* Grid principal - 2 colonnes en haut, 2 colonnes en bas */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+          {/* Card 1: Climatisation */}
           <SimpleWrapper>
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: 0, ease: "easeOut" }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
             >
-            <Link href="/climatisation" className="group block bg-white dark:bg-card backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 sm:hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#2563EB]/50 dark:hover:border-[#60A5FA] h-64 sm:h-72 lg:h-80 flex flex-col">
-            <div className="text-center flex flex-col h-full">
-              {/* Icône service avec pastille uniforme */}
-              <div className="bg-[#2563EB]/10 dark:bg-[#2563EB]/20 rounded-full w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                <Snowflake className="w-8 h-8 sm:w-10 sm:h-10 text-[#2563EB] dark:text-[#60A5FA]" />
-              </div>
-              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 group-hover:text-[#2563EB] dark:group-hover:text-[#60A5FA] transition-colors px-2 min-h-[28px] flex items-center justify-center">
-                Climatisation
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm leading-relaxed px-2 flex-1 flex items-center justify-center">
-                <span className="text-center">
-                  Systèmes de climatisation haute performance pour un confort optimal. 
-                  <strong className="text-[#2563EB] dark:text-[#60A5FA]">Réversible</strong> pour chauffer en hiver et refroidir en été.
-                </span>
-              </p>
-            </div>
-            </Link>
+              <Link href="/climatisation" className="group block relative overflow-hidden rounded-2xl sm:rounded-3xl h-64 sm:h-80 lg:h-96 shadow-xl hover:shadow-2xl transition-all duration-300">
+                <Image
+                  src="/img/climdame.png"
+                  alt="Climatisation"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white uppercase tracking-wider drop-shadow-2xl text-center px-4" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
+                    Climatisation
+                  </h2>
+                </div>
+              </Link>
             </motion.div>
           </SimpleWrapper>
 
-          {/* Chauffage */}
+          {/* Card 2: Pompes à chaleur */}
           <SimpleWrapper>
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
+              transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
             >
-            <Link href="/chauffage" className="group block bg-white dark:bg-card backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 sm:hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#FF8C00]/50 dark:hover:border-[#FFA500] h-64 sm:h-72 lg:h-80 flex flex-col">
-            <div className="text-center flex flex-col h-full">
-              {/* Icône service avec pastille uniforme */}
-              <div className="bg-[#FF8C00]/10 dark:bg-[#FF8C00]/20 rounded-full w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                <Flame className="w-8 h-8 sm:w-10 sm:h-10 text-[#FF8C00] dark:text-[#FFA500]" />
-              </div>
-              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 group-hover:text-[#FF8C00] dark:group-hover:text-[#FFA500] transition-colors px-2 min-h-[28px] flex items-center justify-center">
-                Chauffage
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm leading-relaxed px-2 flex-1 flex items-center justify-center">
-                <span className="text-center">
-                  Pompes à chaleur et planchers chauffants pour un <strong className="text-[#FF8C00] dark:text-[#FFA500]">chauffage écologique</strong> et économique toute l&apos;année.
-                </span>
-              </p>
-            </div>
-            </Link>
+              <Link href="/pompe-a-chaleur" className="group block relative overflow-hidden rounded-2xl sm:rounded-3xl h-64 sm:h-80 lg:h-96 shadow-xl hover:shadow-2xl transition-all duration-300">
+                <Image
+                  src="/img/uipacspacex.png"
+                  alt="Pompes à chaleur"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white uppercase tracking-wider drop-shadow-2xl text-center px-4" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
+                    Pompes à chaleur
+                  </h2>
+                </div>
+              </Link>
             </motion.div>
           </SimpleWrapper>
 
-          {/* Eau Chaude Sanitaire */}
+          {/* Card 3: Intervention Professionnelle (largeur double en desktop) */}
           <SimpleWrapper>
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+              transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+              className="lg:col-span-1"
             >
-            <Link href="/eau-chaude-sanitaire" className="group block bg-white dark:bg-card backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 sm:hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#FF6B6B]/50 dark:hover:border-[#FF6B6B] h-64 sm:h-72 lg:h-80 flex flex-col">
-            <div className="text-center flex flex-col h-full">
-              {/* Icône service avec pastille uniforme */}
-              <div className="bg-[#FF6B6B]/10 dark:bg-[#FF6B6B]/20 rounded-full w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                <Droplets className="w-8 h-8 sm:w-10 sm:h-10 text-[#FF6B6B] dark:text-[#FF6B6B]" />
+              <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl h-64 sm:h-80 lg:h-96 shadow-xl bg-gradient-to-br from-[#03144A] to-[#0a2463]">
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-6 sm:p-8 text-center">
+                  <div className="mb-6">
+                    <Wrench className="w-16 h-16 sm:w-20 sm:h-20 text-white mx-auto mb-4" />
+                  </div>
+                  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white uppercase tracking-wider mb-4 sm:mb-6">
+                    Intervention Professionnelle
+                  </h2>
+                  <p className="text-base sm:text-lg text-white/90 mb-3 max-w-2xl">
+                    Votre Artisan est agréé <strong>RGE QUALIPAC</strong> et <strong>QUALIPV</strong>
+                  </p>
+                  <p className="text-sm sm:text-base text-white/80 mb-6">
+                    (Reconnu Garant de l'Environnement)
+                  </p>
+                  <p className="text-base sm:text-lg text-white/90 mb-8">
+                    Attestation de capacité et Garantie Décennale
+                  </p>
+                  <Link 
+                    href="/aides-etat"
+                    className="inline-flex items-center justify-center px-8 sm:px-10 py-3 sm:py-4 bg-white text-[#03144A] text-base sm:text-lg font-bold rounded-full hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 uppercase tracking-wide"
+                  >
+                    Bénéficier des aides d'État
+                  </Link>
+                </div>
               </div>
-              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 group-hover:text-[#FF6B6B] dark:group-hover:text-[#FF6B6B] transition-colors px-2 min-h-[28px] flex items-center justify-center">
-                Eau Chaude Sanitaire
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm leading-relaxed px-2 flex-1 flex items-center justify-center">
-                <span className="text-center">
-                  Ballons thermodynamiques et cumulus électriques pour une <strong className="text-[#FF6B6B] dark:text-[#FF6B6B]">eau chaude</strong> disponible 24h/24 et économique.
-                </span>
-              </p>
-            </div>
-            </Link>
             </motion.div>
           </SimpleWrapper>
 
-          {/* Maintenance */}
+          {/* Card 4: Autres services */}
           <SimpleWrapper>
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
+              transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
             >
-            <Link href="/maintenance" className="group block bg-white dark:bg-card backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 sm:hover:-translate-y-2 border border-gray-200 dark:border-gray-600/30 hover:border-[#10B981]/50 dark:hover:border-[#34D399] h-64 sm:h-72 lg:h-80 flex flex-col">
-            <div className="text-center flex flex-col h-full">
-              {/* Icône service avec pastille uniforme */}
-              <div className="bg-[#10B981]/10 dark:bg-[#10B981]/20 rounded-full w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                <Wrench className="w-8 h-8 sm:w-10 sm:h-10 text-[#10B981] dark:text-[#34D399]" />
-              </div>
-              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 group-hover:text-[#10B981] dark:group-hover:text-[#10B981] transition-colors px-2 min-h-[28px] flex items-center justify-center">
-                Maintenance
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm leading-relaxed px-2 flex-1 flex items-center justify-center">
-                <span className="text-center">
-                  Maintenance experte et <strong className="text-[#10B981] dark:text-[#10B981]">garantie décennale</strong>. 
-                  Engagement sur 10 ans pour la tranquillité de vos équipements.
-                </span>
-              </p>
-            </div>
-            </Link>
+              <Link href="/contact" className="group block relative overflow-hidden rounded-2xl sm:rounded-3xl h-64 sm:h-80 lg:h-96 shadow-xl hover:shadow-2xl transition-all duration-300">
+                <Image
+                  src="/img/mainclim.png"
+                  alt="Autres services"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white uppercase tracking-wider drop-shadow-2xl text-center px-4" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
+                    Autres services
+                  </h2>
+                </div>
+              </Link>
             </motion.div>
           </SimpleWrapper>
         </div>
