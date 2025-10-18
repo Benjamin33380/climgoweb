@@ -191,16 +191,19 @@ export default function AidesEtatPage() {
       <AidesCards />
 
       {/* Section Contact */}
-      <section ref={contactRef} className="py-12 xs:py-16 sm:py-20 md:py-24 bg-gray-50 dark:bg-background">
-        <div className="container mx-auto px-4 xs:px-5 sm:px-6 max-w-6xl">
-          <div className="grid grid-cols-1 gap-8 lg:gap-12">
-            {/* Formulaire de contact */}
-            <div className="bg-white dark:bg-gray-800 rounded-3xl p-6 sm:p-8 shadow-xl border border-gray-100 dark:border-gray-700 order-1">
-              <div className="text-center mb-8">
-                <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900 dark:text-white mb-4">
+      <section ref={contactRef} className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-50 dark:bg-background">
+        <div className="container mx-auto px-4 xs:px-5 sm:px-6">
+          <div className="grid grid-cols-1 gap-8 max-w-7xl mx-auto">
+            
+            {/* Carte formulaire de contact */}
+            <div>
+              <div className="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-700">
+                <h3 className="text-2xl sm:text-3xl font-light text-black dark:text-white mb-4">
                   Démarrons votre projet
-                </h2>
-                <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                </h3>
+                <div className="w-24 h-1 bg-gradient-to-r from-[#F97316] to-[#03144A] mb-6"></div>
+                
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm mb-6">
                   Remplissez ce formulaire et recevez une réponse personnalisée sous 48h. Nos experts analysent votre demande pour vous proposer la meilleure solution.
                 </p>
 
