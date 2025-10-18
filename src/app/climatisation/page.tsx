@@ -570,29 +570,21 @@ export default function ClimatisationPage() {
                   Besoin d'une réponse immédiate ?
                 </h3>
                 
-                <div style={{ marginBottom: '24px' }}>
-                  <p style={{ fontSize: '14px', marginBottom: '8px', color: 'white' }}>Appelez directement</p>
-                  <Link href="tel:0766460008" style={{ fontSize: '20px', fontWeight: '600', color: 'white', display: 'block' }}>
-                    07 66 46 00 08
-                  </Link>
-                </div>
+                <p style={{ fontSize: '14px', marginBottom: '8px', color: 'white' }}>Appelez directement</p>
+                <Link href="tel:0766460008" style={{ fontSize: '20px', fontWeight: '600', color: 'white', display: 'block', marginBottom: '24px' }}>
+                  07 66 46 00 08
+                </Link>
 
-                <div style={{ marginBottom: '24px' }}>
-                  <p style={{ fontSize: '14px', marginBottom: '8px', color: 'white' }}>Email professionnel</p>
-                  <Link href="mailto:contact@climgo.fr" style={{ fontSize: '20px', fontWeight: '600', color: 'white', display: 'block' }}>
-                    contact@climgo.fr
-                  </Link>
-                </div>
+                <p style={{ fontSize: '14px', marginBottom: '8px', color: 'white' }}>Email professionnel</p>
+                <Link href="mailto:contact@climgo.fr" style={{ fontSize: '20px', fontWeight: '600', color: 'white', display: 'block', marginBottom: '24px' }}>
+                  contact@climgo.fr
+                </Link>
 
-                <div style={{ marginBottom: '24px' }}>
-                  <p style={{ fontSize: '14px', marginBottom: '8px', color: 'white' }}>Notre localisation</p>
-                  <p style={{ fontSize: '16px', fontWeight: '500', color: 'white' }}>28 rue de Cantelaude, 33380 Marcheprime</p>
-                </div>
+                <p style={{ fontSize: '14px', marginBottom: '8px', color: 'white' }}>Notre localisation</p>
+                <p style={{ fontSize: '16px', fontWeight: '500', color: 'white', marginBottom: '24px' }}>28 rue de Cantelaude, 33380 Marcheprime</p>
 
-                <div style={{ marginBottom: '32px' }}>
-                  <p style={{ fontSize: '14px', marginBottom: '8px', color: 'white' }}>Horaires d'ouverture</p>
-                  <p style={{ fontSize: '16px', fontWeight: '500', color: 'white' }}>Lun-Ven: 8h-18h</p>
-                </div>
+                <p style={{ fontSize: '14px', marginBottom: '8px', color: 'white' }}>Horaires d'ouverture</p>
+                <p style={{ fontSize: '16px', fontWeight: '500', color: 'white', marginBottom: '32px' }}>Lun-Ven: 8h-18h</p>
 
                 <div style={{ borderTop: '1px solid rgba(255,255,255,0.2)', paddingTop: '24px', marginTop: '32px' }}>
                   <Link
