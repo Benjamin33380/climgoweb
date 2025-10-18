@@ -189,7 +189,7 @@ export default function EauChaudeSanitairePage() {
                 </span>
                 <br />
                 <span className="bg-gradient-to-r from-[#03144A] via-[#FF6B6B] to-[#03144A] dark:from-white dark:via-[#FF8A8A] dark:to-white bg-clip-text text-transparent">
-                  Thermodynamique
+                  Ballon thermodynamique
                 </span>
               </h1>
               
