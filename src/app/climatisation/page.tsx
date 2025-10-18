@@ -251,7 +251,13 @@ export default function ClimatisationPage() {
                     <img
                       src={solution.image}
                       alt={solution.title}
-                      className="absolute inset-0 w-full h-full object-cover"
+                      className="absolute inset-0 w-full h-full object-cover z-10"
+                      style={{ backgroundColor: '#e5e7eb' }}
+                      onLoad={(e) => console.log('Image loaded:', solution.image)}
+                      onError={(e) => {
+                        console.error('Image failed to load:', solution.image);
+                        e.currentTarget.style.display = 'none';
+                      }}
                     />
                     
                     {/* Bannière avec le titre - toujours visible sur mobile/tablette, au survol sur grand desktop */}
