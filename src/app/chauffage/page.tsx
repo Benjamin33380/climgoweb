@@ -257,6 +257,57 @@ export default function ChauffagePage() {
         </div>
       </section>
 
+      {/* Section Découvrir nos autres services */}
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-white dark:bg-[#0f172a]">
+        <div className="container mx-auto px-4 xs:px-5 sm:px-6 max-w-6xl">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-black dark:text-white mb-8 sm:mb-12 text-center">
+            Découvrir nos autres services
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+            {/* Climatisation */}
+            <Link 
+              href="/climatisation"
+              className="group relative bg-gray-50 dark:bg-gray-800/50 rounded-3xl p-8 sm:p-10 hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400 hover:-translate-y-2"
+            >
+              <div className="flex flex-col items-center text-center">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 mb-6 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-light text-black dark:text-white mb-4">
+                  Climatisation
+                </h3>
+                <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 font-light leading-relaxed">
+                  Installation et entretien de systèmes de climatisation pour votre confort toute l'année.
+                </p>
+              </div>
+            </Link>
+
+            {/* Eau chaude sanitaire */}
+            <Link 
+              href="/eau-chaude-sanitaire"
+              className="group relative bg-gray-50 dark:bg-gray-800/50 rounded-3xl p-8 sm:p-10 hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700 hover:border-red-500 dark:hover:border-red-400 hover:-translate-y-2"
+            >
+              <div className="flex flex-col items-center text-center">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 mb-6 bg-gradient-to-br from-red-500 to-pink-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-light text-black dark:text-white mb-4">
+                  Eau chaude sanitaire
+                </h3>
+                <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 font-light leading-relaxed">
+                  Solutions de chauffe-eau thermodynamique pour une eau chaude économique et écologique.
+                </p>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Location Map Section */}
       <LazyGoogleMaps backgroundColor="bg-gray-50 dark:bg-background" />
 
