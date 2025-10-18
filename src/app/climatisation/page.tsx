@@ -559,7 +559,7 @@ export default function ClimatisationPage() {
           <div className="grid grid-cols-1 gap-8 max-w-7xl mx-auto">
             
             {/* Carte de contact */}
-            <div>
+            <div className="order-2">
               <div className="bg-gradient-to-br from-[#03144A] to-[#F97316] rounded-3xl p-8 text-white shadow-xl !bg-opacity-100 h-full">
                 <h3 className="text-2xl font-light mb-6 flex items-center text-white">
                   <div className="w-1 h-6 bg-white rounded-full mr-3"></div>
@@ -636,7 +636,7 @@ export default function ClimatisationPage() {
             </div>
 
             {/* Carte formulaire de contact */}
-            <div>
+            <div className="order-1">
               <div className="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-700">
                 <h3 className="text-2xl sm:text-3xl font-light text-black dark:text-white mb-4">
                   Démarrons votre projet

@@ -145,7 +145,7 @@ export default function ChauffagePage() {
             <span className="text-black dark:text-white font-medium">
               Chauffage
             </span>
-          </nav>
+        </nav>
         </div>
       </div>
 
@@ -163,12 +163,12 @@ export default function ChauffagePage() {
               <h1 className="text-3xl xs:text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl font-bold lg:font-light tracking-tight mb-4 xs:mb-5 sm:mb-5 md:mb-6 lg:mb-8 text-[#03144A] dark:text-white break-words leading-tight">
                 <span className="bg-gradient-to-r from-[#FF8C00] via-[#03144A] to-[#FF8C00] dark:from-[#FFA500] dark:via-white dark:to-[#FFA500] bg-clip-text text-transparent">
                   Pompe à Chaleur
-                </span>
-                <br />
+              </span>
+              <br />
                 <span className="bg-gradient-to-r from-[#03144A] via-[#FF8C00] to-[#03144A] dark:from-white dark:via-[#FFA500] dark:to-white bg-clip-text text-transparent">
                   Air-Eau
-                </span>
-              </h1>
+              </span>
+            </h1>
               
               <div className="text-base xs:text-lg sm:text-xl md:text-xl lg:text-xl leading-relaxed text-gray-700 dark:text-gray-100 max-w-full lg:max-w-4xl mx-auto lg:mx-0 px-0 sm:px-2 lg:px-0 mb-6 xs:mb-7 sm:mb-8">
                 <p className="mb-3 font-light">
@@ -205,16 +205,16 @@ export default function ChauffagePage() {
                 <a href="#solutions">
                   <button className="px-10 sm:px-12 py-4 sm:py-4 bg-gray-50 dark:bg-gray-800 border border-black dark:border-white text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 text-base sm:text-lg font-semibold rounded-full transition-colors duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
                     Découvrir nos solutions
-                  </button>
+            </button>
                 </a>
-                
+            
                 <Link href="/contact">
                   <button className="px-10 sm:px-12 py-4 sm:py-4 bg-gray-50 dark:bg-gray-800 border border-black dark:border-white text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 text-base sm:text-lg font-semibold rounded-full transition-colors duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
-                    Demander un devis
-                  </button>
+              Demander un devis
+            </button>
                 </Link>
-              </div>
-            </div>
+          </div>
+        </div>
             
             {/* Cartes dans le hero - Animation depuis la droite */}
             <div id="solutions" className="w-full max-w-2xl mx-auto lg:mx-0 order-2 lg:order-2">
@@ -258,9 +258,9 @@ export default function ChauffagePage() {
                  </Link>
                ))}
              </div>
-           </div>
-         </div>
-       </div>
+                      </div>
+                    </div>
+                  </div>
      </section>
 
       {/* Section Information PAC Air-Eau */}
@@ -297,7 +297,7 @@ export default function ChauffagePage() {
             <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mt-4 font-light">
               C'est une solution durable, efficace et particulièrement intéressante sur le long terme.
             </p>
-          </div>
+              </div>
 
           {/* Séparateur */}
           <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-[#FF8C00] to-transparent mx-auto mb-12 sm:mb-16" />
@@ -423,7 +423,7 @@ export default function ChauffagePage() {
       {/* Section Contact */}
       <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-50 dark:bg-background">
         <div className="container mx-auto px-4 xs:px-5 sm:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 gap-8 max-w-7xl mx-auto">
             
             {/* Carte de contact */}
             <div>
@@ -512,23 +512,23 @@ export default function ChauffagePage() {
                 
                 <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-8 flex-1">
                   Remplissez notre formulaire de contact et recevez une réponse personnalisée sous 48h. Nos experts analysent votre demande pour vous proposer la meilleure solution adaptée à vos besoins.
-                </p>
-
-                <Link 
-                  href="/contact"
+            </p>
+            
+            <Link
+              href="/contact"
                   className="w-full px-8 py-4 rounded-xl font-semibold bg-gradient-to-r from-[#03144A] to-[#F97316] text-white hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl text-center"
-                >
-                  Demander un devis gratuit
-                </Link>
-              </div>
-            </div>
+            >
+              Demander un devis gratuit
+            </Link>
+          </div>
+        </div>
 
           </div>
         </div>
       </section>
 
       {/* Location Map Section */}
-      <LazyGoogleMaps backgroundColor="bg-gray-50 dark:bg-background" />
+              <LazyGoogleMaps backgroundColor="bg-gray-50 dark:bg-background" />
 
       <style jsx global>{`
         @keyframes float {
