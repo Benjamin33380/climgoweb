@@ -29,7 +29,7 @@ export default function Services() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white uppercase tracking-wider drop-shadow-2xl text-center px-4" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
+                  <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-white uppercase tracking-wider drop-shadow-2xl text-center px-4" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
                     Climatisation
                   </h2>
                 </div>
@@ -54,7 +54,7 @@ export default function Services() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white uppercase tracking-wider drop-shadow-2xl text-center px-4" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
+                  <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-white uppercase tracking-wider drop-shadow-2xl text-center px-4" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
                     Pompes à chaleur
                   </h2>
                 </div>
@@ -76,7 +76,7 @@ export default function Services() {
                   <div className="mb-6">
                     <Wrench className="w-16 h-16 sm:w-20 sm:h-20 text-white mx-auto mb-4" />
                   </div>
-                  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white uppercase tracking-wider mb-4 sm:mb-6">
+                  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-white uppercase tracking-wider mb-4 sm:mb-6">
                     Intervention Professionnelle
                   </h2>
                   <p className="text-base sm:text-lg text-white/90 mb-3 max-w-2xl">
@@ -116,7 +116,7 @@ export default function Services() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white uppercase tracking-wider drop-shadow-2xl text-center px-4" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
+                  <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-white uppercase tracking-wider drop-shadow-2xl text-center px-4" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
                     Autres services
                   </h2>
                 </div>
