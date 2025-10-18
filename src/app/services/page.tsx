@@ -90,7 +90,7 @@ export default function PompeAChaleurPage() {
                   <Link 
                     key={index} 
                     href="/contact" 
-                    className="block group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-white hover:-translate-y-2 h-[300px] sm:h-[320px] lg:h-[280px] cursor-pointer"
+                    className="block group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-white hover:-translate-y-2 h-[350px] sm:h-[380px] lg:h-[350px] cursor-pointer"
                     style={{ 
                       animation: `slide-in-right 1.2s ease-out ${index * 0.2}s both`
                     }}
@@ -126,7 +126,7 @@ export default function PompeAChaleurPage() {
                ))}
                   </div>
                 </div>
-              </div>
+          </div>
         </div>
       </section>
 
@@ -145,8 +145,8 @@ export default function PompeAChaleurPage() {
             <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mt-4 font-light">
               Nos techniciens experts étudient les particularités de votre logement ou de votre piscine pour vous orienter vers la <strong className="text-black dark:text-white font-medium">pompe à chaleur la plus adaptée</strong> à votre confort et à votre consommation.
             </p>
-          </div>
-
+        </div>
+        
           {/* Séparateur */}
           <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-[#FF8C00] to-transparent mx-auto mb-12 sm:mb-16" />
 
@@ -165,7 +165,7 @@ export default function PompeAChaleurPage() {
               Notre priorité : <strong className="text-black dark:text-white font-medium">efficacité, propreté et discrétion</strong>, afin que les travaux s'intègrent naturellement dans votre quotidien.
             </p>
           </div>
-
+          
           {/* Séparateur */}
           <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-[#2563EB] to-transparent mx-auto mb-12 sm:mb-16" />
 
@@ -173,7 +173,7 @@ export default function PompeAChaleurPage() {
           <div className="mb-12 sm:mb-16">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-black dark:text-white mb-4 sm:mb-6">
               Entretien de pompe à chaleur
-            </h2>
+          </h2>
             <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed font-light">
               Pour garantir la durée de vie et la performance de votre installation, un <strong className="text-black dark:text-white font-medium">entretien régulier</strong> est indispensable.
             </p>
@@ -212,7 +212,7 @@ export default function PompeAChaleurPage() {
               Avec <strong className="text-black dark:text-white font-medium">ClimGO</strong>, vous bénéficiez d'un service complet, du conseil à la maintenance, pour un <strong className="text-black dark:text-white font-medium">confort maîtrisé toute l'année</strong>.
             </p>
           </div>
-
+          
         </div>
       </section>
 
