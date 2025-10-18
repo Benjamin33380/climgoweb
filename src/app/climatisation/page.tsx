@@ -556,7 +556,7 @@ export default function ClimatisationPage() {
       {/* Section Contact */}
       <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-50 dark:bg-background">
         <div className="container mx-auto px-4 xs:px-5 sm:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 gap-8 max-w-7xl mx-auto">
             
             {/* Carte de contact */}
             <div>
