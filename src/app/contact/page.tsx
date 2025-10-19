@@ -449,7 +449,7 @@ export default function ContactPage() {
                     {[
                       { icon: <Flame className="w-6 h-6" />, title: "Chauffage", desc: "Installation et maintenance de systèmes performants", hoverColor: "group-hover:text-[#FF8C00]", link: "/air+eau" },
                       { icon: <AirVent className="w-6 h-6" />, title: "Climatisation", desc: "Solutions de climatisation adaptées", hoverColor: "group-hover:text-[#2563EB]", link: "/climatisation" },
-                      { icon: <Droplet className="w-6 h-6" />, title: "Eau chaude sanitaire", desc: "Systèmes d'eau chaude efficaces", hoverColor: "group-hover:text-[#0EA5E9]", link: "/eau-chaude-sanitaire" },
+                      { icon: <Droplet className="w-6 h-6" />, title: "Eau chaude sanitaire", desc: "Systèmes d'eau chaude efficaces", hoverColor: "group-hover:text-[#0EA5E9]", link: "/thermodynamique" },
                       { icon: <Settings className="w-6 h-6" />, title: "Pompe à chaleur", desc: "Pompes à chaleur air-air et air-eau", hoverColor: "group-hover:text-[#8B5CF6]", link: "/pompe-a-chaleur" },
                       { icon: <FileText className="w-6 h-6" />, title: "Maintenance", desc: "Entretien professionnel de vos équipements", hoverColor: "group-hover:text-[#10B981]", link: "/maintenance" }
                     ].map((service, index) => (

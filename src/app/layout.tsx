@@ -380,7 +380,7 @@ export default function RootLayout({
                   "item": {
                     "@type": "WebPage",
                     "name": "Eau chaude sanitaire",
-                    "url": "https://www.climgo.fr/eau-chaude-sanitaire",
+                    "url": "https://www.climgo.fr/thermodynamique",
                     "description": "Installation et maintenance de chauffe-eau thermodynamiques et électriques"
                   }
                 },

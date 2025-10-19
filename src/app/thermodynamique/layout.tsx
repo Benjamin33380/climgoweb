@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Eau chaude sanitaire | Installation & Maintenance Gironde",
     description: "Installation et maintenance de chauffe-eau en Gironde. ClimGO, expert en eau chaude sanitaire. Devis gratuit, intervention rapide.",
-    url: "https://www.climgo.fr/eau-chaude-sanitaire",
+    url: "https://www.climgo.fr/thermodynamique",
     siteName: "ClimGO",
     locale: "fr_FR",
     type: "website",
@@ -30,10 +30,10 @@ export const metadata: Metadata = {
     images: ["/img/serp/ecs.webp"],
   },
   alternates: {
-    canonical: "https://www.climgo.fr/eau-chaude-sanitaire",
+    canonical: "https://www.climgo.fr/thermodynamique",
     languages: {
-      'x-default': 'https://www.climgo.fr/eau-chaude-sanitaire',
-      'fr-FR': 'https://www.climgo.fr/eau-chaude-sanitaire',
+      'x-default': 'https://www.climgo.fr/thermodynamique',
+      'fr-FR': 'https://www.climgo.fr/thermodynamique',
     },
   },
   robots: {
@@ -79,7 +79,7 @@ export default function EauChaudeSanitaireLayout({
             "provider": {"@id": "https://www.climgo.fr/#organization"},
             "areaServed": {"@type": "State", "name": "Gironde"},
             "serviceType": "Installation et maintenance de systèmes d'eau chaude sanitaire",
-            "url": "https://www.climgo.fr/eau-chaude-sanitaire",
+            "url": "https://www.climgo.fr/thermodynamique",
             "offers": {
               "@type": "Offer",
               "description": "Installation et maintenance chauffe-eau - Devis gratuit"

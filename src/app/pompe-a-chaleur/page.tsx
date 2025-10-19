@@ -199,7 +199,7 @@ export default function PompeAChaleurPage() {
                     switch(index) {
                       case 0: return "/climatisation";
                       case 1: return "/air+eau";
-                      case 2: return "/eau-chaude-sanitaire";
+                      case 2: return "/thermodynamique";
                       default: return "/contact";
                     }
                   };

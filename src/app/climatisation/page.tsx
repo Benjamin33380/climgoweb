@@ -550,7 +550,7 @@ export default function ClimatisationPage() {
 
             {/* Eau chaude sanitaire */}
             <Link 
-              href="/eau-chaude-sanitaire"
+              href="/thermodynamique"
               className="group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-red-500 dark:hover:border-red-400 hover:-translate-y-2 h-[300px] sm:h-[320px]"
             >
               {/* Version MOBILE - Image simple */}

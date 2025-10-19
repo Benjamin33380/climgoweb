@@ -39,7 +39,7 @@ const servicesLeft: { title: string; href: string; description: string; icon: Re
   },
   {
     title: "Eau chaude sanitaire",
-    href: "/eau-chaude-sanitaire",
+    href: "/thermodynamique",
     icon: <Droplet className="w-4 h-4" />,
     description: "Systèmes d'eau chaude sanitaire efficaces et durables.",
   },
