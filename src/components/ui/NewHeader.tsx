@@ -357,7 +357,7 @@ function ListItem({
   icon?: React.ReactNode
 }) {
   return (
-    <li {...props}>
+    <li {...props} className="list-none">
       <NavigationMenuLink asChild>
         <Link 
           href={href}
