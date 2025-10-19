@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Users, Award, Clock, MapPin, Phone, Mail, CheckCircle, Star, Shield, Wrench, Settings, ThermometerSun, Camera } from 'lucide-react';
+import { Users, Award, Clock, MapPin, Phone, Mail, CheckCircle, Star, Shield, Wrench, Settings, Thermometer, Camera } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -44,7 +44,7 @@ export default function AProposPage() {
     {
       title: "QualiPAC",
       description: "Qualification pompe à chaleur air/eau et air/air",
-      icon: <ThermometerSun className="w-8 h-8" />
+      icon: <Thermometer className="w-8 h-8" />
     },
     {
       title: "Qualibat",
