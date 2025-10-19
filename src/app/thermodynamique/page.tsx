@@ -400,7 +400,7 @@ export default function EauChaudeSanitairePage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             {/* Chauffe-eau thermodynamique */}
-            <div className="group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400 hover:-translate-y-2 h-[300px] sm:h-[320px]">
+            <div className="group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-black dark:hover:border-white hover:-translate-y-2 h-[300px] sm:h-[320px]">
               {/* Version MOBILE - Image simple */}
               <img
                 src="/img/chauffeeau.png"
@@ -430,7 +430,7 @@ export default function EauChaudeSanitairePage() {
             </div>
 
             {/* Chauffe-eau extra plat */}
-            <div className="group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-orange-500 dark:hover:border-orange-400 hover:-translate-y-2 h-[300px] sm:h-[320px]">
+            <div className="group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-black dark:hover:border-white hover:-translate-y-2 h-[300px] sm:h-[320px]">
               {/* Version MOBILE - Image simple */}
               <img
                 src="/img/extraplatchauf.png"

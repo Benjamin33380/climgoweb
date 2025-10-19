@@ -383,6 +383,50 @@ export default function ChauffagePage() {
         </div>
       </section>
 
+      {/* Section Découvrir nos systèmes de production de chauffage */}
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-50 dark:bg-background">
+        <div className="container mx-auto px-4 xs:px-5 sm:px-6 max-w-6xl">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-black dark:text-white mb-4 sm:mb-6 text-center">
+            Découvrir nos systèmes de production de chauffage
+          </h2>
+          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 mb-8 sm:mb-12 text-center italic">
+            *non éligible aux aides d'état
+          </p>
+          
+          <div className="grid grid-cols-1 gap-6 sm:gap-8 max-w-2xl mx-auto">
+            {/* Chaudière murale */}
+            <div className="group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-black dark:hover:border-white hover:-translate-y-2 h-[300px] sm:h-[320px]">
+              {/* Version MOBILE - Image simple */}
+              <img
+                src="/img/chaudieremur.png"
+                alt="Chaudière murale"
+                className="lg:hidden absolute inset-0 w-full h-full object-cover"
+              />
+
+              {/* Version DESKTOP */}
+              <div
+                className="hidden lg:block absolute inset-0 bg-no-repeat bg-cover transition-transform duration-300 group-hover:scale-105"
+                style={{
+                  backgroundImage: 'url(/img/chaudieremur.png)',
+                  backgroundPosition: 'center center'
+                }}
+              >
+                {/* Overlay pour contraste - desktop uniquement */}
+                <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-white/30 to-transparent dark:from-black/60 dark:via-black/35 dark:to-transparent group-hover:from-white/50 group-hover:via-white/25 group-hover:to-transparent dark:group-hover:from-black/50 dark:group-hover:via-black/30 dark:group-hover:to-transparent transition-all duration-300" />
+              </div>
+
+              {/* Overlay et titre centré sur l'image */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <h4 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-white uppercase tracking-wide drop-shadow-2xl text-center px-4" style={{ textShadow: '3px 3px 10px rgba(0,0,0,0.9)' }}>
+                  Chaudière murale
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Section Découvrir nos autres services */}
       <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-50 dark:bg-background">
         <div className="container mx-auto px-4 xs:px-5 sm:px-6 max-w-6xl">
