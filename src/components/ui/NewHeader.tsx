@@ -119,7 +119,7 @@ export default function NewHeader() {
                 <NavigationMenuContent>
                   <div className="grid gap-3 p-4 w-[600px] lg:w-[800px] grid-cols-2">
                     {/* Colonne gauche */}
-                    <div className="space-y-3">
+                    <div>
                       {servicesLeft.map((service) => (
                         <ListItem key={service.title} href={service.href} title={service.title} icon={service.icon}>
                           {service.description}
@@ -127,7 +127,7 @@ export default function NewHeader() {
                       ))}
                     </div>
                     {/* Colonne droite */}
-                    <div className="space-y-3">
+                    <div>
                       {servicesRight.map((service) => (
                         <ListItem key={service.title} href={service.href} title={service.title} icon={service.icon}>
                           {service.description}
