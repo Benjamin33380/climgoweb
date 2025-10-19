@@ -337,8 +337,8 @@ export default function PompeAChaleurPage() {
 
       {/* Section Pourquoi ClimGO */}
       <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-50 dark:bg-background">
-        <div className="container mx-auto px-4 xs:px-5 sm:px-6">
-          <div className="max-w-4xl mx-auto">
+        <div className="container mx-auto px-4 xs:px-5 sm:px-6 max-w-7xl">
+          <div className="text-left">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-black dark:text-white mb-8 sm:mb-12">
               Pourquoi choisir ClimGO pour votre projet de pompe à chaleur ?
             </h2>
@@ -359,7 +359,7 @@ export default function PompeAChaleurPage() {
               </p>
               
               {/* Logos RGE et République Française */}
-              <div className="flex items-center justify-center gap-6 sm:gap-8 mt-8 pt-8">
+              <div className="flex items-center justify-start gap-6 sm:gap-8 mt-8 pt-8 ml-0">
                 <Image
                   src="/logoannexe/rge.png"
                   alt="Certifié RGE"
@@ -377,7 +377,7 @@ export default function PompeAChaleurPage() {
               </div>
               
               {/* Bouton Découvrir les aides d'État */}
-              <div className="flex justify-center mt-8">
+              <div className="flex justify-start mt-8 ml-0">
                 <Link
                   href="/aides-etat"
                   className="inline-flex items-center justify-center px-10 sm:px-12 py-4 sm:py-4 bg-gray-50 dark:bg-gray-800 border border-black dark:border-white text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 text-base sm:text-lg font-semibold rounded-full transition-colors duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
