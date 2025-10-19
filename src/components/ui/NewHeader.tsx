@@ -272,7 +272,21 @@ export default function NewHeader() {
             {/* Services */}
             <div className="space-y-2">
               <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Nos Services</h3>
-              {services.map((service) => (
+              {servicesLeft.map((service) => (
+                <Link
+                  key={service.title}
+                  href={service.href}
+                  className="flex items-center space-x-3 p-3 rounded-md hover:bg-accent transition-colors min-h-[48px]"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {service.icon}
+                  <div>
+                    <span className="font-medium text-base">{service.title}</span>
+                    <p className="text-xs text-muted-foreground mt-1 line-clamp-1">{service.description}</p>
+                  </div>
+                </Link>
+              ))}
+              {servicesRight.map((service) => (
                 <Link
                   key={service.title}
                   href={service.href}
