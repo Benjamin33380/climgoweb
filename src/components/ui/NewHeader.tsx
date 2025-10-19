@@ -24,13 +24,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
 
-const services: { title: string; href: string; description: string; icon: React.ReactNode }[] = [
-  {
-    title: "Chauffage",
-    href: "/chauffage",
-    icon: <Flame className="w-4 h-4" />,
-    description: "Installation et maintenance de systèmes de chauffage performants et économiques.",
-  },
+const servicesLeft: { title: string; href: string; description: string; icon: React.ReactNode }[] = [
   {
     title: "Climatisation",
     href: "/climatisation", 
@@ -38,22 +32,25 @@ const services: { title: string; href: string; description: string; icon: React.
     description: "Solutions de climatisation adaptées à vos besoins pour un confort optimal.",
   },
   {
+    title: "Chauffage",
+    href: "/chauffage",
+    icon: <Flame className="w-4 h-4" />,
+    description: "Installation et maintenance de systèmes de chauffage performants et économiques.",
+  },
+  {
     title: "Eau chaude sanitaire",
     href: "/eau-chaude-sanitaire",
     icon: <Droplet className="w-4 h-4" />,
     description: "Systèmes d'eau chaude sanitaire efficaces et durables.",
   },
+]
+
+const servicesRight: { title: string; href: string; description: string; icon: React.ReactNode }[] = [
   {
     title: "Pompe à chaleur",
     href: "/pompe-a-chaleur",
     icon: <Settings className="w-4 h-4" />,
     description: "Pompes à chaleur air-air et air-eau pour chauffage et eau chaude sanitaire.",
-  },
-  {
-    title: "Maintenance",
-    href: "/maintenance",
-    icon: <FileText className="w-4 h-4" />,
-    description: "Entretien professionnel de vos équipements pour garantir leur longévité.",
   },
 ]
 
@@ -120,13 +117,24 @@ export default function NewHeader() {
               <NavigationMenuItem>
                 <NavigationMenuTrigger>Nos Services</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid gap-3 p-4 w-[600px] lg:w-[800px] grid-cols-2">
-                    {services.map((service) => (
-                      <ListItem key={service.title} href={service.href} title={service.title} icon={service.icon}>
-                        {service.description}
-                      </ListItem>
-                    ))}
-                  </ul>
+                  <div className="grid gap-3 p-4 w-[600px] lg:w-[800px] grid-cols-2">
+                    {/* Colonne gauche */}
+                    <div className="space-y-3">
+                      {servicesLeft.map((service) => (
+                        <ListItem key={service.title} href={service.href} title={service.title} icon={service.icon}>
+                          {service.description}
+                        </ListItem>
+                      ))}
+                    </div>
+                    {/* Colonne droite */}
+                    <div className="space-y-3">
+                      {servicesRight.map((service) => (
+                        <ListItem key={service.title} href={service.href} title={service.title} icon={service.icon}>
+                          {service.description}
+                        </ListItem>
+                      ))}
+                    </div>
+                  </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
