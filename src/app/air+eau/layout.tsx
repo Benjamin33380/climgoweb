@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Chauffagiste Gironde - Installation Pompe à Chaleur, Chauffe-eau Thermodynamique',
     description: 'Chauffagiste expert Gironde ⚡ Installation pompe à chaleur, chauffe-eau thermodynamique, plancher chauffant. Artisan RGE certifié. Devis gratuit 07.66.46.00.08',
-    url: 'https://www.climgo.fr/chauffage',
+    url: 'https://www.climgo.fr/air+eau',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
     type: 'website',
@@ -31,10 +31,10 @@ export const metadata: Metadata = {
   },
   
   alternates: {
-    canonical: 'https://www.climgo.fr/chauffage',
+    canonical: 'https://www.climgo.fr/air+eau',
     languages: {
-      'x-default': 'https://www.climgo.fr/chauffage',
-      'fr-FR': 'https://www.climgo.fr/chauffage',
+      'x-default': 'https://www.climgo.fr/air+eau',
+      'fr-FR': 'https://www.climgo.fr/air+eau',
     },
   },
   
@@ -81,7 +81,7 @@ export default function ChauffageLayout({
             "provider": {"@id": "https://www.climgo.fr/#organization"},
             "areaServed": {"@type": "State", "name": "Gironde"},
             "serviceType": "Installation et maintenance de systèmes de chauffage",
-            "url": "https://www.climgo.fr/chauffage",
+            "url": "https://www.climgo.fr/air+eau",
             "offers": {
               "@type": "Offer",
               "description": "Installation PAC, plancher chauffant, radiateurs - Devis gratuit"

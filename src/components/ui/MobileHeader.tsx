@@ -10,7 +10,7 @@ import { UserMenu } from '@/components/auth/UserMenu';
 import { ModeToggle } from '@/components/ui/mode-toggle';
 
 const services = [
-  { title: "Chauffage", href: "/chauffage", icon: <Flame className="w-5 h-5" /> },
+  { title: "Chauffage", href: "/air+eau", icon: <Flame className="w-5 h-5" /> },
   { title: "Climatisation", href: "/climatisation", icon: <AirVent className="w-5 h-5" /> },
   { title: "Eau chaude sanitaire", href: "/eau-chaude-sanitaire", icon: <Droplet className="w-5 h-5" /> },
   { title: "Maintenance", href: "/maintenance", icon: <FileText className="w-5 h-5" /> },

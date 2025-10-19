@@ -370,7 +370,7 @@ export default function RootLayout({
                   "item": {
                     "@type": "WebPage",
                     "name": "Chauffage",
-                    "url": "https://www.climgo.fr/chauffage",
+                    "url": "https://www.climgo.fr/air+eau",
                     "description": "Installation et maintenance de systèmes de chauffage, PAC, planchers chauffants"
                   }
                 },

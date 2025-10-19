@@ -198,7 +198,7 @@ export default function PompeAChaleurPage() {
                   const getHref = (index: number) => {
                     switch(index) {
                       case 0: return "/climatisation";
-                      case 1: return "/chauffage";
+                      case 1: return "/air+eau";
                       case 2: return "/eau-chaude-sanitaire";
                       default: return "/contact";
                     }

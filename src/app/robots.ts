@@ -10,7 +10,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: [
           '/',
           '/blog',
-          '/chauffage',
+          '/air+eau',
           '/climatisation',
           '/eau-chaude-sanitaire',
           '/pompe-a-chaleur',
@@ -32,7 +32,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: [
           '/',
           '/blog/*',
-          '/chauffage',
+          '/air+eau',
           '/climatisation',
           '/eau-chaude-sanitaire',
           '/pompe-a-chaleur',

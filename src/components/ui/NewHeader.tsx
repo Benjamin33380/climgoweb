@@ -33,7 +33,7 @@ const servicesLeft: { title: string; href: string; description: string; icon: Re
   },
   {
     title: "Chauffage",
-    href: "/chauffage",
+    href: "/air+eau",
     icon: <Flame className="w-4 h-4" />,
     description: "Installation et maintenance de systèmes de chauffage performants et économiques.",
   },

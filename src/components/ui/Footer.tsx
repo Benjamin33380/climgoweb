@@ -4,7 +4,7 @@ import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin, Flame, Dropl
 import NewsletterSignup from './NewsletterSignup';
 
 const services = [
-  { title: "Chauffage", href: "/chauffage", icon: <Flame className="w-4 h-4" /> },
+  { title: "Chauffage", href: "/air+eau", icon: <Flame className="w-4 h-4" /> },
   { title: "Climatisation", href: "/climatisation", icon: <AirVent className="w-4 h-4" /> },
   { title: "Eau chaude sanitaire", href: "/eau-chaude-sanitaire", icon: <Droplet className="w-4 h-4" /> },
   { title: "Maintenance", href: "/maintenance", icon: <FileText className="w-4 h-4" /> },

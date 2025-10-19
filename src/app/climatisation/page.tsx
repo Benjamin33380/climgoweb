@@ -517,7 +517,7 @@ export default function ClimatisationPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             {/* Chauffage */}
             <Link 
-              href="/chauffage"
+              href="/air+eau"
               className="group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-orange-500 dark:hover:border-orange-400 hover:-translate-y-2 h-[300px] sm:h-[320px]"
             >
               {/* Version MOBILE - Image simple */}

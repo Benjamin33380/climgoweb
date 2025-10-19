@@ -521,7 +521,7 @@ export default function HomePage() {
                   
                   <div className="flex justify-between items-center text-xs text-gray-500 dark:text-gray-400 border-t border-gray-100 dark:border-gray-700 pt-2 sm:pt-3">
                     <span className="font-medium">Juillet 2025</span>
-                    <a href="/chauffage" className="text-blue-600 dark:text-blue-400 font-medium hover:text-blue-500 dark:hover:text-blue-300 hover:underline transition-colors">PAC</a>
+                    <a href="/air+eau" className="text-blue-600 dark:text-blue-400 font-medium hover:text-blue-500 dark:hover:text-blue-300 hover:underline transition-colors">PAC</a>
                   </div>
                 </div>
               </div>
@@ -907,7 +907,7 @@ export default function HomePage() {
                   
                   <div className="flex justify-between items-center text-xs text-gray-500 dark:text-gray-400 border-t border-gray-100 dark:border-gray-700 pt-2 sm:pt-3">
                     <span className="font-medium">Juillet 2025</span>
-                    <a href="/chauffage" className="text-blue-600 dark:text-blue-400 font-medium hover:text-blue-500 dark:hover:text-blue-300 hover:underline transition-colors">PAC</a>
+                    <a href="/air+eau" className="text-blue-600 dark:text-blue-400 font-medium hover:text-blue-500 dark:hover:text-blue-300 hover:underline transition-colors">PAC</a>
                   </div>
                 </div>
               </div>

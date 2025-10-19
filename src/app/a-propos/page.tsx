@@ -104,7 +104,7 @@ export default function AProposPage() {
             {/* Description */}
             <p className="text-xl text-black/70 dark:text-white/70 leading-relaxed mb-12 max-w-3xl mx-auto">
               Depuis plus de 10 ans, <strong className="text-black dark:text-white">ClimGO</strong> accompagne particuliers et professionnels en Gironde et dans le Nord des Landes. 
-              Notre expertise : installation, <Link href="/maintenance" className="text-black dark:text-white font-medium hover:opacity-70 transition-opacity">maintenance</Link> et dépannage de <Link href="/pompe-a-chaleur" className="text-black dark:text-white font-medium hover:opacity-70 transition-opacity">pompes à chaleur</Link>, <Link href="/climatisation" className="text-black dark:text-white font-medium hover:opacity-70 transition-opacity">climatisation</Link> et systèmes de <Link href="/chauffage" className="text-black dark:text-white font-medium hover:opacity-70 transition-opacity">chauffage</Link>.
+              Notre expertise : installation, <Link href="/maintenance" className="text-black dark:text-white font-medium hover:opacity-70 transition-opacity">maintenance</Link> et dépannage de <Link href="/pompe-a-chaleur" className="text-black dark:text-white font-medium hover:opacity-70 transition-opacity">pompes à chaleur</Link>, <Link href="/climatisation" className="text-black dark:text-white font-medium hover:opacity-70 transition-opacity">climatisation</Link> et systèmes de <Link href="/air+eau" className="text-black dark:text-white font-medium hover:opacity-70 transition-opacity">chauffage</Link>.
             </p>
           </div>
         </div>
@@ -163,12 +163,12 @@ export default function AProposPage() {
                 <p>
                   <span className="text-black dark:text-white font-medium">ClimGO est née d'une passion</span> pour les technologies énergétiques et d'un constat simple : 
                   les particuliers et professionnels méritent un service de qualité, transparent et accessible 
-                  pour leurs installations de <Link href="/chauffage" className="text-black dark:text-white font-medium hover:opacity-70 transition-opacity">chauffage</Link> et <Link href="/climatisation" className="text-black dark:text-white font-medium hover:opacity-70 transition-opacity">climatisation</Link>.
+                  pour leurs installations de <Link href="/air+eau" className="text-black dark:text-white font-medium hover:opacity-70 transition-opacity">chauffage</Link> et <Link href="/climatisation" className="text-black dark:text-white font-medium hover:opacity-70 transition-opacity">climatisation</Link>.
                 </p>
                 <p>
                   Depuis nos débuts, nous avons fait le choix de la spécialisation et de l'excellence. 
                   Plutôt que de disperser notre expertise, nous nous concentrons sur ce que nous savons 
-                  faire de mieux : les <Link href="/pompe-a-chaleur" className="text-black dark:text-white font-medium hover:opacity-70 transition-opacity">pompes à chaleur</Link>, la <Link href="/climatisation" className="text-black dark:text-white font-medium hover:opacity-70 transition-opacity">climatisation</Link> et les systèmes de <Link href="/chauffage" className="text-black dark:text-white font-medium hover:opacity-70 transition-opacity">chauffage</Link> performants.
+                  faire de mieux : les <Link href="/pompe-a-chaleur" className="text-black dark:text-white font-medium hover:opacity-70 transition-opacity">pompes à chaleur</Link>, la <Link href="/climatisation" className="text-black dark:text-white font-medium hover:opacity-70 transition-opacity">climatisation</Link> et les systèmes de <Link href="/air+eau" className="text-black dark:text-white font-medium hover:opacity-70 transition-opacity">chauffage</Link> performants.
                 </p>
                 <p>
                   <span className="text-black dark:text-white font-medium">Aujourd'hui, avec plus de 50 clients satisfaits</span> et une présence sur 48 communes, 
