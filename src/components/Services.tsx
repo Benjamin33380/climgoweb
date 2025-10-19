@@ -23,9 +23,11 @@ export default function Services() {
                 <Image
                   src="/outro/cardclim.png"
                   alt="Climatisation"
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  width={400}
+                  height={384}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   quality={100}
+                  priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -49,9 +51,11 @@ export default function Services() {
                 <Image
                   src="/outro/chauffageseul.png"
                   alt="Chauffage"
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  width={400}
+                  height={384}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   quality={100}
+                  priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -75,9 +79,11 @@ export default function Services() {
                 <Image
                   src="/img/thermoecs.png"
                   alt="Eau chaude sanitaire"
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  width={400}
+                  height={384}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   quality={100}
+                  priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
                 <div className="absolute inset-0 flex items-center justify-center">
