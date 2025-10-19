@@ -165,11 +165,11 @@ export default function ChauffagePage() {
             >
               <h1 className="text-3xl xs:text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl font-bold lg:font-light tracking-tight mb-4 xs:mb-5 sm:mb-5 md:mb-6 lg:mb-8 text-[#03144A] dark:text-white break-words leading-tight">
                 <span className="bg-gradient-to-r from-[#FF8C00] via-[#03144A] to-[#FF8C00] dark:from-[#FFA500] dark:via-white dark:to-[#FFA500] bg-clip-text text-transparent">
-                  Pompe à Chaleur
+                  Production de chauffage
               </span>
               <br />
                 <span className="bg-gradient-to-r from-[#03144A] via-[#FF8C00] to-[#03144A] dark:from-white dark:via-[#FFA500] dark:to-white bg-clip-text text-transparent">
-                  Air-Eau
+                  Pompe à Chaleur Air-Eau
               </span>
             </h1>
               
@@ -325,8 +325,8 @@ export default function ChauffagePage() {
 
       {/* Section Professionnels & Particuliers */}
       <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-50 dark:bg-background">
-        <div className="container mx-auto px-4 xs:px-5 sm:px-6 max-w-4xl">
-          <div className="text-center">
+        <div className="container mx-auto px-4 xs:px-5 sm:px-6 max-w-7xl">
+          <div className="text-left">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-black dark:text-white mb-6 sm:mb-8">
               Professionnels & Particuliers
             </h2>
@@ -344,7 +344,7 @@ export default function ChauffagePage() {
             </p>
             
             {/* Logos RGE et République Française */}
-            <div className="flex items-center justify-center gap-6 sm:gap-8 mt-8">
+            <div className="flex items-center justify-start gap-6 sm:gap-8 mt-8 ml-0">
               <Image
                 src="/logoannexe/rge.png"
                 alt="Certifié RGE"
@@ -362,7 +362,7 @@ export default function ChauffagePage() {
             </div>
             
             {/* Bouton Découvrir les aides d'État */}
-            <div className="flex justify-center mt-8">
+            <div className="flex justify-start mt-8 ml-0">
               <Link
                 href="/aides-etat"
                 className="inline-flex items-center justify-center px-10 sm:px-12 py-4 sm:py-4 bg-gray-50 dark:bg-gray-800 border border-black dark:border-white text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 text-base sm:text-lg font-semibold rounded-full transition-colors duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
@@ -406,13 +406,12 @@ export default function ChauffagePage() {
                 <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-white/30 to-transparent dark:from-black/60 dark:via-black/35 dark:to-transparent group-hover:from-white/50 group-hover:via-white/25 group-hover:to-transparent dark:group-hover:from-black/50 dark:group-hover:via-black/30 dark:group-hover:to-transparent transition-all duration-300" />
               </div>
 
-              {/* Bannière avec le titre - toujours visible sur mobile, au survol sur desktop */}
-              <div className="absolute bottom-0 left-0 z-20 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-300 transform translate-y-0 lg:translate-y-2 lg:group-hover:translate-y-0">
-                <div className="bg-white/90 dark:bg-black/90 lg:bg-white/60 lg:dark:bg-black/60 backdrop-blur-md text-black dark:text-white px-4 py-2 lg:px-6 lg:py-3 rounded-tr-2xl border border-white/30 dark:border-white/10">
-                  <h4 className="text-sm sm:text-base lg:text-lg xl:text-xl font-light tracking-wide">
-                    Climatisation
-                  </h4>
-                </div>
+              {/* Overlay et titre centré sur l'image */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <h4 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-white uppercase tracking-wide drop-shadow-2xl text-center px-4" style={{ textShadow: '3px 3px 10px rgba(0,0,0,0.9)' }}>
+                  Climatisation
+                </h4>
               </div>
             </Link>
 
@@ -440,13 +439,12 @@ export default function ChauffagePage() {
                 <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-white/30 to-transparent dark:from-black/60 dark:via-black/35 dark:to-transparent group-hover:from-white/50 group-hover:via-white/25 group-hover:to-transparent dark:group-hover:from-black/50 dark:group-hover:via-black/30 dark:group-hover:to-transparent transition-all duration-300" />
               </div>
 
-              {/* Bannière avec le titre - toujours visible sur mobile, au survol sur desktop */}
-              <div className="absolute bottom-0 left-0 z-20 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-300 transform translate-y-0 lg:translate-y-2 lg:group-hover:translate-y-0">
-                <div className="bg-white/90 dark:bg-black/90 lg:bg-white/60 lg:dark:bg-black/60 backdrop-blur-md text-black dark:text-white px-4 py-2 lg:px-6 lg:py-3 rounded-tr-2xl border border-white/30 dark:border-white/10">
-                  <h4 className="text-sm sm:text-base lg:text-lg xl:text-xl font-light tracking-wide">
-                    Eau chaude sanitaire
-                  </h4>
-                </div>
+              {/* Overlay et titre centré sur l'image */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <h4 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-white uppercase tracking-wide drop-shadow-2xl text-center px-4" style={{ textShadow: '3px 3px 10px rgba(0,0,0,0.9)' }}>
+                  Eau chaude sanitaire
+                </h4>
               </div>
             </Link>
           </div>

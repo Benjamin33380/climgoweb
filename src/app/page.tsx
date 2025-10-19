@@ -161,27 +161,6 @@ export default function HomePage() {
           aria-hidden="true"
         ></div>
         
-        {/* Titre centré */}
-        <motion.div 
-          className="relative z-10 container mx-auto px-4 xs:px-6 sm:px-6 md:px-8 lg:px-12 mb-6 xs:mb-8 sm:mb-8 md:mb-12"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-        >
-          <h2 className="text-xl xs:text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-gray-900 dark:text-white text-center max-w-5xl mx-auto leading-relaxed">
-            <span className="block mb-2 xs:mb-3 sm:mb-4">
-              Installation, entretien et dépannage
-            </span>
-            <span className="block text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl font-normal text-gray-700 dark:text-gray-300 mb-2 xs:mb-3 sm:mb-4">
-              Pompes à chaleur · Chaudières · Climatisations · Chauffe-eau · Sanitaires
-            </span>
-            <span className="block text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-semibold bg-gradient-to-r from-orange-500 to-blue-600 bg-clip-text text-transparent">
-              Artisan RGE QualiPAC en Gironde
-            </span>
-          </h2>
-        </motion.div>
-        
         {/* Container fixe */}
         <motion.div 
           className="relative w-full px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12"
@@ -190,9 +169,30 @@ export default function HomePage() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
         >
-          {/* Contenu centré */}
-            <div className="max-w-3xl xs:max-w-4xl sm:max-w-4xl mx-auto">
-              <div className="space-y-6 xs:space-y-8 sm:space-y-8 text-center pt-4 xs:pt-6 sm:pt-8 pb-12 xs:pb-16 sm:pb-20">
+          {/* Contenu aligné à droite */}
+            <div className="max-w-3xl xs:max-w-4xl sm:max-w-4xl mr-auto">
+              <div className="space-y-6 xs:space-y-8 sm:space-y-8 text-left pt-4 xs:pt-6 sm:pt-8 pb-12 xs:pb-16 sm:pb-20">
+                
+                {/* Titre */}
+                <motion.div 
+                  className="mb-6 xs:mb-8 sm:mb-8 md:mb-12"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                >
+                  <h2 className="text-xl xs:text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-gray-900 dark:text-white text-left max-w-5xl leading-relaxed">
+                    <span className="block mb-2 xs:mb-3 sm:mb-4">
+                      Installation, entretien et dépannage
+                    </span>
+                    <span className="block text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl font-normal text-gray-700 dark:text-gray-300 mb-2 xs:mb-3 sm:mb-4">
+                      Pompes à chaleur · Chaudières · Climatisations · Chauffe-eau · Sanitaires
+                    </span>
+                    <span className="block text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-semibold bg-gradient-to-r from-orange-500 to-blue-600 bg-clip-text text-transparent">
+                      Artisan RGE QualiPAC en Gironde
+                    </span>
+                  </h2>
+                </motion.div>
                 
                 {/* Introduction */}
                 <motion.div 
@@ -202,7 +202,7 @@ export default function HomePage() {
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.5, ease: "easeOut" }}
                 >
-                  <p className="text-base xs:text-lg sm:text-xl md:text-xl text-gray-800 dark:text-gray-200 leading-relaxed px-2 font-medium">
+                  <p className="text-base xs:text-lg sm:text-xl md:text-xl text-gray-800 dark:text-gray-200 leading-relaxed px-2 font-medium text-left">
                     <strong>ClimGO</strong>, entreprise <strong>RGE QualiPAC certifiée</strong>, est spécialisée dans l'installation, l'entretien et le dépannage de vos équipements thermiques et sanitaires sur <strong>Bordeaux</strong>, <strong>Arcachon</strong> et l'ensemble de la <strong>Gironde</strong>.
                   </p>
                 </motion.div>
@@ -215,14 +215,14 @@ export default function HomePage() {
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
                 >
-                  <div className="flex items-center justify-center mb-4">
+                  <div className="flex items-center justify-start mb-4">
                     <div className="h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-600 to-transparent w-24"></div>
-                    <h3 className="text-lg xs:text-xl sm:text-2xl md:text-2xl font-semibold text-gray-900 dark:text-white mx-6">
+                    <h3 className="text-lg xs:text-xl sm:text-2xl md:text-2xl font-semibold text-gray-900 dark:text-white mx-6 text-left">
                       Aides financières de l'État
                     </h3>
                     <div className="h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-600 to-transparent w-24"></div>
                   </div>
-                  <p className="text-sm xs:text-base sm:text-lg md:text-lg text-gray-800 dark:text-gray-200 leading-relaxed px-2">
+                  <p className="text-sm xs:text-base sm:text-lg md:text-lg text-gray-800 dark:text-gray-200 leading-relaxed px-2 text-left">
                     En tant qu'<strong>artisan RGE QualiPAC</strong>, nos travaux ouvrent droit aux <strong>aides financières de l'État</strong> : <strong>MaPrimeRénov'</strong>, <strong>Certificats d'Économie d'Énergie (CEE)</strong>, <strong>TVA réduite</strong> et <strong>Éco-PTZ</strong>. Nous vous accompagnons dans toutes les démarches administratives et proposons, lorsque c'est possible, la <strong>déduction directe des aides sur la facture</strong> pour une gestion simplifiée.
                   </p>
                 </motion.div>
@@ -235,10 +235,10 @@ export default function HomePage() {
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
                 >
-                  <p className="text-base xs:text-lg sm:text-xl md:text-xl text-gray-800 dark:text-gray-200 leading-relaxed font-semibold px-2">
+                  <p className="text-base xs:text-lg sm:text-xl md:text-xl text-gray-800 dark:text-gray-200 leading-relaxed font-semibold px-2 text-left">
                     De l'installation à l'entretien, <strong>ClimGO</strong> assure votre confort thermique en Gironde avec expertise et réactivité.
                   </p>
-                  <p className="text-sm xs:text-base sm:text-lg md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed px-2 italic font-medium">
+                  <p className="text-sm xs:text-base sm:text-lg md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed px-2 italic font-medium text-left">
                     ClimGO – L'art du confort, le goût du détail.
                   </p>
                 </motion.div>

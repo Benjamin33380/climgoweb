@@ -193,10 +193,21 @@ export default function PompeAChaleurPage() {
             {/* Cartes des solutions - Animation depuis la droite */}
             <div className="w-full max-w-2xl mx-auto lg:mx-0 order-2 lg:order-2">
               <div className="grid grid-cols-1 gap-6">
-                {solutions.map((solution, index) => (
+                {solutions.map((solution, index) => {
+                  // Définir les liens de redirection selon l'index
+                  const getHref = (index: number) => {
+                    switch(index) {
+                      case 0: return "/climatisation";
+                      case 1: return "/chauffage";
+                      case 2: return "/eau-chaude-sanitaire";
+                      default: return "/contact";
+                    }
+                  };
+
+                  return (
                   <Link 
                     key={index} 
-                    href="/contact" 
+                    href={getHref(index)}
                     className="block group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-white hover:-translate-y-2 h-[350px] sm:h-[380px] lg:h-[350px] cursor-pointer"
                     style={{ 
                       animation: `slide-in-right 1.2s ease-out ${index * 0.2}s both`
@@ -230,7 +241,8 @@ export default function PompeAChaleurPage() {
                     </div>
                     </div>
                     </Link>
-               ))}
+                  );
+                })}
                   </div>
                 </div>
           </div>

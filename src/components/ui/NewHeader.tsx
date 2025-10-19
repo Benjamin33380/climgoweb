@@ -352,12 +352,12 @@ function ListItem({
   href,
   icon,
   ...props
-}: React.ComponentPropsWithoutRef<"li"> & { 
+}: React.ComponentPropsWithoutRef<"div"> & { 
   href: string
   icon?: React.ReactNode
 }) {
   return (
-    <li {...props} className="list-none">
+    <div {...props}>
       <NavigationMenuLink asChild>
         <Link 
           href={href}
@@ -372,7 +372,7 @@ function ListItem({
           </p>
         </Link>
       </NavigationMenuLink>
-    </li>
+    </div>
   )
 }
 
