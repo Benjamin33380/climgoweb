@@ -520,24 +520,15 @@ export default function ClimatisationPage() {
               href="/air+eau"
               className="group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-orange-500 dark:hover:border-orange-400 hover:-translate-y-2 h-[300px] sm:h-[320px]"
             >
-              {/* Version MOBILE - Image simple */}
+              {/* Image unifiée pour toutes les tailles d'écran */}
               <img
                 src="/img/uipacspacex.png"
                 alt="Chauffage"
-                className="lg:hidden absolute inset-0 w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-cover"
               />
 
-              {/* Version DESKTOP */}
-              <div
-                className="hidden lg:block absolute inset-0 bg-no-repeat bg-cover transition-transform duration-300 group-hover:scale-105"
-                style={{
-                  backgroundImage: 'url(/img/uipacspacex.png)',
-                  backgroundPosition: 'center center'
-                }}
-              >
-                {/* Overlay pour contraste - desktop uniquement */}
-                <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-white/30 to-transparent dark:from-black/60 dark:via-black/35 dark:to-transparent group-hover:from-white/50 group-hover:via-white/25 group-hover:to-transparent dark:group-hover:from-black/50 dark:group-hover:via-black/30 dark:group-hover:to-transparent transition-all duration-300" />
-              </div>
+              {/* Overlay pour contraste */}
+              <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-white/30 to-transparent dark:from-black/60 dark:via-black/35 dark:to-transparent group-hover:from-white/50 group-hover:via-white/25 group-hover:to-transparent dark:group-hover:from-black/50 dark:group-hover:via-black/30 dark:group-hover:to-transparent transition-all duration-300" />
 
               {/* Overlay et titre centré sur l'image */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
@@ -553,24 +544,15 @@ export default function ClimatisationPage() {
               href="/thermodynamique"
               className="group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-red-500 dark:hover:border-red-400 hover:-translate-y-2 h-[300px] sm:h-[320px]"
             >
-              {/* Version MOBILE - Image simple */}
+              {/* Image unifiée pour toutes les tailles d'écran */}
               <img
                 src="/img/thermoecs.png"
                 alt="Eau chaude sanitaire"
-                className="lg:hidden absolute inset-0 w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-cover"
               />
 
-              {/* Version DESKTOP */}
-              <div
-                className="hidden lg:block absolute inset-0 bg-no-repeat bg-cover transition-transform duration-300 group-hover:scale-105"
-                style={{
-                  backgroundImage: 'url(/img/thermoecs.png)',
-                  backgroundPosition: 'center center'
-                }}
-              >
-                {/* Overlay pour contraste - desktop uniquement */}
-                <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-white/30 to-transparent dark:from-black/60 dark:via-black/35 dark:to-transparent group-hover:from-white/50 group-hover:via-white/25 group-hover:to-transparent dark:group-hover:from-black/50 dark:group-hover:via-black/30 dark:group-hover:to-transparent transition-all duration-300" />
-              </div>
+              {/* Overlay pour contraste */}
+              <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-white/30 to-transparent dark:from-black/60 dark:via-black/35 dark:to-transparent group-hover:from-white/50 group-hover:via-white/25 group-hover:to-transparent dark:group-hover:from-black/50 dark:group-hover:via-black/30 dark:group-hover:to-transparent transition-all duration-300" />
 
               {/* Overlay et titre centré sur l'image */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
