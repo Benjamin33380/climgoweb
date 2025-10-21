@@ -518,48 +518,54 @@ export default function ClimatisationPage() {
             {/* Chauffage */}
             <Link 
               href="/air+eau"
-              className="group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-orange-500 dark:hover:border-orange-400 hover:-translate-y-2 h-[300px] sm:h-[320px]"
+              className="block group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-white hover:-translate-y-2 h-[300px] sm:h-[320px] cursor-pointer"
             >
-              {/* Image unifiée pour toutes les tailles d'écran */}
-              <img
-                src="/img/uipacspacex.png"
-                alt="Chauffage"
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-
-              {/* Overlay pour contraste */}
-              <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-white/30 to-transparent dark:from-black/60 dark:via-black/35 dark:to-transparent group-hover:from-white/50 group-hover:via-white/25 group-hover:to-transparent dark:group-hover:from-black/50 dark:group-hover:via-black/30 dark:group-hover:to-transparent transition-all duration-300" />
-
-              {/* Overlay et titre centré sur l'image */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <h4 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-white uppercase tracking-wide drop-shadow-2xl text-center px-4" style={{ textShadow: '3px 3px 10px rgba(0,0,0,0.9)' }}>
-                  Chauffage
-                </h4>
+              {/* Image en fond pour toutes les résolutions */}
+              <div 
+                className="absolute inset-0 bg-no-repeat bg-center bg-cover"
+                style={{ 
+                  backgroundImage: 'url(/img/uipacspacex.png)',
+                  backgroundColor: '#f3f4f6'
+                }}
+              >
+                {/* Overlay léger pour contraste sur desktop uniquement */}
+                <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-white/40 via-white/20 to-transparent dark:from-black/40 dark:via-black/20 dark:to-transparent" />
+              </div>
+              
+              {/* Bannière avec le titre - toujours visible sur mobile, au survol sur desktop */}
+              <div className="absolute bottom-0 left-0 z-20 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-300 transform translate-y-0 lg:translate-y-2 lg:group-hover:translate-y-0">
+                <div className="bg-white/90 dark:bg-black/90 lg:bg-white/60 lg:dark:bg-black/60 backdrop-blur-md text-black dark:text-white px-4 py-2 lg:px-6 lg:py-3 rounded-tr-2xl border border-white/30 dark:border-white/10">
+                  <h4 className="text-sm sm:text-base lg:text-lg xl:text-xl font-light tracking-wide">
+                    Chauffage
+                  </h4>
+                </div>
               </div>
             </Link>
 
             {/* Eau chaude sanitaire */}
             <Link 
               href="/thermodynamique"
-              className="group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-red-500 dark:hover:border-red-400 hover:-translate-y-2 h-[300px] sm:h-[320px]"
+              className="block group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-white hover:-translate-y-2 h-[300px] sm:h-[320px] cursor-pointer"
             >
-              {/* Image unifiée pour toutes les tailles d'écran */}
-              <img
-                src="/img/thermoecs.png"
-                alt="Eau chaude sanitaire"
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-
-              {/* Overlay pour contraste */}
-              <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-white/30 to-transparent dark:from-black/60 dark:via-black/35 dark:to-transparent group-hover:from-white/50 group-hover:via-white/25 group-hover:to-transparent dark:group-hover:from-black/50 dark:group-hover:via-black/30 dark:group-hover:to-transparent transition-all duration-300" />
-
-              {/* Overlay et titre centré sur l'image */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <h4 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-white uppercase tracking-wide drop-shadow-2xl text-center px-4" style={{ textShadow: '3px 3px 10px rgba(0,0,0,0.9)' }}>
-                  Eau chaude sanitaire
-                </h4>
+              {/* Image en fond pour toutes les résolutions */}
+              <div 
+                className="absolute inset-0 bg-no-repeat bg-center bg-cover"
+                style={{ 
+                  backgroundImage: 'url(/img/thermoecs.png)',
+                  backgroundColor: '#f3f4f6'
+                }}
+              >
+                {/* Overlay léger pour contraste sur desktop uniquement */}
+                <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-white/40 via-white/20 to-transparent dark:from-black/40 dark:via-black/20 dark:to-transparent" />
+              </div>
+              
+              {/* Bannière avec le titre - toujours visible sur mobile, au survol sur desktop */}
+              <div className="absolute bottom-0 left-0 z-20 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-300 transform translate-y-0 lg:translate-y-2 lg:group-hover:translate-y-0">
+                <div className="bg-white/90 dark:bg-black/90 lg:bg-white/60 lg:dark:bg-black/60 backdrop-blur-md text-black dark:text-white px-4 py-2 lg:px-6 lg:py-3 rounded-tr-2xl border border-white/30 dark:border-white/10">
+                  <h4 className="text-sm sm:text-base lg:text-lg xl:text-xl font-light tracking-wide">
+                    Eau chaude sanitaire
+                  </h4>
+                </div>
               </div>
             </Link>
           </div>
