@@ -400,44 +400,58 @@ export default function EauChaudeSanitairePage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             {/* Chauffe-eau thermodynamique */}
-            <div className="group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-black dark:hover:border-white hover:-translate-y-2 h-[350px] sm:h-[380px]">
-              {/* Image simple */}
-              <img
-                src="/img/chauffeeau.png"
-                alt="Chauffe-eau thermodynamique"
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-
-              {/* Overlay simple */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
-              
-              {/* Titre centré */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <h4 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-white uppercase tracking-wide drop-shadow-2xl text-center px-4">
-                  Chauffe-eau cumulus
-                </h4>
+            <Link 
+              href="#"
+              className="block group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-white hover:-translate-y-2 h-[400px] sm:h-[450px] lg:h-[500px] cursor-pointer"
+            >
+              {/* Image en fond pour toutes les résolutions */}
+              <div 
+                className="absolute inset-0 bg-no-repeat bg-center bg-cover"
+                style={{ 
+                  backgroundImage: 'url(/img/chauffeeau.png)',
+                  backgroundColor: '#f3f4f6'
+                }}
+              >
+                {/* Overlay léger pour contraste sur desktop uniquement */}
+                <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-white/40 via-white/20 to-transparent dark:from-black/40 dark:via-black/20 dark:to-transparent" />
               </div>
-            </div>
+              
+              {/* Bannière avec le titre - toujours visible sur mobile, au survol sur desktop */}
+              <div className="absolute bottom-0 left-0 z-20 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-300 transform translate-y-0 lg:translate-y-2 lg:group-hover:translate-y-0">
+                <div className="bg-white/90 dark:bg-black/90 lg:bg-white/60 lg:dark:bg-black/60 backdrop-blur-md text-black dark:text-white px-4 py-2 lg:px-6 lg:py-3 rounded-tr-2xl border border-white/30 dark:border-white/10">
+                  <h4 className="text-sm sm:text-base lg:text-lg xl:text-xl font-light tracking-wide">
+                    Chauffe-eau cumulus
+                  </h4>
+                </div>
+              </div>
+            </Link>
 
             {/* Chauffe-eau extra plat */}
-            <div className="group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-black dark:hover:border-white hover:-translate-y-2 h-[350px] sm:h-[380px]">
-              {/* Image simple */}
-              <img
-                src="/img/extraplatchauf.png"
-                alt="Chauffe-eau extra plat"
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-
-              {/* Overlay simple */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
-              
-              {/* Titre centré */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <h4 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-white uppercase tracking-wide drop-shadow-2xl text-center px-4">
-                  Chauffe-eau cumulus extra plat
-                </h4>
+            <Link 
+              href="#"
+              className="block group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-white hover:-translate-y-2 h-[400px] sm:h-[450px] lg:h-[500px] cursor-pointer"
+            >
+              {/* Image en fond pour toutes les résolutions */}
+              <div 
+                className="absolute inset-0 bg-no-repeat bg-center bg-cover"
+                style={{ 
+                  backgroundImage: 'url(/img/extraplatchauf.png)',
+                  backgroundColor: '#f3f4f6'
+                }}
+              >
+                {/* Overlay léger pour contraste sur desktop uniquement */}
+                <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-white/40 via-white/20 to-transparent dark:from-black/40 dark:via-black/20 dark:to-transparent" />
               </div>
-            </div>
+              
+              {/* Bannière avec le titre - toujours visible sur mobile, au survol sur desktop */}
+              <div className="absolute bottom-0 left-0 z-20 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-300 transform translate-y-0 lg:translate-y-2 lg:group-hover:translate-y-0">
+                <div className="bg-white/90 dark:bg-black/90 lg:bg-white/60 lg:dark:bg-black/60 backdrop-blur-md text-black dark:text-white px-4 py-2 lg:px-6 lg:py-3 rounded-tr-2xl border border-white/30 dark:border-white/10">
+                  <h4 className="text-sm sm:text-base lg:text-lg xl:text-xl font-light tracking-wide">
+                    Chauffe-eau cumulus extra plat
+                  </h4>
+                </div>
+              </div>
+            </Link>
           </div>
         </div>
       </section>
