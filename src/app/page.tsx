@@ -1012,7 +1012,7 @@ export default function HomePage() {
                   href="https://g.page/r/CYU8G8pY5uo1EBM/review"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-xl transition-all duration-300 transform hover:scale-105 text-sm sm:text-base"
+                  className="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-white dark:bg-blue-600 hover:bg-gray-100 dark:hover:bg-blue-700 text-black dark:text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-xl transition-all duration-300 transform hover:scale-105 text-sm sm:text-base shadow-md"
                 >
                   <svg className="w-4 sm:w-5 h-4 sm:h-5 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
@@ -1029,9 +1029,9 @@ export default function HomePage() {
                 </a>
 
                 {/* Bouton pour nous contacter */}
-                <a
+                <a 
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-gray-50 dark:bg-background border-2 border-blue-600 dark:border-white text-blue-600 dark:text-white hover:bg-blue-50 dark:hover:bg-muted font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-xl transition-all duration-300 transform hover:scale-105 text-sm sm:text-base"
+                  className="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-blue-50 dark:bg-gray-800 border-2 border-blue-600 dark:border-white text-blue-600 dark:text-white hover:bg-blue-100 dark:hover:bg-gray-700 font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-xl transition-all duration-300 transform hover:scale-105 text-sm sm:text-base shadow-md"
                 >
                   <svg className="w-4 sm:w-5 h-4 sm:h-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
