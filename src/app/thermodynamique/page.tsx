@@ -400,42 +400,40 @@ export default function EauChaudeSanitairePage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             {/* Chauffe-eau thermodynamique */}
-            <div className="group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-black dark:hover:border-white hover:-translate-y-2 h-[300px] sm:h-[320px]">
-              {/* Image unifiée pour toutes les tailles d'écran */}
+            <div className="group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-black dark:hover:border-white hover:-translate-y-2 h-[350px] sm:h-[380px]">
+              {/* Image simple */}
               <img
                 src="/img/chauffeeau.png"
                 alt="Chauffe-eau thermodynamique"
                 className="absolute inset-0 w-full h-full object-cover"
               />
 
-              {/* Overlay pour contraste */}
-              <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-white/30 to-transparent dark:from-black/60 dark:via-black/35 dark:to-transparent group-hover:from-white/50 group-hover:via-white/25 group-hover:to-transparent dark:group-hover:from-black/50 dark:group-hover:via-black/30 dark:group-hover:to-transparent transition-all duration-300" />
-
-              {/* Overlay et titre centré sur l'image */}
+              {/* Overlay simple */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
+              
+              {/* Titre centré */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <h4 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-white uppercase tracking-wide drop-shadow-2xl text-center px-4" style={{ textShadow: '3px 3px 10px rgba(0,0,0,0.9)' }}>
+                <h4 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-white uppercase tracking-wide drop-shadow-2xl text-center px-4">
                   Chauffe-eau cumulus
                 </h4>
               </div>
             </div>
 
             {/* Chauffe-eau extra plat */}
-            <div className="group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-black dark:hover:border-white hover:-translate-y-2 h-[300px] sm:h-[320px]">
-              {/* Image unifiée pour toutes les tailles d'écran */}
+            <div className="group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-black dark:hover:border-white hover:-translate-y-2 h-[350px] sm:h-[380px]">
+              {/* Image simple */}
               <img
                 src="/img/extraplatchauf.png"
                 alt="Chauffe-eau extra plat"
                 className="absolute inset-0 w-full h-full object-cover"
               />
 
-              {/* Overlay pour contraste */}
-              <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-white/30 to-transparent dark:from-black/60 dark:via-black/35 dark:to-transparent group-hover:from-white/50 group-hover:via-white/25 group-hover:to-transparent dark:group-hover:from-black/50 dark:group-hover:via-black/30 dark:group-hover:to-transparent transition-all duration-300" />
-
-              {/* Overlay et titre centré sur l'image */}
+              {/* Overlay simple */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
+              
+              {/* Titre centré */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <h4 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-white uppercase tracking-wide drop-shadow-2xl text-center px-4" style={{ textShadow: '3px 3px 10px rgba(0,0,0,0.9)' }}>
+                <h4 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-white uppercase tracking-wide drop-shadow-2xl text-center px-4">
                   Chauffe-eau cumulus extra plat
                 </h4>
               </div>
