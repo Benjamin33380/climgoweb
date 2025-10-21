@@ -19,18 +19,15 @@ export default function Services() {
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
               <Link href="/climatisation" className="group block relative overflow-hidden rounded-2xl sm:rounded-3xl h-64 sm:h-80 lg:h-96 shadow-xl hover:shadow-2xl transition-all duration-300">
-                    {/* Image de fond pour toutes les tailles d'écran */}
-                    <div 
-                      className="absolute inset-0 bg-no-repeat bg-cover transition-transform duration-300 group-hover:scale-105"
-                      style={{ 
-                        backgroundImage: `url(/outro/cardclim.png)`,
-                        backgroundPosition: 'center center',
-                        backgroundSize: 'cover'
-                      }}
-                    >
-                      {/* Overlay pour contraste */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-white/40 via-white/20 to-transparent dark:from-black/30 dark:via-black/15 dark:to-transparent group-hover:from-white/30 group-hover:via-white/15 group-hover:to-transparent dark:group-hover:from-black/20 dark:group-hover:via-black/10 dark:group-hover:to-transparent transition-all duration-300" />
-                    </div>
+                    {/* Image mobile avec img tag */}
+                    <img
+                      src="/outro/cardclim.png"
+                      alt="Climatisation"
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                    
+                    {/* Overlay pour contraste */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/40 via-white/20 to-transparent dark:from-black/30 dark:via-black/15 dark:to-transparent group-hover:from-white/30 group-hover:via-white/15 group-hover:to-transparent dark:group-hover:from-black/20 dark:group-hover:via-black/10 dark:group-hover:to-transparent transition-all duration-300" />
                 
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -51,18 +48,15 @@ export default function Services() {
               transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
             >
               <Link href="/air+eau" className="group block relative overflow-hidden rounded-2xl sm:rounded-3xl h-64 sm:h-80 lg:h-96 shadow-xl hover:shadow-2xl transition-all duration-300">
-                    {/* Image de fond pour toutes les tailles d'écran */}
-                    <div 
-                      className="absolute inset-0 bg-no-repeat bg-cover transition-transform duration-300 group-hover:scale-105"
-                      style={{ 
-                        backgroundImage: `url(/outro/chauffageseul.png)`,
-                        backgroundPosition: 'center center',
-                        backgroundSize: 'cover'
-                      }}
-                    >
-                      {/* Overlay pour contraste */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-white/40 via-white/20 to-transparent dark:from-black/30 dark:via-black/15 dark:to-transparent group-hover:from-white/30 group-hover:via-white/15 group-hover:to-transparent dark:group-hover:from-black/20 dark:group-hover:via-black/10 dark:group-hover:to-transparent transition-all duration-300" />
-                    </div>
+                    {/* Image mobile avec img tag */}
+                    <img
+                      src="/outro/chauffageseul.png"
+                      alt="Chauffage"
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                    
+                    {/* Overlay pour contraste */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/40 via-white/20 to-transparent dark:from-black/30 dark:via-black/15 dark:to-transparent group-hover:from-white/30 group-hover:via-white/15 group-hover:to-transparent dark:group-hover:from-black/20 dark:group-hover:via-black/10 dark:group-hover:to-transparent transition-all duration-300" />
                 
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -83,18 +77,15 @@ export default function Services() {
               transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             >
               <Link href="/thermodynamique" className="group block relative overflow-hidden rounded-2xl sm:rounded-3xl h-64 sm:h-80 lg:h-96 shadow-xl hover:shadow-2xl transition-all duration-300">
-                    {/* Image de fond pour toutes les tailles d'écran */}
-                    <div 
-                      className="absolute inset-0 bg-no-repeat bg-cover transition-transform duration-300 group-hover:scale-105"
-                      style={{ 
-                        backgroundImage: `url(/img/thermoecs.png)`,
-                        backgroundPosition: 'center center',
-                        backgroundSize: 'cover'
-                      }}
-                    >
-                      {/* Overlay pour contraste */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-white/40 via-white/20 to-transparent dark:from-black/30 dark:via-black/15 dark:to-transparent group-hover:from-white/30 group-hover:via-white/15 group-hover:to-transparent dark:group-hover:from-black/20 dark:group-hover:via-black/10 dark:group-hover:to-transparent transition-all duration-300" />
-                    </div>
+                    {/* Image mobile avec img tag - même méthode que les autres */}
+                    <img
+                      src="/img/thermoecs.png"
+                      alt="Eau chaude sanitaire"
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                    
+                    {/* Overlay pour contraste */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/40 via-white/20 to-transparent dark:from-black/30 dark:via-black/15 dark:to-transparent group-hover:from-white/30 group-hover:via-white/15 group-hover:to-transparent dark:group-hover:from-black/20 dark:group-hover:via-black/10 dark:group-hover:to-transparent transition-all duration-300" />
                 
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
                     <div className="absolute inset-0 flex items-center justify-center">
