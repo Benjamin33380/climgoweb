@@ -39,10 +39,10 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.climgo.fr'),
   title: {
-    default: "ClimGO - Spécialiste des systèmes de pompe à chaleur,chauffage et climatisation en Gironde",
+    default: "ClimGO - L'excellence thermique au service de votre habitat en Gironde",
     template: "%s | ClimGO"
   },
-  description: "Installation, entretien et dépannage de pompes à chaleur, chaudières, climatisations, chauffe-eau et sanitaires. Artisan RGE QualiPAC en Gironde.",
+  description: "Entreprise certifiée RGE QualiPAC et Professionnel du Gaz, ClimGO est spécialiste des pompes à chaleur, chaudières, climatisations et chauffe-eau en Gironde. Installation, entretien, dépannage. Devis gratuit.",
   keywords: [
     // Villes principales
     "chauffagiste bordeaux", "climatisation bordeaux", "pompe à chaleur bordeaux", "clim bordeaux", "climatiseur bordeaux",
@@ -84,8 +84,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     url: "https://www.climgo.fr",
-    title: "ClimGO - Installation, entretien et dépannage - Artisan RGE QualiPAC Gironde",
-    description: "Installation, entretien et dépannage de pompes à chaleur, chaudières, climatisations, chauffe-eau et sanitaires. Artisan RGE QualiPAC en Gironde.",
+    title: "ClimGO - L'excellence thermique en Gironde | RGE QualiPAC & Professionnel du Gaz",
+    description: "Entreprise certifiée RGE QualiPAC et Professionnel du Gaz. Spécialiste pompes à chaleur, chaudières, climatisations. De Bordeaux au Bassin d'Arcachon. Devis gratuit.",
     siteName: "ClimGO",
     images: [
       {
@@ -108,8 +108,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ClimGO - Installation, entretien et dépannage - Artisan RGE QualiPAC Gironde",
-    description: "Installation, entretien et dépannage de pompes à chaleur, chaudières, climatisations, chauffe-eau et sanitaires. Artisan RGE QualiPAC en Gironde.",
+    title: "ClimGO - L'excellence thermique en Gironde | RGE QualiPAC & Professionnel du Gaz",
+    description: "Entreprise certifiée RGE QualiPAC et Professionnel du Gaz. Spécialiste pompes à chaleur, chaudières, climatisations. Devis gratuit.",
     images: ["/img/climdame.png"],
   },
   alternates: {
@@ -173,7 +173,7 @@ export default function RootLayout({
                 "height": 630
               },
               "image": "https://www.climgo.fr/img/climdame.png",
-              "description": "ClimGO, expert chauffage et climatisation en Gironde. Installation PAC, entretien et dépannage. Artisan RGE. Devis gratuit.",
+              "description": "ClimGO, l'excellence thermique au service de votre habitat en Gironde. Entreprise certifiée RGE QualiPAC et Professionnel du Gaz. Spécialiste pompes à chaleur, chaudières, climatisations. Devis gratuit.",
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "28 rue de Cantelaude",
@@ -209,7 +209,7 @@ export default function RootLayout({
               "hasCredential": [
                 {
                   "@type": "EducationalOccupationalCredential",
-                  "name": "Certification RGE",
+                  "name": "Certification RGE QualiPAC",
                   "description": "Reconnu Garant de l'Environnement pour les pompes à chaleur",
                   "credentialCategory": "certification",
                   "recognizedBy": {
@@ -217,6 +217,16 @@ export default function RootLayout({
                     "name": "Qualit'EnR"
                   }
                 },
+                {
+                  "@type": "EducationalOccupationalCredential",
+                  "name": "Professionnel du Gaz (PG)",
+                  "description": "Certification pour l'installation et la maintenance des équipements gaz",
+                  "credentialCategory": "certification",
+                  "recognizedBy": {
+                    "@type": "Organization",
+                    "name": "PG - Professionnel du Gaz"
+                  }
+                }
               ],
               "areaServed": [
                 {

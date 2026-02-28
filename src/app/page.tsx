@@ -203,13 +203,13 @@ export default function HomePage() {
                 >
                   <h2 className="text-xl xs:text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-gray-900 dark:text-white text-left max-w-5xl leading-relaxed">
                     <span className="block mb-2 xs:mb-3 sm:mb-4">
-                      Installation, entretien et dépannage
+                      L'excellence thermique au service de votre habitat en Gironde
                     </span>
                     <span className="block text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl font-normal text-gray-700 dark:text-gray-300 mb-2 xs:mb-3 sm:mb-4">
-                      Pompes à chaleur · Chaudières · Climatisations · Chauffe-eau · Sanitaires
+                      Installation • Entretien • Dépannage
                     </span>
                     <span className="block text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-semibold bg-gradient-to-r from-orange-500 to-blue-600 bg-clip-text text-transparent">
-                      Artisan RGE QualiPAC en Gironde 
+                      Spécialiste chauffage, climatisation et renovation énergétique
                     </span>
                   </h2>
                 </motion.div>
@@ -223,7 +223,26 @@ export default function HomePage() {
                   transition={{ duration: 0.5, ease: "easeOut" }}
                 >
                   <p className="text-base xs:text-lg sm:text-xl md:text-xl text-gray-800 dark:text-gray-200 leading-relaxed px-2 font-medium text-left">
-                    <strong>ClimGO</strong>, entreprise <strong>RGE QualiPAC certifiée</strong>, est spécialisée dans l'installation, l'entretien et le dépannage de vos équipements thermiques et sanitaires sur <strong>Bordeaux</strong>, <strong>Arcachon</strong> et l'ensemble de la <strong>Gironde</strong>.
+                    Spécialiste des systèmes de chauffage, climatisation et sanitaires, <strong>ClimGO</strong> met son expertise au service de votre confort. De <strong>Bordeaux</strong> au <strong>Bassin d'Arcachon</strong>, nous intervenons avec réactivité pour optimiser la performance énergétique de votre foyer.
+                  </p>
+                </motion.div>
+
+                {/* Un partenaire de confiance */}
+                <motion.div 
+                  className="space-y-4"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
+                >
+                  <h3 className="text-lg xs:text-xl sm:text-2xl md:text-2xl font-semibold text-gray-900 dark:text-white px-2 text-left">
+                    Un partenaire de confiance pour vos projets énergétiques
+                  </h3>
+                  <p className="text-sm xs:text-base sm:text-lg md:text-lg text-gray-800 dark:text-gray-200 leading-relaxed px-2 text-left">
+                    Entreprise certifiée <strong>RGE QualiPAC</strong> et <strong>Professionnel du Gaz (PG)</strong>, ClimGO assure la pose et le suivi technique de vos équipements : <strong>Pompes à chaleur</strong> (Air/Air, Air/Eau), <strong>Chaudières haute performance</strong>, <strong>Climatisations réversibles</strong> et <strong>Chauffe-eau thermodynamiques</strong>.
+                  </p>
+                  <p className="text-sm xs:text-base sm:text-lg md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed px-2 text-left italic">
+                    Notre engagement : allier technicité, économies d'énergie et finitions soignées pour une installation durable et performante.
                   </p>
                 </motion.div>
 
@@ -238,12 +257,15 @@ export default function HomePage() {
                   <div className="flex items-center justify-start mb-4">
                     <div className="h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-600 to-transparent w-24"></div>
                     <h3 className="text-lg xs:text-xl sm:text-2xl md:text-2xl font-semibold text-gray-900 dark:text-white mx-6 text-left">
-                      Aides financières de l'État
+                      Optimisez votre budget avec les aides de l'État
                     </h3>
                     <div className="h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-600 to-transparent w-24"></div>
                   </div>
                   <p className="text-sm xs:text-base sm:text-lg md:text-lg text-gray-800 dark:text-gray-200 leading-relaxed px-2 text-left">
-                    En tant qu'<strong>artisan RGE QualiPAC</strong>, nos travaux ouvrent droit aux <strong>aides financières de l'État</strong> : <strong>MaPrimeRénov'</strong>, <strong>Certificats d'Économie d'Énergie (CEE)</strong>, <strong>TVA réduite</strong> et <strong>Éco-PTZ</strong>. Nous vous accompagnons dans toutes les démarches administratives et proposons, lorsque c'est possible, la <strong>déduction directe des aides sur la facture</strong> pour une gestion simplifiée.
+                    En tant qu'<strong>artisan certifié RGE</strong>, nos interventions vous ouvrent droit aux dispositifs de financement nationaux : <strong>MaPrimeRénov'</strong>, <strong>CEE</strong>, <strong>TVA réduite</strong> et <strong>Éco-PTZ</strong>.
+                  </p>
+                  <p className="text-sm xs:text-base sm:text-lg md:text-lg text-gray-800 dark:text-gray-200 leading-relaxed px-2 text-left mt-3">
+                    Parce que votre sérénité est notre priorité, nous vous accompagnons dans l'intégralité des démarches administratives. <strong>Le plus ClimGO</strong> : nous pratiquons, selon éligibilité, la <strong>déduction directe des aides</strong> de votre facture pour vous éviter toute avance de frais inutile.
                   </p>
                 </motion.div>
 
@@ -255,10 +277,7 @@ export default function HomePage() {
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
                 >
-                  <p className="text-base xs:text-lg sm:text-xl md:text-xl text-gray-800 dark:text-gray-200 leading-relaxed font-semibold px-2 text-left">
-                    De l'installation à l'entretien, <strong>ClimGO</strong> assure votre confort thermique en Gironde avec expertise et réactivité.
-                  </p>
-                  <p className="text-sm xs:text-base sm:text-lg md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed px-2 italic font-medium text-left">
+                  <p className="text-lg xs:text-xl sm:text-2xl md:text-2xl text-gray-900 dark:text-white leading-relaxed font-semibold px-2 text-center italic">
                     ClimGO – L'art du confort, le goût du détail.
                   </p>
                 </motion.div>
