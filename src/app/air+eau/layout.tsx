@@ -2,12 +2,12 @@ import { Metadata } from 'next';
 import { HEADQUARTERS_COORDINATES, generateGeoJsonLd, generateServiceAreaJsonLd } from '@/config/geo';
 
 export const metadata: Metadata = {
-  title: 'Chauffagiste Gironde - Installation Pompe à Chaleur, Chauffe-eau Thermodynamique',
+  title: 'Chauffage Gironde | PAC Air-Eau | ClimGO',
   description: 'Chauffagiste expert Gironde ⚡ Installation pompe à chaleur, chauffe-eau thermodynamique, plancher chauffant. Artisan RGE certifié. Devis gratuit 07.66.46.00.08',
   keywords: 'chauffagiste gironde, chauffage gironde, installation pompe à chaleur, chauffe-eau thermodynamique, pompe à chaleur air-eau, pompe à chaleur air-air, plancher chauffant, radiateurs, chauffagiste bordeaux, chauffagiste bassin arcachon, artisan RGE, thermodynamique, PAC air eau, PAC air air, MaPrimeRénov, prime CEE, devis gratuit chauffage, entretien chauffage, dépannage chauffage',
   
   openGraph: {
-    title: 'Chauffagiste Gironde - Installation Pompe à Chaleur, Chauffe-eau Thermodynamique',
+    title: 'Chauffage Gironde | PAC Air-Eau | ClimGO',
     description: 'Chauffagiste expert Gironde ⚡ Installation pompe à chaleur, chauffe-eau thermodynamique, plancher chauffant. Artisan RGE certifié. Devis gratuit 07.66.46.00.08',
     url: 'https://www.climgo.fr/air+eau',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@climgo_fr',
     creator: '@climgo_fr',
-    title: 'Chauffagiste Gironde - Installation Pompe à Chaleur, Chauffe-eau Thermodynamique',
+    title: 'Chauffage Gironde | PAC Air-Eau | ClimGO',
     description: 'Chauffagiste expert Gironde ⚡ Installation pompe à chaleur, chauffe-eau thermodynamique, plancher chauffant. Artisan RGE certifié. Devis gratuit 07.66.46.00.08',
     images: ['/img/serp/chauff.jpg'],
   },
