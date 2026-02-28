@@ -127,28 +127,48 @@ export default function HomePage() {
               </a>
             </div>
 
-            {/* Logo RGE */}
-            <a 
-              href="https://www.qualit-enr.org/entreprises/climgo/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 xs:gap-3 hover:opacity-80 transition-opacity cursor-pointer"
-              aria-label="Voir notre certification RGE QualiPAC sur Qualit'EnR"
-            >
-              <Image
-                src="/logoannexe/rge.png"
-                alt="RGE QualiPAC"
-                width={80}
-                height={80}
-                className="w-16 h-16 xs:w-20 xs:h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 object-contain"
-                quality={100}
-                priority
-                unoptimized
-              />
-              <span className="text-xs xs:text-sm sm:text-base md:text-lg text-white sm:text-black/80 dark:text-white/80 font-medium mobile-text-shadow">
-                Artisan certifié<br />RGE QualiPAC
-              </span>
-            </a>
+            {/* Logos certifications */}
+            <div className="flex items-center gap-4 xs:gap-6 sm:gap-8">
+              {/* Logo RGE */}
+              <a 
+                href="https://www.qualit-enr.org/entreprises/climgo/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 xs:gap-3 hover:opacity-80 transition-opacity cursor-pointer"
+                aria-label="Voir notre certification RGE QualiPAC sur Qualit'EnR"
+              >
+                <Image
+                  src="/logoannexe/rge.png"
+                  alt="RGE QualiPAC"
+                  width={80}
+                  height={80}
+                  className="w-16 h-16 xs:w-20 xs:h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 object-contain"
+                  quality={100}
+                  priority
+                  unoptimized
+                />
+                <span className="text-xs xs:text-sm sm:text-base md:text-lg text-white sm:text-black/80 dark:text-white/80 font-medium mobile-text-shadow">
+                  Artisan certifié<br />RGE QualiPAC
+                </span>
+              </a>
+
+              {/* Logo PGI */}
+              <div className="flex items-center gap-2 xs:gap-3">
+                <Image
+                  src="/logoannexe/logo-pgi.png"
+                  alt="Professionnel du Gaz Installation"
+                  width={80}
+                  height={80}
+                  className="w-16 h-16 xs:w-20 xs:h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 object-contain"
+                  quality={100}
+                  priority
+                  unoptimized
+                />
+                <span className="text-xs xs:text-sm sm:text-base md:text-lg text-white sm:text-black/80 dark:text-white/80 font-medium mobile-text-shadow">
+                  Professionnel<br />du Gaz
+                </span>
+              </div>
+            </div>
           </motion.div>
         </div>
 
@@ -189,7 +209,7 @@ export default function HomePage() {
                       Pompes à chaleur · Chaudières · Climatisations · Chauffe-eau · Sanitaires
                     </span>
                     <span className="block text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-semibold bg-gradient-to-r from-orange-500 to-blue-600 bg-clip-text text-transparent">
-                      Artisan RGE QualiPAC en Gironde
+                      Artisan RGE QualiPAC en Gironde 
                     </span>
                   </h2>
                 </motion.div>
