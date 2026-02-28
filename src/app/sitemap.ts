@@ -25,7 +25,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }))
 
   // Pages services
-  const services = ['chauffage', 'climatisation', 'maintenance', 'eau-chaude-sanitaire']
+  const services = ['air+eau', 'climatisation', 'thermodynamique', 'pompe-a-chaleur', 'aides-etat']
   const serviceUrls = services.map(service => ({
     url: `${baseUrl}/${service}`,
     lastModified: currentDate,

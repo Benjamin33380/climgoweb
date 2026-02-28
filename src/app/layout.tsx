@@ -409,9 +409,9 @@ export default function RootLayout({
                   "position": 6,
                   "item": {
                     "@type": "WebPage",
-                    "name": "Zones d'interventions",
-                    "url": "https://www.climgo.fr/zones-interventions",
-                    "description": "Découvrez nos zones d'intervention en Gironde et Bassin d'Arcachon"
+                    "name": "À propos",
+                    "url": "https://www.climgo.fr/a-propos",
+                    "description": "Découvrez ClimGO, votre expert chauffage et climatisation en Gironde"
                   }
                 }
               ]

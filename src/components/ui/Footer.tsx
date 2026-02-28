@@ -7,7 +7,7 @@ const services = [
   { title: "Chauffage", href: "/air+eau", icon: <Flame className="w-4 h-4" /> },
   { title: "Climatisation", href: "/climatisation", icon: <AirVent className="w-4 h-4" /> },
   { title: "Eau chaude sanitaire", href: "/thermodynamique", icon: <Droplet className="w-4 h-4" /> },
-  { title: "Maintenance", href: "/maintenance", icon: <FileText className="w-4 h-4" /> },
+  { title: "Dépannage", href: "/contact", icon: <FileText className="w-4 h-4" /> },
 ];
 
 const entreprise = [

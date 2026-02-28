@@ -104,7 +104,7 @@ export default function AProposPage() {
             {/* Description */}
             <p className="text-xl text-black/70 dark:text-white/70 leading-relaxed mb-12 max-w-3xl mx-auto">
               Depuis plus de 10 ans, <strong className="text-black dark:text-white">ClimGO</strong> accompagne particuliers et professionnels en Gironde et dans le Nord des Landes. 
-              Notre expertise : installation, <Link href="/maintenance" className="text-black dark:text-white font-medium hover:opacity-70 transition-opacity">maintenance</Link> et dépannage de <Link href="/pompe-a-chaleur" className="text-black dark:text-white font-medium hover:opacity-70 transition-opacity">pompes à chaleur</Link>, <Link href="/climatisation" className="text-black dark:text-white font-medium hover:opacity-70 transition-opacity">climatisation</Link> et systèmes de <Link href="/air+eau" className="text-black dark:text-white font-medium hover:opacity-70 transition-opacity">chauffage</Link>.
+              Notre expertise : installation, <Link href="/contact" className="text-black dark:text-white font-medium hover:opacity-70 transition-opacity">entretien</Link> et dépannage de <Link href="/pompe-a-chaleur" className="text-black dark:text-white font-medium hover:opacity-70 transition-opacity">pompes à chaleur</Link>, <Link href="/climatisation" className="text-black dark:text-white font-medium hover:opacity-70 transition-opacity">climatisation</Link> et systèmes de <Link href="/air+eau" className="text-black dark:text-white font-medium hover:opacity-70 transition-opacity">chauffage</Link>.
             </p>
           </div>
         </div>
@@ -295,8 +295,8 @@ export default function AProposPage() {
             
             <div className="flex justify-center items-center text-black/60 dark:text-white/60">
               <MapPin className="w-4 h-4 mr-2" />
-              <Link href="/zones-interventions" className="hover:text-black dark:hover:text-white transition-colors">
-                Découvrir notre zone d'intervention
+              <Link href="/contact" className="hover:text-black dark:hover:text-white transition-colors">
+                Nous contacter - Gironde et Bassin d'Arcachon
               </Link>
             </div>
           </div>
