@@ -128,7 +128,73 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
     ? `${article.author.firstName} ${article.author.lastName}`
     : article.author.email;
 
+  // JSON-LD Article pour les rich snippets Google
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: article.title,
+    description: article.excerpt || article.content.substring(0, 160),
+    image: article.imageUrl || 'https://www.climgo.fr/img/climdame.png',
+    author: {
+      '@type': 'Person',
+      name: authorName,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'ClimGO',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://www.climgo.fr/img/climdame.png',
+      },
+    },
+    datePublished: article.createdAt?.toISOString() || new Date().toISOString(),
+    dateModified: article.updatedAt?.toISOString() || new Date().toISOString(),
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://www.climgo.fr/blog/${article.slug}`,
+    },
+    wordCount: wordCount,
+    timeRequired: `PT${readingTime}M`,
+    articleSection: 'Chauffage et Climatisation',
+    keywords: article.content.match(/\*\*(.*?)\*\*/g)?.map(m => m.replace(/\*\*/g, '')).slice(0, 5).join(', ') || 'chauffage, climatisation, PAC',
+  };
+
+  // JSON-LD BreadcrumbList pour la navigation
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Accueil',
+        item: 'https://www.climgo.fr',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Blog',
+        item: 'https://www.climgo.fr/blog',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: article.title,
+        item: `https://www.climgo.fr/blog/${article.slug}`,
+      },
+    ],
+  };
+
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
     <div className="min-h-screen bg-background">
       {/* Hero Section avec image optimisée */}
       {article.imageUrl && (
@@ -261,5 +327,6 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
         </div>
       </div>
     </div>
+    </>
   );
 }
