@@ -3,13 +3,13 @@ import { HEADQUARTERS_COORDINATES, generateGeoJsonLd, generateServiceAreaJsonLd 
 
 export const metadata: Metadata = {
   title: 'Aides & Subventions 2025',
-  description: 'Travaux énergétiques subventionnés : remplacement chaudière, pompe à chaleur, ballon thermodynamique, climatisation. MaPrimeRénov\', CEE, TVA 5,5%, Éco-PTZ. Jusqu\'à 80% financés en Gironde.',
+  description: 'Aides travaux énergétiques : MaPrimeRénov, CEE, TVA 5,5%, Éco-PTZ. Jusqu\\'à 80% financés. ClimGO vous accompagne en Gironde.',
   
   keywords: 'installation climatisation avec aide, installation pompe à chaleur subvention, remplacement chaudière aide 2025, ballon thermodynamique installation aide, chauffage réversible subvention, climatisation réversible aide état, PAC air eau MaPrimeRénov, installation chauffage aide CEE, remplacement chaudière gaz fioul, pompe à chaleur air eau subvention, climatisation Gironde aide, chauffage Bordeaux subvention, installation PAC aide 2025, ballon thermodynamique prime, MaPrimeRénov 2025, CEE climatisation, TVA 5.5% chauffage, éco-PTZ pompe à chaleur, entreprise RGE Gironde, RGE QualiPAC Bordeaux, aide ANAH chauffage, prime énergie climatisation, financement travaux chauffage, accompagnement MaPrimeRénov Gironde, devis gratuit installation chauffage, cumul aides pompe à chaleur, barème aide climatisation 2025',
   
   openGraph: {
     title: 'Aides & Subventions 2025',
-    description: 'Travaux énergétiques subventionnés : remplacement chaudière, pompe à chaleur, ballon thermodynamique, climatisation. MaPrimeRénov\', CEE, TVA 5,5%, Éco-PTZ. Jusqu\'à 80% financés en Gironde.',
+    description: 'Aides travaux énergétiques : MaPrimeRénov, CEE, TVA 5,5%, Éco-PTZ. Jusqu\\'à 80% financés. ClimGO vous accompagne en Gironde.',
     url: 'https://www.climgo.fr/aides-etat',
     siteName: 'ClimGO - Expert Chauffage Climatisation',
     locale: 'fr_FR',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     site: '@climgo_fr',
     creator: '@climgo_fr',
     title: 'Aides & Subventions 2025',
-    description: 'Travaux énergétiques subventionnés : remplacement chaudière, pompe à chaleur, ballon thermodynamique, climatisation. MaPrimeRénov\', CEE, TVA 5,5%, Éco-PTZ. Jusqu\'à 80% financés.',
+    description: 'Aides travaux énergétiques : MaPrimeRénov, CEE, TVA 5,5%, Éco-PTZ. Jusqu\\'à 80% financés. ClimGO Gironde.',
     images: ['https://www.climgo.fr/images/twitter-aides-etat-climgo.jpg'],
   },
   
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     
     // Dublin Core
     'DC.title': 'Aides & Subventions 2025',
-    'DC.description': 'Travaux énergétiques subventionnés : remplacement chaudière, pompe à chaleur, ballon thermodynamique, climatisation. MaPrimeRénov\', CEE, TVA 5,5%, Éco-PTZ. Jusqu\'à 80% financés en Gironde.',
+    'DC.description': 'Aides travaux énergétiques : MaPrimeRénov, CEE, TVA 5,5%, Éco-PTZ. Jusqu\\'à 80% financés. ClimGO Gironde.',
     'DC.creator': 'ClimGO',
     'DC.publisher': 'ClimGO',
     'DC.language': 'fr-FR',

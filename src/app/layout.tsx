@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     default: "ClimGO - L'excellence thermique au service de votre habitat en Gironde",
     template: "%s | ClimGO"
   },
-  description: "Entreprise certifiée RGE QualiPAC et Professionnel du Gaz, ClimGO est spécialiste des pompes à chaleur, chaudières, climatisations et chauffe-eau en Gironde. Installation, entretien, dépannage. Devis gratuit.",
+  description: "ClimGO, expert RGE en pompes à chaleur, climatisation et chauffage en Gironde. Installation, entretien, dépannage. Devis gratuit.",
   keywords: [
     // Villes principales
     "chauffagiste bordeaux", "climatisation bordeaux", "pompe à chaleur bordeaux", "clim bordeaux", "climatiseur bordeaux",
