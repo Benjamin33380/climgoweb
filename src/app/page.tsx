@@ -155,7 +155,7 @@ export default function HomePage() {
               {/* Logo PGI */}
               <div className="flex items-center gap-2 xs:gap-3">
                 <Image
-                  src="/logoannexe/logo-pgi.png"
+                  src="/logoannexe/logopgi.png"
                   alt="Professionnel du Gaz Installation"
                   width={80}
                   height={80}
